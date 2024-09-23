@@ -1,0 +1,102 @@
+<div class="row">
+    <div class="col-12 col-md">
+        <div class="row">
+            <div class="col">
+                <div class="card bg-white">
+                    <div class="card-header text-center">
+                        <h4 class="mb-0">Truck Loading Parchi</h4>
+                        <p>
+                            <b>M+M</b>
+                        </p>
+                        <div class="row">
+                            <div class="col text-start">
+                                <b>
+                                    <span class="text-muted ps-2">Serial Number:</span>
+                                    <span class="text-link">{{ TruckLoadingParchi.id }}</span>
+                                </b>
+                            </div>
+                            <div class="col text-end">
+                                <b>
+                                    <span class="text-muted pe-2">Date:</span>
+                                    <span class="text-link">{{ TruckLoadingParchi.created_at| date: 'dd-MM-YYYY' }}</span>
+                                </b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body bg-warning">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group mb-3">
+                                    <label for="partyName" class="form-label">Party Name</label>
+                                    <select id="partyName" class="form-select" [(ngModel)]="TruckLoadingParchi.partyName"
+                                        name="partyName">
+                                        <option value="">Select Party</option>
+                                        <option *ngFor="let party of Parties" [value]="party._id">
+                                            {{ party.name }}
+                                        </option>
+                                    </select>
+
+                                    <label for="vehicleNumber" class="form-label
+                                    ">Vehicle Number</label>
+                                    <input id="vehicleNumber" class="form-control" [(ngModel)]="TruckLoadingParchi.vehicleNumber"
+                                        name="vehicleNumber" type="text" placeholder="Vehicle Number" />
+
+                                    <label for="deliveryLocation" class="form-label">Delivery Location</label>
+                                    <select id="deliveryLocation" class="form-select" [(ngModel)]="TruckLoadingParchi.deliveryLocation"
+                                        name="deliveryLocation">
+                                        <option value="">Select Location</option>
+                                        <option *ngFor="let location of DeliveryLocations" [value]="location._id">
+                                            {{ location.name }}
+                                        </option>
+                                    </select>
+
+                                    <label for="assignedHammal" class="form-label
+                                    ">Assigned Hammal</label>
+                                    <select id="assignedHammal" class="form-select" [(ngModel)]="TruckLoadingParchi.assignedHammal"
+                                        name="assignedHammal">
+                                        <option value="">Select Hammal</option>
+                                        <option *ngFor="let hammal of Hammals" [value]="hammal._id">
+                                            {{ hammal.name }}
+                                        </option>
+                                    </select>
+
+                                    <label for="boraQuantity" class="form-label">Bora Quantity</label>
+                                        <input id="boraQuantity" class="form-control" [(ngModel)]="TruckLoadingParchi.boraQuantity" name="boraQuantity"
+                                            type="number" placeholder="Bora Quantity" (ngModelChange)="calculateNetWeight()" />
+                                        
+                                        <label for="unitBora" class="form-label">Unit Bora</label>
+                                        <input id="unitBora" class="form-control" [(ngModel)]="TruckLoadingParchi.unitBora" name="unitBora"
+                                            type="number" placeholder="Unit Bora" (ngModelChange)="calculateNetWeight()" />
+
+                                            <label for="netWeight" class="form-label">Net Weight</label>
+                                            <!-- The calculated Net Weight will be displayed here -->
+                                            <input id="netWeight" class="form-control" [value]="TruckLoadingParchi.netWeight" name="netWeight"
+                                                type="number" placeholder="Net Weight" readonly />
+    
+                                        <label for="crop" class="form-label">Crop</label>
+                                        <select id="crop" class="form-select" [(ngModel)]="TruckLoadingParchi.crop" name="crop">
+                                            <option value="">Select Crop</option>
+                                            <option *ngFor="let crop of Crops" [value]="crop._id">
+                                                {{ crop.name }}
+                                            </option>
+                                        </select>
+
+                                    <label for="other" class="form-label">Other</label>
+                                    <input id="other" class="form-control" [(ngModel)]="TruckLoadingParchi.other" name="other"
+                                        type="text" placeholder="Other" />
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-actions bg-light border">
+                        <div class="text-end">
+                            <button class="btn btn-primary btn-lg m-3" type="button" (click)="saveTruckLoadingParchi()">Save</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

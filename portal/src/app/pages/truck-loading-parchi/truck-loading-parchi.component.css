@@ -1,0 +1,11 @@
+input, select {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px dotted #000;
+    margin-bottom: 10px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+  }

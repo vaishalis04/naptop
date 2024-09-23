@@ -1,0 +1,22 @@
+/* input and select should be transparent and dotted bottom border */
+input, select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px dotted #000;
+  margin-bottom: 10px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+.input-group-text {
+    position: relative;
+    top: -5px;
+}
+/* If input field is autofilled keep the background transparent */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+    -webkit-text-fill-color: black;
+    background-color: transparent;
+}
