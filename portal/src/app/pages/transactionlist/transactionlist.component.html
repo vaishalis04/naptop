@@ -1,0 +1,136 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-center align-items-center">
+    <h4>Transactions</h4>
+  </div>
+  <div class="card-body">
+    <div class="div d-flex justify-content-end align-items-center"><button type="button" class="btn btn-primary" (click)="navigateToTransactionPage()">Add Transaction</button></div>
+    
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="fromDate">From</label>
+          <input
+            [(ngModel)]="fromDate"
+            type="date"
+            class="form-control"
+            name="fromDate"
+            id="fromDate"
+            aria-describedby="fromdatehelpid"
+            placeholder=""
+          />
+          <small id="fromdatehelpid" class="form-text text-muted"
+            >From Date</small
+          >
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="toDate">To</label>
+          <input
+            [(ngModel)]="toDate"
+            type="date"
+            class="form-control"
+            name="toDate"
+            id="toDate"
+            aria-describedby="todatehelpid"
+            placeholder=""
+          />
+          <small id="todatehelpid" class="form-text text-muted">To Date</small>
+        </div>
+      </div>
+      <!-- <div class="col">
+              <div class="form-group">
+                <label for="crop">Crop</label>
+                <select [(ngModel)]="selectedCrop" class="form-control" name="crop" id="crop">
+                  <option [value]="">Select</option>
+                  <option *ngFor="let item of Crops" [value]="item._id">{{item.name}}</option>
+                </select>
+              </div>
+            </div> -->
+      <div class="col">
+        <button
+          (click)="getTransactions()"
+          type="button"
+          class="btn btn-primary"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+
+    <!-- Transaction Summary -->
+    <!-- <div class="row">
+            <div class="col-auto" *ngFor="let item of TransactionSummary">
+              <button type="button" class="btn btn-primary">
+                {{ item.cropName }}: ₹{{ item.totalRate }}
+              </button>
+            </div>
+          </div> -->
+
+    <!-- Transactions Table -->
+    <div class="card bg-white mt-4">
+      <div class="card-header">
+        <h4 class="mb-0">Transactions</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Sr.no</th>
+                <th scope="col">Date</th>
+                <th scope="col">Farmer</th>
+                <!-- <th scope="col">Village</th> -->
+                <th scope="col">Firm/Company</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Hammal</th>
+                <th scope="col">Crop</th>
+                <th scope="col">Transaction Status</th>
+                <th scope="col">Transaction Mode</th>
+                <th scope="col">Discount</th>
+                <th scope="col">Paid Payment</th>
+                <th scope="col">Remaining Payment</th>
+               
+                <th scope="col"> Payment Status</th>
+                <th scope="col">Total Payment</th>
+
+                <!-- <th scope="col">Action</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let transactions of transactions; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ transactions?.created_at | date : "dd-MM-YYYY" }}</td>
+                <td>{{ transactions?.farmerDetails.name }}</td>
+                <!-- <td>{{ transactions?.villageDetails.name }}</td> -->
+                <td>{{ transactions.firm_company }}</td>
+                <td>₹{{ transactions.rate }}</td>
+                <td>{{ transactions?.hammalDetails.name }}</td>
+                <td>{{ transactions?.cropDetails.name }}</td>
+                <td>{{ transactions?.transactionStatus }}</td>
+                <td>{{ transactions?.transactionMode }}</td>
+                <td>{{ transactions?.discount }}%</td>
+                <td>{{ transactions?.paidAmount }}</td>
+                <td>{{ transactions?.remainingAmount }}</td>
+                <td>{{ transactions?.PaymentStatus }}</td>
+                <td>{{ transactions?.totalAmount }}</td>
+
+
+                <!-- <td>
+                        <button
+                          type="button"
+                          class="btn btn-primary"
+                         
+                        >
+                          Print Receipt
+                        </button>
+                      </td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- <pagination-controls id="transaction" (pageChange)="currentPage = $event; getTransactions()"></pagination-controls> -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -39805,197 +39805,135 @@ var ForgotPasswordComponent = _ForgotPasswordComponent;
 // src/app/pages/dashboard/dashboard.component.ts
 function DashboardComponent_div_48_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 22)(1, "div", 23)(2, "div", 18)(3, "div", 24)(4, "h4", 19);
-    \u0275\u0275text(5, "Taula Parchi");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "p")(7, "b");
-    \u0275\u0275text(8, "M+M");
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(9, "h6", 25)(10, "div", 0)(11, "div", 26);
-    \u0275\u0275text(12);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(13, "div", 27);
-    \u0275\u0275text(14);
-    \u0275\u0275pipe(15, "date");
-    \u0275\u0275elementEnd()()()();
-    \u0275\u0275elementStart(16, "div", 28)(17, "div", 29)(18, "h6", 30);
-    \u0275\u0275text(19, "Farmer:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "p", 31);
-    \u0275\u0275text(21);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(22, "div", 29)(23, "h6", 30);
-    \u0275\u0275text(24, "Village:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(25, "p", 31);
-    \u0275\u0275text(26);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(27, "div", 29)(28, "h6", 30);
-    \u0275\u0275text(29, "Firm/Company:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(30, "p", 31);
-    \u0275\u0275text(31);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(32, "div", 29)(33, "h6", 30);
-    \u0275\u0275text(34, "Rate:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(35, "p", 31);
-    \u0275\u0275text(36);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(37, "div", 29)(38, "h6", 30);
-    \u0275\u0275text(39, "Hammal:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(40, "p", 31);
-    \u0275\u0275text(41);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(42, "div", 29)(43, "h6", 30);
-    \u0275\u0275text(44, "Crop:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(45, "p", 31);
-    \u0275\u0275text(46);
-    \u0275\u0275elementEnd()()()()();
-  }
-  if (rf & 2) {
-    const taulaParchi_r3 = ctx.$implicit;
-    \u0275\u0275advance(12);
-    \u0275\u0275textInterpolate1(" Sr.no: ", taulaParchi_r3._id, " ");
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1(" Date: ", \u0275\u0275pipeBind2(15, 8, taulaParchi_r3.created_at, "dd-MM-YYYY"), " ");
-    \u0275\u0275advance(7);
-    \u0275\u0275textInterpolate(taulaParchi_r3.farmer);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(taulaParchi_r3.village);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(taulaParchi_r3.firm_company);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(taulaParchi_r3.rate);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(taulaParchi_r3.hammal);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(taulaParchi_r3.crop);
-  }
-}
-function DashboardComponent_div_58_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 22)(1, "div", 23)(2, "div", 18)(3, "div", 24)(4, "h4", 19);
-    \u0275\u0275text(5, "Truck Loading Parchi");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "p")(7, "b");
-    \u0275\u0275text(8, "M+M");
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(9, "h6", 32)(10, "div", 0)(11, "div", 26);
-    \u0275\u0275text(12);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(13, "div", 27);
-    \u0275\u0275text(14);
-    \u0275\u0275pipe(15, "date");
-    \u0275\u0275elementEnd()()()();
-    \u0275\u0275elementStart(16, "div", 28)(17, "div", 29)(18, "h6", 30);
-    \u0275\u0275text(19, "Party Name:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "p", 31);
-    \u0275\u0275text(21);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(22, "div", 29)(23, "h6", 30);
-    \u0275\u0275text(24, "Vehicle Number:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(25, "p", 31);
-    \u0275\u0275text(26);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(27, "div", 29)(28, "h6", 30);
-    \u0275\u0275text(29, "Delivery Location: ");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(30, "p", 31);
-    \u0275\u0275text(31);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(32, "div", 29)(33, "h6", 30);
-    \u0275\u0275text(34, "Hammal:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(35, "p", 31);
-    \u0275\u0275text(36);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(37, "div", 29)(38, "h6", 30);
-    \u0275\u0275text(39, "Bora Nag:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(40, "p", 31);
-    \u0275\u0275text(41);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(42, "div", 29)(43, "h6", 30);
-    \u0275\u0275text(44, "Kaanta Weight:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(45, "p", 31);
-    \u0275\u0275text(46);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(47, "div", 29)(48, "h6", 30);
-    \u0275\u0275text(49, "Crop");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(50, "p", 31);
-    \u0275\u0275text(51);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(52, "div", 29)(53, "h6", 30);
-    \u0275\u0275text(54, "Other:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(55, "p", 31);
-    \u0275\u0275text(56);
-    \u0275\u0275elementEnd()()()()();
-  }
-  if (rf & 2) {
-    const truckLoadingParchi_r4 = ctx.$implicit;
-    const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275advance(12);
-    \u0275\u0275textInterpolate1(" Sr.no: ", truckLoadingParchi_r4._id, " ");
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1(" Date: ", \u0275\u0275pipeBind2(15, 10, truckLoadingParchi_r4.created_at, "dd-MM-YYYY"), " ");
-    \u0275\u0275advance(7);
-    \u0275\u0275textInterpolate(ctx_r1.TruckLoadingParchi[0] == null ? null : ctx_r1.TruckLoadingParchi[0].partyName);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(ctx_r1.TruckLoadingParchi[0] == null ? null : ctx_r1.TruckLoadingParchi[0].vehicleNumber);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate1("", ctx_r1.TruckLoadingParchi[0] == null ? null : ctx_r1.TruckLoadingParchi[0].deliveryLocation, " ");
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(ctx_r1.TruckLoadingParchi[0] == null ? null : ctx_r1.TruckLoadingParchi[0].assignedHammal);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(ctx_r1.TruckLoadingParchi[0] == null ? null : ctx_r1.TruckLoadingParchi[0].boraQuantity);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(ctx_r1.TruckLoadingParchi[0] == null ? null : ctx_r1.TruckLoadingParchi[0].netWeight);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(ctx_r1.TruckLoadingParchi[0] == null ? null : ctx_r1.TruckLoadingParchi[0].crop);
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(ctx_r1.TruckLoadingParchi[0] == null ? null : ctx_r1.TruckLoadingParchi[0].other);
-  }
-}
-function DashboardComponent_div_68_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 22)(1, "div", 23)(2, "div", 18)(3, "div", 24)(4, "h4", 19);
+    \u0275\u0275elementStart(0, "div", 23)(1, "div", 24)(2, "div", 18)(3, "div", 25)(4, "h4", 19);
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "p")(7, "b");
     \u0275\u0275text(8, "M+M");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(9, "h6", 25)(10, "div", 0)(11, "div", 26);
+    \u0275\u0275elementStart(9, "h6", 26)(10, "div", 0)(11, "div", 27);
     \u0275\u0275text(12);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(13, "div", 27);
-    \u0275\u0275text(14);
-    \u0275\u0275pipe(15, "date");
     \u0275\u0275elementEnd()()()();
-    \u0275\u0275elementStart(16, "div", 28)(17, "div", 29)(18, "h6", 30);
-    \u0275\u0275text(19, "NetWeight:");
+    \u0275\u0275elementStart(13, "div", 28)(14, "div", 29)(15, "h6", 30);
+    \u0275\u0275text(16, " Taul Parchi Grand Total: ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "p", 31);
-    \u0275\u0275text(21);
+    \u0275\u0275elementStart(17, "p", 31);
+    \u0275\u0275text(18);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(19, "div", 29)(20, "h6", 30);
+    \u0275\u0275text(21, " Truck Loading Net Weight: ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(22, "p", 31);
+    \u0275\u0275text(23);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(24, "div", 29)(25, "h6", 30);
+    \u0275\u0275text(26, " Difference (Taul - Truck): ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(27, "p", 31);
+    \u0275\u0275text(28);
     \u0275\u0275elementEnd()()()()();
   }
   if (rf & 2) {
-    const crop_r5 = ctx.$implicit;
+    const crop_r3 = ctx.$implicit;
+    const i_r4 = ctx.index;
+    const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(crop_r5.name);
+    \u0275\u0275textInterpolate(crop_r3.crop_name);
     \u0275\u0275advance(7);
-    \u0275\u0275textInterpolate1(" Sr.no: ", crop_r5._id, " ");
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1(" Date: ", \u0275\u0275pipeBind2(15, 4, crop_r5.created_at, "dd-MM-YYYY"), " ");
+    \u0275\u0275textInterpolate1(" Sr.no: ", crop_r3._id, " ");
+    \u0275\u0275advance(6);
+    \u0275\u0275textInterpolate1("", crop_r3.grandTotal, " kg");
+    \u0275\u0275advance(5);
+    \u0275\u0275textInterpolate1("", ctx_r0.Datas[i_r4] == null ? null : ctx_r0.Datas[i_r4].totalBoraValue, " kg");
+    \u0275\u0275advance(5);
+    \u0275\u0275textInterpolate1(" ", crop_r3.grandTotal - (ctx_r0.Datas[i_r4] == null ? null : ctx_r0.Datas[i_r4].totalBoraValue), " kg ");
+  }
+}
+function DashboardComponent_div_49_div_10_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 23)(1, "div", 24)(2, "div", 18)(3, "div", 25)(4, "h4", 19);
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "p")(7, "b");
+    \u0275\u0275text(8, "M+M");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(9, "h6", 26)(10, "div", 0)(11, "div", 27);
+    \u0275\u0275text(12);
+    \u0275\u0275elementEnd()()()();
+    \u0275\u0275elementStart(13, "div", 28)(14, "div", 29)(15, "h6", 30);
+    \u0275\u0275text(16, " NetWeight (Unit * Quantity): ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "p", 31);
+    \u0275\u0275text(18);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(19, "div", 29)(20, "h6", 30);
+    \u0275\u0275text(21, " Bharti Total: ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(22, "p", 31);
+    \u0275\u0275text(23);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(24, "div", 29)(25, "h6", 30);
+    \u0275\u0275text(26, " Grand Total: ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(27, "p", 31);
+    \u0275\u0275text(28);
+    \u0275\u0275elementEnd()()()()();
+  }
+  if (rf & 2) {
+    const crop_r6 = ctx.$implicit;
+    \u0275\u0275advance(5);
+    \u0275\u0275textInterpolate(crop_r6.crop_name);
     \u0275\u0275advance(7);
-    \u0275\u0275textInterpolate(crop_r5.notes);
+    \u0275\u0275textInterpolate1(" Sr.no: ", crop_r6._id, " ");
+    \u0275\u0275advance(6);
+    \u0275\u0275textInterpolate1(" ", crop_r6 == null ? null : crop_r6.totalUnitBoraBoraQuantity, " kg ");
+    \u0275\u0275advance(5);
+    \u0275\u0275textInterpolate1("", crop_r6.totalBharti, " kg");
+    \u0275\u0275advance(5);
+    \u0275\u0275textInterpolate1("", crop_r6.grandTotal, " kg");
+  }
+}
+function DashboardComponent_div_49_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div")(1, "div", 17)(2, "div", 18)(3, "h4", 19);
+    \u0275\u0275text(4, "Net Weight of Crop in Taula Parchi");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(5, "div", 4)(6, "div", 0)(7, "div", 16)(8, "div", 20)(9, "div", 0);
+    \u0275\u0275template(10, DashboardComponent_div_49_div_10_Template, 29, 5, "div", 21);
+    \u0275\u0275elementEnd()()()()()()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(10);
+    \u0275\u0275property("ngForOf", ctx_r1.Crops);
+  }
+}
+function DashboardComponent_div_59_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 23)(1, "div", 24)(2, "div", 18)(3, "div", 25)(4, "h4", 19);
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "p")(7, "b");
+    \u0275\u0275text(8, "M+M");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(9, "h6", 26)(10, "div", 0)(11, "div", 27);
+    \u0275\u0275text(12);
+    \u0275\u0275elementEnd()()()();
+    \u0275\u0275elementStart(13, "div", 28)(14, "div", 29)(15, "h6", 30);
+    \u0275\u0275text(16, " Net Weight: ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "p", 31);
+    \u0275\u0275text(18);
+    \u0275\u0275elementEnd()()()()();
+  }
+  if (rf & 2) {
+    const truck_r7 = ctx.$implicit;
+    \u0275\u0275advance(5);
+    \u0275\u0275textInterpolate(truck_r7.crop_name);
+    \u0275\u0275advance(7);
+    \u0275\u0275textInterpolate1(" Sr.no: ", truck_r7._id, " ");
+    \u0275\u0275advance(6);
+    \u0275\u0275textInterpolate1(" ", truck_r7.totalBoraValue, " kg ");
   }
 }
 var _DashboardComponent = class _DashboardComponent {
@@ -40006,66 +39944,17 @@ var _DashboardComponent = class _DashboardComponent {
     this.TruckLoadingParchiCount = 0;
     this.TaulaParchi = [];
     this.TruckLoadingParchi = [];
-    this.Crops = [];
+    this.TaulaParchiDetailsCount = 0;
+    this.TruckLoadingDetailsCount = 0;
+    this.remainingCrops = [];
   }
   ngOnInit() {
     this.getTaulaParchis();
+    this.getTaulaParchiDetails();
     this.getTruckLoadingParchis();
-    this.loadDummyCrops();
-  }
-  loadDataFromLocalStorage() {
-    const cropsData = localStorage.getItem("crops");
-    if (cropsData) {
-      this.Crops = JSON.parse(cropsData);
-    }
-  }
-  loadDummyCrops() {
-    this.Crops = [
-      {
-        _id: "1",
-        name: "Wheat",
-        created_at: /* @__PURE__ */ new Date(),
-        // farmer: 'John Doe',
-        // village: 'Village A',
-        // quantity: '100 kg',
-        // rate: '20 USD',
-        // status: 'Available',
-        notes: "80Kg"
-      },
-      {
-        _id: "2",
-        name: "Rice",
-        created_at: /* @__PURE__ */ new Date(),
-        farmer: "Jane Smith",
-        village: "Village B",
-        quantity: "200 kg",
-        rate: "30 USD",
-        status: "Available",
-        notes: "67"
-      },
-      {
-        _id: "3",
-        name: "Corn",
-        created_at: /* @__PURE__ */ new Date(),
-        farmer: "Mike Johnson",
-        village: "Village C",
-        quantity: "150 kg",
-        rate: "25 USD",
-        status: "Sold Out",
-        notes: "93"
-      },
-      {
-        _id: "4",
-        name: "Soybean",
-        created_at: /* @__PURE__ */ new Date(),
-        farmer: "Mike Johnson",
-        village: "Village C",
-        quantity: "150 kg",
-        rate: "25 USD",
-        status: "Sold Out",
-        notes: "93"
-      }
-    ];
+    this.getTaulparchisAggregatedCropData();
+    this.getTruckLoadingDetails();
+    this.getTruckLoadingAggregatedCropData();
   }
   // Fetch TaulaParchis from backend
   getTaulaParchis() {
@@ -40073,7 +39962,6 @@ var _DashboardComponent = class _DashboardComponent {
       params: {
         page: 1,
         limit: 1e3
-        // Adjust limit as needed
       }
     }).subscribe({
       next: (res) => {
@@ -40085,13 +39973,51 @@ var _DashboardComponent = class _DashboardComponent {
       }
     });
   }
+  getTaulaParchiDetails() {
+    this.apiService.get("taulparchi/getdetails", {
+      params: { page: 1, limit: 1e3 }
+    }).subscribe({
+      next: (res) => {
+        if (res && Array.isArray(res)) {
+          console.log("res", res);
+          this.TaulaParchiDetails = res[0];
+          this.TaulaParchiDetailsCount = res.length;
+          console.log("Taula Parchi Details:", this.TaulaParchiDetails);
+        } else {
+          console.error("Invalid response format for Taula Parchi details:", res);
+        }
+      },
+      error: (err) => {
+        console.error("Error fetching Taula Parchi details:", err.message || err);
+      }
+    });
+  }
+  getTaulparchisAggregatedCropData() {
+    this.apiService.get("taulparchi/taulparchisAggregate", {
+      params: {
+        page: 1,
+        limit: 1e3
+      }
+    }).subscribe({
+      next: (res) => {
+        if (Array.isArray(res)) {
+          this.Crops = res;
+          console.log("Aggregated Taul Parchis Data:", this.Crops);
+        } else {
+          console.error("Invalid response format:", res);
+        }
+      },
+      error: (err) => {
+        console.error("Error fetching Taul Parchis Aggregated Data:", err.message || err);
+      }
+    });
+  }
   // Fetch TruckLoadingParchis from backend
   getTruckLoadingParchis() {
     this.apiService.get("truckloading", {
       params: {
         page: 1,
         limit: 1e3
-        // Adjust limit as needed
       }
     }).subscribe({
       next: (res) => {
@@ -40104,11 +40030,53 @@ var _DashboardComponent = class _DashboardComponent {
       }
     });
   }
+  getTruckLoadingDetails() {
+    this.apiService.get("truckloading/getdetails", {
+      params: {
+        page: 1,
+        limit: 1e3
+      }
+    }).subscribe({
+      next: (res) => {
+        if (res && Array.isArray(res)) {
+          console.log("Response:", res);
+          this.TruckLoadingDetails = res[0];
+          this.TruckLoadingDetailsCount = res.length;
+          console.log("Truck loading details:", this.TruckLoadingDetails);
+        } else {
+          console.error("Invalid response format:", res);
+        }
+      },
+      error: (err) => {
+        console.error("Error fetching truck loading details:", err.message || err);
+      }
+    });
+  }
+  getTruckLoadingAggregatedCropData() {
+    this.apiService.get("truckloading/truck-loading-details", {
+      params: {
+        page: 1,
+        limit: 1e3
+      }
+    }).subscribe({
+      next: (res) => {
+        if (res) {
+          this.Datas = res;
+          console.log("Aggregated Truck Loading Data:", this.Datas);
+        } else {
+          console.error("Invalid response format:", res);
+        }
+      },
+      error: (err) => {
+        console.error("Error fetching Truck Loading Aggregated Data:", err.message || err);
+      }
+    });
+  }
 };
 _DashboardComponent.\u0275fac = function DashboardComponent_Factory(t) {
   return new (t || _DashboardComponent)(\u0275\u0275directiveInject(ApiService));
 };
-_DashboardComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DashboardComponent, selectors: [["app-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 69, vars: 9, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-body"], [1, "d-flex", "justify-content-between", "align-items-center"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-dark", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-calendar", "fs-3", "text-white"], [1, "text-end"], [1, "mb-0", "text-dark"], [1, "mb-0", "text-secondary"], [1, "row", "mt-3"], [1, "col-12", "col-md-6"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-primary", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-file", "fs-3", "text-white"], [1, "fi", "fi-rs-list", "fs-3", "text-white"], [1, "col-12"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], ["class", "col-md-4", 4, "ngFor", "ngForOf"], [1, "col-md-4"], [1, "card", "bg-white", "mb-3"], [1, "text-center"], [1, "card-title"], [1, "col", "text-start"], [1, "col", "text-end"], [1, "card-body", "bg-warning"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], [1, "card-title", "text-dark"]], template: function DashboardComponent_Template(rf, ctx) {
+_DashboardComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DashboardComponent, selectors: [["app-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 60, vars: 9, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-body"], [1, "d-flex", "justify-content-between", "align-items-center"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-dark", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-calendar", "fs-3", "text-white"], [1, "text-end"], [1, "mb-0", "text-dark"], [1, "mb-0", "text-secondary"], [1, "row", "mt-3"], [1, "col-12", "col-md-6"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-primary", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-file", "fs-3", "text-white"], [1, "fi", "fi-rs-list", "fs-3", "text-white"], [1, "col-12"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], ["class", "col-md-4", 4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "col-md-4"], [1, "card", "bg-white", "mb-3"], [1, "text-center"], [1, "card-title"], [1, "col", "text-start"], [1, "card-body", "bg-warning"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"]], template: function DashboardComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "div", 5)(7, "div", 6);
     \u0275\u0275element(8, "i", 7);
@@ -40136,45 +40104,40 @@ _DashboardComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ ty
     \u0275\u0275text(35);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(36, "p", 10);
-    \u0275\u0275text(37, " Total Truck Loading Parchi ");
+    \u0275\u0275text(37, "Total Truck Loading Parchi");
     \u0275\u0275elementEnd()()()()()();
     \u0275\u0275elementStart(38, "div", 16)(39, "div", 17)(40, "div", 18)(41, "h4", 19);
-    \u0275\u0275text(42, "Taula Parchis");
+    \u0275\u0275text(42, "Total Crops");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(43, "div", 4)(44, "div", 0)(45, "div", 16)(46, "div", 20)(47, "div", 0);
-    \u0275\u0275template(48, DashboardComponent_div_48_Template, 47, 11, "div", 21);
+    \u0275\u0275template(48, DashboardComponent_div_48_Template, 29, 5, "div", 21);
     \u0275\u0275elementEnd()()()()()();
-    \u0275\u0275elementStart(49, "div", 17)(50, "div", 18)(51, "h4", 19);
-    \u0275\u0275text(52, "Truck Loading Parchis");
+    \u0275\u0275template(49, DashboardComponent_div_49_Template, 11, 1, "div", 22);
+    \u0275\u0275elementStart(50, "div", 17)(51, "div", 18)(52, "h4", 19);
+    \u0275\u0275text(53, "Net Weight of Crop in Truck Loading Parchi");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(53, "div", 4)(54, "div", 0)(55, "div", 16)(56, "div", 20)(57, "div", 0);
-    \u0275\u0275template(58, DashboardComponent_div_58_Template, 57, 13, "div", 21);
-    \u0275\u0275elementEnd()()()()()();
-    \u0275\u0275elementStart(59, "div", 17)(60, "div", 18)(61, "h4", 19);
-    \u0275\u0275text(62, "Crops");
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(63, "div", 4)(64, "div", 0)(65, "div", 16)(66, "div", 20)(67, "div", 0);
-    \u0275\u0275template(68, DashboardComponent_div_68_Template, 22, 7, "div", 21);
+    \u0275\u0275elementStart(54, "div", 4)(55, "div", 0)(56, "div", 16)(57, "div", 20)(58, "div", 0);
+    \u0275\u0275template(59, DashboardComponent_div_59_Template, 19, 3, "div", 21);
     \u0275\u0275elementEnd()()()()()()()()()();
   }
   if (rf & 2) {
     \u0275\u0275advance(11);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(12, 6, ctx.currentDate, "dd-MM-YYYY"));
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(12, 6, ctx.currentDate, "dd-MM-YYYY"), " ");
     \u0275\u0275advance(13);
     \u0275\u0275textInterpolate(ctx.TaulaParchiCount);
     \u0275\u0275advance(11);
     \u0275\u0275textInterpolate(ctx.TruckLoadingParchiCount);
     \u0275\u0275advance(13);
-    \u0275\u0275property("ngForOf", ctx.TaulaParchi);
-    \u0275\u0275advance(10);
-    \u0275\u0275property("ngForOf", ctx.TruckLoadingParchi);
-    \u0275\u0275advance(10);
     \u0275\u0275property("ngForOf", ctx.Crops);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx.Crops && ctx.Crops.length > 0);
+    \u0275\u0275advance(10);
+    \u0275\u0275property("ngForOf", ctx.Datas);
   }
-}, dependencies: [DatePipe, CommonModule, NgForOf], styles: ["\n\n/*# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFtdLAogICJzb3VyY2VzQ29udGVudCI6IFtdLAogICJtYXBwaW5ncyI6ICIiLAogICJuYW1lcyI6IFtdCn0K */"] });
+}, dependencies: [DatePipe, CommonModule, NgForOf, NgIf], styles: ["\n\n/*# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFtdLAogICJzb3VyY2VzQ29udGVudCI6IFtdLAogICJtYXBwaW5ncyI6ICIiLAogICJuYW1lcyI6IFtdCn0K */"] });
 var DashboardComponent = _DashboardComponent;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DashboardComponent, { className: "DashboardComponent", filePath: "src\\app\\pages\\dashboard\\dashboard.component.ts", lineNumber: 55 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DashboardComponent, { className: "DashboardComponent", filePath: "src\\app\\pages\\dashboard\\dashboard.component.ts", lineNumber: 13 });
 })();
 
 // node_modules/@angular/core/fesm2022/rxjs-interop.mjs
@@ -56925,6 +56888,26 @@ var _SidebarComponent = class _SidebarComponent {
         title: "Settings",
         icon: "fi-rr-settings",
         link: "/settings"
+      },
+      {
+        title: "Accounts",
+        icon: "fi-rr-settings",
+        link: "/accounts"
+      },
+      {
+        title: "Inventory",
+        icon: "fi-rr-settings",
+        link: "/inventory"
+      },
+      // {
+      //   title: 'Transaction',
+      //   icon: 'fi-rr-settings',
+      //   link: '/transaction'
+      // },
+      {
+        title: "Transaction List",
+        icon: "fi-rr-settings",
+        link: "/transactionlist"
       }
     ];
   }
@@ -57457,13 +57440,13 @@ _TaulParchiComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ t
 ], styles: ["\n\ninput[_ngcontent-%COMP%], select[_ngcontent-%COMP%] {\n  background-color: transparent;\n  border: none;\n  border-bottom: 1px dotted #000;\n  margin-bottom: 10px;\n  border-radius: 0;\n  -webkit-border-radius: 0;\n  -moz-border-radius: 0;\n  -ms-border-radius: 0;\n  -o-border-radius: 0;\n}\n.input-group-text[_ngcontent-%COMP%] {\n  position: relative;\n  top: -5px;\n}\ninput[_ngcontent-%COMP%]:-webkit-autofill {\n  -webkit-box-shadow: 0 0 0 1000px white inset;\n  -webkit-text-fill-color: black;\n  background-color: transparent;\n}\n/*# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsic3JjL2FwcC9wYWdlcy90YXVsLXBhcmNoaS90YXVsLXBhcmNoaS5jb21wb25lbnQuY3NzIl0sCiAgInNvdXJjZXNDb250ZW50IjogWyIvKiBpbnB1dCBhbmQgc2VsZWN0IHNob3VsZCBiZSB0cmFuc3BhcmVudCBhbmQgZG90dGVkIGJvdHRvbSBib3JkZXIgKi9cbmlucHV0LCBzZWxlY3Qge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgYm9yZGVyOiBub25lO1xuICBib3JkZXItYm90dG9tOiAxcHggZG90dGVkICMwMDA7XG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDA7XG4gIC13ZWJraXQtYm9yZGVyLXJhZGl1czogMDtcbiAgLW1vei1ib3JkZXItcmFkaXVzOiAwO1xuICAtbXMtYm9yZGVyLXJhZGl1czogMDtcbiAgLW8tYm9yZGVyLXJhZGl1czogMDtcbn1cbi5pbnB1dC1ncm91cC10ZXh0IHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgdG9wOiAtNXB4O1xufVxuLyogSWYgaW5wdXQgZmllbGQgaXMgYXV0b2ZpbGxlZCBrZWVwIHRoZSBiYWNrZ3JvdW5kIHRyYW5zcGFyZW50ICovXG5pbnB1dDotd2Via2l0LWF1dG9maWxsIHtcbiAgICAtd2Via2l0LWJveC1zaGFkb3c6IDAgMCAwIDEwMDBweCB3aGl0ZSBpbnNldDtcbiAgICAtd2Via2l0LXRleHQtZmlsbC1jb2xvcjogYmxhY2s7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG59Il0sCiAgIm1hcHBpbmdzIjogIjtBQUNBO0FBQU87QUFDTCxvQkFBa0I7QUFDbEIsVUFBUTtBQUNSLGlCQUFlLElBQUksT0FBTztBQUMxQixpQkFBZTtBQUNmLGlCQUFlO0FBQ2YseUJBQXVCO0FBQ3ZCLHNCQUFvQjtBQUNwQixxQkFBbUI7QUFDbkIsb0JBQWtCO0FBQ3BCO0FBQ0EsQ0FBQztBQUNHLFlBQVU7QUFDVixPQUFLO0FBQ1Q7QUFFQSxLQUFLO0FBQ0Qsc0JBQW9CLEVBQUUsRUFBRSxFQUFFLE9BQU8sTUFBTTtBQUN2QywyQkFBeUI7QUFDekIsb0JBQWtCO0FBQ3RCOyIsCiAgIm5hbWVzIjogW10KfQo= */"] });
 var TaulParchiComponent = _TaulParchiComponent;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulParchiComponent, { className: "TaulParchiComponent", filePath: "src\\app\\pages\\taul-parchi\\taul-parchi.component.ts", lineNumber: 123 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulParchiComponent, { className: "TaulParchiComponent", filePath: "src\\app\\pages\\taul-parchi\\taul-parchi.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/truck-loading-parchi/truck-loading-parchi.component.ts
 function TruckLoadingParchiComponent_option_34_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 37);
+    \u0275\u0275elementStart(0, "option", 39);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -57476,7 +57459,7 @@ function TruckLoadingParchiComponent_option_34_Template(rf, ctx) {
 }
 function TruckLoadingParchiComponent_option_43_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 37);
+    \u0275\u0275elementStart(0, "option", 39);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -57489,7 +57472,7 @@ function TruckLoadingParchiComponent_option_43_Template(rf, ctx) {
 }
 function TruckLoadingParchiComponent_option_49_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 37);
+    \u0275\u0275elementStart(0, "option", 39);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -57502,7 +57485,7 @@ function TruckLoadingParchiComponent_option_49_Template(rf, ctx) {
 }
 function TruckLoadingParchiComponent_option_64_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 37);
+    \u0275\u0275elementStart(0, "option", 39);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -57529,6 +57512,7 @@ var _TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
       boraQuantity: 0,
       unitBora: 0,
       crop: 0,
+      rate: 0,
       netWeight: 0,
       other: "",
       id: Date.now(),
@@ -57639,6 +57623,10 @@ var _TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
       alert("Please enter Jins");
       return;
     }
+    if (!this.TruckLoadingParchi.rate) {
+      alert("Please enter rate");
+      return;
+    }
     if (!this.TruckLoadingParchi.other) {
       alert("Please enter Other");
       return;
@@ -57661,7 +57649,7 @@ var _TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
 _TruckLoadingParchiComponent.\u0275fac = function TruckLoadingParchiComponent_Factory(t) {
   return new (t || _TruckLoadingParchiComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(Router));
 };
-_TruckLoadingParchiComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TruckLoadingParchiComponent, selectors: [["app-truck-loading-parchi"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 72, vars: 18, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "text-link"], [1, "col", "text-end"], [1, "text-muted", "pe-2"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "partyName", 1, "form-label"], ["id", "partyName", "name", "partyName", 1, "form-select", 3, "ngModel", "ngModelChange"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "vehicleNumber", 1, "form-label"], ["id", "vehicleNumber", "name", "vehicleNumber", "type", "text", "placeholder", "Vehicle Number", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "deliveryLocation", 1, "form-label"], ["id", "deliveryLocation", "name", "deliveryLocation", 1, "form-select", 3, "ngModel", "ngModelChange"], ["for", "assignedHammal", 1, "form-label"], ["id", "assignedHammal", "name", "assignedHammal", 1, "form-select", 3, "ngModel", "ngModelChange"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", "type", "number", "placeholder", "Bora Quantity", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "unitBora", 1, "form-label"], ["id", "unitBora", "name", "unitBora", "type", "number", "placeholder", "Unit Bora", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "placeholder", "Net Weight", "readonly", "", 1, "form-control", 3, "value"], ["for", "crop", 1, "form-label"], ["id", "crop", "name", "crop", 1, "form-select", 3, "ngModel", "ngModelChange"], ["for", "other", 1, "form-label"], ["id", "other", "name", "other", "type", "text", "placeholder", "Other", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], ["type", "button", 1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"], [3, "value"]], template: function TruckLoadingParchiComponent_Template(rf, ctx) {
+_TruckLoadingParchiComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TruckLoadingParchiComponent, selectors: [["app-truck-loading-parchi"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 75, vars: 19, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "text-link"], [1, "col", "text-end"], [1, "text-muted", "pe-2"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "partyName", 1, "form-label"], ["id", "partyName", "name", "partyName", 1, "form-select", 3, "ngModel", "ngModelChange"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "vehicleNumber", 1, "form-label"], ["id", "vehicleNumber", "name", "vehicleNumber", "type", "text", "placeholder", "Vehicle Number", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "deliveryLocation", 1, "form-label"], ["id", "deliveryLocation", "name", "deliveryLocation", 1, "form-select", 3, "ngModel", "ngModelChange"], ["for", "assignedHammal", 1, "form-label"], ["id", "assignedHammal", "name", "assignedHammal", 1, "form-select", 3, "ngModel", "ngModelChange"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", "type", "number", "placeholder", "Bora Quantity", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "unitBora", 1, "form-label"], ["id", "unitBora", "name", "unitBora", "type", "number", "placeholder", "Unit Bora", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "placeholder", "Net Weight", "readonly", "", 1, "form-control", 3, "value"], ["for", "crop", 1, "form-label"], ["id", "crop", "name", "crop", 1, "form-select", 3, "ngModel", "ngModelChange"], ["for", "rate", 1, "form-label"], ["id", "rate", "name", "rate", "type", "text", "placeholder", "rate", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "other", 1, "form-label"], ["id", "other", "name", "other", "type", "text", "placeholder", "Other", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], ["type", "button", 1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"], [3, "value"]], template: function TruckLoadingParchiComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "h4", 5);
     \u0275\u0275text(7, "Truck Loading Parchi");
@@ -57763,25 +57751,33 @@ _TruckLoadingParchiComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineCompo
     \u0275\u0275template(64, TruckLoadingParchiComponent_option_64_Template, 2, 2, "option", 17);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(65, "label", 32);
-    \u0275\u0275text(66, "Other");
+    \u0275\u0275text(66, "rate");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(67, "input", 33);
     \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_67_listener($event) {
+      return ctx.TruckLoadingParchi.rate = $event;
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(68, "label", 34);
+    \u0275\u0275text(69, "Other");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(70, "input", 35);
+    \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_70_listener($event) {
       return ctx.TruckLoadingParchi.other = $event;
     });
     \u0275\u0275elementEnd()()()()()();
-    \u0275\u0275elementStart(68, "div", 34)(69, "div", 35)(70, "button", 36);
-    \u0275\u0275listener("click", function TruckLoadingParchiComponent_Template_button_click_70_listener() {
+    \u0275\u0275elementStart(71, "div", 36)(72, "div", 37)(73, "button", 38);
+    \u0275\u0275listener("click", function TruckLoadingParchiComponent_Template_button_click_73_listener() {
       return ctx.saveTruckLoadingParchi();
     });
-    \u0275\u0275text(71, "Save");
+    \u0275\u0275text(74, "Save");
     \u0275\u0275elementEnd()()()()()()();
   }
   if (rf & 2) {
     \u0275\u0275advance(17);
     \u0275\u0275textInterpolate(ctx.TruckLoadingParchi.id);
     \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(24, 15, ctx.TruckLoadingParchi.created_at, "dd-MM-YYYY"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(24, 16, ctx.TruckLoadingParchi.created_at, "dd-MM-YYYY"));
     \u0275\u0275advance(8);
     \u0275\u0275property("ngModel", ctx.TruckLoadingParchi.partyName);
     \u0275\u0275advance(3);
@@ -57806,6 +57802,8 @@ _TruckLoadingParchiComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineCompo
     \u0275\u0275property("ngModel", ctx.TruckLoadingParchi.crop);
     \u0275\u0275advance(3);
     \u0275\u0275property("ngForOf", ctx.Crops);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngModel", ctx.TruckLoadingParchi.rate);
     \u0275\u0275advance(3);
     \u0275\u0275property("ngModel", ctx.TruckLoadingParchi.other);
   }
@@ -60645,6 +60643,1876 @@ var DeliveryComponent = _DeliveryComponent;
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DeliveryComponent, { className: "DeliveryComponent", filePath: "src\\app\\pages\\delivery\\delivery.component.ts", lineNumber: 19 });
 })();
 
+// src/app/pages/accounts/accounts.component.ts
+function AccountsComponent_option_34_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 17);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const item_r3 = ctx.$implicit;
+    \u0275\u0275property("value", item_r3._id);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(item_r3.name);
+  }
+}
+function AccountsComponent_Conditional_38_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 30)(1, "button", 31);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const item_r6 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate2(" ", item_r6.cropName, ": \u20B9", item_r6.totalRate, " ");
+  }
+}
+function AccountsComponent_Conditional_38_tr_30_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r10 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
+    \u0275\u0275pipe(5, "date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "td");
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "td");
+    \u0275\u0275text(9);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "td");
+    \u0275\u0275text(11);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "td");
+    \u0275\u0275text(13);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(14, "td");
+    \u0275\u0275text(15);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(16, "td");
+    \u0275\u0275text(17);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(18, "td")(19, "button", 19);
+    \u0275\u0275listener("click", function AccountsComponent_Conditional_38_tr_30_Template_button_click_19_listener() {
+      const restoredCtx = \u0275\u0275restoreView(_r10);
+      const taulaParchi_r7 = restoredCtx.$implicit;
+      const ctx_r9 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r9.printReceipt(taulaParchi_r7, "taulparchi"));
+    });
+    \u0275\u0275text(20, " Print Receipt ");
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const taulaParchi_r7 = ctx.$implicit;
+    const i_r8 = ctx.index;
+    const ctx_r5 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r5.currentPage * ctx_r5.perPage - ctx_r5.perPage + (i_r8 + 1));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 8, taulaParchi_r7.created_at, "dd-MM-YYYY"));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.farmerDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.villageDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r7.firm_company);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1("\u20B9", taulaParchi_r7.rate, "");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.hammalDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.cropDetails.name);
+  }
+}
+var _c08 = (a0, a1, a3) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a3 });
+function AccountsComponent_Conditional_38_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r12 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 6);
+    \u0275\u0275template(1, AccountsComponent_Conditional_38_div_1_Template, 3, 2, "div", 20);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(2, "div", 21)(3, "div", 22)(4, "h4", 23);
+    \u0275\u0275text(5, "Taula Parchis");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(6, "div", 2)(7, "div", 24)(8, "table", 25)(9, "thead", 26)(10, "tr")(11, "th", 27);
+    \u0275\u0275text(12, "Sr.no");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(13, "th", 27);
+    \u0275\u0275text(14, "Date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(15, "th", 27);
+    \u0275\u0275text(16, "Farmer");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "th", 27);
+    \u0275\u0275text(18, "Village");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(19, "th", 27);
+    \u0275\u0275text(20, "Firm/Company");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(21, "th", 27);
+    \u0275\u0275text(22, "Rate");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(23, "th", 27);
+    \u0275\u0275text(24, "Hammal");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(25, "th", 27);
+    \u0275\u0275text(26, "Crop");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(27, "th", 27);
+    \u0275\u0275text(28, "Action");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(29, "tbody");
+    \u0275\u0275template(30, AccountsComponent_Conditional_38_tr_30_Template, 21, 11, "tr", 28);
+    \u0275\u0275pipe(31, "paginate");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(32, "pagination-controls", 29);
+    \u0275\u0275listener("pageChange", function AccountsComponent_Conditional_38_Template_pagination_controls_pageChange_32_listener($event) {
+      \u0275\u0275restoreView(_r12);
+      const ctx_r11 = \u0275\u0275nextContext();
+      ctx_r11.currentPage = $event;
+      return \u0275\u0275resetView(ctx_r11.getTaulaParchis());
+    });
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", ctx_r1.TaulParchiTransactionSummary);
+    \u0275\u0275advance(29);
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(31, 2, ctx_r1.TaulaParchi, \u0275\u0275pureFunction3(5, _c08, ctx_r1.perPage, ctx_r1.currentPage, ctx_r1.TaulaParchiCount)));
+  }
+}
+function AccountsComponent_Conditional_39_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 30)(1, "button", 31);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const item_r15 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate2(" ", item_r15.cropName, ": \u20B9", item_r15.totalRate, " ");
+  }
+}
+function AccountsComponent_Conditional_39_tr_36_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r19 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
+    \u0275\u0275pipe(5, "date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "td");
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "td");
+    \u0275\u0275text(9);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "td");
+    \u0275\u0275text(11);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "td");
+    \u0275\u0275text(13);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(14, "td");
+    \u0275\u0275text(15);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(16, "td");
+    \u0275\u0275text(17);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(18, "td");
+    \u0275\u0275text(19);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(20, "td");
+    \u0275\u0275text(21);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(22, "td");
+    \u0275\u0275text(23);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(24, "td")(25, "button", 19);
+    \u0275\u0275listener("click", function AccountsComponent_Conditional_39_tr_36_Template_button_click_25_listener() {
+      const restoredCtx = \u0275\u0275restoreView(_r19);
+      const truckLoadingParchi_r16 = restoredCtx.$implicit;
+      const ctx_r18 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r18.printReceipt(truckLoadingParchi_r16, "truckloading"));
+    });
+    \u0275\u0275text(26, " Print Receipt ");
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const truckLoadingParchi_r16 = ctx.$implicit;
+    const i_r17 = ctx.index;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(i_r17 + 1);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(5, 11, truckLoadingParchi_r16.created_at, "dd-MM-YYYY"), " ");
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16.partyDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16.vehicleNumber);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16.deliveryDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16.hammalDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16.boraQuantity);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16.netWeight);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16.cropDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1("\u20B9", truckLoadingParchi_r16.rate, "");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16.other);
+  }
+}
+var _c18 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
+function AccountsComponent_Conditional_39_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r21 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 6);
+    \u0275\u0275template(1, AccountsComponent_Conditional_39_div_1_Template, 3, 2, "div", 20);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(2, "div", 21)(3, "div", 22)(4, "h4", 23);
+    \u0275\u0275text(5, "Truck Loading Parchis");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(6, "div", 2)(7, "div", 24)(8, "table", 25)(9, "thead", 26)(10, "tr")(11, "th", 27);
+    \u0275\u0275text(12, "Sr.no");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(13, "th", 27);
+    \u0275\u0275text(14, "Date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(15, "th", 27);
+    \u0275\u0275text(16, "Party Name");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "th", 27);
+    \u0275\u0275text(18, "Vehicle Number");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(19, "th", 27);
+    \u0275\u0275text(20, "Delivery Location");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(21, "th", 27);
+    \u0275\u0275text(22, "Hammal");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(23, "th", 27);
+    \u0275\u0275text(24, "Bora Nag");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(25, "th", 27);
+    \u0275\u0275text(26, "Kaanta Weight");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(27, "th", 27);
+    \u0275\u0275text(28, "Crop");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(29, "th", 27);
+    \u0275\u0275text(30, "Rate");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(31, "th", 27);
+    \u0275\u0275text(32, "Other");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(33, "th", 27);
+    \u0275\u0275text(34, "Action");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(35, "tbody");
+    \u0275\u0275template(36, AccountsComponent_Conditional_39_tr_36_Template, 27, 14, "tr", 28);
+    \u0275\u0275pipe(37, "paginate");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(38, "pagination-controls", 32);
+    \u0275\u0275listener("pageChange", function AccountsComponent_Conditional_39_Template_pagination_controls_pageChange_38_listener($event) {
+      \u0275\u0275restoreView(_r21);
+      const ctx_r20 = \u0275\u0275nextContext();
+      ctx_r20.currentPage = $event;
+      return \u0275\u0275resetView(ctx_r20.getTruckLoadingParchis());
+    });
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", ctx_r2.TruckLoadingParchiTransactionSummary);
+    \u0275\u0275advance(35);
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(37, 2, ctx_r2.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c18, ctx_r2.perPage, ctx_r2.currentPage)));
+  }
+}
+var _c22 = (a0) => ({ active: a0 });
+var _AccountsComponent = class _AccountsComponent {
+  constructor(apiService) {
+    this.apiService = apiService;
+    this.TaulaParchi = [];
+    this.TaulaParchiCount = 0;
+    this.TruckLoadingParchi = [];
+    this.TruckLoadingParchiCount = 0;
+    this.currentPage = 1;
+    this.perPage = 5;
+    this.totalItems = 0;
+    this.TruckLoadingParchiTransactionSummary = [];
+    this.TaulParchiTransactionSummary = [];
+    this.Crops = [];
+    this.tabState = "taulparchi";
+  }
+  ngOnInit() {
+    this.setTabState("taulparchi");
+    this.fetchCrops();
+  }
+  setTabState(newtabstate) {
+    this.tabState = newtabstate;
+    this.currentPage = 1;
+    if (this.tabState == "truckloading") {
+      this.getTruckLoadingParchis();
+      this.getTruckLoadingParchisTransactionSummary();
+    } else if (this.tabState == "taulparchi") {
+      this.getTaulaParchis();
+      this.getTaulParchisTransactionSummary();
+    }
+  }
+  getTaulaParchis() {
+    let params = {
+      page: this.currentPage,
+      limit: this.perPage
+      // crop:this.selectedCrop
+    };
+    if (this.selectedCrop) {
+      params.crop = this.selectedCrop;
+    }
+    this.apiService.get("taulparchi", {
+      params
+    }).subscribe({
+      next: (res) => {
+        this.TaulaParchi = res.data;
+        this.TaulaParchiCount = res.meta.total || this.TaulaParchi.length;
+      },
+      error: (err) => {
+        console.error("Error fetching TaulaParchis:", err);
+      }
+    });
+  }
+  getTruckLoadingParchis() {
+    let params = {
+      page: this.currentPage,
+      limit: this.perPage
+      // crop:this.selectedCrop
+    };
+    if (this.selectedCrop) {
+      params.crop = this.selectedCrop;
+    }
+    this.apiService.get("truckloading", {
+      params
+    }).subscribe({
+      next: (res) => {
+        this.TruckLoadingParchi = res.data;
+        console.log("loading...", res.data);
+        this.TruckLoadingParchiCount = res.total || this.TruckLoadingParchi.length;
+      },
+      error: (err) => {
+        console.error("Error fetching TruckLoadingParchis:", err);
+      }
+    });
+  }
+  getTruckLoadingParchisTransactionSummary() {
+    let params = {};
+    if (this.selectedCrop) {
+      params.crop = this.selectedCrop;
+    }
+    if (this.fromDate) {
+      params.fromDate = this.fromDate;
+    }
+    if (this.toDate) {
+      params.toDate = this.toDate;
+    }
+    this.apiService.get("truckloading/getsummary", {
+      params
+    }).subscribe({
+      next: (res) => {
+        this.TruckLoadingParchiTransactionSummary = res.data;
+      },
+      error: (err) => {
+        console.error("Error fetching TruckLoadingParchis:", err);
+      }
+    });
+  }
+  getTaulParchisTransactionSummary() {
+    let params = {};
+    if (this.selectedCrop) {
+      params.crop = this.selectedCrop;
+    }
+    if (this.fromDate) {
+      params.fromDate = this.fromDate;
+    }
+    if (this.toDate) {
+      params.toDate = this.toDate;
+    }
+    this.apiService.get("taulparchi/getsummary", {
+      params
+    }).subscribe({
+      next: (res) => {
+        this.TaulParchiTransactionSummary = res.data;
+      },
+      error: (err) => {
+        console.error("Error fetching TaulParchis:", err);
+      }
+    });
+  }
+  fetchCrops() {
+    this.apiService.get("crop", {
+      params: {
+        page: 1,
+        limit: 1e3
+      }
+    }).subscribe({
+      next: (res) => {
+        this.Crops = res.data;
+      },
+      error: (err) => {
+        console.error("Error fetching Crops:", err);
+      }
+    });
+  }
+  // printReceipt(transaction: any, type: 'taulparchi' | 'truckloading') {
+  //   let receiptContent = '';
+  //   if (type === 'taulparchi') {
+  //     receiptContent = `
+  //       <h1>Taul Parchi Receipt</h1>
+  //       <p><strong>Date:</strong> ${new Date(transaction.created_at).toLocaleDateString()}</p>
+  //       <p><strong>Farmer:</strong> ${transaction.farmerDetails.name}</p>
+  //       <p><strong>Village:</strong> ${transaction.villageDetails.name}</p>
+  //       <p><strong>Firm/Company:</strong> ${transaction.firm_company}</p>
+  //       <p><strong>Rate:</strong> ₹${transaction.rate}</p>
+  //       <p><strong>Hammal:</strong> ${transaction.hammalDetails.name}</p>
+  //       <p><strong>Crop:</strong> ${transaction.cropDetails.name}</p>
+  //     `;
+  //   } else if (type === 'truckloading') {
+  //     receiptContent = `
+  //       <h1>Truck Loading Parchi Receipt</h1>
+  //       <p><strong>Date:</strong> ${new Date(transaction.created_at).toLocaleDateString()}</p>
+  //       <p><strong>Party Name:</strong> ${transaction.partyDetails.name}</p>
+  //       <p><strong>Vehicle Number:</strong> ${transaction.vehicleNumber}</p>
+  //       <p><strong>Delivery Location:</strong> ${transaction.deliveryDetails.name}</p>
+  //       <p><strong>Hammal:</strong> ${transaction.hammalDetails.name}</p>
+  //       <p><strong>Bora Nag:</strong> ${transaction.boraQuantity}</p>
+  //       <p><strong>Kaanta Weight:</strong> ${transaction.netWeight}</p>
+  //       <p><strong>Crop:</strong> ${transaction.cropDetails.name}</p>
+  //       <p><strong>Rate:</strong> ₹${transaction.rate}</p>
+  //       <p><strong>Other:</strong> ${transaction.other}</p>
+  //     `;
+  //   }
+  //   const printWindow:any = window.open('', '_blank');
+  //   printWindow.document.write(`
+  //     <html>
+  //       <head>
+  //         <title>Receipt</title>
+  //         <style>
+  //           body { font-family: Arial, sans-serif; }
+  //           h1 { text-align: center; }
+  //           p { font-size: 14px; }
+  //         </style>
+  //       </head>
+  //       <body>
+  //         ${receiptContent}
+  //         <script>
+  //           window.onload = function() {
+  //             window.print();
+  //             window.close();
+  //           }
+  //         <\/script>
+  //       </body>
+  //     </html>
+  //   `);
+  //   printWindow.document.close();
+  // }
+  printReceipt(transaction, type) {
+    let receiptContent = "";
+    if (type === "taulparchi") {
+      receiptContent = `
+            <div style="text-align: center; color: #333;">
+                <h1 style="color: #007bff;">Taul Parchi Receipt</h1>
+                <p><strong>Date:</strong> ${new Date(transaction.created_at).toLocaleDateString()}</p>
+                <p><strong>Farmer:</strong> ${transaction.farmerDetails.name}</p>
+                <p><strong>Village:</strong> ${transaction.villageDetails.name}</p>
+                <p><strong>Firm/Company:</strong> ${transaction.firm_company}</p>
+                <p style="font-size: 1.2em; color: #28a745;"><strong>Rate:</strong> \u20B9${transaction.rate}</p>
+                <p><strong>Hammal:</strong> ${transaction.hammalDetails.name}</p>
+                <p><strong>Crop:</strong> ${transaction.cropDetails.name}</p>
+            </div>
+        `;
+    } else if (type === "truckloading") {
+      receiptContent = `
+            <div style="text-align: center; color: #333;">
+                <h1 style="color: #007bff;">Truck Loading Parchi Receipt</h1>
+                <p><strong>Date:</strong> ${new Date(transaction.created_at).toLocaleDateString()}</p>
+                <p><strong>Party Name:</strong> ${transaction.partyDetails.name}</p>
+                <p><strong>Vehicle Number:</strong> ${transaction.vehicleNumber}</p>
+                <p><strong>Delivery Location:</strong> ${transaction.deliveryDetails.name}</p>
+                <p><strong>Hammal:</strong> ${transaction.hammalDetails.name}</p>
+                <p style="color: #dc3545;"><strong>Bora Nag:</strong> ${transaction.boraQuantity}</p>
+                <p><strong>Kaanta Weight:</strong> ${transaction.netWeight}</p>
+                <p><strong>Crop:</strong> ${transaction.cropDetails.name}</p>
+                <p style="font-size: 1.2em; color: #28a745;"><strong>Rate:</strong> \u20B9${transaction.rate}</p>
+                <p><strong>Other:</strong> ${transaction.other}</p>
+            </div>
+        `;
+    }
+    const printWindow = window.open("", "_blank");
+    printWindow.document.write(`
+        <html>
+            <head>
+                <title>Receipt</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+                    h1 { text-align: center; }
+                    p { font-size: 14px; margin: 5px 0; }
+                    .header { background-color: #007bff; color: white; padding: 10px; }
+                    .footer { margin-top: 20px; font-size: 12px; color: #666; }
+                </style>
+            </head>
+            <body>
+                <div class="header">
+                    <h1>Receipt</h1>
+                </div>
+                ${receiptContent}
+                <div class="footer">
+                    <p>Thank you for your business!</p>
+                </div>
+                <script>
+                    window.onload = function() {
+                        window.print();
+                        window.close();
+                    }
+                <\/script>
+            </body>
+        </html>
+    `);
+    printWindow.document.close();
+  }
+};
+_AccountsComponent.\u0275fac = function AccountsComponent_Factory(t) {
+  return new (t || _AccountsComponent)(\u0275\u0275directiveInject(ApiService));
+};
+_AccountsComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _AccountsComponent, selectors: [["app-accounts"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 40, vars: 12, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-item-center"], [1, "card-body"], [1, "nav", "nav-pills", "nav-stacked"], [1, "nav-item"], [1, "nav-link", 3, "ngClass", "click"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["for", "crop"], ["name", "crop", "id", "crop", 1, "form-control", 3, "ngModel", "ngModelChange"], [3, "value"], [3, "value", 4, "ngFor", "ngForOf"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], ["class", "col-auto", 4, "ngFor", "ngForOf"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "col-auto"], ["type", "button", 1, "btn", "btn-primary"], ["id", "truckloading", 3, "pageChange"]], template: function AccountsComponent_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4");
+    \u0275\u0275text(3, "Transactions");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(4, "div", 2)(5, "ul", 3)(6, "li", 4)(7, "a", 5);
+    \u0275\u0275listener("click", function AccountsComponent_Template_a_click_7_listener() {
+      return ctx.setTabState("taulparchi");
+    });
+    \u0275\u0275text(8, "Taul Parchi (debit)");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(9, "li", 4)(10, "a", 5);
+    \u0275\u0275listener("click", function AccountsComponent_Template_a_click_10_listener() {
+      return ctx.setTabState("truckloading");
+    });
+    \u0275\u0275text(11, "Truck Loading Parchi (credit)");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(12, "div", 6)(13, "div", 7)(14, "div", 8)(15, "label", 9);
+    \u0275\u0275text(16, "From");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "input", 10);
+    \u0275\u0275listener("ngModelChange", function AccountsComponent_Template_input_ngModelChange_17_listener($event) {
+      return ctx.fromDate = $event;
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(18, "small", 11);
+    \u0275\u0275text(19, "From Date");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(20, "div", 7)(21, "div", 8)(22, "label", 12);
+    \u0275\u0275text(23, "To");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(24, "input", 13);
+    \u0275\u0275listener("ngModelChange", function AccountsComponent_Template_input_ngModelChange_24_listener($event) {
+      return ctx.toDate = $event;
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(25, "small", 14);
+    \u0275\u0275text(26, "To Date");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(27, "div", 7)(28, "div", 8)(29, "label", 15);
+    \u0275\u0275text(30, "Crop");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(31, "select", 16);
+    \u0275\u0275listener("ngModelChange", function AccountsComponent_Template_select_ngModelChange_31_listener($event) {
+      return ctx.selectedCrop = $event;
+    });
+    \u0275\u0275elementStart(32, "option", 17);
+    \u0275\u0275text(33, "Select");
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(34, AccountsComponent_option_34_Template, 2, 2, "option", 18);
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(35, "div", 7)(36, "button", 19);
+    \u0275\u0275listener("click", function AccountsComponent_Template_button_click_36_listener() {
+      return ctx.setTabState(ctx.tabState);
+    });
+    \u0275\u0275text(37, " Submit ");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275template(38, AccountsComponent_Conditional_38_Template, 33, 9)(39, AccountsComponent_Conditional_39_Template, 39, 8);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    \u0275\u0275advance(7);
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c22, ctx.tabState == "taulparchi"));
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(10, _c22, ctx.tabState == "truckloading"));
+    \u0275\u0275advance(7);
+    \u0275\u0275property("ngModel", ctx.fromDate);
+    \u0275\u0275advance(7);
+    \u0275\u0275property("ngModel", ctx.toDate);
+    \u0275\u0275advance(7);
+    \u0275\u0275property("ngModel", ctx.selectedCrop);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngForOf", ctx.Crops);
+    \u0275\u0275advance(4);
+    \u0275\u0275conditional(38, ctx.tabState == "taulparchi" ? 38 : -1);
+    \u0275\u0275advance();
+    \u0275\u0275conditional(39, ctx.tabState == "truckloading" ? 39 : -1);
+  }
+}, dependencies: [
+  CommonModule,
+  NgClass,
+  NgForOf,
+  DatePipe,
+  FormsModule,
+  NgSelectOption,
+  \u0275NgSelectMultipleOption,
+  DefaultValueAccessor,
+  SelectControlValueAccessor,
+  NgControlStatus,
+  NgModel,
+  ReactiveFormsModule,
+  NgxPaginationModule,
+  PaginatePipe,
+  PaginationControlsComponent
+], styles: ["\n\n/*# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFtdLAogICJzb3VyY2VzQ29udGVudCI6IFtdLAogICJtYXBwaW5ncyI6ICIiLAogICJuYW1lcyI6IFtdCn0K */"] });
+var AccountsComponent = _AccountsComponent;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AccountsComponent, { className: "AccountsComponent", filePath: "src\\app\\pages\\accounts\\accounts.component.ts", lineNumber: 28 });
+})();
+
+// src/app/pages/inventory/inventory.component.ts
+function InventoryComponent_option_34_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 17);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const item_r3 = ctx.$implicit;
+    \u0275\u0275property("value", item_r3._id);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", item_r3.name, " ");
+  }
+}
+function InventoryComponent_Conditional_38_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 30)(1, "button", 31);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const item_r6 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate2(" ", item_r6.cropName, ": ", item_r6.totalWeight, "Kg ");
+  }
+}
+function InventoryComponent_Conditional_38_tr_32_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
+    \u0275\u0275pipe(5, "date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "td");
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "td");
+    \u0275\u0275text(9);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "td");
+    \u0275\u0275text(11);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "td");
+    \u0275\u0275text(13);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(14, "td");
+    \u0275\u0275text(15);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(16, "td");
+    \u0275\u0275text(17);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(18, "td");
+    \u0275\u0275text(19);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(20, "td");
+    \u0275\u0275text(21);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const taulaParchi_r7 = ctx.$implicit;
+    const i_r8 = ctx.index;
+    const ctx_r5 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r5.currentPage * ctx_r5.perPage - ctx_r5.perPage + (i_r8 + 1));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 10, taulaParchi_r7.created_at, "dd-MM-YYYY"));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.farmerDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.villageDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r7.boraQuantity);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r7.unitBora);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1("", taulaParchi_r7.bharti, "Kg");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1("", taulaParchi_r7.netWeight, "Kg");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.hammalDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.cropDetails.name);
+  }
+}
+var _c09 = (a0, a1, a3) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a3 });
+function InventoryComponent_Conditional_38_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r10 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 6);
+    \u0275\u0275template(1, InventoryComponent_Conditional_38_div_1_Template, 3, 2, "div", 20);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(2, "div", 21)(3, "div", 22)(4, "h4", 23);
+    \u0275\u0275text(5, "Taula Parchis");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(6, "div", 2)(7, "div", 24)(8, "table", 25)(9, "thead", 26)(10, "tr")(11, "th", 27);
+    \u0275\u0275text(12, "Sr.no");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(13, "th", 27);
+    \u0275\u0275text(14, "Date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(15, "th", 27);
+    \u0275\u0275text(16, "Farmer");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "th", 27);
+    \u0275\u0275text(18, "Village");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(19, "th", 27);
+    \u0275\u0275text(20, "Bora Quantity");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(21, "th", 27);
+    \u0275\u0275text(22, "unit Bora");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(23, "th", 27);
+    \u0275\u0275text(24, "Bharti");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(25, "th", 27);
+    \u0275\u0275text(26, "Net Weight");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(27, "th", 27);
+    \u0275\u0275text(28, "Hammal");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(29, "th", 27);
+    \u0275\u0275text(30, "Crop");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(31, "tbody");
+    \u0275\u0275template(32, InventoryComponent_Conditional_38_tr_32_Template, 22, 13, "tr", 28);
+    \u0275\u0275pipe(33, "paginate");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(34, "pagination-controls", 29);
+    \u0275\u0275listener("pageChange", function InventoryComponent_Conditional_38_Template_pagination_controls_pageChange_34_listener($event) {
+      \u0275\u0275restoreView(_r10);
+      const ctx_r9 = \u0275\u0275nextContext();
+      ctx_r9.currentPage = $event;
+      return \u0275\u0275resetView(ctx_r9.getTaulaParchis());
+    });
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", ctx_r1.TaulParchiWeightSummary);
+    \u0275\u0275advance(31);
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(33, 2, ctx_r1.TaulaParchi, \u0275\u0275pureFunction3(5, _c09, ctx_r1.perPage, ctx_r1.currentPage, ctx_r1.TaulaParchiCount)));
+  }
+}
+function InventoryComponent_Conditional_39_div_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 30)(1, "button", 31);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const item_r13 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate2(" ", item_r13.cropName, ": \u20B9", item_r13.totalWeight, " ");
+  }
+}
+function InventoryComponent_Conditional_39_tr_34_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
+    \u0275\u0275pipe(5, "date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "td");
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "td");
+    \u0275\u0275text(9);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "td");
+    \u0275\u0275text(11);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "td");
+    \u0275\u0275text(13);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(14, "td");
+    \u0275\u0275text(15);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(16, "td");
+    \u0275\u0275text(17);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(18, "td");
+    \u0275\u0275text(19);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(20, "td");
+    \u0275\u0275text(21);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(22, "td");
+    \u0275\u0275text(23);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const truckLoadingParchi_r14 = ctx.$implicit;
+    const i_r15 = ctx.index;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(i_r15 + 1);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(5, 11, truckLoadingParchi_r14.created_at, "dd-MM-YYYY"), " ");
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r14.partyDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r14.vehicleNumber);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r14.deliveryDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r14.hammalDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r14.boraQuantity);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1("", truckLoadingParchi_r14.unitBora, "Kg");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1("", truckLoadingParchi_r14.netWeight, "Kg");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r14.cropDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r14.other);
+  }
+}
+var _c19 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
+function InventoryComponent_Conditional_39_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r17 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 6);
+    \u0275\u0275template(1, InventoryComponent_Conditional_39_div_1_Template, 3, 2, "div", 20);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(2, "div", 21)(3, "div", 22)(4, "h4", 23);
+    \u0275\u0275text(5, "Truck Loading Parchis");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(6, "div", 2)(7, "div", 24)(8, "table", 25)(9, "thead", 26)(10, "tr")(11, "th", 27);
+    \u0275\u0275text(12, "Sr.no");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(13, "th", 27);
+    \u0275\u0275text(14, "Date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(15, "th", 27);
+    \u0275\u0275text(16, "Party Name");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "th", 27);
+    \u0275\u0275text(18, "Vehicle Number");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(19, "th", 27);
+    \u0275\u0275text(20, "Delivery Location");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(21, "th", 27);
+    \u0275\u0275text(22, "Hammal");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(23, "th", 27);
+    \u0275\u0275text(24, "Bora Nag");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(25, "th", 27);
+    \u0275\u0275text(26, "Kaanta Weight");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(27, "th", 27);
+    \u0275\u0275text(28, "Net Weight");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(29, "th", 27);
+    \u0275\u0275text(30, "Crop");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(31, "th", 27);
+    \u0275\u0275text(32, "Other");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(33, "tbody");
+    \u0275\u0275template(34, InventoryComponent_Conditional_39_tr_34_Template, 24, 14, "tr", 28);
+    \u0275\u0275pipe(35, "paginate");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(36, "pagination-controls", 32);
+    \u0275\u0275listener("pageChange", function InventoryComponent_Conditional_39_Template_pagination_controls_pageChange_36_listener($event) {
+      \u0275\u0275restoreView(_r17);
+      const ctx_r16 = \u0275\u0275nextContext();
+      ctx_r16.currentPage = $event;
+      return \u0275\u0275resetView(ctx_r16.getTruckLoadingParchis());
+    });
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", ctx_r2.TruckLoadingParchiWeightSummary);
+    \u0275\u0275advance(33);
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(35, 2, ctx_r2.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c19, ctx_r2.perPage, ctx_r2.currentPage)));
+  }
+}
+var _c23 = (a0) => ({ active: a0 });
+var _InventoryComponent = class _InventoryComponent {
+  constructor(apiService) {
+    this.apiService = apiService;
+    this.TaulaParchi = [];
+    this.TaulaParchiCount = 0;
+    this.TruckLoadingParchi = [];
+    this.TruckLoadingParchiCount = 0;
+    this.currentPage = 1;
+    this.perPage = 5;
+    this.totalItems = 0;
+    this.Crops = [];
+    this.TruckLoadingParchiWeightSummary = [];
+    this.TaulParchiWeightSummary = [];
+    this.tabState = "taulparchi";
+  }
+  ngOnInit() {
+    this.setTabState("taulparchi");
+    this.fetchCrops();
+  }
+  setTabState(newtabstate) {
+    this.tabState = newtabstate;
+    this.currentPage = 1;
+    if (this.tabState == "truckloading") {
+      this.getTruckLoadingParchis();
+      this.getTaulParchisWeightSummary();
+    } else if (this.tabState == "taulparchi") {
+      this.getTaulaParchis();
+      this.getTruckLoadingParchisWeightSummary();
+    }
+  }
+  getTaulaParchis() {
+    let params = {
+      page: this.currentPage,
+      limit: this.perPage
+      // crop:this.selectedCrop
+    };
+    if (this.selectedCrop) {
+      params.crop = this.selectedCrop;
+    }
+    this.apiService.get("taulparchi", {
+      params
+    }).subscribe({
+      next: (res) => {
+        this.TaulaParchi = res.data;
+        this.TaulaParchiCount = res.meta.total || this.TaulaParchi.length;
+      },
+      error: (err) => {
+        console.error("Error fetching TaulaParchis:", err);
+      }
+    });
+  }
+  getTruckLoadingParchis() {
+    let params = {
+      page: this.currentPage,
+      limit: this.perPage
+      // crop:this.selectedCrop
+    };
+    if (this.selectedCrop) {
+      params.crop = this.selectedCrop;
+    }
+    this.apiService.get("truckloading", {
+      params
+    }).subscribe({
+      next: (res) => {
+        this.TruckLoadingParchi = res.data;
+        console.log("loading...", res.data);
+        this.TruckLoadingParchiCount = res.total || this.TruckLoadingParchi.length;
+      },
+      error: (err) => {
+        console.error("Error fetching TruckLoadingParchis:", err);
+      }
+    });
+  }
+  fetchCrops() {
+    this.apiService.get("crop", {
+      params: {
+        page: 1,
+        limit: 1e3
+      }
+    }).subscribe({
+      next: (res) => {
+        this.Crops = res.data;
+      },
+      error: (err) => {
+        console.error("Error fetching Crops:", err);
+      }
+    });
+  }
+  getTruckLoadingParchisWeightSummary() {
+    let params = {};
+    if (this.selectedCrop) {
+      params.crop = this.selectedCrop;
+    }
+    if (this.fromDate) {
+      params.fromDate = this.fromDate;
+    }
+    if (this.toDate) {
+      params.toDate = this.toDate;
+    }
+    this.apiService.get("truckloading/getWeightsummary", {
+      params
+    }).subscribe({
+      next: (res) => {
+        this.TaulParchiWeightSummary = res.data;
+      },
+      error: (err) => {
+        console.error("Error fetching TruckLoadingParchis:", err);
+      }
+    });
+  }
+  getTaulParchisWeightSummary() {
+    let params = {};
+    if (this.selectedCrop) {
+      params.crop = this.selectedCrop;
+    }
+    if (this.fromDate) {
+      params.fromDate = this.fromDate;
+    }
+    if (this.toDate) {
+      params.toDate = this.toDate;
+    }
+    this.apiService.get("taulparchi/getWeightsummary", {
+      params
+    }).subscribe({
+      next: (res) => {
+        this.TruckLoadingParchiWeightSummary = res.data;
+        console.log("dataaa", res.data);
+      },
+      error: (err) => {
+        console.error("Error fetching TaulParchis:", err);
+      }
+    });
+  }
+};
+_InventoryComponent.\u0275fac = function InventoryComponent_Factory(t) {
+  return new (t || _InventoryComponent)(\u0275\u0275directiveInject(ApiService));
+};
+_InventoryComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _InventoryComponent, selectors: [["app-inventory"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 40, vars: 10, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-item-center"], [1, "card-body"], [1, "nav", "nav-pills", "nav-stacked"], [1, "nav-item"], [1, "nav-link", 3, "ngClass", "click"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["for", "crop"], ["name", "crop", "id", "crop", 1, "form-control", 3, "ngModel", "ngModelChange"], [3, "value"], [3, "value", 4, "ngFor", "ngForOf"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], ["class", "col-auto", 4, "ngFor", "ngForOf"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "col-auto"], ["type", "button", 1, "btn", "btn-primary"], ["id", "truckloading", 3, "pageChange"]], template: function InventoryComponent_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4");
+    \u0275\u0275text(3, "Inventory");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(4, "div", 2)(5, "ul", 3)(6, "li", 4)(7, "a", 5);
+    \u0275\u0275listener("click", function InventoryComponent_Template_a_click_7_listener() {
+      return ctx.setTabState("taulparchi");
+    });
+    \u0275\u0275text(8, "Taul Parchi");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(9, "li", 4)(10, "a", 5);
+    \u0275\u0275listener("click", function InventoryComponent_Template_a_click_10_listener() {
+      return ctx.setTabState("truckloading");
+    });
+    \u0275\u0275text(11, "Truck Loading Parchi");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(12, "div", 6)(13, "div", 7)(14, "div", 8)(15, "label", 9);
+    \u0275\u0275text(16, "From");
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(17, "input", 10);
+    \u0275\u0275elementStart(18, "small", 11);
+    \u0275\u0275text(19, "From Date");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(20, "div", 7)(21, "div", 8)(22, "label", 12);
+    \u0275\u0275text(23, "To");
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(24, "input", 13);
+    \u0275\u0275elementStart(25, "small", 14);
+    \u0275\u0275text(26, "To Date");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(27, "div", 7)(28, "div", 8)(29, "label", 15);
+    \u0275\u0275text(30, "Crop");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(31, "select", 16);
+    \u0275\u0275listener("ngModelChange", function InventoryComponent_Template_select_ngModelChange_31_listener($event) {
+      return ctx.selectedCrop = $event;
+    });
+    \u0275\u0275elementStart(32, "option", 17);
+    \u0275\u0275text(33, "Select");
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(34, InventoryComponent_option_34_Template, 2, 2, "option", 18);
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(35, "div", 7)(36, "button", 19);
+    \u0275\u0275listener("click", function InventoryComponent_Template_button_click_36_listener() {
+      return ctx.setTabState(ctx.tabState);
+    });
+    \u0275\u0275text(37, " Submit ");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275template(38, InventoryComponent_Conditional_38_Template, 35, 9)(39, InventoryComponent_Conditional_39_Template, 37, 8);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    \u0275\u0275advance(7);
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(6, _c23, ctx.tabState == "taulparchi"));
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c23, ctx.tabState == "truckloading"));
+    \u0275\u0275advance(21);
+    \u0275\u0275property("ngModel", ctx.selectedCrop);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngForOf", ctx.Crops);
+    \u0275\u0275advance(4);
+    \u0275\u0275conditional(38, ctx.tabState == "taulparchi" ? 38 : -1);
+    \u0275\u0275advance();
+    \u0275\u0275conditional(39, ctx.tabState == "truckloading" ? 39 : -1);
+  }
+}, dependencies: [
+  CommonModule,
+  NgClass,
+  NgForOf,
+  DatePipe,
+  FormsModule,
+  NgSelectOption,
+  \u0275NgSelectMultipleOption,
+  SelectControlValueAccessor,
+  NgControlStatus,
+  NgModel,
+  ReactiveFormsModule,
+  NgxPaginationModule,
+  PaginatePipe,
+  PaginationControlsComponent
+], styles: ["\n\n/*# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFtdLAogICJzb3VyY2VzQ29udGVudCI6IFtdLAogICJtYXBwaW5ncyI6ICIiLAogICJuYW1lcyI6IFtdCn0K */"] });
+var InventoryComponent = _InventoryComponent;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(InventoryComponent, { className: "InventoryComponent", filePath: "src\\app\\pages\\inventory\\inventory.component.ts", lineNumber: 20 });
+})();
+
+// src/app/pages/transaction/transaction.component.ts
+function TransactionComponent_option_25_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 63);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const farmer_r4 = ctx.$implicit;
+    \u0275\u0275property("value", farmer_r4._id);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", farmer_r4.name, " ");
+  }
+}
+function TransactionComponent_option_31_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 63);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const village_r5 = ctx.$implicit;
+    \u0275\u0275property("value", village_r5._id);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", village_r5.name, " ");
+  }
+}
+function TransactionComponent_option_46_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 63);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const hammal_r6 = ctx.$implicit;
+    \u0275\u0275property("value", hammal_r6._id);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", hammal_r6.name, " ");
+  }
+}
+function TransactionComponent_option_64_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 63);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const crop_r7 = ctx.$implicit;
+    \u0275\u0275property("value", crop_r7._id);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", crop_r7.name, " ");
+  }
+}
+var _TransactionComponent = class _TransactionComponent {
+  constructor(apiService, router) {
+    this.apiService = apiService;
+    this.router = router;
+    this.Farmers = [];
+    this.Villages = [];
+    this.Hammals = [];
+    this.Crops = [];
+    this.transaction = {
+      farmer: "",
+      village: "",
+      firm_company: "",
+      rate: "",
+      hammal: "",
+      boraQuantity: 0,
+      unitBora: 0,
+      bharti: 0,
+      netWeight: 0,
+      crop: "",
+      PaymentStatus: "",
+      id: Date.now(),
+      created_at: /* @__PURE__ */ new Date(),
+      transactionStatus: "",
+      transactionMode: "",
+      discount: 0,
+      paidAmount: 0,
+      remainingAmount: 0,
+      totalAmount: 0
+    };
+  }
+  ngOnInit() {
+    this.fetchFarmers();
+    this.fetchVillages();
+    this.fetchHammals();
+    this.fetchCrops();
+  }
+  calculateNetWeight() {
+    const { boraQuantity, unitBora, bharti } = this.transaction;
+    this.transaction.netWeight = boraQuantity * unitBora + bharti;
+  }
+  // Fetch Farmers from backend
+  fetchFarmers() {
+    this.apiService.get("farmer", {
+      params: {
+        page: 1,
+        limit: 1e3
+      }
+    }).subscribe({
+      next: (res) => {
+        this.Farmers = res.data;
+      },
+      error: (err) => {
+        console.error("Error fetching Farmers:", err);
+      }
+    });
+  }
+  // Fetch Villages from backend
+  fetchVillages() {
+    this.apiService.get("village", {
+      params: {
+        page: 1,
+        limit: 1e3
+      }
+    }).subscribe({
+      next: (res) => {
+        this.Villages = res.data;
+      },
+      error: (err) => {
+        console.error("Error fetching Villages:", err);
+      }
+    });
+  }
+  // Fetch Hammals from backend
+  fetchHammals() {
+    this.apiService.get("hammals", {
+      params: {
+        page: 1,
+        limit: 1e3
+      }
+    }).subscribe({
+      next: (res) => {
+        this.Hammals = res.data;
+      },
+      error: (err) => {
+        console.error("Error fetching Hammals:", err);
+      }
+    });
+  }
+  // Fetch Crops from backend
+  fetchCrops() {
+    this.apiService.get("crop", {
+      params: {
+        page: 1,
+        limit: 1e3
+      }
+    }).subscribe({
+      next: (res) => {
+        this.Crops = res.data;
+      },
+      error: (err) => {
+        console.error("Error fetching Crops:", err);
+      }
+    });
+  }
+  autoFillFirmOrCompany() {
+    const selectedFarmer = this.Farmers.find((farmer) => farmer.name === this.transaction.farmer);
+    if (selectedFarmer) {
+      this.transaction.firm_company = selectedFarmer.firm_company;
+    } else {
+      this.transaction.firm_company = "";
+    }
+  }
+  saveTransaction() {
+    if (!this.transaction.farmer) {
+      alert("Please select Farmer");
+      return;
+    }
+    if (!this.transaction.village) {
+      alert("Please select Village");
+      return;
+    }
+    if (!this.transaction.rate) {
+      alert("Please enter Rate");
+      return;
+    }
+    if (!this.transaction.hammal) {
+      alert("Please select Hammal");
+      return;
+    }
+    if (!this.transaction.boraQuantity) {
+      alert("Please enter Bora");
+      return;
+    }
+    if (!this.transaction.unitBora) {
+      alert("Please enter Bora");
+      return;
+    }
+    if (!this.transaction.bharti) {
+      alert("Please enter Bharti");
+      return;
+    }
+    if (!this.transaction.crop) {
+      alert("Please select Crop");
+      return;
+    }
+    if (this.transaction) {
+      this.apiService.post("transaction", this.transaction).subscribe({
+        next: (res) => {
+          console.log("transaction saved successfully");
+          this.router.navigate(["/dashboard"]);
+        },
+        error: (err) => {
+          console.error("Error saving transaction:", err);
+        }
+      });
+    } else {
+      alert("Please fill in all required fields.");
+    }
+  }
+};
+_TransactionComponent.\u0275fac = function TransactionComponent_Factory(t) {
+  return new (t || _TransactionComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(Router));
+};
+_TransactionComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TransactionComponent, selectors: [["app-transaction"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 112, vars: 22, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "ps-2", "text-link"], [1, "col", "text-end"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "farmerName", 1, "form-label"], ["id", "farmerName", "name", "farmerName", 1, "form-select", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "village", 1, "form-label"], ["id", "village", "name", "village", 1, "form-select", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["for", "firmCompany", 1, "form-label"], ["id", "firmCompany", "name", "firmCompany", "type", "text", "placeholder", "Firm / Company", 1, "form-control", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["for", "rate", 1, "form-label"], [1, "input-group"], [1, "input-group-text", "bg-transparent", "border-0", "p-0"], ["id", "rate", "name", "rate", "type", "number", "placeholder", "Rate", 1, "form-control", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["for", "assignedHammal", 1, "form-label"], ["id", "assignedHammal", "name", "assignedHammal", 1, "form-select", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", "type", "number", "placeholder", "Bora Quantity", 1, "form-control", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["for", "unitBora", 1, "form-label"], ["id", "unitBora", "name", "unitBora", "type", "number", "placeholder", "Unit Bora", 1, "form-control", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["for", "bharti", 1, "form-label"], ["id", "bharti", "name", "bharti", "type", "number", "placeholder", "Bharti", 1, "form-control", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "placeholder", "Net Weight", "readonly", "", 1, "form-control", "bg-warning", "text-dark", 3, "value"], ["for", "crop", 1, "form-label"], ["id", "crop", "name", "crop", 1, "form-select", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["for", "transactionStatus", 1, "form-label"], ["id", "transactionStatus", "name", "transactionStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["value", "active"], ["value", "inactive"], ["for", "transactionMode", 1, "form-label"], ["id", "transactionMode", "name", "transactionMode", 1, "form-select", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["value", "cash"], ["value", "cheque"], ["value", "online"], ["value", "bank transfer"], ["value", "UPI"], ["for", "paymentStatus", 1, "form-label"], ["id", "paymentStatus", "name", "paymentStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["value", "incoming"], ["value", "outgoing"], ["for", "paidAmount", 1, "form-label"], ["id", "paidAmount", "name", "paidAmount", "type", "number", "placeholder", "Paid Amount", 1, "form-control", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["for", "totalAmount", 1, "form-label"], ["id", "totalAmount", "name", "totalAmount", "type", "number", "placeholder", "Total Amount", 1, "form-control", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], ["for", "remainingAmount", 1, "form-label"], ["id", "remainingAmount", "name", "remainingAmount", "type", "number", "placeholder", "Remaining Amount", 1, "form-control", "bg-warning", "text-dark", 3, "value"], ["for", "discount", 1, "form-label"], ["id", "discount", "name", "discount", "type", "number", "placeholder", "Discount", 1, "form-control", "bg-warning", "text-dark", 3, "ngModel", "ngModelChange"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"], [3, "value"]], template: function TransactionComponent_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "h4", 5);
+    \u0275\u0275text(7, "Add Transaction");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "div", 0)(9, "div", 6)(10, "b")(11, "span", 7);
+    \u0275\u0275text(12, "Transaction ID:");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(13, "span", 8);
+    \u0275\u0275text(14);
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275element(15, "div", 9);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(16, "div", 10)(17, "div", 0)(18, "div", 11)(19, "div", 12)(20, "label", 13);
+    \u0275\u0275text(21, "Farmer's Name");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(22, "select", 14);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_22_listener($event) {
+      return ctx.transaction.farmer = $event;
+    });
+    \u0275\u0275elementStart(23, "option", 15);
+    \u0275\u0275text(24, "Select Farmer");
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(25, TransactionComponent_option_25_Template, 2, 2, "option", 16);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(26, "label", 17);
+    \u0275\u0275text(27, "Village");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(28, "select", 18);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_28_listener($event) {
+      return ctx.transaction.village = $event;
+    });
+    \u0275\u0275elementStart(29, "option", 15);
+    \u0275\u0275text(30, "Select Village");
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(31, TransactionComponent_option_31_Template, 2, 2, "option", 16);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(32, "label", 19);
+    \u0275\u0275text(33, "Firm / Company");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(34, "input", 20);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_34_listener($event) {
+      return ctx.transaction.firm_company = $event;
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(35, "label", 21);
+    \u0275\u0275text(36, "Rate");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(37, "div", 22)(38, "span", 23);
+    \u0275\u0275text(39, "\u20B9");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(40, "input", 24);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_40_listener($event) {
+      return ctx.transaction.rate = $event;
+    });
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(41, "label", 25);
+    \u0275\u0275text(42, "Assigned Hammal");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(43, "select", 26);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_43_listener($event) {
+      return ctx.transaction.hammal = $event;
+    });
+    \u0275\u0275elementStart(44, "option", 15);
+    \u0275\u0275text(45, "Select Hammal");
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(46, TransactionComponent_option_46_Template, 2, 2, "option", 16);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(47, "label", 27);
+    \u0275\u0275text(48, "Bora Quantity");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(49, "input", 28);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_49_listener($event) {
+      return ctx.transaction.boraQuantity = $event;
+    })("ngModelChange", function TransactionComponent_Template_input_ngModelChange_49_listener() {
+      return ctx.calculateNetWeight();
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(50, "label", 29);
+    \u0275\u0275text(51, "Unit Bora");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(52, "input", 30);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_52_listener($event) {
+      return ctx.transaction.unitBora = $event;
+    })("ngModelChange", function TransactionComponent_Template_input_ngModelChange_52_listener() {
+      return ctx.calculateNetWeight();
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(53, "label", 31);
+    \u0275\u0275text(54, "Bharti");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(55, "input", 32);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_55_listener($event) {
+      return ctx.transaction.bharti = $event;
+    })("ngModelChange", function TransactionComponent_Template_input_ngModelChange_55_listener() {
+      return ctx.calculateNetWeight();
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(56, "label", 33);
+    \u0275\u0275text(57, "Net Weight");
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(58, "input", 34);
+    \u0275\u0275elementStart(59, "label", 35);
+    \u0275\u0275text(60, "Crop");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(61, "select", 36);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_61_listener($event) {
+      return ctx.transaction.crop = $event;
+    });
+    \u0275\u0275elementStart(62, "option", 15);
+    \u0275\u0275text(63, "Select Crop");
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(64, TransactionComponent_option_64_Template, 2, 2, "option", 16);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(65, "label", 37);
+    \u0275\u0275text(66, "Transaction Status");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(67, "select", 38);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_67_listener($event) {
+      return ctx.transaction.transactionStatus = $event;
+    });
+    \u0275\u0275elementStart(68, "option", 39);
+    \u0275\u0275text(69, "Active");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(70, "option", 40);
+    \u0275\u0275text(71, "Inactive");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(72, "label", 41);
+    \u0275\u0275text(73, "Transaction Mode");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(74, "select", 42);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_74_listener($event) {
+      return ctx.transaction.transactionMode = $event;
+    });
+    \u0275\u0275elementStart(75, "option", 15);
+    \u0275\u0275text(76, "Select Transaction Mode");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(77, "option", 43);
+    \u0275\u0275text(78, "Cash");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(79, "option", 44);
+    \u0275\u0275text(80, "Cheque");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(81, "option", 45);
+    \u0275\u0275text(82, "Online");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(83, "option", 46);
+    \u0275\u0275text(84, "Bank Transfer");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(85, "option", 47);
+    \u0275\u0275text(86, "UPI");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(87, "label", 48);
+    \u0275\u0275text(88, "Payment Status");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(89, "select", 49);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_89_listener($event) {
+      return ctx.transaction.PaymentStatus = $event;
+    });
+    \u0275\u0275elementStart(90, "option", 15);
+    \u0275\u0275text(91, "Select Payment Status");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(92, "option", 50);
+    \u0275\u0275text(93, "Incoming");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(94, "option", 51);
+    \u0275\u0275text(95, "Outgoing");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(96, "label", 52);
+    \u0275\u0275text(97, "Paid Amount");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(98, "input", 53);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_98_listener($event) {
+      return ctx.transaction.paidAmount = $event;
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(99, "label", 54);
+    \u0275\u0275text(100, "Total Amount");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(101, "input", 55);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_101_listener($event) {
+      return ctx.transaction.totalAmount = $event;
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(102, "label", 56);
+    \u0275\u0275text(103, "Remaining Amount");
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(104, "input", 57);
+    \u0275\u0275elementStart(105, "label", 58);
+    \u0275\u0275text(106, "Discount");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(107, "input", 59);
+    \u0275\u0275listener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_107_listener($event) {
+      return ctx.transaction.discount = $event;
+    });
+    \u0275\u0275elementEnd()()()()();
+    \u0275\u0275elementStart(108, "div", 60)(109, "div", 61)(110, "button", 62);
+    \u0275\u0275listener("click", function TransactionComponent_Template_button_click_110_listener() {
+      return ctx.saveTransaction();
+    });
+    \u0275\u0275text(111, " Submit ");
+    \u0275\u0275elementEnd()()()()()()()();
+  }
+  if (rf & 2) {
+    \u0275\u0275advance(14);
+    \u0275\u0275textInterpolate(ctx.transaction.id);
+    \u0275\u0275advance(8);
+    \u0275\u0275property("ngModel", ctx.transaction.farmer);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngForOf", ctx.Farmers);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngModel", ctx.transaction.village);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngForOf", ctx.Villages);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngModel", ctx.transaction.firm_company);
+    \u0275\u0275advance(6);
+    \u0275\u0275property("ngModel", ctx.transaction.rate);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngModel", ctx.transaction.hammal);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngForOf", ctx.Hammals);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngModel", ctx.transaction.boraQuantity);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngModel", ctx.transaction.unitBora);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngModel", ctx.transaction.bharti);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("value", ctx.transaction.netWeight);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngModel", ctx.transaction.crop);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngForOf", ctx.Crops);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngModel", ctx.transaction.transactionStatus);
+    \u0275\u0275advance(7);
+    \u0275\u0275property("ngModel", ctx.transaction.transactionMode);
+    \u0275\u0275advance(15);
+    \u0275\u0275property("ngModel", ctx.transaction.PaymentStatus);
+    \u0275\u0275advance(9);
+    \u0275\u0275property("ngModel", ctx.transaction.paidAmount);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngModel", ctx.transaction.totalAmount);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("value", ctx.transaction.remainingAmount);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngModel", ctx.transaction.discount);
+  }
+}, dependencies: [
+  FormsModule,
+  NgSelectOption,
+  \u0275NgSelectMultipleOption,
+  DefaultValueAccessor,
+  NumberValueAccessor,
+  SelectControlValueAccessor,
+  NgControlStatus,
+  NgModel,
+  ReactiveFormsModule,
+  CommonModule,
+  NgForOf
+], styles: ["\n\n/*# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFtdLAogICJzb3VyY2VzQ29udGVudCI6IFtdLAogICJtYXBwaW5ncyI6ICIiLAogICJuYW1lcyI6IFtdCn0K */"] });
+var TransactionComponent = _TransactionComponent;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionComponent, { className: "TransactionComponent", filePath: "src\\app\\pages\\transaction\\transaction.component.ts", lineNumber: 17 });
+})();
+
+// src/app/pages/transactionlist/transactionlist.component.ts
+function TransactionlistComponent_tr_64_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
+    \u0275\u0275pipe(5, "date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "td");
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "td");
+    \u0275\u0275text(9);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "td");
+    \u0275\u0275text(11);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "td");
+    \u0275\u0275text(13);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(14, "td");
+    \u0275\u0275text(15);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(16, "td");
+    \u0275\u0275text(17);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(18, "td");
+    \u0275\u0275text(19);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(20, "td");
+    \u0275\u0275text(21);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(22, "td");
+    \u0275\u0275text(23);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(24, "td");
+    \u0275\u0275text(25);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(26, "td");
+    \u0275\u0275text(27);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(28, "td");
+    \u0275\u0275text(29);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const transactions_r1 = ctx.$implicit;
+    const i_r2 = ctx.index;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(i_r2 + 1);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 14, transactions_r1 == null ? null : transactions_r1.created_at, "dd-MM-YYYY"));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.farmerDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(transactions_r1.firm_company);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1("\u20B9", transactions_r1.rate, "");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.hammalDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.cropDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.transactionStatus);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.transactionMode);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1("", transactions_r1 == null ? null : transactions_r1.discount, "%");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.paidAmount);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.remainingAmount);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.PaymentStatus);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.totalAmount);
+  }
+}
+var _TransactionlistComponent = class _TransactionlistComponent {
+  constructor(apiService, router) {
+    this.apiService = apiService;
+    this.router = router;
+    this.transactions = [];
+    this.transactionsCount = 0;
+  }
+  ngOnInit() {
+    this.getTransactions();
+  }
+  getTransactions() {
+    this.apiService.get("transaction", {
+      params: {
+        page: 1,
+        limit: 1e3
+      }
+    }).subscribe({
+      next: (res) => {
+        this.transactions = res.data;
+        this.transactionsCount = res.meta.total || this.transactions.length;
+      },
+      error: (err) => {
+        console.error("Error fetching transactions:", err);
+      }
+    });
+  }
+  navigateToTransactionPage() {
+    this.router.navigate(["/transaction"]);
+  }
+};
+_TransactionlistComponent.\u0275fac = function TransactionlistComponent_Factory(t) {
+  return new (t || _TransactionlistComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(Router));
+};
+_TransactionlistComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TransactionlistComponent, selectors: [["app-transactionlist"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 65, vars: 3, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "div", "d-flex", "justify-content-end", "align-items-center"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["id", "todatehelpid", 1, "form-text", "text-muted"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"]], template: function TransactionlistComponent_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4");
+    \u0275\u0275text(3, "Transactions");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(4, "div", 2)(5, "div", 3)(6, "button", 4);
+    \u0275\u0275listener("click", function TransactionlistComponent_Template_button_click_6_listener() {
+      return ctx.navigateToTransactionPage();
+    });
+    \u0275\u0275text(7, "Add Transaction");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(8, "div", 5)(9, "div", 6)(10, "div", 7)(11, "label", 8);
+    \u0275\u0275text(12, "From");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(13, "input", 9);
+    \u0275\u0275listener("ngModelChange", function TransactionlistComponent_Template_input_ngModelChange_13_listener($event) {
+      return ctx.fromDate = $event;
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(14, "small", 10);
+    \u0275\u0275text(15, "From Date");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(16, "div", 6)(17, "div", 7)(18, "label", 11);
+    \u0275\u0275text(19, "To");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(20, "input", 12);
+    \u0275\u0275listener("ngModelChange", function TransactionlistComponent_Template_input_ngModelChange_20_listener($event) {
+      return ctx.toDate = $event;
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(21, "small", 13);
+    \u0275\u0275text(22, "To Date");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(23, "div", 6)(24, "button", 4);
+    \u0275\u0275listener("click", function TransactionlistComponent_Template_button_click_24_listener() {
+      return ctx.getTransactions();
+    });
+    \u0275\u0275text(25, " Submit ");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(26, "div", 14)(27, "div", 15)(28, "h4", 16);
+    \u0275\u0275text(29, "Transactions");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(30, "div", 2)(31, "div", 17)(32, "table", 18)(33, "thead", 19)(34, "tr")(35, "th", 20);
+    \u0275\u0275text(36, "Sr.no");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(37, "th", 20);
+    \u0275\u0275text(38, "Date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(39, "th", 20);
+    \u0275\u0275text(40, "Farmer");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(41, "th", 20);
+    \u0275\u0275text(42, "Firm/Company");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(43, "th", 20);
+    \u0275\u0275text(44, "Rate");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(45, "th", 20);
+    \u0275\u0275text(46, "Hammal");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(47, "th", 20);
+    \u0275\u0275text(48, "Crop");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(49, "th", 20);
+    \u0275\u0275text(50, "Transaction Status");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(51, "th", 20);
+    \u0275\u0275text(52, "Transaction Mode");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(53, "th", 20);
+    \u0275\u0275text(54, "Discount");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(55, "th", 20);
+    \u0275\u0275text(56, "Paid Payment");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(57, "th", 20);
+    \u0275\u0275text(58, "Remaining Payment");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(59, "th", 20);
+    \u0275\u0275text(60, " Payment Status");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(61, "th", 20);
+    \u0275\u0275text(62, "Total Payment");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(63, "tbody");
+    \u0275\u0275template(64, TransactionlistComponent_tr_64_Template, 30, 17, "tr", 21);
+    \u0275\u0275elementEnd()()()()()()();
+  }
+  if (rf & 2) {
+    \u0275\u0275advance(13);
+    \u0275\u0275property("ngModel", ctx.fromDate);
+    \u0275\u0275advance(7);
+    \u0275\u0275property("ngModel", ctx.toDate);
+    \u0275\u0275advance(44);
+    \u0275\u0275property("ngForOf", ctx.transactions);
+  }
+}, dependencies: [
+  CommonModule,
+  NgForOf,
+  DatePipe,
+  FormsModule,
+  DefaultValueAccessor,
+  NgControlStatus,
+  NgModel,
+  ReactiveFormsModule,
+  NgxPaginationModule
+], styles: ["\n\n/*# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFtdLAogICJzb3VyY2VzQ29udGVudCI6IFtdLAogICJtYXBwaW5ncyI6ICIiLAogICJuYW1lcyI6IFtdCn0K */"] });
+var TransactionlistComponent = _TransactionlistComponent;
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionlistComponent, { className: "TransactionlistComponent", filePath: "src\\app\\pages\\transactionlist\\transactionlist.component.ts", lineNumber: 21 });
+})();
+
 // src/app/app.routes.ts
 var routes = [
   {
@@ -60733,6 +62601,26 @@ var routes = [
         path: "settings",
         component: SettingsComponent,
         data: { title: "Settings" }
+      },
+      {
+        path: "accounts",
+        component: AccountsComponent,
+        data: { title: "Accounts" }
+      },
+      {
+        path: "inventory",
+        component: InventoryComponent,
+        data: { title: "Inventory" }
+      },
+      {
+        path: "transaction",
+        component: TransactionComponent,
+        data: { title: "Transaction" }
+      },
+      {
+        path: "transactionlist",
+        component: TransactionlistComponent,
+        data: { title: "Transactionlist" }
       }
     ]
   },
@@ -60831,6 +62719,22 @@ var roleWiseAccess = [
   },
   {
     page: "settings",
+    roles: ["Admin"]
+  },
+  {
+    page: "accounts",
+    roles: ["Admin"]
+  },
+  {
+    page: "inventory",
+    roles: ["Admin"]
+  },
+  {
+    page: "transaction",
+    roles: ["Admin"]
+  },
+  {
+    page: "transactionlist",
     roles: ["Admin"]
   }
 ];

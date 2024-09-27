@@ -1,4 +1,5 @@
 const { ref } = require("@hapi/joi/lib/compile");
+const { type } = require("@hapi/joi/lib/extend");
 const mongoose = require("mongoose");
 
 const TruckLoadingSchema = new mongoose.Schema({
@@ -26,6 +27,9 @@ const TruckLoadingSchema = new mongoose.Schema({
     },
     netWeight:{
         type: Number,
+    },
+    rate:{
+type:Number
     },
     crop: {
         type: mongoose.Types.ObjectId,

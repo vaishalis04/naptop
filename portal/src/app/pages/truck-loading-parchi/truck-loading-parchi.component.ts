@@ -128,6 +128,7 @@ export class TruckLoadingParchiComponent implements OnInit {
     boraQuantity: 0,
     unitBora: 0,
     crop: 0,
+    rate:0,
     netWeight: 0,  // To be calculated
     other: '',
     id: Date.now(),
@@ -248,6 +249,10 @@ export class TruckLoadingParchiComponent implements OnInit {
           }
           if (!this.TruckLoadingParchi.crop) {
             alert('Please enter Jins');
+            return;
+          }
+          if (!this.TruckLoadingParchi.rate) {
+            alert('Please enter rate');
             return;
           }
           if (!this.TruckLoadingParchi.other) {

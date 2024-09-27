@@ -60,6 +60,8 @@ app.use("/api/parties", require("./routes/parties.route"));
 app.use("/api/delivery", require("./routes/delivery.route"));
 app.use("/api/taulparchi", require("./routes/taulparchi.route"));
 app.use("/api/truckloading", require("./routes/truckLoading.route"));
+app.use("/api/transaction", require("./routes/transaction.route"));
+
 
 
 

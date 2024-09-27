@@ -1,45 +1,3 @@
-// import { Component } from '@angular/core';
-// import { CommonModule, DatePipe } from '@angular/common';
-// import { RouterLink } from '@angular/router';
-// import { SharedService } from '../../services/shared.service';
-
-// @Component({
-//   selector: 'app-dashboard',
-//   standalone: true,
-//   imports: [
-//     DatePipe,
-//     RouterLink,
-//     CommonModule
-//   ],
-//   templateUrl: './dashboard.component.html',
-//   styleUrl: './dashboard.component.css'
-// })
-// export class DashboardComponent {
-
-//   currentDate = new Date();
-//   TaulaParchiCount = 0;
-//   TruckLoadingParchiCount = 0;
-//   TaulaParchi: any[] = [];
-//   TruckLoadingParchi: any[] = [];
-
-//   constructor(
-//     private sharedService: SharedService
-//   ) {
-//     this.TaulaParchiCount = this.sharedService.TaulParchis.length;
-//     this.TruckLoadingParchiCount = this.sharedService.TruckLoadingParchis.length;
-//     this.getTaulaParchis();
-//     this.getTruckLoadingParchis();
-//   }
-
-//   getTaulaParchis() {
-//     this.TaulaParchi = this.sharedService.TaulParchis;
-//   }
-
-//   getTruckLoadingParchis() {
-//     this.TruckLoadingParchi = this.sharedService.TruckLoadingParchis;
-//   }
-
-// }
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
@@ -58,78 +16,32 @@ export class DashboardComponent implements OnInit {
   TruckLoadingParchiCount = 0;
   TaulaParchi: any[] = [];
   TruckLoadingParchi: any[] = [];
-  Crops: any[] = [];
-
+  Crops: any;
+  Datas: any;
+  TaulaParchiDetails: any
+  TaulaParchiDetailsCount = 0;
+  TruckLoadingDetails: any;
+  TruckLoadingDetailsCount = 0
+  remainingCrops: any[] = [];
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.getTaulaParchis();
+    this.getTaulaParchiDetails()
     this.getTruckLoadingParchis();
-    this.loadDummyCrops();
+    this.getTaulparchisAggregatedCropData()
+    this.getTruckLoadingDetails()
+    this.getTruckLoadingAggregatedCropData()
     
   }
-  loadDataFromLocalStorage() {
-    const cropsData = localStorage.getItem('crops');  // Load crops from localStorag
-    if (cropsData) {  // Check if crops data exists
-      this.Crops = JSON.parse(cropsData);
-    }
-  }
-  loadDummyCrops() {
-    this.Crops = [
-      {
-        _id: '1',
-        name: 'Wheat',
-        created_at: new Date(),
-        // farmer: 'John Doe',
-        // village: 'Village A',
-        // quantity: '100 kg',
-        // rate: '20 USD',
-        // status: 'Available',
-        notes: '80Kg',
-      },
-      {
-        _id: '2',
-        name: 'Rice',
-        created_at: new Date(),
-        farmer: 'Jane Smith',
-        village: 'Village B',
-        quantity: '200 kg',
-        rate: '30 USD',
-        status: 'Available',
-        notes: '67',
-      },
-      {
-        _id: '3',
-        name: 'Corn',
-        created_at: new Date(),
-        farmer: 'Mike Johnson',
-        village: 'Village C',
-        quantity: '150 kg',
-        rate: '25 USD',
-        status: 'Sold Out',
-        notes: '93',
-      },
-      {
-        _id: '4',
-        name: 'Soybean',
-        created_at: new Date(),
-        farmer: 'Mike Johnson',
-        village: 'Village C',
-        quantity: '150 kg',
-        rate: '25 USD',
-        status: 'Sold Out',
-        notes: '93',
-      },
-    ];
-  }
-
+  
   // Fetch TaulaParchis from backend
   getTaulaParchis() {
     this.apiService
       .get('taulparchi', {
         params: {
           page: 1,
-          limit: 1000, // Adjust limit as needed
+          limit: 1000, 
         },
       })
       .subscribe({
@@ -143,13 +55,62 @@ export class DashboardComponent implements OnInit {
       });
   }
 
+  getTaulaParchiDetails() {
+    this.apiService.get('taulparchi/getdetails', {
+      params: { page: 1, limit: 1000 }
+    })
+    .subscribe({
+      next: (res: any) => {
+        if (res && Array.isArray(res)) {
+          console.log("res", res);
+          // Assuming you want the first item
+          this.TaulaParchiDetails = res[0]; // Get the first object
+          this.TaulaParchiDetailsCount = res.length; // Total number of items
+          console.log('Taula Parchi Details:', this.TaulaParchiDetails);
+        } else {
+          console.error('Invalid response format for Taula Parchi details:', res);
+        }
+      },
+      error: (err: any) => {
+        console.error('Error fetching Taula Parchi details:', err.message || err);
+      }
+    });
+    
+  }
+  
+
+
+  getTaulparchisAggregatedCropData() {
+    this.apiService
+      .get('taulparchi/taulparchisAggregate', {
+        params: {
+          page: 1,
+          limit: 1000, 
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+        // if(res){
+          if (Array.isArray(res)) {
+            this.Crops = res; 
+            console.log('Aggregated Taul Parchis Data:', this.Crops);
+          } else {
+            console.error('Invalid response format:', res);
+          }
+        },
+        error: (err: any) => {
+          console.error('Error fetching Taul Parchis Aggregated Data:', err.message || err);
+        },
+      });
+  }
+  
   // Fetch TruckLoadingParchis from backend
   getTruckLoadingParchis() {
     this.apiService
       .get('truckloading', {
         params: {
           page: 1,
-          limit: 1000, // Adjust limit as needed
+          limit: 1000, 
         },
       })
       .subscribe({
@@ -164,4 +125,53 @@ export class DashboardComponent implements OnInit {
         },
       });
   }
+
+  getTruckLoadingDetails() {
+    this.apiService
+      .get('truckloading/getdetails', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          if (res && Array.isArray(res)) {
+            console.log("Response:", res);
+            this.TruckLoadingDetails = res[0]; // Assuming you want to get the first item
+            this.TruckLoadingDetailsCount = res.length; // Total number of items
+            console.log("Truck loading details:", this.TruckLoadingDetails);
+          } else {
+            console.error('Invalid response format:', res);
+          }
+        },
+        error: (err: any) => {
+          console.error('Error fetching truck loading details:', err.message || err);
+        },
+      });
+  }
+  
+  getTruckLoadingAggregatedCropData() {
+    this.apiService
+      .get('truckloading/truck-loading-details', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          if (res) {
+            this.Datas = res; 
+            console.log('Aggregated Truck Loading Data:', this.Datas);
+          } else {
+            console.error('Invalid response format:', res);
+          }
+        },
+        error: (err: any) => {
+          console.error('Error fetching Truck Loading Aggregated Data:', err.message || err);
+        },
+      });
+  }
+  
 }

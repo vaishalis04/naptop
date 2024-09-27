@@ -7,15 +7,20 @@ router.get('/',  TaulParchiController.list);
 
 router.post('/', TaulParchiController.create);
 
+router.get('/getsummary', TaulParchiController.getTaulParchiSummary);
+
+router.get('/getWeightsummary', TaulParchiController.getWeightSummary);
+
+
+router.get('/taulparchisAggregate', TaulParchiController.getTaulparchisAggregatedData);
+
+router.get('/getdetails', TaulParchiController.getTaulParchiDetails);
+
 router.put('/:id', TaulParchiController.update);
 
 router.delete('/:id', TaulParchiController.delete);
 
 router.get('/:id', TaulParchiController.get);
-
-router.get('/taulparchisAggregate', TaulParchiController.getTaulparchisAggregatedData);
-
-router.get('/getdetails', TaulParchiController.getTaulParchiDetails);
 
 
 

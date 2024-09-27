@@ -63,4 +63,20 @@ export const roleWiseAccess = [
     page: 'settings',
     roles: ['Admin'],
   },
+  {
+    page: 'accounts',
+    roles: ['Admin'],
+  },
+  {
+    page: 'inventory',
+    roles: ['Admin'],
+  },
+  {
+    page: 'transaction',
+    roles: ['Admin'],
+  },
+  {
+    page: 'transactionlist',
+    roles: ['Admin'],
+  },
 ];

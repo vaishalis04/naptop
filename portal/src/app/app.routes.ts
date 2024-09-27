@@ -17,6 +17,10 @@ import { HammalsComponent } from './pages/hammals/hammals.component';
 import { CropComponent } from './pages/crop/crop.component';
 import { PartiesComponent } from './pages/parties/parties.component';
 import { DeliveryComponent } from './pages/delivery/delivery.component';
+import { AccountsComponent } from './pages/accounts/accounts.component';
+import { InventoryComponent } from './pages/inventory/inventory.component';
+import { TransactionComponent } from './pages/transaction/transaction.component';
+import { TransactionlistComponent } from './pages/transactionlist/transactionlist.component';
 
 export const routes: Routes = [
   {
@@ -106,6 +110,26 @@ export const routes: Routes = [
         path: 'settings',
         component: SettingsComponent,
         data: { title: 'Settings' },
+      },
+      {
+        path: 'accounts',
+        component: AccountsComponent,
+        data: { title: 'Accounts' },
+      },
+      {
+        path: 'inventory',
+        component: InventoryComponent,
+        data: { title: 'Inventory' },
+      },
+      {
+        path: 'transaction',
+        component: TransactionComponent,
+        data: { title: 'Transaction' },
+      },
+      {
+        path: 'transactionlist',
+        component: TransactionlistComponent,
+        data: { title: 'Transactionlist' },
       },
     ],
   },

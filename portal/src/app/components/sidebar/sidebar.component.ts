@@ -80,6 +80,26 @@ export class SidebarComponent {
       title: 'Settings',
       icon: 'fi-rr-settings',
       link: '/settings'
+    },
+    {
+      title: 'Accounts',
+      icon: 'fi-rr-settings',
+      link: '/accounts'
+    },
+    {
+      title: 'Inventory',
+      icon: 'fi-rr-settings',
+      link: '/inventory'
+    },
+    // {
+    //   title: 'Transaction',
+    //   icon: 'fi-rr-settings',
+    //   link: '/transaction'
+    // },
+    {
+      title: 'Transaction List',
+      icon: 'fi-rr-settings',
+      link: '/transactionlist'
     }
   ];
 

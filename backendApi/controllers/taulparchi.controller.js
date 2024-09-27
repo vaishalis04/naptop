@@ -69,7 +69,7 @@ module.exports = {
     },
     list: async (req, res, next) => {
         try {
-            const { firm_company, disabled, page, limit, order_by, order_in } = req.query;
+            const {crop, firm_company, disabled, page, limit, order_by, order_in } = req.query;
 
             const _page = page ? parseInt(page) : 1;
             const _limit = limit ? parseInt(limit) : 20;
@@ -87,7 +87,9 @@ module.exports = {
             if (firm_company) {
                 query.firm_company = new RegExp(firm_company, "i");
             }
-
+            if (crop) {
+                query.crop = new mongoose.Types.ObjectId(crop);
+            }
             query.disabled = { $ne: true };
             query.is_inactive = { $ne: true };
 
@@ -99,6 +101,50 @@ module.exports = {
                 { $sort: sorting },
                 { $skip: _skip },
                 { $limit: _limit },
+                {
+                    $lookup: {
+                        from: 'farmers',
+                        localField: 'farmer',
+                        foreignField: '_id',
+                        as: 'farmerDetails'
+                    }
+                },
+                {
+                    $lookup: {
+                        from: 'villages',
+                        localField: 'village',
+                        foreignField: '_id',
+                        as: 'villageDetails'
+                    }
+                },
+                {
+                    $lookup: {
+                        from: 'hammals',
+                        localField: 'hammal',
+                        foreignField: '_id',
+                        as: 'hammalDetails'
+                    }
+                },
+                {
+                    $lookup: {
+                        from: 'crops',
+                        localField: 'crop',
+                        foreignField: '_id',
+                        as: 'cropDetails'
+                    }
+                },
+                {
+                    $unwind: "$cropDetails"
+                },
+                {
+                    $unwind: "$hammalDetails"
+                },
+                {
+                    $unwind: "$villageDetails"
+                },
+                {
+                    $unwind: "$farmerDetails"
+                }
             ]);
 
             // Count total number of results for pagination metadata
@@ -263,19 +309,21 @@ module.exports = {
                       { $multiply: ['$unitBora', '$boraQuantity'] }
                     ]
                   }
-                }
+                },
+                grandRate: {
+                    $sum: {
+                        calculatedRate: {
+                            $multiply: ['$rate', '$grandTotal']
+                          }
+                    }
+                  } 
               }
-            }
+            },           
           ],
-          {
-            maxTimeMS: 60000, 
-            allowDiskUse: true 
-          });
+          );
       
-          res.status(200).json({
-            success: true,
-            data: result
-          });
+          res.status(200).json(result);
+          
         } catch (error) {
           console.error('Error in aggregation:', error);
       
@@ -286,7 +334,8 @@ module.exports = {
           });
         }
       },
-       getTaulParchiDetails : async (req, res) => {
+       
+    getTaulParchiDetails : async (req, res) => {
         try {
             const results = await Model.aggregate([
                 {
@@ -328,15 +377,262 @@ module.exports = {
                         villageName: { $arrayElemAt: ['$villageDetails.name', 0] },
                         hammalName: { $arrayElemAt: ['$hammalDetails.name', 0] },
                         cropName: { $arrayElemAt: ['$cropDetails.name', 0] }
-                    }
+                    } 
                 }
+            ]);    
+            res.status(200).json(results);
+
+        } catch (error) {
+            throw new Error(error);
+        }
+    },
+    getTaulParchiSummary: async (req, res) => {
+        try {
+            const {
+                firm_company,
+                page,
+                limit,
+                order_by,
+                order_in,
+                from,
+                to
+            } = req.query;
+    
+            const _page = page ? parseInt(page) : 1;
+            const _limit = limit ? parseInt(limit) : 20;
+            const _skip = (_page - 1) * _limit;
+    
+            // Define sorting logic
+            let sorting = {};
+            if (order_by) {
+                sorting[order_by] = order_in === "desc" ? -1 : 1;
+            } else {
+                sorting["_id"] = -1; // Default sorting by _id (descending)
+            }
+    
+            const query = {};
+            if (firm_company) {
+                query.firm_company = new RegExp(firm_company, "i");
+            }
+    
+            // Add date range filter based on 'from' and 'to' params
+            if (from || to) {
+                query.created_at = {};
+                if (from) {
+                    query.created_at.$gte = new Date(from);
+                }
+                if (to) {
+                    query.created_at.$lte = new Date(to);
+                }
+            }
+    
+            query.disabled = { $ne: true };
+            query.is_inactive = { $ne: true };
+    
+            console.log(query);
+    
+            // Aggregate query to get taul parchis with filters, pagination, and sorting
+            let result = await Model.aggregate([
+                { $match: query },
+                { $sort: sorting },
+                { $skip: _skip },
+                { $limit: _limit },
+                {
+                    $lookup: {
+                        from: "farmers",
+                        localField: "farmer",
+                        foreignField: "_id",
+                        as: "farmerDetails"
+                    }
+                },
+                {
+                    $lookup: {
+                        from: "villages",
+                        localField: "village",
+                        foreignField: "_id",
+                        as: "villageDetails"
+                    }
+                },
+                {
+                    $lookup: {
+                        from: "hammals",
+                        localField: "hammal",
+                        foreignField: "_id",
+                        as: "hammalDetails"
+                    }
+                },
+                {
+                    $lookup: {
+                        from: "crops",
+                        localField: "crop",
+                        foreignField: "_id",
+                        as: "cropDetails"
+                    }
+                },
+                { $unwind: "$farmerDetails" },
+                { $unwind: "$villageDetails" },
+                { $unwind: "$hammalDetails" },
+                { $unwind: "$cropDetails" },
+    
+                // Grouping by crop to calculate sum of rates
+                {
+                    $group: {
+                        _id: "$cropDetails._id",
+                        cropName: { $first: "$cropDetails.name" },
+                        totalRate: { $sum: "$rate" }
+                    }
+                },
+                { $sort: sorting },
             ]);
     
-            return results;
+            // Count total number of results for pagination metadata
+            const resultCount = await Model.countDocuments(query);
+    
+            // Respond with data and pagination metadata
+            res.json({
+                data: result,
+                meta: {
+                    current_page: _page,
+                    from: _skip + 1,
+                    last_page: Math.ceil(resultCount / _limit),
+                    per_page: _limit,
+                    to: _skip + result.length,
+                    total: resultCount,
+                },
+            });
+        } catch (error) {
+            throw new Error(error);
+        }
+    },
+     getWeightSummary : async (req, res) => {
+        try {
+            const {
+                firm_company,
+                page,
+                limit,
+                order_by,
+                order_in,
+                from,
+                to
+            } = req.query;
+    
+            const _page = page ? parseInt(page) : 1;
+            const _limit = limit ? parseInt(limit) : 20;
+            const _skip = (_page - 1) * _limit;
+    
+            // Define sorting logic
+            let sorting = {};
+            if (order_by) {
+                sorting[order_by] = order_in === "desc" ? -1 : 1;
+            } else {
+                sorting["_id"] = -1; // Default sorting by _id (descending)
+            }
+    
+            const query = {};
+            if (firm_company) {
+                query.firm_company = new RegExp(firm_company, "i");
+            }
+    
+            // Add date range filter based on 'from' and 'to' params
+            if (from || to) {
+                query.created_at = {};
+                if (from) {
+                    query.created_at.$gte = new Date(from);
+                }
+                if (to) {
+                    query.created_at.$lte = new Date(to);
+                }
+            }
+    
+            query.disabled = { $ne: true };
+            query.is_inactive = { $ne: true };
+    
+            console.log(query);
+    
+            // Aggregate query to get total weight per crop
+            let result = await Model.aggregate([
+                { $match: query },
+                { $sort: sorting },
+                { $skip: _skip },
+                { $limit: _limit },
+                {
+                    $lookup: {
+                        from: "farmers",
+                        localField: "farmer",
+                        foreignField: "_id",
+                        as: "farmerDetails"
+                    }
+                },
+                {
+                    $lookup: {
+                        from: "villages",
+                        localField: "village",
+                        foreignField: "_id",
+                        as: "villageDetails"
+                    }
+                },
+                {
+                    $lookup: {
+                        from: "hammals",
+                        localField: "hammal",
+                        foreignField: "_id",
+                        as: "hammalDetails"
+                    }
+                },
+                {
+                    $lookup: {
+                        from: "crops",
+                        localField: "crop",
+                        foreignField: "_id",
+                        as: "cropDetails"
+                    }
+                },
+                { $unwind: "$farmerDetails" },
+                { $unwind: "$villageDetails" },
+                { $unwind: "$hammalDetails" },
+                { $unwind: "$cropDetails" },
+    
+                // Dynamically calculate net weight based on (boraQuantity * unitBora) + bharti
+                {
+                    $addFields: {
+                        calculatedNetWeight: {
+                            $add: [
+                                { $multiply: ["$boraQuantity", "$unitBora"] },
+                                "$bharti"
+                            ]
+                        }
+                    }
+                },
+    
+                {
+                    $group: {
+                        _id: "$cropDetails._id",
+                        cropName: { $first: "$cropDetails.name" },
+                        totalWeight: { $sum: "$calculatedNetWeight" } // Summing up the dynamically calculated net weight
+                    }
+                },
+                { $sort: sorting },
+            ]);
+    
+            // Count total number of results for pagination metadata
+            const resultCount = await Model.countDocuments(query);
+    
+            // Respond with data and pagination metadata
+            res.json({
+                data: result,
+                meta: {
+                    current_page: _page,
+                    from: _skip + 1,
+                    last_page: Math.ceil(resultCount / _limit),
+                    per_page: _limit,
+                    to: _skip + result.length,
+                    total: resultCount,
+                },
+            });
         } catch (error) {
             throw new Error(error);
         }
     }
-          
+     
 
 }
