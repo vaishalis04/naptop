@@ -22,14 +22,14 @@ export class InventoryComponent {
   TaulaParchiCount = 0;
   TruckLoadingParchi: any[] = [];
   TruckLoadingParchiCount = 0;
-  currentPage = 1; // Default page
-  perPage = 5; // Items per page
+  currentPage = 1; 
+  perPage = 5; 
   totalItems = 0;
   fromDate: any;
   toDate: any;
   Crops: any[] = [];
-  TruckLoadingParchiWeightSummary: any[] = [];
   TaulParchiWeightSummary: any[] = [];
+  TruckLoadingParchiWeightSummary: any[] = [];
   selectedCrop:any
   tabState: 'truckloading' | 'taulparchi' = 'taulparchi';
 
@@ -132,7 +132,7 @@ export class InventoryComponent {
       })
       .subscribe({
         next: (res: any) => {
-          this.TaulParchiWeightSummary = res.data;
+          this.TruckLoadingParchiWeightSummary = res.data;
         },
         error: (err: any) => {
           console.error('Error fetching TruckLoadingParchis:', err);
@@ -156,7 +156,7 @@ export class InventoryComponent {
       })
       .subscribe({
         next: (res: any) => {
-          this.TruckLoadingParchiWeightSummary = res.data;
+          this.TaulParchiWeightSummary = res.data;
           console.log("dataaa",res.data)
         },
         error: (err: any) => {

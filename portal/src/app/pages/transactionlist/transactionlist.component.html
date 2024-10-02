@@ -79,18 +79,12 @@
               <tr>
                 <th scope="col">Sr.no</th>
                 <th scope="col">Date</th>
-                <th scope="col">Farmer</th>
-                <!-- <th scope="col">Village</th> -->
-                <th scope="col">Firm/Company</th>
-                <th scope="col">Rate</th>
-                <th scope="col">Hammal</th>
-                <th scope="col">Crop</th>
+                <th scope="col">Transaction Type</th>               
                 <th scope="col">Transaction Status</th>
                 <th scope="col">Transaction Mode</th>
                 <th scope="col">Discount</th>
                 <th scope="col">Paid Payment</th>
-                <th scope="col">Remaining Payment</th>
-               
+                <th scope="col">Remaining Payment</th>              
                 <th scope="col"> Payment Status</th>
                 <th scope="col">Total Payment</th>
 
@@ -101,12 +95,7 @@
               <tr *ngFor="let transactions of transactions; let i = index">
                 <td>{{ i + 1 }}</td>
                 <td>{{ transactions?.created_at | date : "dd-MM-YYYY" }}</td>
-                <td>{{ transactions?.farmerDetails.name }}</td>
-                <!-- <td>{{ transactions?.villageDetails.name }}</td> -->
-                <td>{{ transactions.firm_company }}</td>
-                <td>₹{{ transactions.rate }}</td>
-                <td>{{ transactions?.hammalDetails.name }}</td>
-                <td>{{ transactions?.cropDetails.name }}</td>
+                <td>{{ transactions?.transactionType }}</td>
                 <td>{{ transactions?.transactionStatus }}</td>
                 <td>{{ transactions?.transactionMode }}</td>
                 <td>{{ transactions?.discount }}%</td>

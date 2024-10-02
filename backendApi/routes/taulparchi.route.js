@@ -3,6 +3,8 @@ const router = express.Router();
 const TaulParchiController = require('../controllers/taulparchi.controller');
 const { verifyAccessToken } = require("../Helpers/jwt_helper");
 
+router.get('/userId/:id',  TaulParchiController.getByUser);
+
 router.get('/',  TaulParchiController.list);
 
 router.post('/', TaulParchiController.create);
@@ -10,7 +12,6 @@ router.post('/', TaulParchiController.create);
 router.get('/getsummary', TaulParchiController.getTaulParchiSummary);
 
 router.get('/getWeightsummary', TaulParchiController.getWeightSummary);
-
 
 router.get('/taulparchisAggregate', TaulParchiController.getTaulparchisAggregatedData);
 

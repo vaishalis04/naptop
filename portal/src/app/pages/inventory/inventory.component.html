@@ -80,9 +80,9 @@
     </div>
     @if(tabState=="taulparchi"){
     <div class="row">
-      <div class="col-auto" *ngFor="let item of TaulParchiWeightSummary">
+      <div class="col-auto" *ngFor="let items of TaulParchiWeightSummary">
         <button type="button" class="btn btn-primary">
-          {{ item.cropName }}: {{ item.totalWeight }}Kg
+          {{ items.cropName }}: {{ items.totalWeight }}Kg
         </button>
       </div>
     </div>
@@ -99,7 +99,7 @@
                 <th scope="col">Sr.no</th>
                 <th scope="col">Date</th>
                 <th scope="col">Farmer</th>
-                <th scope="col">Village</th>
+                <!-- <th scope="col">Village</th> -->
                 <th scope="col">Bora Quantity</th>
                 <th scope="col">unit Bora</th>
                 <th scope="col">Bharti</th>
@@ -126,11 +126,11 @@
                 <td>{{ currentPage * perPage - perPage + (i + 1) }}</td>
                 <td>{{ taulaParchi.created_at | date : "dd-MM-YYYY" }}</td>
                 <td>{{ taulaParchi?.farmerDetails.name }}</td>
-                <td>{{ taulaParchi?.villageDetails.name }}</td>
-                <td>{{ taulaParchi.boraQuantity }}</td>
-                <td>{{ taulaParchi.unitBora }}</td>
-                <td>{{ taulaParchi.bharti }}Kg</td>
-                <td>{{ taulaParchi.netWeight }}Kg</td>
+                <!-- <td>{{ taulaParchi?.villageDetails.name }}</td> -->
+                <td>{{ taulaParchi?.boraQuantity }}</td>
+                <td>{{ taulaParchi?.unitBora }}</td>
+                <td>{{ taulaParchi?.bharti }}Kg</td>
+                <td>{{ taulaParchi?.netWeight }}Kg</td>
                 <td>{{ taulaParchi?.hammalDetails.name }}</td>
                 <td>{{ taulaParchi?.cropDetails.name }}</td>
                 <!-- <td>
@@ -159,7 +159,7 @@
         *ngFor="let item of TruckLoadingParchiWeightSummary"
       >
         <button type="button" class="btn btn-primary">
-          {{ item.cropName }}: ₹{{ item.totalWeight }}
+          {{ item.cropName }}: {{ item.totalWeight }}Kg
         </button>
       </div>
     </div>
@@ -175,7 +175,7 @@
                 <th scope="col">Sr.no</th>
                 <th scope="col">Date</th>
                 <th scope="col">Party Name</th>
-                <th scope="col">Vehicle Number</th>
+                <!-- <th scope="col">Vehicle Number</th> -->
                 <th scope="col">Delivery Location</th>
                 <th scope="col">Hammal</th>
                 <th scope="col">Bora Nag</th>
@@ -204,7 +204,7 @@
                   {{ truckLoadingParchi.created_at | date : "dd-MM-YYYY" }}
                 </td>
                 <td>{{ truckLoadingParchi.partyDetails.name }}</td>
-                <td>{{ truckLoadingParchi.vehicleNumber }}</td>
+                <!-- <td>{{ truckLoadingParchi.vehicleNumber }}</td> -->
                 <td>{{ truckLoadingParchi.deliveryDetails.name }}</td>
                 <td>{{ truckLoadingParchi.hammalDetails.name }}</td>
                 <td>{{ truckLoadingParchi.boraQuantity }}</td>

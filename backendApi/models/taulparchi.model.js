@@ -1,14 +1,21 @@
-const { ref } = require("@hapi/joi/lib/compile");
 const mongoose = require("mongoose");
 
 const TaulParchiSchema = new mongoose.Schema({
+    purchase:{
+        type:String,
+    enum: ['directPurchase', 'AuctionMandiPurchase'],
+    },
     farmer: {
         type: mongoose.Types.ObjectId,
         ref:'farmers'      
     },
     village: {
         type: mongoose.Types.ObjectId, 
-        ref:'villages'       
+             
+    },
+    mobile:{
+        type: mongoose.Types.ObjectId, 
+
     },
     firm_company: {
         type: String,     
@@ -18,7 +25,12 @@ const TaulParchiSchema = new mongoose.Schema({
     },
     hammal: {
         type: mongoose.Types.ObjectId,
-        ref:'hammals'
+        ref:'hammals',
+        required: function () {
+        return this.tulai === 'Labour';
+        },
+        default: null,
+
     },
     boraQuantity: {
         type: Number,   
@@ -27,7 +39,8 @@ const TaulParchiSchema = new mongoose.Schema({
         type: Number,   
     },
     bharti: {
-        type: Number,  
+        type: Number,
+        enum: [30, 60],
     },
     netWeight:{
         type: Number,
@@ -36,12 +49,17 @@ const TaulParchiSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,  
         ref:'crop'
     },
+    tulai:{
+        type: String,     
+        enum: ['Labour', 'Dharamkata'],
+    },
     created_at: {
         type: Date,
         default: Date.now
     },
-    created_by: {
-        type: mongoose.Types.ObjectId,     
+    createdBy: {
+        type: mongoose.Types.ObjectId,   
+        ref: 'user',   
     },
     updated_at: {
         type: Date

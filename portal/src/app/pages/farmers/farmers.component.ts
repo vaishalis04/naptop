@@ -18,13 +18,8 @@ import { ApiService } from '../../services/api.service';
 })
 export class FarmersComponent {
 
-
-
   isEdit: 'Update' | 'Add' | undefined;
-
   data: any[] = [];
-
-
   masterToAddOrEdit: any = {};
   masterToAddOrEditIndex: number = -1;
   p: number = 1;
@@ -67,15 +62,36 @@ export class FarmersComponent {
     this.isEdit = 'Add';
   }
 
+  // addNewItem() {
+  //   if (this.masterToAddOrEdit.name === '') {
+  //     return;
+  //   }
+  //   this.apiService.post('farmer', this.masterToAddOrEdit).subscribe((data: any) => {
+  //     this.getData();
+  //     this.resetMasterToAddOrEdit();
+  //   },);
+  // }
   addNewItem() {
     if (this.masterToAddOrEdit.name === '') {
       return;
     }
-    this.apiService.post('farmer', this.masterToAddOrEdit).subscribe((data: any) => {
-      this.getData();
-      this.resetMasterToAddOrEdit();
-    });
+    
+    this.apiService.post('farmer', this.masterToAddOrEdit).subscribe(
+      (data: any) => {
+        this.getData();
+        this.resetMasterToAddOrEdit();
+      },
+      (error: any) => {
+        if (error.status === 400) {
+          alert('Mobile number already exists. Please use another mobile number.');
+        } else {
+          alert('An error occurred. Please try again.');
+        }
+      }
+      
+    );
   }
+  
 
   resetMasterToAddOrEdit() {
     this.masterToAddOrEdit = {};

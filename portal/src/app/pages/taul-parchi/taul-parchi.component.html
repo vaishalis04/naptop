@@ -1,112 +1,250 @@
 <div class="row">
-    <div class="col-12 col-md">
-        <div class="row">
-            <div class="col">
-                <div class="card bg-white">
-                    <div class="card-header text-center">
-                        <h4 class="mb-0">Taula Parchi</h4>
-                        <p>
-                            <b>M+M</b>
-                        </p>
-                        <div class="row">
-                            <div class="col text-start">
-                                <b>
-                                    <span class="text-muted ps-2">Serial Number:</span>
-                                    <span class=" ps-2 text-link">{{ TaulParchi.id }}</span>
-                                </b>
-                            </div>
-                            <div class="col text-end">
-                                <b>
-                                    <span class="text-muted pe-2">Date:</span>
-                                    <span class="text-link">{{ TaulParchi.created_at| date: 'dd-MM-YYYY' }}</span>
-                                </b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body bg-warning">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="form-group mb-3">
-                                    <label for="farmerName" class="form-label">Farmer's Name</label>
-                                    <select id="farmerName" class="form-select" [(ngModel)]="TaulParchi.farmer"
-                                        name="farmerName" (ngModelChange)="autoFillFirmOrCompany()">
-                                        <option value="">Select Farmer</option>
-                                        <option *ngFor="let farmer of Farmers" [value]="farmer._id">
-                                            {{ farmer.name }}
-                                        </option>
-                                    </select>
-
-                                    <label for="village" class="form-label">Village</label>
-                                    <select id="village" class="form-select" [(ngModel)]="TaulParchi.village"
-                                        name="village">
-                                        <option value="">Select Village</option>
-                                        <option *ngFor="let village of Villages" [value]="village._id">
-                                            {{ village.name }}
-                                        </option>
-                                    </select>
-
-                                    <label for="firmCompany" class="form-label">Firm / Company</label>
-                                    <input id="firmCompany" class="form-control" [(ngModel)]="TaulParchi.firm_company"
-                                        name="firmCompany" type="text" placeholder="Firm / Company" />
-
-                                    <label for="rate" class="form-label">Rate</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text bg-transparent border-0 p-0">₹</span>
-                                        <input id="rate" class="form-control" [(ngModel)]="TaulParchi.rate" name="rate"
-                                            type="number" placeholder="Rate" />
-                                    </div>
-
-                                    <label for="assignedHammal" class="form-label
-                                    ">Assigned Hammal</label>
-                                    <select id="assignedHammal" class="form-select" [(ngModel)]="TaulParchi.hammal"
-                                        name="assignedHammal">
-                                        <option value="">Select Hammal</option>
-                                        <option *ngFor="let hammal of Hammals" [value]="hammal._id">
-                                            {{ hammal.name }}
-                                        </option>
-                                    </select>
-
-                                   
-
-                                        <label for="boraQuantity" class="form-label">Bora Quantity</label>
-                                        <input id="boraQuantity" class="form-control" [(ngModel)]="TaulParchi.boraQuantity" name="boraQuantity"
-                                            type="number" placeholder="Bora Quantity" (ngModelChange)="calculateNetWeight()" />
-                                        
-                                        <label for="unitBora" class="form-label">Unit Bora</label>
-                                        <input id="unitBora" class="form-control" [(ngModel)]="TaulParchi.unitBora" name="unitBora"
-                                            type="number" placeholder="Unit Bora" (ngModelChange)="calculateNetWeight()" />
-                                        
-                                        <label for="bharti" class="form-label">Bharti</label>
-                                        <input id="bharti" class="form-control" [(ngModel)]="TaulParchi.bharti"
-                                            name="bharti" type="number" placeholder="Bharti" (ngModelChange)="calculateNetWeight()" />
-                                        
-                                        <label for="netWeight" class="form-label">Net Weight</label>
-                                        <!-- The calculated Net Weight will be displayed here -->
-                                        <input id="netWeight" class="form-control" [value]="TaulParchi.netWeight" name="netWeight"
-                                            type="number" placeholder="Net Weight" readonly />
-
-                                    <label for="crop" class="form-label">Crop</label>
-                                    <select id="crop" class="form-select" [(ngModel)]="TaulParchi.crop" name="crop">
-                                        <option value="">Select Crop</option>
-                                        <option *ngFor="let crop of Crops" [value]="crop._id">
-                                            {{ crop.name }}
-                                        </option>
-                                    </select>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-actions bg-light border">
-                        <div class="text-end">
-                            <button class="btn btn-primary btn-lg m-3" (click)="saveTaulParchi()">
-                                Submit
-                            </button>
-                        </div>
-                    </div>
-                </div>
+  <div class="col-12 col-md">
+    <div class="row">
+      <div class="col">
+        <div class="card bg-white">
+          <div class="card-header text-center">
+            <h4 class="mb-0">Taula Parchi</h4>
+            <p>
+              <b>M+M</b>
+            </p>
+            <div class="row">
+              <div class="col text-start">
+                <b>
+                  <span class="text-muted ps-2">Serial Number:</span>
+                  <span class="ps-2 text-link">{{ TaulParchi.id }}</span>
+                </b>
+              </div>
+              <div class="col text-end">
+                <b>
+                  <span class="text-muted pe-2">Date:</span>
+                  <span class="text-link">{{
+                    TaulParchi.created_at | date : "dd-MM-YYYY"
+                  }}</span>
+                </b>
+              </div>
             </div>
+          </div>
+          <div class="card-body bg-warning">
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group mb-3">
+                  <label for="purchaseStatus" class="form-label"
+                    >Purchase Status</label
+                  >
+                  <select
+                    id="purchaseStatus"
+                    class="form-select bg-warning text-dark"
+                    [(ngModel)]="TaulParchi.purchase"
+                    name="purchaseStatus"
+                  >
+                    <option value="">Select Purchase</option>
+                    <option value="directPurchase">Direct Purchase</option>
+                    <option value="AuctionMandiPurchase">
+                      Auction Mandi Purchase
+                    </option>
+                  </select>
+                  <label for="farmerName" class="form-label"
+                    >Farmer's Name</label
+                  >
+                  <select
+                    id="farmerName"
+                    class="form-select"
+                    [(ngModel)]="TaulParchi.farmer"
+                    name="farmerName"
+                    (ngModelChange)="autoFillFirmOrCompany()"
+                  >
+                    <option value="">Select Farmer</option>
+                    <option *ngFor="let farmer of Farmers" [value]="farmer._id">
+                      {{ farmer.name }}
+                    </option>
+                  </select>
+
+                  <label for="village" class="form-label">Village</label>
+                  <select
+                    id="village"
+                    class="form-select"
+                    [(ngModel)]="TaulParchi.village"
+                    name="village"
+                  >
+                    <option value="">Select Village</option>
+                    <option
+                      *ngFor="let village of Farmers"
+                      [value]="village._id"
+                    >
+                      {{ village.village }}
+                    </option>
+                  </select>
+                  <label for="mobile" class="form-label">Mobile</label>
+                  <select
+                    id="mobile"
+                    class="form-select"
+                    [(ngModel)]="TaulParchi.mobile"
+                    name="mobile"
+                  >
+                    <option value="">Select Mobile Number</option>
+                    <option *ngFor="let mobile of Farmers" [value]="mobile._id">
+                      {{ mobile.mobile }}
+                    </option>
+                  </select>
+
+                  <label for="firmCompany" class="form-label"
+                    >Firm / Company</label
+                  >
+                  <input
+                    id="firmCompany"
+                    class="form-control"
+                    [(ngModel)]="TaulParchi.firm_company"
+                    name="firmCompany"
+                    type="text"
+                    placeholder="Firm / Company"
+                  />
+
+                  <label for="rate" class="form-label">Rate</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-transparent border-0 p-0"
+                      >₹</span
+                    >
+                    <input
+                      id="rate"
+                      class="form-control"
+                      [(ngModel)]="TaulParchi.rate"
+                      name="rate"
+                      type="number"
+                      placeholder="Rate"
+                    />
+                  </div>
+                  <label for="tulai" class="form-label"
+                    >Tulai Options</label
+                  >
+                  <select
+                    id="tulai"
+                    class="form-select bg-warning text-dark"
+                    [(ngModel)]="TaulParchi.tulai"
+                    name="tulai"
+                  >
+                    <option value="">Select Tulai</option>
+                    <option value="Labour">Labour</option>
+                    <option value="Dharamkata">
+                      Dharamkanta
+                    </option>
+                  </select>
+                  <!-- <label for="assignedHammal" class="form-label"
+                    >Assigned Hammal</label
+                  >
+                  <select
+                    id="assignedHammal"
+                    class="form-select"
+                    [(ngModel)]="TaulParchi.hammal"
+                    name="assignedHammal"
+                  >
+                    <option value="">Select Hammal</option>
+                    <option *ngFor="let hammal of Hammals" [value]="hammal._id">
+                      {{ hammal.name }}
+                    </option>
+                  </select> -->
+                  <div *ngIf="TaulParchi.tulai === 'Labour'">
+                    <label for="assignedHammal" class="form-label">Assigned Hammal</label>
+                    <select
+                      id="assignedHammal"
+                      class="form-select"
+                      [(ngModel)]="TaulParchi.hammal"
+                      name="assignedHammal"
+                    >
+                      <option value="">Select Hammal</option>
+                      <option *ngFor="let hammal of Hammals" [ngValue]="hammal._id">
+                        {{ hammal.name }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <label for="boraQuantity" class="form-label"
+                    >Bora Quantity</label
+                  >
+                  <input
+                    id="boraQuantity"
+                    class="form-control"
+                    [(ngModel)]="TaulParchi.boraQuantity"
+                    name="boraQuantity"
+                    type="number"
+                    placeholder="Bora Quantity"
+                    (ngModelChange)="calculateNetWeight()"
+                  />
+
+                  <label for="unitBora" class="form-label">Unit Bora</label>
+                  <input
+                    id="unitBora"
+                    class="form-control"
+                    [(ngModel)]="TaulParchi.unitBora"
+                    name="unitBora"
+                    type="number"
+                    placeholder="Unit Bora"
+                    (ngModelChange)="calculateNetWeight()"
+                  />
+
+                  <!-- <label for="bharti" class="form-label">Bharti</label>
+                  <input
+                    id="bharti"
+                    class="form-control"
+                    [(ngModel)]="TaulParchi.bharti"
+                    name="bharti"
+                    type="number"
+                    placeholder="Bharti"
+                    (ngModelChange)="calculateNetWeight()"
+                  /> -->
+                  <label for="bharti" class="form-label">Bharti</label>
+                  <select
+                    id="bharti"
+                    class="form-control"
+                    [(ngModel)]="TaulParchi.bharti"
+                    name="bharti"
+                    (ngModelChange)="calculateNetWeight()"
+                  >
+                    <option value="" disabled selected>Select Bharti</option>
+                    <option value="30">30</option>
+                    <option value="60">60</option>
+                  </select>
+
+                  <label for="netWeight" class="form-label">Net Weight</label>
+                  <!-- The calculated Net Weight will be displayed here -->
+                  <input
+                    id="netWeight"
+                    class="form-control"
+                    [value]="TaulParchi.netWeight"
+                    name="netWeight"
+                    type="number"
+                    placeholder="Net Weight"
+                    readonly
+                  />
+
+                  <label for="crop" class="form-label">Crop</label>
+                  <select
+                    id="crop"
+                    class="form-select"
+                    [(ngModel)]="TaulParchi.crop"
+                    name="crop"
+                  >
+                    <option value="">Select Crop</option>
+                    <option *ngFor="let crop of Crops" [value]="crop._id">
+                      {{ crop.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-actions bg-light border">
+            <div class="text-end">
+              <button
+                class="btn btn-primary btn-lg m-3"
+                (click)="saveTaulParchi()"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>

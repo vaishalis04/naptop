@@ -33,23 +33,24 @@ export class TransactionlistComponent {
   }
 
   getTransactions() {
+    let params;
+   
     this.apiService
       .get('transaction', {
-        params: {
-          page: 1,
-          limit: 1000,
-        },
+         params
       })
       .subscribe({
         next: (res: any) => {
-          this.transactions = res.data;
+          this.transactions = res;
           this.transactionsCount = res.meta.total || this.transactions.length;
+          console.log("vasv",res)
         },
         error: (err: any) => {
           console.error('Error fetching transactions:', err);
         },
       });
   }
+  
   navigateToTransactionPage() {
     this.router.navigate(['/transaction']); // Adjust the path as needed
   }

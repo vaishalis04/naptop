@@ -13,149 +13,72 @@
                   <span class="ps-2 text-link">{{ transaction.id }}</span>
                 </b>
               </div>
-              <div class="col text-end">
-                <!-- <b>
-                                    <span class="text-muted pe-2">Date:</span>
-                                    <span class="text-link">{{ transaction.created_at | date: 'dd-MM-YYYY' }}</span>
-                                </b> -->
-              </div>
+              <div class="col text-end"></div>
             </div>
           </div>
           <div class="card-body bg-warning">
             <div class="row">
               <div class="col-12">
                 <div class="form-group mb-3">
-                  <label for="farmerName" class="form-label"
-                    >Farmer's Name</label
+                  <label for="transactionType" class="form-label"
+                    >Transaction Type</label
                   >
                   <select
-                    id="farmerName"
+                    id="transactionType"
                     class="form-select bg-warning text-dark"
-                    [(ngModel)]="transaction.farmer"
-                    name="farmerName"
+                    [(ngModel)]="transaction.transactionType"
+                    name="transactionType"
                   >
-                    <option value="">Select Farmer</option>
-                    <option *ngFor="let farmer of Farmers" [value]="farmer._id">
-                      {{ farmer.name }}
-                    </option>
+                    <option value="">Select</option>
+                    <option value="taulParchi">Taul Parchi</option>
+                    <option value="truckLoading">Truck Loading Parchi</option>
                   </select>
 
-                  <label for="village" class="form-label">Village</label>
-                  <select
-                    id="village"
-                    class="form-select bg-warning text-dark"
-                    [(ngModel)]="transaction.village"
-                    name="village"
-                  >
-                    <option value="">Select Village</option>
-                    <option
-                      *ngFor="let village of Villages"
-                      [value]="village._id"
+                  <!-- Taul Parchi Transaction Details -->
+                  <div *ngIf="transaction.transactionType === 'taulParchi'">
+                    <label for="transactionDetails" class="form-label mt-3"
+                      >Transaction Details</label
                     >
-                      {{ village.name }}
-                    </option>
-                  </select>
-
-                  <label for="firmCompany" class="form-label"
-                    >Firm / Company</label
-                  >
-                  <input
-                    id="firmCompany"
-                    class="form-control bg-warning text-dark"
-                    [(ngModel)]="transaction.firm_company"
-                    name="firmCompany"
-                    type="text"
-                    placeholder="Firm / Company"
-                  />
-
-                  <label for="rate" class="form-label">Rate</label>
-                  <div class="input-group">
-                    <span class="input-group-text bg-transparent border-0 p-0"
-                      >₹</span
+                    <select
+                      id="transactionDetails"
+                      class="form-select bg-warning text-dark"
+                      [(ngModel)]="transactions.transactionDetails"
+                      name="transactionDetails"
                     >
-                    <input
-                      id="rate"
-                      class="form-control bg-warning text-dark"
-                      [(ngModel)]="transaction.rate"
-                      name="rate"
-                      type="number"
-                      placeholder="Rate"
-                    />
+                      <option value="">Select</option>
+                      <option
+                        *ngFor="let parchi of TaulaParchi"
+                        [value]="parchi._id"
+                      >
+                        Farmer: {{ parchi?.farmerDetails.name }} -- Crop:
+                        {{ parchi?.cropDetails.name }} -- Weight:
+                        {{ parchi?.netWeight }} -- Rate: {{ parchi?.rate }}
+                      </option>
+                    </select>
                   </div>
 
-                  <label for="assignedHammal" class="form-label"
-                    >Assigned Hammal</label
-                  >
-                  <select
-                    id="assignedHammal"
-                    class="form-select bg-warning text-dark"
-                    [(ngModel)]="transaction.hammal"
-                    name="assignedHammal"
-                  >
-                    <option value="">Select Hammal</option>
-                    <option *ngFor="let hammal of Hammals" [value]="hammal._id">
-                      {{ hammal.name }}
-                    </option>
-                  </select>
-
-                  <label for="boraQuantity" class="form-label"
-                    >Bora Quantity</label
-                  >
-                  <input
-                    id="boraQuantity"
-                    class="form-control bg-warning text-dark"
-                    [(ngModel)]="transaction.boraQuantity"
-                    name="boraQuantity"
-                    type="number"
-                    placeholder="Bora Quantity"
-                    (ngModelChange)="calculateNetWeight()"
-                  />
-
-                  <label for="unitBora" class="form-label">Unit Bora</label>
-                  <input
-                    id="unitBora"
-                    class="form-control bg-warning text-dark"
-                    [(ngModel)]="transaction.unitBora"
-                    name="unitBora"
-                    type="number"
-                    placeholder="Unit Bora"
-                    (ngModelChange)="calculateNetWeight()"
-                  />
-
-                  <label for="bharti" class="form-label">Bharti</label>
-                  <input
-                    id="bharti"
-                    class="form-control bg-warning text-dark"
-                    [(ngModel)]="transaction.bharti"
-                    name="bharti"
-                    type="number"
-                    placeholder="Bharti"
-                    (ngModelChange)="calculateNetWeight()"
-                  />
-
-                  <label for="netWeight" class="form-label">Net Weight</label>
-                  <input
-                    id="netWeight"
-                    class="form-control bg-warning text-dark"
-                    [value]="transaction.netWeight"
-                    name="netWeight"
-                    type="number"
-                    placeholder="Net Weight"
-                    readonly
-                  />
-
-                  <label for="crop" class="form-label">Crop</label>
-                  <select
-                    id="crop"
-                    class="form-select bg-warning text-dark"
-                    [(ngModel)]="transaction.crop"
-                    name="crop"
-                  >
-                    <option value="">Select Crop</option>
-                    <option *ngFor="let crop of Crops" [value]="crop._id">
-                      {{ crop.name }}
-                    </option>
-                  </select>
+                  <!-- Truck Loading Parchi Transaction Details -->
+                  <div *ngIf="transaction.transactionType === 'truckLoading'">
+                    <label for="transactionDetails" class="form-label mt-3"
+                      >Transaction Details</label
+                    >
+                    <select
+                      id="transactionDetails"
+                      class="form-select bg-warning text-dark"
+                      [(ngModel)]="transactions.transactionDetails"
+                      name="transactionDetails"
+                    >
+                      <option value="">Select</option>
+                      <option
+                        *ngFor="let parchi of TruckLoadingParchi"
+                        [value]="parchi._id"
+                      >
+                        Farmer: {{ parchi?.partyDetails.name }} -- Crop:
+                        {{ parchi?.cropDetails.name }} -- Weight:
+                        {{ parchi?.netWeight }}
+                      </option>
+                    </select>
+                  </div>
 
                   <label for="transactionStatus" class="form-label"
                     >Transaction Status</label
@@ -166,6 +89,7 @@
                     [(ngModel)]="transaction.transactionStatus"
                     name="transactionStatus"
                   >
+                    <option value="">Select</option>
                     <option value="active">Active</option>
                     <option value="inactive">Inactive</option>
                   </select>
@@ -201,7 +125,7 @@
                     <option value="outgoing">Outgoing</option>
                   </select>
 
-                  <label for="paidAmount" class="form-label">Paid Amount</label>
+                  <!-- <label for="paidAmount" class="form-label">Paid Amount</label>
                   <input
                     id="paidAmount"
                     class="form-control bg-warning text-dark"
@@ -243,6 +167,53 @@
                     name="discount"
                     type="number"
                     placeholder="Discount"
+                  /> -->
+                  <label for="paidAmount" class="form-label">Paid Amount</label>
+                  <input
+                    id="paidAmount"
+                    class="form-control bg-warning text-dark"
+                    [(ngModel)]="transaction.paidAmount"
+                    name="paidAmount"
+                    type="number"
+                    placeholder="Paid Amount"
+                    (input)="calculateRemainingAmount()"
+                  />
+
+                  <label for="totalAmount" class="form-label"
+                    >Total Amount</label
+                  >
+                  <input
+                    id="totalAmount"
+                    class="form-control bg-warning text-dark"
+                    [(ngModel)]="transaction.totalAmount"
+                    name="totalAmount"
+                    type="number"
+                    placeholder="Total Amount"
+                    (input)="calculateRemainingAmount()"
+                  />
+
+                  <label for="remainingAmount" class="form-label"
+                    >Remaining Amount</label
+                  >
+                  <input
+                    id="remainingAmount"
+                    class="form-control bg-warning text-dark"
+                    [value]="transaction.remainingAmount"
+                    name="remainingAmount"
+                    type="number"
+                    placeholder="Remaining Amount"
+                    readonly
+                  />
+
+                  <label for="discount" class="form-label">Discount</label>
+                  <input
+                    id="discount"
+                    class="form-control bg-warning text-dark"
+                    [(ngModel)]="transaction.discount"
+                    name="discount"
+                    type="number"
+                    placeholder="Discount"
+                    (input)="calculateRemainingAmount()"
                   />
                 </div>
               </div>

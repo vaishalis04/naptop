@@ -13,9 +13,9 @@ module.exports = {
       if (!data.partyName) {
         return res.status(400).json({ error: "Party Name is required." });
       }
-      if (!data.vehicleNumber) {
-        return res.status(400).json({ error: "Vehicle Number is required." });
-      }
+      // if (!data.vehicleNumber) {
+      //   return res.status(400).json({ error: "Vehicle Number is required." });
+      // }
       if (!data.assignedHammal) {
         return res.status(400).json({ error: "Assigned Hammal is required." });
       }
@@ -59,8 +59,15 @@ module.exports = {
   },
   list: async (req, res, next) => {
     try {
-      const {crop, partyName, vehicleNumber, page, limit, order_by, order_in } =
-        req.query;
+      const {
+        crop,
+        partyName,
+        vehicleNumber,
+        page,
+        limit,
+        order_by,
+        order_in,
+      } = req.query;
 
       const _page = page ? parseInt(page) : 1;
       const _limit = limit ? parseInt(limit) : 20;
@@ -83,7 +90,7 @@ module.exports = {
       }
       if (crop) {
         query.crop = new mongoose.Types.ObjectId(crop);
-    }
+      }
 
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
@@ -129,6 +136,14 @@ module.exports = {
           },
         },
         {
+          $lookup: {
+            from: "users",
+            localField: "createdBy",
+            foreignField: "_id",
+            as: "userDetails",
+          },
+        },
+        {
           $unwind: "$cropDetails",
         },
         {
@@ -139,6 +154,9 @@ module.exports = {
         },
         {
           $unwind: "$partyDetails",
+        },
+        {
+          $unwind: "$userDetails",
         },
       ]);
 
@@ -178,29 +196,29 @@ module.exports = {
       }
 
       // Validate required fields
-      if (data.partyName === undefined) {
-        return res.status(400).json({ error: "Party Name is required." });
-      }
-      if (data.vehicleNumber === undefined) {
-        return res.status(400).json({ error: "Vehicle Number is required." });
-      }
-      if (data.deliveryLocation === undefined) {
-        return res
-          .status(400)
-          .json({ error: "Delivery Location is required." });
-      }
-      if (data.assignedHammal === undefined) {
-        return res.status(400).json({ error: "Assigned Hammal is required." });
-      }
-      if (data.boraQuantity === undefined) {
-        return res.status(400).json({ error: "Bora Quantity is required." });
-      }
-      if (data.unitBora === undefined) {
-        return res.status(400).json({ error: "Unit Bora is required." });
-      }
-      if (data.crop === undefined) {
-        return res.status(400).json({ error: "Crop is required." });
-      }
+      // if (data.partyName === undefined) {
+      //   return res.status(400).json({ error: "Party Name is required." });
+      // }
+      // if (data.vehicleNumber === undefined) {
+      //   return res.status(400).json({ error: "Vehicle Number is required." });
+      // }
+      // if (data.deliveryLocation === undefined) {
+      //   return res
+      //     .status(400)
+      //     .json({ error: "Delivery Location is required." });
+      // }
+      // if (data.assignedHammal === undefined) {
+      //   return res.status(400).json({ error: "Assigned Hammal is required." });
+      // }
+      // if (data.boraQuantity === undefined) {
+      //   return res.status(400).json({ error: "Bora Quantity is required." });
+      // }
+      // if (data.unitBora === undefined) {
+      //   return res.status(400).json({ error: "Unit Bora is required." });
+      // }
+      // if (data.crop === undefined) {
+      //   return res.status(400).json({ error: "Crop is required." });
+      // }
 
       // Calculate netWeight using the formula: netWeight = boraQuantity * unitBora
       data.netWeight = data.boraQuantity * data.unitBora;
@@ -294,13 +312,15 @@ module.exports = {
             },
             totalBharti: { $sum: "$bharti" },
             totalRate: {
-                $sum: { $add: [{ $multiply: ["$unitBora", "$boraQuantity"] }, "$bharti"] }
-            }
+              $sum: {
+                $add: [
+                  { $multiply: ["$unitBora", "$boraQuantity"] },
+                  "$bharti",
+                ],
+              },
+            },
           },
         },
-        
-    
-          
       ]);
 
       res.status(200).json(result);
@@ -458,7 +478,7 @@ module.exports = {
       throw new Error(error);
     }
   },
-   getWeightSummary : async (req, res) => {
+  getWeightSummary: async (req, res) => {
     try {
       const {
         partyName,
@@ -470,11 +490,11 @@ module.exports = {
         from,
         to,
       } = req.query;
-  
+
       const _page = page ? parseInt(page) : 1;
       const _limit = limit ? parseInt(limit) : 20;
       const _skip = (_page - 1) * _limit;
-  
+
       // Define sorting logic
       let sorting = {};
       if (order_by) {
@@ -482,7 +502,7 @@ module.exports = {
       } else {
         sorting["_id"] = -1; // Default sorting by _id (descending)
       }
-  
+
       const query = {};
       if (partyName) {
         query.partyName = mongoose.Types.ObjectId(partyName);
@@ -490,7 +510,7 @@ module.exports = {
       if (vehicleNumber) {
         query.vehicleNumber = new RegExp(vehicleNumber, "i");
       }
-  
+
       // Add date range filter based on 'from' and 'to' params
       if (from || to) {
         query.created_at = {};
@@ -501,17 +521,17 @@ module.exports = {
           query.created_at.$lte = new Date(to);
         }
       }
-  
+
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
-  
+
       console.log(query);
-  
+
       // Aggregate query to get truck loading data with filters, pagination, and sorting
       let result = await Model.aggregate([
         { $match: query },
         { $sort: sorting },
-  
+
         {
           $lookup: {
             from: "crops",
@@ -521,22 +541,24 @@ module.exports = {
           },
         },
         { $unwind: "$cropDetails" },
-  
+
         // Grouping by crop to calculate total weight and sum of weights
         {
           $group: {
             _id: "$cropDetails._id",
             cropName: { $first: "$cropDetails.name" },
-            totalWeight: { $sum: { $multiply: ["$boraQuantity", "$unitBora"] } }, // Calculate total weight
+            totalWeight: {
+              $sum: { $multiply: ["$boraQuantity", "$unitBora"] },
+            }, // Calculate total weight
           },
         },
         {
           $sort: sorting,
         },
       ]);
-  
+
       const resultCount = await Model.countDocuments(query);
-  
+
       // Respond with data and pagination metadata
       res.json({
         data: result,
@@ -552,6 +574,134 @@ module.exports = {
     } catch (error) {
       throw new Error(error);
     }
-  }
+  },
+  // getByUserRole: async function (req, res) {
+  //   const { id } = req.params;
+  //   const page = parseInt(req.query.page) || 1;
+  //   const limit = parseInt(req.query.limit) || 10;
+
+  //   try {
+  //     const skip = (page - 1) * limit;
+
+  //     const users = await Model.find({ createdBy: id, disabled: false })
+  //       .skip(skip)
+  //       .limit(limit);
+
+  //     const totalCount = await Model.countDocuments({
+  //       createdBy: id,
+  //       disabled: false,
+  //     });
+
+  //     const totalPages = Math.ceil(totalCount / limit);
+
+  //     res.status(200).json({ users, totalPages });
+  //   } catch (error) {
+  //     res.status(500).json({ message: "Failed to retrieve Users", error });
+  //   }
+  // },
+  getByUser: async function (req, res) {
+    const { id } = req.params;
+    const { page, limit, order_by, order_in } = req.query;
   
+    const _page = page ? parseInt(page) : 1;
+    const _limit = limit ? parseInt(limit) : 10;
+    const _skip = (_page - 1) * _limit;
+  
+    try {
+      // Define sorting logic
+      let sorting = {};
+      if (order_by) {
+        sorting[order_by] = order_in === "desc" ? -1 : 1;
+      } else {
+        sorting["_id"] = -1; // Default sorting by _id (descending)
+      }
+  
+      // Aggregation pipeline to filter by createdBy and disabled fields
+      const query = {
+        createdBy: mongoose.Types.ObjectId(id),
+        disabled: false
+      };
+  
+      let result = await Model.aggregate([
+        { $match: query }, // Match the query for createdBy and disabled fields
+        { $sort: sorting }, // Apply sorting
+        { $skip: _skip }, // Pagination: Skip results based on page
+        { $limit: _limit }, // Limit results per page
+        {
+          $lookup: {
+            from: "users", // Lookup related user details (adjust this as per your schema)
+            localField: "createdBy",
+            foreignField: "_id",
+            as: "userDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "parties",
+            localField: "partyName",
+            foreignField: "_id",
+            as: "partyDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "deliveries",
+            localField: "deliveryLocation",
+            foreignField: "_id",
+            as: "deliveryDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "hammals",
+            localField: "assignedHammal",
+            foreignField: "_id",
+            as: "hammalDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "crops",
+            localField: "crop",
+            foreignField: "_id",
+            as: "cropDetails",
+          },
+        },
+        { $unwind: "$userDetails" },
+        {
+          $unwind: "$cropDetails",
+        },
+        {
+          $unwind: "$hammalDetails",
+        },
+        {
+          $unwind: "$deliveryDetails",
+        },
+        {
+          $unwind: "$partyDetails",
+        }, // Unwind the user details if necessary
+      ]);
+  
+      // Count total number of results for pagination metadata
+      const resultCount = await Model.countDocuments(query);
+  
+      // Respond with data and pagination metadata
+      res.json({
+        data: result,
+        meta: {
+          current_page: _page,
+          from: _skip + 1,
+          last_page: Math.ceil(resultCount / _limit),
+          per_page: _limit,
+          to: _skip + result.length,
+          total: resultCount,
+        },
+      });
+    } catch (error) {
+      res.status(500).json({ message: 'Failed to retrieve users', error });
+    }
+  },
+ 
+
+
 };

@@ -44,6 +44,10 @@ type:Number
         type: Date,
         default: Date.now,
     },
+    createdBy: {
+        type: mongoose.Types.ObjectId,
+        ref: 'user', 
+    },
     updated_at: {
         type: Date,
     },

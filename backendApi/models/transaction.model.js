@@ -1,25 +1,30 @@
-const { type } = require("@hapi/joi/lib/extend");
 const mongoose = require("mongoose");
 
 const TransactionSchema = new mongoose.Schema({
-  farmer: {
-    type: mongoose.Types.ObjectId,
-    ref: 'farmers',
-  },
-  village: {
-    type: mongoose.Types.ObjectId,
-    ref: 'villages',
-  },
+  // farmer: {
+  //   type: mongoose.Types.ObjectId,
+  //   ref: 'farmers',
+  // },
+  // village: {
+  //   type: mongoose.Types.ObjectId,
+  //   ref: 'villages',
+  // },
+  transactionDetails: [{
+    farmerName: String,
+    firmName: String,
+    rate: Number,
+    netWeight: Number,
+  }],
   firm_company: {
     type: String,
   },
   rate: {
     type: Number,
   },
-  hammal: {
-    type: mongoose.Types.ObjectId,
-    ref: 'hammals',
-  },
+  // hammal: {
+  //   type: mongoose.Types.ObjectId,
+  //   ref: 'hammals',
+  // },
   boraQuantity: {
     type: Number,
   },
@@ -32,14 +37,19 @@ const TransactionSchema = new mongoose.Schema({
   netWeight: {
     type: Number,
   },
-  crop: {
-    type: mongoose.Types.ObjectId,
-    ref: 'crop',
-  },
-  transactionStatus: {
+  // crop: {
+  //   type: mongoose.Types.ObjectId,
+  //   ref: 'crop',
+  
+  // },
+  transactionStatus:{
     type: String,
-    enum: ['active', 'inactive'],  
-    default: 'active',
+    enum: ['active', 'inactive'],
+  },
+  transactionType: {
+    type: String,
+    enum: ['taulParchi', 'truckLoading'],  
+    
   },
   transactionMode: {
     type: String,

@@ -21,6 +21,9 @@ import { AccountsComponent } from './pages/accounts/accounts.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
 import { TransactionComponent } from './pages/transaction/transaction.component';
 import { TransactionlistComponent } from './pages/transactionlist/transactionlist.component';
+import { TruckComponent } from './pages/truck/truck.component';
+import { ListComponent } from './pages/list/list.component';
+import { MyListComponent } from './pages/my-list/my-list.component';
 
 export const routes: Routes = [
   {
@@ -131,7 +134,23 @@ export const routes: Routes = [
         component: TransactionlistComponent,
         data: { title: 'Transactionlist' },
       },
+      {
+        path: 'truck',
+        component: TruckComponent,
+        data: { title: 'truck' },
+      },
+      {
+        path: 'list',
+        component: ListComponent,
+        data: { title: 'list' },
+      },
+      {
+        path: 'my-list',
+        component: MyListComponent,
+        data: { title: 'my-list' },
+      },
     ],
+    
   },
   {
     path: '**',

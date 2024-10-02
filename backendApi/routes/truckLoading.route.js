@@ -7,6 +7,8 @@ router.get('/',  TruckLoadingController.list);
 
 router.post('/', TruckLoadingController.create);
 
+router.get('/userId/:id',  TruckLoadingController.getByUser);
+
 router.get('/getsummary', TruckLoadingController.getTransactionSummary);
 
 router.get('/getWeightsummary', TruckLoadingController.getWeightSummary);

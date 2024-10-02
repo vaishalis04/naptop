@@ -17,15 +17,15 @@ export const appConfig: ApplicationConfig = {
 export const roleWiseAccess = [
   {
     page: 'dashboard',
-    roles: ['Admin', 'User'],
+    roles: ['Admin', 'User','Employee','cashier'],
   },
   {
     page: 'taul-parchi',
-    roles: ['Admin'],
+    roles: ['Admin','Employee'],
   },
   {
     page: 'truck-loading-parchi',
-    roles: ['Admin'],
+    roles: ['Admin','Employee'],
   },
   {
     page: 'masters',
@@ -65,18 +65,30 @@ export const roleWiseAccess = [
   },
   {
     page: 'accounts',
-    roles: ['Admin'],
+    roles: ['Admin','cashier'],
   },
   {
     page: 'inventory',
-    roles: ['Admin'],
+    roles: ['Admin','cashier'],
   },
   {
     page: 'transaction',
-    roles: ['Admin'],
+    roles: ['Admin','cashier'],
   },
   {
     page: 'transactionlist',
+    roles: ['Admin','cashier'],
+  },
+  {
+    page: 'truck',
     roles: ['Admin'],
+  },
+  {
+    page: 'list',
+    roles: ['Admin'],
+  },
+  {
+    page: 'my-list',
+    roles: ['Admin','Employee'],
   },
 ];

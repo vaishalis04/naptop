@@ -36,11 +36,11 @@ export class SidebarComponent {
       icon: 'fi-rr-wallet',
       link: '/truck-loading-parchi'
     },
-    {
-      title: 'Masters',
-      icon: 'fi-rr-database',
-      link: '/masters'
-    },
+    // {
+    //   title: 'Masters',
+    //   icon: 'fi-rr-database',
+    //   link: '/masters'
+    // },
     {
       title:'Farmers',
       icon: 'fi-rr-database',
@@ -72,6 +72,11 @@ export class SidebarComponent {
       link:'/delivery'
     },
     {
+      title: 'Trucks',
+      icon: 'fi-rr-settings',
+      link: '/truck'
+    },
+    {
       title: 'Profile',
       icon: 'fi-rr-user',
       link: '/profile'
@@ -100,6 +105,16 @@ export class SidebarComponent {
       title: 'Transaction List',
       icon: 'fi-rr-settings',
       link: '/transactionlist'
+    },
+     {
+      title: 'List',
+      icon: 'fi-rr-settings',
+      link: '/list'
+    },
+    {
+      title: 'My List',
+      icon: 'fi-rr-settings',
+      link: '/my-list'
     }
   ];
 

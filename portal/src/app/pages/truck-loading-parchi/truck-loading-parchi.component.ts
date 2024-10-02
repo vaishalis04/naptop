@@ -56,7 +56,6 @@
 //     this.Hammals = this.sharedService.Hammals;
 //   }
 
-  
 //   saveTruckLoadingParchi() {
 //     if (!this.TruckLoadingParchi.party_name) {
 //       alert('Please select Party Name');
@@ -105,16 +104,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-truck-loading-parchi',
   standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    CommonModule
-  ],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './truck-loading-parchi.component.html',
-  styleUrls: ['./truck-loading-parchi.component.css']
+  styleUrls: ['./truck-loading-parchi.component.css'],
 })
 export class TruckLoadingParchiComponent implements OnInit {
-
+  Trucks: any[] = [];
   Parties: any[] = [];
   DeliveryLocations: any[] = [];
   Hammals: any[] = [];
@@ -124,27 +119,27 @@ export class TruckLoadingParchiComponent implements OnInit {
     partyName: '',
     vehicleNumber: '',
     deliveryLocation: '',
+    truck: '',
     assignedHammal: '',
     boraQuantity: 0,
     unitBora: 0,
     crop: 0,
-    rate:0,
-    netWeight: 0,  // To be calculated
+    rate: 0,
+    netWeight: 0, // To be calculated
     other: '',
     id: Date.now(),
     created_at: new Date(),
-  }
+    createdBy: '',
+  };
 
-  constructor(
-    private apiService: ApiService,
-    private router: Router
-  ) {}
+  constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchParties();
     this.fetchDeliveryLocations();
     this.fetchHammals();
     this.fetchCrops();
+    this.fetchTrucks();
   }
 
   calculateNetWeight(): void {
@@ -154,123 +149,168 @@ export class TruckLoadingParchiComponent implements OnInit {
 
   // Fetch Party Names from backend
   fetchParties() {
-    this.apiService.get('parties', {
+    this.apiService
+      .get('parties', {
         params: {
           page: 1,
-          limit: 1000
+          limit: 1000,
         },
-      }
-    ).subscribe({
-      next: (res: any) => {
-        this.Parties = res.data;
-      },
-      error: (err: any) => {
-        console.error('Error fetching Parties:', err);
-      }
-    });
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.Parties = res.data;
+        },
+        error: (err: any) => {
+          console.error('Error fetching Parties:', err);
+        },
+      });
   }
 
   // Fetch Delivery Locations from backend
   fetchDeliveryLocations() {
-    this.apiService.get('delivery', {
-      params: {
-        page: 1,
-        limit: 1000
-      },
-    }).subscribe({
-      next: (res: any) => {
-        this.DeliveryLocations = res.data;
-      },
-      error: (err: any) => {
-        console.error('Error fetching Delivery Locations:', err);
-      }
-    });
+    this.apiService
+      .get('delivery', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.DeliveryLocations = res.data;
+        },
+        error: (err: any) => {
+          console.error('Error fetching Delivery Locations:', err);
+        },
+      });
   }
 
   // Fetch Hammals from backend
   fetchHammals() {
-    this.apiService.get('hammals', {
-      params: {
-        page: 1,
-        limit: 1000
-      },
-    }).subscribe({
-      next: (res: any) => {
-        this.Hammals = res.data;
-      },
-      error: (err: any) => {
-        console.error('Error fetching Hammals:', err);
-      }
-    });
+    this.apiService
+      .get('hammals', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.Hammals = res.data;
+        },
+        error: (err: any) => {
+          console.error('Error fetching Hammals:', err);
+        },
+      });
   }
 
   // Fetch Crops from backend
   fetchCrops() {
-    this.apiService.get('crop', {
-      params: {
-        page: 1,
-        limit: 1000
-      },
-    }).subscribe({
-      next: (res: any) => {
-        this.Crops = res.data;
-      },
-      error: (err: any) => {
-        console.error('Error fetching Crops:', err);
-      }
-    });
+    this.apiService
+      .get('crop', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.Crops = res.data;
+        },
+        error: (err: any) => {
+          console.error('Error fetching Crops:', err);
+        },
+      });
   }
-
+  fetchTrucks() {
+    this.apiService
+      .get('truck', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.Trucks = res.data;
+        },
+        error: (err: any) => {
+          console.error('Error fetching trucks:', err);
+        },
+      });
+  }
   // Save TruckLoadingParchi to the backend
   saveTruckLoadingParchi() {
     if (!this.TruckLoadingParchi.partyName) {
-            alert('Please select Party Name');
-            return;
-          }
-          if (!this.TruckLoadingParchi.vehicleNumber) {
-            alert('Please enter Vehicle Number');
-            return;
-          }
-          if (!this.TruckLoadingParchi.deliveryLocation) {
-            alert('Please select Delivery Location');
-            return;
-          }
-          if (!this.TruckLoadingParchi.assignedHammal) {
-            alert('Please select Hammal');
-            return;
-          }
-          if (!this.TruckLoadingParchi.boraQuantity) {
-            alert('Please enter Bora Nag');
-            return;
-          }
-          if (!this.TruckLoadingParchi.unitBora) {
-            alert('Please enter Kaanta Weight');
-            return;
-          }
-          if (!this.TruckLoadingParchi.crop) {
-            alert('Please enter Jins');
-            return;
-          }
-          if (!this.TruckLoadingParchi.rate) {
-            alert('Please enter rate');
-            return;
-          }
-          if (!this.TruckLoadingParchi.other) {
-            alert('Please enter Other');
-            return;
-          }
-    
-    if (this.TruckLoadingParchi) {
-    this.apiService.post('truckloading', this.TruckLoadingParchi).subscribe({
-      next: (res: any) => {
-        console.log('TruckLoadingParchi saved successfully');
-        this.router.navigate(['/dashboard']);
-      },
-      error: (err: any) => {
-        console.error('Error saving TruckLoadingParchi:', err);
+      alert('Please select Party Name');
+      return;
+    }
+    // if (!this.TruckLoadingParchi.vehicleNumber) {
+    //   alert('Please enter Vehicle Number');
+    //   return;
+    // }
+    if (!this.TruckLoadingParchi.deliveryLocation) {
+      alert('Please select Delivery Location');
+      return;
+    }
+    if (!this.TruckLoadingParchi.assignedHammal) {
+      alert('Please select Hammal');
+      return;
+    }
+    if (!this.TruckLoadingParchi.boraQuantity) {
+      alert('Please enter Bora Nag');
+      return;
+    }
+    if (!this.TruckLoadingParchi.unitBora) {
+      alert('Please enter Kaanta Weight');
+      return;
+    }
+    if (!this.TruckLoadingParchi.crop) {
+      alert('Please enter Jins');
+      return;
+    }
+    if (!this.TruckLoadingParchi.rate) {
+      alert('Please enter rate');
+      return;
+    }
+    if (!this.TruckLoadingParchi.other) {
+      alert('Please enter Other');
+      return;
+    }
+    let user = null;
+    try {
+      const storedUserData = localStorage.getItem('user');
+      if (storedUserData) {
+        user = JSON.parse(storedUserData);
+      } else {
+        throw new Error('No user data found in localStorage.');
       }
-    });
-  }else {
-    alert('Please fill in all required fields.');
-  }}
+    } catch (error) {
+      console.error('Error retrieving user data:');
+      alert('Unable to retrieve user data. Please log in again.');
+      return;
+    }
+
+    if (!user || !user.id) {
+      alert('User not logged in. Please log in again.');
+      return;
+    }
+
+    // Add the createdBy field to TruckLoadingParchi object
+    this.TruckLoadingParchi.createdBy = user.id;
+
+    if (this.TruckLoadingParchi) {
+      this.apiService.post('truckloading', this.TruckLoadingParchi).subscribe({
+        next: (res: any) => {
+          console.log('TruckLoadingParchi saved successfully');
+          this.router.navigate(['/dashboard']);
+        },
+        error: (err: any) => {
+          console.error('Error saving TruckLoadingParchi:', err);
+        },
+      });
+    } else {
+      alert('Please fill in all required fields.');
+    }
+  }
 }
