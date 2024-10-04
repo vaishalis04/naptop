@@ -131,7 +131,7 @@
                 <td>{{ taulaParchi?.unitBora }}</td>
                 <td>{{ taulaParchi?.bharti }}Kg</td>
                 <td>{{ taulaParchi?.netWeight }}Kg</td>
-                <td>{{ taulaParchi?.hammalDetails.name }}</td>
+                <td>{{ taulaParchi?.hammalDetails?.name || 'null'}}</td>
                 <td>{{ taulaParchi?.cropDetails.name }}</td>
                 <!-- <td>
                       <button
@@ -206,7 +206,7 @@
                 <td>{{ truckLoadingParchi.partyDetails.name }}</td>
                 <!-- <td>{{ truckLoadingParchi.vehicleNumber }}</td> -->
                 <td>{{ truckLoadingParchi.deliveryDetails.name }}</td>
-                <td>{{ truckLoadingParchi.hammalDetails.name }}</td>
+                <td>{{ truckLoadingParchi.hammalDetails.name || 'null' }}</td>
                 <td>{{ truckLoadingParchi.boraQuantity }}</td>
                 <td>{{ truckLoadingParchi.unitBora }}Kg</td>
                 <td>{{ truckLoadingParchi.netWeight }}Kg</td>

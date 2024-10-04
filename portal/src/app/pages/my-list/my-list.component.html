@@ -143,15 +143,15 @@
                 >
                   <td>{{ currentPage * perPage - perPage + (i + 1) }}</td>
                   <td>{{ taulaParchi.created_at | date : "dd-MM-YYYY" }}</td>
-                  <td>{{ taulaParchi?.farmerDetails.name }}</td>
+                  <td>{{ taulaParchi?.farmerDetails?.name || 'null'}}</td>
                   <!-- <td>{{ taulaParchi?.villageDetails.name }}</td> -->
                   <td>{{ taulaParchi?.boraQuantity }}</td>
                   <td>{{ taulaParchi?.unitBora }}</td>
                   <td>{{ taulaParchi?.bharti }}Kg</td>
                   <td>{{ taulaParchi?.netWeight }}Kg</td>
                   <td>{{ taulaParchi?.rate }}</td>
-                  <td>{{ taulaParchi?.hammalDetails.name }}</td>
-                  <td>{{ taulaParchi?.cropDetails.name }}</td><!-- <td>
+                  <td>{{ taulaParchi?.hammalDetails?.name || 'null' }}</td>
+                  <td>{{ taulaParchi?.cropDetails?.name || 'null'}}</td><!-- <td>
                         <button
                           type="button"
                           class="btn btn-primary"

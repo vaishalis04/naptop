@@ -33,16 +33,16 @@ module.exports = {
       data.netWeight = data.boraQuantity * data.unitBora;
 
       // Optional: You can check for duplicates or other conditions if required.
-      const existingTruckLoading = await Model.findOne({
-        partyName: data.partyName,
-        vehicleNumber: data.vehicleNumber,
-      });
-      if (existingTruckLoading) {
-        return res.status(400).json({
-          error:
-            "A Truck Loading entry already exists with the same Party Name and Vehicle Number.",
-        });
-      }
+      // const existingTruckLoading = await Model.findOne({
+      //   partyName: data.partyName,
+      //   vehicleNumber: data.vehicleNumber,
+      // });
+      // if (existingTruckLoading) {
+      //   return res.status(400).json({
+      //     error:
+      //       "A Truck Loading entry already exists with the same Party Name and Vehicle Number.",
+      //   });
+      // }
 
       // Create a new TruckLoading instance with the provided data
       const newTruckLoading = new Model(data);

@@ -38,7 +38,7 @@ export class MyListComponent {
     ngOnInit(): void {
       this.setTabState('taulparchi');
       this.fetchCrops()
-      this.fetchUsers()
+    
   
     }
     getCurrentUser() {
@@ -123,36 +123,39 @@ export class MyListComponent {
     getTruckLoadingParchis() {
       const userData = JSON.parse(localStorage.getItem('user') || '{}');
       const userId = userData.id;
-      console.log("userId",userId)
+      console.log("userId", userId);
     
       if (!userId) {
         console.error('User ID not found in local storage.');
         return;
       }
-      let params:any={
+    
+      let params: any = {
         page: this.currentPage,
         limit: this.perPage,
-        // crop:this.selectedCrop
       };
-      if(this.selectedCrop){
-        params.crop=this.selectedCrop
+      
+      if (this.selectedCrop) {
+        params.crop = this.selectedCrop;
       }
+    
+      // Use backticks for the URL to include the userId dynamically
       this.apiService
-        .get('truckloading/userId/${userId}', {
-          params
+        .get(`truckloading/userId/${userId}`, {
+          params,
         })
         .subscribe({
           next: (res: any) => {
             this.TruckLoadingParchi = res.data;
             console.log('loading...', res.data);
-            this.TruckLoadingParchiCount =
-              res.total || this.TruckLoadingParchi.length;
+            this.TruckLoadingParchiCount = res.meta?.total || this.TruckLoadingParchi.length;
           },
           error: (err: any) => {
             console.error('Error fetching TruckLoadingParchis:', err);
           },
         });
     }
+    
     
     fetchCrops() {
       this.apiService.get('crop',{
@@ -169,21 +172,7 @@ export class MyListComponent {
         }
       });
     }
-    fetchUsers() {
-      this.apiService.get('user',{
-        params: {
-          page: 1,
-          limit: 1000
-        },
-      }).subscribe({
-        next: (res: any) => {
-          this.Users = res.data;
-        },
-        error: (err: any) => {
-          console.error('Error fetching Users:', err);
-        }
-      });
-    }
+    
   }
   
 

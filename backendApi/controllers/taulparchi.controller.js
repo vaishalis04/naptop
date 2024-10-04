@@ -894,9 +894,35 @@ getByUser: async function (req, res, next) {
               },
           },
           {
+            $lookup: {
+              from: "farmers",
+              localField: "farmer",
+              foreignField: "_id",
+              as: "farmerDetails",
+            },
+          },
+          {
+            $lookup: {
+              from: "villages",
+              localField: "village",
+              foreignField: "_id",
+              as: "villageDetails",
+            },
+          },
+          {
+            $lookup: {
+              from: "hammals",
+              localField: "hammal",
+              foreignField: "_id",
+              as: "hammalDetails",
+            },
+          },
+          {
             $unwind: "$cropDetails",
           },
           { $unwind: "$userDetails" },
+          { $unwind: "$hammalDetails" },
+          { $unwind: "$farmerDetails" },
       ]);
 
       console.log("Result:", result);

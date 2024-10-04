@@ -60890,7 +60890,7 @@ function AccountsComponent_Conditional_38_div_1_Template(rf, ctx) {
     \u0275\u0275textInterpolate2(" ", item_r6.cropName, ": \u20B9", item_r6.totalRate, " ");
   }
 }
-function AccountsComponent_Conditional_38_tr_30_Template(rf, ctx) {
+function AccountsComponent_Conditional_38_tr_28_Template(rf, ctx) {
   if (rf & 1) {
     const _r10 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "tr")(1, "td");
@@ -60915,17 +60915,14 @@ function AccountsComponent_Conditional_38_tr_30_Template(rf, ctx) {
     \u0275\u0275elementStart(14, "td");
     \u0275\u0275text(15);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "td");
-    \u0275\u0275text(17);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "td")(19, "button", 19);
-    \u0275\u0275listener("click", function AccountsComponent_Conditional_38_tr_30_Template_button_click_19_listener() {
+    \u0275\u0275elementStart(16, "td")(17, "button", 19);
+    \u0275\u0275listener("click", function AccountsComponent_Conditional_38_tr_28_Template_button_click_17_listener() {
       const restoredCtx = \u0275\u0275restoreView(_r10);
       const taulaParchi_r7 = restoredCtx.$implicit;
       const ctx_r9 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r9.printReceipt(taulaParchi_r7, "taulparchi"));
     });
-    \u0275\u0275text(20, " Print Receipt ");
+    \u0275\u0275text(18, " Print Receipt ");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -60935,17 +60932,15 @@ function AccountsComponent_Conditional_38_tr_30_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(ctx_r5.currentPage * ctx_r5.perPage - ctx_r5.perPage + (i_r8 + 1));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 8, taulaParchi_r7.created_at, "dd-MM-YYYY"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 7, taulaParchi_r7.created_at, "dd-MM-YYYY"));
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.farmerDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.villageDetails.name);
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r7.firm_company);
+    \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.firm_company);
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate1("\u20B9", taulaParchi_r7.rate, "");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.hammalDetails.name);
+    \u0275\u0275textInterpolate((taulaParchi_r7 == null ? null : taulaParchi_r7.hammalDetails == null ? null : taulaParchi_r7.hammalDetails.name) || "null");
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.cropDetails.name);
   }
@@ -60970,29 +60965,26 @@ function AccountsComponent_Conditional_38_Template(rf, ctx) {
     \u0275\u0275text(16, "Farmer");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(17, "th", 27);
-    \u0275\u0275text(18, "Village");
+    \u0275\u0275text(18, "Firm/Company");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(19, "th", 27);
-    \u0275\u0275text(20, "Firm/Company");
+    \u0275\u0275text(20, "Rate");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(21, "th", 27);
-    \u0275\u0275text(22, "Rate");
+    \u0275\u0275text(22, "Hammal");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(23, "th", 27);
-    \u0275\u0275text(24, "Hammal");
+    \u0275\u0275text(24, "Crop");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(25, "th", 27);
-    \u0275\u0275text(26, "Crop");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "th", 27);
-    \u0275\u0275text(28, "Action");
+    \u0275\u0275text(26, "Action");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(29, "tbody");
-    \u0275\u0275template(30, AccountsComponent_Conditional_38_tr_30_Template, 21, 11, "tr", 28);
-    \u0275\u0275pipe(31, "paginate");
+    \u0275\u0275elementStart(27, "tbody");
+    \u0275\u0275template(28, AccountsComponent_Conditional_38_tr_28_Template, 19, 10, "tr", 28);
+    \u0275\u0275pipe(29, "paginate");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(32, "pagination-controls", 29);
-    \u0275\u0275listener("pageChange", function AccountsComponent_Conditional_38_Template_pagination_controls_pageChange_32_listener($event) {
+    \u0275\u0275elementStart(30, "pagination-controls", 29);
+    \u0275\u0275listener("pageChange", function AccountsComponent_Conditional_38_Template_pagination_controls_pageChange_30_listener($event) {
       \u0275\u0275restoreView(_r12);
       const ctx_r11 = \u0275\u0275nextContext();
       ctx_r11.currentPage = $event;
@@ -61004,8 +60996,8 @@ function AccountsComponent_Conditional_38_Template(rf, ctx) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance();
     \u0275\u0275property("ngForOf", ctx_r1.TaulParchiTransactionSummary);
-    \u0275\u0275advance(29);
-    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(31, 2, ctx_r1.TaulaParchi, \u0275\u0275pureFunction3(5, _c08, ctx_r1.perPage, ctx_r1.currentPage, ctx_r1.TaulaParchiCount)));
+    \u0275\u0275advance(27);
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(29, 2, ctx_r1.TaulaParchi, \u0275\u0275pureFunction3(5, _c08, ctx_r1.perPage, ctx_r1.currentPage, ctx_r1.TaulaParchiCount)));
   }
 }
 function AccountsComponent_Conditional_39_div_1_Template(rf, ctx) {
@@ -61020,7 +61012,7 @@ function AccountsComponent_Conditional_39_div_1_Template(rf, ctx) {
     \u0275\u0275textInterpolate2(" ", item_r15.cropName, ": \u20B9", item_r15.totalRate, " ");
   }
 }
-function AccountsComponent_Conditional_39_tr_36_Template(rf, ctx) {
+function AccountsComponent_Conditional_39_tr_34_Template(rf, ctx) {
   if (rf & 1) {
     const _r19 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "tr")(1, "td");
@@ -61054,17 +61046,14 @@ function AccountsComponent_Conditional_39_tr_36_Template(rf, ctx) {
     \u0275\u0275elementStart(20, "td");
     \u0275\u0275text(21);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(22, "td");
-    \u0275\u0275text(23);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(24, "td")(25, "button", 19);
-    \u0275\u0275listener("click", function AccountsComponent_Conditional_39_tr_36_Template_button_click_25_listener() {
+    \u0275\u0275elementStart(22, "td")(23, "button", 19);
+    \u0275\u0275listener("click", function AccountsComponent_Conditional_39_tr_34_Template_button_click_23_listener() {
       const restoredCtx = \u0275\u0275restoreView(_r19);
       const truckLoadingParchi_r16 = restoredCtx.$implicit;
       const ctx_r18 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r18.printReceipt(truckLoadingParchi_r16, "truckloading"));
     });
-    \u0275\u0275text(26, " Print Receipt ");
+    \u0275\u0275text(24, " Print Receipt ");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -61073,25 +61062,23 @@ function AccountsComponent_Conditional_39_tr_36_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(i_r17 + 1);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(5, 11, truckLoadingParchi_r16.created_at, "dd-MM-YYYY"), " ");
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(5, 10, truckLoadingParchi_r16.created_at, "dd-MM-YYYY"), " ");
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(truckLoadingParchi_r16.partyDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r16.vehicleNumber);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16 == null ? null : truckLoadingParchi_r16.deliveryDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r16.deliveryDetails.name);
+    \u0275\u0275textInterpolate((truckLoadingParchi_r16.hammalDetails == null ? null : truckLoadingParchi_r16.hammalDetails.name) || "null");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r16.hammalDetails.name);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16 == null ? null : truckLoadingParchi_r16.boraQuantity);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r16.boraQuantity);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16 == null ? null : truckLoadingParchi_r16.netWeight);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r16.netWeight);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16 == null ? null : truckLoadingParchi_r16.cropDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r16.cropDetails.name);
+    \u0275\u0275textInterpolate1("\u20B9", truckLoadingParchi_r16 == null ? null : truckLoadingParchi_r16.rate, "");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1("\u20B9", truckLoadingParchi_r16.rate, "");
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r16.other);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r16 == null ? null : truckLoadingParchi_r16.other);
   }
 }
 var _c18 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
@@ -61114,38 +61101,35 @@ function AccountsComponent_Conditional_39_Template(rf, ctx) {
     \u0275\u0275text(16, "Party Name");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(17, "th", 27);
-    \u0275\u0275text(18, "Vehicle Number");
+    \u0275\u0275text(18, "Delivery Location");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(19, "th", 27);
-    \u0275\u0275text(20, "Delivery Location");
+    \u0275\u0275text(20, "Hammal");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(21, "th", 27);
-    \u0275\u0275text(22, "Hammal");
+    \u0275\u0275text(22, "Bora Nag");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(23, "th", 27);
-    \u0275\u0275text(24, "Bora Nag");
+    \u0275\u0275text(24, "Kaanta Weight");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(25, "th", 27);
-    \u0275\u0275text(26, "Kaanta Weight");
+    \u0275\u0275text(26, "Crop");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(27, "th", 27);
-    \u0275\u0275text(28, "Crop");
+    \u0275\u0275text(28, "Rate");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(29, "th", 27);
-    \u0275\u0275text(30, "Rate");
+    \u0275\u0275text(30, "Other");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(31, "th", 27);
-    \u0275\u0275text(32, "Other");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(33, "th", 27);
-    \u0275\u0275text(34, "Action");
+    \u0275\u0275text(32, "Action");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(35, "tbody");
-    \u0275\u0275template(36, AccountsComponent_Conditional_39_tr_36_Template, 27, 14, "tr", 28);
-    \u0275\u0275pipe(37, "paginate");
+    \u0275\u0275elementStart(33, "tbody");
+    \u0275\u0275template(34, AccountsComponent_Conditional_39_tr_34_Template, 25, 13, "tr", 28);
+    \u0275\u0275pipe(35, "paginate");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(38, "pagination-controls", 32);
-    \u0275\u0275listener("pageChange", function AccountsComponent_Conditional_39_Template_pagination_controls_pageChange_38_listener($event) {
+    \u0275\u0275elementStart(36, "pagination-controls", 32);
+    \u0275\u0275listener("pageChange", function AccountsComponent_Conditional_39_Template_pagination_controls_pageChange_36_listener($event) {
       \u0275\u0275restoreView(_r21);
       const ctx_r20 = \u0275\u0275nextContext();
       ctx_r20.currentPage = $event;
@@ -61157,8 +61141,8 @@ function AccountsComponent_Conditional_39_Template(rf, ctx) {
     const ctx_r2 = \u0275\u0275nextContext();
     \u0275\u0275advance();
     \u0275\u0275property("ngForOf", ctx_r2.TruckLoadingParchiTransactionSummary);
-    \u0275\u0275advance(35);
-    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(37, 2, ctx_r2.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c18, ctx_r2.perPage, ctx_r2.currentPage)));
+    \u0275\u0275advance(33);
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(35, 2, ctx_r2.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c18, ctx_r2.perPage, ctx_r2.currentPage)));
   }
 }
 var _c22 = (a0) => ({ active: a0 });
@@ -61471,7 +61455,7 @@ _AccountsComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ typ
     });
     \u0275\u0275text(37, " Submit ");
     \u0275\u0275elementEnd()()();
-    \u0275\u0275template(38, AccountsComponent_Conditional_38_Template, 33, 9)(39, AccountsComponent_Conditional_39_Template, 39, 8);
+    \u0275\u0275template(38, AccountsComponent_Conditional_38_Template, 31, 9)(39, AccountsComponent_Conditional_39_Template, 37, 8);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -61590,7 +61574,7 @@ function InventoryComponent_Conditional_38_tr_30_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate1("", taulaParchi_r7 == null ? null : taulaParchi_r7.netWeight, "Kg");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.hammalDetails.name);
+    \u0275\u0275textInterpolate((taulaParchi_r7 == null ? null : taulaParchi_r7.hammalDetails == null ? null : taulaParchi_r7.hammalDetails.name) || "null");
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.cropDetails.name);
   }
@@ -61711,7 +61695,7 @@ function InventoryComponent_Conditional_39_tr_32_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(truckLoadingParchi_r14.deliveryDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r14.hammalDetails.name);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r14.hammalDetails.name || "null");
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(truckLoadingParchi_r14.boraQuantity);
     \u0275\u0275advance(2);
@@ -63047,7 +63031,7 @@ function ListComponent_Conditional_39_tr_33_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(taulaParchi_r13 == null ? null : taulaParchi_r13.rate);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r13 == null ? null : taulaParchi_r13.hammalDetails.name);
+    \u0275\u0275textInterpolate((taulaParchi_r13 == null ? null : taulaParchi_r13.hammalDetails == null ? null : taulaParchi_r13.hammalDetails.name) || "null");
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(taulaParchi_r13 == null ? null : taulaParchi_r13.cropDetails.name);
     \u0275\u0275advance();
@@ -63406,7 +63390,7 @@ _ListComponent.\u0275fac = function ListComponent_Factory(t) {
 _ListComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ListComponent, selectors: [["app-list"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 41, vars: 11, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-item-center"], [1, "card-body"], [1, "nav", "nav-pills", "nav-stacked"], [1, "nav-item"], [1, "nav-link", 3, "ngClass", "click"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["for", "crop"], ["name", "crop", "id", "crop", 1, "form-control", 3, "ngModel", "ngModelChange"], [3, "value"], [3, "value", 4, "ngFor", "ngForOf"], ["class", "col", 4, "ngIf"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], ["for", "user"], ["name", "user", "id", "user", 1, "form-control", 3, "ngModel", "ngModelChange"], ["class", "col-auto", 4, "ngFor", "ngForOf"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], ["scope", "col", 4, "ngIf"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "col-auto"], ["type", "button", 1, "btn", "btn-primary"], [4, "ngIf"], ["id", "truckloading", 3, "pageChange"]], template: function ListComponent_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4");
-    \u0275\u0275text(3, "Added Details");
+    \u0275\u0275text(3, "All Users Details");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(4, "div", 2)(5, "ul", 3)(6, "li", 4)(7, "a", 5);
     \u0275\u0275listener("click", function ListComponent_Template_a_click_7_listener() {
@@ -63603,7 +63587,7 @@ function MyListComponent_Conditional_39_tr_32_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 10, taulaParchi_r12.created_at, "dd-MM-YYYY"));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(taulaParchi_r12 == null ? null : taulaParchi_r12.farmerDetails.name);
+    \u0275\u0275textInterpolate((taulaParchi_r12 == null ? null : taulaParchi_r12.farmerDetails == null ? null : taulaParchi_r12.farmerDetails.name) || "null");
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(taulaParchi_r12 == null ? null : taulaParchi_r12.boraQuantity);
     \u0275\u0275advance(2);
@@ -63615,9 +63599,9 @@ function MyListComponent_Conditional_39_tr_32_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(taulaParchi_r12 == null ? null : taulaParchi_r12.rate);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r12 == null ? null : taulaParchi_r12.hammalDetails.name);
+    \u0275\u0275textInterpolate((taulaParchi_r12 == null ? null : taulaParchi_r12.hammalDetails == null ? null : taulaParchi_r12.hammalDetails.name) || "null");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r12 == null ? null : taulaParchi_r12.cropDetails.name);
+    \u0275\u0275textInterpolate((taulaParchi_r12 == null ? null : taulaParchi_r12.cropDetails == null ? null : taulaParchi_r12.cropDetails.name) || "null");
   }
 }
 var _c012 = (a0, a1, a3) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a3 });
@@ -63842,7 +63826,6 @@ var _MyListComponent = class _MyListComponent {
   ngOnInit() {
     this.setTabState("taulparchi");
     this.fetchCrops();
-    this.fetchUsers();
   }
   getCurrentUser() {
     return this.authService.currentUser;
@@ -63919,18 +63902,17 @@ var _MyListComponent = class _MyListComponent {
     let params = {
       page: this.currentPage,
       limit: this.perPage
-      // crop:this.selectedCrop
     };
     if (this.selectedCrop) {
       params.crop = this.selectedCrop;
     }
-    this.apiService.get("truckloading/userId/${userId}", {
+    this.apiService.get(`truckloading/userId/${userId}`, {
       params
     }).subscribe({
       next: (res) => {
         this.TruckLoadingParchi = res.data;
         console.log("loading...", res.data);
-        this.TruckLoadingParchiCount = res.total || this.TruckLoadingParchi.length;
+        this.TruckLoadingParchiCount = res.meta?.total || this.TruckLoadingParchi.length;
       },
       error: (err) => {
         console.error("Error fetching TruckLoadingParchis:", err);
@@ -63949,21 +63931,6 @@ var _MyListComponent = class _MyListComponent {
       },
       error: (err) => {
         console.error("Error fetching Crops:", err);
-      }
-    });
-  }
-  fetchUsers() {
-    this.apiService.get("user", {
-      params: {
-        page: 1,
-        limit: 1e3
-      }
-    }).subscribe({
-      next: (res) => {
-        this.Users = res.data;
-      },
-      error: (err) => {
-        console.error("Error fetching Users:", err);
       }
     });
   }

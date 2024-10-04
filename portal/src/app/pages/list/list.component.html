@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header d-flex justify-content-center align-item-center">
-      <h4>Added Details</h4>
+      <h4>All Users Details</h4>
     </div>
     <div class="card-body">
       <ul class="nav nav-pills nav-stacked">
@@ -151,7 +151,7 @@
                   <td>{{ taulaParchi?.bharti }}Kg</td>
                   <td>{{ taulaParchi?.netWeight }}Kg</td>
                   <td>{{ taulaParchi?.rate }}</td>
-                  <td>{{ taulaParchi?.hammalDetails.name }}</td>
+                  <td>{{ taulaParchi?.hammalDetails?.name || 'null' }}</td>
                   <td>{{ taulaParchi?.cropDetails.name }}</td>
                   <td *ngIf="getCurrentUser()?.role === 'Admin'">{{ taulaParchi?.userDetails.name }}</td>                  <!-- <td>
                         <button

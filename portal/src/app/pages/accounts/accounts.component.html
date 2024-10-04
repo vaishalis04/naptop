@@ -95,7 +95,7 @@
                 <th scope="col">Sr.no</th>
                 <th scope="col">Date</th>
                 <th scope="col">Farmer</th>
-                <th scope="col">Village</th>
+                <!-- <th scope="col">Village</th> -->
                 <th scope="col">Firm/Company</th>
                 <th scope="col">Rate</th>
                 <th scope="col">Hammal</th>
@@ -121,10 +121,10 @@
                 <td>{{ currentPage * perPage - perPage + (i + 1) }}</td>
                 <td>{{ taulaParchi.created_at | date : "dd-MM-YYYY" }}</td>
                 <td>{{ taulaParchi?.farmerDetails.name }}</td>
-                <td>{{ taulaParchi?.villageDetails.name }}</td>
-                <td>{{ taulaParchi.firm_company }}</td>
+                <!-- <td>{{ taulaParchi?.villageDetails.name }}</td> -->
+                <td>{{ taulaParchi?.firm_company }}</td>
                 <td>₹{{ taulaParchi.rate }}</td>
-                <td>{{ taulaParchi?.hammalDetails.name }}</td>
+                <td>{{ taulaParchi?.hammalDetails?.name || 'null'}}</td>
                 <td>{{ taulaParchi?.cropDetails.name }}</td>
                 <td>
                   <button
@@ -171,7 +171,7 @@
                 <th scope="col">Sr.no</th>
                 <th scope="col">Date</th>
                 <th scope="col">Party Name</th>
-                <th scope="col">Vehicle Number</th>
+                <!-- <th scope="col">Vehicle Number</th> -->
                 <th scope="col">Delivery Location</th>
                 <th scope="col">Hammal</th>
                 <th scope="col">Bora Nag</th>
@@ -200,14 +200,14 @@
                   {{ truckLoadingParchi.created_at | date : "dd-MM-YYYY" }}
                 </td>
                 <td>{{ truckLoadingParchi.partyDetails.name }}</td>
-                <td>{{ truckLoadingParchi.vehicleNumber }}</td>
-                <td>{{ truckLoadingParchi.deliveryDetails.name }}</td>
-                <td>{{ truckLoadingParchi.hammalDetails.name }}</td>
-                <td>{{ truckLoadingParchi.boraQuantity }}</td>
-                <td>{{ truckLoadingParchi.netWeight }}</td>
-                <td>{{ truckLoadingParchi.cropDetails.name }}</td>
-                <td>₹{{ truckLoadingParchi.rate }}</td>
-                <td>{{ truckLoadingParchi.other }}</td>
+                <!-- <td>{{ truckLoadingParchi.vehicleNumber }}</td> -->
+                <td>{{ truckLoadingParchi?.deliveryDetails.name }}</td>
+                <td>{{ truckLoadingParchi.hammalDetails?.name || 'null' }}</td>
+                <td>{{ truckLoadingParchi?.boraQuantity }}</td>
+                <td>{{ truckLoadingParchi?.netWeight }}</td>
+                <td>{{ truckLoadingParchi?.cropDetails.name }}</td>
+                <td>₹{{ truckLoadingParchi?.rate }}</td>
+                <td>{{ truckLoadingParchi?.other }}</td>
                 <td>
                   <button
                     type="button"
