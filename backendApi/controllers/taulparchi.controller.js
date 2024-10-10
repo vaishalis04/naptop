@@ -576,22 +576,22 @@ module.exports = {
             as: "farmerDetails",
           },
         },
-        {
-          $lookup: {
-            from: "villages",
-            localField: "village",
-            foreignField: "_id",
-            as: "villageDetails",
-          },
-        },
-        {
-          $lookup: {
-            from: "hammals",
-            localField: "hammal",
-            foreignField: "_id",
-            as: "hammalDetails",
-          },
-        },
+        // {
+        //   $lookup: {
+        //     from: "villages",
+        //     localField: "village",
+        //     foreignField: "_id",
+        //     as: "villageDetails",
+        //   },
+        // },
+        // {
+        //   $lookup: {
+        //     from: "hammals",
+        //     localField: "hammal",
+        //     foreignField: "_id",
+        //     as: "hammalDetails",
+        //   },
+        // },
         {
           $lookup: {
             from: "crops",
@@ -601,8 +601,8 @@ module.exports = {
           },
         },
         { $unwind: "$farmerDetails" },
-        { $unwind: "$villageDetails" },
-        { $unwind: "$hammalDetails" },
+        // { $unwind: "$villageDetails" },
+        // { $unwind: "$hammalDetails" },
         { $unwind: "$cropDetails" },
 
         // Grouping by crop to calculate sum of rates
@@ -615,7 +615,7 @@ module.exports = {
         },
         { $sort: sorting },
       ]);
-
+console.log("result",result)
       // Count total number of results for pagination metadata
       const resultCount = await Model.countDocuments(query);
 
@@ -635,15 +635,144 @@ module.exports = {
       throw new Error(error);
     }
   },
+  // getWeightSummary: async (req, res) => {
+  //   try {
+  //     const { firm_company, page, limit, order_by, order_in, from, to } =
+  //       req.query;
+
+  //     const _page = page ? parseInt(page) : 1;
+  //     const _limit = limit ? parseInt(limit) : 20;
+  //     const _skip = (_page - 1) * _limit;
+
+  //     // Define sorting logic
+  //     let sorting = {};
+  //     if (order_by) {
+  //       sorting[order_by] = order_in === "desc" ? -1 : 1;
+  //     } else {
+  //       sorting["_id"] = -1; // Default sorting by _id (descending)
+  //     }
+
+  //     const query = {};
+  //     if (firm_company) {
+  //       query.firm_company = new RegExp(firm_company, "i");
+  //     }
+
+  //     // Add date range filter based on 'from' and 'to' params
+  //     if (from || to) {
+  //       query.created_at = {};
+  //       if (from) {
+  //         query.created_at.$gte = new Date(from);
+  //       }
+  //       if (to) {
+  //         query.created_at.$lte = new Date(to);
+  //       }
+  //     }
+
+  //     query.disabled = { $ne: true };
+  //     query.is_inactive = { $ne: true };
+
+  //     console.log(query);
+
+  //     // Aggregate query to get total weight per crop
+  //     let result = await Model.aggregate([
+  //       { $match: query },
+  //       { $sort: sorting },
+  //       { $skip: _skip },
+  //       { $limit: _limit },
+  //       {
+  //         $lookup: {
+  //           from: "farmers",
+  //           localField: "farmer",
+  //           foreignField: "_id",
+  //           as: "farmerDetails",
+  //         },
+  //       },
+  //       // {
+  //       //   $lookup: {
+  //       //     from: "villages",
+  //       //     localField: "village",
+  //       //     foreignField: "_id",
+  //       //     as: "villageDetails",
+  //       //   },
+  //       // },
+  //       {
+  //         $lookup: {
+  //           from: "hammals",
+  //           localField: "hammal",
+  //           foreignField: "_id",
+  //           as: "hammalDetails",
+  //         },
+  //       },
+  //       {
+  //         $lookup: {
+  //           from: "crops",
+  //           localField: "crop",
+  //           foreignField: "_id",
+  //           as: "cropDetails",
+  //         },
+  //       },
+  //       {
+  //         $lookup: {
+  //           from: "users",
+  //           localField: "createdBy",
+  //           foreignField: "_id",
+  //           as: "userDetails",
+  //         },
+  //       },
+  //       { $unwind: "$farmerDetails" },
+  //       // { $unwind: "$villageDetails" },
+  //       { $unwind: "$hammalDetails" },
+  //       { $unwind: "$cropDetails" },
+  //       {
+  //         $unwind: "$userDetails",
+  //       },
+
+  //       // Dynamically calculate net weight based on (boraQuantity * unitBora) + bharti
+  //       {
+  //         $addFields: {
+  //           calculatedNetWeight: {
+  //             $add: [{ $multiply: ["$boraQuantity", "$unitBora"] }, "$bharti"],
+  //           },
+  //         },
+  //       },
+
+  //       {
+  //         $group: {
+  //           _id: "$cropDetails._id",
+  //           cropName: { $first: "$cropDetails.name" },
+  //           totalWeight: { $sum: "$calculatedNetWeight" }, // Summing up the dynamically calculated net weight
+  //         },
+  //       },
+  //       { $sort: sorting },
+  //     ]);
+
+  //     // Count total number of results for pagination metadata
+  //     const resultCount = await Model.countDocuments(query);
+
+  //     // Respond with data and pagination metadata
+  //     res.json({
+  //       data: result,
+  //       meta: {
+  //         current_page: _page,
+  //         from: _skip + 1,
+  //         last_page: Math.ceil(resultCount / _limit),
+  //         per_page: _limit,
+  //         to: _skip + result.length,
+  //         total: resultCount,
+  //       },
+  //     });
+  //   } catch (error) {
+  //     throw new Error(error);
+  //   }
+  // },
   getWeightSummary: async (req, res) => {
     try {
-      const { firm_company, page, limit, order_by, order_in, from, to } =
-        req.query;
-
+      const { firm_company, page, limit, order_by, order_in, from, to } = req.query;
+  
       const _page = page ? parseInt(page) : 1;
       const _limit = limit ? parseInt(limit) : 20;
       const _skip = (_page - 1) * _limit;
-
+  
       // Define sorting logic
       let sorting = {};
       if (order_by) {
@@ -651,30 +780,28 @@ module.exports = {
       } else {
         sorting["_id"] = -1; // Default sorting by _id (descending)
       }
-
+  
+      // Create query object for filtering
       const query = {};
       if (firm_company) {
         query.firm_company = new RegExp(firm_company, "i");
       }
-
-      // Add date range filter based on 'from' and 'to' params
+  
+      // Date range filtering
       if (from || to) {
         query.created_at = {};
-        if (from) {
-          query.created_at.$gte = new Date(from);
-        }
-        if (to) {
-          query.created_at.$lte = new Date(to);
-        }
+        if (from) query.created_at.$gte = new Date(from);
+        if (to) query.created_at.$lte = new Date(to);
       }
-
+  
+      // Exclude disabled and inactive entries
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
-
+  
       console.log(query);
-
-      // Aggregate query to get total weight per crop
-      let result = await Model.aggregate([
+  
+      // Perform aggregation to calculate total weight per crop
+      const result = await Model.aggregate([
         { $match: query },
         { $sort: sorting },
         { $skip: _skip },
@@ -689,14 +816,6 @@ module.exports = {
         },
         {
           $lookup: {
-            from: "villages",
-            localField: "village",
-            foreignField: "_id",
-            as: "villageDetails",
-          },
-        },
-        {
-          $lookup: {
             from: "hammals",
             localField: "hammal",
             foreignField: "_id",
@@ -711,12 +830,20 @@ module.exports = {
             as: "cropDetails",
           },
         },
-        { $unwind: "$farmerDetails" },
-        { $unwind: "$villageDetails" },
-        { $unwind: "$hammalDetails" },
-        { $unwind: "$cropDetails" },
-
-        // Dynamically calculate net weight based on (boraQuantity * unitBora) + bharti
+        {
+          $lookup: {
+            from: "users",
+            localField: "createdBy",
+            foreignField: "_id",
+            as: "userDetails",
+          },
+        },
+        { $unwind: { path: "$farmerDetails", preserveNullAndEmptyArrays: true } },
+        { $unwind: { path: "$hammalDetails", preserveNullAndEmptyArrays: true } },
+        { $unwind: { path: "$cropDetails", preserveNullAndEmptyArrays: true } },
+        { $unwind: { path: "$userDetails", preserveNullAndEmptyArrays: true } },
+  
+        // Calculate net weight: (boraQuantity * unitBora) + bharti
         {
           $addFields: {
             calculatedNetWeight: {
@@ -724,21 +851,22 @@ module.exports = {
             },
           },
         },
-
+  
+        // Group by crop to sum up the weights
         {
           $group: {
             _id: "$cropDetails._id",
             cropName: { $first: "$cropDetails.name" },
-            totalWeight: { $sum: "$calculatedNetWeight" }, // Summing up the dynamically calculated net weight
+            totalWeight: { $sum: "$calculatedNetWeight" },
           },
         },
-        { $sort: sorting },
+        { $sort: sorting }, // Sort results based on sorting criteria
       ]);
-
-      // Count total number of results for pagination metadata
+  
+      // Get total count for pagination
       const resultCount = await Model.countDocuments(query);
-
-      // Respond with data and pagination metadata
+  
+      // Send response with result and pagination metadata
       res.json({
         data: result,
         meta: {
@@ -751,98 +879,14 @@ module.exports = {
         },
       });
     } catch (error) {
-      throw new Error(error);
+      console.error("Error in getWeightSummary:", error);
+      res.status(500).json({ error: error.message });
     }
   },
-//   getByUser: async function (req, res, next) {
-//     const { id } = req.params;
-//     const { firm_company, crop, disabled, page, limit, order_by, order_in } = req.query;
-
-//     const _page = page ? parseInt(page) : 1;
-//     const _limit = limit ? parseInt(limit) : 20;
-//     const _skip = (_page - 1) * _limit;
-
-//     try {
-//         // Define sorting logic
-//         let sorting = {};
-//         if (order_by) {
-//             sorting[order_by] = order_in === "desc" ? -1 : 1;
-//         } else {
-//             sorting["_id"] = -1; // Default sorting by _id (descending)
-//         }
-
-//         // Build the query
-//         const query = { createdBy: mongoose.Types.ObjectId(id) };
-//         if (firm_company) {
-//             query.firm_company = new RegExp(firm_company, "i"); // Filter by firm_company (case-insensitive)
-//         }
-//         if (crop) {
-//             query.crop = new mongoose.Types.ObjectId(crop); // Filter by crop
-//         }
-//         query.disabled = { $ne: true }; // Exclude disabled users
-//         query.is_inactive = { $ne: true }; // Exclude inactive users
-
-//         console.log("Query:", query);
-
-//         // Aggregation pipeline to fetch users with filtering, pagination, sorting, and lookups
-//         let result = await Model.aggregate([
-//             { $match: query },
-//             { $sort: sorting },
-//             { $skip: _skip },
-//             { $limit: _limit },
-//             {
-//                 $lookup: {
-//                     from: "crops",
-//                     localField: "crop",
-//                     foreignField: "_id",
-//                     as: "cropDetails",
-//                 },
-//             },
-//             {
-//                 $lookup: {
-//                     from: "users",
-//                     localField: "createdBy",
-//                     foreignField: "_id",
-//                     as: "userDetails",
-//                 },
-//             },
-//             {
-//                 $unwind: {
-//                     path: "$cropDetails",
-//                 },
-//             },
-//             {
-//                 $unwind: {
-//                     path: "$userDetails",
-                    
-//                 },
-//             },
-//         ]);
-
-//         console.log("Result:", result);
-
-//         // Count total number of results for pagination metadata
-//         const resultCount = await Model.countDocuments(query);
-
-//         // Respond with data and pagination metadata
-//         res.json({
-//             data: result,
-//             meta: {
-//                 current_page: _page,
-//                 from: _skip + 1,
-//                 last_page: Math.ceil(resultCount / _limit),
-//                 per_page: _limit,
-//                 to: _skip + result.length,
-//                 total: resultCount,
-//             },
-//         });
-//     } catch (error) {
-//         next(error); // Handle errors
-//     }
-// },
+  
 getByUser: async function (req, res, next) {
   const { id } = req.params;
-  const { firm_company, crop, disabled, page, limit, order_by, order_in } = req.query;
+  const {  page, limit, order_by, order_in } = req.query;
 
   const _page = page ? parseInt(page) : 1;
   const _limit = limit ? parseInt(limit) : 20;
@@ -860,13 +904,15 @@ getByUser: async function (req, res, next) {
       }
 
       // Build the query
-      const query = { createdBy: mongoose.Types.ObjectId(id) };
-      if (firm_company) {
-          query.firm_company = new RegExp(firm_company, "i"); // Filter by firm_company (case-insensitive)
-      }
-      if (crop) {
-          query.crop = mongoose.Types.ObjectId(crop); // Filter by crop
-      }
+      const query = { createdBy: mongoose.Types.ObjectId(id),
+        disabled: false
+       };
+      // if (firm_company) {
+      //     query.firm_company = new RegExp(firm_company, "i"); // Filter by firm_company (case-insensitive)
+      // }
+      // if (crop) {
+      //     query.crop = mongoose.Types.ObjectId(crop); // Filter by crop
+      // }
       query.disabled = { $ne: true }; 
       query.is_inactive = { $ne: true }; 
 
@@ -921,7 +967,8 @@ getByUser: async function (req, res, next) {
             $unwind: "$cropDetails",
           },
           { $unwind: "$userDetails" },
-          { $unwind: "$hammalDetails" },
+          // { $unwind: "$hammalDetails" },
+          { $unwind: { path: "$hammalDetails", preserveNullAndEmptyArrays: true } },
           { $unwind: "$farmerDetails" },
       ]);
 

@@ -85,10 +85,14 @@ export const roleWiseAccess = [
   },
   {
     page: 'list',
-    roles: ['Admin'],
+    roles: ['Admin','cashier'],
   },
   {
     page: 'my-list',
     roles: ['Admin','Employee'],
+  },
+  {
+    page: 'advance-payment',
+    roles: ['Admin'],
   },
 ];

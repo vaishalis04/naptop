@@ -115,6 +115,11 @@ export class SidebarComponent {
       title: 'My List',
       icon: 'fi-rr-settings',
       link: '/my-list'
+    },
+    {
+      title: 'Advance Payments',
+      icon: 'fi-rr-settings',
+      link: '/advance-payment'
     }
   ];
 

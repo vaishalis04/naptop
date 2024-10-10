@@ -1,265 +1,260 @@
 <div class="card">
-    <div class="card-header d-flex justify-content-center align-item-center">
-      <h4>All Users Details</h4>
-    </div>
-    <div class="card-body">
-      <ul class="nav nav-pills nav-stacked">
-        <li class="nav-item">
-          <a
-            (click)="setTabState('taulparchi')"
-            class="nav-link"
-            [ngClass]="{ active: tabState == 'taulparchi' }"
-            >Taul Parchi</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            (click)="setTabState('truckloading')"
-            class="nav-link"
-            [ngClass]="{ active: tabState == 'truckloading' }"
-            >Truck Loading Parchi</a
-          >
-        </li>
-      </ul>
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label for="fromDate">From</label>
-            <input
-              type="date"
-              class="form-control"
-              name="fromDate"
-              id="fromDate"
-              aria-describedby="fromdatehelpid"
-              placeholder=""
-            />
-            <small id="fromdatehelpid" class="form-text text-muted"
-              >From Date</small
-            >
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-group">
-            <label for="toDate">To</label>
-            <input
-              type="date"
-              class="form-control"
-              name="toDate"
-              id="toDate"
-              aria-describedby="todatehelpid"
-              placeholder=""
-            />
-            <small id="todatehelpid" class="form-text text-muted">To Date</small>
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-group">
-            <label for="crop">Crop</label>
-            <select
-              [(ngModel)]="selectedCrop"
-              class="form-control"
-              name="crop"
-              id="crop"
-            >
-              <option [value]="">Select</option>
-              <option *ngFor="let item of Crops" [value]="item._id">
-                {{ item.name }}
-              </option>
-            </select>
-          </div>
-        </div>
-        <div class="col" *ngIf="getCurrentUser()?.role === 'Admin'">
-          <div class="form-group">
-            <label for="user">User</label>
-            <select
-              [(ngModel)]="selectedUser"
-              class="form-control"
-              name="user"
-              id="user"
-            >
-              <option [value]="">Select</option>
-              <option *ngFor="let item of Users" [value]="item._id">
-                {{ item.name }}
-              </option>
-            </select>
-          </div>
-        </div>
-        <div class="col">
-          <button
-            (click)="setTabState(tabState)"
-            type="button"
-            class="btn btn-primary"
-          >
-            Submit
-          </button>
-        </div>
-      </div>
-      @if(tabState=="taulparchi"){
-      <div class="row">
-        <div class="col-auto" *ngFor="let items of TaulParchiWeightSummary">
-          <button type="button" class="btn btn-primary">
-            {{ items.cropName }}: {{ items.totalWeight }}Kg
-          </button>
-        </div>
-      </div>
-      <div class="card bg-white mt-4">
-        <div class="card-header">
-          <h4 class="mb-0">Taula Parchis</h4>
-        </div>
-        <!-- Table for displaying Taula Parchis -->
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">Sr.no</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Farmer</th>
-                  <!-- <th scope="col">Village</th> -->
-                  <th scope="col">Bora Quantity</th>
-                  <th scope="col">unit Bora</th>
-                  <th scope="col">Bharti</th>
-                  <th scope="col">Net Weight</th>
-                  <th scope="col">Rate</th>
-                  <th scope="col">Hammal</th>
-                  <th scope="col">Crop</th>
-                  <th scope="col" *ngIf="getCurrentUser()?.role === 'Admin'">Created By</th>
-
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Iterate through TaulaParchi data -->
-                <tr
-                  *ngFor="
-                    let taulaParchi of TaulaParchi
-                      | paginate
-                        : {
-                            itemsPerPage: perPage,
-                            currentPage: currentPage,
-                            id: 'taulaparchi',
-                            totalItems: TaulaParchiCount
-                          };
-                    let i = index
-                  "
-                >
-                  <td>{{ currentPage * perPage - perPage + (i + 1) }}</td>
-                  <td>{{ taulaParchi.created_at | date : "dd-MM-YYYY" }}</td>
-                  <td>{{ taulaParchi?.farmerDetails.name }}</td>
-                  <!-- <td>{{ taulaParchi?.villageDetails.name }}</td> -->
-                  <td>{{ taulaParchi?.boraQuantity }}</td>
-                  <td>{{ taulaParchi?.unitBora }}</td>
-                  <td>{{ taulaParchi?.bharti }}Kg</td>
-                  <td>{{ taulaParchi?.netWeight }}Kg</td>
-                  <td>{{ taulaParchi?.rate }}</td>
-                  <td>{{ taulaParchi?.hammalDetails?.name || 'null' }}</td>
-                  <td>{{ taulaParchi?.cropDetails.name }}</td>
-                  <td *ngIf="getCurrentUser()?.role === 'Admin'">{{ taulaParchi?.userDetails.name }}</td>                  <!-- <td>
-                        <button
-                          type="button"
-                          class="btn btn-primary"
-                         
-                        >
-                          Print Receipt
-                        </button>
-                      </td> -->
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <pagination-controls
-            id="taulaparchi"
-            (pageChange)="currentPage = $event; getTaulaParchis()"
-          ></pagination-controls>
-        </div>
-      </div>
-      } @if(tabState=="truckloading"){
-      <div class="row">
-        <div
-          class="col-auto"
-          *ngFor="let item of TruckLoadingParchiWeightSummary"
-        >
-          <button type="button" class="btn btn-primary">
-            {{ item.cropName }}: {{ item.totalWeight }}Kg
-          </button>
-        </div>
-      </div>
-      <div class="card bg-white mt-4">
-        <div class="card-header">
-          <h4 class="mb-0">Truck Loading Parchis</h4>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">Sr.no</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Party Name</th>
-                  <!-- <th scope="col">Vehicle Number</th> -->
-                  <th scope="col">Delivery Location</th>
-                  <th scope="col">Hammal</th>
-                  <th scope="col">Bora Nag</th>
-                  <th scope="col">Kaanta Weight</th>
-                  <th scope="col">Net Weight</th>
-                  <th scope="col">Rate</th>
-                  <th scope="col">Crop</th>
-                  <th scope="col">Other</th>
-                  <th scope="col" *ngIf="getCurrentUser()?.role === 'Admin'">Created By</th>
-
-                  <!-- <th scope="col">Action</th> -->
-                </tr>
-              </thead>
-              <tbody>
-                <tr
-                  *ngFor="
-                    let truckLoadingParchi of TruckLoadingParchi
-                      | paginate
-                        : {
-                            itemsPerPage: perPage,
-                            currentPage: currentPage,
-                            id: 'truckloading'
-                          };
-                    let i = index
-                  "
-                >
-                  <td>{{ i + 1 }}</td>
-                  <td>
-                    {{ truckLoadingParchi.created_at | date : "dd-MM-YYYY" }}
-                  </td>
-                  <td>{{ truckLoadingParchi.partyDetails.name }}</td>
-                  <!-- <td>{{ truckLoadingParchi.vehicleNumber }}</td> -->
-                  <td>{{ truckLoadingParchi.deliveryDetails.name }}</td>
-                  <td>{{ truckLoadingParchi.hammalDetails.name }}</td>
-                  <td>{{ truckLoadingParchi.boraQuantity }}</td>
-                  <td>{{ truckLoadingParchi.unitBora }}Kg</td>
-                  <td>{{ truckLoadingParchi.netWeight }}Kg</td>
-                  <td>{{ truckLoadingParchi.rate }}</td>
-                  <td>{{ truckLoadingParchi.cropDetails.name }}</td>
-                  <td>{{ truckLoadingParchi.other }}</td>
-                  <td *ngIf="getCurrentUser()?.role === 'Admin'">{{ truckLoadingParchi?.userDetails.name }}</td>
-
-                  <!-- <td>
-                        <button
-                          type="button"
-                          class="btn btn-primary"
-                          
-                        >
-                          Print Receipt
-                        </button>
-                      </td> -->
-                </tr>
-              </tbody>
-            </table>
-          </div>
-  
-          <!-- Pagination Controls -->
-          <pagination-controls
-            id="truckloading"
-            (pageChange)="currentPage = $event; getTruckLoadingParchis()"
-          ></pagination-controls>
-        </div>
-      </div>
-      }
-    </div>
+  <div class="card-header d-flex justify-content-center align-item-center">
+    <h4>All Users Details</h4>
   </div>
-  
+  <div class="card-body">
+    <ul class="nav nav-pills nav-stacked">
+      <li class="nav-item">
+        <a
+          (click)="setTabState('taulparchi')"
+          class="nav-link"
+          [ngClass]="{ active: tabState == 'taulparchi' }"
+          >Taul Parchi</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          (click)="setTabState('truckloading')"
+          class="nav-link"
+          [ngClass]="{ active: tabState == 'truckloading' }"
+          >Truck Loading Parchi</a
+        >
+      </li>
+    </ul>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="fromDate">From</label>
+          <input
+            type="date"
+            class="form-control"
+            name="fromDate"
+            id="fromDate"
+            aria-describedby="fromdatehelpid"
+            placeholder=""
+          />
+          <small id="fromdatehelpid" class="form-text text-muted"
+            >From Date</small
+          >
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="toDate">To</label>
+          <input
+            type="date"
+            class="form-control"
+            name="toDate"
+            id="toDate"
+            aria-describedby="todatehelpid"
+            placeholder=""
+          />
+          <small id="todatehelpid" class="form-text text-muted">To Date</small>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="crop">Crop</label>
+          <select
+            [(ngModel)]="selectedCrop"
+            class="form-control"
+            name="crop"
+            id="crop"
+          >
+            <option [value]="">Select</option>
+            <option *ngFor="let item of Crops" [value]="item._id">
+              {{ item.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <!-- <div class="col">
+        
+        <div class="form-group">
+          <label for="user">User</label>
+          <select
+            [(ngModel)]="selectedUser"
+            class="form-control"
+            name="user"
+            id="user"
+          >
+            <option [value]="">Select</option>
+            <option *ngFor="let user of Users" [value]="user._id">
+              {{ user.name }}
+            </option>
+          </select>
+        </div>
+      </div> -->
+      <div class="col">
+        <button
+          (click)="setTabState(tabState)"
+          type="button"
+          class="btn btn-primary"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+    @if(tabState=="taulparchi"){
+    <div class="row">
+      <div class="col-auto" *ngFor="let items of TaulParchiWeightSummary">
+        <button type="button" class="btn btn-primary">
+          {{ items.cropName }}: {{ items.totalWeight }}Kg
+        </button>
+      </div>
+    </div>
+    <div class="card bg-white mt-4">
+      <div class="card-header">
+        <h4 class="mb-0">Taula Parchis</h4>
+      </div>
+      <!-- Table for displaying Taula Parchis -->
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Sr.no</th>
+                <th scope="col">Date</th>
+                <th scope="col">Farmer</th>
+                <!-- <th scope="col">Village</th> -->
+                <th scope="col">Bora Quantity</th>
+                <th scope="col">unit Bora</th>
+                <th scope="col">Bharti</th>
+                <th scope="col">Net Weight</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Hammal</th>
+                <th scope="col">Crop</th>
+                <th
+                  scope="col"
+                  *ngIf="getCurrentUser()?.role === 'Admin' || 'cashier'"
+                >
+                  Created By
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Iterate through TaulaParchi data -->
+              <tr
+                *ngFor="
+                  let taulaParchi of TaulaParchi
+                    | paginate
+                      : {
+                          itemsPerPage: perPage,
+                          currentPage: currentPage,
+                          id: 'taulaparchi',
+                          totalItems: TaulaParchiCount
+                        };
+                  let i = index
+                "
+              >
+                <td>{{ currentPage * perPage - perPage + (i + 1) }}</td>
+                <td>{{ taulaParchi.created_at | date : "dd-MM-YYYY" }}</td>
+                <td>{{ taulaParchi?.farmerDetails.name }}</td>
+                <!-- <td>{{ taulaParchi?.villageDetails.name }}</td> -->
+                <td>{{ taulaParchi?.boraQuantity }}</td>
+                <td>{{ taulaParchi?.unitBora }}</td>
+                <td>{{ taulaParchi?.bharti }}Kg</td>
+                <td>{{ taulaParchi?.netWeight }}Kg</td>
+                <td>{{ taulaParchi?.rate }}</td>
+                <td>{{ taulaParchi?.hammalDetails?.name || "null" }}</td>
+                <td>{{ taulaParchi?.cropDetails.name }}</td>
+                <td *ngIf="getCurrentUser()?.role === 'Admin' || 'cashier'">
+                  {{ taulaParchi?.userDetails.name }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <pagination-controls
+          id="taulaparchi"
+          (pageChange)="currentPage = $event; getTaulaParchis()"
+        ></pagination-controls>
+      </div>
+    </div>
+    } @if(tabState=="truckloading"){
+    <div class="row">
+      <div
+        class="col-auto"
+        *ngFor="let item of TruckLoadingParchiWeightSummary"
+      >
+        <button type="button" class="btn btn-primary">
+          {{ item.cropName }}: {{ item.totalWeight }}Kg
+        </button>
+      </div>
+    </div>
+    <div class="card bg-white mt-4">
+      <div class="card-header">
+        <h4 class="mb-0">Truck Loading Parchis</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Sr.no</th>
+                <th scope="col">Date</th>
+                <th scope="col">Party Name</th>
+                <!-- <th scope="col">Vehicle Number</th> -->
+                <th scope="col">Delivery Location</th>
+                <th scope="col">Hammal</th>
+                <th scope="col">Bora Nag</th>
+                <th scope="col">Kaanta Weight</th>
+                <th scope="col">Net Weight</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Crop</th>
+                <th scope="col">Other</th>
+                <th
+                  scope="col"
+                  *ngIf="getCurrentUser()?.role === 'Admin' || 'cashier'"
+                >
+                  Created By
+                </th>
+
+                <!-- <th scope="col">Action</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="
+                  let truckLoadingParchi of TruckLoadingParchi
+                    | paginate
+                      : {
+                          itemsPerPage: perPage,
+                          currentPage: currentPage,
+                          id: 'truckloading'
+                        };
+                  let i = index
+                "
+              >
+                <td>{{ i + 1 }}</td>
+                <td>
+                  {{ truckLoadingParchi.created_at | date : "dd-MM-YYYY" }}
+                </td>
+                <td>{{ truckLoadingParchi.partyDetails.name }}</td>
+                <!-- <td>{{ truckLoadingParchi.vehicleNumber }}</td> -->
+                <td>{{ truckLoadingParchi.deliveryDetails.name }}</td>
+                <td>{{ truckLoadingParchi.hammalDetails.name }}</td>
+                <td>{{ truckLoadingParchi.boraQuantity }}</td>
+                <td>{{ truckLoadingParchi.unitBora }}Kg</td>
+                <td>{{ truckLoadingParchi.netWeight }}Kg</td>
+                <td>{{ truckLoadingParchi.rate }}</td>
+                <td>{{ truckLoadingParchi.cropDetails.name }}</td>
+                <td>{{ truckLoadingParchi.other }}</td>
+                <td *ngIf="getCurrentUser()?.role === 'Admin' || 'cashier'">
+                  {{ truckLoadingParchi?.userDetails.name }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination Controls -->
+        <pagination-controls
+          id="truckloading"
+          (pageChange)="currentPage = $event; getTruckLoadingParchis()"
+        ></pagination-controls>
+      </div>
+    </div>
+    }
+  </div>
+</div>

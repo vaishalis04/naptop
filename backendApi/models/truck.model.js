@@ -4,6 +4,10 @@ const TruckSchema = new mongoose.Schema({
   truckNumber: {
     type: String,
   },
+  truckType:{
+    type: String,
+    enum: ["regular", "premium"],
+  },
   driverName: {
     type: String,
   },

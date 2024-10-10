@@ -1,0 +1,282 @@
+<!-- modal for add/update -->
+<div
+  class="modal fade"
+  [ngClass]="{ show: isEdit }"
+  id="addUpdateMasterModal"
+  tabindex="-1"
+  aria-labelledby="addUpdateMasterModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addUpdateMasterModalLabel">
+          {{ isEdit == "Update" ? "Update" : "Add" }} {{ masterName }}
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="isEdit = undefined"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!-- <div class="form-group">
+                <label for="Type" class="form-label">Type</label>
+                <input
+                  id="Type"
+                  class="form-control"
+                  [(ngModel)]="masterToAddOrEdit.Type"
+                  name="Type"
+                  type="text"
+                  placeholder="Type"
+                />
+              </div> -->
+              <div class="form-group">
+                <label for="Type" class="form-label">Type</label>
+                <select
+                  id="Type"
+                  class="form-control"
+                  [(ngModel)]="masterToAddOrEdit.Type"
+                  name="Type"
+                >
+                  <option value="" disabled>Select Type</option>
+                  <option value="truck">Truck</option>
+                  <option value="farmer">Farmer</option>
+                </select>
+              </div>
+              
+              <!-- Farmer Select -->
+              <div *ngIf="masterToAddOrEdit.Type === 'farmer'" class="form-group">
+                <label for="details" class="form-label">Select Farmer</label>
+                <select
+                  id="details"
+                  class="form-control"
+                  [(ngModel)]="masterToAddOrEdit.details"
+                  name="details"
+                >
+                  <option value="" disabled>Select Farmer</option>
+                  <!-- Display farmer names and bind the selected value to farmer._id -->
+                  <option *ngFor="let farmer of Farmers" [value]="farmer._id">
+                    {{ farmer?._id }}--{{ farmer?.farmerType }}--{{ farmer?.name }}
+                  </option>
+                </select>
+              </div>
+              
+              
+              <!-- Truck Select -->
+              <div *ngIf="masterToAddOrEdit.Type === 'truck'" class="form-group">
+                <label for="details" class="form-label">Select Truck</label>
+                <select
+                  id="details"
+                  class="form-control"
+                  [(ngModel)]="masterToAddOrEdit.details"
+                  name="details"
+                >
+                  <option value="" disabled>Select Truck</option>
+                  <option *ngFor="let truck of Trucks" [value]="truck._id">
+                    {{ truck?._id }}--{{ truck?.driverName }}--{{ truck?.truckNumber }}
+                  </option>
+                </select>
+              </div>
+              
+              
+              
+
+              <div class="form-group">
+                <label for="amount" class="form-label">Amount</label>
+                <input
+                  id="amount"
+                  class="form-control"
+                  [(ngModel)]="masterToAddOrEdit.amount"
+                  name="amount"
+                  type="text"
+                  placeholder="amount"
+                  maxlength="10"
+                  minlength="10"
+                  pattern="[0-9]{10}"
+                  required
+                  #amountInput="ngModel"
+                />
+                <div class="form-group">
+                  <label for="receiver" class="form-label">Receiver</label>
+                  <input
+                    id="receiver"
+                    class="form-control"
+                    [(ngModel)]="masterToAddOrEdit.receiver"
+                    name="receiver"
+                    type="text"
+                    placeholder="Enter receiver Name"
+                    maxlength="30"
+                    minlength="3"
+                    pattern="^[a-zA-Z\s]+$"
+                    required
+                    #receiverInput="ngModel"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="remark" class="form-label">Remark</label>
+                  <input
+                    id="remark"
+                    class="form-control"
+                    [(ngModel)]="masterToAddOrEdit.remark"
+                    name="remark"
+                    type="text"
+                    placeholder="Enter remark "
+                    maxlength="30"
+                    minlength="3"
+                    pattern="^[a-zA-Z\s]+$"
+                    #remarkInput="ngModel"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          (click)="isEdit = undefined"
+        >
+          Close
+        </button>
+        <button
+          *ngIf="isEdit == 'Add'"
+          type="button"
+          class="btn btn-primary"
+          (click)="addNewItem()"
+        >
+          Add
+        </button>
+        <button
+          *ngIf="isEdit == 'Update'"
+          type="button"
+          class="btn btn-primary"
+          (click)="editItem(masterToAddOrEditIndex)"
+        >
+          Update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- masters -->
+
+<div class="row">
+  <div class="col-12 col-md">
+    <div class="row">
+      <div class="col">
+        <!-- Date time card -->
+        <div class="card bg-white">
+          <div class="card-header">
+            <div class="d-flex justify-content-center align-items-center">
+              <h2>{{ masterName }} Management</h2>
+            </div>
+          </div>
+          <div class="card-body">
+            <!-- Masters -->
+            <div class="container">
+              <!-- selectable chips/badges for masters -->
+              <div class="row">
+                <div class="col-12">
+                  <div
+                    class="d-flex flex-column flex-md-row justify-content-between"
+                  >
+                    <div>
+                      <button
+                        class="btn btn-primary w-100 w-md-auto"
+                        data-bs-toggle="modal"
+                        data-bs-target="#addUpdateMasterModal"
+                        (click)="selectItemToAdd()"
+                      >
+                        <i class="fi fi-rr-add"></i>
+                        <span class="ms-2"> Add {{ masterName }} </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-12">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <!-- Pagination Controls -->
+                    <pagination-controls
+                      id="roles_list"
+                      (pageChange)="p = $event; getData()"
+                    >
+                    </pagination-controls>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Payment For</th>
+                          <th>Details</th>
+                          <th>Receiver</th>
+                          <th>Amount</th>
+                          <th>Remark</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr
+                          *ngFor="
+                            let item of data
+                              | paginate
+                                : {
+                                    id: 'roles_list',
+                                    itemsPerPage: limit,
+                                    currentPage: p,
+                                    totalItems: total
+                                  };
+                            let i = index
+                          "
+                        >
+                          <td>{{ i + 1 }}</td>
+                          <td>{{ item?.Type }}</td>
+                          <!-- <td>{{ item.detailsFarmerInfo.name }} </td> -->
+                          <td>
+                            {{ item.detailsFarmerInfo ? item.detailsFarmerInfo.name : item.detailsTruckInfo.truckNumber }}
+                          </td>
+                          <td>{{ item?.receiver }}</td>
+                          <td>{{ item?.amount }}</td>
+                          <td>{{ item?.remark }}</td>
+
+                          <td>
+                            <button
+                              class="btn btn-outline-primary btn-sm"
+                              (click)="selectItemToEdit(i)"
+                            >
+                              <i class="fi fi-rr-pencil"></i>
+                            </button>
+                            <button
+                              class="btn btn-outline-danger btn-sm"
+                              (click)="deleteItem(i)"
+                            >
+                              <i class="fi fi-rr-trash"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

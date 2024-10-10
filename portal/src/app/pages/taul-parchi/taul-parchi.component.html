@@ -182,17 +182,8 @@
                     (ngModelChange)="calculateNetWeight()"
                   />
 
+                  
                   <!-- <label for="bharti" class="form-label">Bharti</label>
-                  <input
-                    id="bharti"
-                    class="form-control"
-                    [(ngModel)]="TaulParchi.bharti"
-                    name="bharti"
-                    type="number"
-                    placeholder="Bharti"
-                    (ngModelChange)="calculateNetWeight()"
-                  /> -->
-                  <label for="bharti" class="form-label">Bharti</label>
                   <select
                     id="bharti"
                     class="form-control"
@@ -203,8 +194,22 @@
                     <option value="" disabled selected>Select Bharti</option>
                     <option value="30">30</option>
                     <option value="60">60</option>
-                  </select>
+                  </select> -->
+                  <label for="bharti" class="form-label">Bharti</label>
+                  <select
+                    id="bharti"
+                    class="form-control"
+                    [(ngModel)]="TaulParchi.bharti"
+                    name="bharti"
+                    (ngModelChange)="calculateNetWeight()"
+                  >
+                    <option value="" disabled selected>Select Bharti</option>
+                   
+                    <option [ngValue]="60">60</option>
+                    <option [ngValue]="55">55</option>
+                    <option [ngValue]="40">40</option>
 
+                  </select>
                   <label for="netWeight" class="form-label">Net Weight</label>
                   <!-- The calculated Net Weight will be displayed here -->
                   <input

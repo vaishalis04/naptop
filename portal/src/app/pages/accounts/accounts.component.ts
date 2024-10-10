@@ -170,60 +170,7 @@ export class AccountsComponent implements OnInit {
       }
     });
   }
-  // printReceipt(transaction: any, type: 'taulparchi' | 'truckloading') {
-  //   let receiptContent = '';
-    
-  //   if (type === 'taulparchi') {
-  //     receiptContent = `
-  //       <h1>Taul Parchi Receipt</h1>
-  //       <p><strong>Date:</strong> ${new Date(transaction.created_at).toLocaleDateString()}</p>
-  //       <p><strong>Farmer:</strong> ${transaction.farmerDetails.name}</p>
-  //       <p><strong>Village:</strong> ${transaction.villageDetails.name}</p>
-  //       <p><strong>Firm/Company:</strong> ${transaction.firm_company}</p>
-  //       <p><strong>Rate:</strong> ₹${transaction.rate}</p>
-  //       <p><strong>Hammal:</strong> ${transaction.hammalDetails.name}</p>
-  //       <p><strong>Crop:</strong> ${transaction.cropDetails.name}</p>
-  //     `;
-  //   } else if (type === 'truckloading') {
-  //     receiptContent = `
-  //       <h1>Truck Loading Parchi Receipt</h1>
-  //       <p><strong>Date:</strong> ${new Date(transaction.created_at).toLocaleDateString()}</p>
-  //       <p><strong>Party Name:</strong> ${transaction.partyDetails.name}</p>
-  //       <p><strong>Vehicle Number:</strong> ${transaction.vehicleNumber}</p>
-  //       <p><strong>Delivery Location:</strong> ${transaction.deliveryDetails.name}</p>
-  //       <p><strong>Hammal:</strong> ${transaction.hammalDetails.name}</p>
-  //       <p><strong>Bora Nag:</strong> ${transaction.boraQuantity}</p>
-  //       <p><strong>Kaanta Weight:</strong> ${transaction.netWeight}</p>
-  //       <p><strong>Crop:</strong> ${transaction.cropDetails.name}</p>
-  //       <p><strong>Rate:</strong> ₹${transaction.rate}</p>
-  //       <p><strong>Other:</strong> ${transaction.other}</p>
-  //     `;
-  //   }
-    
-  //   const printWindow:any = window.open('', '_blank');
-  //   printWindow.document.write(`
-  //     <html>
-  //       <head>
-  //         <title>Receipt</title>
-  //         <style>
-  //           body { font-family: Arial, sans-serif; }
-  //           h1 { text-align: center; }
-  //           p { font-size: 14px; }
-  //         </style>
-  //       </head>
-  //       <body>
-  //         ${receiptContent}
-  //         <script>
-  //           window.onload = function() {
-  //             window.print();
-  //             window.close();
-  //           }
-  //         </script>
-  //       </body>
-  //     </html>
-  //   `);
-  //   printWindow.document.close();
-  // }
+
   printReceipt(transaction: any, type: 'taulparchi' | 'truckloading') {
     let receiptContent = '';
 
@@ -233,10 +180,11 @@ export class AccountsComponent implements OnInit {
                 <h1 style="color: #007bff;">Taul Parchi Receipt</h1>
                 <p><strong>Date:</strong> ${new Date(transaction.created_at).toLocaleDateString()}</p>
                 <p><strong>Farmer:</strong> ${transaction.farmerDetails.name}</p>
-                <p><strong>Village:</strong> ${transaction.villageDetails.name}</p>
+             
                 <p><strong>Firm/Company:</strong> ${transaction.firm_company}</p>
                 <p style="font-size: 1.2em; color: #28a745;"><strong>Rate:</strong> ₹${transaction.rate}</p>
-                <p><strong>Hammal:</strong> ${transaction.hammalDetails.name}</p>
+                    <p><strong>Hammal:</strong> ${transaction.hammalDetails?.name ? transaction.hammalDetails.name : 'null'}</p>
+
                 <p><strong>Crop:</strong> ${transaction.cropDetails.name}</p>
             </div>
         `;

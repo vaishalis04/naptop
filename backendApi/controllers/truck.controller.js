@@ -164,5 +164,59 @@ module.exports = {
         } catch (error) {
             next(error); 
         }
-    }
-};
+    },
+    getByType: async (req, res, next) => {
+        try {
+            const { truckNumber, disabled, page, limit, order_by, order_in } = req.query;
+    
+            const _page = page ? parseInt(page) : 1;
+            const _limit = limit ? parseInt(limit) : 20;
+            const _skip = (_page - 1) * _limit;
+    
+            let sorting = {};
+            if (order_by) {
+                sorting[order_by] = order_in === "desc" ? -1 : 1;
+            } else {
+                sorting["_id"] = -1; 
+            }
+    
+            const query = {};
+    
+            // Filtering only premium truck type
+            query.truckType = 'premium';
+    
+            if (truckNumber) {
+                query.truckNumber = new RegExp(truckNumber, "i");
+            }
+    
+            query.disabled = { $ne: true };
+            query.is_inactive = { $ne: true };
+    
+            console.log(query);
+    
+            const result = await Model.aggregate([
+                { $match: query },
+                { $sort: sorting },
+                { $skip: _skip },
+                { $limit: _limit },
+            ]);
+    
+            const resultCount = await Model.countDocuments(query);
+    
+            res.json({
+                data: result,
+                meta: {
+                    current_page: _page,
+                    from: _skip + 1,
+                    last_page: Math.ceil(resultCount / _limit),
+                    per_page: _limit,
+                    to: _skip + result.length,
+                    total: resultCount,
+                },
+            });
+        } catch (error) {
+            next(error);
+        }
+        
+}
+}

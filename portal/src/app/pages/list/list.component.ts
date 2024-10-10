@@ -65,8 +65,12 @@ export class ListComponent {
       limit: this.perPage,
       // crop:this.selectedCrop
     };
+    
     if(this.selectedCrop){
       params.crop=this.selectedCrop
+    }
+    if(this.selectedUser){
+      params.user=this.selectedUser
     }
     this.apiService
       .get('taulparchi', {
@@ -92,6 +96,9 @@ export class ListComponent {
     };
     if(this.selectedCrop){
       params.crop=this.selectedCrop
+    }
+    if(this.selectedUser){
+      params.user=this.selectedUser
     }
     this.apiService
       .get('truckloading', {
@@ -119,6 +126,8 @@ export class ListComponent {
     }).subscribe({
       next: (res: any) => {
         this.Crops = res.data;
+    console.log("crops",res.data)
+
       },
       error: (err: any) => {
         console.error('Error fetching Crops:', err);
@@ -134,6 +143,7 @@ export class ListComponent {
     }).subscribe({
       next: (res: any) => {
         this.Users = res.data;
+    console.log("users",res.data)
       },
       error: (err: any) => {
         console.error('Error fetching Users:', err);

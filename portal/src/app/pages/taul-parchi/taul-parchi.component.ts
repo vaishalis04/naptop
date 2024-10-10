@@ -47,7 +47,7 @@ export class TaulParchiComponent implements OnInit {
 
   calculateNetWeight(): void {
     const { boraQuantity, unitBora, bharti } = this.TaulParchi;
-    this.TaulParchi.netWeight = boraQuantity * unitBora + bharti;
+    this.TaulParchi.netWeight = (boraQuantity * unitBora) + bharti;
   }
 
   // Fetch Farmers from backend

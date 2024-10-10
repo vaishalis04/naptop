@@ -3,6 +3,8 @@ const router = express.Router();
 const farmerController = require('../controllers/farmer.controller');
 const { verifyAccessToken } = require("../Helpers/jwt_helper");
 
+router.get('/getbytype',  farmerController.getByType);
+
 router.get('/',  farmerController.list);
 
 router.post('/', farmerController.create);

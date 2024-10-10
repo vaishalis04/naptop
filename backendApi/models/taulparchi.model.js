@@ -40,7 +40,7 @@ const TaulParchiSchema = new mongoose.Schema({
     },
     bharti: {
         type: Number,
-        enum: [30, 60],
+        enum: [60,55,40],
     },
     netWeight:{
         type: Number,

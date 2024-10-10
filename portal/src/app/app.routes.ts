@@ -24,6 +24,7 @@ import { TransactionlistComponent } from './pages/transactionlist/transactionlis
 import { TruckComponent } from './pages/truck/truck.component';
 import { ListComponent } from './pages/list/list.component';
 import { MyListComponent } from './pages/my-list/my-list.component';
+import { AdvancePaymentComponent } from './pages/advance-payment/advance-payment.component';
 
 export const routes: Routes = [
   {
@@ -148,6 +149,11 @@ export const routes: Routes = [
         path: 'my-list',
         component: MyListComponent,
         data: { title: 'my-list' },
+      },
+      {
+        path: 'advance-payment',
+        component: AdvancePaymentComponent,
+        data: { title: 'advance-payment' },
       },
     ],
     

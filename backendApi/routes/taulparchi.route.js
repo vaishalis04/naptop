@@ -5,11 +5,13 @@ const { verifyAccessToken } = require("../Helpers/jwt_helper");
 
 router.get('/userId/:id',  TaulParchiController.getByUser);
 
+router.get('/getsummary', TaulParchiController.getTaulParchiSummary);
+
+
 router.get('/',  TaulParchiController.list);
 
 router.post('/', TaulParchiController.create);
 
-router.get('/getsummary', TaulParchiController.getTaulParchiSummary);
 
 router.get('/getWeightsummary', TaulParchiController.getWeightSummary);
 

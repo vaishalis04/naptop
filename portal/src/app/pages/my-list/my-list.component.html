@@ -68,7 +68,7 @@
             </select>
           </div>
         </div>
-        <div class="col" *ngIf="getCurrentUser()?.role === 'Admin'">
+        <!-- <div class="col" *ngIf="getCurrentUser()?.role === 'Admin'">
           <div class="form-group">
             <label for="user">User</label>
             <select
@@ -83,7 +83,7 @@
               </option>
             </select>
           </div>
-        </div>
+        </div> -->
         <div class="col">
           <button
             (click)="setTabState(tabState)"
@@ -151,7 +151,8 @@
                   <td>{{ taulaParchi?.netWeight }}Kg</td>
                   <td>{{ taulaParchi?.rate }}</td>
                   <td>{{ taulaParchi?.hammalDetails?.name || 'null' }}</td>
-                  <td>{{ taulaParchi?.cropDetails?.name || 'null'}}</td><!-- <td>
+                  <td>{{ taulaParchi?.cropDetails?.name || 'null'}}</td>
+                  <!-- <td>
                         <button
                           type="button"
                           class="btn btn-primary"

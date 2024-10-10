@@ -65,7 +65,19 @@
                 />
                  
                 </div>
-                
+                <div class="form-group">
+                  <label for="truckType" class="form-label">Truck Type</label>
+                  <select
+                    id="truckType"
+                    class="form-control"
+                    [(ngModel)]="masterToAddOrEdit.truckType"
+                    name="truckType"
+                  >
+                    <option value="">Select Truck Type</option>
+                    <option value="regular">Regular</option>
+                    <option value="premium">Premium</option>
+                  </select>
+                </div>
                
               </div>
             </div>
@@ -158,6 +170,9 @@
                           <th>Truck Number</th>
                           <th>Driver Name</th>
                           <th>Driver Mobile</th>
+                          <th>Truck Type</th>
+
+                          
                           <th>Actions</th>
                         </tr>
                       </thead>
@@ -179,6 +194,8 @@
                           <td>{{ item.truckNumber }}</td>
                           <td>{{ item.driverName }}</td>
                           <td>{{ item.driverMobile }}</td>
+                          <td>{{ item.truckType }}</td>
+
 
                           <td>
                             <button
