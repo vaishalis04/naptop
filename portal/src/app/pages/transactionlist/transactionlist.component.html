@@ -94,7 +94,7 @@
             <tbody>
               <tr *ngFor="let transactions of transactions; let i = index">
                 <td>{{ i + 1 }}</td>
-                <td>{{ transactions?.created_at | date : "dd-MM-YYYY" }}</td>
+                <td>{{ transactions?.created_at | date : "MM-dd-YYYY" }}</td>
                 <td>{{ transactions?.transactionType }}</td>
                 <td>{{ transactions?.transactionStatus }}</td>
                 <td>{{ transactions?.transactionMode }}</td>

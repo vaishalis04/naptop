@@ -7,11 +7,9 @@ router.get('/userId/:id',  TaulParchiController.getByUser);
 
 router.get('/getsummary', TaulParchiController.getTaulParchiSummary);
 
-
 router.get('/',  TaulParchiController.list);
 
 router.post('/', TaulParchiController.create);
-
 
 router.get('/getWeightsummary', TaulParchiController.getWeightSummary);
 

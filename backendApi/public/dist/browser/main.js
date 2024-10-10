@@ -61525,7 +61525,7 @@ function InventoryComponent_Conditional_38_tr_30_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(ctx_r5.currentPage * ctx_r5.perPage - ctx_r5.perPage + (i_r8 + 1));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 9, taulaParchi_r7.created_at, "dd-MM-YYYY"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 9, taulaParchi_r7.created_at, "MM-dd-YYYY"));
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(taulaParchi_r7 == null ? null : taulaParchi_r7.farmerDetails.name);
     \u0275\u0275advance(2);
@@ -61652,7 +61652,7 @@ function InventoryComponent_Conditional_39_tr_32_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(i_r15 + 1);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(5, 10, truckLoadingParchi_r14.created_at, "dd-MM-YYYY"), " ");
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(5, 10, truckLoadingParchi_r14.created_at, "MM-dd-YYYY"), " ");
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(truckLoadingParchi_r14.partyDetails.name);
     \u0275\u0275advance(2);
@@ -62417,7 +62417,7 @@ function TransactionlistComponent_tr_56_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(i_r2 + 1);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 10, transactions_r1 == null ? null : transactions_r1.created_at, "dd-MM-YYYY"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 10, transactions_r1 == null ? null : transactions_r1.created_at, "MM-dd-YYYY"));
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.transactionType);
     \u0275\u0275advance(2);
@@ -62970,7 +62970,7 @@ function ListComponent_Conditional_38_tr_33_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(ctx_r6.currentPage * ctx_r6.perPage - ctx_r6.perPage + (i_r9 + 1));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 11, taulaParchi_r8.created_at, "dd-MM-YYYY"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 11, taulaParchi_r8.created_at, "MM-dd-YYYY"));
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(taulaParchi_r8 == null ? null : taulaParchi_r8.farmerDetails.name);
     \u0275\u0275advance(2);
@@ -63135,7 +63135,7 @@ function ListComponent_Conditional_39_tr_35_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(i_r19 + 1);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(5, 12, truckLoadingParchi_r18.created_at, "dd-MM-YYYY"), " ");
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(5, 12, truckLoadingParchi_r18.created_at, "MM-dd-YYYY"), " ");
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(truckLoadingParchi_r18.partyDetails.name);
     \u0275\u0275advance(2);
@@ -63503,7 +63503,7 @@ function MyListComponent_Conditional_38_tr_32_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(ctx_r5.currentPage * ctx_r5.perPage - ctx_r5.perPage + (i_r8 + 1));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 10, taulaParchi_r7.created_at, "dd-MM-YYYY"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 10, taulaParchi_r7.created_at, "MM-dd-YYYY"));
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate((taulaParchi_r7 == null ? null : taulaParchi_r7.farmerDetails == null ? null : taulaParchi_r7.farmerDetails.name) || "null");
     \u0275\u0275advance(2);
@@ -63638,7 +63638,7 @@ function MyListComponent_Conditional_39_tr_34_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(i_r15 + 1);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(5, 11, truckLoadingParchi_r14.created_at, "dd-MM-YYYY"), " ");
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(5, 11, truckLoadingParchi_r14.created_at, "MM-dd-YYYY"), " ");
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(truckLoadingParchi_r14.partyDetails.name);
     \u0275\u0275advance(2);
