@@ -144,6 +144,14 @@ module.exports = {
           },
         },
         {
+          $lookup: {
+            from: "storages",
+            localField: "storage",
+            foreignField: "_id",
+            as: "wearhouseDetails",
+          },
+        },
+        {
           $unwind: "$cropDetails",
         },
         {
@@ -157,6 +165,9 @@ module.exports = {
         },
         {
           $unwind: "$userDetails",
+        },
+        {
+          $unwind: "$wearhouseDetails",
         },
       ]);
 
@@ -701,7 +712,390 @@ module.exports = {
       res.status(500).json({ message: 'Failed to retrieve users', error });
     }
   },
- 
+  // getWearhouseSummary: async (req, res) => {
+  //   try {
+  //     const { partyName,
+  //       vehicleNumber,
+  //       page,
+  //       limit,
+  //       order_by,
+  //       order_in,
+  //       from,
+  //       to, } = req.query;
+  
+  //     const _page = page ? parseInt(page) : 1;
+  //     const _limit = limit ? parseInt(limit) : 20;
+  //     const _skip = (_page - 1) * _limit;
+  
+  //     let sorting = {};
+  //     if (order_by) {
+  //       sorting[order_by] = order_in === "desc" ? -1 : 1;
+  //     } else {
+  //       sorting["_id"] = -1;
+  //     }
+  
+  //     const query = {};
+  //     if (partyName) {
+  //       query.partyName = new RegExp(partyName, "i");
+  //     }
+  
+  //     if (from || to) {
+  //       query.created_at = {};
+  //       if (from) {
+  //         query.created_at.$gte = new Date(from);
+  //       }
+  //       if (to) {
+  //         query.created_at.$lte = new Date(to);
+  //       }
+  //     }
+  
+  //     query.disabled = { $ne: true };
+  //     query.is_inactive = { $ne: true };
+  
+  //     console.log(query);
+  
+  //     let result = await Model.aggregate([
+  //       { $match: query },
+  //       { $sort: sorting },
+  //       { $skip: _skip },
+  //       { $limit: _limit },
+  //       {
+  //         $lookup: {
+  //           from: "farmers",
+  //           localField: "farmer",
+  //           foreignField: "_id",
+  //           as: "farmerDetails",
+  //         },
+  //       },
+  //       {
+  //         $lookup: {
+  //           from: "crops",
+  //           localField: "crop",
+  //           foreignField: "_id",
+  //           as: "cropDetails",
+  //         },
+  //       },
+  //       {
+  //         $lookup: {
+  //           from: "storages",
+  //           localField: "storage",
+  //           foreignField: "_id",
+  //           as: "wearhouseDetails",
+  //         },
+  //       },
+  //       { $unwind: "$farmerDetails" },
+  //       { $unwind: "$cropDetails" },
+  //       { $unwind: "$wearhouseDetails" }, // Unwind the wearhouse details
+  
+  //       {
+  //         $group: {
+  //           _id: "$wearhouseDetails._id", // Group by wearhouseDetails
+  //           storageName: { $first: "$wearhouseDetails.name" }, // Use the wearhouse name
+  //           totalRate: { $sum: "$rate" }, // Calculate totalRate for each wearhouse
+  //         },
+  //       },
+  //       { $sort: sorting },
+  //     ]);
+  
+  //     console.log("result", result);
+  //     const resultCount = await Model.countDocuments(query);
+  
+  //     res.json({
+  //       data: result,
+  //       meta: {
+  //         current_page: _page,
+  //         from: _skip + 1,
+  //         last_page: Math.ceil(resultCount / _limit),
+  //         per_page: _limit,
+  //         to: _skip + result.length,
+  //         total: resultCount,
+  //       },
+  //     });
+  //   } catch (error) {
+  //     throw new Error(error);
+  //   }
+  // }  
 
+  getWearhouseSummary: async (req, res) => {
+    try {
+      const {
+        partyName,
+        vehicleNumber,
+        page,
+        limit,
+        order_by,
+        order_in,
+        from,
+        to,
+      } = req.query;
+  
+      const _page = page ? parseInt(page) : 1;
+      const _limit = limit ? parseInt(limit) : 20;
+      const _skip = (_page - 1) * _limit;
+  
+      let sorting = {};
+      if (order_by) {
+        sorting[order_by] = order_in === "desc" ? -1 : 1;
+      } else {
+        sorting["_id"] = -1;
+      }
+  
+      // Build query object
+      const query = {};
+      if (partyName) {
+        query.partyName = new RegExp(partyName, "i");
+      }
+  
+      if (from || to) {
+        query.created_at = {};
+        if (from) {
+          query.created_at.$gte = new Date(from);
+        }
+        if (to) {
+          query.created_at.$lte = new Date(to);
+        }
+      }
+  
+      query.disabled = { $ne: true };
+      query.is_inactive = { $ne: true };
+  
+      console.log("Query being used:", query);
+  
+      // Debugging: Test base query without lookups and grouping
+      let baseResult = await Model.aggregate([
+        { $match: query },
+        { $sort: sorting },
+        { $skip: _skip },
+        { $limit: _limit },
+      ]);
+  
+      console.log("Base query result:", baseResult);
+  
+      // If baseResult is empty, there's an issue with the query, sorting, or pagination
+      if (baseResult.length === 0) {
+        console.log("No records found for base query.");
+      }
+  
+      // Now reintroduce the lookups and grouping step-by-step to identify issues
+      let result = await Model.aggregate([
+        { $match: query },
+        { $sort: sorting },
+        { $skip: _skip },
+        { $limit: _limit },
+        {
+          $lookup: {
+            from: "farmers",
+            localField: "farmer",
+            foreignField: "_id",
+            as: "farmerDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "crops",
+            localField: "crop",
+            foreignField: "_id",
+            as: "cropDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "storages",
+            localField: "storage",
+            foreignField: "_id",
+            as: "wearhouseDetails",
+          },
+        },
+        // Removed $unwind temporarily for debugging
+        // { $unwind: "$farmerDetails" },
+        // { $unwind: "$cropDetails" },
+        // { $unwind: "$wearhouseDetails" },
+        
+        // Test result after lookups without grouping
+        { 
+          $project: {
+            farmerDetails: 1,
+            cropDetails: 1,
+            wearhouseDetails: 1,
+            rate: 1
+          }
+        }
+      ]);
+  
+      console.log("Aggregation result before grouping:", result);
+  
+      // If there’s no data, it's likely an issue with the lookups or matching conditions.
+      if (result.length === 0) {
+        console.log("No results found after lookup stages.");
+      }
+  
+      // Now proceed with the grouping step if there is data
+      let groupedResult = await Model.aggregate([
+        { $match: query },
+        { $sort: sorting },
+        { $skip: _skip },
+        { $limit: _limit },
+        {
+          $lookup: {
+            from: "farmers",
+            localField: "farmer",
+            foreignField: "_id",
+            as: "farmerDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "crops",
+            localField: "crop",
+            foreignField: "_id",
+            as: "cropDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "storages",
+            localField: "storage",
+            foreignField: "_id",
+            as: "wearhouseDetails",
+          },
+        },
+        { $unwind: "$farmerDetails" },
+        { $unwind: "$cropDetails" },
+        { $unwind: "$wearhouseDetails" }, // Unwind the wearhouse details
+        {
+          $group: {
+            _id: "$wearhouseDetails._id", // Group by wearhouseDetails
+            storageName: { $first: "$wearhouseDetails.name" }, // Use the wearhouse name
+            totalRate: { $sum: "$rate" }, // Calculate totalRate for each wearhouse
+          },
+        },
+        { $sort: sorting },
+      ]);
+  
+      console.log("Grouped result:", groupedResult);
+  
+      const resultCount = await Model.countDocuments(query);
+  
+      res.json({
+        data: groupedResult,
+        meta: {
+          current_page: _page,
+          from: _skip + 1,
+          last_page: Math.ceil(resultCount / _limit),
+          per_page: _limit,
+          to: _skip + groupedResult.length,
+          total: resultCount,
+        },
+      });
+    } catch (error) {
+      console.error("Error in getWearhouseSummary:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  },
+  getWearhouseWeightSummary: async (req, res) => {
+    try {
+      const {
+        partyName,
+        vehicleNumber,
+        page,
+        limit,
+        order_by,
+        order_in,
+        from,
+        to,
+      } = req.query;
 
+      const _page = page ? parseInt(page) : 1;
+      const _limit = limit ? parseInt(limit) : 20;
+      const _skip = (_page - 1) * _limit;
+
+      // Define sorting logic
+      let sorting = {};
+      if (order_by) {
+        sorting[order_by] = order_in === "desc" ? -1 : 1;
+      } else {
+        sorting["_id"] = -1; // Default sorting by _id (descending)
+      }
+
+      const query = {};
+      if (partyName) {
+        query.partyName = mongoose.Types.ObjectId(partyName);
+      }
+      if (vehicleNumber) {
+        query.vehicleNumber = new RegExp(vehicleNumber, "i");
+      }
+
+      // Add date range filter based on 'from' and 'to' params
+      if (from || to) {
+        query.created_at = {};
+        if (from) {
+          query.created_at.$gte = new Date(from);
+        }
+        if (to) {
+          query.created_at.$lte = new Date(to);
+        }
+      }
+
+      query.disabled = { $ne: true };
+      query.is_inactive = { $ne: true };
+
+      console.log(query);
+
+      // Aggregate query to get truck loading data with filters, pagination, and sorting
+      let result = await Model.aggregate([
+        { $match: query },
+        { $sort: sorting },
+
+        {
+          $lookup: {
+            from: "crops",
+            localField: "crop",
+            foreignField: "_id",
+            as: "cropDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "storages",
+            localField: "storage",
+            foreignField: "_id",
+            as: "wearhouseDetails",
+          },
+        },
+        { $unwind: "$cropDetails" },
+        { $unwind: "$wearhouseDetails" },
+
+        // Grouping by crop to calculate total weight and sum of weights
+        {
+          $group: {
+            _id: "$wearhouseDetails._id",
+            storageName: { $first: "$wearhouseDetails.name" },
+            totalWeight: {
+              $sum: { $multiply: ["$boraQuantity", "$unitBora"] },
+            }, // Calculate total weight
+          },
+        },
+        {
+          $sort: sorting,
+        },
+      ]);
+
+      const resultCount = await Model.countDocuments(query);
+
+      // Respond with data and pagination metadata
+      res.json({
+        data: result,
+        meta: {
+          current_page: _page,
+          from: _skip + 1,
+          last_page: Math.ceil(resultCount / _limit),
+          per_page: _limit,
+          to: _skip + result.length,
+          total: resultCount,
+        },
+      });
+    } catch (error) {
+      throw new Error(error);
+    }
+  },
 };

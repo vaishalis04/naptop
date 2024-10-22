@@ -11,6 +11,10 @@ router.get('/userId/:id',  TruckLoadingController.getByUser);
 
 router.get('/getsummary', TruckLoadingController.getTransactionSummary);
 
+router.get('/getWearhousesummary', TruckLoadingController.getWearhouseSummary);
+
+router.get('/getWeightWearhousesummary', TruckLoadingController.getWearhouseWeightSummary);
+
 router.get('/getWeightsummary', TruckLoadingController.getWeightSummary);
 
 router.get('/truck-loading-details',  TruckLoadingController.getTruckLoadingAggregatedData);

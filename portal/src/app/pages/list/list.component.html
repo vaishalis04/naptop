@@ -152,10 +152,10 @@
                 <td>{{ taulaParchi?.farmerDetails.name }}</td>
                 <!-- <td>{{ taulaParchi?.villageDetails.name }}</td> -->
                 <td>{{ taulaParchi?.boraQuantity }}</td>
-                <td>{{ taulaParchi?.unitBora }}</td>
+                <td>{{ taulaParchi?.unitBora }}Kg</td>
                 <td>{{ taulaParchi?.bharti }}Kg</td>
                 <td>{{ taulaParchi?.netWeight }}Kg</td>
-                <td>{{ taulaParchi?.rate }}</td>
+                <td>₹{{ taulaParchi?.rate }}</td>
                 <td>{{ taulaParchi?.hammalDetails?.name || "null" }}</td>
                 <td>{{ taulaParchi?.cropDetails.name }}</td>
                 <td *ngIf="getCurrentUser()?.role === 'Admin' || 'cashier'">
@@ -237,7 +237,7 @@
                 <td>{{ truckLoadingParchi.boraQuantity }}</td>
                 <td>{{ truckLoadingParchi.unitBora }}Kg</td>
                 <td>{{ truckLoadingParchi.netWeight }}Kg</td>
-                <td>{{ truckLoadingParchi.rate }}</td>
+                <td>₹{{ truckLoadingParchi.rate }}</td>
                 <td>{{ truckLoadingParchi.cropDetails.name }}</td>
                 <td>{{ truckLoadingParchi.other }}</td>
                 <td *ngIf="getCurrentUser()?.role === 'Admin' || 'cashier'">

@@ -19,6 +19,10 @@ const TruckLoadingSchema = new mongoose.Schema({
         ref: 'Hammal',
        
     },
+    storage: {
+        type: mongoose.Types.ObjectId,
+             
+    },
     boraQuantity: {
         type: Number,   
     },

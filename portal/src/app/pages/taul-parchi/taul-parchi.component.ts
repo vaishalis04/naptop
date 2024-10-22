@@ -16,11 +16,14 @@ export class TaulParchiComponent implements OnInit {
   // Villages: any[] = [];
   Hammals: any[] = [];
   Crops: any[] = [];
+  Storage: any[] = [];
+  
 
   TaulParchi = {
     farmer: '',
     village: '',
     mobile: '',
+    storage:'',
     firm_company: '',
     rate: '',
     tulai: '',
@@ -43,6 +46,7 @@ export class TaulParchiComponent implements OnInit {
     // this.fetchVillages();
     this.fetchHammals();
     this.fetchCrops();
+    this.fetchStorage()
   }
 
   calculateNetWeight(): void {
@@ -125,7 +129,23 @@ export class TaulParchiComponent implements OnInit {
         },
       });
   }
-
+  fetchStorage() {
+    this.apiService
+      .get('storage', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.Storage = res.data;
+        },
+        error: (err: any) => {
+          console.error('Error fetching Storage Locations:', err);
+        },
+      });
+  }
   // Autofill the firm/company based on the selected farmer
   autoFillFirmOrCompany() {
     const selectedFarmer = this.Farmers.find(

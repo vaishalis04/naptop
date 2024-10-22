@@ -114,6 +114,8 @@ export class TruckLoadingParchiComponent implements OnInit {
   DeliveryLocations: any[] = [];
   Hammals: any[] = [];
   Crops: any[] = [];
+  Storage: any[] = [];
+
 
   TruckLoadingParchi = {
     partyName: '',
@@ -121,6 +123,7 @@ export class TruckLoadingParchiComponent implements OnInit {
     deliveryLocation: '',
     truck: '',
     assignedHammal: '',
+    storage:'',
     boraQuantity: 0,
     unitBora: 0,
     crop: 0,
@@ -140,6 +143,7 @@ export class TruckLoadingParchiComponent implements OnInit {
     this.fetchHammals();
     this.fetchCrops();
     this.fetchTrucks();
+    this.fetchStorage()
   }
 
   calculateNetWeight(): void {
@@ -236,6 +240,23 @@ export class TruckLoadingParchiComponent implements OnInit {
         },
         error: (err: any) => {
           console.error('Error fetching trucks:', err);
+        },
+      });
+  }
+  fetchStorage() {
+    this.apiService
+      .get('storage', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.Storage = res.data;
+        },
+        error: (err: any) => {
+          console.error('Error fetching Storage Locations:', err);
         },
       });
   }

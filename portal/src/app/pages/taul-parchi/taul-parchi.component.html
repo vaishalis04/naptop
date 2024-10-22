@@ -87,6 +87,23 @@
                       {{ mobile.mobile }}
                     </option>
                   </select>
+                  <label for="storage" class="form-label"
+                    >Storage Location</label
+                  >
+                  <select
+                    id="storage"
+                    class="form-select"
+                    [(ngModel)]="TaulParchi.storage"
+                    name="storage"
+                  >
+                    <option value="">Select Storage Location</option>
+                    <option
+                      *ngFor="let storage of Storage"
+                      [value]="storage._id"
+                    >
+                      {{ storage.name }}
+                    </option>
+                  </select>
 
                   <label for="firmCompany" class="form-label"
                     >Firm / Company</label
@@ -114,9 +131,7 @@
                       placeholder="Rate"
                     />
                   </div>
-                  <label for="tulai" class="form-label"
-                    >Tulai Options</label
-                  >
+                  <label for="tulai" class="form-label">Tulai Options</label>
                   <select
                     id="tulai"
                     class="form-select bg-warning text-dark"
@@ -125,9 +140,7 @@
                   >
                     <option value="">Select Tulai</option>
                     <option value="Labour">Labour</option>
-                    <option value="Dharamkata">
-                      Dharamkanta
-                    </option>
+                    <option value="Dharamkata">Dharamkanta</option>
                   </select>
                   <!-- <label for="assignedHammal" class="form-label"
                     >Assigned Hammal</label
@@ -144,7 +157,9 @@
                     </option>
                   </select> -->
                   <div *ngIf="TaulParchi.tulai === 'Labour'">
-                    <label for="assignedHammal" class="form-label">Assigned Hammal</label>
+                    <label for="assignedHammal" class="form-label"
+                      >Assigned Hammal</label
+                    >
                     <select
                       id="assignedHammal"
                       class="form-select"
@@ -152,7 +167,10 @@
                       name="assignedHammal"
                     >
                       <option value="">Select Hammal</option>
-                      <option *ngFor="let hammal of Hammals" [ngValue]="hammal._id">
+                      <option
+                        *ngFor="let hammal of Hammals"
+                        [ngValue]="hammal._id"
+                      >
                         {{ hammal.name }}
                       </option>
                     </select>
@@ -182,7 +200,6 @@
                     (ngModelChange)="calculateNetWeight()"
                   />
 
-                  
                   <!-- <label for="bharti" class="form-label">Bharti</label>
                   <select
                     id="bharti"
@@ -204,11 +221,10 @@
                     (ngModelChange)="calculateNetWeight()"
                   >
                     <option value="" disabled selected>Select Bharti</option>
-                   
+
                     <option [ngValue]="60">60</option>
                     <option [ngValue]="55">55</option>
                     <option [ngValue]="40">40</option>
-
                   </select>
                   <label for="netWeight" class="form-label">Net Weight</label>
                   <!-- The calculated Net Weight will be displayed here -->

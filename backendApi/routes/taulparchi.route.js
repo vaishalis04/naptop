@@ -7,6 +7,10 @@ router.get('/userId/:id',  TaulParchiController.getByUser);
 
 router.get('/getsummary', TaulParchiController.getTaulParchiSummary);
 
+router.get('/getwearhouseSummary', TaulParchiController.getWearhouseSummary);
+
+router.get('/getWeightwearhouseSummary', TaulParchiController.getWearhouseWeightSummary);
+
 router.get('/',  TaulParchiController.list);
 
 router.post('/', TaulParchiController.create);

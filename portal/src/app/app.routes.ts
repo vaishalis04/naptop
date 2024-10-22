@@ -25,6 +25,9 @@ import { TruckComponent } from './pages/truck/truck.component';
 import { ListComponent } from './pages/list/list.component';
 import { MyListComponent } from './pages/my-list/my-list.component';
 import { AdvancePaymentComponent } from './pages/advance-payment/advance-payment.component';
+import { StorageComponent } from './pages/storage/storage.component';
+import { WearhouseAccountsComponent } from './pages/wearhouse-accounts/wearhouse-accounts.component';
+import { WearhouseInventoryComponent } from './pages/wearhouse-inventory/wearhouse-inventory.component';
 
 export const routes: Routes = [
   {
@@ -106,6 +109,11 @@ export const routes: Routes = [
         data: { title: 'Delivery Locations' },
       },
       {
+        path: 'storage',
+        component: StorageComponent,
+        data: { title: 'Storage Locations' },
+      },
+      {
         path: 'profile',
         component: ProfileComponent,
         data: { title: 'Profile' },
@@ -154,6 +162,16 @@ export const routes: Routes = [
         path: 'advance-payment',
         component: AdvancePaymentComponent,
         data: { title: 'advance-payment' },
+      },
+      {
+        path: 'wearhouse-accounts',
+        component: WearhouseAccountsComponent,
+        data: { title: 'wearhouse-accounts' },
+      },
+      {
+        path: 'wearhouse-inventory',
+        component: WearhouseInventoryComponent,
+        data: { title: 'wearhouse-inventory' },
       },
     ],
     

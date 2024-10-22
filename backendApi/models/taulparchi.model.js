@@ -17,6 +17,10 @@ const TaulParchiSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId, 
 
     },
+    storage: {
+        type: mongoose.Types.ObjectId,
+             
+    },
     firm_company: {
         type: String,     
     },

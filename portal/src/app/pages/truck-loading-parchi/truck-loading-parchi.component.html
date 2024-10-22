@@ -91,6 +91,23 @@
                       {{ hammal.name }}
                     </option>
                   </select>
+                  <label for="storage" class="form-label"
+                  >Storage Location</label
+                >
+                <select
+                  id="storage"
+                  class="form-select"
+                  [(ngModel)]="TruckLoadingParchi.storage"
+                  name="storage"
+                >
+                  <option value="">Select Storage Location</option>
+                  <option
+                    *ngFor="let storage of Storage"
+                    [value]="storage._id"
+                  >
+                    {{ storage.name }}
+                  </option>
+                </select>
 
                   <label for="boraQuantity" class="form-label"
                     >Bora Quantity</label

@@ -28,7 +28,7 @@ export class SidebarComponent {
     },
     {
       title: 'Taul Parchi',
-      icon: 'fi-rr-list',
+      icon: 'fi fi-rr-document',
       link: '/taul-parchi'
     },
     {
@@ -36,11 +36,6 @@ export class SidebarComponent {
       icon: 'fi-rr-wallet',
       link: '/truck-loading-parchi'
     },
-    // {
-    //   title: 'Masters',
-    //   icon: 'fi-rr-database',
-    //   link: '/masters'
-    // },
     {
       title:'Farmers',
       icon: 'fi-rr-database',
@@ -48,32 +43,37 @@ export class SidebarComponent {
     },
     {
       title:'Villages',
-      icon: 'fi-rr-database',
+      icon: 'fi fi-rr-map',
       link:'/villages'
     },
     {
       title:'Hammals',
-      icon: 'fi-rr-database',
+      icon: 'fi fi-rr-paw',
       link:'/hammals'
     },
     {
       title:'Crops',
-      icon: 'fi-rr-database',
+      icon: 'fi fi-rr-leaf',
       link:'/crops'
     },
     {
       title:'Parties',
-      icon: 'fi-rr-database',
+      icon: 'fi fi-rr-users',
       link:'/parties'
     },
     {
       title:'Delivery Locations',
-      icon: 'fi-rr-database',
+      icon: 'fi fi-rr-map-marker',
       link:'/delivery'
     },
     {
+      title:'Storage Locations',
+      icon: 'fi fi-rr-box',
+      link:'/storage'
+    },
+    {
       title: 'Trucks',
-      icon: 'fi-rr-settings',
+      icon: 'fi fi-rr-route',
       link: '/truck'
     },
     {
@@ -88,38 +88,43 @@ export class SidebarComponent {
     },
     {
       title: 'Accounts',
-      icon: 'fi-rr-settings',
+      icon: 'fi fi-rr-user-check',
       link: '/accounts'
     },
     {
       title: 'Inventory',
-      icon: 'fi-rr-settings',
+      icon: 'fi fi-rr-list',
       link: '/inventory'
     },
-    // {
-    //   title: 'Transaction',
-    //   icon: 'fi-rr-settings',
-    //   link: '/transaction'
-    // },
     {
       title: 'Transaction List',
-      icon: 'fi-rr-settings',
+      icon: 'fi fi-rr-receipt',
       link: '/transactionlist'
     },
      {
       title: 'List',
-      icon: 'fi-rr-settings',
+      icon: 'fi fi-rr-list-check',
       link: '/list'
     },
     {
       title: 'My List',
-      icon: 'fi-rr-settings',
+      icon: 'fi fi-rr-clipboard',
       link: '/my-list'
     },
     {
       title: 'Advance Payments',
-      icon: 'fi-rr-settings',
+      icon: 'fi fi-rr-wallet',
       link: '/advance-payment'
+    },
+    {
+      title: 'Wearhouse Accounts',
+      icon: 'fi fi-rr-wallet',
+      link: '/wearhouse-accounts'
+    },
+    {
+      title: 'Wearhouse Inventory',
+      icon: 'fi fi-rr-wallet',
+      link: '/wearhouse-inventory'
     }
   ];
 

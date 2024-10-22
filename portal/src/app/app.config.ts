@@ -56,6 +56,10 @@ export const roleWiseAccess = [
     roles: ['Admin'],
   },
   {
+    page: 'storage',
+    roles: ['Admin'],
+  },
+  {
     page: 'profile',
     roles: ['Admin'],
   },
@@ -93,6 +97,14 @@ export const roleWiseAccess = [
   },
   {
     page: 'advance-payment',
+    roles: ['Admin'],
+  },
+  {
+    page: 'wearhouse-accounts',
+    roles: ['Admin'],
+  },
+  {
+    page: 'wearhouse-inventory',
     roles: ['Admin'],
   },
 ];
