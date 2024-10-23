@@ -1,6 +1,11 @@
 @charset "UTF-8";
 
 /* node_modules/bootstrap/dist/css/bootstrap.min.css */
+/*!
+* Bootstrap  v5.3.2 (https://getbootstrap.com/)
+* Copyright 2011-2023 The Bootstrap Authors
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+*/
 :root,
 [data-bs-theme=light] {
   --bs-blue:#0d6efd;
@@ -70,7 +75,10 @@
   --bs-black-rgb:0,0,0;
   --bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   --bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  --bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-gradient:linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0));
   --bs-body-font-family:var(--bs-font-sans-serif);
   --bs-body-font-size:1rem;
   --bs-body-font-weight:400;
@@ -4809,7 +4817,16 @@ fieldset:disabled .btn {
   }
 }
 .progress-bar-striped {
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+  background-image:
+    linear-gradient(
+      45deg,
+      rgba(255, 255, 255, .15) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, .15) 50%,
+      rgba(255, 255, 255, .15) 75%,
+      transparent 75%,
+      transparent);
   background-size: var(--bs-progress-height) var(--bs-progress-height);
 }
 .progress-stacked > .progress {
@@ -6612,8 +6629,18 @@ fieldset:disabled .btn {
   }
 }
 .placeholder-wave {
-  -webkit-mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.8) 75%, #000 95%);
-  mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, 0.8) 75%, #000 95%);
+  -webkit-mask-image:
+    linear-gradient(
+      130deg,
+      #000 55%,
+      rgba(0, 0, 0, 0.8) 75%,
+      #000 95%);
+  mask-image:
+    linear-gradient(
+      130deg,
+      #000 55%,
+      rgba(0, 0, 0, 0.8) 75%,
+      #000 95%);
   -webkit-mask-size: 200% 100%;
   mask-size: 200% 100%;
   animation: placeholder-wave 2s linear infinite;
@@ -64662,8 +64689,25 @@ span[class*=fi-brands-]:before {
 .fi-brands-zoom:before {
   content: "\f1dd";
 }
+/*!
+*   _____       _             __                 _____                               ______ _       _   _
+*  |_   _|     | |           / _|               |_   _|                             |  ____| |     | | (_)
+*    | |  _ __ | |_ ___ _ __| |_ __ _  ___ ___    | |  ___ ___  _ __  ___   ______  | |__  | | __ _| |_ _  ___ ___  _ __
+*    | | | '_ \| __/ _ \ '__|  _/ _` |/ __/ _ \   | | / __/ _ \| '_ \/ __| |______| |  __| | |/ _` | __| |/ __/ _ \| '_ \
+*   _| |_| | | | ||  __/ |  | || (_| | (_|  __/  _| || (_| (_) | | | \__ \          | |    | | (_| | |_| | (_| (_) | | | |
+*  |_____|_| |_|\__\___|_|  |_| \__,_|\___\___| |_____\___\___/|_| |_|___/          |_|    |_|\__,_|\__|_|\___\___/|_| |_|
+*
+*                         UIcons 2.1.0 - https://www.flaticon.com/uicons/interface-icons
+*/
 
 /* node_modules/animate.css/animate.min.css */
+/*!
+* animate.css - https://animate.style/
+* Version - 4.1.1
+* Licensed under the MIT license - http://opensource.org/licenses/MIT
+*
+* Copyright (c) 2020 Animate.css
+*/
 :root {
   --animate-duration:1s;
   --animate-delay:1s;
@@ -69118,7 +69162,11 @@ body.vjs-pip-window .video-js {
 }
 .video-js .vjs-modal-dialog {
   background: rgba(0, 0, 0, 0.8);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0));
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.8),
+      rgba(255, 255, 255, 0));
   overflow: auto;
 }
 .video-js .vjs-modal-dialog > * {
@@ -70147,14 +70195,22 @@ video::-webkit-media-text-track-display {
 .vjs-track-settings-controls button:active {
   outline-style: solid;
   outline-width: medium;
-  background-image: linear-gradient(0deg, #fff 88%, #73859f 100%);
+  background-image:
+    linear-gradient(
+      0deg,
+      #fff 88%,
+      #73859f 100%);
 }
 .vjs-track-settings-controls button:hover {
   color: rgba(43, 51, 63, 0.75);
 }
 .vjs-track-settings-controls button {
   background-color: #fff;
-  background-image: linear-gradient(-180deg, #fff 88%, #73859f 100%);
+  background-image:
+    linear-gradient(
+      -180deg,
+      #fff 88%,
+      #73859f 100%);
   color: #2B333F;
   cursor: pointer;
   border-radius: 2px;
@@ -70164,7 +70220,12 @@ video::-webkit-media-text-track-display {
 }
 .vjs-title-bar {
   background: rgba(0, 0, 0, 0.9);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0) 100%);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.7) 60%,
+      rgba(0, 0, 0, 0) 100%);
   font-size: 1.2em;
   line-height: 1.5;
   transition: opacity 0.1s;
@@ -70359,7 +70420,11 @@ video::-webkit-media-text-track-display {
     "Liberation Mono",
     "Courier New",
     monospace;
-  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-gradient:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
@@ -70644,34 +70709,4 @@ a:hover::before {
 }
 
 /* angular:styles/global:styles */
-/*! Bundled license information:
-
-bootstrap/dist/css/bootstrap.min.css:
-  (*!
-  * Bootstrap  v5.3.2 (https://getbootstrap.com/)
-  * Copyright 2011-2023 The Bootstrap Authors
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  *)
-
-@flaticon/flaticon-uicons/css/all/all.css:
-  (*!
-  *   _____       _             __                 _____                               ______ _       _   _
-  *  |_   _|     | |           / _|               |_   _|                             |  ____| |     | | (_)
-  *    | |  _ __ | |_ ___ _ __| |_ __ _  ___ ___    | |  ___ ___  _ __  ___   ______  | |__  | | __ _| |_ _  ___ ___  _ __
-  *    | | | '_ \| __/ _ \ '__|  _/ _` |/ __/ _ \   | | / __/ _ \| '_ \/ __| |______| |  __| | |/ _` | __| |/ __/ _ \| '_ \
-  *   _| |_| | | | ||  __/ |  | || (_| | (_|  __/  _| || (_| (_) | | | \__ \          | |    | | (_| | |_| | (_| (_) | | | |
-  *  |_____|_| |_|\__\___|_|  |_| \__,_|\___\___| |_____\___\___/|_| |_|___/          |_|    |_|\__,_|\__|_|\___\___/|_| |_|
-  *
-  *                         UIcons 2.1.0 - https://www.flaticon.com/uicons/interface-icons
-  *)
-
-animate.css/animate.min.css:
-  (*!
-  * animate.css - https://animate.style/
-  * Version - 4.1.1
-  * Licensed under the MIT license - http://opensource.org/licenses/MIT
-  *
-  * Copyright (c) 2020 Animate.css
-  *)
-*/
 /*# sourceMappingURL=styles.css.map */

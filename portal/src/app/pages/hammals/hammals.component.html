@@ -18,7 +18,12 @@
                                 <input id="masterName" class="form-control" [(ngModel)]="masterToAddOrEdit.name"
                                     name="masterName" type="text" placeholder="Name" />
                             </div>
-                      
+                            <!-- Rate -->
+                            <div class="form-group">
+                                <label for="masterRate" class="form-label">Rate</label>
+                                <input id="masterRate" class="form-control" [(ngModel)]="masterToAddOrEdit.rate"
+                                    name="masterRate" type="number" placeholder="Rate" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -88,7 +93,7 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Name</th>
-                                                    
+                                                    <th>Rate</th>
                                                     <th>Actions</th>
                                                 </tr>
                                             </thead>
@@ -96,7 +101,7 @@
                                                 <tr *ngFor="let item of data | paginate: { id: 'roles_list', itemsPerPage: limit, currentPage: p, totalItems: total }; let i = index">
                                                     <td>{{ i + 1 }}</td>
                                                     <td>{{ item.name }}</td>
-                                                    
+                                                    <td>{{ item.rate }}</td>
                                                     <td>
                                                         <button class="btn btn-outline-primary btn-sm"
                                                             (click)="selectItemToEdit(i)">

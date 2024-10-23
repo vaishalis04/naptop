@@ -5,6 +5,10 @@ const HammalSchema = new mongoose.Schema({
         type: String,
         required: true,  // Assuming this field is required, modify if needed
     },
+    rate: {
+        type: Number,
+        default: 0,
+    },
     created_at: {
         type: Date,
         default: Date.now,

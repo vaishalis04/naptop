@@ -34,7 +34,6 @@ export class HammalsComponent {
     private apiService: ApiService
   ) {
     this.getData();
-    
   }
 
 

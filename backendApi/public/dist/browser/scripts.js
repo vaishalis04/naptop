@@ -1589,20 +1589,15 @@
     function keyCode(searchInput) {
       if (searchInput && "object" === typeof searchInput) {
         var hasKeyCode = searchInput.which || searchInput.keyCode || searchInput.charCode;
-        if (hasKeyCode)
-          searchInput = hasKeyCode;
+        if (hasKeyCode) searchInput = hasKeyCode;
       }
-      if ("number" === typeof searchInput)
-        return names[searchInput];
+      if ("number" === typeof searchInput) return names[searchInput];
       var search = String(searchInput);
       var foundNamedKey = codes[search.toLowerCase()];
-      if (foundNamedKey)
-        return foundNamedKey;
+      if (foundNamedKey) return foundNamedKey;
       var foundNamedKey = aliases[search.toLowerCase()];
-      if (foundNamedKey)
-        return foundNamedKey;
-      if (search.length === 1)
-        return search.charCodeAt(0);
+      if (foundNamedKey) return foundNamedKey;
+      if (search.length === 1) return search.charCodeAt(0);
       return void 0;
     }
     keyCode.isEventKey = function isEventKey(event, nameOrCode) {
@@ -1697,17 +1692,12 @@
     /*!
      * Programatically add the following
      */
-    for (i = 97; i < 123; i++)
-      codes[String.fromCharCode(i)] = i - 32;
-    for (var i = 48; i < 58; i++)
-      codes[i - 48] = i;
-    for (i = 1; i < 13; i++)
-      codes["f" + i] = i + 111;
-    for (i = 0; i < 10; i++)
-      codes["numpad " + i] = i + 96;
+    for (i = 97; i < 123; i++) codes[String.fromCharCode(i)] = i - 32;
+    for (var i = 48; i < 58; i++) codes[i - 48] = i;
+    for (i = 1; i < 13; i++) codes["f" + i] = i + 111;
+    for (i = 0; i < 10; i++) codes["numpad " + i] = i + 96;
     var names = exports2.names = exports2.title = {};
-    for (i in codes)
-      names[codes[i]] = i;
+    for (i in codes) names[codes[i]] = i;
     for (var alias in aliases) {
       codes[alias] = aliases[alias];
     }
@@ -4409,8 +4399,7 @@
   }
   function isEmpty(obj) {
     for (var i in obj) {
-      if (obj.hasOwnProperty(i))
-        return false;
+      if (obj.hasOwnProperty(i)) return false;
     }
     return true;
   }
@@ -4475,8 +4464,7 @@
       return callback(evt, failureResponse);
     }
     function loadFunc() {
-      if (aborted)
-        return;
+      if (aborted) return;
       var status2;
       clearTimeout(timeoutTimer);
       if (options.useXDR && xhr.status === void 0) {
@@ -4551,8 +4539,7 @@
     }
     if (!sync && options.timeout > 0) {
       timeoutTimer = setTimeout(function() {
-        if (aborted)
-          return;
+        if (aborted) return;
         aborted = true;
         xhr.abort("timeout");
         var e = new Error("XMLHttpRequest timeout");
@@ -5142,7 +5129,7 @@
     }
   }
   var document_1 = doccy;
-  var _objCreate = Object.create || function() {
+  var _objCreate = Object.create || /* @__PURE__ */ function() {
     function F() {
     }
     return function(o) {
@@ -21952,8 +21939,7 @@
     return current;
   }
   function toOrderedSet(input) {
-    if (!input)
-      return [];
+    if (!input) return [];
     var list = splitOnASCIIWhitespace(input);
     return Object.keys(list.reduce(orderedSetReducer, {}));
   }
@@ -22023,12 +22009,10 @@
       error = this;
       Error.call(this, ExceptionMessage[code]);
       this.message = ExceptionMessage[code];
-      if (Error.captureStackTrace)
-        Error.captureStackTrace(this, DOMException2);
+      if (Error.captureStackTrace) Error.captureStackTrace(this, DOMException2);
     }
     error.code = code;
-    if (message)
-      this.message = this.message + ": " + message;
+    if (message) this.message = this.message + ": " + message;
     return error;
   }
   DOMException2.prototype = Error.prototype;
@@ -25507,8 +25491,7 @@
   function ParseError$1(message, locator) {
     this.message = message;
     this.locator = locator;
-    if (Error.captureStackTrace)
-      Error.captureStackTrace(this, ParseError$1);
+    if (Error.captureStackTrace) Error.captureStackTrace(this, ParseError$1);
   }
   ParseError$1.prototype = new Error();
   ParseError$1.prototype.name = ParseError$1.name;
@@ -26063,8 +26046,7 @@
     reg.exec(source);
     while (match = reg.exec(source)) {
       buf.push(match);
-      if (match[1])
-        return buf;
+      if (match[1]) return buf;
     }
   }
   var XMLReader_1 = XMLReader$1;
@@ -33388,8 +33370,7 @@ browserWorkerPolyFill(self);
           service.currentWindow.clearText();
         } else if (b === 141) {
           i++;
-        } else
-          ;
+        } else ;
       }
     };
     Cea708Stream.prototype.extendedCommands = function(i, service) {
@@ -47577,13 +47558,11 @@ Current map: `, currentMap);
       return e;
     }
     function _toPrimitive(t, r) {
-      if ("object" != typeof t || !t)
-        return t;
+      if ("object" != typeof t || !t) return t;
       var e = t[Symbol.toPrimitive];
       if (void 0 !== e) {
         var i = e.call(t, r || "default");
-        if ("object" != typeof i)
-          return i;
+        if ("object" != typeof i) return i;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === r ? String : Number)(t);
@@ -47597,16 +47576,13 @@ Current map: `, currentMap);
         var descriptor = props[i];
         descriptor.enumerable = descriptor.enumerable || false;
         descriptor.configurable = true;
-        if ("value" in descriptor)
-          descriptor.writable = true;
+        if ("value" in descriptor) descriptor.writable = true;
         Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
       }
     }
     function _createClass(Constructor, protoProps, staticProps) {
-      if (protoProps)
-        _defineProperties(Constructor.prototype, protoProps);
-      if (staticProps)
-        _defineProperties(Constructor, staticProps);
+      if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) _defineProperties(Constructor, staticProps);
       Object.defineProperty(Constructor, "prototype", {
         writable: false
       });
@@ -47659,12 +47635,9 @@ Current map: `, currentMap);
       return _setPrototypeOf(o, p);
     }
     function _isNativeReflectConstruct() {
-      if (typeof Reflect === "undefined" || !Reflect.construct)
-        return false;
-      if (Reflect.construct.sham)
-        return false;
-      if (typeof Proxy === "function")
-        return true;
+      if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+      if (Reflect.construct.sham) return false;
+      if (typeof Proxy === "function") return true;
       try {
         Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
         }));
@@ -47682,8 +47655,7 @@ Current map: `, currentMap);
           a.push.apply(a, args2);
           var Constructor = Function.bind.apply(Parent2, a);
           var instance = new Constructor();
-          if (Class2)
-            _setPrototypeOf(instance, Class2.prototype);
+          if (Class2) _setPrototypeOf(instance, Class2.prototype);
           return instance;
         };
       }
@@ -47699,14 +47671,12 @@ Current map: `, currentMap);
     function _wrapNativeSuper(Class) {
       var _cache = typeof Map === "function" ? /* @__PURE__ */ new Map() : void 0;
       _wrapNativeSuper = function _wrapNativeSuper2(Class2) {
-        if (Class2 === null || !_isNativeFunction(Class2))
-          return Class2;
+        if (Class2 === null || !_isNativeFunction(Class2)) return Class2;
         if (typeof Class2 !== "function") {
           throw new TypeError("Super expression must either be null or a function");
         }
         if (typeof _cache !== "undefined") {
-          if (_cache.has(Class2))
-            return _cache.get(Class2);
+          if (_cache.has(Class2)) return _cache.get(Class2);
           _cache.set(Class2, Wrapper);
         }
         function Wrapper() {
@@ -47731,38 +47701,28 @@ Current map: `, currentMap);
       return self2;
     }
     function _unsupportedIterableToArray(o, minLen) {
-      if (!o)
-        return;
-      if (typeof o === "string")
-        return _arrayLikeToArray(o, minLen);
+      if (!o) return;
+      if (typeof o === "string") return _arrayLikeToArray(o, minLen);
       var n = Object.prototype.toString.call(o).slice(8, -1);
-      if (n === "Object" && o.constructor)
-        n = o.constructor.name;
-      if (n === "Map" || n === "Set")
-        return Array.from(o);
-      if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-        return _arrayLikeToArray(o, minLen);
+      if (n === "Object" && o.constructor) n = o.constructor.name;
+      if (n === "Map" || n === "Set") return Array.from(o);
+      if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
     }
     function _arrayLikeToArray(arr, len) {
-      if (len == null || len > arr.length)
-        len = arr.length;
-      for (var i = 0, arr2 = new Array(len); i < len; i++)
-        arr2[i] = arr[i];
+      if (len == null || len > arr.length) len = arr.length;
+      for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
       return arr2;
     }
     function _createForOfIteratorHelperLoose(o, allowArrayLike) {
       var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
-      if (it)
-        return (it = it.call(o)).next.bind(it);
+      if (it) return (it = it.call(o)).next.bind(it);
       if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
-        if (it)
-          o = it;
+        if (it) o = it;
         var i = 0;
         return function() {
-          if (i >= o.length)
-            return {
-              done: true
-            };
+          if (i >= o.length) return {
+            done: true
+          };
           return {
             done: false,
             value: o[i++]
@@ -50208,8 +50168,7 @@ Current map: `, currentMap);
       if (preferManagedMediaSource === void 0) {
         preferManagedMediaSource = true;
       }
-      if (typeof self === "undefined")
-        return void 0;
+      if (typeof self === "undefined") return void 0;
       var mms = (preferManagedMediaSource || !self.MediaSource) && self.ManagedMediaSource;
       return mms || self.MediaSource || self.WebKitMediaSource;
     }
@@ -51569,8 +51528,7 @@ Current map: `, currentMap);
     };
     var MIN_CUE_DURATION = 0.25;
     function getCueClass() {
-      if (typeof self === "undefined")
-        return void 0;
+      if (typeof self === "undefined") return void 0;
       return self.VTTCue || self.TextTrackCue;
     }
     function createCueWithDataFields(Cue, startTime, endTime, data, type) {
@@ -53007,10 +52965,8 @@ Current map: `, currentMap);
           }, _ret;
           for (var i = levels.length; i--; ) {
             _ret = _loop();
-            if (_ret === 0)
-              continue;
-            if (_ret === 1)
-              break;
+            if (_ret === 0) continue;
+            if (_ret === 1) break;
           }
           if (nextLevel > -1 && hls.loadLevel !== nextLevel) {
             data.levelRetry = true;
@@ -54252,10 +54208,8 @@ Current map: `, currentMap);
         }, _ret;
         for (var i = maxAutoLevel; i >= minAutoLevel; i--) {
           _ret = _loop();
-          if (_ret === 0)
-            continue;
-          if (_ret)
-            return _ret.v;
+          if (_ret === 0) continue;
+          if (_ret) return _ret.v;
         }
         return -1;
       };
@@ -61390,8 +61344,7 @@ Current map: `, currentMap);
       }
       if (Object.create) {
         Events2.prototype = /* @__PURE__ */ Object.create(null);
-        if (!new Events2().__proto__)
-          prefix = false;
+        if (!new Events2().__proto__) prefix = false;
       }
       function EE(fn, context, once) {
         this.fn = fn;
@@ -61403,19 +61356,14 @@ Current map: `, currentMap);
           throw new TypeError("The listener must be a function");
         }
         var listener = new EE(fn, context || emitter, once), evt = prefix ? prefix + event : event;
-        if (!emitter._events[evt])
-          emitter._events[evt] = listener, emitter._eventsCount++;
-        else if (!emitter._events[evt].fn)
-          emitter._events[evt].push(listener);
-        else
-          emitter._events[evt] = [emitter._events[evt], listener];
+        if (!emitter._events[evt]) emitter._events[evt] = listener, emitter._eventsCount++;
+        else if (!emitter._events[evt].fn) emitter._events[evt].push(listener);
+        else emitter._events[evt] = [emitter._events[evt], listener];
         return emitter;
       }
       function clearEvent(emitter, evt) {
-        if (--emitter._eventsCount === 0)
-          emitter._events = new Events2();
-        else
-          delete emitter._events[evt];
+        if (--emitter._eventsCount === 0) emitter._events = new Events2();
+        else delete emitter._events[evt];
       }
       function EventEmitter2() {
         this._events = new Events2();
@@ -61423,11 +61371,9 @@ Current map: `, currentMap);
       }
       EventEmitter2.prototype.eventNames = function eventNames() {
         var names = [], events, name;
-        if (this._eventsCount === 0)
-          return names;
+        if (this._eventsCount === 0) return names;
         for (name in events = this._events) {
-          if (has.call(events, name))
-            names.push(prefix ? name.slice(1) : name);
+          if (has.call(events, name)) names.push(prefix ? name.slice(1) : name);
         }
         if (Object.getOwnPropertySymbols) {
           return names.concat(Object.getOwnPropertySymbols(events));
@@ -61436,10 +61382,8 @@ Current map: `, currentMap);
       };
       EventEmitter2.prototype.listeners = function listeners(event) {
         var evt = prefix ? prefix + event : event, handlers = this._events[evt];
-        if (!handlers)
-          return [];
-        if (handlers.fn)
-          return [handlers.fn];
+        if (!handlers) return [];
+        if (handlers.fn) return [handlers.fn];
         for (var i = 0, l = handlers.length, ee = new Array(l); i < l; i++) {
           ee[i] = handlers[i].fn;
         }
@@ -61447,20 +61391,16 @@ Current map: `, currentMap);
       };
       EventEmitter2.prototype.listenerCount = function listenerCount(event) {
         var evt = prefix ? prefix + event : event, listeners = this._events[evt];
-        if (!listeners)
-          return 0;
-        if (listeners.fn)
-          return 1;
+        if (!listeners) return 0;
+        if (listeners.fn) return 1;
         return listeners.length;
       };
       EventEmitter2.prototype.emit = function emit(event, a1, a2, a3, a4, a5) {
         var evt = prefix ? prefix + event : event;
-        if (!this._events[evt])
-          return false;
+        if (!this._events[evt]) return false;
         var listeners = this._events[evt], len = arguments.length, args, i;
         if (listeners.fn) {
-          if (listeners.once)
-            this.removeListener(event, listeners.fn, void 0, true);
+          if (listeners.once) this.removeListener(event, listeners.fn, void 0, true);
           switch (len) {
             case 1:
               return listeners.fn.call(listeners.context), true;
@@ -61482,8 +61422,7 @@ Current map: `, currentMap);
         } else {
           var length = listeners.length, j;
           for (i = 0; i < length; i++) {
-            if (listeners[i].once)
-              this.removeListener(event, listeners[i].fn, void 0, true);
+            if (listeners[i].once) this.removeListener(event, listeners[i].fn, void 0, true);
             switch (len) {
               case 1:
                 listeners[i].fn.call(listeners[i].context);
@@ -61498,10 +61437,9 @@ Current map: `, currentMap);
                 listeners[i].fn.call(listeners[i].context, a1, a2, a3);
                 break;
               default:
-                if (!args)
-                  for (j = 1, args = new Array(len - 1); j < len; j++) {
-                    args[j - 1] = arguments[j];
-                  }
+                if (!args) for (j = 1, args = new Array(len - 1); j < len; j++) {
+                  args[j - 1] = arguments[j];
+                }
                 listeners[i].fn.apply(listeners[i].context, args);
             }
           }
@@ -61516,8 +61454,7 @@ Current map: `, currentMap);
       };
       EventEmitter2.prototype.removeListener = function removeListener(event, fn, context, once) {
         var evt = prefix ? prefix + event : event;
-        if (!this._events[evt])
-          return this;
+        if (!this._events[evt]) return this;
         if (!fn) {
           clearEvent(this, evt);
           return this;
@@ -61533,10 +61470,8 @@ Current map: `, currentMap);
               events.push(listeners[i]);
             }
           }
-          if (events.length)
-            this._events[evt] = events.length === 1 ? events[0] : events;
-          else
-            clearEvent(this, evt);
+          if (events.length) this._events[evt] = events.length === 1 ? events[0] : events;
+          else clearEvent(this, evt);
         }
         return this;
       };
@@ -61544,8 +61479,7 @@ Current map: `, currentMap);
         var evt;
         if (event) {
           evt = prefix ? prefix + event : event;
-          if (this._events[evt])
-            clearEvent(this, evt);
+          if (this._events[evt]) clearEvent(this, evt);
         } else {
           this._events = new Events2();
           this._eventsCount = 0;
@@ -67865,10 +67799,8 @@ Current map: `, currentMap);
         }, _ret;
         for (var i = 0; i < mediaKeySessions.length; i++) {
           _ret = _loop();
-          if (_ret === 0)
-            continue;
-          if (_ret === 1)
-            break;
+          if (_ret === 0) continue;
+          if (_ret === 1) break;
         }
         if (!keySessionContextPromise) {
           keySessionContextPromise = keyIdToKeySessionPromise[keyIdHex] = this.getKeySystemSelectionPromise([keySystemDomain]).then(function(_ref4) {
@@ -69520,15 +69452,13 @@ Current map: `, currentMap);
         var xhrSetup = this.xhrSetup;
         if (xhrSetup) {
           Promise.resolve().then(function() {
-            if (_this.stats.aborted)
-              return;
+            if (_this.stats.aborted) return;
             return xhrSetup(xhr, context.url);
           }).catch(function(error) {
             xhr.open("GET", context.url, true);
             return xhrSetup(xhr, context.url);
           }).then(function() {
-            if (_this.stats.aborted)
-              return;
+            if (_this.stats.aborted) return;
             _this.openAndSendXhr(xhr, context, config);
           }).catch(function(error) {
             _this.callbacks.onError({
@@ -70886,8 +70816,7 @@ Current map: `, currentMap);
             }
           };
           for (var i = 0; i < encryptedFragments.length; i++) {
-            if (_loop())
-              break;
+            if (_loop()) break;
           }
         }
       };
@@ -72703,8 +72632,7 @@ Current map: `, currentMap);
         key: "minAutoLevel",
         get: function get() {
           var levels = this.levels, minAutoBitrate = this.config.minAutoBitrate;
-          if (!levels)
-            return 0;
+          if (!levels) return 0;
           var len = levels.length;
           for (var i = 0; i < len; i++) {
             if (levels[i].maxBitrate >= minAutoBitrate) {
@@ -72988,13 +72916,11 @@ var Clappr = function() {
   function r(e2, t2, r2) {
     return (t2 = function(e3) {
       var t3 = function(e4, t4) {
-        if ("object" != typeof e4 || null === e4)
-          return e4;
+        if ("object" != typeof e4 || null === e4) return e4;
         var r3 = e4[Symbol.toPrimitive];
         if (void 0 !== r3) {
           var i2 = r3.call(e4, t4 || "default");
-          if ("object" != typeof i2)
-            return i2;
+          if ("object" != typeof i2) return i2;
           throw new TypeError("@@toPrimitive must return a primitive value.");
         }
         return ("string" === t4 ? String : Number)(e4);
@@ -73031,8 +72957,7 @@ var Clappr = function() {
     }, a(e2);
   }
   function s(e2, t2) {
-    if (!(e2 instanceof t2))
-      throw new TypeError("Cannot call a class as a function");
+    if (!(e2 instanceof t2)) throw new TypeError("Cannot call a class as a function");
   }
   function o(e2, t2) {
     for (var r2 = 0; r2 < t2.length; r2++) {
@@ -73047,8 +72972,7 @@ var Clappr = function() {
     return t2 in e2 ? Object.defineProperty(e2, t2, { value: r2, enumerable: true, configurable: true, writable: true }) : e2[t2] = r2, e2;
   }
   function c(e2, t2) {
-    if ("function" != typeof t2 && null !== t2)
-      throw new TypeError("Super expression must either be null or a function");
+    if ("function" != typeof t2 && null !== t2) throw new TypeError("Super expression must either be null or a function");
     e2.prototype = Object.create(t2 && t2.prototype, { constructor: { value: e2, writable: true, configurable: true } }), Object.defineProperty(e2, "prototype", { writable: false }), t2 && h(e2, t2);
   }
   function d(e2) {
@@ -73062,25 +72986,19 @@ var Clappr = function() {
     }, h(e2, t2);
   }
   function f(e2) {
-    if (void 0 === e2)
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    if (void 0 === e2) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
     return e2;
   }
   function p(e2, t2) {
-    if (t2 && ("object" == typeof t2 || "function" == typeof t2))
-      return t2;
-    if (void 0 !== t2)
-      throw new TypeError("Derived constructors may only return object or undefined");
+    if (t2 && ("object" == typeof t2 || "function" == typeof t2)) return t2;
+    if (void 0 !== t2) throw new TypeError("Derived constructors may only return object or undefined");
     return f(e2);
   }
   function g(e2) {
     var t2 = function() {
-      if ("undefined" == typeof Reflect || !Reflect.construct)
-        return false;
-      if (Reflect.construct.sham)
-        return false;
-      if ("function" == typeof Proxy)
-        return true;
+      if ("undefined" == typeof Reflect || !Reflect.construct) return false;
+      if (Reflect.construct.sham) return false;
+      if ("function" == typeof Proxy) return true;
       try {
         return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
         })), true;
@@ -73093,14 +73011,12 @@ var Clappr = function() {
       if (t2) {
         var n2 = d(this).constructor;
         r2 = Reflect.construct(i2, arguments, n2);
-      } else
-        r2 = i2.apply(this, arguments);
+      } else r2 = i2.apply(this, arguments);
       return p(this, r2);
     };
   }
   function v(e2, t2) {
-    for (; !Object.prototype.hasOwnProperty.call(e2, t2) && null !== (e2 = d(e2)); )
-      ;
+    for (; !Object.prototype.hasOwnProperty.call(e2, t2) && null !== (e2 = d(e2)); ) ;
     return e2;
   }
   function m() {
@@ -73114,24 +73030,20 @@ var Clappr = function() {
   }
   function y(e2, t2) {
     return function(e3) {
-      if (Array.isArray(e3))
-        return e3;
+      if (Array.isArray(e3)) return e3;
     }(e2) || function(e3, t3) {
       var r2 = null == e3 ? null : "undefined" != typeof Symbol && e3[Symbol.iterator] || e3["@@iterator"];
-      if (null == r2)
-        return;
+      if (null == r2) return;
       var i2, n2, a2 = [], s2 = true, o2 = false;
       try {
-        for (r2 = r2.call(e3); !(s2 = (i2 = r2.next()).done) && (a2.push(i2.value), !t3 || a2.length !== t3); s2 = true)
-          ;
+        for (r2 = r2.call(e3); !(s2 = (i2 = r2.next()).done) && (a2.push(i2.value), !t3 || a2.length !== t3); s2 = true) ;
       } catch (e4) {
         o2 = true, n2 = e4;
       } finally {
         try {
           s2 || null == r2.return || r2.return();
         } finally {
-          if (o2)
-            throw n2;
+          if (o2) throw n2;
         }
       }
       return a2;
@@ -73141,27 +73053,23 @@ var Clappr = function() {
   }
   function A(e2) {
     return function(e3) {
-      if (Array.isArray(e3))
-        return T(e3);
+      if (Array.isArray(e3)) return T(e3);
     }(e2) || function(e3) {
-      if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"])
-        return Array.from(e3);
+      if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"]) return Array.from(e3);
     }(e2) || E(e2) || function() {
       throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
     }();
   }
   function E(e2, t2) {
     if (e2) {
-      if ("string" == typeof e2)
-        return T(e2, t2);
+      if ("string" == typeof e2) return T(e2, t2);
       var r2 = Object.prototype.toString.call(e2).slice(8, -1);
       return "Object" === r2 && e2.constructor && (r2 = e2.constructor.name), "Map" === r2 || "Set" === r2 ? Array.from(e2) : "Arguments" === r2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r2) ? T(e2, t2) : void 0;
     }
   }
   function T(e2, t2) {
     (null == t2 || t2 > e2.length) && (t2 = e2.length);
-    for (var r2 = 0, i2 = new Array(t2); r2 < t2; r2++)
-      i2[r2] = e2[r2];
+    for (var r2 = 0, i2 = new Array(t2); r2 < t2; r2++) i2[r2] = e2[r2];
     return i2;
   }
   function b(e2, t2) {
@@ -73191,51 +73099,39 @@ var Clappr = function() {
       try {
         s2 || null == r2.return || r2.return();
       } finally {
-        if (o2)
-          throw a2;
+        if (o2) throw a2;
       }
     } };
   }
   Array.prototype.find || Object.defineProperty(Array.prototype, "find", { value: function(e2) {
-    if (null == this)
-      throw new TypeError('"this" is null or not defined');
+    if (null == this) throw new TypeError('"this" is null or not defined');
     var t2 = Object(this), r2 = t2.length >>> 0;
-    if ("function" != typeof e2)
-      throw new TypeError("predicate must be a function");
+    if ("function" != typeof e2) throw new TypeError("predicate must be a function");
     for (var i2 = arguments[1], n2 = 0; n2 < r2; ) {
       var a2 = t2[n2];
-      if (e2.call(i2, a2, n2, t2))
-        return a2;
+      if (e2.call(i2, a2, n2, t2)) return a2;
       n2++;
     }
   } }), Object.entries || (Object.entries = function(e2) {
-    for (var t2 = Object.keys(e2), r2 = t2.length, i2 = new Array(r2); r2--; )
-      i2[r2] = [t2[r2], e2[t2[r2]]];
+    for (var t2 = Object.keys(e2), r2 = t2.length, i2 = new Array(r2); r2--; ) i2[r2] = [t2[r2], e2[t2[r2]]];
     return i2;
   }), Object.values || (Object.values = function(e2) {
-    for (var t2 = Object.keys(e2), r2 = t2.length, i2 = new Array(r2); r2--; )
-      i2[r2] = e2[t2[r2]];
+    for (var t2 = Object.keys(e2), r2 = t2.length, i2 = new Array(r2); r2--; ) i2[r2] = e2[t2[r2]];
     return i2;
   }), "function" != typeof Object.assign && Object.defineProperty(Object, "assign", { value: function(e2, t2) {
-    if (null == e2)
-      throw new TypeError("Cannot convert undefined or null to object");
+    if (null == e2) throw new TypeError("Cannot convert undefined or null to object");
     for (var r2 = Object(e2), i2 = 1; i2 < arguments.length; i2++) {
       var n2 = arguments[i2];
-      if (null != n2)
-        for (var a2 in n2)
-          Object.prototype.hasOwnProperty.call(n2, a2) && (r2[a2] = n2[a2]);
+      if (null != n2) for (var a2 in n2) Object.prototype.hasOwnProperty.call(n2, a2) && (r2[a2] = n2[a2]);
     }
     return r2;
   }, writable: true, configurable: true }), Array.prototype.findIndex || Object.defineProperty(Array.prototype, "findIndex", { value: function(e2) {
-    if (null == this)
-      throw new TypeError('"this" is null or not defined');
+    if (null == this) throw new TypeError('"this" is null or not defined');
     var t2 = Object(this), r2 = t2.length >>> 0;
-    if ("function" != typeof e2)
-      throw new TypeError("predicate must be a function");
+    if ("function" != typeof e2) throw new TypeError("predicate must be a function");
     for (var i2 = arguments[1], n2 = 0; n2 < r2; ) {
       var a2 = t2[n2];
-      if (e2.call(i2, a2, n2, t2))
-        return n2;
+      if (e2.call(i2, a2, n2, t2)) return n2;
       n2++;
     }
     return -1;
@@ -73277,19 +73173,16 @@ var Clappr = function() {
     }
     function V2(e3) {
       return "children" in e3 ? u2.call(e3.children) : r2.map(e3.childNodes, function(e4) {
-        if (1 == e4.nodeType)
-          return e4;
+        if (1 == e4.nodeType) return e4;
       });
     }
     function K2(e3, t3) {
       var r3, i3 = e3 ? e3.length : 0;
-      for (r3 = 0; r3 < i3; r3++)
-        this[r3] = e3[r3];
+      for (r3 = 0; r3 < i3; r3++) this[r3] = e3[r3];
       this.length = i3, this.selector = t3 || "";
     }
     function j2(r3, i3, n3) {
-      for (t2 in i3)
-        n3 && (F2(i3[t2]) || I2(i3[t2])) ? (F2(i3[t2]) && !F2(r3[t2]) && (r3[t2] = {}), I2(i3[t2]) && !I2(r3[t2]) && (r3[t2] = []), j2(r3[t2], i3[t2], n3)) : i3[t2] !== e2 && (r3[t2] = i3[t2]);
+      for (t2 in i3) n3 && (F2(i3[t2]) || I2(i3[t2])) ? (F2(i3[t2]) && !F2(r3[t2]) && (r3[t2] = {}), I2(i3[t2]) && !I2(r3[t2]) && (r3[t2] = []), j2(r3[t2], i3[t2], n3)) : i3[t2] !== e2 && (r3[t2] = i3[t2]);
     }
     function H2(e3, t3) {
       return null == t3 ? r2(e3) : r2(e3).filter(t3);
@@ -73302,8 +73195,7 @@ var Clappr = function() {
     }
     function $2(t3, r3) {
       var i3 = t3.className || "", n3 = i3 && i3.baseVal !== e2;
-      if (r3 === e2)
-        return n3 ? i3.baseVal : i3;
+      if (r3 === e2) return n3 ? i3.baseVal : i3;
       n3 ? i3.baseVal = r3 : t3.className = r3;
     }
     function z2(e3) {
@@ -73315,15 +73207,12 @@ var Clappr = function() {
     }
     function q2(e3, t3) {
       t3(e3);
-      for (var r3 = 0, i3 = e3.childNodes.length; r3 < i3; r3++)
-        q2(e3.childNodes[r3], t3);
+      for (var r3 = 0, i3 = e3.childNodes.length; r3 < i3; r3++) q2(e3.childNodes[r3], t3);
     }
     return L2.matches = function(e3, t3) {
-      if (!t3 || !e3 || 1 !== e3.nodeType)
-        return false;
+      if (!t3 || !e3 || 1 !== e3.nodeType) return false;
       var r3 = e3.matches || e3.webkitMatchesSelector || e3.mozMatchesSelector || e3.oMatchesSelector || e3.matchesSelector;
-      if (r3)
-        return r3.call(e3, t3);
+      if (r3) return r3.call(e3, t3);
       var i3, n3 = e3.parentNode, a3 = !n3;
       return a3 && (n3 = D2).appendChild(e3), i3 = ~L2.qsa(n3, t3).indexOf(e3), a3 && D2.removeChild(e3), i3;
     }, n2 = function(e3) {
@@ -73347,32 +73236,22 @@ var Clappr = function() {
       return e3 instanceof L2.Z;
     }, L2.init = function(t3, i3) {
       var n3, a3;
-      if (!t3)
-        return L2.Z();
-      if ("string" == typeof t3)
-        if ("<" == (t3 = t3.trim())[0] && p2.test(t3))
-          n3 = L2.fragment(t3, RegExp.$1, i3), t3 = null;
-        else {
-          if (i3 !== e2)
-            return r2(i3).find(t3);
-          n3 = L2.qsa(c2, t3);
-        }
+      if (!t3) return L2.Z();
+      if ("string" == typeof t3) if ("<" == (t3 = t3.trim())[0] && p2.test(t3)) n3 = L2.fragment(t3, RegExp.$1, i3), t3 = null;
       else {
-        if (w2(t3))
-          return r2(c2).ready(t3);
-        if (L2.isZ(t3))
-          return t3;
-        if (I2(t3))
-          a3 = t3, n3 = l2.call(a3, function(e3) {
-            return null != e3;
-          });
-        else if (N2(t3))
-          n3 = [t3], t3 = null;
-        else if (p2.test(t3))
-          n3 = L2.fragment(t3.trim(), RegExp.$1, i3), t3 = null;
+        if (i3 !== e2) return r2(i3).find(t3);
+        n3 = L2.qsa(c2, t3);
+      }
+      else {
+        if (w2(t3)) return r2(c2).ready(t3);
+        if (L2.isZ(t3)) return t3;
+        if (I2(t3)) a3 = t3, n3 = l2.call(a3, function(e3) {
+          return null != e3;
+        });
+        else if (N2(t3)) n3 = [t3], t3 = null;
+        else if (p2.test(t3)) n3 = L2.fragment(t3.trim(), RegExp.$1, i3), t3 = null;
         else {
-          if (i3 !== e2)
-            return r2(i3).find(t3);
+          if (i3 !== e2) return r2(i3).find(t3);
           n3 = L2.qsa(c2, t3);
         }
       }
@@ -73390,14 +73269,11 @@ var Clappr = function() {
     }, r2.contains = c2.documentElement.contains ? function(e3, t3) {
       return e3 !== t3 && e3.contains(t3);
     } : function(e3, t3) {
-      for (; t3 && (t3 = t3.parentNode); )
-        if (t3 === e3)
-          return true;
+      for (; t3 && (t3 = t3.parentNode); ) if (t3 === e3) return true;
       return false;
     }, r2.type = O2, r2.isFunction = w2, r2.isWindow = P2, r2.isArray = I2, r2.isPlainObject = F2, r2.isEmptyObject = function(e3) {
       var t3;
-      for (t3 in e3)
-        return false;
+      for (t3 in e3) return false;
       return true;
     }, r2.isNumeric = function(e3) {
       var t3 = Number(e3), r3 = typeof e3;
@@ -73409,23 +73285,14 @@ var Clappr = function() {
     }, r2.uuid = 0, r2.support = {}, r2.expr = {}, r2.noop = function() {
     }, r2.map = function(e3, t3) {
       var i3, n3, a3, s3, o3 = [];
-      if (M2(e3))
-        for (n3 = 0; n3 < e3.length; n3++)
-          null != (i3 = t3(e3[n3], n3)) && o3.push(i3);
-      else
-        for (a3 in e3)
-          null != (i3 = t3(e3[a3], a3)) && o3.push(i3);
+      if (M2(e3)) for (n3 = 0; n3 < e3.length; n3++) null != (i3 = t3(e3[n3], n3)) && o3.push(i3);
+      else for (a3 in e3) null != (i3 = t3(e3[a3], a3)) && o3.push(i3);
       return (s3 = o3).length > 0 ? r2.fn.concat.apply([], s3) : s3;
     }, r2.each = function(e3, t3) {
       var r3, i3;
       if (M2(e3)) {
-        for (r3 = 0; r3 < e3.length; r3++)
-          if (false === t3.call(e3[r3], r3, e3[r3]))
-            return e3;
-      } else
-        for (i3 in e3)
-          if (false === t3.call(e3[i3], i3, e3[i3]))
-            return e3;
+        for (r3 = 0; r3 < e3.length; r3++) if (false === t3.call(e3[r3], r3, e3[r3])) return e3;
+      } else for (i3 in e3) if (false === t3.call(e3[i3], i3, e3[i3])) return e3;
       return e3;
     }, r2.grep = function(e3, t3) {
       return l2.call(e3, t3);
@@ -73433,8 +73300,7 @@ var Clappr = function() {
       _2["[object " + t3 + "]"] = t3.toLowerCase();
     }), r2.fn = { constructor: L2.Z, length: 0, forEach: s2.forEach, reduce: s2.reduce, push: s2.push, sort: s2.sort, splice: s2.splice, indexOf: s2.indexOf, concat: function() {
       var e3, t3, r3 = [];
-      for (e3 = 0; e3 < arguments.length; e3++)
-        t3 = arguments[e3], r3[e3] = L2.isZ(t3) ? t3.toArray() : t3;
+      for (e3 = 0; e3 < arguments.length; e3++) t3 = arguments[e3], r3[e3] = L2.isZ(t3) ? t3.toArray() : t3;
       return o2.apply(L2.isZ(this) ? this.toArray() : this, r3);
     }, map: function(e3) {
       return r2(r2.map(this, function(t3, r3) {
@@ -73470,10 +73336,9 @@ var Clappr = function() {
       return this.length > 0 && L2.matches(this[0], e3);
     }, not: function(t3) {
       var i3 = [];
-      if (w2(t3) && t3.call !== e2)
-        this.each(function(e3) {
-          t3.call(this, e3) || i3.push(this);
-        });
+      if (w2(t3) && t3.call !== e2) this.each(function(e3) {
+        t3.call(this, e3) || i3.push(this);
+      });
       else {
         var n3 = "string" == typeof t3 ? this.filter(t3) : M2(t3) && w2(t3.item) ? u2.call(t3) : r2(t3);
         this.forEach(function(e3) {
@@ -73506,16 +73371,13 @@ var Clappr = function() {
     }, closest: function(e3, t3) {
       var i3 = [], n3 = "object" == typeof e3 && r2(e3);
       return this.each(function(r3, a3) {
-        for (; a3 && !(n3 ? n3.indexOf(a3) >= 0 : L2.matches(a3, e3)); )
-          a3 = a3 !== t3 && !x2(a3) && a3.parentNode;
+        for (; a3 && !(n3 ? n3.indexOf(a3) >= 0 : L2.matches(a3, e3)); ) a3 = a3 !== t3 && !x2(a3) && a3.parentNode;
         a3 && i3.indexOf(a3) < 0 && i3.push(a3);
       }), r2(i3);
     }, parents: function(e3) {
-      for (var t3 = [], i3 = this; i3.length > 0; )
-        i3 = r2.map(i3, function(e4) {
-          if ((e4 = e4.parentNode) && !x2(e4) && t3.indexOf(e4) < 0)
-            return t3.push(e4), e4;
-        });
+      for (var t3 = [], i3 = this; i3.length > 0; ) i3 = r2.map(i3, function(e4) {
+        if ((e4 = e4.parentNode) && !x2(e4) && t3.indexOf(e4) < 0) return t3.push(e4), e4;
+      });
       return H2(t3, e3);
     }, parent: function(e3) {
       return H2(a2(this.pluck("parentNode")), e3);
@@ -73550,16 +73412,14 @@ var Clappr = function() {
       return this.before(e3).remove();
     }, wrap: function(e3) {
       var t3 = w2(e3);
-      if (this[0] && !t3)
-        var i3 = r2(e3).get(0), n3 = i3.parentNode || this.length > 1;
+      if (this[0] && !t3) var i3 = r2(e3).get(0), n3 = i3.parentNode || this.length > 1;
       return this.each(function(a3) {
         r2(this).wrapAll(t3 ? e3.call(this, a3) : n3 ? i3.cloneNode(true) : i3);
       });
     }, wrapAll: function(e3) {
       if (this[0]) {
         var t3;
-        for (r2(this[0]).before(e3 = r2(e3)); (t3 = e3.children()).length; )
-          e3 = t3.first();
+        for (r2(this[0]).before(e3 = r2(e3)); (t3 = e3.children()).length; ) e3 = t3.first();
         r2(e3).append(this);
       }
       return this;
@@ -73601,12 +73461,8 @@ var Clappr = function() {
     }, attr: function(r3, i3) {
       var n3;
       return "string" != typeof r3 || 1 in arguments ? this.each(function(e3) {
-        if (1 === this.nodeType)
-          if (N2(r3))
-            for (t2 in r3)
-              W2(this, t2, r3[t2]);
-          else
-            W2(this, r3, Y2(this, i3, e3, this.getAttribute(r3)));
+        if (1 === this.nodeType) if (N2(r3)) for (t2 in r3) W2(this, t2, r3[t2]);
+        else W2(this, r3, Y2(this, i3, e3, this.getAttribute(r3)));
       }) : 0 in this && 1 == this[0].nodeType && null != (n3 = this[0].getAttribute(r3)) ? n3 : e2;
     }, removeAttr: function(e3) {
       return this.each(function() {
@@ -73632,28 +73488,23 @@ var Clappr = function() {
         return this.selected;
       }).pluck("value") : this[0].value);
     }, offset: function(e3) {
-      if (e3)
-        return this.each(function(t4) {
-          var i3 = r2(this), n3 = Y2(this, e3, t4, i3.offset()), a3 = i3.offsetParent().offset(), s3 = { top: n3.top - a3.top, left: n3.left - a3.left };
-          "static" == i3.css("position") && (s3.position = "relative"), i3.css(s3);
-        });
-      if (!this.length)
-        return null;
-      if (c2.documentElement !== this[0] && !r2.contains(c2.documentElement, this[0]))
-        return { top: 0, left: 0 };
+      if (e3) return this.each(function(t4) {
+        var i3 = r2(this), n3 = Y2(this, e3, t4, i3.offset()), a3 = i3.offsetParent().offset(), s3 = { top: n3.top - a3.top, left: n3.left - a3.left };
+        "static" == i3.css("position") && (s3.position = "relative"), i3.css(s3);
+      });
+      if (!this.length) return null;
+      if (c2.documentElement !== this[0] && !r2.contains(c2.documentElement, this[0])) return { top: 0, left: 0 };
       var t3 = this[0].getBoundingClientRect();
       return { left: t3.left + window.pageXOffset, top: t3.top + window.pageYOffset, width: Math.round(t3.width), height: Math.round(t3.height) };
     }, css: function(e3, i3) {
       if (arguments.length < 2) {
         var a3 = this[0];
         if ("string" == typeof e3) {
-          if (!a3)
-            return;
+          if (!a3) return;
           return a3.style[n2(e3)] || getComputedStyle(a3, "").getPropertyValue(e3);
         }
         if (I2(e3)) {
-          if (!a3)
-            return;
+          if (!a3) return;
           var s3 = {}, o3 = getComputedStyle(a3, "");
           return r2.each(e3, function(e4, t3) {
             s3[t3] = a3.style[n2(t3)] || o3.getPropertyValue(t3);
@@ -73661,15 +73512,12 @@ var Clappr = function() {
         }
       }
       var l3 = "";
-      if ("string" == O2(e3))
-        i3 || 0 === i3 ? l3 = B2(e3) + ":" + G2(e3, i3) : this.each(function() {
-          this.style.removeProperty(B2(e3));
-        });
-      else
-        for (t2 in e3)
-          e3[t2] || 0 === e3[t2] ? l3 += B2(t2) + ":" + G2(t2, e3[t2]) + ";" : this.each(function() {
-            this.style.removeProperty(B2(t2));
-          });
+      if ("string" == O2(e3)) i3 || 0 === i3 ? l3 = B2(e3) + ":" + G2(e3, i3) : this.each(function() {
+        this.style.removeProperty(B2(e3));
+      });
+      else for (t2 in e3) e3[t2] || 0 === e3[t2] ? l3 += B2(t2) + ":" + G2(t2, e3[t2]) + ";" : this.each(function() {
+        this.style.removeProperty(B2(t2));
+      });
       return this.each(function() {
         this.style.cssText += ";" + l3;
       });
@@ -73692,8 +73540,7 @@ var Clappr = function() {
     }, removeClass: function(t3) {
       return this.each(function(r3) {
         if ("className" in this) {
-          if (t3 === e2)
-            return $2(this, "");
+          if (t3 === e2) return $2(this, "");
           i2 = $2(this), Y2(this, t3, r3, i2).split(/\s+/g).forEach(function(e3) {
             i2 = i2.replace(U2(e3), " ");
           }), $2(this, i2.trim());
@@ -73731,8 +73578,7 @@ var Clappr = function() {
       }
     }, offsetParent: function() {
       return this.map(function() {
-        for (var e3 = this.offsetParent || c2.body; e3 && !m2.test(e3.nodeName) && "static" == r2(e3).css("position"); )
-          e3 = e3.offsetParent;
+        for (var e3 = this.offsetParent || c2.body; e3 && !m2.test(e3.nodeName) && "static" == r2(e3).css("position"); ) e3 = e3.offsetParent;
         return e3;
       });
     } }, r2.fn.detach = r2.fn.remove, ["width", "height"].forEach(function(t3) {
@@ -73758,10 +73604,8 @@ var Clappr = function() {
           a3 = n3 ? t5 : t5.parentNode, t5 = 0 == i3 ? t5.nextSibling : 1 == i3 ? t5.firstChild : 2 == i3 ? t5 : null;
           var l3 = r2.contains(c2.documentElement, a3);
           s3.forEach(function(e4) {
-            if (o3)
-              e4 = e4.cloneNode(true);
-            else if (!a3)
-              return r2(e4).remove();
+            if (o3) e4 = e4.cloneNode(true);
+            else if (!a3) return r2(e4).remove();
             a3.insertBefore(e4, t5), l3 && q2(e4, function(e5) {
               if (!(null == e5.nodeName || "SCRIPT" !== e5.nodeName.toUpperCase() || e5.type && "text/javascript" !== e5.type || e5.src)) {
                 var t6 = e5.ownerDocument ? e5.ownerDocument.defaultView : window;
@@ -73778,16 +73622,14 @@ var Clappr = function() {
   window.Zepto = _, void 0 === window.$ && (window.$ = _), function(e2) {
     var t2, r2, i2 = +/* @__PURE__ */ new Date(), n2 = window.document, a2 = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, s2 = /^(?:text|application)\/javascript/i, o2 = /^(?:text|application)\/xml/i, l2 = "application/json", u2 = "text/html", c2 = /^\s*$/, d2 = n2.createElement("a");
     function h2(t3, r3, i3, a3) {
-      if (t3.global)
-        return function(t4, r4, i4) {
-          var n3 = e2.Event(r4);
-          return e2(t4).trigger(n3, i4), !n3.isDefaultPrevented();
-        }(r3 || n2, i3, a3);
+      if (t3.global) return function(t4, r4, i4) {
+        var n3 = e2.Event(r4);
+        return e2(t4).trigger(n3, i4), !n3.isDefaultPrevented();
+      }(r3 || n2, i3, a3);
     }
     function f2(e3, t3) {
       var r3 = t3.context;
-      if (false === t3.beforeSend.call(r3, e3, t3) || false === h2(t3, r3, "ajaxBeforeSend", [e3, t3]))
-        return false;
+      if (false === t3.beforeSend.call(r3, e3, t3) || false === h2(t3, r3, "ajaxBeforeSend", [e3, t3])) return false;
       h2(t3, r3, "ajaxSend", [e3, t3]);
     }
     function p2(e3, t3, r3, i3) {
@@ -73813,8 +73655,7 @@ var Clappr = function() {
       return e2.isFunction(r3) && (n3 = i3, i3 = r3, r3 = void 0), e2.isFunction(i3) || (n3 = i3, i3 = void 0), { url: t3, data: r3, success: i3, dataType: n3 };
     }
     d2.href = window.location.href, e2.active = 0, e2.ajaxJSONP = function(t3, r3) {
-      if (!("type" in t3))
-        return e2.ajax(t3);
+      if (!("type" in t3)) return e2.ajax(t3);
       var a3, s3, o3 = t3.jsonpCallback, l3 = (e2.isFunction(o3) ? o3() : o3) || "Zepto" + i2++, u3 = n2.createElement("script"), c3 = window[l3], d3 = function(t4) {
         e2(u3).triggerHandler("error", t4 || "abort");
       }, h3 = { abort: d3 };
@@ -73829,22 +73670,18 @@ var Clappr = function() {
       return new window.XMLHttpRequest();
     }, accepts: { script: "text/javascript, application/javascript, application/x-javascript", json: l2, xml: "application/xml, text/xml", html: u2, text: "text/plain" }, crossDomain: false, timeout: 0, processData: true, cache: true, dataFilter: m2 }, e2.ajax = function(i3) {
       var a3, v3, A3 = e2.extend({}, i3 || {}), E3 = e2.Deferred && e2.Deferred();
-      for (t2 in e2.ajaxSettings)
-        void 0 === A3[t2] && (A3[t2] = e2.ajaxSettings[t2]);
+      for (t2 in e2.ajaxSettings) void 0 === A3[t2] && (A3[t2] = e2.ajaxSettings[t2]);
       !function(t3) {
         t3.global && 0 == e2.active++ && h2(t3, null, "ajaxStart");
       }(A3), A3.crossDomain || ((a3 = n2.createElement("a")).href = A3.url, a3.href = a3.href, A3.crossDomain = d2.protocol + "//" + d2.host != a3.protocol + "//" + a3.host), A3.url || (A3.url = window.location.toString()), (v3 = A3.url.indexOf("#")) > -1 && (A3.url = A3.url.slice(0, v3)), function(t3) {
         t3.processData && t3.data && "string" != e2.type(t3.data) && (t3.data = e2.param(t3.data, t3.traditional)), !t3.data || t3.type && "GET" != t3.type.toUpperCase() && "jsonp" != t3.dataType || (t3.url = y2(t3.url, t3.data), t3.data = void 0);
       }(A3);
       var T3 = A3.dataType, b2 = /\?.+=\?/.test(A3.url);
-      if (b2 && (T3 = "jsonp"), false !== A3.cache && (i3 && true === i3.cache || "script" != T3 && "jsonp" != T3) || (A3.url = y2(A3.url, "_=" + Date.now())), "jsonp" == T3)
-        return b2 || (A3.url = y2(A3.url, A3.jsonp ? A3.jsonp + "=?" : false === A3.jsonp ? "" : "callback=?")), e2.ajaxJSONP(A3, E3);
+      if (b2 && (T3 = "jsonp"), false !== A3.cache && (i3 && true === i3.cache || "script" != T3 && "jsonp" != T3) || (A3.url = y2(A3.url, "_=" + Date.now())), "jsonp" == T3) return b2 || (A3.url = y2(A3.url, A3.jsonp ? A3.jsonp + "=?" : false === A3.jsonp ? "" : "callback=?")), e2.ajaxJSONP(A3, E3);
       var k2, S2 = A3.accepts[T3], _2 = {}, C2 = function(e3, t3) {
         _2[e3.toLowerCase()] = [e3, t3];
       }, L2 = /^([\w-]+:)\/\//.test(A3.url) ? RegExp.$1 : window.location.protocol, D2 = A3.xhr(), R2 = D2.setRequestHeader;
-      if (E3 && E3.promise(D2), A3.crossDomain || C2("X-Requested-With", "XMLHttpRequest"), C2("Accept", S2 || "*/*"), (S2 = A3.mimeType || S2) && (S2.indexOf(",") > -1 && (S2 = S2.split(",", 2)[0]), D2.overrideMimeType && D2.overrideMimeType(S2)), (A3.contentType || false !== A3.contentType && A3.data && "GET" != A3.type.toUpperCase()) && C2("Content-Type", A3.contentType || "application/x-www-form-urlencoded"), A3.headers)
-        for (r2 in A3.headers)
-          C2(r2, A3.headers[r2]);
+      if (E3 && E3.promise(D2), A3.crossDomain || C2("X-Requested-With", "XMLHttpRequest"), C2("Accept", S2 || "*/*"), (S2 = A3.mimeType || S2) && (S2.indexOf(",") > -1 && (S2 = S2.split(",", 2)[0]), D2.overrideMimeType && D2.overrideMimeType(S2)), (A3.contentType || false !== A3.contentType && A3.data && "GET" != A3.type.toUpperCase()) && C2("Content-Type", A3.contentType || "application/x-www-form-urlencoded"), A3.headers) for (r2 in A3.headers) C2(r2, A3.headers[r2]);
       if (D2.setRequestHeader = C2, D2.onreadystatechange = function() {
         if (4 == D2.readyState) {
           D2.onreadystatechange = m2, clearTimeout(k2);
@@ -73852,35 +73689,27 @@ var Clappr = function() {
           if (D2.status >= 200 && D2.status < 300 || 304 == D2.status || 0 == D2.status && "file:" == L2) {
             if (T3 = T3 || function(e3) {
               return e3 && (e3 = e3.split(";", 2)[0]), e3 && (e3 == u2 ? "html" : e3 == l2 ? "json" : s2.test(e3) ? "script" : o2.test(e3) && "xml") || "text";
-            }(A3.mimeType || D2.getResponseHeader("content-type")), "arraybuffer" == D2.responseType || "blob" == D2.responseType)
-              t3 = D2.response;
+            }(A3.mimeType || D2.getResponseHeader("content-type")), "arraybuffer" == D2.responseType || "blob" == D2.responseType) t3 = D2.response;
             else {
               t3 = D2.responseText;
               try {
                 t3 = function(e3, t4, r4) {
-                  if (r4.dataFilter == m2)
-                    return e3;
+                  if (r4.dataFilter == m2) return e3;
                   var i4 = r4.context;
                   return r4.dataFilter.call(i4, e3, t4);
                 }(t3, T3, A3), "script" == T3 ? (0, eval)(t3) : "xml" == T3 ? t3 = D2.responseXML : "json" == T3 && (t3 = c2.test(t3) ? null : e2.parseJSON(t3));
               } catch (e3) {
                 r3 = e3;
               }
-              if (r3)
-                return g2(r3, "parsererror", D2, A3, E3);
+              if (r3) return g2(r3, "parsererror", D2, A3, E3);
             }
             p2(t3, D2, A3, E3);
-          } else
-            g2(D2.statusText || null, D2.status ? "error" : "abort", D2, A3, E3);
+          } else g2(D2.statusText || null, D2.status ? "error" : "abort", D2, A3, E3);
         }
-      }, false === f2(D2, A3))
-        return D2.abort(), g2(null, "abort", D2, A3, E3), D2;
+      }, false === f2(D2, A3)) return D2.abort(), g2(null, "abort", D2, A3, E3), D2;
       var I2 = !("async" in A3) || A3.async;
-      if (D2.open(A3.type, A3.url, I2, A3.username, A3.password), A3.xhrFields)
-        for (r2 in A3.xhrFields)
-          D2[r2] = A3.xhrFields[r2];
-      for (r2 in _2)
-        R2.apply(D2, _2[r2]);
+      if (D2.open(A3.type, A3.url, I2, A3.username, A3.password), A3.xhrFields) for (r2 in A3.xhrFields) D2[r2] = A3.xhrFields[r2];
+      for (r2 in _2) R2.apply(D2, _2[r2]);
       return A3.timeout > 0 && (k2 = setTimeout(function() {
         D2.onreadystatechange = m2, D2.abort(), g2(null, "timeout", D2, A3, E3);
       }, A3.timeout)), D2.send(A3.data ? A3.data : null), D2;
@@ -73893,8 +73722,7 @@ var Clappr = function() {
       var t3 = A2.apply(null, arguments);
       return t3.dataType = "json", e2.ajax(t3);
     }, e2.fn.load = function(t3, r3, i3) {
-      if (!this.length)
-        return this;
+      if (!this.length) return this;
       var n3, s3 = this, o3 = t3.split(/\s/), l3 = A2(t3, r3, i3), u3 = l3.success;
       return o3.length > 1 && (l3.url = o3[0], n3 = o3[1]), l3.success = function(t4) {
         s3.html(n3 ? e2("<div>").html(t4.replace(a2, "")).find(n3) : t4), u3 && u3.apply(s3, arguments);
@@ -73916,11 +73744,10 @@ var Clappr = function() {
   }(_), (k = _).Callbacks = function(e2) {
     e2 = k.extend({}, e2);
     var t2, r2, i2, n2, a2, s2, o2 = [], l2 = !e2.once && [], u2 = function(d2) {
-      for (t2 = e2.memory && d2, r2 = true, s2 = n2 || 0, n2 = 0, a2 = o2.length, i2 = true; o2 && s2 < a2; ++s2)
-        if (false === o2[s2].apply(d2[0], d2[1]) && e2.stopOnFalse) {
-          t2 = false;
-          break;
-        }
+      for (t2 = e2.memory && d2, r2 = true, s2 = n2 || 0, n2 = 0, a2 = o2.length, i2 = true; o2 && s2 < a2; ++s2) if (false === o2[s2].apply(d2[0], d2[1]) && e2.stopOnFalse) {
+        t2 = false;
+        break;
+      }
       i2 = false, o2 && (l2 ? l2.length && u2(l2.shift()) : t2 ? o2.length = 0 : c2.disable());
     }, c2 = { add: function() {
       if (o2) {
@@ -73934,8 +73761,7 @@ var Clappr = function() {
       return this;
     }, remove: function() {
       return o2 && k.each(arguments, function(e3, t3) {
-        for (var r3; (r3 = k.inArray(t3, o2, r3)) > -1; )
-          o2.splice(r3, 1), i2 && (r3 <= a2 && --a2, r3 <= s2 && --s2);
+        for (var r3; (r3 = k.inArray(t3, o2, r3)) > -1; ) o2.splice(r3, 1), i2 && (r3 <= a2 && --a2, r3 <= s2 && --s2);
       }), this;
     }, has: function(e3) {
       return !(!o2 || !(e3 ? k.inArray(e3, o2) > -1 : o2.length));
@@ -73971,8 +73797,7 @@ var Clappr = function() {
             var o2 = e2.isFunction(t4[i3]) && t4[i3];
             s2[n3[1]](function() {
               var t5 = o2 && o2.apply(this, arguments);
-              if (t5 && e2.isFunction(t5.promise))
-                t5.promise().done(r3.resolve).fail(r3.reject).progress(r3.notify);
+              if (t5 && e2.isFunction(t5.promise)) t5.promise().done(r3.resolve).fail(r3.reject).progress(r3.notify);
               else {
                 var i4 = this === a2 ? r3.promise() : this, s3 = o2 ? [t5] : arguments;
                 r3[n3[0] + "With"](i4, s3);
@@ -73998,9 +73823,7 @@ var Clappr = function() {
           r3[e3] = this, i3[e3] = arguments.length > 1 ? t2.call(arguments) : a3, i3 === n2 ? d2.notifyWith(r3, i3) : --c2 || d2.resolveWith(r3, i3);
         };
       };
-      if (l2 > 1)
-        for (n2 = new Array(l2), a2 = new Array(l2), s2 = new Array(l2); u2 < l2; ++u2)
-          o2[u2] && e2.isFunction(o2[u2].promise) ? o2[u2].promise().done(h2(u2, s2, o2)).fail(d2.reject).progress(h2(u2, a2, n2)) : --c2;
+      if (l2 > 1) for (n2 = new Array(l2), a2 = new Array(l2), s2 = new Array(l2); u2 < l2; ++u2) o2[u2] && e2.isFunction(o2[u2].promise) ? o2[u2].promise().done(h2(u2, s2, o2)).fail(d2.reject).progress(h2(u2, a2, n2)) : --c2;
       return c2 || d2.resolveWith(s2, o2), d2.promise();
     }, e2.Deferred = r2;
   }(_), function(e2) {
@@ -74011,8 +73834,7 @@ var Clappr = function() {
       return e3._zid || (e3._zid = r2++);
     }
     function h2(e3, t3, r3, i3) {
-      if ((t3 = f2(t3)).ns)
-        var n3 = (a3 = t3.ns, new RegExp("(?:^| )" + a3.replace(" ", " .* ?") + "(?: |$)"));
+      if ((t3 = f2(t3)).ns) var n3 = (a3 = t3.ns, new RegExp("(?:^| )" + a3.replace(" ", " .* ?") + "(?: |$)"));
       var a3;
       return (s2[d2(e3)] || []).filter(function(e4) {
         return e4 && (!t3.e || e4.e == t3.e) && (!t3.ns || n3.test(e4.ns)) && (!r3 || d2(e4.fn) === d2(r3)) && (!i3 || e4.sel == i3);
@@ -74031,13 +73853,11 @@ var Clappr = function() {
     function v2(r3, i3, n3, a3, o3, l3, u3) {
       var h3 = d2(r3), v3 = s2[h3] || (s2[h3] = []);
       i3.split(/\s/).forEach(function(i4) {
-        if ("ready" == i4)
-          return e2(document).ready(n3);
+        if ("ready" == i4) return e2(document).ready(n3);
         var s3 = f2(i4);
         s3.fn = n3, s3.sel = o3, s3.e in c2 && (n3 = function(t3) {
           var r4 = t3.relatedTarget;
-          if (!r4 || r4 !== this && !e2.contains(this, r4))
-            return s3.fn.apply(this, arguments);
+          if (!r4 || r4 !== this && !e2.contains(this, r4)) return s3.fn.apply(this, arguments);
         }), s3.del = l3;
         var d3 = l3 || n3;
         s3.proxy = function(e3) {
@@ -74065,8 +73885,7 @@ var Clappr = function() {
         };
         return o3._zid = d2(t3), o3;
       }
-      if (a2(r3))
-        return s3 ? (s3.unshift(t3[r3], t3), e2.proxy.apply(null, s3)) : e2.proxy(t3[r3], t3);
+      if (a2(r3)) return s3 ? (s3.unshift(t3[r3], t3), e2.proxy.apply(null, s3)) : e2.proxy(t3[r3], t3);
       throw new TypeError("expected function");
     }, e2.fn.bind = function(e3, t3, r3) {
       return this.on(e3, t3, r3);
@@ -74090,8 +73909,7 @@ var Clappr = function() {
     }
     function k2(e3) {
       var r3, i3 = { originalEvent: e3 };
-      for (r3 in e3)
-        E2.test(r3) || e3[r3] === t2 || (i3[r3] = e3[r3]);
+      for (r3 in e3) E2.test(r3) || e3[r3] === t2 || (i3[r3] = e3[r3]);
       return b2(i3, e3);
     }
     e2.fn.delegate = function(e3, t3, r3) {
@@ -74111,8 +73929,7 @@ var Clappr = function() {
           return m2(n3, e3.type, l3), l3.apply(this, arguments);
         }), s3 && (d3 = function(t4) {
           var r4, a3 = e2(t4.target).closest(s3, n3).get(0);
-          if (a3 && a3 !== n3)
-            return r4 = e2.extend(k2(t4), { currentTarget: a3, liveFired: n3 }), (c3 || l3).apply(a3, [r4].concat(i2.call(arguments, 1)));
+          if (a3 && a3 !== n3) return r4 = e2.extend(k2(t4), { currentTarget: a3, liveFired: n3 }), (c3 || l3).apply(a3, [r4].concat(i2.call(arguments, 1)));
         }), v2(n3, r3, l3, o3, s3, d3 || c3);
       }));
     }, e2.fn.off = function(r3, i3, s3) {
@@ -74130,8 +73947,7 @@ var Clappr = function() {
       var i3, n3;
       return this.each(function(s3, o3) {
         (i3 = k2(a2(t3) ? e2.Event(t3) : t3))._args = r3, i3.target = o3, e2.each(h2(o3, t3.type || t3), function(e3, t4) {
-          if (n3 = t4.proxy(i3), i3.isImmediatePropagationStopped())
-            return false;
+          if (n3 = t4.proxy(i3), i3.isImmediatePropagationStopped()) return false;
         });
       }), n3;
     }, "focusin focusout focus blur load resize scroll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select keydown keypress keyup error".split(" ").forEach(function(t3) {
@@ -74141,9 +73957,7 @@ var Clappr = function() {
     }), e2.Event = function(e3, t3) {
       a2(e3) || (e3 = (t3 = e3).type);
       var r3 = document.createEvent(o2[e3] || "Events"), i3 = true;
-      if (t3)
-        for (var n3 in t3)
-          "bubbles" == n3 ? i3 = !!t3[n3] : r3[n3] = t3[n3];
+      if (t3) for (var n3 in t3) "bubbles" == n3 ? i3 = !!t3[n3] : r3[n3] = t3[n3];
       return r3.initEvent(e3, i3, true), b2(r3);
     };
   }(_), function() {
@@ -74165,34 +73979,25 @@ var Clappr = function() {
       return !(!(t3 = e2(t3)).width() && !t3.height()) && "none" !== t3.css("display");
     }
     var a2 = e2.expr[":"] = { visible: function() {
-      if (n2(this))
-        return this;
+      if (n2(this)) return this;
     }, hidden: function() {
-      if (!n2(this))
-        return this;
+      if (!n2(this)) return this;
     }, selected: function() {
-      if (this.selected)
-        return this;
+      if (this.selected) return this;
     }, checked: function() {
-      if (this.checked)
-        return this;
+      if (this.checked) return this;
     }, parent: function() {
       return this.parentNode;
     }, first: function(e3) {
-      if (0 === e3)
-        return this;
+      if (0 === e3) return this;
     }, last: function(e3, t3) {
-      if (e3 === t3.length - 1)
-        return this;
+      if (e3 === t3.length - 1) return this;
     }, eq: function(e3, t3, r3) {
-      if (e3 === r3)
-        return this;
+      if (e3 === r3) return this;
     }, contains: function(t3, r3, i3) {
-      if (e2(this).text().indexOf(i3) > -1)
-        return this;
+      if (e2(this).text().indexOf(i3) > -1) return this;
     }, has: function(e3, r3, i3) {
-      if (t2.qsa(this, i3).length)
-        return this;
+      if (t2.qsa(this, i3).length) return this;
     } }, s2 = new RegExp("(.*):(\\w+)(?:\\(([^)]+)\\))?$\\s*"), o2 = /^\s*>/, l2 = "Zepto" + +/* @__PURE__ */ new Date();
     function u2(e3, t3) {
       e3 = e3.replace(/=#\]/g, '="#"]');
@@ -74232,15 +74037,11 @@ var Clappr = function() {
     "." != t2 && (e2 = e2.replace(new RegExp(t2, "g"), ".")), r2.fullVersion = e2, n2 && n2[0] && (r2.majorVersion = parseInt(n2[0])), n2 && n2[1] && (r2.minorVersion = parseInt(n2[1]));
   }, N = function(e2) {
     var t2, r2 = e2.match(/\b(playstation 4|nx|opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-    if (/trident/i.test(r2[1]))
-      return t2 = /\brv[ :]+(\d+)/g.exec(e2) || [], { name: "IE", version: parseInt(t2[1] || "") };
+    if (/trident/i.test(r2[1])) return t2 = /\brv[ :]+(\d+)/g.exec(e2) || [], { name: "IE", version: parseInt(t2[1] || "") };
     if ("Chrome" === r2[1]) {
-      if (null != (t2 = e2.match(/\bOPR\/(\d+)/)))
-        return { name: "Opera", version: parseInt(t2[1]) };
-      if (null != (t2 = e2.match(/\bEdge\/(\d+)/)))
-        return { name: "Edge", version: parseInt(t2[1]) };
-    } else
-      /android/i.test(e2) && (t2 = e2.match(/version\/(\d+)/i)) && (r2.splice(1, 1, "Android WebView"), r2.splice(2, 1, t2[1]));
+      if (null != (t2 = e2.match(/\bOPR\/(\d+)/))) return { name: "Opera", version: parseInt(t2[1]) };
+      if (null != (t2 = e2.match(/\bEdge\/(\d+)/))) return { name: "Edge", version: parseInt(t2[1]) };
+    } else /android/i.test(e2) && (t2 = e2.match(/version\/(\d+)/i)) && (r2.splice(1, 1, "Android WebView"), r2.splice(2, 1, t2[1]));
     return { name: (r2 = r2[2] ? [r2[1], r2[2]] : [navigator.appName, navigator.appVersion, "-?"])[0], version: parseInt(r2[1]) };
   }(navigator.userAgent);
   w.isEdge = /Edg|EdgiOS|EdgA/i.test(navigator.userAgent), w.isChrome = /Chrome|CriOS/i.test(navigator.userAgent) && !w.isEdge, w.isSafari = /Safari/i.test(navigator.userAgent) && !w.isChrome && !w.isEdge, w.isFirefox = /Firefox/i.test(navigator.userAgent), w.isLegacyIE = !!window.ActiveXObject, w.isIE = w.isLegacyIE || /trident.*rv:1\d/i.test(navigator.userAgent), w.isIE11 = /trident.*rv:11/i.test(navigator.userAgent), w.isChromecast = w.isChrome && /CrKey/i.test(navigator.userAgent), w.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone|IEMobile|Mobile Safari|Opera Mini/i.test(navigator.userAgent), w.isiOS = /iPad|iPhone|iPod/i.test(navigator.userAgent), w.isAndroid = /Android/i.test(navigator.userAgent), w.isWindowsPhone = /Windows Phone/i.test(navigator.userAgent), w.isWin8App = /MSAppHost/i.test(navigator.userAgent), w.isWiiU = /WiiU/i.test(navigator.userAgent), w.isPS4 = /PlayStation 4/i.test(navigator.userAgent), w.hasLocalstorage = function() {
@@ -74264,8 +74065,7 @@ var Clappr = function() {
           if (t2.name = n2.name, t2.group = n2.group, n2.versionIdentifier) {
             var s2 = new RegExp(n2.versionIdentifier.toLowerCase()).exec(r2);
             null != s2 && s2[1] && P(s2[1], t2);
-          } else
-            P(a2[1], t2);
+          } else P(a2[1], t2);
           break;
         }
       }
@@ -74281,10 +74081,8 @@ var Clappr = function() {
       for (i2.s(); !(e2 = i2.n()).done; ) {
         var n2 = e2.value, a2 = new RegExp(n2.identifier.toLowerCase()).exec(r2);
         if (null != a2) {
-          if (t2.name = n2.name, t2.group = n2.group, n2.version)
-            x(n2.version, n2.versionSeparator ? n2.versionSeparator : ".", t2);
-          else if (a2[1])
-            x(a2[1], n2.versionSeparator ? n2.versionSeparator : ".", t2);
+          if (t2.name = n2.name, t2.group = n2.group, n2.version) x(n2.version, n2.versionSeparator ? n2.versionSeparator : ".", t2);
+          else if (a2[1]) x(a2[1], n2.versionSeparator ? n2.versionSeparator : ".", t2);
           else if (n2.versionIdentifier) {
             var s2 = new RegExp(n2.versionIdentifier.toLowerCase()).exec(r2);
             null != s2 && s2[1] && x(s2[1], n2.versionSeparator ? n2.versionSeparator : ".", t2);
@@ -74312,11 +74110,10 @@ var Clappr = function() {
     window.setTimeout(e2, 1e3 / 60);
   }).bind(window), U = (window.cancelAnimationFrame || window.mozCancelAnimationFrame || window.webkitCancelAnimationFrame || window.clearTimeout).bind(window);
   function G(e2, t2) {
-    if (t2)
-      for (var r2 in t2) {
-        var i2 = Object.getOwnPropertyDescriptor(t2, r2);
-        i2 ? Object.defineProperty(e2, r2, i2) : e2[r2] = t2[r2];
-      }
+    if (t2) for (var r2 in t2) {
+      var i2 = Object.getOwnPropertyDescriptor(t2, r2);
+      i2 ? Object.defineProperty(e2, r2, i2) : e2[r2] = t2[r2];
+    }
     return e2;
   }
   function V(e2, t2) {
@@ -74326,8 +74123,7 @@ var Clappr = function() {
       function i2() {
         var e4;
         s(this, i2);
-        for (var n2 = arguments.length, a2 = new Array(n2), o2 = 0; o2 < n2; o2++)
-          a2[o2] = arguments[o2];
+        for (var n2 = arguments.length, a2 = new Array(n2), o2 = 0; o2 < n2; o2++) a2[o2] = arguments[o2];
         return e4 = r3.call.apply(r3, [this].concat(a2)), t2.initialize && t2.initialize.apply(f(e4), a2), e4;
       }
       return l(i2);
@@ -74337,17 +74133,13 @@ var Clappr = function() {
   var K = { fullscreenElement: function() {
     return document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
   }, requestFullscreen: function(e2) {
-    if (e2.requestFullscreen)
-      return e2.requestFullscreen();
+    if (e2.requestFullscreen) return e2.requestFullscreen();
     if (e2.webkitRequestFullscreen) {
-      if ("function" == typeof e2.then)
-        return e2.webkitRequestFullscreen();
+      if ("function" == typeof e2.then) return e2.webkitRequestFullscreen();
       e2.webkitRequestFullscreen();
     } else {
-      if (e2.mozRequestFullScreen)
-        return e2.mozRequestFullScreen();
-      if (e2.msRequestFullscreen)
-        return e2.msRequestFullscreen();
+      if (e2.mozRequestFullScreen) return e2.mozRequestFullScreen();
+      if (e2.msRequestFullscreen) return e2.msRequestFullscreen();
       e2.querySelector && e2.querySelector("video") && e2.querySelector("video").webkitEnterFullScreen ? e2.querySelector("video").webkitEnterFullScreen() : e2.webkitEnterFullScreen && e2.webkitEnterFullScreen();
     }
   }, cancelFullscreen: function() {
@@ -74372,12 +74164,11 @@ var Clappr = function() {
     } }, { key: "restore", value: function(e3) {
       return w.hasLocalstorage && localStorage[this._createKeyspace(e3)] ? this._defaultConfig()[e3].parse(localStorage[this._createKeyspace(e3)]) : this._defaultValueFor(e3);
     } }, { key: "persist", value: function(e3, t2) {
-      if (w.hasLocalstorage)
-        try {
-          return localStorage[this._createKeyspace(e3)] = t2, true;
-        } catch (e4) {
-          return false;
-        }
+      if (w.hasLocalstorage) try {
+        return localStorage[this._createKeyspace(e3)] = t2, true;
+      } catch (e4) {
+        return false;
+      }
     } }]), e2;
   }(), H = function() {
     function e2() {
@@ -74392,8 +74183,7 @@ var Clappr = function() {
     } }, { key: "parse", value: function(e3) {
       for (var t2, r2 = /\+/g, i2 = /([^&=]+)=?([^&]*)/g, n2 = function(e4) {
         return decodeURIComponent(e4.replace(r2, " "));
-      }, a2 = {}; t2 = i2.exec(e3); )
-        a2[n2(t2[1]).toLowerCase()] = n2(t2[2]);
+      }, a2 = {}; t2 = i2.exec(e3); ) a2[n2(t2[1]).toLowerCase()] = n2(t2[2]);
       return a2;
     } }]), e2;
   }();
@@ -74407,8 +74197,7 @@ var Clappr = function() {
           t2 += i3 * n2[r3];
         }
       });
-    } else
-      r2 && (t2 = parseInt(r2, 10));
+    } else r2 && (t2 = parseInt(r2, 10));
     return t2;
   }
   function W(e2) {
@@ -74464,8 +74253,7 @@ var Clappr = function() {
       n2 < this.delay && n2 > 0 && (t2(), r2 && e3.preventDefault()), this.lastTime = i2;
     } }]), e2;
   }(), J = { Config: j, Fullscreen: K, QueryString: H, DomRecycler: Z, assign: G, extend: V, formatTime: function(e2, t2) {
-    if (!isFinite(e2))
-      return "--:--";
+    if (!isFinite(e2)) return "--:--";
     e2 *= 1e3;
     var r2 = (e2 = parseInt(e2 / 1e3)) % 60, i2 = (e2 = parseInt(e2 / 60)) % 60, n2 = (e2 = parseInt(e2 / 60)) % 24, a2 = parseInt(e2 / 24), s2 = "";
     return a2 && a2 > 0 && (s2 += a2 + ":", n2 < 1 && (s2 += "00:")), (n2 && n2 > 0 || t2) && (s2 += ("0" + n2).slice(-2) + ":"), s2 += ("0" + i2).slice(-2) + ":", (s2 += ("0" + r2).slice(-2)).trim();
@@ -74519,16 +74307,13 @@ var Clappr = function() {
     this.getInstance().error.apply(this.getInstance(), arguments);
   };
   var se = Array.prototype.slice, oe = /\s+/, le = function(e2, t2, r2, i2) {
-    if (!r2)
-      return true;
+    if (!r2) return true;
     if ("object" === a(r2)) {
-      for (var n2 in r2)
-        e2[t2].apply(e2, [n2, r2[n2]].concat(i2));
+      for (var n2 in r2) e2[t2].apply(e2, [n2, r2[n2]].concat(i2));
       return false;
     }
     if (oe.test(r2)) {
-      for (var s2 = r2.split(oe), o2 = 0, l2 = s2.length; o2 < l2; o2++)
-        e2[t2].apply(e2, [s2[o2]].concat(i2));
+      for (var s2 = r2.split(oe), o2 = 0, l2 = s2.length; o2 < l2; o2++) e2[t2].apply(e2, [s2[o2]].concat(i2));
       return false;
     }
     return true;
@@ -74538,24 +74323,19 @@ var Clappr = function() {
       try {
         switch (t2.length) {
           case 0:
-            for (; ++a2 < s2; )
-              (n2 = e2[a2]).callback.call(n2.ctx);
+            for (; ++a2 < s2; ) (n2 = e2[a2]).callback.call(n2.ctx);
             return;
           case 1:
-            for (; ++a2 < s2; )
-              (n2 = e2[a2]).callback.call(n2.ctx, o2);
+            for (; ++a2 < s2; ) (n2 = e2[a2]).callback.call(n2.ctx, o2);
             return;
           case 2:
-            for (; ++a2 < s2; )
-              (n2 = e2[a2]).callback.call(n2.ctx, o2, l2);
+            for (; ++a2 < s2; ) (n2 = e2[a2]).callback.call(n2.ctx, o2, l2);
             return;
           case 3:
-            for (; ++a2 < s2; )
-              (n2 = e2[a2]).callback.call(n2.ctx, o2, l2, u2);
+            for (; ++a2 < s2; ) (n2 = e2[a2]).callback.call(n2.ctx, o2, l2, u2);
             return;
           default:
-            for (; ++a2 < s2; )
-              (n2 = e2[a2]).callback.apply(n2.ctx, t2);
+            for (; ++a2 < s2; ) (n2 = e2[a2]).callback.apply(n2.ctx, t2);
             return;
         }
       } catch (e3) {
@@ -74570,8 +74350,7 @@ var Clappr = function() {
       return le(this, "on", e3, [t2, r2]) && t2 ? (this._events || (this._events = {}), (this._events[e3] || (this._events[e3] = [])).push({ callback: t2, context: r2, ctx: r2 || this }), this) : this;
     } }, { key: "once", value: function(e3, t2, r2) {
       var i2, n2 = this;
-      if (!le(this, "once", e3, [t2, r2]) || !t2)
-        return this;
+      if (!le(this, "once", e3, [t2, r2]) || !t2) return this;
       var a2 = function() {
         return n2.off(e3, i2);
       };
@@ -74580,34 +74359,25 @@ var Clappr = function() {
       }, this.on(e3, i2, r2);
     } }, { key: "off", value: function(e3, t2, r2) {
       var i2, n2, a2, s2, o2, l2, u2, c2;
-      if (!this._events || !le(this, "off", e3, [t2, r2]))
-        return this;
-      if (!e3 && !t2 && !r2)
-        return this._events = void 0, this;
-      for (o2 = 0, l2 = (s2 = e3 ? [e3] : Object.keys(this._events)).length; o2 < l2; o2++)
-        if (e3 = s2[o2], a2 = this._events[e3]) {
-          if (this._events[e3] = i2 = [], t2 || r2)
-            for (u2 = 0, c2 = a2.length; u2 < c2; u2++)
-              n2 = a2[u2], (t2 && t2 !== n2.callback && t2 !== n2.callback._callback || r2 && r2 !== n2.context) && i2.push(n2);
-          i2.length || delete this._events[e3];
-        }
+      if (!this._events || !le(this, "off", e3, [t2, r2])) return this;
+      if (!e3 && !t2 && !r2) return this._events = void 0, this;
+      for (o2 = 0, l2 = (s2 = e3 ? [e3] : Object.keys(this._events)).length; o2 < l2; o2++) if (e3 = s2[o2], a2 = this._events[e3]) {
+        if (this._events[e3] = i2 = [], t2 || r2) for (u2 = 0, c2 = a2.length; u2 < c2; u2++) n2 = a2[u2], (t2 && t2 !== n2.callback && t2 !== n2.callback._callback || r2 && r2 !== n2.context) && i2.push(n2);
+        i2.length || delete this._events[e3];
+      }
       return this;
     } }, { key: "trigger", value: function(e3) {
       var t2 = this.name || this.constructor.name;
-      if (ae.debug.apply(ae, [t2].concat(Array.prototype.slice.call(arguments))), !this._events)
-        return this;
+      if (ae.debug.apply(ae, [t2].concat(Array.prototype.slice.call(arguments))), !this._events) return this;
       var r2 = se.call(arguments, 1);
-      if (!le(this, "trigger", e3, r2))
-        return this;
+      if (!le(this, "trigger", e3, r2)) return this;
       var i2 = this._events[e3], n2 = this._events.all;
       return i2 && ue(i2, r2, t2, e3), n2 && ue(n2, arguments, t2, e3), this;
     } }, { key: "stopListening", value: function(e3, t2, r2) {
       var i2 = this._listeningTo;
-      if (!i2)
-        return this;
+      if (!i2) return this;
       var n2 = !t2 && !r2;
-      for (var s2 in r2 || "object" !== a(t2) || (r2 = this), e3 && ((i2 = {})[e3._listenId] = e3), i2)
-        (e3 = i2[s2]).off(t2, r2, this), (n2 || 0 === Object.keys(e3._events).length) && delete this._listeningTo[s2];
+      for (var s2 in r2 || "object" !== a(t2) || (r2 = this), e3 && ((i2 = {})[e3._listenId] = e3), i2) (e3 = i2[s2]).off(t2, r2, this), (n2 || 0 === Object.keys(e3._events).length) && delete this._listeningTo[s2];
       return this;
     } }], [{ key: "register", value: function(t2) {
       e2.Custom || (e2.Custom = {});
@@ -74652,8 +74422,7 @@ var Clappr = function() {
     } catch (e3) {
       throw e3.source = a2, e3;
     }
-    if (t2)
-      return r2(t2, Ae);
+    if (t2) return r2(t2, Ae);
     var s2 = function(e3) {
       return r2.call(this, e3, Ae);
     };
@@ -74696,8 +74465,7 @@ var Clappr = function() {
     } }, { key: "undelegateEvents", value: function() {
       return this.$el.off(".delegateEvents" + this.cid), this;
     } }, { key: "_ensureElement", value: function() {
-      if (this.el)
-        this.setElement(this.el, false);
+      if (this.el) this.setElement(this.el, false);
       else {
         var e3 = R.extend(true, {}, this.attributes);
         this.id && (e3.id = this.id), this.className && (e3.class = this.className);
@@ -74829,8 +74597,7 @@ var Clappr = function() {
     } }, { key: "timeUpdated", value: function(e3) {
       this.currentTime = e3.current, this.trigger(ce.CONTAINER_TIMEUPDATE, e3, this.name);
     } }, { key: "onProgress", value: function() {
-      for (var e3 = arguments.length, t3 = new Array(e3), r3 = 0; r3 < e3; r3++)
-        t3[r3] = arguments[r3];
+      for (var e3 = arguments.length, t3 = new Array(e3), r3 = 0; r3 < e3; r3++) t3[r3] = arguments[r3];
       this.trigger.apply(this, [ce.CONTAINER_PROGRESS].concat(t3, [this.name]));
     } }, { key: "playing", value: function() {
       this.trigger(ce.CONTAINER_PLAY, this.name, this.actionsMetadata.playEvent || {}), this.actionsMetadata.playEvent = {};
@@ -75068,8 +74835,7 @@ var Clappr = function() {
     } }, { key: "activePlayback", get: function() {
       return this.activeContainer && this.activeContainer.playback;
     } }, { key: "activePlaybackEl", get: function() {
-      if (this.activePlayback)
-        return this.activePlayback.$el ? this.activePlayback.$el.find("video")[0] : this.activePlayback.el;
+      if (this.activePlayback) return this.activePlayback.$el ? this.activePlayback.$el.find("video")[0] : this.activePlayback.el;
     } }, { key: "configureDomRecycler", value: function() {
       var e3 = this.options && this.options.playback && this.options.playback.recycleVideo;
       Z.configure({ recycleVideo: e3 });
@@ -75160,14 +74926,12 @@ var Clappr = function() {
         K.cancelFullscreen(t3), !w.isiOS && this.$el.removeClass("fullscreen nocursor");
       } else {
         var r3 = w.isiOS ? this.activePlaybackEl : this.el;
-        if (!r3)
-          return;
+        if (!r3) return;
         w.isSafari || w.isiOS ? K.requestFullscreen(r3) : K.requestFullscreen(r3).then(function(e4) {
           return e4;
         }, function(t4) {
           return setTimeout(function() {
-            if (!e3.isFullscreen())
-              throw new ReferenceError(t4);
+            if (!e3.isFullscreen()) throw new ReferenceError(t4);
           }, 600);
         }), !w.isiOS && this.$el.addClass("fullscreen");
       }
@@ -75211,8 +74975,7 @@ var Clappr = function() {
       }), this.core;
     } }, { key: "setupExternalInterface", value: function(e3) {
       var t3 = e3.getExternalInterface();
-      for (var r3 in t3)
-        this.player[r3] = t3[r3].bind(e3);
+      for (var r3 in t3) this.player[r3] = t3[r3].bind(e3);
     } }]), r2;
   }(he), Ne = /(\d+)(?:\.(\d+))?(?:\.(\d+))?/, Fe = function() {
     function e2(t2, r2, i2) {
@@ -75254,8 +75017,7 @@ var Clappr = function() {
       var t2 = arguments.length > 1 && void 0 !== arguments[1] && arguments[1], r2 = function(e4, r3) {
         return e4[r3.prototype.name] && t2 || (e4[r3.prototype.name] && delete e4[r3.prototype.name], e4[r3.prototype.name] = r3), e4;
       }, i2 = e3.reduceRight(r2, /* @__PURE__ */ Object.create(null)), n2 = [];
-      for (var a2 in i2)
-        n2.unshift(i2[a2]);
+      for (var a2 in i2) n2.unshift(i2[a2]);
       return n2;
     } }, { key: "addExternalPlugins", value: function(t2) {
       var r2 = "boolean" != typeof t2.loadExternalPluginsFirst || t2.loadExternalPluginsFirst, i2 = "boolean" != typeof t2.loadExternalPlaybacksFirst || t2.loadExternalPlaybacksFirst;
@@ -75281,8 +75043,7 @@ var Clappr = function() {
       ["playback", "container", "core"].forEach(function(t2) {
         (e3[t2] || []).forEach(function(e4) {
           var r2 = "external " + e4.type + " plugin on " + t2 + " array";
-          if (e4.type !== t2)
-            throw new ReferenceError(r2);
+          if (e4.type !== t2) throw new ReferenceError(r2);
         });
       });
     } }], [{ key: "registeredPlaybacks", get: function() {
@@ -75292,22 +75053,18 @@ var Clappr = function() {
       return { core: Me(e3, "core"), container: Me(e3, "container") };
     } }, { key: "checkVersionSupport", value: function(e3) {
       var t2 = e3.prototype, r2 = t2.supportedVersion, i2 = t2.name;
-      if (!r2 || !r2.min)
-        return ae.warn("Loader", "missing version information for ".concat(i2)), false;
+      if (!r2 || !r2.min) return ae.warn("Loader", "missing version information for ".concat(i2)), false;
       var n2 = r2.max ? Fe.parse(r2.max) : Fe.parse(r2.min).inc("minor"), a2 = Fe.parse(r2.min);
       return !!Fe.parse(Pe).satisfies(a2, n2) || (ae.warn("Loader", "unsupported plugin ".concat(i2, ": Clappr version ").concat(Pe, " does not match required range [").concat(a2, ",").concat(n2, ")")), false);
     } }, { key: "registerPlugin", value: function(t2) {
-      if (!t2 || !t2.prototype.name)
-        return ae.warn("Loader", "missing information to register plugin: ".concat(t2)), false;
+      if (!t2 || !t2.prototype.name) return ae.warn("Loader", "missing information to register plugin: ".concat(t2)), false;
       e2.checkVersionSupport(t2);
       var r2 = we.plugins;
-      if (!r2)
-        return false;
+      if (!r2) return false;
       var i2 = r2[t2.prototype.name];
       return i2 && ae.warn("Loader", "overriding plugin entry: ".concat(t2.prototype.name, " - ").concat(i2)), r2[t2.prototype.name] = t2, true;
     } }, { key: "registerPlayback", value: function(t2) {
-      if (!t2 || !t2.prototype.name)
-        return false;
+      if (!t2 || !t2.prototype.name) return false;
       e2.checkVersionSupport(t2);
       var r2 = we.playbacks, i2 = r2.findIndex(function(e3) {
         return e3.prototype.name === t2.prototype.name;
@@ -75318,13 +75075,11 @@ var Clappr = function() {
       }
       return we.playbacks = [t2].concat(A(r2)), true;
     } }, { key: "unregisterPlugin", value: function(e3) {
-      if (!e3)
-        return false;
+      if (!e3) return false;
       var t2 = we.plugins;
       return !!t2[e3] && (delete t2[e3], true);
     } }, { key: "unregisterPlayback", value: function(e3) {
-      if (!e3)
-        return false;
+      if (!e3) return false;
       var t2 = we.playbacks, r2 = t2.findIndex(function(t3) {
         return t3.prototype.name === e3;
       });
@@ -75533,8 +75288,7 @@ var Clappr = function() {
     function r2() {
       var e3;
       s(this, r2);
-      for (var i2 = arguments.length, n2 = new Array(i2), a2 = 0; a2 < i2; a2++)
-        n2[a2] = arguments[a2];
+      for (var i2 = arguments.length, n2 = new Array(i2), a2 = 0; a2 < i2; a2++) n2[a2] = arguments[a2];
       (e3 = t2.call.apply(t2, [this].concat(n2)))._destroyed = false, e3._loadStarted = false, e3._isBuffering = false, e3._playheadMoving = false, e3._playheadMovingTimer = null, e3._stopped = false, e3._ccTrackId = -1, e3._setupSrc(e3.options.src), e3.options.playback || (e3.options.playback = e3.options || {}), e3.options.playback.disableContextMenu = e3.options.playback.disableContextMenu || e3.options.disableVideoTagContextMenu, e3._minDvrSize = e3.isValidMinimumDVRSizeConfig ? e3.minimumDVRSizeConfig : 60;
       var o2, l2 = e3.options.playback, u2 = l2.preload || (w.isSafari ? "auto" : e3.options.preload);
       return e3.options.poster && ("string" == typeof e3.options.poster ? o2 = e3.options.poster : "string" == typeof e3.options.poster.url && (o2 = e3.options.poster.url)), R.extend(true, e3.el, { muted: e3.options.mute, defaultMuted: e3.options.mute, loop: e3.options.loop, poster: o2, preload: u2 || "metadata", crossOrigin: l2.crossOrigin, "x-webkit-playsinline": l2.playInline }), (l2.controls || e3.options.useVideoTagDefaultControls) && e3.$el.attr("controls", ""), l2.playInline && e3.$el.attr({ playsinline: "playsinline" }), l2.crossOrigin && e3.$el.attr({ crossorigin: l2.crossOrigin }), e3.settings = { default: ["seekbar"] }, e3.settings.left = ["playpause", "position", "duration"], e3.settings.right = ["fullscreen", "volume", "hd-indicator"], l2.externalTracks && e3._setupExternalTracks(l2.externalTracks), e3.options.autoPlay && e3.attemptAutoPlay(), e3;
@@ -75574,8 +75328,7 @@ var Clappr = function() {
         }, 0);
       });
     } }, { key: "canAutoPlay", value: function(e3) {
-      if (this.options.disableCanAutoPlay)
-        e3(true, null);
+      if (this.options.disableCanAutoPlay) e3(true, null);
       else {
         var t3 = { timeout: this.options.autoPlayTimeout || 500, inline: this.options.playback.playInline || false, muted: this.options.mute || false };
         w.isMobile && Z.options.recycleVideo && (t3.element = this.el), X(e3, t3);
@@ -75603,8 +75356,7 @@ var Clappr = function() {
       return false;
     } }, { key: "consent", value: function(e3) {
       var t3 = this;
-      if (this.isPlaying() || this.el._consented)
-        m(d(r2.prototype), "consent", this).call(this, e3);
+      if (this.isPlaying() || this.el._consented) m(d(r2.prototype), "consent", this).call(this, e3);
       else {
         var i2 = function i3() {
           t3.el.removeEventListener("loadedmetadata", i3, false), t3.el.removeEventListener("error", i3, false), t3.el._consented = true, m(d(r2.prototype), "consent", t3).call(t3, e3);
@@ -75677,8 +75429,7 @@ var Clappr = function() {
       return this.el.currentTime;
     } }, { key: "getDuration", value: function() {
       if (this.isLive) {
-        if (this.el.seekable.length > 0)
-          return this.el.seekable.end(0) - this.el.seekable.start(0);
+        if (this.el.seekable.length > 0) return this.el.seekable.end(0) - this.el.seekable.start(0);
         this._scheduleUpdateSettingsCheck();
       }
       return this.el.duration;
@@ -75692,8 +75443,7 @@ var Clappr = function() {
       this.trigger(ce.PLAYBACK_TIMEUPDATE, { current: this.el.currentTime, total: e3 }, this.name);
     } }, { key: "_onProgress", value: function() {
       if (this.el.buffered.length) {
-        for (var e3 = [], t3 = 0, r3 = 0; r3 < this.el.buffered.length; r3++)
-          e3 = [].concat(A(e3), [{ start: this.el.buffered.start(r3), end: this.el.buffered.end(r3) }]), this.el.currentTime >= e3[r3].start && this.el.currentTime <= e3[r3].end && (t3 = r3);
+        for (var e3 = [], t3 = 0, r3 = 0; r3 < this.el.buffered.length; r3++) e3 = [].concat(A(e3), [{ start: this.el.buffered.start(r3), end: this.el.buffered.end(r3) }]), this.el.currentTime >= e3[r3].start && this.el.currentTime <= e3[r3].end && (t3 = r3);
         var i2 = { start: e3[t3].start, current: e3[t3].end, total: this.el.duration };
         this.trigger(ce.PLAYBACK_PROGRESS, i2, e3);
       }
@@ -75733,10 +75483,8 @@ var Clappr = function() {
         if (-1 !== e3) {
           if (!(t3 = r3.find(function(t4) {
             return t4.id === e3;
-          })))
-            return;
-          if ("showing" === t3.track.mode)
-            return;
+          }))) return;
+          if ("showing" === t3.track.mode) return;
         }
         r3.filter(function(e4) {
           return "hidden" !== e4.track.mode;
@@ -75826,8 +75574,7 @@ var Clappr = function() {
     function r2() {
       var e3;
       s(this, r2);
-      for (var i2 = arguments.length, n2 = new Array(i2), a2 = 0; a2 < i2; a2++)
-        n2[a2] = arguments[a2];
+      for (var i2 = arguments.length, n2 = new Array(i2), a2 = 0; a2 < i2; a2++) n2[a2] = arguments[a2];
       return (e3 = t2.call.apply(t2, [this].concat(n2)))._noiseFrameNum = -1, e3;
     }
     return l(r2, [{ key: "name", get: function() {
@@ -75850,12 +75597,10 @@ var Clappr = function() {
           e3 = new Uint32Array(t3.data.buffer);
         } catch (n3) {
           e3 = new Uint32Array(this.context.canvas.width * this.context.canvas.height * 4);
-          for (var r3 = t3.data, i2 = 0; i2 < r3.length; i2++)
-            e3[i2] = r3[i2];
+          for (var r3 = t3.data, i2 = 0; i2 < r3.length; i2++) e3[i2] = r3[i2];
         }
         for (var n2 = e3.length, a2 = 6 * Math.random() + 4, s2 = 0, o2 = 0, l2 = 0; l2 < n2; ) {
-          if (s2 < 0)
-            s2 = a2 * Math.random(), o2 = 255 * Math.pow(Math.random(), 0.4) << 24;
+          if (s2 < 0) s2 = a2 * Math.random(), o2 = 255 * Math.pow(Math.random(), 0.4) << 24;
           s2 -= 1, e3[l2++] = o2;
         }
         this.context.putImageData(t3, 0, 0);
@@ -75917,20 +75662,17 @@ var Clappr = function() {
   Be.registerPlugin(Qe), Be.registerPlugin(Je), Be.registerPlayback(Ze), Be.registerPlayback(Xe), Be.registerPlayback(qe), Be.registerPlayback(ze);
   var et = { Player: Ge, Events: ce, Browser: w, ContainerPlugin: Ve, UIContainerPlugin: je, CorePlugin: Ke, UICorePlugin: Le, Playback: Re, Container: De, Core: Oe, PlayerError: _e, Loader: Be, BaseObject: he, UIObject: Se, Utils: J, HTML5Audio: qe, HTML5Video: ze, HTMLImg: Xe, Log: ae, Styler: be, version: "0.4.27", template: Te, $: R };
   function tt(e2, t2) {
-    if (!(e2 instanceof t2))
-      throw new TypeError("Cannot call a class as a function");
+    if (!(e2 instanceof t2)) throw new TypeError("Cannot call a class as a function");
   }
   function rt(e2, t2) {
     for (var r2 = 0; r2 < t2.length; r2++) {
       var i2 = t2[r2];
       i2.enumerable = i2.enumerable || false, i2.configurable = true, "value" in i2 && (i2.writable = true), Object.defineProperty(e2, (n2 = i2.key, a2 = void 0, "symbol" == typeof (a2 = function(e3, t3) {
-        if ("object" != typeof e3 || null === e3)
-          return e3;
+        if ("object" != typeof e3 || null === e3) return e3;
         var r3 = e3[Symbol.toPrimitive];
         if (void 0 !== r3) {
           var i3 = r3.call(e3, t3 || "default");
-          if ("object" != typeof i3)
-            return i3;
+          if ("object" != typeof i3) return i3;
           throw new TypeError("@@toPrimitive must return a primitive value.");
         }
         return ("string" === t3 ? String : Number)(e3);
@@ -75942,8 +75684,7 @@ var Clappr = function() {
     return t2 && rt(e2.prototype, t2), r2 && rt(e2, r2), Object.defineProperty(e2, "prototype", { writable: false }), e2;
   }
   function nt(e2, t2) {
-    if ("function" != typeof t2 && null !== t2)
-      throw new TypeError("Super expression must either be null or a function");
+    if ("function" != typeof t2 && null !== t2) throw new TypeError("Super expression must either be null or a function");
     e2.prototype = Object.create(t2 && t2.prototype, { constructor: { value: e2, writable: true, configurable: true } }), Object.defineProperty(e2, "prototype", { writable: false }), t2 && st(e2, t2);
   }
   function at(e2) {
@@ -75957,24 +75698,18 @@ var Clappr = function() {
     }, st(e2, t2);
   }
   function ot(e2, t2) {
-    if (t2 && ("object" == typeof t2 || "function" == typeof t2))
-      return t2;
-    if (void 0 !== t2)
-      throw new TypeError("Derived constructors may only return object or undefined");
+    if (t2 && ("object" == typeof t2 || "function" == typeof t2)) return t2;
+    if (void 0 !== t2) throw new TypeError("Derived constructors may only return object or undefined");
     return function(e3) {
-      if (void 0 === e3)
-        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+      if (void 0 === e3) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
       return e3;
     }(e2);
   }
   function lt(e2) {
     var t2 = function() {
-      if ("undefined" == typeof Reflect || !Reflect.construct)
-        return false;
-      if (Reflect.construct.sham)
-        return false;
-      if ("function" == typeof Proxy)
-        return true;
+      if ("undefined" == typeof Reflect || !Reflect.construct) return false;
+      if (Reflect.construct.sham) return false;
+      if ("function" == typeof Proxy) return true;
       try {
         return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
         })), true;
@@ -75987,14 +75722,12 @@ var Clappr = function() {
       if (t2) {
         var n2 = at(this).constructor;
         r2 = Reflect.construct(i2, arguments, n2);
-      } else
-        r2 = i2.apply(this, arguments);
+      } else r2 = i2.apply(this, arguments);
       return ot(this, r2);
     };
   }
   function ut(e2, t2) {
-    for (; !Object.prototype.hasOwnProperty.call(e2, t2) && null !== (e2 = at(e2)); )
-      ;
+    for (; !Object.prototype.hasOwnProperty.call(e2, t2) && null !== (e2 = at(e2)); ) ;
     return e2;
   }
   function ct() {
@@ -76082,8 +75815,7 @@ var Clappr = function() {
         this.$ccButton[t3]("enabled"), this._trackId = e3;
       }
     } }, { key: "renderCcButton", value: function() {
-      for (var e3 = this.container ? this.container.closedCaptionsTracks : [], t3 = 0; t3 < e3.length; t3++)
-        e3[t3].label = this._labelCb(e3[t3]);
+      for (var e3 = this.container ? this.container.closedCaptionsTracks : [], t3 = 0; t3 < e3.length; t3++) e3[t3].label = this._labelCb(e3[t3]);
       var r3 = be.getStyleFor(".cc-controls[data-cc-controls] {\n  float: right;\n  position: relative;\n  display: none; }\n  .cc-controls[data-cc-controls].available {\n    display: block; }\n  .cc-controls[data-cc-controls] .cc-button {\n    padding: 6px !important; }\n    .cc-controls[data-cc-controls] .cc-button.enabled {\n      display: block;\n      opacity: 1.0; }\n      .cc-controls[data-cc-controls] .cc-button.enabled:hover {\n        opacity: 1.0;\n        text-shadow: none; }\n  .cc-controls[data-cc-controls] > ul {\n    list-style-type: none;\n    position: absolute;\n    bottom: 25px;\n    border: 1px solid black;\n    display: none;\n    background-color: #e6e6e6; }\n  .cc-controls[data-cc-controls] li {\n    font-size: 10px; }\n    .cc-controls[data-cc-controls] li[data-title] {\n      background-color: #c3c2c2;\n      padding: 5px; }\n    .cc-controls[data-cc-controls] li a {\n      color: #444;\n      padding: 2px 10px;\n      display: block;\n      text-decoration: none; }\n      .cc-controls[data-cc-controls] li a:hover {\n        background-color: #555;\n        color: white; }\n        .cc-controls[data-cc-controls] li a:hover a {\n          color: white;\n          text-decoration: none; }\n    .cc-controls[data-cc-controls] li.current a {\n      color: #f00; }\n", { baseUrl: this.options.baseUrl });
       this.$el.html(this.template({ ariaLabel: this._ariaLabel, disabledLabel: this.core.i18n.t("disabled"), title: this._title, tracks: e3 })), this.$ccButton = this.$el.find("button.cc-button[data-cc-button]"), this.$ccButton.append('<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n	 viewBox="0 0 49 41.8" style="enable-background:new 0 0 49 41.8;" xml:space="preserve">\n<path d="M47.1,0H3.2C1.6,0,0,1.2,0,2.8v31.5C0,35.9,1.6,37,3.2,37h11.9l3.2,1.9l4.7,2.7c0.9,0.5,2-0.1,2-1.1V37h22.1\n	c1.6,0,1.9-1.1,1.9-2.7V2.8C49,1.2,48.7,0,47.1,0z M7.2,18.6c0-4.8,3.5-9.3,9.9-9.3c4.8,0,7.1,2.7,7.1,2.7l-2.5,4\n	c0,0-1.7-1.7-4.2-1.7c-2.8,0-4.3,2.1-4.3,4.3c0,2.1,1.5,4.4,4.5,4.4c2.5,0,4.9-2.1,4.9-2.1l2.2,4.2c0,0-2.7,2.9-7.6,2.9\n	C10.8,27.9,7.2,23.5,7.2,18.6z M36.9,27.9c-6.4,0-9.9-4.4-9.9-9.3c0-4.8,3.5-9.3,9.9-9.3C41.7,9.3,44,12,44,12l-2.5,4\n	c0,0-1.7-1.7-4.2-1.7c-2.8,0-4.3,2.1-4.3,4.3c0,2.1,1.5,4.4,4.5,4.4c2.5,0,4.9-2.1,4.9-2.1l2.2,4.2C44.5,25,41.9,27.9,36.9,27.9z"/>\n</svg>'), this.$el.append(r3[0]);
     } }, { key: "render", value: function() {
@@ -76251,8 +75983,7 @@ var Clappr = function() {
       return { min: "0.4.27" };
     } }, { key: "embedScript", value: function() {
       var e3 = this;
-      if (window._gat)
-        this.addEventListeners();
+      if (window._gat) this.addEventListeners();
       else {
         var t3 = document.createElement("script");
         t3.setAttribute("type", "text/javascript"), t3.setAttribute("async", "async"), t3.setAttribute("src", "//www.google-analytics.com/ga.js"), t3.onload = function() {
@@ -76304,8 +76035,7 @@ var Clappr = function() {
     this.element = e2 || window.document, this.initialize();
   };
   Tt.KEY_NAMES_BY_CODE = { 8: "backspace", 9: "tab", 13: "enter", 16: "shift", 17: "ctrl", 18: "alt", 20: "caps_lock", 27: "esc", 32: "space", 37: "left", 38: "up", 39: "right", 40: "down", 48: "0", 49: "1", 50: "2", 51: "3", 52: "4", 53: "5", 54: "6", 55: "7", 56: "8", 57: "9", 65: "a", 66: "b", 67: "c", 68: "d", 69: "e", 70: "f", 71: "g", 72: "h", 73: "i", 74: "j", 75: "k", 76: "l", 77: "m", 78: "n", 79: "o", 80: "p", 81: "q", 82: "r", 83: "s", 84: "t", 85: "u", 86: "v", 87: "w", 88: "x", 89: "y", 90: "z", 112: "f1", 113: "f2", 114: "f3", 115: "f4", 116: "f5", 117: "f6", 118: "f7", 119: "f8", 120: "f9", 121: "f10", 122: "f11", 123: "f12" }, Tt.KEY_CODES_BY_NAME = {}, function() {
-    for (var e2 in Tt.KEY_NAMES_BY_CODE)
-      Object.prototype.hasOwnProperty.call(Tt.KEY_NAMES_BY_CODE, e2) && (Tt.KEY_CODES_BY_NAME[Tt.KEY_NAMES_BY_CODE[e2]] = +e2);
+    for (var e2 in Tt.KEY_NAMES_BY_CODE) Object.prototype.hasOwnProperty.call(Tt.KEY_NAMES_BY_CODE, e2) && (Tt.KEY_CODES_BY_NAME[Tt.KEY_NAMES_BY_CODE[e2]] = +e2);
   }(), Tt.MODIFIERS = ["shift", "ctrl", "alt"], Tt.registerEvent = document.addEventListener ? function(e2, t2, r2) {
     e2.addEventListener(t2, r2, false);
   } : document.attachEvent ? function(e2, t2, r2) {
@@ -76327,20 +76057,15 @@ var Clappr = function() {
   }, Tt.arrayIncludes = Array.prototype.indexOf ? function(e2, t2) {
     return -1 !== e2.indexOf(t2);
   } : function(e2, t2) {
-    for (var r2 = 0; r2 < e2.length; r2++)
-      if (e2[r2] === t2)
-        return true;
+    for (var r2 = 0; r2 < e2.length; r2++) if (e2[r2] === t2) return true;
     return false;
   }, Tt.extractModifiers = function(e2) {
     var t2, r2;
-    for (t2 = [], r2 = 0; r2 < Tt.MODIFIERS.length; r2++)
-      Tt.stringContains(e2, Tt.MODIFIERS[r2]) && t2.push(Tt.MODIFIERS[r2]);
+    for (t2 = [], r2 = 0; r2 < Tt.MODIFIERS.length; r2++) Tt.stringContains(e2, Tt.MODIFIERS[r2]) && t2.push(Tt.MODIFIERS[r2]);
     return t2;
   }, Tt.extractKey = function(e2) {
     var t2, r2;
-    for (t2 = Tt.neatString(e2).split(" "), r2 = 0; r2 < t2.length; r2++)
-      if (!Tt.arrayIncludes(Tt.MODIFIERS, t2[r2]))
-        return t2[r2];
+    for (t2 = Tt.neatString(e2).split(" "), r2 = 0; r2 < t2.length; r2++) if (!Tt.arrayIncludes(Tt.MODIFIERS, t2[r2])) return t2[r2];
   }, Tt.modifiersAndKey = function(e2) {
     var t2, r2;
     return Tt.stringContains(e2, "any") ? Tt.neatString(e2).split(" ").slice(0, 2).join(" ") : (t2 = Tt.extractModifiers(e2), (r2 = Tt.extractKey(e2)) && !Tt.arrayIncludes(Tt.MODIFIERS, r2) && t2.push(r2), t2.join(" "));
@@ -76350,8 +76075,7 @@ var Clappr = function() {
     return +Tt.KEY_CODES_BY_NAME[e2];
   }, Tt.prototype.initialize = function() {
     var e2, t2 = this;
-    for (this.lastKeyCode = -1, this.lastModifiers = {}, e2 = 0; e2 < Tt.MODIFIERS.length; e2++)
-      this.lastModifiers[Tt.MODIFIERS[e2]] = false;
+    for (this.lastKeyCode = -1, this.lastModifiers = {}, e2 = 0; e2 < Tt.MODIFIERS.length; e2++) this.lastModifiers[Tt.MODIFIERS[e2]] = false;
     this.keysDown = { any: [] }, this.keysUp = { any: [] }, this.downHandler = this.handler("down"), this.upHandler = this.handler("up"), Tt.registerEvent(this.element, "keydown", this.downHandler), Tt.registerEvent(this.element, "keyup", this.upHandler), Tt.registerEvent(window, "unload", function e3() {
       Tt.unregisterEvent(t2.element, "keydown", t2.downHandler), Tt.unregisterEvent(t2.element, "keyup", t2.upHandler), Tt.unregisterEvent(window, "unload", e3);
     });
@@ -76359,31 +76083,23 @@ var Clappr = function() {
     var t2 = this;
     return function(r2) {
       var i2, n2, a2;
-      for (r2 = r2 || window.event, t2.lastKeyCode = r2.keyCode, i2 = 0; i2 < Tt.MODIFIERS.length; i2++)
-        t2.lastModifiers[Tt.MODIFIERS[i2]] = r2[Tt.MODIFIERS[i2] + "Key"];
-      for (Tt.arrayIncludes(Tt.MODIFIERS, Tt.keyName(t2.lastKeyCode)) && (t2.lastModifiers[Tt.keyName(t2.lastKeyCode)] = true), n2 = t2["keys" + Tt.capitalize(e2)], i2 = 0; i2 < n2.any.length; i2++)
-        false === n2.any[i2](r2) && r2.preventDefault && r2.preventDefault();
-      if (n2[a2 = t2.lastModifiersAndKey()])
-        for (i2 = 0; i2 < n2[a2].length; i2++)
-          false === n2[a2][i2](r2) && r2.preventDefault && r2.preventDefault();
+      for (r2 = r2 || window.event, t2.lastKeyCode = r2.keyCode, i2 = 0; i2 < Tt.MODIFIERS.length; i2++) t2.lastModifiers[Tt.MODIFIERS[i2]] = r2[Tt.MODIFIERS[i2] + "Key"];
+      for (Tt.arrayIncludes(Tt.MODIFIERS, Tt.keyName(t2.lastKeyCode)) && (t2.lastModifiers[Tt.keyName(t2.lastKeyCode)] = true), n2 = t2["keys" + Tt.capitalize(e2)], i2 = 0; i2 < n2.any.length; i2++) false === n2.any[i2](r2) && r2.preventDefault && r2.preventDefault();
+      if (n2[a2 = t2.lastModifiersAndKey()]) for (i2 = 0; i2 < n2[a2].length; i2++) false === n2[a2][i2](r2) && r2.preventDefault && r2.preventDefault();
     };
   }, Tt.prototype.registerKeys = function(e2, t2, r2) {
     var i2, n2, a2 = this["keys" + Tt.capitalize(e2)];
-    for (Tt.isString(t2) && (t2 = [t2]), i2 = 0; i2 < t2.length; i2++)
-      n2 = t2[i2], a2[n2 = Tt.modifiersAndKey(n2 + "")] ? a2[n2].push(r2) : a2[n2] = [r2];
+    for (Tt.isString(t2) && (t2 = [t2]), i2 = 0; i2 < t2.length; i2++) n2 = t2[i2], a2[n2 = Tt.modifiersAndKey(n2 + "")] ? a2[n2].push(r2) : a2[n2] = [r2];
     return this;
   }, Tt.prototype.unregisterKeys = function(e2, t2, r2) {
     var i2, n2, a2, s2 = this["keys" + Tt.capitalize(e2)];
-    for (Tt.isString(t2) && (t2 = [t2]), i2 = 0; i2 < t2.length; i2++)
-      if (a2 = t2[i2], a2 = Tt.modifiersAndKey(a2 + ""), null === r2)
-        delete s2[a2];
-      else if (s2[a2]) {
-        for (n2 = 0; n2 < s2[a2].length; n2++)
-          if (String(s2[a2][n2]) === String(r2)) {
-            s2[a2].splice(n2, 1);
-            break;
-          }
+    for (Tt.isString(t2) && (t2 = [t2]), i2 = 0; i2 < t2.length; i2++) if (a2 = t2[i2], a2 = Tt.modifiersAndKey(a2 + ""), null === r2) delete s2[a2];
+    else if (s2[a2]) {
+      for (n2 = 0; n2 < s2[a2].length; n2++) if (String(s2[a2][n2]) === String(r2)) {
+        s2[a2].splice(n2, 1);
+        break;
       }
+    }
     return this;
   }, Tt.prototype.off = function(e2) {
     return this.unregisterKeys("down", e2, null);
@@ -76397,8 +76113,7 @@ var Clappr = function() {
     return e2 ? this.lastModifiers[e2] : Tt.keyName(this.lastKeyCode);
   }, Tt.prototype.lastModifiersAndKey = function() {
     var e2, t2;
-    for (e2 = [], t2 = 0; t2 < Tt.MODIFIERS.length; t2++)
-      this.lastKey(Tt.MODIFIERS[t2]) && e2.push(Tt.MODIFIERS[t2]);
+    for (e2 = [], t2 = 0; t2 < Tt.MODIFIERS.length; t2++) this.lastKey(Tt.MODIFIERS[t2]) && e2.push(Tt.MODIFIERS[t2]);
     return Tt.arrayIncludes(e2, this.lastKey()) || e2.push(this.lastKey()), e2.join(" ");
   };
   var bt = { Kibo: Tt }, kt = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\n  <path fill-rule="evenodd" clip-rule="evenodd" fill="#010101" d="M1.712 1.24h12.6v13.52h-12.6z"/>\n</svg>', St = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\n  <path fill-rule="evenodd" clip-rule="evenodd" fill="#010101" d="M11.5 11h-.002v1.502L7.798 10H4.5V6h3.297l3.7-2.502V4.5h.003V11zM11 4.49L7.953 6.5H5v3h2.953L11 11.51V4.49z"/>\n</svg>', _t = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">\n  <path fill="#010101" d="M7.156 8L4 11.156V8.5H3V13h4.5v-1H4.844L8 8.844 7.156 8zM8.5 3v1h2.657L8 7.157 8.846 8 12 4.844V7.5h1V3H8.5z"/>\n</svg>', Ct = J.Config, Lt = J.Fullscreen, Dt = J.formatTime, Rt = J.extend, It = J.removeArrayItem, Ot = function(e2) {
@@ -76504,8 +76219,7 @@ var Clappr = function() {
         e3.preventDefault();
         var t3 = (e3.pageX - this.$seekBarContainer.offset().left) / this.$seekBarContainer.width() * 100;
         t3 = Math.min(100, Math.max(t3, 0)), this.setSeekPercentage(t3);
-      } else
-        this.draggingVolumeBar && (e3.preventDefault(), this.setVolume(this.getVolumeFromUIEvent(e3)));
+      } else this.draggingVolumeBar && (e3.preventDefault(), this.setVolume(this.getVolumeFromUIEvent(e3)));
     } }, { key: "getVolumeFromUIEvent", value: function(e3) {
       return (e3.pageX - this.$volumeBarContainer.offset().left) / this.$volumeBarContainer.width() * 100;
     } }, { key: "toggleMute", value: function() {
@@ -76580,10 +76294,9 @@ var Clappr = function() {
         var r3 = t3 || 2e3;
         if (clearTimeout(this.hideId), this.disabled || false !== this.options.hideMediaControl) {
           var i2 = this.userKeepVisible || this.keepVisible, n2 = this.draggingSeekBar || this.draggingVolumeBar;
-          if (!this.disabled && (t3 || i2 || n2))
-            this.hideId = setTimeout(function() {
-              return e3.hide();
-            }, r3);
+          if (!this.disabled && (t3 || i2 || n2)) this.hideId = setTimeout(function() {
+            return e3.hide();
+          }, r3);
           else {
             this.trigger(ce.MEDIACONTROL_HIDE, this.name), this.container && this.container.trigger(ce.CONTAINER_MEDIACONTROL_HIDE, this.name), this.$el.addClass("media-control-hide"), this.hideVolumeBar(0);
             var a2 = false;
@@ -76715,8 +76428,7 @@ var Clappr = function() {
     } }, { key: "hidePlayButton", value: function() {
       this.$playButton.hide(), this.$el.removeClass("clickable");
     } }, { key: "clicked", value: function() {
-      if (!this.hasStartedPlaying)
-        return this.options.chromeless && !this.options.allowUserInteraction || (this.playRequested = true, this.update(), this.container.playback && (this.container.playback._consented = true), this.container.play()), false;
+      if (!this.hasStartedPlaying) return this.options.chromeless && !this.options.allowUserInteraction || (this.playRequested = true, this.update(), this.container.playback && (this.container.playback._consented = true), this.container.play()), false;
     } }, { key: "shouldHideOnPlay", value: function() {
       return !this.container.playback.isAudioOnly;
     } }, { key: "update", value: function() {
@@ -76736,8 +76448,7 @@ var Clappr = function() {
         if (this.$el.html(this.template()), this.$el.append(e3[0]), this.options.poster && void 0 === this.options.poster.custom) {
           var t3 = this.options.poster.url || this.options.poster;
           this.$el.css({ "background-image": "url(" + t3 + ")" }), this.removeVideoElementPoster();
-        } else
-          this.options.poster && (this.$el.css({ background: this.options.poster.custom }), this.removeVideoElementPoster());
+        } else this.options.poster && (this.$el.css({ background: this.options.poster.custom }), this.removeVideoElementPoster());
         this.container.$el.append(this.el), this.$playWrapper = this.$el.find(".play-wrapper"), this.$playWrapper.append(vt), this.$playButton = this.$playWrapper.find("svg"), this.$playButton.addClass("poster-icon"), this.$playButton.attr("data-poster", "");
         var r3 = this.options.mediacontrol && this.options.mediacontrol.buttons;
         return r3 && this.$el.find("svg path").css("fill", r3), this.options.mediacontrol && this.options.mediacontrol.buttons && (r3 = this.options.mediacontrol.buttons, this.$playButton.css("color", r3)), this.update(), this;
@@ -76787,20 +76498,17 @@ var Clappr = function() {
       var e3, t3, r3, i2;
       return this.useActualLiveTime ? (this.firstFragDateTime ? (i2 = new Date(this.firstFragDateTime), (r3 = new Date(this.firstFragDateTime)).setHours(0, 0, 0, 0), t3 = (i2.getTime() - r3.getTime()) / 1e3 + this.duration) : (r3 = new Date((/* @__PURE__ */ new Date()).getTime() - this.actualLiveServerTimeDiff), t3 = ((i2 = new Date(r3)) - r3.setHours(0, 0, 0, 0)) / 1e3), (e3 = t3 - this.duration + this.hoverPosition * this.duration) < 0 && (e3 += 86400)) : e3 = this.hoverPosition * this.duration, { seekTime: e3, secondsSinceMidnight: t3 };
     } }, { key: "update", value: function() {
-      if (this.rendered)
-        if (this.shouldBeVisible()) {
-          var e3 = this.getSeekTime(), t3 = Pt(e3.seekTime, this.useActualLiveTime);
-          if (t3 !== this.displayedSeekTime && (this.$seekTimeEl.text(t3), this.displayedSeekTime = t3), this.durationShown) {
-            this.$durationEl.show();
-            var r3 = Pt(this.actualLiveTime ? e3.secondsSinceMidnight : this.duration, this.actualLiveTime);
-            r3 !== this.displayedDuration && (this.$durationEl.text(r3), this.displayedDuration = r3);
-          } else
-            this.$durationEl.hide();
-          this.$el.show();
-          var i2 = this.mediaControl.$seekBarContainer.width(), n2 = this.$el.width(), a2 = this.hoverPosition * i2;
-          a2 -= n2 / 2, a2 = Math.max(0, Math.min(a2, i2 - n2)), this.$el.css("left", a2);
-        } else
-          this.$el.hide(), this.$el.css("left", "-100%");
+      if (this.rendered) if (this.shouldBeVisible()) {
+        var e3 = this.getSeekTime(), t3 = Pt(e3.seekTime, this.useActualLiveTime);
+        if (t3 !== this.displayedSeekTime && (this.$seekTimeEl.text(t3), this.displayedSeekTime = t3), this.durationShown) {
+          this.$durationEl.show();
+          var r3 = Pt(this.actualLiveTime ? e3.secondsSinceMidnight : this.duration, this.actualLiveTime);
+          r3 !== this.displayedDuration && (this.$durationEl.text(r3), this.displayedDuration = r3);
+        } else this.$durationEl.hide();
+        this.$el.show();
+        var i2 = this.mediaControl.$seekBarContainer.width(), n2 = this.$el.width(), a2 = this.hoverPosition * i2;
+        a2 -= n2 / 2, a2 = Math.max(0, Math.min(a2, i2 - n2)), this.$el.css("left", a2);
+      } else this.$el.hide(), this.$el.css("left", "-100%");
     } }, { key: "shouldBeVisible", value: function() {
       return this.mediaControlContainer && this.mediaControlContainer.settings.seekEnabled && this.hoveringOverSeekBar && null !== this.hoverPosition && null !== this.duration;
     } }, { key: "render", value: function() {
@@ -76936,8 +76644,7 @@ var Clappr = function() {
     return e2;
   }
   function tr(e2, t2) {
-    if (!(e2 instanceof t2))
-      throw new TypeError("Cannot call a class as a function");
+    if (!(e2 instanceof t2)) throw new TypeError("Cannot call a class as a function");
   }
   function rr(e2, t2) {
     for (var r2 = 0; r2 < t2.length; r2++) {
@@ -76959,24 +76666,18 @@ var Clappr = function() {
     }, ar(e2, t2);
   }
   function sr(e2, t2) {
-    if (t2 && ("object" == typeof t2 || "function" == typeof t2))
-      return t2;
-    if (void 0 !== t2)
-      throw new TypeError("Derived constructors may only return object or undefined");
+    if (t2 && ("object" == typeof t2 || "function" == typeof t2)) return t2;
+    if (void 0 !== t2) throw new TypeError("Derived constructors may only return object or undefined");
     return function(e3) {
-      if (void 0 === e3)
-        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+      if (void 0 === e3) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
       return e3;
     }(e2);
   }
   function or(e2) {
     var t2 = function() {
-      if ("undefined" == typeof Reflect || !Reflect.construct)
-        return false;
-      if (Reflect.construct.sham)
-        return false;
-      if ("function" == typeof Proxy)
-        return true;
+      if ("undefined" == typeof Reflect || !Reflect.construct) return false;
+      if (Reflect.construct.sham) return false;
+      if ("function" == typeof Proxy) return true;
       try {
         return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
         })), true;
@@ -76989,14 +76690,12 @@ var Clappr = function() {
       if (t2) {
         var n2 = nr(this).constructor;
         r2 = Reflect.construct(i2, arguments, n2);
-      } else
-        r2 = i2.apply(this, arguments);
+      } else r2 = i2.apply(this, arguments);
       return sr(this, r2);
     };
   }
   function lr(e2, t2) {
-    for (; !Object.prototype.hasOwnProperty.call(e2, t2) && null !== (e2 = nr(e2)); )
-      ;
+    for (; !Object.prototype.hasOwnProperty.call(e2, t2) && null !== (e2 = nr(e2)); ) ;
     return e2;
   }
   function ur() {
@@ -77010,41 +76709,32 @@ var Clappr = function() {
   }
   function cr(e2) {
     return function(e3) {
-      if (Array.isArray(e3))
-        return dr(e3);
+      if (Array.isArray(e3)) return dr(e3);
     }(e2) || function(e3) {
-      if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"])
-        return Array.from(e3);
+      if ("undefined" != typeof Symbol && null != e3[Symbol.iterator] || null != e3["@@iterator"]) return Array.from(e3);
     }(e2) || function(e3, t2) {
-      if (!e3)
-        return;
-      if ("string" == typeof e3)
-        return dr(e3, t2);
+      if (!e3) return;
+      if ("string" == typeof e3) return dr(e3, t2);
       var r2 = Object.prototype.toString.call(e3).slice(8, -1);
       "Object" === r2 && e3.constructor && (r2 = e3.constructor.name);
-      if ("Map" === r2 || "Set" === r2)
-        return Array.from(e3);
-      if ("Arguments" === r2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r2))
-        return dr(e3, t2);
+      if ("Map" === r2 || "Set" === r2) return Array.from(e3);
+      if ("Arguments" === r2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r2)) return dr(e3, t2);
     }(e2) || function() {
       throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
     }();
   }
   function dr(e2, t2) {
     (null == t2 || t2 > e2.length) && (t2 = e2.length);
-    for (var r2 = 0, i2 = new Array(t2); r2 < t2; r2++)
-      i2[r2] = e2[r2];
+    for (var r2 = 0, i2 = new Array(t2); r2 < t2; r2++) i2[r2] = e2[r2];
     return i2;
   }
   function hr(e2) {
     var t2 = function(e3, t3) {
-      if ("object" != typeof e3 || null === e3)
-        return e3;
+      if ("object" != typeof e3 || null === e3) return e3;
       var r2 = e3[Symbol.toPrimitive];
       if (void 0 !== r2) {
         var i2 = r2.call(e3, t3 || "default");
-        if ("object" != typeof i2)
-          return i2;
+        if ("object" != typeof i2) return i2;
         throw new TypeError("@@toPrimitive must return a primitive value.");
       }
       return ("string" === t3 ? String : Number)(e3);
@@ -77116,8 +76806,7 @@ var Clappr = function() {
           return A2 = Object.assign ? Object.assign.bind() : function(e4) {
             for (var t4 = 1; t4 < arguments.length; t4++) {
               var r4 = arguments[t4];
-              for (var i4 in r4)
-                Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
+              for (var i4 in r4) Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
             }
             return e4;
           }, A2.apply(this, arguments);
@@ -77148,12 +76837,9 @@ var Clappr = function() {
         }
         var k2 = T2(T2({ autoStartLoad: true, startPosition: -1, defaultAudioCodec: void 0, debug: false, capLevelOnFPSDrop: false, capLevelToPlayerSize: false, ignoreDevicePixelRatio: false, initialLiveManifestSize: 1, maxBufferLength: 30, backBufferLength: 1 / 0, maxBufferSize: 6e7, maxBufferHole: 0.1, highBufferWatchdogPeriod: 2, nudgeOffset: 0.1, nudgeMaxRetry: 3, maxFragLookUpTolerance: 0.25, liveSyncDurationCount: 3, liveMaxLatencyDurationCount: 1 / 0, liveSyncDuration: void 0, liveMaxLatencyDuration: void 0, maxLiveSyncPlaybackRate: 1, liveDurationInfinity: false, liveBackBufferLength: null, maxMaxBufferLength: 600, enableWorker: true, enableSoftwareAES: true, manifestLoadingTimeOut: 1e4, manifestLoadingMaxRetry: 1, manifestLoadingRetryDelay: 1e3, manifestLoadingMaxRetryTimeout: 64e3, startLevel: void 0, levelLoadingTimeOut: 1e4, levelLoadingMaxRetry: 4, levelLoadingRetryDelay: 1e3, levelLoadingMaxRetryTimeout: 64e3, fragLoadingTimeOut: 2e4, fragLoadingMaxRetry: 6, fragLoadingRetryDelay: 1e3, fragLoadingMaxRetryTimeout: 64e3, startFragPrefetch: false, fpsDroppedMonitoringPeriod: 5e3, fpsDroppedMonitoringThreshold: 0.2, appendErrorMaxRetry: 3, loader: p2.default, fLoader: void 0, pLoader: void 0, xhrSetup: void 0, licenseXhrSetup: void 0, licenseResponseCallback: void 0, abrController: i3.default, bufferController: l2.default, capLevelController: c2.default, fpsController: d2.default, stretchShortVideoTrack: false, maxAudioFramesDrift: 1, forceKeyFrameOnDiscontinuity: true, abrEwmaFastLive: 3, abrEwmaSlowLive: 9, abrEwmaFastVoD: 3, abrEwmaSlowVoD: 9, abrEwmaDefaultEstimate: 5e5, abrBandWidthFactor: 0.95, abrBandWidthUpFactor: 0.7, abrMaxWithRealBitrate: false, maxStarvationDelay: 4, maxLoadingDelay: 4, minAutoBitrate: 0, emeEnabled: false, widevineLicenseUrl: void 0, drmSystemOptions: {}, requestMediaKeySystemAccessFunc: m2.requestMediaKeySystemAccess, testBandwidth: true, progressive: false, lowLatencyMode: true, cmcd: void 0, enableDateRangeMetadataCues: true, enableEmsgMetadataCues: true, enableID3MetadataCues: true }, { cueHandler: v2.default, enableWebVTT: true, enableIMSC1: true, enableCEA708Captions: true, captionsTextTrack1Label: "English", captionsTextTrack1LanguageCode: "en", captionsTextTrack2Label: "Spanish", captionsTextTrack2LanguageCode: "es", captionsTextTrack3Label: "Unknown CC", captionsTextTrack3LanguageCode: "", captionsTextTrack4Label: "Unknown CC", captionsTextTrack4LanguageCode: "", renderTextTracksNatively: true }), {}, { subtitleStreamController: s2.SubtitleStreamController, subtitleTrackController: o2.default, timelineController: u2.TimelineController, audioStreamController: n2.default, audioTrackController: a2.default, emeController: h2.default, cmcdController: f2.default });
         function S2(e4, t4) {
-          if ((t4.liveSyncDurationCount || t4.liveMaxLatencyDurationCount) && (t4.liveSyncDuration || t4.liveMaxLatencyDuration))
-            throw new Error("Illegal hls.js config: don't mix up liveSyncDurationCount/liveMaxLatencyDurationCount and liveSyncDuration/liveMaxLatencyDuration");
-          if (void 0 !== t4.liveMaxLatencyDurationCount && (void 0 === t4.liveSyncDurationCount || t4.liveMaxLatencyDurationCount <= t4.liveSyncDurationCount))
-            throw new Error('Illegal hls.js config: "liveMaxLatencyDurationCount" must be greater than "liveSyncDurationCount"');
-          if (void 0 !== t4.liveMaxLatencyDuration && (void 0 === t4.liveSyncDuration || t4.liveMaxLatencyDuration <= t4.liveSyncDuration))
-            throw new Error('Illegal hls.js config: "liveMaxLatencyDuration" must be greater than "liveSyncDuration"');
+          if ((t4.liveSyncDurationCount || t4.liveMaxLatencyDurationCount) && (t4.liveSyncDuration || t4.liveMaxLatencyDuration)) throw new Error("Illegal hls.js config: don't mix up liveSyncDurationCount/liveMaxLatencyDurationCount and liveSyncDuration/liveMaxLatencyDuration");
+          if (void 0 !== t4.liveMaxLatencyDurationCount && (void 0 === t4.liveSyncDurationCount || t4.liveMaxLatencyDurationCount <= t4.liveSyncDurationCount)) throw new Error('Illegal hls.js config: "liveMaxLatencyDurationCount" must be greater than "liveSyncDurationCount"');
+          if (void 0 !== t4.liveMaxLatencyDuration && (void 0 === t4.liveSyncDuration || t4.liveMaxLatencyDuration <= t4.liveSyncDuration)) throw new Error('Illegal hls.js config: "liveMaxLatencyDuration" must be greater than "liveSyncDuration"');
           return A2({}, e4, t4);
         }
         function _2(e4) {
@@ -77219,8 +76905,7 @@ var Clappr = function() {
             var s3 = r5.media;
             if (e5 && s3) {
               var o3 = t5 ? t5.stats : e5.stats, u3 = t5 ? t5.duration : e5.duration;
-              if (o3.aborted || o3.loaded && o3.loaded === o3.total || 0 === e5.level)
-                return this.clearTimer(), void (this._nextAutoLevel = -1);
+              if (o3.aborted || o3.loaded && o3.loaded === o3.total || 0 === e5.level) return this.clearTimer(), void (this._nextAutoLevel = -1);
               if (n3 && !s3.paused && s3.playbackRate && s3.readyState) {
                 var c4 = r5.mainForwardBufferInfo;
                 if (null !== c4) {
@@ -77231,8 +76916,7 @@ var Clappr = function() {
                       var b2, k2 = Number.POSITIVE_INFINITY;
                       for (b2 = e5.level - 1; b2 > v2; b2--) {
                         var S2 = g2[b2].maxBitrate;
-                        if ((k2 = A2 ? u3 * S2 / (6.4 * A2) : u3 * S2 / p2) < T2)
-                          break;
+                        if ((k2 = A2 ? u3 * S2 / (6.4 * A2) : u3 * S2 / p2) < T2) break;
                       }
                       k2 >= E2 || (l2.logger.warn("Fragment " + e5.sn + (t5 ? " part " + t5.index : "") + " of level " + e5.level + " is loading too slowly and will cause an underbuffer; aborting and switching to level " + b2 + "\n      Current BW estimate: " + ((0, i3.isFiniteNumber)(p2) ? (p2 / 1024).toFixed(3) : "Unknown") + " Kb/s\n      Estimated load time for current fragment: " + E2.toFixed(3) + " s\n      Estimated load time for the next fragment: " + k2.toFixed(3) + " s\n      Time to underbuffer: " + T2.toFixed(3) + " s"), r5.nextLoadLevel = b2, f2 && this.bwEstimator.sample(d4, o3.loaded), this.clearTimer(), e5.loader && (this.fragCurrent = this.partCurrent = null, e5.loader.abort()), r5.trigger(a2.Events.FRAG_LOAD_EMERGENCY_ABORTED, { frag: e5, part: t5, stats: o3 }));
                     }
@@ -77271,8 +76955,7 @@ var Clappr = function() {
             var e5 = this.fragCurrent, t5 = this.partCurrent, r5 = this.hls, i4 = r5.maxAutoLevel, n3 = r5.config, a3 = r5.minAutoLevel, s3 = r5.media, o3 = t5 ? t5.duration : e5 ? e5.duration : 0;
             s3 && s3.currentTime;
             var u3 = s3 && 0 !== s3.playbackRate ? Math.abs(s3.playbackRate) : 1, c4 = this.bwEstimator ? this.bwEstimator.getEstimate() : n3.abrEwmaDefaultEstimate, d4 = r5.mainForwardBufferInfo, h2 = (d4 ? d4.len : 0) / u3, f2 = this.findBestLevel(c4, a3, i4, h2, n3.abrBandWidthFactor, n3.abrBandWidthUpFactor);
-            if (f2 >= 0)
-              return f2;
+            if (f2 >= 0) return f2;
             l2.logger.trace((h2 ? "rebuffering expected" : "buffer is empty") + ", finding optimal quality level");
             var p2 = o3 ? Math.min(o3, n3.maxStarvationDelay) : n3.maxStarvationDelay, g2 = n3.abrBandWidthFactor, v2 = n3.abrBandWidthUpFactor;
             if (!h2) {
@@ -77287,15 +76970,13 @@ var Clappr = function() {
                 var A2 = y2.details, E2 = (c4 ? null == A2 ? void 0 : A2.partTarget : null == A2 ? void 0 : A2.averagetargetduration) || v2, T2 = void 0;
                 T2 = m2 <= d4 ? a3 * e5 : s3 * e5;
                 var b2 = h2[m2].maxBitrate, k2 = b2 * E2 / T2;
-                if (l2.logger.trace("level/adjustedbw/bitrate/avgDuration/maxFetchDuration/fetchDuration: " + m2 + "/" + Math.round(T2) + "/" + b2 + "/" + E2 + "/" + n3 + "/" + k2), T2 > b2 && (0 === k2 || !(0, i3.isFiniteNumber)(k2) || p2 && !this.bitrateTestDelay || k2 < n3))
-                  return m2;
+                if (l2.logger.trace("level/adjustedbw/bitrate/avgDuration/maxFetchDuration/fetchDuration: " + m2 + "/" + Math.round(T2) + "/" + b2 + "/" + E2 + "/" + n3 + "/" + k2), T2 > b2 && (0 === k2 || !(0, i3.isFiniteNumber)(k2) || p2 && !this.bitrateTestDelay || k2 < n3)) return m2;
               }
             }
             return -1;
           }, t4 = e4, (r4 = [{ key: "nextAutoLevel", get: function() {
             var e5 = this._nextAutoLevel, t5 = this.bwEstimator;
-            if (-1 !== e5 && !t5.canEstimate())
-              return e5;
+            if (-1 !== e5 && !t5.canEstimate()) return e5;
             var r5 = this.getNextABRAutoLevel();
             return -1 !== e5 && this.hls.levels[r5].loadError ? e5 : (-1 !== e5 && (r5 = Math.min(e5, r5)), r5);
           }, set: function(e5) {
@@ -77357,8 +77038,7 @@ var Clappr = function() {
           return m2 = Object.assign ? Object.assign.bind() : function(e4) {
             for (var t4 = 1; t4 < arguments.length; t4++) {
               var r4 = arguments[t4];
-              for (var i4 in r4)
-                Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
+              for (var i4 in r4) Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
             }
             return e4;
           }, m2.apply(this, arguments);
@@ -77391,8 +77071,7 @@ var Clappr = function() {
               this.initPTS[r5.cc] = a3, this.log("InitPTS for cc: " + s3 + " found from main: " + a3), this.videoTrackCC = s3, this.state === n2.State.WAITING_INIT_PTS && this.tick();
             }
           }, E3.startLoad = function(e5) {
-            if (!this.levels)
-              return this.startPosition = e5, void (this.state = n2.State.STOPPED);
+            if (!this.levels) return this.startPosition = e5, void (this.state = n2.State.STOPPED);
             var t5 = this.lastCurrentTime;
             this.stopLoad(), this.setInterval(100), this.fragLoadError = 0, t5 > 0 && -1 === e5 ? (this.log("Override startPosition with lastCurrentTime @" + t5.toFixed(3)), e5 = t5, this.state = n2.State.IDLE) : (this.loadedmetadata = false, this.state = n2.State.WAITING_TRACK), this.nextLoadPosition = this.startPosition = this.lastCurrentTime = e5, this.tick();
           }, E3.doTick = function() {
@@ -77403,8 +77082,7 @@ var Clappr = function() {
               case n2.State.WAITING_TRACK:
                 var t5, r5 = this.levels, i4 = this.trackId, a3 = null == r5 || null === (t5 = r5[i4]) || void 0 === t5 ? void 0 : t5.details;
                 if (a3) {
-                  if (this.waitForCdnTuneIn(a3))
-                    break;
+                  if (this.waitForCdnTuneIn(a3)) break;
                   this.state = n2.State.WAITING_INIT_PTS;
                 }
                 break;
@@ -77420,14 +77098,12 @@ var Clappr = function() {
                     this.waitingData = null, this.waitingVideoCC = -1, this.state = n2.State.FRAG_LOADING;
                     var v3 = { frag: d3, part: h3, payload: f3.flush(), networkDetails: null };
                     this._handleFragmentLoadProgress(v3), g3 && e4.prototype._handleFragmentLoadComplete.call(this, v3);
-                  } else if (this.videoTrackCC !== this.waitingVideoCC)
-                    this.log("Waiting fragment cc (" + d3.cc + ") cancelled because video is at cc " + this.videoTrackCC), this.clearWaitingFragment();
+                  } else if (this.videoTrackCC !== this.waitingVideoCC) this.log("Waiting fragment cc (" + d3.cc + ") cancelled because video is at cc " + this.videoTrackCC), this.clearWaitingFragment();
                   else {
                     var m3 = this.getLoadPosition(), y3 = s2.BufferHelper.bufferInfo(this.mediaBuffer, m3, this.config.maxBufferHole);
                     (0, p2.fragmentWithinToleranceTest)(y3.end, this.config.maxFragLookUpTolerance, d3) < 0 && (this.log("Waiting fragment cc (" + d3.cc + ") @ " + d3.start + " cancelled because another fragment at " + y3.end + " is needed"), this.clearWaitingFragment());
                   }
-                } else
-                  this.state = n2.State.IDLE;
+                } else this.state = n2.State.IDLE;
             }
             this.onTickEnd();
           }, E3.clearWaitingFragment = function() {
@@ -77442,8 +77118,7 @@ var Clappr = function() {
             var e5, t5, r5 = this.hls, i4 = this.levels, s3 = this.media, o3 = this.trackId, l3 = r5.config;
             if (i4 && i4[o3] && (s3 || !this.startFragRequested && l3.startFragPrefetch)) {
               var d3 = i4[o3].details;
-              if (!d3 || d3.live && this.levelLastLoaded !== o3 || this.waitForCdnTuneIn(d3))
-                this.state = n2.State.WAITING_TRACK;
+              if (!d3 || d3.live && this.levelLastLoaded !== o3 || this.waitForCdnTuneIn(d3)) this.state = n2.State.WAITING_TRACK;
               else {
                 var h3 = this.mediaBuffer ? this.mediaBuffer : this.media;
                 this.bufferFlushed && h3 && (this.bufferFlushed = false, this.afterBufferFlushed(h3, c2.ElementaryStreamTypes.AUDIO, u2.PlaylistLevelType.AUDIO));
@@ -77451,8 +77126,7 @@ var Clappr = function() {
                 if (null !== f3) {
                   var p3 = this.getFwdBufferInfo(this.videoBuffer ? this.videoBuffer : this.media, u2.PlaylistLevelType.MAIN), g3 = f3.len, v3 = this.getMaxBufferLength(null == p3 ? void 0 : p3.len), m3 = this.audioSwitch;
                   if (!(g3 >= v3) || m3) {
-                    if (!m3 && this._streamEnded(f3, d3))
-                      return r5.trigger(a2.Events.BUFFER_EOS, { type: "audio" }), void (this.state = n2.State.ENDED);
+                    if (!m3 && this._streamEnded(f3, d3)) return r5.trigger(a2.Events.BUFFER_EOS, { type: "audio" }), void (this.state = n2.State.ENDED);
                     var y3 = d3.fragments[0].start, A4 = f3.end;
                     if (m3 && s3) {
                       var E4 = this.getLoadPosition();
@@ -77494,15 +77168,12 @@ var Clappr = function() {
                 var o3 = i4[s3], l3 = 0;
                 if (a3.live || null !== (r5 = o3.details) && void 0 !== r5 && r5.live) {
                   var u3 = this.mainDetails;
-                  if (a3.fragments[0] || (a3.deltaUpdateFailed = true), a3.deltaUpdateFailed || !u3)
-                    return;
+                  if (a3.fragments[0] || (a3.deltaUpdateFailed = true), a3.deltaUpdateFailed || !u3) return;
                   !o3.details && a3.hasProgramDateTime && u3.hasProgramDateTime ? ((0, g2.alignMediaPlaylistByPDT)(a3, u3), l3 = a3.fragments[0].start) : l3 = this.alignPlaylists(a3, o3.details);
                 }
                 o3.details = a3, this.levelLastLoaded = s3, this.startFragRequested || !this.mainDetails && a3.live || this.setStartPosition(o3.details, l3), this.state !== n2.State.WAITING_TRACK || this.waitForCdnTuneIn(a3) || (this.state = n2.State.IDLE), this.tick();
-              } else
-                this.warn("Audio tracks were reset while loading level " + s3);
-            } else
-              this.cachedTrackLoadedData = t5;
+              } else this.warn("Audio tracks were reset while loading level " + s3);
+            } else this.cachedTrackLoadedData = t5;
           }, E3._handleFragmentLoadProgress = function(e5) {
             var t5, r5 = e5.frag, i4 = e5.part, a3 = e5.payload, s3 = this.config, o3 = this.trackId, l3 = this.levels;
             if (l3) {
@@ -77516,10 +77187,8 @@ var Clappr = function() {
               if (void 0 !== m3) {
                 var A4 = i4 ? i4.index : -1, E4 = -1 !== A4, T2 = new f2.ChunkMetadata(r5.level, r5.sn, r5.stats.chunkCount, a3.byteLength, A4, E4);
                 v3.push(a3, y3, g3, "", r5, i4, p3.totalduration, false, T2, m3);
-              } else
-                this.log("Unknown video PTS for cc " + r5.cc + ", waiting for video PTS before demuxing audio frag " + r5.sn + " of [" + p3.startSN + " ," + p3.endSN + "],track " + o3), (this.waitingData = this.waitingData || { frag: r5, part: i4, cache: new d2.default(), complete: false }).cache.push(new Uint8Array(a3)), this.waitingVideoCC = this.videoTrackCC, this.state = n2.State.WAITING_INIT_PTS;
-            } else
-              this.warn("Audio tracks were reset while fragment load was in progress. Fragment " + r5.sn + " of level " + r5.level + " will not be buffered");
+              } else this.log("Unknown video PTS for cc " + r5.cc + ", waiting for video PTS before demuxing audio frag " + r5.sn + " of [" + p3.startSN + " ," + p3.endSN + "],track " + o3), (this.waitingData = this.waitingData || { frag: r5, part: i4, cache: new d2.default(), complete: false }).cache.push(new Uint8Array(a3)), this.waitingVideoCC = this.videoTrackCC, this.state = n2.State.WAITING_INIT_PTS;
+            } else this.warn("Audio tracks were reset while fragment load was in progress. Fragment " + r5.sn + " of level " + r5.level + " will not be buffered");
           }, E3._handleFragmentLoadComplete = function(t5) {
             this.waitingData ? this.waitingData.complete = true : e4.prototype._handleFragmentLoadComplete.call(this, t5);
           }, E3.onBufferReset = function() {
@@ -77552,8 +77221,7 @@ var Clappr = function() {
             t5.type === c2.ElementaryStreamTypes.AUDIO && (this.bufferFlushed = true);
           }, E3._handleTransmuxComplete = function(e5) {
             var t5, r5 = "audio", i4 = this.hls, s3 = e5.remuxResult, o3 = e5.chunkMeta, l3 = this.getCurrentContext(o3);
-            if (!l3)
-              return this.warn("The loading context changed while buffering fragment " + o3.sn + " of level " + o3.level + ". This chunk will not be buffered."), void this.resetStartWhenNotLoaded(o3.level);
+            if (!l3) return this.warn("The loading context changed while buffering fragment " + o3.sn + " of level " + o3.level + ". This chunk will not be buffered."), void this.resetStartWhenNotLoaded(o3.level);
             var u3 = l3.frag, d3 = l3.part, h3 = l3.level.details, f3 = s3.audio, p3 = s3.text, g3 = s3.id3, v3 = s3.initSegment;
             if (!this.fragContextChanged(u3) && h3) {
               if (this.state = n2.State.PARSING, this.audioSwitch && f3 && this.completeAudioSwitch(), null != v3 && v3.tracks && (this._bufferInitSegment(v3.tracks, u3, o3), i4.trigger(a2.Events.FRAG_PARSING_INIT_SEGMENT, { frag: u3, id: r5, tracks: v3.tracks })), f3) {
@@ -77648,8 +77316,7 @@ var Clappr = function() {
             if (n3) {
               var a4 = n3.details;
               n3.details = t5.details, this.log("audioTrack " + r5 + " loaded [" + i4.startSN + "-" + i4.endSN + "]"), r5 === this.trackId && (this.retryCount = 0, this.playlistLoaded(r5, t5, a4));
-            } else
-              this.warn("Invalid audio track id " + r5);
+            } else this.warn("Invalid audio track id " + r5);
           }, h2.onLevelLoading = function(e5, t5) {
             this.switchLevel(t5.level);
           }, h2.onLevelSwitching = function(e5, t5) {
@@ -77674,8 +77341,7 @@ var Clappr = function() {
             e4.prototype.onError.call(this, t5, r5), !r5.fatal && r5.context && r5.context.type === s2.PlaylistContextType.AUDIO_TRACK && r5.context.id === this.trackId && r5.context.groupId === this.groupId && this.retryLoadingOrFail(r5);
           }, h2.setAudioTrack = function(e5) {
             var t5 = this.tracksInGroup;
-            if (e5 < 0 || e5 >= t5.length)
-              this.warn("Invalid id passed to audio-track controller");
+            if (e5 < 0 || e5 >= t5.length) this.warn("Invalid id passed to audio-track controller");
             else {
               this.clearTimer();
               var r5 = t5[this.trackId];
@@ -77694,20 +77360,18 @@ var Clappr = function() {
           }, h2.findTrackId = function(e5) {
             for (var t5 = this.tracksInGroup, r5 = 0; r5 < t5.length; r5++) {
               var i4 = t5[r5];
-              if ((!this.selectDefaultTrack || i4.default) && (!e5 || e5 === i4.name))
-                return i4.id;
+              if ((!this.selectDefaultTrack || i4.default) && (!e5 || e5 === i4.name)) return i4.id;
             }
             return -1;
           }, h2.loadPlaylist = function(e5) {
             var t5 = this.tracksInGroup[this.trackId];
             if (this.shouldLoadTrack(t5)) {
               var r5 = t5.id, n3 = t5.groupId, a4 = t5.url;
-              if (e5)
-                try {
-                  a4 = e5.addDirectives(a4);
-                } catch (e6) {
-                  this.warn("Could not construct new URL with HLS Delivery Directives: " + e6);
-                }
+              if (e5) try {
+                a4 = e5.addDirectives(a4);
+              } catch (e6) {
+                this.warn("Could not construct new URL with HLS Delivery Directives: " + e6);
+              }
               this.log("loading audio-track playlist for id: " + r5), this.clearTimer(), this.hls.trigger(i3.Events.AUDIO_TRACK_LOADING, { url: a4, id: r5, groupId: n3, deliveryDirectives: e5 || null });
             }
           }, u3 = a3, (c3 = [{ key: "audioTracks", get: function() {
@@ -77758,67 +77422,57 @@ var Clappr = function() {
             this.canLoad = false, this.clearTimer();
           }, t4.switchParams = function(e5, t5) {
             var r4 = null == t5 ? void 0 : t5.renditionReports;
-            if (r4)
-              for (var a3 = 0; a3 < r4.length; a3++) {
-                var s3 = r4[a3], o3 = "" + s3.URI;
-                if (o3 === e5.slice(-o3.length)) {
-                  var l3 = parseInt(s3["LAST-MSN"]), u2 = parseInt(s3["LAST-PART"]);
-                  if (t5 && this.hls.config.lowLatencyMode) {
-                    var c2 = Math.min(t5.age - t5.partTarget, t5.targetduration);
-                    void 0 !== u2 && c2 > t5.partTarget && (u2 += 1);
-                  }
-                  if ((0, i3.isFiniteNumber)(l3))
-                    return new n2.HlsUrlParameters(l3, (0, i3.isFiniteNumber)(u2) ? u2 : void 0, n2.HlsSkip.No);
+            if (r4) for (var a3 = 0; a3 < r4.length; a3++) {
+              var s3 = r4[a3], o3 = "" + s3.URI;
+              if (o3 === e5.slice(-o3.length)) {
+                var l3 = parseInt(s3["LAST-MSN"]), u2 = parseInt(s3["LAST-PART"]);
+                if (t5 && this.hls.config.lowLatencyMode) {
+                  var c2 = Math.min(t5.age - t5.partTarget, t5.targetduration);
+                  void 0 !== u2 && c2 > t5.partTarget && (u2 += 1);
                 }
+                if ((0, i3.isFiniteNumber)(l3)) return new n2.HlsUrlParameters(l3, (0, i3.isFiniteNumber)(u2) ? u2 : void 0, n2.HlsSkip.No);
               }
+            }
           }, t4.loadPlaylist = function(e5) {
           }, t4.shouldLoadTrack = function(e5) {
             return this.canLoad && e5 && !!e5.url && (!e5.details || e5.details.live);
           }, t4.playlistLoaded = function(e5, t5, r4) {
             var i4 = this, n3 = t5.details, s3 = t5.stats, o3 = s3.loading.end ? Math.max(0, self.performance.now() - s3.loading.end) : 0;
             if (n3.advancedDateTime = Date.now() - o3, n3.live || null != r4 && r4.live) {
-              if (n3.reloaded(r4), r4 && this.log("live playlist " + e5 + " " + (n3.advanced ? "REFRESHED " + n3.lastPartSn + "-" + n3.lastPartIndex : "MISSED")), r4 && n3.fragments.length > 0 && (0, a2.mergeDetails)(r4, n3), !this.canLoad || !n3.live)
-                return;
+              if (n3.reloaded(r4), r4 && this.log("live playlist " + e5 + " " + (n3.advanced ? "REFRESHED " + n3.lastPartSn + "-" + n3.lastPartIndex : "MISSED")), r4 && n3.fragments.length > 0 && (0, a2.mergeDetails)(r4, n3), !this.canLoad || !n3.live) return;
               var l3, u2 = void 0, c2 = void 0;
               if (n3.canBlockReload && n3.endSN && n3.advanced) {
                 var d2 = this.hls.config.lowLatencyMode, h2 = n3.lastPartSn, f2 = n3.endSN, p2 = n3.lastPartIndex, g2 = h2 === f2;
                 -1 !== p2 ? (u2 = g2 ? f2 + 1 : h2, c2 = g2 ? d2 ? 0 : p2 : p2 + 1) : u2 = f2 + 1;
                 var v2 = n3.age, m2 = v2 + n3.ageHeader, y2 = Math.min(m2 - n3.partTarget, 1.5 * n3.targetduration);
                 if (y2 > 0) {
-                  if (r4 && y2 > r4.tuneInGoal)
-                    this.warn("CDN Tune-in goal increased from: " + r4.tuneInGoal + " to: " + y2 + " with playlist age: " + n3.age), y2 = 0;
+                  if (r4 && y2 > r4.tuneInGoal) this.warn("CDN Tune-in goal increased from: " + r4.tuneInGoal + " to: " + y2 + " with playlist age: " + n3.age), y2 = 0;
                   else {
                     var A2 = Math.floor(y2 / n3.targetduration);
                     u2 += A2, void 0 !== c2 && (c2 += Math.round(y2 % n3.targetduration / n3.partTarget)), this.log("CDN Tune-in age: " + n3.ageHeader + "s last advanced " + v2.toFixed(2) + "s goal: " + y2 + " skip sn " + A2 + " to part " + c2);
                   }
                   n3.tuneInGoal = y2;
                 }
-                if (l3 = this.getDeliveryDirectives(n3, t5.deliveryDirectives, u2, c2), d2 || !g2)
-                  return void this.loadPlaylist(l3);
-              } else
-                l3 = this.getDeliveryDirectives(n3, t5.deliveryDirectives, u2, c2);
+                if (l3 = this.getDeliveryDirectives(n3, t5.deliveryDirectives, u2, c2), d2 || !g2) return void this.loadPlaylist(l3);
+              } else l3 = this.getDeliveryDirectives(n3, t5.deliveryDirectives, u2, c2);
               var E2 = (0, a2.computeReloadInterval)(n3, s3);
               void 0 !== u2 && n3.canBlockReload && (E2 -= n3.partTarget || 1), this.log("reload live playlist " + e5 + " in " + Math.round(E2) + " ms"), this.timer = self.setTimeout(function() {
                 return i4.loadPlaylist(l3);
               }, E2);
-            } else
-              this.clearTimer();
+            } else this.clearTimer();
           }, t4.getDeliveryDirectives = function(e5, t5, r4, i4) {
             var a3 = (0, n2.getSkipValue)(e5, r4);
             return null != t5 && t5.skip && e5.deltaUpdateFailed && (r4 = t5.msn, i4 = t5.part, a3 = n2.HlsSkip.No), new n2.HlsUrlParameters(r4, i4, a3);
           }, t4.retryLoadingOrFail = function(e5) {
             var t5, r4 = this, i4 = this.hls.config, n3 = this.retryCount < i4.levelLoadingMaxRetry;
-            if (n3)
-              if (this.retryCount++, e5.details.indexOf("LoadTimeOut") > -1 && null !== (t5 = e5.context) && void 0 !== t5 && t5.deliveryDirectives)
-                this.warn("retry playlist loading #" + this.retryCount + ' after "' + e5.details + '"'), this.loadPlaylist();
-              else {
-                var a3 = Math.min(Math.pow(2, this.retryCount) * i4.levelLoadingRetryDelay, i4.levelLoadingMaxRetryTimeout);
-                this.timer = self.setTimeout(function() {
-                  return r4.loadPlaylist();
-                }, a3), this.warn("retry playlist loading #" + this.retryCount + " in " + a3 + ' ms after "' + e5.details + '"');
-              }
-            else
-              this.warn('cannot recover from error "' + e5.details + '"'), this.clearTimer(), e5.fatal = true;
+            if (n3) if (this.retryCount++, e5.details.indexOf("LoadTimeOut") > -1 && null !== (t5 = e5.context) && void 0 !== t5 && t5.deliveryDirectives) this.warn("retry playlist loading #" + this.retryCount + ' after "' + e5.details + '"'), this.loadPlaylist();
+            else {
+              var a3 = Math.min(Math.pow(2, this.retryCount) * i4.levelLoadingRetryDelay, i4.levelLoadingMaxRetryTimeout);
+              this.timer = self.setTimeout(function() {
+                return r4.loadPlaylist();
+              }, a3), this.warn("retry playlist loading #" + this.retryCount + " in " + a3 + ' ms after "' + e5.details + '"');
+            }
+            else this.warn('cannot recover from error "' + e5.details + '"'), this.clearTimer(), e5.fatal = true;
             return n3;
           }, e4;
         }();
@@ -77885,8 +77539,7 @@ var Clappr = function() {
           }
         }
         function E2(e4) {
-          if (void 0 === e4)
-            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+          if (void 0 === e4) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
           return e4;
         }
         function T2(e4, t4) {
@@ -77932,8 +77585,7 @@ var Clappr = function() {
             null != e5 && e5.ended && (this.log("MSE detaching and video ended, reset startPosition"), this.startPosition = this.lastCurrentTime = 0), e5 && this.onvseeking && this.onvended && (e5.removeEventListener("seeking", this.onvseeking), e5.removeEventListener("ended", this.onvended), this.onvseeking = this.onvended = null), this.media = this.mediaBuffer = null, this.loadedmetadata = false, this.fragmentTracker.removeAllFragments(), this.stopLoad();
           }, C2.onMediaSeeking = function() {
             var e5 = this.config, t5 = this.fragCurrent, r5 = this.media, n4 = this.mediaBuffer, a3 = this.state, o3 = r5 ? r5.currentTime : 0, l3 = s2.BufferHelper.bufferInfo(n4 || r5, o3, e5.maxBufferHole);
-            if (this.log("media seeking to " + ((0, i3.isFiniteNumber)(o3) ? o3.toFixed(3) : o3) + ", state: " + a3), a3 === b2.ENDED)
-              this.resetLoadingState();
+            if (this.log("media seeking to " + ((0, i3.isFiniteNumber)(o3) ? o3.toFixed(3) : o3) + ", state: " + a3), a3 === b2.ENDED) this.resetLoadingState();
             else if (t5) {
               var u3 = e5.maxFragLookUpTolerance, c3 = t5.start - u3, d3 = t5.start + t5.duration + u3;
               if (!l3.len || d3 < l3.start || c3 > l3.end) {
@@ -77963,8 +77615,7 @@ var Clappr = function() {
           }, C2._loadFragForPlayback = function(e5, t5, r5) {
             var i4 = this;
             this._doFragLoad(e5, t5, r5, function(t6) {
-              if (i4.fragContextChanged(e5))
-                return i4.warn("Fragment " + e5.sn + (t6.part ? " p: " + t6.part.index : "") + " of level " + e5.level + " was dropped during download."), void i4.fragmentTracker.removeFragment(e5);
+              if (i4.fragContextChanged(e5)) return i4.warn("Fragment " + e5.sn + (t6.part ? " p: " + t6.part.index : "") + " of level " + e5.level + " was dropped during download."), void i4.fragmentTracker.removeFragment(e5);
               e5.stats.chunkCount++, i4._handleFragmentLoadProgress(t6);
             }).then(function(t6) {
               if (t6) {
@@ -77983,8 +77634,7 @@ var Clappr = function() {
           }, C2._loadInitSegment = function(e5) {
             var t5 = this;
             this._doFragLoad(e5).then(function(r5) {
-              if (!r5 || t5.fragContextChanged(e5) || !t5.levels)
-                throw new Error("init load aborted");
+              if (!r5 || t5.fragContextChanged(e5) || !t5.levels) throw new Error("init load aborted");
               return r5;
             }).then(function(r5) {
               var i4 = t5.hls, n4 = r5.payload, a3 = e5.decryptdata;
@@ -77998,8 +77648,7 @@ var Clappr = function() {
               return r5;
             }).then(function(r5) {
               var i4 = t5.fragCurrent, n4 = t5.hls, a3 = t5.levels;
-              if (!a3)
-                throw new Error("init load aborted, missing levels");
+              if (!a3) throw new Error("init load aborted, missing levels");
               var s3 = a3[e5.level].details;
               console.assert(s3, "Level details are defined when init segment is loaded");
               var o3 = e5.stats;
@@ -78025,8 +77674,7 @@ var Clappr = function() {
           }, C2._handleFragmentLoadProgress = function(e5) {
           }, C2._doFragLoad = function(e5, t5, r5, n4) {
             var a3 = this;
-            if (void 0 === r5 && (r5 = null), !this.levels)
-              throw new Error("frag load aborted, missing levels");
+            if (void 0 === r5 && (r5 = null), !this.levels) throw new Error("frag load aborted, missing levels");
             if (r5 = Math.max(e5.start, r5 || 0), this.config.lowLatencyMode && t5) {
               var s3 = t5.partList;
               if (s3 && n4) {
@@ -78038,8 +77686,7 @@ var Clappr = function() {
                     return a3.handleFragLoadError(e6);
                   });
                 }
-                if (!e5.url || this.loadedEndOfParts(s3, r5))
-                  return Promise.resolve(null);
+                if (!e5.url || this.loadedEndOfParts(s3, r5)) return Promise.resolve(null);
               }
             }
             return this.log("Loading fragment " + e5.sn + " cc: " + e5.cc + " " + (t5 ? "of [" + t5.startSN + "-" + t5.endSN + "] " : "") + ("[stream-controller]" === this.logPrefix ? "level" : "track") + ": " + e5.level + ", target: " + parseFloat(r5.toFixed(3))), (0, i3.isFiniteNumber)(e5.sn) && !this.bitrateTest && (this.nextLoadPosition = e5.start + e5.duration), this.state = b2.FRAG_LOADING, this.hls.trigger(l2.Events.FRAG_LOADING, { frag: e5, targetBufferTime: r5 }), this.fragmentLoader.load(e5, n4).catch(function(e6) {
@@ -78056,8 +77703,7 @@ var Clappr = function() {
                   var s4 = i5.part;
                   n4.hls.trigger(l2.Events.FRAG_LOADED, i5);
                   var d3 = t5[u3 + 1];
-                  if (!d3 || d3.fragment !== e5)
-                    return a3({ frag: e5, part: s4, partsLoaded: o3 });
+                  if (!d3 || d3.fragment !== e5) return a3({ frag: e5, part: s4, partsLoaded: o3 });
                   r6(u3 + 1);
                 }).catch(s3);
               }(r5);
@@ -78070,12 +77716,10 @@ var Clappr = function() {
             if (t5 && this.state === b2.PARSING) {
               var r5 = t5.frag, i4 = t5.part, n4 = t5.level, a3 = self.performance.now();
               r5.stats.parsing.end = a3, i4 && (i4.stats.parsing.end = a3), this.updateLevelTiming(r5, i4, n4, e5.partial);
-            } else
-              this.fragCurrent || (this.state = b2.IDLE);
+            } else this.fragCurrent || (this.state = b2.IDLE);
           }, C2.getCurrentContext = function(e5) {
             var t5 = this.levels, r5 = e5.level, i4 = e5.sn, n4 = e5.part;
-            if (!t5 || !t5[r5])
-              return this.warn("Levels object was unset while buffering fragment " + i4 + " of level " + r5 + ". The current chunk will not be buffered."), null;
+            if (!t5 || !t5[r5]) return this.warn("Levels object was unset while buffering fragment " + i4 + " of level " + r5 + ". The current chunk will not be buffered."), null;
             var a3 = t5[r5], s3 = n4 > -1 ? (0, p2.getPartWith)(a3, i4, n4) : null, o3 = s3 ? s3.fragment : (0, p2.getFragmentWithSN)(a3, i4, this.fragCurrent);
             return o3 ? { frag: o3, part: s3, level: a3 } : null;
           }, C2.bufferFragmentData = function(e5, t5, r5, i4) {
@@ -78088,21 +77732,17 @@ var Clappr = function() {
             }
           }, C2.flushBufferGap = function(e5) {
             var t5 = this.media;
-            if (t5)
-              if (s2.BufferHelper.isBuffered(t5, t5.currentTime)) {
-                var r5 = t5.currentTime, i4 = s2.BufferHelper.bufferInfo(t5, r5, 0), n4 = e5.duration, a3 = Math.min(2 * this.config.maxFragLookUpTolerance, 0.25 * n4), o3 = Math.max(Math.min(e5.start - a3, i4.end - a3), r5 + a3);
-                e5.start - o3 > a3 && this.flushMainBuffer(o3, e5.start);
-              } else
-                this.flushMainBuffer(0, e5.start);
+            if (t5) if (s2.BufferHelper.isBuffered(t5, t5.currentTime)) {
+              var r5 = t5.currentTime, i4 = s2.BufferHelper.bufferInfo(t5, r5, 0), n4 = e5.duration, a3 = Math.min(2 * this.config.maxFragLookUpTolerance, 0.25 * n4), o3 = Math.max(Math.min(e5.start - a3, i4.end - a3), r5 + a3);
+              e5.start - o3 > a3 && this.flushMainBuffer(o3, e5.start);
+            } else this.flushMainBuffer(0, e5.start);
           }, C2.getFwdBufferInfo = function(e5, t5) {
             var r5 = this.config, n4 = this.getLoadPosition();
-            if (!(0, i3.isFiniteNumber)(n4))
-              return null;
+            if (!(0, i3.isFiniteNumber)(n4)) return null;
             var a3 = s2.BufferHelper.bufferInfo(e5, n4, r5.maxBufferHole);
             if (0 === a3.len && void 0 !== a3.nextStart) {
               var o3 = this.fragmentTracker.getBufferedFrag(n4, t5);
-              if (o3 && a3.nextStart < o3.end)
-                return s2.BufferHelper.bufferInfo(e5, n4, Math.max(a3.nextStart, r5.maxBufferHole));
+              if (o3 && a3.nextStart < o3.end) return s2.BufferHelper.bufferInfo(e5, n4, Math.max(a3.nextStart, r5.maxBufferHole));
             }
             return a3;
           }, C2.getMaxBufferLength = function(e5) {
@@ -78113,16 +77753,13 @@ var Clappr = function() {
             return t5.maxMaxBufferLength >= r5 && (t5.maxMaxBufferLength /= 2, this.warn("Reduce max buffer length to " + t5.maxMaxBufferLength + "s"), true);
           }, C2.getNextFragment = function(e5, t5) {
             var r5 = t5.fragments, i4 = r5.length;
-            if (!i4)
-              return null;
+            if (!i4) return null;
             var n4, a3 = this.config, s3 = r5[0].start;
             if (t5.live) {
               var o3 = a3.initialLiveManifestSize;
-              if (i4 < o3)
-                return this.warn("Not enough fragments to start playback (have: " + i4 + ", need: " + o3 + ")"), null;
+              if (i4 < o3) return this.warn("Not enough fragments to start playback (have: " + i4 + ", need: " + o3 + ")"), null;
               t5.PTSKnown || this.startFragRequested || -1 !== this.startPosition || (n4 = this.getInitialLiveFragment(t5, r5), this.startPosition = n4 ? this.hls.liveSyncPosition || n4.start : e5);
-            } else
-              e5 <= s3 && (n4 = r5[0]);
+            } else e5 <= s3 && (n4 = r5[0]);
             if (!n4) {
               var l3 = a3.lowLatencyMode ? t5.partEnd : t5.fragmentEnd;
               n4 = this.getFragmentAtPosition(e5, l3, t5);
@@ -78133,8 +77770,7 @@ var Clappr = function() {
           }, C2.getNextPart = function(e5, t5, r5) {
             for (var i4 = -1, n4 = false, a3 = true, s3 = 0, o3 = e5.length; s3 < o3; s3++) {
               var l3 = e5[s3];
-              if (a3 = a3 && !l3.independent, i4 > -1 && r5 < l3.start)
-                break;
+              if (a3 = a3 && !l3.independent, i4 > -1 && r5 < l3.start) break;
               var u3 = l3.loaded;
               !u3 && (n4 || l3.independent || a3) && l3.fragment === t5 && (i4 = s3), n4 = u3;
             }
@@ -78163,8 +77799,7 @@ var Clappr = function() {
             if (d3 && u3 && !this.bitrateTest && (o3 = o3.concat(u3), l3 = u3.sn), e5 < t5) {
               var h3 = e5 > t5 - c3 ? 0 : c3;
               i4 = (0, f2.findFragmentByPTS)(s3, o3, e5, h3);
-            } else
-              i4 = o3[o3.length - 1];
+            } else i4 = o3[o3.length - 1];
             if (i4) {
               var p3 = i4.sn - r5.startSN;
               if (this.fragmentTracker.getState(i4) === a2.FragmentState.OK && (s3 = i4), s3 && i4.sn === s3.sn && !d3 && s3 && i4.level === s3.level) {
@@ -78184,8 +77819,7 @@ var Clappr = function() {
             }
           }, C2.alignPlaylists = function(e5, t5) {
             var r5 = this.levels, n4 = this.levelLastLoaded, a3 = this.fragPrevious, s3 = null !== n4 ? r5[n4] : null, o3 = e5.fragments.length;
-            if (!o3)
-              return this.warn("No fragments in live playlist"), 0;
+            if (!o3) return this.warn("No fragments in live playlist"), 0;
             var l3 = e5.fragments[0].start, u3 = !t5, c3 = e5.alignedSliding && (0, i3.isFiniteNumber)(l3);
             if (u3 || !c3 && !l3) {
               (0, h2.alignStream)(a3, s3, e5);
@@ -78220,8 +77854,7 @@ var Clappr = function() {
                   this.loadedmetadata || (this.startFragRequested = false, this.nextLoadPosition = this.startPosition);
                   var a3 = Math.min(Math.pow(2, this.fragLoadError) * n4.fragLoadingRetryDelay, n4.fragLoadingMaxRetryTimeout);
                   this.warn("Fragment " + r5.sn + " of " + e5 + " " + r5.level + " failed to load, retrying in " + a3 + "ms"), this.retryDate = self.performance.now() + a3, this.fragLoadError++, this.state = b2.FRAG_LOADING_WAITING_RETRY;
-                } else
-                  t5.levelRetry ? (e5 === y2.PlaylistLevelType.AUDIO && (this.fragCurrent = null), this.fragLoadError = 0, this.state = b2.IDLE) : (o2.logger.error(t5.details + " reaches max retry, redispatch as fatal ..."), t5.fatal = true, this.hls.stopLoad(), this.state = b2.ERROR);
+                } else t5.levelRetry ? (e5 === y2.PlaylistLevelType.AUDIO && (this.fragCurrent = null), this.fragLoadError = 0, this.state = b2.IDLE) : (o2.logger.error(t5.details + " reaches max retry, redispatch as fatal ..."), t5.fatal = true, this.hls.stopLoad(), this.state = b2.ERROR);
               }
             }
           }, C2.afterBufferFlushed = function(e5, t5, r5) {
@@ -78243,8 +77876,7 @@ var Clappr = function() {
               var o3 = e5.elementaryStreams[s3];
               if (o3) {
                 var u3 = o3.endPTS - o3.startPTS;
-                if (u3 <= 0)
-                  return n4.warn("Could not parse fragment " + e5.sn + " " + s3 + " duration reliably (" + u3 + ")"), t6 || false;
+                if (u3 <= 0) return n4.warn("Could not parse fragment " + e5.sn + " " + s3 + " duration reliably (" + u3 + ")"), t6 || false;
                 var c3 = i4 ? 0 : (0, p2.updateFragPTSDTS)(a3, e5, o3.startPTS, o3.endPTS, o3.startDTS, o3.endDTS);
                 return n4.hls.trigger(l2.Events.LEVEL_PTS_UPDATED, { details: a3, level: r5, drift: c3, type: s3, frag: e5, start: o3.startPTS, end: o3.endPTS }), true;
               }
@@ -78327,12 +77959,11 @@ var Clappr = function() {
           }, t4.onMediaDetaching = function() {
             var e5 = this.media, t5 = this.mediaSource, r4 = this._objectUrl;
             if (t5) {
-              if (a2.logger.log("[buffer-controller]: media source detaching"), "open" === t5.readyState)
-                try {
-                  t5.endOfStream();
-                } catch (e6) {
-                  a2.logger.warn("[buffer-controller]: onMediaDetaching: " + e6.message + " while calling endOfStream");
-                }
+              if (a2.logger.log("[buffer-controller]: media source detaching"), "open" === t5.readyState) try {
+                t5.endOfStream();
+              } catch (e6) {
+                a2.logger.warn("[buffer-controller]: onMediaDetaching: " + e6.message + " while calling endOfStream");
+              }
               this.onBufferReset(), t5.removeEventListener("sourceopen", this._onMediaSourceOpen), t5.removeEventListener("sourceended", this._onMediaSourceEnded), t5.removeEventListener("sourceclose", this._onMediaSourceClose), e5 && (r4 && self.URL.revokeObjectURL(r4), e5.src === r4 ? (e5.removeAttribute("src"), e5.load()) : a2.logger.warn("[buffer-controller]: media.src was changed by a third party - skip cleanup")), this.mediaSource = null, this.media = null, this._objectUrl = null, this.bufferCodecEventsExpected = this._bufferCodecEventsTotal, this.pendingTracks = {}, this.tracks = {};
             }
             this.hls.trigger(n2.Events.MEDIA_DETACHED, void 0);
@@ -78358,8 +77989,7 @@ var Clappr = function() {
                     r4.appendChangeType(e6, g2), a2.logger.log("[buffer-controller]: switching codec " + f3 + " to " + p2), r4.tracks[e6] = { buffer: n3.buffer, codec: l3, container: c3, levelCodec: u3, metadata: d3, id: o3 };
                   }
                 }
-              } else
-                r4.pendingTracks[e6] = t5[e6];
+              } else r4.pendingTracks[e6] = t5[e6];
             }), i4 || (this.bufferCodecEventsExpected = Math.max(this.bufferCodecEventsExpected - 1, 0), this.mediaSource && "open" === this.mediaSource.readyState && this.checkPendingTracks());
           }, t4.appendChangeType = function(e5, t5) {
             var r4 = this, i4 = this.operationQueue, n3 = { execute: function() {
@@ -78390,8 +78020,7 @@ var Clappr = function() {
               var e6 = self.performance.now();
               g2.executeEnd = g2.end = e6, 0 === m2.first && (m2.first = e6), y2 && 0 === y2.first && (y2.first = e6);
               var t6 = r4.sourceBuffer, i5 = {};
-              for (var a3 in t6)
-                i5[a3] = o2.BufferHelper.getBuffered(t6[a3]);
+              for (var a3 in t6) i5[a3] = o2.BufferHelper.getBuffered(t6[a3]);
               r4.appendError = 0, r4.hls.trigger(n2.Events.BUFFER_APPENDED, { type: d3, frag: h3, part: f3, chunkMeta: p2, parent: h3.type, timeRanges: i5 });
             }, onError: function(e6) {
               a2.logger.error("[buffer-controller]: Error encountered while trying to append to the " + d3 + " SourceBuffer", e6);
@@ -78467,31 +78096,27 @@ var Clappr = function() {
             if (i4 && !e5 || 2 === i4) {
               this.createSourceBuffers(r4), this.pendingTracks = {};
               var a3 = this.getSourceBufferTypes();
-              if (0 === a3.length)
-                return void this.hls.trigger(n2.Events.ERROR, { type: s2.ErrorTypes.MEDIA_ERROR, details: s2.ErrorDetails.BUFFER_INCOMPATIBLE_CODECS_ERROR, fatal: true, reason: "could not create source buffer for media codec(s)" });
+              if (0 === a3.length) return void this.hls.trigger(n2.Events.ERROR, { type: s2.ErrorTypes.MEDIA_ERROR, details: s2.ErrorDetails.BUFFER_INCOMPATIBLE_CODECS_ERROR, fatal: true, reason: "could not create source buffer for media codec(s)" });
               a3.forEach(function(e6) {
                 t5.executeNext(e6);
               });
             }
           }, t4.createSourceBuffers = function(e5) {
             var t5 = this.sourceBuffer, r4 = this.mediaSource;
-            if (!r4)
-              throw Error("createSourceBuffers called when mediaSource was null");
+            if (!r4) throw Error("createSourceBuffers called when mediaSource was null");
             var i4 = 0;
-            for (var o3 in e5)
-              if (!t5[o3]) {
-                var l3 = e5[o3];
-                if (!l3)
-                  throw Error("source buffer exists for track " + o3 + ", however track does not");
-                var u3 = l3.levelCodec || l3.codec, c3 = l3.container + ";codecs=" + u3;
-                a2.logger.log("[buffer-controller]: creating sourceBuffer(" + c3 + ")");
-                try {
-                  var d3 = t5[o3] = r4.addSourceBuffer(c3), h3 = o3;
-                  this.addBufferListener(h3, "updatestart", this._onSBUpdateStart), this.addBufferListener(h3, "updateend", this._onSBUpdateEnd), this.addBufferListener(h3, "error", this._onSBUpdateError), this.tracks[o3] = { buffer: d3, codec: u3, container: l3.container, levelCodec: l3.levelCodec, metadata: l3.metadata, id: l3.id }, i4++;
-                } catch (e6) {
-                  a2.logger.error("[buffer-controller]: error while trying to add sourceBuffer: " + e6.message), this.hls.trigger(n2.Events.ERROR, { type: s2.ErrorTypes.MEDIA_ERROR, details: s2.ErrorDetails.BUFFER_ADD_CODEC_ERROR, fatal: false, error: e6, mimeType: c3 });
-                }
+            for (var o3 in e5) if (!t5[o3]) {
+              var l3 = e5[o3];
+              if (!l3) throw Error("source buffer exists for track " + o3 + ", however track does not");
+              var u3 = l3.levelCodec || l3.codec, c3 = l3.container + ";codecs=" + u3;
+              a2.logger.log("[buffer-controller]: creating sourceBuffer(" + c3 + ")");
+              try {
+                var d3 = t5[o3] = r4.addSourceBuffer(c3), h3 = o3;
+                this.addBufferListener(h3, "updatestart", this._onSBUpdateStart), this.addBufferListener(h3, "updateend", this._onSBUpdateEnd), this.addBufferListener(h3, "error", this._onSBUpdateError), this.tracks[o3] = { buffer: d3, codec: u3, container: l3.container, levelCodec: l3.levelCodec, metadata: l3.metadata, id: l3.id }, i4++;
+              } catch (e6) {
+                a2.logger.error("[buffer-controller]: error while trying to add sourceBuffer: " + e6.message), this.hls.trigger(n2.Events.ERROR, { type: s2.ErrorTypes.MEDIA_ERROR, details: s2.ErrorDetails.BUFFER_ADD_CODEC_ERROR, fatal: false, error: e6, mimeType: c3 });
               }
+            }
             i4 && this.hls.trigger(n2.Events.BUFFER_CREATED, { tracks: this.tracks });
           }, t4._onSBUpdateStart = function(e5) {
             this.operationQueue.current(e5).onStart();
@@ -78504,19 +78129,16 @@ var Clappr = function() {
             r4 && r4.onError(t5);
           }, t4.removeExecutor = function(e5, t5, r4) {
             var n3 = this.media, s3 = this.mediaSource, o3 = this.operationQueue, l3 = this.sourceBuffer[e5];
-            if (!n3 || !s3 || !l3)
-              return a2.logger.warn("[buffer-controller]: Attempting to remove from the " + e5 + " SourceBuffer, but it does not exist"), void o3.shiftAndExecuteNext(e5);
+            if (!n3 || !s3 || !l3) return a2.logger.warn("[buffer-controller]: Attempting to remove from the " + e5 + " SourceBuffer, but it does not exist"), void o3.shiftAndExecuteNext(e5);
             var u3 = (0, i3.isFiniteNumber)(n3.duration) ? n3.duration : 1 / 0, c3 = (0, i3.isFiniteNumber)(s3.duration) ? s3.duration : 1 / 0, d3 = Math.max(0, t5), h3 = Math.min(r4, u3, c3);
             h3 > d3 ? (a2.logger.log("[buffer-controller]: Removing [" + d3 + "," + h3 + "] from the " + e5 + " SourceBuffer"), console.assert(!l3.updating, e5 + " sourceBuffer must not be updating"), l3.remove(d3, h3)) : o3.shiftAndExecuteNext(e5);
           }, t4.appendExecutor = function(e5, t5) {
             var r4 = this.operationQueue, i4 = this.sourceBuffer[t5];
-            if (!i4)
-              return a2.logger.warn("[buffer-controller]: Attempting to append to the " + t5 + " SourceBuffer, but it does not exist"), void r4.shiftAndExecuteNext(t5);
+            if (!i4) return a2.logger.warn("[buffer-controller]: Attempting to append to the " + t5 + " SourceBuffer, but it does not exist"), void r4.shiftAndExecuteNext(t5);
             i4.ended = false, console.assert(!i4.updating, t5 + " sourceBuffer must not be updating"), i4.appendBuffer(e5);
           }, t4.blockBuffers = function(e5, t5) {
             var r4 = this;
-            if (void 0 === t5 && (t5 = this.getSourceBufferTypes()), !t5.length)
-              return a2.logger.log("[buffer-controller]: Blocking operation requested, but no SourceBuffers exist"), void Promise.resolve().then(e5);
+            if (void 0 === t5 && (t5 = this.getSourceBufferTypes()), !t5.length) return a2.logger.log("[buffer-controller]: Blocking operation requested, but no SourceBuffers exist"), void Promise.resolve().then(e5);
             var i4 = this.operationQueue, n3 = t5.map(function(e6) {
               return i4.appendBlocker(e6);
             });
@@ -78638,8 +78260,7 @@ var Clappr = function() {
             }
           }, s3.getMaxLevel = function(t5) {
             var r5 = this, i4 = this.hls.levels;
-            if (!i4.length)
-              return -1;
+            if (!i4.length) return -1;
             var n3 = i4.filter(function(i5, n4) {
               return e4.isLevelAllowed(n4, r5.restrictedLevels) && n4 <= t5;
             });
@@ -78649,8 +78270,7 @@ var Clappr = function() {
           }, s3.stopCapping = function() {
             this.restrictedLevels = [], this.firstLevel = -1, this.autoLevelCapping = Number.POSITIVE_INFINITY, this.timer && (self.clearInterval(this.timer), this.timer = void 0);
           }, s3.getDimensions = function() {
-            if (this.clientRect)
-              return this.clientRect;
+            if (this.clientRect) return this.clientRect;
             var e5 = this.media, t5 = { width: 0, height: 0 };
             if (e5) {
               var r5 = e5.getBoundingClientRect();
@@ -78660,8 +78280,7 @@ var Clappr = function() {
           }, e4.isLevelAllowed = function(e5, t5) {
             return void 0 === t5 && (t5 = []), -1 === t5.indexOf(e5);
           }, e4.getMaxLevelByMediaSize = function(e5, t5, r5) {
-            if (!e5 || !e5.length)
-              return -1;
+            if (!e5 || !e5.length) return -1;
             for (var i4, n3, a4 = e5.length - 1, s4 = 0; s4 < e5.length; s4 += 1) {
               var o2 = e5[s4];
               if ((o2.width >= t5 || o2.height >= r5) && (i4 = o2, !(n3 = e5[s4 + 1]) || i4.width !== n3.width || i4.height !== n3.height)) {
@@ -78676,11 +78295,10 @@ var Clappr = function() {
             return this.getDimensions().height * this.contentScaleFactor;
           } }, { key: "contentScaleFactor", get: function() {
             var e5 = 1;
-            if (!this.hls.config.ignoreDevicePixelRatio)
-              try {
-                e5 = self.devicePixelRatio;
-              } catch (e6) {
-              }
+            if (!this.hls.config.ignoreDevicePixelRatio) try {
+              e5 = self.devicePixelRatio;
+            } catch (e6) {
+            }
             return e5;
           } }]) && n2(t4.prototype, r4), a3 && n2(t4, a3), Object.defineProperty(t4, "prototype", { writable: false }), e4;
         }();
@@ -78716,12 +78334,10 @@ var Clappr = function() {
         }
         function u2(e4, t4) {
           var r4 = "undefined" != typeof Symbol && e4[Symbol.iterator] || e4["@@iterator"];
-          if (r4)
-            return (r4 = r4.call(e4)).next.bind(r4);
+          if (r4) return (r4 = r4.call(e4)).next.bind(r4);
           if (Array.isArray(e4) || (r4 = function(e5, t5) {
             if (e5) {
-              if ("string" == typeof e5)
-                return c2(e5, t5);
+              if ("string" == typeof e5) return c2(e5, t5);
               var r5 = Object.prototype.toString.call(e5).slice(8, -1);
               return "Object" === r5 && e5.constructor && (r5 = e5.constructor.name), "Map" === r5 || "Set" === r5 ? Array.from(e5) : "Arguments" === r5 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r5) ? c2(e5, t5) : void 0;
             }
@@ -78736,16 +78352,14 @@ var Clappr = function() {
         }
         function c2(e4, t4) {
           (null == t4 || t4 > e4.length) && (t4 = e4.length);
-          for (var r4 = 0, i4 = new Array(t4); r4 < t4; r4++)
-            i4[r4] = e4[r4];
+          for (var r4 = 0, i4 = new Array(t4); r4 < t4; r4++) i4[r4] = e4[r4];
           return i4;
         }
         function d2() {
           return d2 = Object.assign ? Object.assign.bind() : function(e4) {
             for (var t4 = 1; t4 < arguments.length; t4++) {
               var r4 = arguments[t4];
-              for (var i4 in r4)
-                Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
+              for (var i4 in r4) Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
             }
             return e4;
           }, d2.apply(this, arguments);
@@ -78798,13 +78412,11 @@ var Clappr = function() {
             var i4 = r4.ot === n2.CMCDObjectType.INIT || r4.ot === n2.CMCDObjectType.VIDEO || r4.ot === n2.CMCDObjectType.MUXED;
             if (this.starved && i4 && (r4.bs = true, r4.su = true, this.starved = false), null == r4.su && (r4.su = this.buffering), this.useHeaders) {
               var a3 = e4.toHeaders(r4);
-              if (!Object.keys(a3).length)
-                return;
+              if (!Object.keys(a3).length) return;
               t5.headers || (t5.headers = {}), d2(t5.headers, a3);
             } else {
               var s3 = e4.toQuery(r4);
-              if (!s3)
-                return;
+              if (!s3) return;
               t5.url = e4.appendQueryToUri(t5.url, s3);
             }
           }, t4.getObjectType = function(e5) {
@@ -78812,8 +78424,7 @@ var Clappr = function() {
             return "subtitle" === t5 ? n2.CMCDObjectType.TIMED_TEXT : "initSegment" === e5.sn ? n2.CMCDObjectType.INIT : "audio" === t5 ? n2.CMCDObjectType.AUDIO : "main" === t5 ? this.hls.audioTracks.length ? n2.CMCDObjectType.VIDEO : n2.CMCDObjectType.MUXED : void 0;
           }, t4.getTopBandwidth = function(e5) {
             var t5, r4 = 0, i4 = this.hls;
-            if (e5 === n2.CMCDObjectType.AUDIO)
-              t5 = i4.audioTracks;
+            if (e5 === n2.CMCDObjectType.AUDIO) t5 = i4.audioTracks;
             else {
               var a3 = i4.maxAutoLevel, s3 = a3 > -1 ? a3 + 1 : i4.levels.length;
               t5 = i4.levels.slice(0, s3);
@@ -78899,8 +78510,7 @@ var Clappr = function() {
           }, e4.toQuery = function(t5) {
             return "CMCD=" + encodeURIComponent(e4.serialize(t5));
           }, e4.appendQueryToUri = function(e5, t5) {
-            if (!t5)
-              return e5;
+            if (!t5) return e5;
             var r4 = e5.includes("?") ? "&" : "?";
             return "" + e5 + r4 + t5;
           }, e4;
@@ -78945,22 +78555,20 @@ var Clappr = function() {
           }, u3.getLicenseServerUrl = function(e5) {
             switch (e5) {
               case s2.KeySystems.WIDEVINE:
-                if (!this._widevineLicenseUrl)
-                  break;
+                if (!this._widevineLicenseUrl) break;
                 return this._widevineLicenseUrl;
             }
             throw new Error('no license server URL configured for key-system "' + e5 + '"');
           }, u3._attemptKeySystemAccess = function(e5, t5, r5) {
             var i4 = this, n3 = function(e6, t6, r6, i5) {
-              if (e6 === s2.KeySystems.WIDEVINE)
-                return function(e7, t7, r7) {
-                  var i6 = { audioCapabilities: [], videoCapabilities: [] };
-                  return e7.forEach(function(e8) {
-                    i6.audioCapabilities.push({ contentType: 'audio/mp4; codecs="' + e8 + '"', robustness: r7.audioRobustness || "" });
-                  }), t7.forEach(function(e8) {
-                    i6.videoCapabilities.push({ contentType: 'video/mp4; codecs="' + e8 + '"', robustness: r7.videoRobustness || "" });
-                  }), [i6];
-                }(t6, r6, i5);
+              if (e6 === s2.KeySystems.WIDEVINE) return function(e7, t7, r7) {
+                var i6 = { audioCapabilities: [], videoCapabilities: [] };
+                return e7.forEach(function(e8) {
+                  i6.audioCapabilities.push({ contentType: 'audio/mp4; codecs="' + e8 + '"', robustness: r7.audioRobustness || "" });
+                }), t7.forEach(function(e8) {
+                  i6.videoCapabilities.push({ contentType: 'video/mp4; codecs="' + e8 + '"', robustness: r7.videoRobustness || "" });
+                }), [i6];
+              }(t6, r6, i5);
               throw new Error("Unknown key-system: " + e6);
             }(e5, t5, r5, this._drmSystemOptions);
             a2.logger.log("Requesting encrypted media key-system access");
@@ -79001,33 +78609,26 @@ var Clappr = function() {
             });
           }, u3.onMediaEncrypted = function(e5) {
             var t5 = this;
-            if (a2.logger.log('Media is encrypted using "' + e5.initDataType + '" init data type'), !this.mediaKeysPromise)
-              return a2.logger.error("Fatal: Media is encrypted but no CDM access or no keys have been requested"), void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_NO_KEYS, fatal: true });
+            if (a2.logger.log('Media is encrypted using "' + e5.initDataType + '" init data type'), !this.mediaKeysPromise) return a2.logger.error("Fatal: Media is encrypted but no CDM access or no keys have been requested"), void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_NO_KEYS, fatal: true });
             var r5 = function(r6) {
               t5._media && (t5._attemptSetMediaKeys(r6), t5._generateRequestWithPreferredKeySession(e5.initDataType, e5.initData));
             };
             this.mediaKeysPromise.then(r5).catch(r5);
           }, u3._attemptSetMediaKeys = function(e5) {
-            if (!this._media)
-              throw new Error("Attempted to set mediaKeys without first attaching a media element");
+            if (!this._media) throw new Error("Attempted to set mediaKeys without first attaching a media element");
             if (!this._hasSetMediaKeys) {
               var t5 = this._mediaKeysList[0];
-              if (!t5 || !t5.mediaKeys)
-                return a2.logger.error("Fatal: Media is encrypted but no CDM access or no keys have been obtained yet"), void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_NO_KEYS, fatal: true });
+              if (!t5 || !t5.mediaKeys) return a2.logger.error("Fatal: Media is encrypted but no CDM access or no keys have been obtained yet"), void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_NO_KEYS, fatal: true });
               a2.logger.log("Setting keys for encrypted media"), this._media.setMediaKeys(t5.mediaKeys), this._hasSetMediaKeys = true;
             }
           }, u3._generateRequestWithPreferredKeySession = function(e5, t5) {
             var r5 = this, s3 = this._mediaKeysList[0];
-            if (!s3)
-              return a2.logger.error("Fatal: Media is encrypted but not any key-system access has been obtained yet"), void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_NO_ACCESS, fatal: true });
-            if (s3.mediaKeysSessionInitialized)
-              a2.logger.warn("Key-Session already initialized but requested again");
+            if (!s3) return a2.logger.error("Fatal: Media is encrypted but not any key-system access has been obtained yet"), void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_NO_ACCESS, fatal: true });
+            if (s3.mediaKeysSessionInitialized) a2.logger.warn("Key-Session already initialized but requested again");
             else {
               var o3 = s3.mediaKeysSession;
-              if (!o3)
-                return a2.logger.error("Fatal: Media is encrypted but no key-session existing"), void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_NO_SESSION, fatal: true });
-              if (!t5)
-                return a2.logger.warn("Fatal: initData required for generating a key session is null"), void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_NO_INIT_DATA, fatal: true });
+              if (!o3) return a2.logger.error("Fatal: Media is encrypted but no key-session existing"), void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_NO_SESSION, fatal: true });
+              if (!t5) return a2.logger.warn("Fatal: initData required for generating a key session is null"), void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_NO_INIT_DATA, fatal: true });
               a2.logger.log('Generating key-session request for "' + e5 + '" init data type'), s3.mediaKeysSessionInitialized = true, o3.generateRequest(e5, t5).then(function() {
                 a2.logger.debug("Key-session generation succeeded");
               }).catch(function(e6) {
@@ -79038,12 +78639,11 @@ var Clappr = function() {
             var i4 = new XMLHttpRequest();
             i4.responseType = "arraybuffer", i4.onreadystatechange = this._onLicenseRequestReadyStageChange.bind(this, i4, e5, t5, r5);
             var n3 = this._licenseXhrSetup;
-            if (n3)
-              try {
-                n3.call(this.hls, i4, e5), n3 = void 0;
-              } catch (e6) {
-                a2.logger.error(e6);
-              }
+            if (n3) try {
+              n3.call(this.hls, i4, e5), n3 = void 0;
+            } catch (e6) {
+              a2.logger.error(e6);
+            }
             try {
               i4.readyState || i4.open("POST", e5, true), n3 && n3.call(this.hls, i4, e5);
             } catch (e6) {
@@ -79051,32 +78651,27 @@ var Clappr = function() {
             }
             return i4;
           }, u3._onLicenseRequestReadyStageChange = function(e5, t5, r5, s3) {
-            if (4 === e5.readyState)
-              if (200 === e5.status) {
-                this._requestLicenseFailureCount = 0, a2.logger.log("License request succeeded");
-                var o3 = e5.response, l4 = this._licenseResponseCallback;
-                if (l4)
-                  try {
-                    o3 = l4.call(this.hls, e5, t5);
-                  } catch (e6) {
-                    a2.logger.error(e6);
-                  }
-                s3(o3);
-              } else {
-                if (a2.logger.error("License Request XHR failed (" + t5 + "). Status: " + e5.status + " (" + e5.statusText + ")"), this._requestLicenseFailureCount++, this._requestLicenseFailureCount > 3)
-                  return void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_FAILED, fatal: true });
-                var u4 = 3 - this._requestLicenseFailureCount + 1;
-                a2.logger.warn("Retrying license request, " + u4 + " attempts left"), this._requestLicense(r5, s3);
+            if (4 === e5.readyState) if (200 === e5.status) {
+              this._requestLicenseFailureCount = 0, a2.logger.log("License request succeeded");
+              var o3 = e5.response, l4 = this._licenseResponseCallback;
+              if (l4) try {
+                o3 = l4.call(this.hls, e5, t5);
+              } catch (e6) {
+                a2.logger.error(e6);
               }
+              s3(o3);
+            } else {
+              if (a2.logger.error("License Request XHR failed (" + t5 + "). Status: " + e5.status + " (" + e5.statusText + ")"), this._requestLicenseFailureCount++, this._requestLicenseFailureCount > 3) return void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_FAILED, fatal: true });
+              var u4 = 3 - this._requestLicenseFailureCount + 1;
+              a2.logger.warn("Retrying license request, " + u4 + " attempts left"), this._requestLicense(r5, s3);
+            }
           }, u3._generateLicenseRequestChallenge = function(e5, t5) {
-            if (e5.mediaKeySystemDomain === s2.KeySystems.WIDEVINE)
-              return t5;
+            if (e5.mediaKeySystemDomain === s2.KeySystems.WIDEVINE) return t5;
             throw new Error("unsupported key-system: " + e5.mediaKeySystemDomain);
           }, u3._requestLicense = function(e5, t5) {
             a2.logger.log("Requesting content license for key-system");
             var r5 = this._mediaKeysList[0];
-            if (!r5)
-              return a2.logger.error("Fatal error: Media is encrypted but no key-system access has been obtained yet"), void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_NO_ACCESS, fatal: true });
+            if (!r5) return a2.logger.error("Fatal error: Media is encrypted but no key-system access has been obtained yet"), void this.hls.trigger(i3.Events.ERROR, { type: n2.ErrorTypes.KEY_SYSTEM_ERROR, details: n2.ErrorDetails.KEY_SYSTEM_NO_ACCESS, fatal: true });
             try {
               var s3 = this.getLicenseServerUrl(r5.mediaKeySystemDomain), o3 = this._createLicenseXhr(s3, e5, t5);
               a2.logger.log("Sending license request to URL: " + s3);
@@ -79093,9 +78688,8 @@ var Clappr = function() {
           }, u3.onMediaDetached = function() {
             var e5 = this._media, t5 = this._mediaKeysList;
             e5 && (e5.removeEventListener("encrypted", this._onMediaEncrypted), this._media = null, this._mediaKeysList = [], Promise.all(t5.map(function(e6) {
-              if (e6.mediaKeysSession)
-                return e6.mediaKeysSession.close().catch(function() {
-                });
+              if (e6.mediaKeysSession) return e6.mediaKeysSession.close().catch(function() {
+              });
             })).then(function() {
               return e5.setMediaKeys(null);
             }).catch(function() {
@@ -79114,8 +78708,7 @@ var Clappr = function() {
               this._attemptKeySystemAccess(s2.KeySystems.WIDEVINE, r5, i4);
             }
           }, t4 = e4, (r4 = [{ key: "requestMediaKeySystemAccess", get: function() {
-            if (!this._requestMediaKeySystemAccess)
-              throw new Error("No requestMediaKeySystemAccess function configured");
+            if (!this._requestMediaKeySystemAccess) throw new Error("No requestMediaKeySystemAccess function configured");
             return this._requestMediaKeySystemAccess;
           } }]) && o2(t4.prototype, r4), l3 && o2(t4, l3), Object.defineProperty(t4, "prototype", { writable: false }), e4;
         }();
@@ -79166,12 +78759,10 @@ var Clappr = function() {
             }
           }, t4.checkFPSInterval = function() {
             var e5 = this.media;
-            if (e5)
-              if (this.isVideoPlaybackQualityAvailable) {
-                var t5 = e5.getVideoPlaybackQuality();
-                this.checkFPS(e5, t5.totalVideoFrames, t5.droppedVideoFrames);
-              } else
-                this.checkFPS(e5, e5.webkitDecodedFrameCount, e5.webkitDroppedFrameCount);
+            if (e5) if (this.isVideoPlaybackQualityAvailable) {
+              var t5 = e5.getVideoPlaybackQuality();
+              this.checkFPS(e5, t5.totalVideoFrames, t5.droppedVideoFrames);
+            } else this.checkFPS(e5, e5.webkitDecodedFrameCount, e5.webkitDroppedFrameCount);
           }, e4;
         }();
         const s2 = a2;
@@ -79190,25 +78781,20 @@ var Clappr = function() {
           "./src/utils/binary-search.ts"
         );
         function a2(e4, t4, r4) {
-          if (null === t4 || !Array.isArray(e4) || !e4.length || !(0, i3.isFiniteNumber)(t4))
-            return null;
-          if (t4 < (e4[0].programDateTime || 0))
-            return null;
-          if (t4 >= (e4[e4.length - 1].endProgramDateTime || 0))
-            return null;
+          if (null === t4 || !Array.isArray(e4) || !e4.length || !(0, i3.isFiniteNumber)(t4)) return null;
+          if (t4 < (e4[0].programDateTime || 0)) return null;
+          if (t4 >= (e4[e4.length - 1].endProgramDateTime || 0)) return null;
           r4 = r4 || 0;
           for (var n3 = 0; n3 < e4.length; ++n3) {
             var a3 = e4[n3];
-            if (l2(t4, r4, a3))
-              return a3;
+            if (l2(t4, r4, a3)) return a3;
           }
           return null;
         }
         function s2(e4, t4, r4, i4) {
           void 0 === r4 && (r4 = 0), void 0 === i4 && (i4 = 0);
           var a3 = null;
-          if (e4 ? a3 = t4[e4.sn - t4[0].sn + 1] || null : 0 === r4 && 0 === t4[0].start && (a3 = t4[0]), a3 && 0 === o2(r4, i4, a3))
-            return a3;
+          if (e4 ? a3 = t4[e4.sn - t4[0].sn + 1] || null : 0 === r4 && 0 === t4[0].start && (a3 = t4[0]), a3 && 0 === o2(r4, i4, a3)) return a3;
           var s3 = n2.default.search(t4, o2.bind(null, r4, i4));
           return s3 || a3;
         }
@@ -79259,16 +78845,12 @@ var Clappr = function() {
           }, t4.getAppendedFrag = function(e5, t5) {
             if (t5 === a2.PlaylistLevelType.MAIN) {
               var r4 = this.activeFragment, i4 = this.activeParts;
-              if (!r4)
-                return null;
-              if (i4)
-                for (var n3 = i4.length; n3--; ) {
-                  var s3 = i4[n3], o3 = s3 ? s3.end : r4.appendedPTS;
-                  if (s3.start <= e5 && void 0 !== o3 && e5 <= o3)
-                    return n3 > 9 && (this.activeParts = i4.slice(n3 - 9)), s3;
-                }
-              else if (r4.start <= e5 && void 0 !== r4.appendedPTS && e5 <= r4.appendedPTS)
-                return r4;
+              if (!r4) return null;
+              if (i4) for (var n3 = i4.length; n3--; ) {
+                var s3 = i4[n3], o3 = s3 ? s3.end : r4.appendedPTS;
+                if (s3.start <= e5 && void 0 !== o3 && e5 <= o3) return n3 > 9 && (this.activeParts = i4.slice(n3 - 9)), s3;
+              }
+              else if (r4.start <= e5 && void 0 !== r4.appendedPTS && e5 <= r4.appendedPTS) return r4;
             }
             return this.getBufferedFrag(e5, t5);
           }, t4.getBufferedFrag = function(e5, t5) {
@@ -79276,8 +78858,7 @@ var Clappr = function() {
               var a3 = r4[i4[n3]];
               if ((null == a3 ? void 0 : a3.body.type) === t5 && a3.buffered) {
                 var s3 = a3.body;
-                if (s3.start <= e5 && e5 <= s3.end)
-                  return s3;
+                if (s3.start <= e5 && e5 <= s3.end) return s3;
               }
             }
             return null;
@@ -79285,15 +78866,13 @@ var Clappr = function() {
             var i4 = this;
             Object.keys(this.fragments).forEach(function(n3) {
               var a3 = i4.fragments[n3];
-              if (a3)
-                if (a3.buffered) {
-                  var s3 = a3.range[e5];
-                  s3 && s3.time.some(function(e6) {
-                    var r5 = !i4.isTimeBuffered(e6.startPTS, e6.endPTS, t5);
-                    return r5 && i4.removeFragment(a3.body), r5;
-                  });
-                } else
-                  a3.body.type === r4 && i4.removeFragment(a3.body);
+              if (a3) if (a3.buffered) {
+                var s3 = a3.range[e5];
+                s3 && s3.time.some(function(e6) {
+                  var r5 = !i4.isTimeBuffered(e6.startPTS, e6.endPTS, t5);
+                  return r5 && i4.removeFragment(a3.body), r5;
+                });
+              } else a3.body.type === r4 && i4.removeFragment(a3.body);
             });
           }, t4.detectPartialFragments = function(e5) {
             var t5 = this, r4 = this.timeRanges, i4 = e5.frag, n3 = e5.part;
@@ -79317,10 +78896,8 @@ var Clappr = function() {
                 n3.time.push({ startPTS: Math.max(a3, i4.start(u2)), endPTS: Math.min(s3, i4.end(u2)) });
                 break;
               }
-              if (a3 < d2 && s3 > c2)
-                n3.partial = true, n3.time.push({ startPTS: Math.max(a3, i4.start(u2)), endPTS: Math.min(s3, i4.end(u2)) });
-              else if (s3 <= c2)
-                break;
+              if (a3 < d2 && s3 > c2) n3.partial = true, n3.time.push({ startPTS: Math.max(a3, i4.start(u2)), endPTS: Math.min(s3, i4.end(u2)) });
+              else if (s3 <= c2) break;
             }
             return n3;
           }, t4.getPartialFragment = function(e5) {
@@ -79334,10 +78911,8 @@ var Clappr = function() {
             return r4 ? r4.buffered ? o2(r4) ? i3.PARTIAL : i3.OK : i3.APPENDING : i3.NOT_LOADED;
           }, t4.isTimeBuffered = function(e5, t5, r4) {
             for (var i4, n3, a3 = 0; a3 < r4.length; a3++) {
-              if (i4 = r4.start(a3) - this.bufferPadding, n3 = r4.end(a3) + this.bufferPadding, e5 >= i4 && t5 <= n3)
-                return true;
-              if (t5 <= i4)
-                return false;
+              if (i4 = r4.start(a3) - this.bufferPadding, n3 = r4.end(a3) + this.bufferPadding, e5 >= i4 && t5 <= n3) return true;
+              if (t5 <= i4) return false;
             }
             return false;
           }, t4.onFragLoaded = function(e5, t5) {
@@ -79348,17 +78923,13 @@ var Clappr = function() {
             }
           }, t4.onBufferAppended = function(e5, t5) {
             var r4 = this, i4 = t5.frag, n3 = t5.part, s3 = t5.timeRanges;
-            if (i4.type === a2.PlaylistLevelType.MAIN)
-              if (this.activeFragment = i4, n3) {
-                var o3 = this.activeParts;
-                o3 || (this.activeParts = o3 = []), o3.push(n3);
-              } else
-                this.activeParts = null;
+            if (i4.type === a2.PlaylistLevelType.MAIN) if (this.activeFragment = i4, n3) {
+              var o3 = this.activeParts;
+              o3 || (this.activeParts = o3 = []), o3.push(n3);
+            } else this.activeParts = null;
             this.timeRanges = s3, Object.keys(s3).forEach(function(e6) {
               var t6 = s3[e6];
-              if (r4.detectEvictedFragments(e6, t6), !n3)
-                for (var a3 = 0; a3 < t6.length; a3++)
-                  i4.appendedPTS = Math.max(t6.end(a3), i4.appendedPTS || 0);
+              if (r4.detectEvictedFragments(e6, t6), !n3) for (var a3 = 0; a3 < t6.length; a3++) i4.appendedPTS = Math.max(t6.end(a3), i4.appendedPTS || 0);
             });
           }, t4.onFragBuffered = function(e5, t5) {
             this.detectPartialFragments(t5);
@@ -79424,14 +78995,12 @@ var Clappr = function() {
                   if (p2 || g2) {
                     if (c3) {
                       var v2 = f2.len > l2, m2 = !g2 || t5 && t5.start <= u3 || g2 - u3 > l2 && !this.fragmentTracker.getPartialFragment(u3);
-                      if (v2 || m2)
-                        return;
+                      if (v2 || m2) return;
                       this.moved = false;
                     }
                     if (!this.moved && null !== this.stalled) {
                       var y2, A2 = Math.max(g2, f2.start || 0) - u3, E2 = this.hls.levels ? this.hls.levels[this.hls.currentLevel] : null, T2 = (null == E2 || null === (y2 = E2.details) || void 0 === y2 ? void 0 : y2.live) ? 2 * E2.details.targetduration : l2;
-                      if (A2 > 0 && A2 <= T2)
-                        return void this._trySkipBufferHole(null);
+                      if (A2 > 0 && A2 <= T2) return void this._trySkipBufferHole(null);
                     }
                     var b2 = self.performance.now();
                     if (null !== a3) {
@@ -79440,8 +79009,7 @@ var Clappr = function() {
                         var S2 = i3.BufferHelper.bufferInfo(n3, u3, r4.maxBufferHole);
                         this._tryFixBufferStall(S2, k2);
                       }
-                    } else
-                      this.stalled = b2;
+                    } else this.stalled = b2;
                   }
                 }
               } else if (this.moved = true, null !== a3) {
@@ -79456,8 +79024,7 @@ var Clappr = function() {
             var r4 = this.config, i4 = this.fragmentTracker, n3 = this.media;
             if (null !== n3) {
               var a3 = n3.currentTime, o3 = i4.getPartialFragment(a3);
-              if (o3 && (this._trySkipBufferHole(o3) || !this.media))
-                return;
+              if (o3 && (this._trySkipBufferHole(o3) || !this.media)) return;
               e5.len > r4.maxBufferHole && t5 > 1e3 * r4.highBufferWatchdogPeriod && (s2.logger.warn("Trying to nudge playhead over buffer-hole"), this.stalled = null, this._tryNudgeBuffer());
             }
           }, t4._reportStall = function(e5) {
@@ -79465,8 +79032,7 @@ var Clappr = function() {
             !this.stallReported && r4 && (this.stallReported = true, s2.logger.warn("Playback stalling at @" + r4.currentTime + " due to low buffer (" + JSON.stringify(e5) + ")"), t5.trigger(a2.Events.ERROR, { type: n2.ErrorTypes.MEDIA_ERROR, details: n2.ErrorDetails.BUFFER_STALLED_ERROR, fatal: false, buffer: e5.len }));
           }, t4._trySkipBufferHole = function(e5) {
             var t5 = this.config, r4 = this.hls, o3 = this.media;
-            if (null === o3)
-              return 0;
+            if (null === o3) return 0;
             for (var l3 = o3.currentTime, d3 = 0, h2 = i3.BufferHelper.getBuffered(o3), f2 = 0; f2 < h2.length; f2++) {
               var p2 = h2.start(f2);
               if (l3 + t5.maxBufferHole >= d3 && l3 < p2) {
@@ -79483,8 +79049,7 @@ var Clappr = function() {
               if (this.nudgeRetry++, i4 < e5.nudgeMaxRetry) {
                 var l3 = o3 + (i4 + 1) * e5.nudgeOffset;
                 s2.logger.warn("Nudging 'currentTime' from " + o3 + " to " + l3), r4.currentTime = l3, t5.trigger(a2.Events.ERROR, { type: n2.ErrorTypes.MEDIA_ERROR, details: n2.ErrorDetails.BUFFER_NUDGE_ON_STALL, fatal: false });
-              } else
-                s2.logger.error("Playhead still not moving while enough data buffered @" + o3 + " after " + e5.nudgeMaxRetry + " nudges"), t5.trigger(a2.Events.ERROR, { type: n2.ErrorTypes.MEDIA_ERROR, details: n2.ErrorDetails.BUFFER_STALLED_ERROR, fatal: true });
+              } else s2.logger.error("Playhead still not moving while enough data buffered @" + o3 + " after " + e5.nudgeMaxRetry + " nudges"), t5.trigger(a2.Events.ERROR, { type: n2.ErrorTypes.MEDIA_ERROR, details: n2.ErrorDetails.BUFFER_STALLED_ERROR, fatal: true });
             }
           }, e4;
         }();
@@ -79555,8 +79120,7 @@ var Clappr = function() {
             if (this.media) {
               for (var t5 = 0; t5 < e5.length; t5++) {
                 var r4 = e5[t5];
-                if ("metadata" === r4.kind && "id3" === r4.label)
-                  return (0, a2.sendAddTrackEvent)(r4, this.media), r4;
+                if ("metadata" === r4.kind && "id3" === r4.label) return (0, a2.sendAddTrackEvent)(r4, this.media), r4;
               }
               return this.media.addTextTrack("metadata", "id3");
             }
@@ -79589,11 +79153,10 @@ var Clappr = function() {
             }
           }, t4.updateId3CueEnds = function(e5) {
             var t5, r4 = null === (t5 = this.id3Track) || void 0 === t5 ? void 0 : t5.cues;
-            if (r4)
-              for (var i4 = r4.length; i4--; ) {
-                var n3 = r4[i4];
-                n3.startTime < e5 && n3.endTime === c2 && (n3.endTime = e5);
-              }
+            if (r4) for (var i4 = r4.length; i4--; ) {
+              var n3 = r4[i4];
+              n3.startTime < e5 && n3.endTime === c2 && (n3.endTime = e5);
+            }
           }, t4.onBufferFlushing = function(e5, t5) {
             var r4 = t5.startOffset, i4 = t5.endOffset, n3 = t5.type, s3 = this.id3Track, o3 = this.hls;
             if (o3) {
@@ -79610,23 +79173,20 @@ var Clappr = function() {
             var r4 = this, n3 = t5.details;
             if (this.media && n3.hasProgramDateTime && this.hls.config.enableDateRangeMetadataCues) {
               var a3 = this.dateRangeCuesAppended, s3 = this.id3Track, h3 = n3.dateRanges, f3 = Object.keys(h3);
-              if (s3)
-                for (var p2 = Object.keys(a3).filter(function(e6) {
-                  return !f3.includes(e6);
-                }), g2 = function(e6) {
-                  var t6 = p2[e6];
-                  Object.keys(a3[t6].cues).forEach(function(e7) {
-                    s3.removeCue(a3[t6].cues[e7]);
-                  }), delete a3[t6];
-                }, v2 = p2.length; v2--; )
-                  g2(v2);
+              if (s3) for (var p2 = Object.keys(a3).filter(function(e6) {
+                return !f3.includes(e6);
+              }), g2 = function(e6) {
+                var t6 = p2[e6];
+                Object.keys(a3[t6].cues).forEach(function(e7) {
+                  s3.removeCue(a3[t6].cues[e7]);
+                }), delete a3[t6];
+              }, v2 = p2.length; v2--; ) g2(v2);
               var m2 = n3.fragments[n3.fragments.length - 1];
               if (0 !== f3.length && (0, i3.isFiniteNumber)(null == m2 ? void 0 : m2.programDateTime)) {
                 this.id3Track || (this.id3Track = this.createTrack(this.media));
                 for (var y2 = m2.programDateTime / 1e3 - m2.start, A2 = u2(), E2 = function(e6) {
                   var t6 = f3[e6], i4 = h3[t6], n4 = a3[t6], s4 = (null == n4 ? void 0 : n4.cues) || {}, u3 = (null == n4 ? void 0 : n4.durationKnown) || false, p3 = d2(i4.startDate, y2), g3 = c2, v3 = i4.endDate;
-                  if (v3)
-                    g3 = d2(v3, y2), u3 = true;
+                  if (v3) g3 = d2(v3, y2), u3 = true;
                   else if (i4.endOnNext && !u3) {
                     var m3 = f3.reduce(function(e7, t7) {
                       var r5 = h3[t7];
@@ -79640,8 +79200,7 @@ var Clappr = function() {
                     var k2 = T3[b2];
                     if (k2 !== o2.DateRangeAttribute.ID && k2 !== o2.DateRangeAttribute.CLASS && k2 !== o2.DateRangeAttribute.START_DATE && k2 !== o2.DateRangeAttribute.DURATION && k2 !== o2.DateRangeAttribute.END_DATE && k2 !== o2.DateRangeAttribute.END_ON_NEXT) {
                       var S2 = s4[k2];
-                      if (S2)
-                        u3 && !n4.durationKnown && (S2.endTime = g3);
+                      if (S2) u3 && !n4.durationKnown && (S2.endTime = g3);
                       else {
                         var _2 = i4.attr[k2];
                         S2 = new A2(p3, g3, ""), k2 !== o2.DateRangeAttribute.SCTE35_OUT && k2 !== o2.DateRangeAttribute.SCTE35_IN || (E3 = _2, _2 = Uint8Array.from(E3.replace(/^0x/, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")).buffer), S2.value = { key: k2, data: _2 }, S2.type = l2.MetadataSchema.dateRange, r4.id3Track.addCue(S2), s4[k2] = S2;
@@ -79649,8 +79208,7 @@ var Clappr = function() {
                     }
                   }
                   a3[t6] = { cues: s4, dateRange: i4, durationKnown: u3 };
-                }, T2 = 0; T2 < f3.length; T2++)
-                  E2(T2);
+                }, T2 = 0; T2 < f3.length; T2++) E2(T2);
               }
             }
           }, e4;
@@ -79719,8 +79277,7 @@ var Clappr = function() {
                     if (t5.live && l3 && o4 > 0.05 && this.forwardBufferLength > 1) {
                       var u2 = Math.min(2, Math.max(1, a3)), c2 = Math.round(2 / (1 + Math.exp(-0.75 * o4 - this.edgeStalled)) * 20) / 20;
                       e5.playbackRate = Math.min(u2, Math.max(1, c2));
-                    } else
-                      1 !== e5.playbackRate && 0 !== e5.playbackRate && (e5.playbackRate = 1);
+                    } else 1 !== e5.playbackRate && 0 !== e5.playbackRate && (e5.playbackRate = 1);
                   }
                 }
               }
@@ -79738,16 +79295,14 @@ var Clappr = function() {
             return void 0 !== e5.liveMaxLatencyDuration ? e5.liveMaxLatencyDuration : t5 ? e5.liveMaxLatencyDurationCount * t5.targetduration : 0;
           } }, { key: "targetLatency", get: function() {
             var e5 = this.levelDetails;
-            if (null === e5)
-              return null;
+            if (null === e5) return null;
             var t5 = e5.holdBack, r5 = e5.partHoldBack, i4 = e5.targetduration, n3 = this.config, a3 = n3.liveSyncDuration, s3 = n3.liveSyncDurationCount, o4 = n3.lowLatencyMode, l3 = this.hls.userConfig, u2 = o4 && r5 || t5;
             (l3.liveSyncDuration || l3.liveSyncDurationCount || 0 === u2) && (u2 = void 0 !== a3 ? a3 : s3 * i4);
             var c2 = i4;
             return u2 + Math.min(1 * this.stallCount, c2);
           } }, { key: "liveSyncPosition", get: function() {
             var e5 = this.estimateLiveEdge(), t5 = this.targetLatency, r5 = this.levelDetails;
-            if (null === e5 || null === t5 || null === r5)
-              return null;
+            if (null === e5 || null === t5 || null === r5) return null;
             var i4 = r5.edge, n3 = e5 - t5 - this.edgeStalled, a3 = i4 - r5.totalduration, s3 = i4 - (this.config.lowLatencyMode && r5.partTarget || r5.targetduration);
             return Math.min(Math.max(a3, n3), s3);
           } }, { key: "drift", get: function() {
@@ -79755,14 +79310,12 @@ var Clappr = function() {
             return null === e5 ? 1 : e5.drift;
           } }, { key: "edgeStalled", get: function() {
             var e5 = this.levelDetails;
-            if (null === e5)
-              return 0;
+            if (null === e5) return 0;
             var t5 = 3 * (this.config.lowLatencyMode && e5.partTarget || e5.targetduration);
             return Math.max(e5.age - t5, 0);
           } }, { key: "forwardBufferLength", get: function() {
             var e5 = this.media, t5 = this.levelDetails;
-            if (!e5 || !t5)
-              return 0;
+            if (!e5 || !t5) return 0;
             var r5 = e5.buffered.length;
             return (r5 ? e5.buffered.end(r5 - 1) : t5.edge) - this.currentTime;
           } }]) && s2(t4.prototype, r4), o3 && s2(t4, o3), Object.defineProperty(t4, "prototype", { writable: false }), e4;
@@ -79800,8 +79353,7 @@ var Clappr = function() {
           return c2 = Object.assign ? Object.assign.bind() : function(e4) {
             for (var t4 = 1; t4 < arguments.length; t4++) {
               var r4 = arguments[t4];
-              for (var i4 in r4)
-                Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
+              for (var i4 in r4) Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
             }
             return e4;
           }, c2.apply(this, arguments);
@@ -79856,23 +79408,20 @@ var Clappr = function() {
               r5 = u3[0].bitrate, u3.sort(function(e6, t6) {
                 return e6.bitrate - t6.bitrate;
               }), this._levels = u3;
-              for (var m3 = 0; m3 < u3.length; m3++)
-                if (u3[m3].bitrate === r5) {
-                  this._firstLevel = m3, this.log("manifest loaded, " + u3.length + " level(s) found, first bitrate: " + r5);
-                  break;
-                }
+              for (var m3 = 0; m3 < u3.length; m3++) if (u3[m3].bitrate === r5) {
+                this._firstLevel = m3, this.log("manifest loaded, " + u3.length + " level(s) found, first bitrate: " + r5);
+                break;
+              }
               var y2 = v3 && !g3, A2 = { levels: u3, audioTracks: c3, subtitleTracks: d3, firstLevel: this._firstLevel, stats: t5.stats, audio: v3, video: g3, altAudio: !y2 && c3.some(function(e6) {
                 return !!e6.url;
               }) };
               this.hls.trigger(n2.Events.MANIFEST_PARSED, A2), (this.hls.config.autoStartLoad || this.hls.forceStartLoad) && this.hls.startLoad(this.hls.config.startPosition);
-            } else
-              this.hls.trigger(n2.Events.ERROR, { type: a2.ErrorTypes.MEDIA_ERROR, details: a2.ErrorDetails.MANIFEST_INCOMPATIBLE_CODECS_ERROR, fatal: true, url: t5.url, reason: "no level with compatible codecs found in manifest" });
+            } else this.hls.trigger(n2.Events.ERROR, { type: a2.ErrorTypes.MEDIA_ERROR, details: a2.ErrorDetails.MANIFEST_INCOMPATIBLE_CODECS_ERROR, fatal: true, url: t5.url, reason: "no level with compatible codecs found in manifest" });
           }, m2.onError = function(t5, r5) {
             var i4;
             if (e4.prototype.onError.call(this, t5, r5), !r5.fatal) {
               var n3 = r5.context, s3 = this._levels[this.currentLevelIndex];
-              if (n3 && (n3.type === u2.PlaylistContextType.AUDIO_TRACK && s3.audioGroupIds && n3.groupId === s3.audioGroupIds[s3.urlId] || n3.type === u2.PlaylistContextType.SUBTITLE_TRACK && s3.textGroupIds && n3.groupId === s3.textGroupIds[s3.urlId]))
-                this.redundantFailover(this.currentLevelIndex);
+              if (n3 && (n3.type === u2.PlaylistContextType.AUDIO_TRACK && s3.audioGroupIds && n3.groupId === s3.audioGroupIds[s3.urlId] || n3.type === u2.PlaylistContextType.SUBTITLE_TRACK && s3.textGroupIds && n3.groupId === s3.textGroupIds[s3.urlId])) this.redundantFailover(this.currentLevelIndex);
               else {
                 var o3, l4 = false, c3 = true;
                 switch (r5.details) {
@@ -79898,14 +79447,12 @@ var Clappr = function() {
           }, m2.recoverLevel = function(e5, t5, r5, i4) {
             var n3 = e5.details, a3 = this._levels[t5];
             if (a3.loadError++, r5) {
-              if (!this.retryLoadingOrFail(e5))
-                return void (this.currentLevelIndex = -1);
+              if (!this.retryLoadingOrFail(e5)) return void (this.currentLevelIndex = -1);
               e5.levelRetry = true;
             }
             if (i4) {
               var s3 = a3.url.length;
-              if (s3 > 1 && a3.loadError < s3)
-                e5.levelRetry = true, this.redundantFailover(t5);
+              if (s3 > 1 && a3.loadError < s3) e5.levelRetry = true, this.redundantFailover(t5);
               else if (-1 === this.manualLevelIndex) {
                 for (var o3 = -1, l4 = this._levels, u3 = l4.length; u3--; ) {
                   var c3 = (u3 + this.currentLevelIndex) % l4.length;
@@ -79933,29 +79480,26 @@ var Clappr = function() {
             }
           }, m2.onLevelLoaded = function(e5, t5) {
             var r5, i4, n3 = t5.level, a3 = t5.details, s3 = this._levels[n3];
-            if (!s3)
-              return this.warn("Invalid level index " + n3), void (null !== (i4 = t5.deliveryDirectives) && void 0 !== i4 && i4.skip && (a3.deltaUpdateFailed = true));
+            if (!s3) return this.warn("Invalid level index " + n3), void (null !== (i4 = t5.deliveryDirectives) && void 0 !== i4 && i4.skip && (a3.deltaUpdateFailed = true));
             n3 === this.currentLevelIndex ? (0 === s3.fragmentError && (s3.loadError = 0, this.retryCount = 0), this.playlistLoaded(n3, t5, s3.details)) : null !== (r5 = t5.deliveryDirectives) && void 0 !== r5 && r5.skip && (a3.deltaUpdateFailed = true);
           }, m2.onAudioTrackSwitched = function(e5, t5) {
             var r5 = this.hls.levels[this.currentLevelIndex];
             if (r5 && r5.audioGroupIds) {
-              for (var i4 = -1, n3 = this.hls.audioTracks[t5.id].groupId, a3 = 0; a3 < r5.audioGroupIds.length; a3++)
-                if (r5.audioGroupIds[a3] === n3) {
-                  i4 = a3;
-                  break;
-                }
+              for (var i4 = -1, n3 = this.hls.audioTracks[t5.id].groupId, a3 = 0; a3 < r5.audioGroupIds.length; a3++) if (r5.audioGroupIds[a3] === n3) {
+                i4 = a3;
+                break;
+              }
               i4 !== r5.urlId && (r5.urlId = i4, this.startLoad());
             }
           }, m2.loadPlaylist = function(e5) {
             var t5 = this.currentLevelIndex, r5 = this._levels[t5];
             if (this.canLoad && r5 && r5.url.length > 0) {
               var i4 = r5.urlId, a3 = r5.url[i4];
-              if (e5)
-                try {
-                  a3 = e5.addDirectives(a3);
-                } catch (e6) {
-                  this.warn("Could not construct new URL with HLS Delivery Directives: " + e6);
-                }
+              if (e5) try {
+                a3 = e5.addDirectives(a3);
+              } catch (e6) {
+                this.warn("Could not construct new URL with HLS Delivery Directives: " + e6);
+              }
               this.log("Attempt loading level index " + t5 + (e5 ? " at sn " + e5.msn + " part " + e5.part : "") + " with URL-id " + i4 + " " + a3), this.clearTimer(), this.hls.trigger(n2.Events.LEVEL_LOADING, { url: a3, level: t5, id: i4, deliveryDirectives: e5 || null });
             }
           }, m2.removeLevel = function(e5, t5) {
@@ -79979,8 +79523,7 @@ var Clappr = function() {
             if (0 !== r5.length && (this.currentLevelIndex !== e5 || null === (t5 = r5[e5]) || void 0 === t5 || !t5.details)) {
               if (e5 < 0 || e5 >= r5.length) {
                 var i4 = e5 < 0;
-                if (this.hls.trigger(n2.Events.ERROR, { type: a2.ErrorTypes.OTHER_ERROR, details: a2.ErrorDetails.LEVEL_SWITCH_ERROR, level: e5, fatal: i4, reason: "invalid level idx" }), i4)
-                  return;
+                if (this.hls.trigger(n2.Events.ERROR, { type: a2.ErrorTypes.OTHER_ERROR, details: a2.ErrorDetails.LEVEL_SWITCH_ERROR, level: e5, fatal: i4, reason: "invalid level idx" }), i4) return;
                 e5 = Math.min(e5, r5.length - 1);
               }
               this.clearTimer();
@@ -80037,8 +79580,7 @@ var Clappr = function() {
           return s2 = Object.assign ? Object.assign.bind() : function(e4) {
             for (var t4 = 1; t4 < arguments.length; t4++) {
               var r4 = arguments[t4];
-              for (var i4 in r4)
-                Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
+              for (var i4 in r4) Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
             }
             return e4;
           }, s2.apply(this, arguments);
@@ -80067,8 +79609,7 @@ var Clappr = function() {
           if ((0, i3.isFiniteNumber)(r4)) {
             var n3, a3 = 0;
             t4.sn > e4.sn ? (a3 = r4 - e4.start, n3 = e4) : (a3 = e4.start - r4, n3 = t4), n3.duration !== a3 && (n3.duration = a3);
-          } else
-            t4.sn > e4.sn ? e4.cc === t4.cc && e4.minEndPTS ? t4.start = e4.start + (e4.minEndPTS - e4.start) : t4.start = e4.start + e4.duration : t4.start = Math.max(e4.start - t4.duration, 0);
+          } else t4.sn > e4.sn ? e4.cc === t4.cc && e4.minEndPTS ? t4.start = e4.start + (e4.minEndPTS - e4.start) : t4.start = e4.start + e4.duration : t4.start = Math.max(e4.start - t4.duration, 0);
         }
         function d2(e4, t4, r4, a3, s3, o3) {
           a3 - r4 <= 0 && (n2.logger.warn("Fragment should have a positive duration", t4), a3 = r4 + t4.duration, o3 = s3 + t4.duration);
@@ -80081,13 +79622,10 @@ var Clappr = function() {
           var p3 = r4 - t4.start;
           t4.appendedPTS = a3, t4.start = t4.startPTS = r4, t4.maxStartPTS = l3, t4.startDTS = s3, t4.endPTS = a3, t4.minEndPTS = u3, t4.endDTS = o3;
           var g3, v3 = t4.sn;
-          if (!e4 || v3 < e4.startSN || v3 > e4.endSN)
-            return 0;
+          if (!e4 || v3 < e4.startSN || v3 > e4.endSN) return 0;
           var m3 = v3 - e4.startSN, y3 = e4.fragments;
-          for (y3[m3] = t4, g3 = m3; g3 > 0; g3--)
-            c2(y3[g3], y3[g3 - 1]);
-          for (g3 = m3; g3 < y3.length - 1; g3++)
-            c2(y3[g3], y3[g3 + 1]);
+          for (y3[m3] = t4, g3 = m3; g3 > 0; g3--) c2(y3[g3], y3[g3 - 1]);
+          for (g3 = m3; g3 < y3.length - 1; g3++) c2(y3[g3], y3[g3 + 1]);
           return e4.fragmentHint && c2(y3[y3.length - 1], e4.fragmentHint), e4.PTSKnown = e4.alignedSliding = true, p3;
         }
         function h2(e4, t4) {
@@ -80105,26 +79643,22 @@ var Clappr = function() {
           }), r4 && (t4.fragmentHint ? t4.fragments.concat(t4.fragmentHint) : t4.fragments).forEach(function(e5) {
             var t5;
             e5.initSegment && e5.initSegment.relurl !== (null === (t5 = r4) || void 0 === t5 ? void 0 : t5.relurl) || (e5.initSegment = r4);
-          }), t4.skippedSegments)
-            if (t4.deltaUpdateFailed = t4.fragments.some(function(e5) {
-              return !e5;
-            }), t4.deltaUpdateFailed) {
-              n2.logger.warn("[level-helper] Previous playlist missing segments skipped in delta playlist");
-              for (var E2 = t4.skippedSegments; E2--; )
-                t4.fragments.shift();
-              t4.startSN = t4.fragments[0].sn, t4.startCC = t4.fragments[0].cc;
-            } else
-              t4.canSkipDateRanges && (t4.dateRanges = (h3 = e4.dateRanges, v3 = t4.dateRanges, m3 = t4.recentlyRemovedDateranges, y3 = s2({}, h3), m3 && m3.forEach(function(e5) {
-                delete y3[e5];
-              }), Object.keys(v3).forEach(function(e5) {
-                var t5 = new a2.DateRange(v3[e5].attr, y3[e5]);
-                t5.isValid ? y3[e5] = t5 : n2.logger.warn('Ignoring invalid Playlist Delta Update DATERANGE tag: "' + JSON.stringify(v3[e5].attr) + '"');
-              }), y3));
+          }), t4.skippedSegments) if (t4.deltaUpdateFailed = t4.fragments.some(function(e5) {
+            return !e5;
+          }), t4.deltaUpdateFailed) {
+            n2.logger.warn("[level-helper] Previous playlist missing segments skipped in delta playlist");
+            for (var E2 = t4.skippedSegments; E2--; ) t4.fragments.shift();
+            t4.startSN = t4.fragments[0].sn, t4.startCC = t4.fragments[0].cc;
+          } else t4.canSkipDateRanges && (t4.dateRanges = (h3 = e4.dateRanges, v3 = t4.dateRanges, m3 = t4.recentlyRemovedDateranges, y3 = s2({}, h3), m3 && m3.forEach(function(e5) {
+            delete y3[e5];
+          }), Object.keys(v3).forEach(function(e5) {
+            var t5 = new a2.DateRange(v3[e5].attr, y3[e5]);
+            t5.isValid ? y3[e5] = t5 : n2.logger.warn('Ignoring invalid Playlist Delta Update DATERANGE tag: "' + JSON.stringify(v3[e5].attr) + '"');
+          }), y3));
           var T2 = t4.fragments;
           if (A3) {
             n2.logger.warn("discontinuity sliding from playlist, take drift into account");
-            for (var b2 = 0; b2 < T2.length; b2++)
-              T2[b2].cc += A3;
+            for (var b2 = 0; b2 < T2.length; b2++) T2[b2].cc += A3;
           }
           t4.skippedSegments && (t4.startCC = t4.fragments[0].cc), f2(e4.partList, t4.partList, function(e5, t5) {
             t5.elementaryStreams = e5.elementaryStreams, t5.stats = e5.stats;
@@ -80133,15 +79667,13 @@ var Clappr = function() {
           if (t4.advanced && k2) {
             var S2 = t4.edge;
             t4.driftStart || (t4.driftStartTime = k2, t4.driftStart = S2), t4.driftEndTime = k2, t4.driftEnd = S2;
-          } else
-            t4.driftEndTime = e4.driftEndTime, t4.driftEnd = e4.driftEnd, t4.advancedDateTime = e4.advancedDateTime;
+          } else t4.driftEndTime = e4.driftEndTime, t4.driftEnd = e4.driftEnd, t4.advancedDateTime = e4.advancedDateTime;
         }
         function f2(e4, t4, r4) {
-          if (e4 && t4)
-            for (var i4 = 0, n3 = 0, a3 = e4.length; n3 <= a3; n3++) {
-              var s3 = e4[n3], o3 = t4[n3 + i4];
-              s3 && o3 && s3.index === o3.index && s3.fragment.sn === o3.fragment.sn ? r4(s3, o3) : i4--;
-            }
+          if (e4 && t4) for (var i4 = 0, n3 = 0, a3 = e4.length; n3 <= a3; n3++) {
+            var s3 = e4[n3], o3 = t4[n3 + i4];
+            s3 && o3 && s3.index === o3.index && s3.fragment.sn === o3.fragment.sn ? r4(s3, o3) : i4--;
+          }
         }
         function p2(e4, t4, r4) {
           for (var i4 = t4.skippedSegments, n3 = Math.max(e4.startSN, t4.startSN) - t4.startSN, a3 = (e4.fragmentHint ? 1 : 0) + (i4 ? t4.endSN : Math.min(e4.endSN, t4.endSN)) - t4.startSN, s3 = t4.startSN - e4.startSN, o3 = t4.fragmentHint ? t4.fragments.concat(t4.fragmentHint) : t4.fragments, l3 = e4.fragmentHint ? e4.fragments.concat(e4.fragmentHint) : e4.fragments, u3 = n3; u3 <= a3; u3++) {
@@ -80155,39 +79687,31 @@ var Clappr = function() {
         }
         function v2(e4, t4) {
           if (t4) {
-            for (var r4 = e4.fragments, i4 = e4.skippedSegments; i4 < r4.length; i4++)
-              r4[i4].start += t4;
+            for (var r4 = e4.fragments, i4 = e4.skippedSegments; i4 < r4.length; i4++) r4[i4].start += t4;
             e4.fragmentHint && (e4.fragmentHint.start += t4);
           }
         }
         function m2(e4, t4) {
           var r4, i4 = 1e3 * e4.levelTargetDuration, n3 = i4 / 2, a3 = e4.age, s3 = a3 > 0 && a3 < 3 * i4, o3 = t4.loading.end - t4.loading.start, l3 = e4.availabilityDelay;
-          if (false === e4.updated)
-            if (s3) {
-              var u3 = 333 * e4.misses;
-              r4 = Math.max(Math.min(n3, 2 * o3), u3), e4.availabilityDelay = (e4.availabilityDelay || 0) + r4;
-            } else
-              r4 = n3;
-          else
-            s3 ? (l3 = Math.min(l3 || i4 / 2, a3), e4.availabilityDelay = l3, r4 = l3 + i4 - a3) : r4 = i4 - o3;
+          if (false === e4.updated) if (s3) {
+            var u3 = 333 * e4.misses;
+            r4 = Math.max(Math.min(n3, 2 * o3), u3), e4.availabilityDelay = (e4.availabilityDelay || 0) + r4;
+          } else r4 = n3;
+          else s3 ? (l3 = Math.min(l3 || i4 / 2, a3), e4.availabilityDelay = l3, r4 = l3 + i4 - a3) : r4 = i4 - o3;
           return Math.round(r4);
         }
         function y2(e4, t4, r4) {
-          if (!e4 || !e4.details)
-            return null;
+          if (!e4 || !e4.details) return null;
           var i4 = e4.details, n3 = i4.fragments[t4 - i4.startSN];
           return n3 || ((n3 = i4.fragmentHint) && n3.sn === t4 ? n3 : t4 < i4.startSN && r4 && r4.sn === t4 ? r4 : null);
         }
         function A2(e4, t4, r4) {
-          if (!e4 || !e4.details)
-            return null;
+          if (!e4 || !e4.details) return null;
           var i4 = e4.details.partList;
-          if (i4)
-            for (var n3 = i4.length; n3--; ) {
-              var a3 = i4[n3];
-              if (a3.index === r4 && a3.fragment.sn === t4)
-                return a3;
-            }
+          if (i4) for (var n3 = i4.length; n3--; ) {
+            var a3 = i4[n3];
+            if (a3.index === r4 && a3.fragment.sn === t4) return a3;
+          }
           return null;
         }
       }
@@ -80269,8 +79793,7 @@ var Clappr = function() {
                 -1 === i4 && (r5.config.testBandwidth && this.levels.length > 1 ? (i4 = 0, this.bitrateTest = true) : i4 = r5.nextAutoLevel), this.level = r5.nextLoadLevel = i4, this.loadedmetadata = false;
               }
               t5 > 0 && -1 === e5 && (this.log("Override startPosition with lastCurrentTime @" + t5.toFixed(3)), e5 = t5), this.state = n2.State.IDLE, this.nextLoadPosition = this.startPosition = this.lastCurrentTime = e5, this.tick();
-            } else
-              this._forceStartLoad = true, this.state = n2.State.STOPPED;
+            } else this._forceStartLoad = true, this.state = n2.State.STOPPED;
           }, T2.stopLoad = function() {
             this._forceStartLoad = false, e4.prototype.stopLoad.call(this);
           }, T2.doTick = function() {
@@ -80281,8 +79804,7 @@ var Clappr = function() {
               case n2.State.WAITING_LEVEL:
                 var e5, t5 = this.levels, r5 = this.level, i4 = null == t5 || null === (e5 = t5[r5]) || void 0 === e5 ? void 0 : e5.details;
                 if (i4 && (!i4.live || this.levelLastLoaded === this.level)) {
-                  if (this.waitForCdnTuneIn(i4))
-                    break;
+                  if (this.waitForCdnTuneIn(i4)) break;
                   this.state = n2.State.IDLE;
                   break;
                 }
@@ -80300,8 +79822,7 @@ var Clappr = function() {
               var f3 = a3[h3];
               this.level = r5.nextLoadLevel = h3;
               var p3 = f3.details;
-              if (!p3 || this.state === n2.State.WAITING_LEVEL || p3.live && this.levelLastLoaded !== h3)
-                this.state = n2.State.WAITING_LEVEL;
+              if (!p3 || this.state === n2.State.WAITING_LEVEL || p3.live && this.levelLastLoaded !== h3) this.state = n2.State.WAITING_LEVEL;
               else {
                 var g3 = this.getMainFwdBufferInfo();
                 if (null !== g3 && !(g3.len >= this.getMaxBufferLength(f3.maxBitrate))) {
@@ -80314,8 +79835,7 @@ var Clappr = function() {
                   if (this.couldBacktrack && !this.fragPrevious && y3 && "initSegment" !== y3.sn && this.fragmentTracker.getState(y3) !== l2.FragmentState.OK) {
                     var A3, E3 = (null != (A3 = this.backtrackFragment) ? A3 : y3).sn - p3.startSN, T3 = p3.fragments[E3 - 1];
                     T3 && y3.cc === T3.cc && (y3 = T3, this.fragmentTracker.removeFragment(T3));
-                  } else
-                    this.backtrackFragment && g3.len && (this.backtrackFragment = null);
+                  } else this.backtrackFragment && g3.len && (this.backtrackFragment = null);
                   if (y3 && this.fragmentTracker.getState(y3) === l2.FragmentState.OK && this.nextLoadPosition > m4) {
                     var b2 = this.audioOnly && !this.altAudio ? c2.ElementaryStreamTypes.AUDIO : c2.ElementaryStreamTypes.VIDEO;
                     o3 && this.afterBufferFlushed(o3, b2, u2.PlaylistLevelType.MAIN), y3 = this.getNextFragment(this.nextLoadPosition, p3);
@@ -80343,8 +79863,7 @@ var Clappr = function() {
               if (i4 && i4.start > 1 && this.flushMainBuffer(0, i4.start - 1), !t5.paused && e5) {
                 var n3 = e5[this.hls.nextLoadLevel], a3 = this.fragLastKbps;
                 r5 = a3 && this.fragCurrent ? this.fragCurrent.duration * n3.maxBitrate / (1e3 * a3) + 1 : 0;
-              } else
-                r5 = 0;
+              } else r5 = 0;
               var s3 = this.getBufferedFrag(t5.currentTime + r5);
               if (s3) {
                 var o3 = this.followingBufferedFrag(s3);
@@ -80401,18 +79920,15 @@ var Clappr = function() {
               !u3 || this.state !== n2.State.FRAG_LOADING && this.state !== n2.State.FRAG_LOADING_WAITING_RETRY || u3.level !== t5.level && u3.loader && (this.state = n2.State.IDLE, this.backtrackFragment = null, u3.loader.abort());
               var c3 = i4[a3], d3 = 0;
               if (o3.live || null !== (r5 = c3.details) && void 0 !== r5 && r5.live) {
-                if (o3.fragments[0] || (o3.deltaUpdateFailed = true), o3.deltaUpdateFailed)
-                  return;
+                if (o3.fragments[0] || (o3.deltaUpdateFailed = true), o3.deltaUpdateFailed) return;
                 d3 = this.alignPlaylists(o3, c3.details);
               }
               if (c3.details = o3, this.levelLastLoaded = a3, this.hls.trigger(s2.Events.LEVEL_UPDATED, { details: o3, level: a3 }), this.state === n2.State.WAITING_LEVEL) {
-                if (this.waitForCdnTuneIn(o3))
-                  return;
+                if (this.waitForCdnTuneIn(o3)) return;
                 this.state = n2.State.IDLE;
               }
               this.startFragRequested ? o3.live && this.synchronizeToLiveEdge(o3) : this.setStartPosition(o3, d3), this.tick();
-            } else
-              this.warn("Levels were reset while loading level " + a3);
+            } else this.warn("Levels were reset while loading level " + a3);
           }, T2._handleFragmentLoadProgress = function(e5) {
             var t5, r5 = e5.frag, i4 = e5.part, n3 = e5.payload, a3 = this.levels;
             if (a3) {
@@ -80420,10 +79936,8 @@ var Clappr = function() {
               if (o3) {
                 var l3 = s3.videoCodec, c3 = o3.PTSKnown || !o3.live, f3 = null === (t5 = r5.initSegment) || void 0 === t5 ? void 0 : t5.data, p3 = this._getAudioCodec(s3), g3 = this.transmuxer = this.transmuxer || new d2.default(this.hls, u2.PlaylistLevelType.MAIN, this._handleTransmuxComplete.bind(this), this._handleTransmuxerFlush.bind(this)), v3 = i4 ? i4.index : -1, m4 = -1 !== v3, y3 = new h2.ChunkMetadata(r5.level, r5.sn, r5.stats.chunkCount, n3.byteLength, v3, m4), A3 = this.initPTS[r5.cc];
                 g3.push(n3, f3, p3, l3, r5, i4, o3.totalduration, c3, y3, A3);
-              } else
-                this.warn("Dropping fragment " + r5.sn + " of level " + r5.level + " after level details were reset");
-            } else
-              this.warn("Levels were reset while fragment load was in progress. Fragment " + r5.sn + " of level " + r5.level + " will not be buffered");
+              } else this.warn("Dropping fragment " + r5.sn + " of level " + r5.level + " after level details were reset");
+            } else this.warn("Levels were reset while fragment load was in progress. Fragment " + r5.sn + " of level " + r5.level + " will not be buffered");
           }, T2.onAudioTrackSwitching = function(e5, t5) {
             var r5 = this.altAudio, i4 = !!t5.url, n3 = t5.id;
             if (!i4) {
@@ -80431,8 +79945,7 @@ var Clappr = function() {
                 this.log("Switching on main audio, use media.buffered to schedule main fragment loading"), this.mediaBuffer = this.media;
                 var a3 = this.fragCurrent;
                 null != a3 && a3.loader && (this.log("Switching to main audio track, cancel main fragment load"), a3.loader.abort()), this.resetTransmuxer(), this.resetLoadingState();
-              } else
-                this.audioOnly && this.resetTransmuxer();
+              } else this.audioOnly && this.resetTransmuxer();
               var o3 = this.hls;
               r5 && o3.trigger(s2.Events.BUFFER_FLUSHING, { startOffset: 0, endOffset: Number.POSITIVE_INFINITY, type: "audio" }), o3.trigger(s2.Events.AUDIO_TRACK_SWITCHED, { id: n3 });
             }
@@ -80452,15 +79965,13 @@ var Clappr = function() {
                   var l3 = n3[s3];
                   l3 && (this.videoBuffer = l3.buffer);
                 }
-              } else
-                a3 = true;
+              } else a3 = true;
             }
             a3 && r5 ? (this.log("Alternate track found, use " + i4 + ".buffered to schedule main fragment loading"), this.mediaBuffer = r5.buffer) : this.mediaBuffer = this.media;
           }, T2.onFragBuffered = function(e5, t5) {
             var r5 = t5.frag, i4 = t5.part;
             if (!r5 || r5.type === u2.PlaylistLevelType.MAIN) {
-              if (this.fragContextChanged(r5))
-                return this.warn("Fragment " + r5.sn + (i4 ? " p: " + i4.index : "") + " of level " + r5.level + " finished buffering, but was aborted. state: " + this.state), void (this.state === n2.State.PARSED && (this.state = n2.State.IDLE));
+              if (this.fragContextChanged(r5)) return this.warn("Fragment " + r5.sn + (i4 ? " p: " + i4.index : "") + " of level " + r5.level + " finished buffering, but was aborted. state: " + this.state), void (this.state === n2.State.PARSED && (this.state = n2.State.IDLE));
               var a3 = i4 ? i4.stats : r5.stats;
               this.fragLastKbps = Math.round(8 * a3.total / (a3.buffering.end - a3.loading.first)), "initSegment" !== r5.sn && (this.fragPrevious = r5), this.fragBufferedComplete(r5, i4);
             }
@@ -80508,8 +80019,7 @@ var Clappr = function() {
             if (e5) {
               var t5 = e5.currentTime, r5 = this.startPosition;
               if (r5 >= 0 && t5 < r5) {
-                if (e5.seeking)
-                  return void this.log("could not seek to " + r5 + ", already seeking at " + t5);
+                if (e5.seeking) return void this.log("could not seek to " + r5 + ", already seeking at " + t5);
                 var i4 = o2.BufferHelper.getBuffered(e5), n3 = (i4.length ? i4.start(0) : 0) - r5;
                 n3 > 0 && (n3 < this.config.maxBufferHole || n3 < this.config.maxFragLookUpTolerance) && (this.log("adjusting start position by " + n3 + " to match buffer start"), r5 += n3, this.startPosition = r5), this.log("seek to target start position " + r5 + " from current time " + t5), e5.currentTime = r5;
               }
@@ -80529,8 +80039,7 @@ var Clappr = function() {
             });
           }, T2._handleTransmuxComplete = function(e5) {
             var t5, r5 = "main", a3 = this.hls, o3 = e5.remuxResult, l3 = e5.chunkMeta, u3 = this.getCurrentContext(l3);
-            if (!u3)
-              return this.warn("The loading context changed while buffering fragment " + l3.sn + " of level " + l3.level + ". This chunk will not be buffered."), void this.resetStartWhenNotLoaded(l3.level);
+            if (!u3) return this.warn("The loading context changed while buffering fragment " + l3.sn + " of level " + l3.level + ". This chunk will not be buffered."), void this.resetStartWhenNotLoaded(l3.level);
             var d3 = u3.frag, h3 = u3.part, f3 = u3.level, p3 = o3.video, g3 = o3.text, v3 = o3.id3, m4 = o3.initSegment, y3 = f3.details, A3 = this.altAudio ? void 0 : o3.audio;
             if (!this.fragContextChanged(d3)) {
               if (this.state = n2.State.PARSING, m4) {
@@ -80541,18 +80050,15 @@ var Clappr = function() {
               if (p3 && false !== o3.independent) {
                 if (y3) {
                   var b2 = p3.startPTS, k2 = p3.endPTS, S2 = p3.startDTS, _2 = p3.endDTS;
-                  if (h3)
-                    h3.elementaryStreams[p3.type] = { startPTS: b2, endPTS: k2, startDTS: S2, endDTS: _2 };
+                  if (h3) h3.elementaryStreams[p3.type] = { startPTS: b2, endPTS: k2, startDTS: S2, endDTS: _2 };
                   else if (p3.firstKeyFrame && p3.independent && (this.couldBacktrack = true), p3.dropped && p3.independent) {
                     var C2 = this.getMainFwdBufferInfo();
-                    if ((C2 ? C2.end : this.getLoadPosition()) + this.config.maxBufferHole < (p3.firstKeyFramePTS ? p3.firstKeyFramePTS : b2) - this.config.maxBufferHole)
-                      return void this.backtrack(d3);
+                    if ((C2 ? C2.end : this.getLoadPosition()) + this.config.maxBufferHole < (p3.firstKeyFramePTS ? p3.firstKeyFramePTS : b2) - this.config.maxBufferHole) return void this.backtrack(d3);
                     d3.setElementaryStreamInfo(p3.type, d3.start, k2, d3.start, _2, true);
                   }
                   d3.setElementaryStreamInfo(p3.type, b2, k2, S2, _2), this.backtrackFragment && (this.backtrackFragment = d3), this.bufferFragmentData(p3, d3, h3, l3);
                 }
-              } else if (false === o3.independent)
-                return void this.backtrack(d3);
+              } else if (false === o3.independent) return void this.backtrack(d3);
               if (A3) {
                 var L2 = A3.startPTS, D2 = A3.endPTS, R2 = A3.startDTS, I2 = A3.endDTS;
                 h3 && (h3.elementaryStreams[c2.ElementaryStreamTypes.AUDIO] = { startPTS: L2, endPTS: D2, startDTS: R2, endDTS: I2 }), d3.setElementaryStreamInfo(c2.ElementaryStreamTypes.AUDIO, L2, D2, R2, I2), this.bufferFragmentData(A3, d3, h3, l3);
@@ -80693,11 +80199,10 @@ var Clappr = function() {
             if (this.fragPrevious = r5, this.state = u2.State.IDLE, i4) {
               var n3 = this.tracksBuffered[this.currentTrackId];
               if (n3) {
-                for (var a3, s3 = r5.start, o3 = 0; o3 < n3.length; o3++)
-                  if (s3 >= n3[o3].start && s3 <= n3[o3].end) {
-                    a3 = n3[o3];
-                    break;
-                  }
+                for (var a3, s3 = r5.start, o3 = 0; o3 < n3.length; o3++) if (s3 >= n3[o3].start && s3 <= n3[o3].end) {
+                  a3 = n3[o3];
+                  break;
+                }
                 var l3 = r5.start + r5.duration;
                 a3 ? a3.end = l3 : (a3 = { start: s3, end: l3 }, n3.push(a3)), this.fragmentTracker.fragBuffered(r5);
               }
@@ -80706,20 +80211,15 @@ var Clappr = function() {
             var r5 = t5.startOffset, i4 = t5.endOffset;
             if (0 === r5 && i4 !== Number.POSITIVE_INFINITY) {
               var n3 = this.currentTrackId, a3 = this.levels;
-              if (!a3.length || !a3[n3] || !a3[n3].details)
-                return;
+              if (!a3.length || !a3[n3] || !a3[n3].details) return;
               var s3 = i4 - a3[n3].details.targetduration;
-              if (s3 <= 0)
-                return;
+              if (s3 <= 0) return;
               t5.endOffsetSubtitles = Math.max(0, s3), this.tracksBuffered.forEach(function(e6) {
-                for (var t6 = 0; t6 < e6.length; )
-                  if (e6[t6].end <= s3)
-                    e6.shift();
-                  else {
-                    if (!(e6[t6].start < s3))
-                      break;
-                    e6[t6].start = s3, t6++;
-                  }
+                for (var t6 = 0; t6 < e6.length; ) if (e6[t6].end <= s3) e6.shift();
+                else {
+                  if (!(e6[t6].start < s3)) break;
+                  e6[t6].start = s3, t6++;
+                }
               }), this.fragmentTracker.removeFragmentsInRange(r5, s3, c2.PlaylistLevelType.SUBTITLE);
             }
           }, A2.onFragBuffered = function(e5, t5) {
@@ -80739,8 +80239,7 @@ var Clappr = function() {
             if (this.currentTrackId = t5.id, this.levels.length && -1 !== this.currentTrackId) {
               var r5 = this.levels[this.currentTrackId];
               null != r5 && r5.details ? this.mediaBuffer = this.mediaBufferTimeRanges : this.mediaBuffer = null, r5 && this.setInterval(500);
-            } else
-              this.clearInterval();
+            } else this.clearInterval();
           }, A2.onSubtitleTrackLoaded = function(e5, t5) {
             var r5, i4 = t5.details, n3 = t5.id, l3 = this.currentTrackId, c3 = this.levels;
             if (c3.length) {
@@ -80750,8 +80249,7 @@ var Clappr = function() {
                 var h3 = 0;
                 if (i4.live || null !== (r5 = d3.details) && void 0 !== r5 && r5.live) {
                   var f3 = this.mainDetails;
-                  if (i4.deltaUpdateFailed || !f3)
-                    return;
+                  if (i4.deltaUpdateFailed || !f3) return;
                   var p4 = f3.fragments[0];
                   d3.details ? 0 === (h3 = this.alignPlaylists(i4, d3.details)) && p4 && (h3 = p4.start, (0, o2.addSliding)(i4, h3)) : i4.hasProgramDateTime && f3.hasProgramDateTime ? ((0, s2.alignMediaPlaylistByPDT)(i4, f3), h3 = i4.fragments[0].start) : p4 && (h3 = p4.start, (0, o2.addSliding)(i4, h3));
                 }
@@ -80771,26 +80269,20 @@ var Clappr = function() {
             if (this.media) {
               if (this.state === u2.State.IDLE) {
                 var e5 = this.currentTrackId, t5 = this.levels;
-                if (!t5.length || !t5[e5] || !t5[e5].details)
-                  return;
+                if (!t5.length || !t5[e5] || !t5[e5].details) return;
                 var r5 = t5[e5].details, i4 = r5.targetduration, s3 = this.config, o3 = this.getLoadPosition(), d3 = n2.BufferHelper.bufferedInfo(this.tracksBuffered[this.currentTrackId] || [], o3 - i4, s3.maxBufferHole), h3 = d3.end, f3 = d3.len, p4 = this.getFwdBufferInfo(this.media, c2.PlaylistLevelType.MAIN);
-                if (f3 > this.getMaxBufferLength(null == p4 ? void 0 : p4.len) + i4)
-                  return;
+                if (f3 > this.getMaxBufferLength(null == p4 ? void 0 : p4.len) + i4) return;
                 console.assert(r5, "Subtitle track details are defined on idle subtitle stream controller tick");
                 var g3, v3 = r5.fragments, m3 = v3.length, y3 = r5.edge, A3 = this.fragPrevious;
                 if (h3 < y3) {
                   var E2 = s3.maxFragLookUpTolerance;
                   !(g3 = (0, a2.findFragmentByPTS)(A3, v3, Math.max(v3[0].start, h3), E2)) && A3 && A3.start < v3[0].start && (g3 = v3[0]);
-                } else
-                  g3 = v3[m3 - 1];
-                if (!(g3 = this.mapToInitFragWhenRequired(g3)))
-                  return;
-                if (this.fragmentTracker.getState(g3) !== l2.FragmentState.NOT_LOADED)
-                  return;
+                } else g3 = v3[m3 - 1];
+                if (!(g3 = this.mapToInitFragWhenRequired(g3))) return;
+                if (this.fragmentTracker.getState(g3) !== l2.FragmentState.NOT_LOADED) return;
                 g3.encrypted ? this.loadKey(g3, r5) : this.loadFragment(g3, r5, h3);
               }
-            } else
-              this.state = u2.State.IDLE;
+            } else this.state = u2.State.IDLE;
           }, A2.getMaxBufferLength = function(t5) {
             var r5 = e4.prototype.getMaxBufferLength.call(this);
             return t5 ? Math.max(r5, t5) : r5;
@@ -80802,8 +80294,7 @@ var Clappr = function() {
         }(u2.default), g2 = function(e4) {
           this.buffered = void 0;
           var t4 = function(t5, r4, i4) {
-            if ((r4 >>>= 0) > i4 - 1)
-              throw new DOMException("Failed to execute '" + t5 + "' on 'TimeRanges': The index provided (" + r4 + ") is greater than the maximum bound (" + i4 + ")");
+            if ((r4 >>>= 0) > i4 - 1) throw new DOMException("Failed to execute '" + t5 + "' on 'TimeRanges': The index provided (" + r4 + ") is greater than the maximum bound (" + i4 + ")");
             return e4[r4][t5];
           };
           this.buffered = { get length() {
@@ -80882,8 +80373,7 @@ var Clappr = function() {
             if (a4) {
               var s3 = a4.details;
               a4.details = t5.details, this.log("subtitle track " + r5 + " loaded [" + i4.startSN + "-" + i4.endSN + "]"), r5 === this.trackId && (this.retryCount = 0, this.playlistLoaded(r5, t5, s3));
-            } else
-              this.warn("Invalid subtitle track id " + r5);
+            } else this.warn("Invalid subtitle track id " + r5);
           }, f2.onLevelLoading = function(e5, t5) {
             this.switchLevel(t5.level);
           }, f2.onLevelSwitching = function(e5, t5) {
@@ -80906,8 +80396,7 @@ var Clappr = function() {
           }, f2.findTrackId = function(e5) {
             for (var t5 = this.tracksInGroup, r5 = 0; r5 < t5.length; r5++) {
               var i4 = t5[r5];
-              if ((!this.selectDefaultTrack || i4.default) && (!e5 || e5 === i4.name))
-                return i4.id;
+              if ((!this.selectDefaultTrack || i4.default) && (!e5 || e5 === i4.name)) return i4.id;
             }
             return -1;
           }, f2.onError = function(t5, r5) {
@@ -80916,12 +80405,11 @@ var Clappr = function() {
             var t5 = this.tracksInGroup[this.trackId];
             if (this.shouldLoadTrack(t5)) {
               var r5 = t5.id, n3 = t5.groupId, a4 = t5.url;
-              if (e5)
-                try {
-                  a4 = e5.addDirectives(a4);
-                } catch (e6) {
-                  this.warn("Could not construct new URL with HLS Delivery Directives: " + e6);
-                }
+              if (e5) try {
+                a4 = e5.addDirectives(a4);
+              } catch (e6) {
+                this.warn("Could not construct new URL with HLS Delivery Directives: " + e6);
+              }
               this.log("Loading subtitle playlist for id " + r5), this.hls.trigger(i3.Events.SUBTITLE_TRACK_LOADING, { url: a4, id: r5, groupId: n3, deliveryDirectives: e5 || null });
             }
           }, f2.toggleTrackModes = function(e5) {
@@ -80930,10 +80418,9 @@ var Clappr = function() {
               var n3 = c2(r5.textTracks), a4 = n3.filter(function(e6) {
                 return e6.groupId === t5.groupId;
               });
-              if (-1 === e5)
-                [].slice.call(n3).forEach(function(e6) {
-                  e6.mode = "disabled";
-                });
+              if (-1 === e5) [].slice.call(n3).forEach(function(e6) {
+                e6.mode = "disabled";
+              });
               else {
                 var s3 = a4[i4];
                 s3 && (s3.mode = "disabled");
@@ -80952,20 +80439,16 @@ var Clappr = function() {
                   this.hls.trigger(i3.Events.SUBTITLE_TRACK_SWITCH, { id: s3, groupId: l3, name: u4, type: c3, url: d4 });
                   var h3 = this.switchParams(a4.url, null == t5 ? void 0 : t5.details);
                   this.loadPlaylist(h3);
-                } else
-                  this.hls.trigger(i3.Events.SUBTITLE_TRACK_SWITCH, { id: e5 });
+                } else this.hls.trigger(i3.Events.SUBTITLE_TRACK_SWITCH, { id: e5 });
               }
-            } else
-              this.queuedDefaultTrack = e5;
+            } else this.queuedDefaultTrack = e5;
           }, f2.onTextTracksChanged = function() {
             if (this.useTextTrackPolling || self.clearInterval(this.subtitlePollingInterval), this.media && this.hls.config.renderTextTracksNatively) {
-              for (var e5 = -1, t5 = c2(this.media.textTracks), r5 = 0; r5 < t5.length; r5++)
-                if ("hidden" === t5[r5].mode)
-                  e5 = r5;
-                else if ("showing" === t5[r5].mode) {
-                  e5 = r5;
-                  break;
-                }
+              for (var e5 = -1, t5 = c2(this.media.textTracks), r5 = 0; r5 < t5.length; r5++) if ("hidden" === t5[r5].mode) e5 = r5;
+              else if ("showing" === t5[r5].mode) {
+                e5 = r5;
+                break;
+              }
               this.subtitleTrack !== e5 && (this.subtitleTrack = e5);
             }
           }, u3 = a3, (d3 = [{ key: "subtitleDisplay", get: function() {
@@ -81042,8 +80525,7 @@ var Clappr = function() {
           }, t4.addCues = function(e5, t5, r4, i4, a3) {
             for (var s3, o3, l3, u3, c3 = false, d3 = a3.length; d3--; ) {
               var h3 = a3[d3], f3 = (s3 = h3[0], o3 = h3[1], l3 = t5, u3 = r4, Math.min(o3, u3) - Math.max(s3, l3));
-              if (f3 >= 0 && (h3[0] = Math.min(h3[0], t5), h3[1] = Math.max(h3[1], r4), c3 = true, f3 / (r4 - t5) > 0.5))
-                return;
+              if (f3 >= 0 && (h3[0] = Math.min(h3[0], t5), h3[1] = Math.max(h3[1], r4), c3 = true, f3 / (r4 - t5) > 0.5)) return;
             }
             if (c3 || a3.push([t5, r4]), this.config.renderTextTracksNatively) {
               var p3 = this.captionsTracks[e5];
@@ -81059,20 +80541,17 @@ var Clappr = function() {
             }));
           }, t4.getExistingTrack = function(e5) {
             var t5 = this.media;
-            if (t5)
-              for (var r4 = 0; r4 < t5.textTracks.length; r4++) {
-                var i4 = t5.textTracks[r4];
-                if (i4[e5])
-                  return i4;
-              }
+            if (t5) for (var r4 = 0; r4 < t5.textTracks.length; r4++) {
+              var i4 = t5.textTracks[r4];
+              if (i4[e5]) return i4;
+            }
             return null;
           }, t4.createCaptionsTrack = function(e5) {
             this.config.renderTextTracksNatively ? this.createNativeTrack(e5) : this.createNonNativeTrack(e5);
           }, t4.createNativeTrack = function(e5) {
             if (!this.captionsTracks[e5]) {
               var t5 = this.captionsProperties, r4 = this.captionsTracks, i4 = this.media, n3 = t5[e5], a3 = n3.label, s3 = n3.languageCode, o3 = this.getExistingTrack(e5);
-              if (o3)
-                r4[e5] = o3, (0, l2.clearCurrentCues)(r4[e5]), (0, l2.sendAddTrackEvent)(r4[e5], i4);
+              if (o3) r4[e5] = o3, (0, l2.clearCurrentCues)(r4[e5]), (0, l2.sendAddTrackEvent)(r4[e5], i4);
               else {
                 var u3 = this.createTextTrack("captions", a3, s3);
                 u3 && (u3[e5] = true, r4[e5] = u3);
@@ -81088,8 +80567,7 @@ var Clappr = function() {
             }
           }, t4.createTextTrack = function(e5, t5, r4) {
             var i4 = this.media;
-            if (i4)
-              return i4.addTextTrack(e5, t5, r4);
+            if (i4) return i4.addTextTrack(e5, t5, r4);
           }, t4.onMediaAttaching = function(e5, t5) {
             this.media = t5.media, this._cleanTracks();
           }, t4.onMediaDetaching = function() {
@@ -81103,9 +80581,7 @@ var Clappr = function() {
             var e5 = this.media;
             if (e5) {
               var t5 = e5.textTracks;
-              if (t5)
-                for (var r4 = 0; r4 < t5.length; r4++)
-                  (0, l2.clearCurrentCues)(t5[r4]);
+              if (t5) for (var r4 = 0; r4 < t5.length; r4++) (0, l2.clearCurrentCues)(t5[r4]);
             }
           }, t4.onSubtitleTracksUpdated = function(e5, t5) {
             var r4 = this;
@@ -81120,15 +80596,13 @@ var Clappr = function() {
                 this.tracks.forEach(function(e6, t6) {
                   var i5;
                   if (t6 < o3.length) {
-                    for (var n3 = null, a4 = 0; a4 < o3.length; a4++)
-                      if (p2(o3[a4], e6)) {
-                        n3 = o3[a4];
-                        break;
-                      }
+                    for (var n3 = null, a4 = 0; a4 < o3.length; a4++) if (p2(o3[a4], e6)) {
+                      n3 = o3[a4];
+                      break;
+                    }
                     n3 && (i5 = n3);
                   }
-                  if (i5)
-                    (0, l2.clearCurrentCues)(i5);
+                  if (i5) (0, l2.clearCurrentCues)(i5);
                   else {
                     var s4 = r4._captionsOrSubtitlesFromCharacteristics(e6);
                     (i5 = r4.createTextTrack(s4, e6.name, e6.lang)) && (i5.mode = "disabled");
@@ -81146,8 +80620,7 @@ var Clappr = function() {
             var t5;
             if (null !== (t5 = e5.attrs) && void 0 !== t5 && t5.CHARACTERISTICS) {
               var r4 = /transcribes-spoken-dialog/gi.test(e5.attrs.CHARACTERISTICS), i4 = /describes-music-and-sound/gi.test(e5.attrs.CHARACTERISTICS);
-              if (r4 && i4)
-                return "captions";
+              if (r4 && i4) return "captions";
             }
             return "subtitles";
           }, t4.onManifestLoaded = function(e5, t5) {
@@ -81170,17 +80643,14 @@ var Clappr = function() {
             }
           }, t4.onFragLoaded = function(e5, t5) {
             var r4 = t5.frag, a3 = t5.payload, s3 = this.initPTS, o3 = this.unparsedVttFrags;
-            if (r4.type === d2.PlaylistLevelType.SUBTITLE)
-              if (a3.byteLength) {
-                if (!(0, i3.isFiniteNumber)(s3[r4.cc]))
-                  return o3.push(t5), void (s3.length && this.hls.trigger(n2.Events.SUBTITLE_FRAG_PROCESSED, { success: false, frag: r4, error: new Error("Missing initial subtitle PTS") }));
-                var l3 = r4.decryptdata, c3 = "stats" in t5;
-                if (null == l3 || null == l3.key || "AES-128" !== l3.method || c3) {
-                  var h3 = this.tracks[r4.level], f3 = this.vttCCs;
-                  f3[r4.cc] || (f3[r4.cc] = { start: r4.start, prevCC: this.prevCC, new: true }, this.prevCC = r4.cc), h3 && h3.textCodec === u2.IMSC1_CODEC ? this._parseIMSC1(r4, a3) : this._parseVTTs(r4, a3, f3);
-                }
-              } else
-                this.hls.trigger(n2.Events.SUBTITLE_FRAG_PROCESSED, { success: false, frag: r4, error: new Error("Empty subtitle payload") });
+            if (r4.type === d2.PlaylistLevelType.SUBTITLE) if (a3.byteLength) {
+              if (!(0, i3.isFiniteNumber)(s3[r4.cc])) return o3.push(t5), void (s3.length && this.hls.trigger(n2.Events.SUBTITLE_FRAG_PROCESSED, { success: false, frag: r4, error: new Error("Missing initial subtitle PTS") }));
+              var l3 = r4.decryptdata, c3 = "stats" in t5;
+              if (null == l3 || null == l3.key || "AES-128" !== l3.method || c3) {
+                var h3 = this.tracks[r4.level], f3 = this.vttCCs;
+                f3[r4.cc] || (f3[r4.cc] = { start: r4.start, prevCC: this.prevCC, new: true }, this.prevCC = r4.cc), h3 && h3.textCodec === u2.IMSC1_CODEC ? this._parseIMSC1(r4, a3) : this._parseVTTs(r4, a3, f3);
+              }
+            } else this.hls.trigger(n2.Events.SUBTITLE_FRAG_PROCESSED, { success: false, frag: r4, error: new Error("Empty subtitle payload") });
           }, t4._parseIMSC1 = function(e5, t5) {
             var r4 = this, i4 = this.hls;
             (0, u2.parseIMSC1)(t5, this.initPTS[e5.cc], this.timescale[e5.cc], function(t6) {
@@ -81206,23 +80676,20 @@ var Clappr = function() {
             var r4 = this.hls;
             if (this.config.renderTextTracksNatively) {
               var i4 = this.textTracks[t5];
-              if (!i4 || "disabled" === i4.mode)
-                return;
+              if (!i4 || "disabled" === i4.mode) return;
               e5.forEach(function(e6) {
                 return (0, l2.addCueToTrack)(i4, e6);
               });
             } else {
               var a3 = this.tracks[t5];
-              if (!a3)
-                return;
+              if (!a3) return;
               var s3 = a3.default ? "default" : "subtitles" + t5;
               r4.trigger(n2.Events.CUES_PARSED, { type: "subtitles", cues: e5, track: s3 });
             }
           }, t4.onFragDecrypted = function(e5, t5) {
             var r4 = t5.frag;
             if (r4.type === d2.PlaylistLevelType.SUBTITLE) {
-              if (!(0, i3.isFiniteNumber)(this.initPTS[r4.cc]))
-                return void this.unparsedVttFrags.push(t5);
+              if (!(0, i3.isFiniteNumber)(this.initPTS[r4.cc])) return void this.unparsedVttFrags.push(t5);
               this.onFragLoaded(n2.Events.FRAG_LOADED, t5);
             }
           }, t4.onSubtitleTracksCleared = function() {
@@ -81231,14 +80698,13 @@ var Clappr = function() {
             var r4 = this.cea608Parser1, i4 = this.cea608Parser2;
             if (this.enabled && r4 && i4) {
               var n3 = t5.frag, a3 = t5.samples;
-              if (n3.type !== d2.PlaylistLevelType.MAIN || "NONE" !== this.closedCaptionsForLevel(n3))
-                for (var s3 = 0; s3 < a3.length; s3++) {
-                  var o3 = a3[s3].bytes;
-                  if (o3) {
-                    var l3 = this.extractCea608Data(o3);
-                    r4.addData(a3[s3].pts, l3[0]), i4.addData(a3[s3].pts, l3[1]);
-                  }
+              if (n3.type !== d2.PlaylistLevelType.MAIN || "NONE" !== this.closedCaptionsForLevel(n3)) for (var s3 = 0; s3 < a3.length; s3++) {
+                var o3 = a3[s3].bytes;
+                if (o3) {
+                  var l3 = this.extractCea608Data(o3);
+                  r4.addData(a3[s3].pts, l3[0]), i4.addData(a3[s3].pts, l3[1]);
                 }
+              }
             }
           }, t4.onBufferFlushing = function(e5, t5) {
             var r4 = t5.startOffset, i4 = t5.endOffset, n3 = t5.endOffsetSubtitles, a3 = t5.type, s3 = this.media;
@@ -81306,13 +80772,11 @@ var Clappr = function() {
           }
           var t4 = e4.prototype;
           return t4.uint8ArrayToUint32Array_ = function(e5) {
-            for (var t5 = new DataView(e5), r4 = new Uint32Array(4), i4 = 0; i4 < 4; i4++)
-              r4[i4] = t5.getUint32(4 * i4);
+            for (var t5 = new DataView(e5), r4 = new Uint32Array(4), i4 = 0; i4 < 4; i4++) r4[i4] = t5.getUint32(4 * i4);
             return r4;
           }, t4.initTable = function() {
             var e5 = this.sBox, t5 = this.invSBox, r4 = this.subMix, i4 = r4[0], n3 = r4[1], a3 = r4[2], s2 = r4[3], o2 = this.invSubMix, l2 = o2[0], u2 = o2[1], c2 = o2[2], d2 = o2[3], h2 = new Uint32Array(256), f2 = 0, p2 = 0, g2 = 0;
-            for (g2 = 0; g2 < 256; g2++)
-              h2[g2] = g2 < 128 ? g2 << 1 : g2 << 1 ^ 283;
+            for (g2 = 0; g2 < 256; g2++) h2[g2] = g2 < 128 ? g2 << 1 : g2 << 1 ^ 283;
             for (g2 = 0; g2 < 256; g2++) {
               var v2 = p2 ^ p2 << 1 ^ p2 << 2 ^ p2 << 3 ^ p2 << 4;
               v2 = v2 >>> 8 ^ 255 & v2 ^ 99, e5[f2] = v2, t5[v2] = f2;
@@ -81320,25 +80784,20 @@ var Clappr = function() {
               i4[f2] = E2 << 24 | E2 >>> 8, n3[f2] = E2 << 16 | E2 >>> 16, a3[f2] = E2 << 8 | E2 >>> 24, s2[f2] = E2, E2 = 16843009 * A2 ^ 65537 * y2 ^ 257 * m2 ^ 16843008 * f2, l2[v2] = E2 << 24 | E2 >>> 8, u2[v2] = E2 << 16 | E2 >>> 16, c2[v2] = E2 << 8 | E2 >>> 24, d2[v2] = E2, f2 ? (f2 = m2 ^ h2[h2[h2[A2 ^ m2]]], p2 ^= h2[h2[p2]]) : f2 = p2 = 1;
             }
           }, t4.expandKey = function(e5) {
-            for (var t5 = this.uint8ArrayToUint32Array_(e5), r4 = true, i4 = 0; i4 < t5.length && r4; )
-              r4 = t5[i4] === this.key[i4], i4++;
+            for (var t5 = this.uint8ArrayToUint32Array_(e5), r4 = true, i4 = 0; i4 < t5.length && r4; ) r4 = t5[i4] === this.key[i4], i4++;
             if (!r4) {
               this.key = t5;
               var n3 = this.keySize = t5.length;
-              if (4 !== n3 && 6 !== n3 && 8 !== n3)
-                throw new Error("Invalid aes key size=" + n3);
+              if (4 !== n3 && 6 !== n3 && 8 !== n3) throw new Error("Invalid aes key size=" + n3);
               var a3, s2, o2, l2, u2 = this.ksRows = 4 * (n3 + 6 + 1), c2 = this.keySchedule = new Uint32Array(u2), d2 = this.invKeySchedule = new Uint32Array(u2), h2 = this.sBox, f2 = this.rcon, p2 = this.invSubMix, g2 = p2[0], v2 = p2[1], m2 = p2[2], y2 = p2[3];
-              for (a3 = 0; a3 < u2; a3++)
-                a3 < n3 ? o2 = c2[a3] = t5[a3] : (l2 = o2, a3 % n3 == 0 ? (l2 = h2[(l2 = l2 << 8 | l2 >>> 24) >>> 24] << 24 | h2[l2 >>> 16 & 255] << 16 | h2[l2 >>> 8 & 255] << 8 | h2[255 & l2], l2 ^= f2[a3 / n3 | 0] << 24) : n3 > 6 && a3 % n3 == 4 && (l2 = h2[l2 >>> 24] << 24 | h2[l2 >>> 16 & 255] << 16 | h2[l2 >>> 8 & 255] << 8 | h2[255 & l2]), c2[a3] = o2 = (c2[a3 - n3] ^ l2) >>> 0);
-              for (s2 = 0; s2 < u2; s2++)
-                a3 = u2 - s2, l2 = 3 & s2 ? c2[a3] : c2[a3 - 4], d2[s2] = s2 < 4 || a3 <= 4 ? l2 : g2[h2[l2 >>> 24]] ^ v2[h2[l2 >>> 16 & 255]] ^ m2[h2[l2 >>> 8 & 255]] ^ y2[h2[255 & l2]], d2[s2] = d2[s2] >>> 0;
+              for (a3 = 0; a3 < u2; a3++) a3 < n3 ? o2 = c2[a3] = t5[a3] : (l2 = o2, a3 % n3 == 0 ? (l2 = h2[(l2 = l2 << 8 | l2 >>> 24) >>> 24] << 24 | h2[l2 >>> 16 & 255] << 16 | h2[l2 >>> 8 & 255] << 8 | h2[255 & l2], l2 ^= f2[a3 / n3 | 0] << 24) : n3 > 6 && a3 % n3 == 4 && (l2 = h2[l2 >>> 24] << 24 | h2[l2 >>> 16 & 255] << 16 | h2[l2 >>> 8 & 255] << 8 | h2[255 & l2]), c2[a3] = o2 = (c2[a3 - n3] ^ l2) >>> 0);
+              for (s2 = 0; s2 < u2; s2++) a3 = u2 - s2, l2 = 3 & s2 ? c2[a3] : c2[a3 - 4], d2[s2] = s2 < 4 || a3 <= 4 ? l2 : g2[h2[l2 >>> 24]] ^ v2[h2[l2 >>> 16 & 255]] ^ m2[h2[l2 >>> 8 & 255]] ^ y2[h2[255 & l2]], d2[s2] = d2[s2] >>> 0;
             }
           }, t4.networkToHostOrderSwap = function(e5) {
             return e5 << 24 | (65280 & e5) << 8 | (16711680 & e5) >> 8 | e5 >>> 24;
           }, t4.decrypt = function(e5, t5, r4) {
             for (var i4, n3, a3, s2, o2, l2, u2, c2, d2, h2, f2, p2, g2, v2, m2 = this.keySize + 6, y2 = this.invKeySchedule, A2 = this.invSBox, E2 = this.invSubMix, T2 = E2[0], b2 = E2[1], k2 = E2[2], S2 = E2[3], _2 = this.uint8ArrayToUint32Array_(r4), C2 = _2[0], L2 = _2[1], D2 = _2[2], R2 = _2[3], I2 = new Int32Array(e5), O2 = new Int32Array(I2.length), w2 = this.networkToHostOrderSwap; t5 < I2.length; ) {
-              for (d2 = w2(I2[t5]), h2 = w2(I2[t5 + 1]), f2 = w2(I2[t5 + 2]), p2 = w2(I2[t5 + 3]), o2 = d2 ^ y2[0], l2 = p2 ^ y2[1], u2 = f2 ^ y2[2], c2 = h2 ^ y2[3], g2 = 4, v2 = 1; v2 < m2; v2++)
-                i4 = T2[o2 >>> 24] ^ b2[l2 >> 16 & 255] ^ k2[u2 >> 8 & 255] ^ S2[255 & c2] ^ y2[g2], n3 = T2[l2 >>> 24] ^ b2[u2 >> 16 & 255] ^ k2[c2 >> 8 & 255] ^ S2[255 & o2] ^ y2[g2 + 1], a3 = T2[u2 >>> 24] ^ b2[c2 >> 16 & 255] ^ k2[o2 >> 8 & 255] ^ S2[255 & l2] ^ y2[g2 + 2], s2 = T2[c2 >>> 24] ^ b2[o2 >> 16 & 255] ^ k2[l2 >> 8 & 255] ^ S2[255 & u2] ^ y2[g2 + 3], o2 = i4, l2 = n3, u2 = a3, c2 = s2, g2 += 4;
+              for (d2 = w2(I2[t5]), h2 = w2(I2[t5 + 1]), f2 = w2(I2[t5 + 2]), p2 = w2(I2[t5 + 3]), o2 = d2 ^ y2[0], l2 = p2 ^ y2[1], u2 = f2 ^ y2[2], c2 = h2 ^ y2[3], g2 = 4, v2 = 1; v2 < m2; v2++) i4 = T2[o2 >>> 24] ^ b2[l2 >> 16 & 255] ^ k2[u2 >> 8 & 255] ^ S2[255 & c2] ^ y2[g2], n3 = T2[l2 >>> 24] ^ b2[u2 >> 16 & 255] ^ k2[c2 >> 8 & 255] ^ S2[255 & o2] ^ y2[g2 + 1], a3 = T2[u2 >>> 24] ^ b2[c2 >> 16 & 255] ^ k2[o2 >> 8 & 255] ^ S2[255 & l2] ^ y2[g2 + 2], s2 = T2[c2 >>> 24] ^ b2[o2 >> 16 & 255] ^ k2[l2 >> 8 & 255] ^ S2[255 & u2] ^ y2[g2 + 3], o2 = i4, l2 = n3, u2 = a3, c2 = s2, g2 += 4;
               i4 = A2[o2 >>> 24] << 24 ^ A2[l2 >> 16 & 255] << 16 ^ A2[u2 >> 8 & 255] << 8 ^ A2[255 & c2] ^ y2[g2], n3 = A2[l2 >>> 24] << 24 ^ A2[u2 >> 16 & 255] << 16 ^ A2[c2 >> 8 & 255] << 8 ^ A2[255 & o2] ^ y2[g2 + 1], a3 = A2[u2 >>> 24] << 24 ^ A2[c2 >> 16 & 255] << 16 ^ A2[o2 >> 8 & 255] << 8 ^ A2[255 & l2] ^ y2[g2 + 2], s2 = A2[c2 >>> 24] << 24 ^ A2[o2 >> 16 & 255] << 16 ^ A2[l2 >> 8 & 255] << 8 ^ A2[255 & u2] ^ y2[g2 + 3], O2[t5] = w2(i4 ^ C2), O2[t5 + 1] = w2(s2 ^ L2), O2[t5 + 2] = w2(a3 ^ D2), O2[t5 + 3] = w2(n3 ^ R2), C2 = d2, L2 = h2, D2 = f2, R2 = p2, t5 += 4;
             }
             return O2.buffer;
@@ -81372,12 +80831,11 @@ var Clappr = function() {
         ), u2 = function() {
           function e4(e5, t5, r4) {
             var i4 = (void 0 === r4 ? {} : r4).removePKCS7Padding, n3 = void 0 === i4 || i4;
-            if (this.logEnabled = true, this.observer = void 0, this.config = void 0, this.removePKCS7Padding = void 0, this.subtle = null, this.softwareDecrypter = null, this.key = null, this.fastAesKey = null, this.remainderData = null, this.currentIV = null, this.currentResult = null, this.observer = e5, this.config = t5, this.removePKCS7Padding = n3, n3)
-              try {
-                var a3 = self.crypto;
-                a3 && (this.subtle = a3.subtle || a3.webkitSubtle);
-              } catch (e6) {
-              }
+            if (this.logEnabled = true, this.observer = void 0, this.config = void 0, this.removePKCS7Padding = void 0, this.subtle = null, this.softwareDecrypter = null, this.key = null, this.fastAesKey = null, this.remainderData = null, this.currentIV = null, this.currentResult = null, this.observer = e5, this.config = t5, this.removePKCS7Padding = n3, n3) try {
+              var a3 = self.crypto;
+              a3 && (this.subtle = a3.subtle || a3.webkitSubtle);
+            } catch (e6) {
+            }
             null === this.subtle && (this.config.enableSoftwareAES = true);
           }
           var t4 = e4.prototype;
@@ -81399,14 +80857,12 @@ var Clappr = function() {
               this.softwareDecrypt(new Uint8Array(e5), t5, r4);
               var n3 = this.flush();
               n3 && i4(n3.buffer);
-            } else
-              this.webCryptoDecrypt(new Uint8Array(e5), t5, r4).then(i4);
+            } else this.webCryptoDecrypt(new Uint8Array(e5), t5, r4).then(i4);
           }, t4.softwareDecrypt = function(e5, t5, r4) {
             var i4 = this.currentIV, n3 = this.currentResult, s3 = this.remainderData;
             this.logOnce("JS AES decrypt"), s3 && (e5 = (0, o2.appendUint8Array)(s3, e5), this.remainderData = null);
             var u3 = this.getValidChunk(e5);
-            if (!u3.length)
-              return null;
+            if (!u3.length) return null;
             i4 && (r4 = i4);
             var c2 = this.softwareDecrypter;
             c2 || (c2 = this.softwareDecrypter = new a2.default()), c2.expandKey(t5);
@@ -81479,19 +80935,15 @@ var Clappr = function() {
           return l3.resetInitSegment = function(t5, r5, i5, n3) {
             e4.prototype.resetInitSegment.call(this, t5, r5, i5, n3), this._audioTrack = { container: "audio/adts", type: "audio", id: 2, pid: -1, sequenceNumber: 0, segmentCodec: "aac", samples: [], manifestCodec: r5, duration: n3, inputTimeScale: 9e4, dropped: 0 };
           }, i4.probe = function(e5) {
-            if (!e5)
-              return false;
-            for (var t5 = (s2.getID3Data(e5, 0) || []).length, r5 = e5.length; t5 < r5; t5++)
-              if (n2.probe(e5, t5))
-                return a2.logger.log("ADTS sync word found !"), true;
+            if (!e5) return false;
+            for (var t5 = (s2.getID3Data(e5, 0) || []).length, r5 = e5.length; t5 < r5; t5++) if (n2.probe(e5, t5)) return a2.logger.log("ADTS sync word found !"), true;
             return false;
           }, l3.canParse = function(e5, t5) {
             return n2.canParse(e5, t5);
           }, l3.appendFrame = function(e5, t5, r5) {
             n2.initTrackConfig(e5, this.observer, t5, r5, e5.manifestCodec);
             var i5 = n2.appendFrame(e5, t5, r5, this.basePTS, this.frameIndex);
-            if (i5 && 0 === i5.missing)
-              return i5;
+            if (i5 && 0 === i5.missing) return i5;
           }, i4;
         }(i3.default);
       }
@@ -81515,8 +80967,7 @@ var Clappr = function() {
           var o3, l3, u3, c3, d3 = navigator.userAgent.toLowerCase(), h3 = s3, f3 = [96e3, 88200, 64e3, 48e3, 44100, 32e3, 24e3, 22050, 16e3, 12e3, 11025, 8e3, 7350];
           o3 = 1 + ((192 & t4[r4 + 2]) >>> 6);
           var p3 = (60 & t4[r4 + 2]) >>> 2;
-          if (!(p3 > f3.length - 1))
-            return u3 = (1 & t4[r4 + 2]) << 2, u3 |= (192 & t4[r4 + 3]) >>> 6, i3.logger.log("manifest codec:" + s3 + ", ADTS type:" + o3 + ", samplingIndex:" + p3), /firefox/i.test(d3) ? p3 >= 6 ? (o3 = 5, c3 = new Array(4), l3 = p3 - 3) : (o3 = 2, c3 = new Array(2), l3 = p3) : -1 !== d3.indexOf("android") ? (o3 = 2, c3 = new Array(2), l3 = p3) : (o3 = 5, c3 = new Array(4), s3 && (-1 !== s3.indexOf("mp4a.40.29") || -1 !== s3.indexOf("mp4a.40.5")) || !s3 && p3 >= 6 ? l3 = p3 - 3 : ((s3 && -1 !== s3.indexOf("mp4a.40.2") && (p3 >= 6 && 1 === u3 || /vivaldi/i.test(d3)) || !s3 && 1 === u3) && (o3 = 2, c3 = new Array(2)), l3 = p3)), c3[0] = o3 << 3, c3[0] |= (14 & p3) >> 1, c3[1] |= (1 & p3) << 7, c3[1] |= u3 << 3, 5 === o3 && (c3[1] |= (14 & l3) >> 1, c3[2] = (1 & l3) << 7, c3[2] |= 8, c3[3] = 0), { config: c3, samplerate: f3[p3], channelCount: u3, codec: "mp4a.40." + o3, manifestCodec: h3 };
+          if (!(p3 > f3.length - 1)) return u3 = (1 & t4[r4 + 2]) << 2, u3 |= (192 & t4[r4 + 3]) >>> 6, i3.logger.log("manifest codec:" + s3 + ", ADTS type:" + o3 + ", samplingIndex:" + p3), /firefox/i.test(d3) ? p3 >= 6 ? (o3 = 5, c3 = new Array(4), l3 = p3 - 3) : (o3 = 2, c3 = new Array(2), l3 = p3) : -1 !== d3.indexOf("android") ? (o3 = 2, c3 = new Array(2), l3 = p3) : (o3 = 5, c3 = new Array(4), s3 && (-1 !== s3.indexOf("mp4a.40.29") || -1 !== s3.indexOf("mp4a.40.5")) || !s3 && p3 >= 6 ? l3 = p3 - 3 : ((s3 && -1 !== s3.indexOf("mp4a.40.2") && (p3 >= 6 && 1 === u3 || /vivaldi/i.test(d3)) || !s3 && 1 === u3) && (o3 = 2, c3 = new Array(2)), l3 = p3)), c3[0] = o3 << 3, c3[0] |= (14 & p3) >> 1, c3[1] |= (1 & p3) << 7, c3[1] |= u3 << 3, 5 === o3 && (c3[1] |= (14 & l3) >> 1, c3[2] = (1 & l3) << 7, c3[2] |= 8, c3[3] = 0), { config: c3, samplerate: f3[p3], channelCount: u3, codec: "mp4a.40." + o3, manifestCodec: h3 };
           e4.trigger(a2.Events.ERROR, { type: n2.ErrorTypes.MEDIA_ERROR, details: n2.ErrorDetails.FRAG_PARSING_ERROR, fatal: true, reason: "invalid ADTS sampling index:" + p3 });
         }
         function o2(e4, t4) {
@@ -81540,11 +80991,9 @@ var Clappr = function() {
         function f2(e4, t4) {
           if (d2(e4, t4)) {
             var r4 = l2(e4, t4);
-            if (t4 + r4 >= e4.length)
-              return false;
+            if (t4 + r4 >= e4.length) return false;
             var i4 = u2(e4, t4);
-            if (i4 <= r4)
-              return false;
+            if (i4 <= r4) return false;
             var n3 = t4 + i4;
             return n3 === e4.length || d2(e4, n3);
           }
@@ -81553,8 +81002,7 @@ var Clappr = function() {
         function p2(e4, t4, r4, n3, a3) {
           if (!e4.samplerate) {
             var o3 = s2(t4, r4, n3, a3);
-            if (!o3)
-              return;
+            if (!o3) return;
             e4.config = o3.config, e4.samplerate = o3.samplerate, e4.channelCount = o3.channelCount, e4.codec = o3.codec, e4.manifestCodec = o3.manifestCodec, i3.logger.log("parsed codec:" + e4.codec + ", rate:" + o3.samplerate + ", channels:" + o3.channelCount);
           }
         }
@@ -81565,8 +81013,7 @@ var Clappr = function() {
           var r4 = l2(e4, t4);
           if (t4 + r4 <= e4.length) {
             var i4 = u2(e4, t4) - r4;
-            if (i4 > 0)
-              return { headerLength: r4, frameLength: i4 };
+            if (i4 > 0) return { headerLength: r4, frameLength: i4 };
           }
         }
         function m2(e4, t4, r4, i4, n3) {
@@ -81626,8 +81073,7 @@ var Clappr = function() {
               if (this.canParse(e5, d3)) {
                 var v2 = this.appendFrame(h2, e5, d3);
                 v2 ? (this.frameIndex++, this.lastPTS = v2.sample.pts, r4 = d3 += v2.length) : d3 = g2;
-              } else
-                n2.canParse(e5, d3) ? (u3 = n2.getID3Data(e5, d3), f2.samples.push({ pts: this.lastPTS, dts: this.lastPTS, data: u3, type: a2.MetadataSchema.audioId3, duration: Number.POSITIVE_INFINITY }), r4 = d3 += u3.length) : d3++;
+              } else n2.canParse(e5, d3) ? (u3 = n2.getID3Data(e5, d3), f2.samples.push({ pts: this.lastPTS, dts: this.lastPTS, data: u3, type: a2.MetadataSchema.audioId3, duration: Number.POSITIVE_INFINITY }), r4 = d3 += u3.length) : d3++;
               if (d3 === g2 && r4 !== g2) {
                 var m2 = (0, l2.sliceUint8)(e5, r4);
                 this.cachedData ? this.cachedData = (0, o2.appendUint8Array)(this.cachedData, m2) : this.cachedData = m2;
@@ -81700,8 +81146,7 @@ var Clappr = function() {
           var t4 = e4.prototype;
           return t4.loadWord = function() {
             var e5 = this.data, t5 = this.bytesAvailable, r4 = e5.byteLength - t5, i4 = new Uint8Array(4), n3 = Math.min(4, t5);
-            if (0 === n3)
-              throw new Error("no bytes available");
+            if (0 === n3) throw new Error("no bytes available");
             i4.set(e5.subarray(r4, r4 + n3)), this.word = new DataView(i4.buffer).getUint32(0), this.bitsAvailable = 8 * n3, this.bytesAvailable -= n3;
           }, t4.skipBits = function(e5) {
             var t5;
@@ -81711,9 +81156,7 @@ var Clappr = function() {
             return e5 > 32 && i3.logger.error("Cannot read more than 32 bits at a time"), this.bitsAvailable -= t5, this.bitsAvailable > 0 ? this.word <<= t5 : this.bytesAvailable > 0 && this.loadWord(), (t5 = e5 - t5) > 0 && this.bitsAvailable ? r4 << t5 | this.readBits(t5) : r4;
           }, t4.skipLZ = function() {
             var e5;
-            for (e5 = 0; e5 < this.bitsAvailable; ++e5)
-              if (0 != (this.word & 2147483648 >>> e5))
-                return this.word <<= e5, this.bitsAvailable -= e5, e5;
+            for (e5 = 0; e5 < this.bitsAvailable; ++e5) if (0 != (this.word & 2147483648 >>> e5)) return this.word <<= e5, this.bitsAvailable -= e5, e5;
             return this.loadWord(), e5 + this.skipLZ();
           }, t4.skipUEG = function() {
             this.skipBits(1 + this.skipLZ());
@@ -81734,82 +81177,75 @@ var Clappr = function() {
           }, t4.readUInt = function() {
             return this.readBits(32);
           }, t4.skipScalingList = function(e5) {
-            for (var t5 = 8, r4 = 8, i4 = 0; i4 < e5; i4++)
-              0 !== r4 && (r4 = (t5 + this.readEG() + 256) % 256), t5 = 0 === r4 ? t5 : r4;
+            for (var t5 = 8, r4 = 8, i4 = 0; i4 < e5; i4++) 0 !== r4 && (r4 = (t5 + this.readEG() + 256) % 256), t5 = 0 === r4 ? t5 : r4;
           }, t4.readSPS = function() {
             var e5, t5, r4, i4 = 0, n3 = 0, a2 = 0, s2 = 0, o2 = this.readUByte.bind(this), l2 = this.readBits.bind(this), u2 = this.readUEG.bind(this), c2 = this.readBoolean.bind(this), d2 = this.skipBits.bind(this), h2 = this.skipEG.bind(this), f2 = this.skipUEG.bind(this), p2 = this.skipScalingList.bind(this);
             o2();
             var g2 = o2();
             if (l2(5), d2(3), o2(), f2(), 100 === g2 || 110 === g2 || 122 === g2 || 244 === g2 || 44 === g2 || 83 === g2 || 86 === g2 || 118 === g2 || 128 === g2) {
               var v2 = u2();
-              if (3 === v2 && d2(1), f2(), f2(), d2(1), c2())
-                for (t5 = 3 !== v2 ? 8 : 12, r4 = 0; r4 < t5; r4++)
-                  c2() && p2(r4 < 6 ? 16 : 64);
+              if (3 === v2 && d2(1), f2(), f2(), d2(1), c2()) for (t5 = 3 !== v2 ? 8 : 12, r4 = 0; r4 < t5; r4++) c2() && p2(r4 < 6 ? 16 : 64);
             }
             f2();
             var m2 = u2();
-            if (0 === m2)
-              u2();
-            else if (1 === m2)
-              for (d2(1), h2(), h2(), e5 = u2(), r4 = 0; r4 < e5; r4++)
-                h2();
+            if (0 === m2) u2();
+            else if (1 === m2) for (d2(1), h2(), h2(), e5 = u2(), r4 = 0; r4 < e5; r4++) h2();
             f2(), d2(1);
             var y2 = u2(), A2 = u2(), E2 = l2(1);
             0 === E2 && d2(1), d2(1), c2() && (i4 = u2(), n3 = u2(), a2 = u2(), s2 = u2());
             var T2 = [1, 1];
-            if (c2() && c2())
-              switch (o2()) {
-                case 1:
-                  T2 = [1, 1];
-                  break;
-                case 2:
-                  T2 = [12, 11];
-                  break;
-                case 3:
-                  T2 = [10, 11];
-                  break;
-                case 4:
-                  T2 = [16, 11];
-                  break;
-                case 5:
-                  T2 = [40, 33];
-                  break;
-                case 6:
-                  T2 = [24, 11];
-                  break;
-                case 7:
-                  T2 = [20, 11];
-                  break;
-                case 8:
-                  T2 = [32, 11];
-                  break;
-                case 9:
-                  T2 = [80, 33];
-                  break;
-                case 10:
-                  T2 = [18, 11];
-                  break;
-                case 11:
-                  T2 = [15, 11];
-                  break;
-                case 12:
-                  T2 = [64, 33];
-                  break;
-                case 13:
-                  T2 = [160, 99];
-                  break;
-                case 14:
-                  T2 = [4, 3];
-                  break;
-                case 15:
-                  T2 = [3, 2];
-                  break;
-                case 16:
-                  T2 = [2, 1];
-                  break;
-                case 255:
-                  T2 = [o2() << 8 | o2(), o2() << 8 | o2()];
-              }
+            if (c2() && c2()) switch (o2()) {
+              case 1:
+                T2 = [1, 1];
+                break;
+              case 2:
+                T2 = [12, 11];
+                break;
+              case 3:
+                T2 = [10, 11];
+                break;
+              case 4:
+                T2 = [16, 11];
+                break;
+              case 5:
+                T2 = [40, 33];
+                break;
+              case 6:
+                T2 = [24, 11];
+                break;
+              case 7:
+                T2 = [20, 11];
+                break;
+              case 8:
+                T2 = [32, 11];
+                break;
+              case 9:
+                T2 = [80, 33];
+                break;
+              case 10:
+                T2 = [18, 11];
+                break;
+              case 11:
+                T2 = [15, 11];
+                break;
+              case 12:
+                T2 = [64, 33];
+                break;
+              case 13:
+                T2 = [160, 99];
+                break;
+              case 14:
+                T2 = [4, 3];
+                break;
+              case 15:
+                T2 = [3, 2];
+                break;
+              case 16:
+                T2 = [2, 1];
+                break;
+              case 255:
+                T2 = [o2() << 8 | o2(), o2() << 8 | o2()];
+            }
             return { width: Math.ceil(16 * (y2 + 1) - 2 * i4 - 2 * n3), height: (2 - E2) * (A2 + 1) * 16 - (E2 ? 2 : 4) * (a2 + s2), pixelRatio: T2 };
           }, t4.readSliceType = function() {
             return this.readUByte(), this.readUEG(), this.readUEG();
@@ -81827,10 +81263,8 @@ var Clappr = function() {
         }, a2 = function(e4, t4) {
           return t4 + 10 <= e4.length && 51 === e4[t4] && 68 === e4[t4 + 1] && 73 === e4[t4 + 2] && e4[t4 + 3] < 255 && e4[t4 + 4] < 255 && e4[t4 + 6] < 128 && e4[t4 + 7] < 128 && e4[t4 + 8] < 128 && e4[t4 + 9] < 128;
         }, s2 = function(e4, t4) {
-          for (var r4 = t4, i4 = 0; n2(e4, t4); )
-            i4 += 10, i4 += o2(e4, t4 + 6), a2(e4, t4 + 10) && (i4 += 10), t4 += i4;
-          if (i4 > 0)
-            return e4.subarray(r4, r4 + i4);
+          for (var r4 = t4, i4 = 0; n2(e4, t4); ) i4 += 10, i4 += o2(e4, t4 + 6), a2(e4, t4 + 10) && (i4 += 10), t4 += i4;
+          if (i4 > 0) return e4.subarray(r4, r4 + i4);
         }, o2 = function(e4, t4) {
           var r4 = 0;
           return r4 = (127 & e4[t4]) << 21, r4 |= (127 & e4[t4 + 1]) << 14, r4 |= (127 & e4[t4 + 2]) << 7, r4 |= 127 & e4[t4 + 3];
@@ -81839,8 +81273,7 @@ var Clappr = function() {
         }, u2 = function(e4) {
           for (var t4 = h2(e4), r4 = 0; r4 < t4.length; r4++) {
             var i4 = t4[r4];
-            if (c2(i4))
-              return m2(i4);
+            if (c2(i4)) return m2(i4);
           }
         }, c2 = function(e4) {
           return e4 && "PRIV" === e4.key && "com.apple.streaming.transportStreamTimestamp" === e4.info;
@@ -81876,8 +81309,7 @@ var Clappr = function() {
           }
         }, v2 = function(e4) {
           if ("WXXX" === e4.type) {
-            if (e4.size < 2)
-              return;
+            if (e4.size < 2) return;
             var t4 = 1, r4 = y2(e4.data.subarray(t4), true);
             t4 += r4.length + 1;
             var i4 = y2(e4.data.subarray(t4));
@@ -81902,27 +81334,25 @@ var Clappr = function() {
             return i4.replace(/\0/g, "");
           }
           for (var a3, s3, o3, l3 = e4.length, u3 = "", c3 = 0; c3 < l3; ) {
-            if (0 === (a3 = e4[c3++]) && t4)
-              return u3;
-            if (0 !== a3 && 3 !== a3)
-              switch (a3 >> 4) {
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                  u3 += String.fromCharCode(a3);
-                  break;
-                case 12:
-                case 13:
-                  s3 = e4[c3++], u3 += String.fromCharCode((31 & a3) << 6 | 63 & s3);
-                  break;
-                case 14:
-                  s3 = e4[c3++], o3 = e4[c3++], u3 += String.fromCharCode((15 & a3) << 12 | (63 & s3) << 6 | (63 & o3) << 0);
-              }
+            if (0 === (a3 = e4[c3++]) && t4) return u3;
+            if (0 !== a3 && 3 !== a3) switch (a3 >> 4) {
+              case 0:
+              case 1:
+              case 2:
+              case 3:
+              case 4:
+              case 5:
+              case 6:
+              case 7:
+                u3 += String.fromCharCode(a3);
+                break;
+              case 12:
+              case 13:
+                s3 = e4[c3++], u3 += String.fromCharCode((31 & a3) << 6 | 63 & s3);
+                break;
+              case 14:
+                s3 = e4[c3++], o3 = e4[c3++], u3 += String.fromCharCode((15 & a3) << 12 | (63 & s3) << 6 | (63 & o3) << 0);
+            }
           }
           return u3;
         }, A2 = { decodeTextFrame: g2 };
@@ -81964,17 +81394,13 @@ var Clappr = function() {
           return l3.resetInitSegment = function(t5, r5, i5, n3) {
             e4.prototype.resetInitSegment.call(this, t5, r5, i5, n3), this._audioTrack = { container: "audio/mpeg", type: "audio", id: 2, pid: -1, sequenceNumber: 0, segmentCodec: "mp3", samples: [], manifestCodec: r5, duration: n3, inputTimeScale: 9e4, dropped: 0 };
           }, i4.probe = function(e5) {
-            if (!e5)
-              return false;
-            for (var t5 = (n2.getID3Data(e5, 0) || []).length, r5 = e5.length; t5 < r5; t5++)
-              if (s2.probe(e5, t5))
-                return a2.logger.log("MPEG Audio sync word found !"), true;
+            if (!e5) return false;
+            for (var t5 = (n2.getID3Data(e5, 0) || []).length, r5 = e5.length; t5 < r5; t5++) if (s2.probe(e5, t5)) return a2.logger.log("MPEG Audio sync word found !"), true;
             return false;
           }, l3.canParse = function(e5, t5) {
             return s2.canParse(e5, t5);
           }, l3.appendFrame = function(e5, t5, r5) {
-            if (null !== this.basePTS)
-              return s2.appendFrame(e5, t5, r5, this.basePTS, this.frameIndex);
+            if (null !== this.basePTS) return s2.appendFrame(e5, t5, r5, this.basePTS, this.frameIndex);
           }, i4;
         }(i3.default);
         const u2 = l2;
@@ -82025,8 +81451,7 @@ var Clappr = function() {
               this.remainderData && (r4 = (0, a2.appendUint8Array)(this.remainderData, e5));
               var s3 = (0, a2.segmentValidRange)(r4);
               this.remainderData = s3.remainder, i4.samples = s3.valid || new Uint8Array();
-            } else
-              i4.samples = r4;
+            } else i4.samples = r4;
             var o3 = this.extractID3Track(i4, t5);
             return n3.samples = (0, a2.parseSamples)(t5, i4), { videoTrack: i4, audioTrack: this.audioTrack, id3Track: o3, textTrack: this.txtTrack };
           }, t4.flush = function() {
@@ -82132,21 +81557,17 @@ var Clappr = function() {
             }
           }, t4.decryptAacSamples = function(e5, t5, r4) {
             for (; ; t5++) {
-              if (t5 >= e5.length)
-                return void r4();
+              if (t5 >= e5.length) return void r4();
               if (!(e5[t5].unit.length < 32)) {
                 var i4 = this.decrypter.isSync();
-                if (this.decryptAacSample(e5, t5, r4, i4), !i4)
-                  return;
+                if (this.decryptAacSample(e5, t5, r4, i4), !i4) return;
               }
             }
           }, t4.getAvcEncryptedData = function(e5) {
-            for (var t5 = 16 * Math.floor((e5.length - 48) / 160) + 16, r4 = new Int8Array(t5), i4 = 0, n3 = 32; n3 < e5.length - 16; n3 += 160, i4 += 16)
-              r4.set(e5.subarray(n3, n3 + 16), i4);
+            for (var t5 = 16 * Math.floor((e5.length - 48) / 160) + 16, r4 = new Int8Array(t5), i4 = 0, n3 = 32; n3 < e5.length - 16; n3 += 160, i4 += 16) r4.set(e5.subarray(n3, n3 + 16), i4);
             return r4;
           }, t4.getAvcDecryptedUnit = function(e5, t5) {
-            for (var r4 = new Uint8Array(t5), i4 = 0, n3 = 32; n3 < e5.length - 16; n3 += 160, i4 += 16)
-              e5.set(r4.subarray(i4, i4 + 16), n3);
+            for (var r4 = new Uint8Array(t5), i4 = 0, n3 = 32; n3 < e5.length - 16; n3 += 160, i4 += 16) e5.set(r4.subarray(i4, i4 + 16), n3);
             return e5;
           }, t4.decryptAvcSample = function(e5, t5, r4, i4, a3, s2) {
             var o2 = (0, n2.discardEPB)(a3.data), l2 = this.getAvcEncryptedData(o2), u2 = this;
@@ -82154,17 +81575,14 @@ var Clappr = function() {
               a3.data = u2.getAvcDecryptedUnit(o2, n3), s2 || u2.decryptAvcSamples(e5, t5, r4 + 1, i4);
             });
           }, t4.decryptAvcSamples = function(e5, t5, r4, i4) {
-            if (e5 instanceof Uint8Array)
-              throw new Error("Cannot decrypt samples of type Uint8Array");
+            if (e5 instanceof Uint8Array) throw new Error("Cannot decrypt samples of type Uint8Array");
             for (; ; t5++, r4 = 0) {
-              if (t5 >= e5.length)
-                return void i4();
+              if (t5 >= e5.length) return void i4();
               for (var n3 = e5[t5].units; !(r4 >= n3.length); r4++) {
                 var a3 = n3[r4];
                 if (!(a3.data.length <= 48 || 1 !== a3.type && 5 !== a3.type)) {
                   var s2 = this.decrypter.isSync();
-                  if (this.decryptAvcSample(e5, t5, r4, i4, a3, s2), !s2)
-                    return;
+                  if (this.decryptAvcSample(e5, t5, r4, i4, a3, s2), !s2) return;
                 }
               }
             }
@@ -82224,14 +81642,12 @@ var Clappr = function() {
               } catch (e6) {
                 s2.logger.warn("Error in worker:", e6), s2.logger.error("Error while initializing DemuxerWorker, fallback to inline"), v2 && self.URL.revokeObjectURL(v2.objectURL), this.transmuxer = new a2.default(this.observer, p2, h2, g2, t5), this.worker = null;
               }
-            } else
-              this.transmuxer = new a2.default(this.observer, p2, h2, g2, t5);
+            } else this.transmuxer = new a2.default(this.observer, p2, h2, g2, t5);
           }
           var t4 = e4.prototype;
           return t4.destroy = function() {
             var e5 = this.worker;
-            if (e5)
-              e5.removeEventListener("message", this.onwmsg), e5.terminate(), this.worker = null, this.onwmsg = void 0;
+            if (e5) e5.removeEventListener("message", this.onwmsg), e5.terminate(), this.worker = null, this.onwmsg = void 0;
             else {
               var t5 = this.transmuxer;
               t5 && (t5.destroy(), this.transmuxer = null);
@@ -82249,8 +81665,7 @@ var Clappr = function() {
               var R2 = new a2.TransmuxConfig(r4, i4, t5, l3, d3);
               this.configureTransmuxer(R2);
             }
-            if (this.frag = n3, this.part = o3, v2)
-              v2.postMessage({ cmd: "demux", data: e5, decryptdata: y2, chunkMeta: c3, state: D2 }, e5 instanceof ArrayBuffer ? [e5] : []);
+            if (this.frag = n3, this.part = o3, v2) v2.postMessage({ cmd: "demux", data: e5, decryptdata: y2, chunkMeta: c3, state: D2 }, e5 instanceof ArrayBuffer ? [e5] : []);
             else if (g2) {
               var I2 = g2.push(e5, y2, c3, D2);
               (0, a2.isPromise)(I2) ? I2.then(function(e6) {
@@ -82261,8 +81676,7 @@ var Clappr = function() {
             var t5 = this;
             e5.transmuxing.start = self.performance.now();
             var r4 = this.transmuxer, i4 = this.worker;
-            if (i4)
-              i4.postMessage({ cmd: "flush", chunkMeta: e5 });
+            if (i4) i4.postMessage({ cmd: "flush", chunkMeta: e5 });
             else if (r4) {
               var n3 = r4.flush(e5);
               (0, a2.isPromise)(n3) ? n3.then(function(r5) {
@@ -82334,8 +81748,7 @@ var Clappr = function() {
                       r4("workerLog", { logType: e6, message: t6 });
                     };
                   };
-                  for (var t5 in a2.logger)
-                    e5(t5);
+                  for (var t5 in a2.logger) e5(t5);
                 }(), r4("init", null);
                 break;
               case "configure":
@@ -82356,8 +81769,7 @@ var Clappr = function() {
           });
         }
         function l2(e4, t4) {
-          if (!((r4 = t4.remuxResult).audio || r4.video || r4.text || r4.id3 || r4.initSegment))
-            return false;
+          if (!((r4 = t4.remuxResult).audio || r4.video || r4.text || r4.id3 || r4.initSegment)) return false;
           var r4, i4 = [], n3 = t4.remuxResult, a3 = n3.audio, s3 = n3.video;
           return a3 && u2(i4, a3), s3 && u2(i4, s3), e4.postMessage({ event: "transmuxComplete", data: t4 }, i4), true;
         }
@@ -82432,14 +81844,12 @@ var Clappr = function() {
             }(o3, t5);
             if (S2 && "AES-128" === S2.method) {
               var _2 = this.getDecrypter();
-              if (!l3.enableSoftwareAES)
-                return this.decryptionPromise = _2.webCryptoDecrypt(o3, S2.key.buffer, S2.iv.buffer).then(function(e6) {
-                  var t6 = a3.push(e6, null, r4);
-                  return a3.decryptionPromise = null, t6;
-                }), this.decryptionPromise;
+              if (!l3.enableSoftwareAES) return this.decryptionPromise = _2.webCryptoDecrypt(o3, S2.key.buffer, S2.iv.buffer).then(function(e6) {
+                var t6 = a3.push(e6, null, r4);
+                return a3.decryptionPromise = null, t6;
+              }), this.decryptionPromise;
               var C2 = _2.softwareDecrypt(o3, S2.key.buffer, S2.iv.buffer);
-              if (!C2)
-                return s3.executeEnd = i3(), v2(r4);
+              if (!C2) return s3.executeEnd = i3(), v2(r4);
               o3 = new Uint8Array(C2);
             }
             this.needsProbing(o3, f3, p3) && this.configureTransmuxer(o3, c3);
@@ -82449,18 +81859,16 @@ var Clappr = function() {
             var t5 = this, r4 = e5.transmuxing;
             r4.executeStart = i3();
             var s3 = this.decrypter, o3 = this.currentTransmuxState, l3 = this.decryptionPromise;
-            if (l3)
-              return l3.then(function() {
-                return t5.flush(e5);
-              });
+            if (l3) return l3.then(function() {
+              return t5.flush(e5);
+            });
             var u3 = [], c3 = o3.timeOffset;
             if (s3) {
               var d3 = s3.flush();
               d3 && u3.push(this.push(d3, null, e5));
             }
             var h3 = this.demuxer, f3 = this.remuxer;
-            if (!h3 || !f3)
-              return this.observer.emit(n2.Events.ERROR, n2.Events.ERROR, { type: a2.ErrorTypes.MEDIA_ERROR, details: a2.ErrorDetails.FRAG_PARSING_ERROR, fatal: true, reason: "no demux matching with content found" }), r4.executeEnd = i3(), [v2(e5)];
+            if (!h3 || !f3) return this.observer.emit(n2.Events.ERROR, n2.Events.ERROR, { type: a2.ErrorTypes.MEDIA_ERROR, details: a2.ErrorDetails.FRAG_PARSING_ERROR, fatal: true, reason: "no demux matching with content found" }), r4.executeEnd = i3(), [v2(e5)];
             var p3 = h3.flush(c3);
             return m2(p3) ? p3.then(function(r5) {
               return t5.flushRemux(u3, r5, e5), u3;
@@ -82492,11 +81900,10 @@ var Clappr = function() {
               return { remuxResult: a3.remuxer.remux(e6.audioTrack, e6.videoTrack, e6.id3Track, e6.textTrack, r4, i4, false, a3.id), chunkMeta: n3 };
             });
           }, t4.configureTransmuxer = function(e5, t5) {
-            for (var r4, i4 = this.config, n3 = this.observer, a3 = this.typeSupported, s3 = this.vendor, o3 = t5.audioCodec, u3 = t5.defaultInitPts, c3 = t5.duration, d3 = t5.initSegmentData, g3 = t5.videoCodec, v3 = 0, m3 = p2.length; v3 < m3; v3++)
-              if (p2[v3].demux.probe(e5)) {
-                r4 = p2[v3];
-                break;
-              }
+            for (var r4, i4 = this.config, n3 = this.observer, a3 = this.typeSupported, s3 = this.vendor, o3 = t5.audioCodec, u3 = t5.defaultInitPts, c3 = t5.duration, d3 = t5.initSegmentData, g3 = t5.videoCodec, v3 = 0, m3 = p2.length; v3 < m3; v3++) if (p2[v3].demux.probe(e5)) {
+              r4 = p2[v3];
+              break;
+            }
             r4 || (f2.logger.warn("Failed to find demuxer by probing frag, treating as mp4 passthrough"), r4 = { demux: l2.default, remux: h2.default });
             var y3 = this.demuxer, A3 = this.remuxer, E2 = r4.remux, T2 = r4.demux;
             A3 && A3 instanceof E2 || (this.remuxer = new E2(n3, i4, a3, s3)), y3 && y3 instanceof T2 || (this.demuxer = new T2(n3, i4, a3), this.probe = T2.probe), this.resetInitSegment(d3, o3, g3, c3), this.resetInitialTimestamp(u3);
@@ -82556,8 +81963,7 @@ var Clappr = function() {
           return h2 = Object.assign ? Object.assign.bind() : function(e4) {
             for (var t4 = 1; t4 < arguments.length; t4++) {
               var r4 = arguments[t4];
-              for (var i4 in r4)
-                Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
+              for (var i4 in r4) Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
             }
             return e4;
           }, h2.apply(this, arguments);
@@ -82606,20 +82012,17 @@ var Clappr = function() {
         }
         function m2(e4) {
           var t4, r4, i4, n3, a3, s3 = 0, o3 = e4.data;
-          if (!e4 || 0 === e4.size)
-            return null;
+          if (!e4 || 0 === e4.size) return null;
           for (; o3[0].length < 19 && o3.length > 1; ) {
             var l3 = new Uint8Array(o3[0].length + o3[1].length);
             l3.set(o3[0]), l3.set(o3[1], o3[0].length), o3[0] = l3, o3.splice(1, 1);
           }
           if (1 === ((t4 = o3[0])[0] << 16) + (t4[1] << 8) + t4[2]) {
-            if ((r4 = (t4[4] << 8) + t4[5]) && r4 > e4.size - 6)
-              return null;
+            if ((r4 = (t4[4] << 8) + t4[5]) && r4 > e4.size - 6) return null;
             var c3 = t4[7];
             192 & c3 && (n3 = 536870912 * (14 & t4[9]) + 4194304 * (255 & t4[10]) + 16384 * (254 & t4[11]) + 128 * (255 & t4[12]) + (254 & t4[13]) / 2, 64 & c3 ? n3 - (a3 = 536870912 * (14 & t4[14]) + 4194304 * (255 & t4[15]) + 16384 * (254 & t4[16]) + 128 * (255 & t4[17]) + (254 & t4[18]) / 2) > 54e5 && (u2.logger.warn(Math.round((n3 - a3) / 9e4) + "s delta between PTS and DTS, align them"), n3 = a3) : a3 = n3);
             var d3 = (i4 = t4[8]) + 9;
-            if (e4.size <= d3)
-              return null;
+            if (e4.size <= d3) return null;
             e4.size -= d3;
             for (var h3 = new Uint8Array(e4.size), f3 = 0, p3 = o3.length; f3 < p3; f3++) {
               var g3 = (t4 = o3[f3]).byteLength;
@@ -82640,8 +82043,7 @@ var Clappr = function() {
           if (e4.units.length && e4.frame) {
             if (void 0 === e4.pts) {
               var r4 = t4.samples, i4 = r4.length;
-              if (!i4)
-                return void t4.dropped++;
+              if (!i4) return void t4.dropped++;
               var n3 = r4[i4 - 1];
               e4.pts = n3.pts, e4.dts = n3.dts;
             }
@@ -82658,8 +82060,7 @@ var Clappr = function() {
             return r4 > 0 && u2.logger.warn("MPEG2-TS detected but first sync word found @ offset " + r4), -1 !== r4;
           }, e4.syncOffset = function(e5) {
             for (var t5 = Math.min(940, e5.length - 376) + 1, r4 = 0; r4 < t5; ) {
-              if (71 === e5[r4] && 71 === e5[r4 + f2])
-                return r4;
+              if (71 === e5[r4] && 71 === e5[r4 + f2]) return r4;
               r4++;
             }
             return -1;
@@ -82677,55 +82078,49 @@ var Clappr = function() {
             var a3;
             void 0 === i4 && (i4 = false), void 0 === n3 && (n3 = false), i4 || (this.sampleAes = null);
             var s3 = this._avcTrack, d3 = this._audioTrack, h3 = this._id3Track, p3 = this._txtTrack, y3 = s3.pid, A3 = s3.pesData, E2 = d3.pid, T2 = h3.pid, b2 = d3.pesData, k2 = h3.pesData, S2 = null, _2 = this.pmtParsed, C2 = this._pmtId, L2 = t5.length;
-            if (this.remainderData && (L2 = (t5 = (0, l2.appendUint8Array)(this.remainderData, t5)).length, this.remainderData = null), L2 < f2 && !n3)
-              return this.remainderData = t5, { audioTrack: d3, videoTrack: s3, id3Track: h3, textTrack: p3 };
+            if (this.remainderData && (L2 = (t5 = (0, l2.appendUint8Array)(this.remainderData, t5)).length, this.remainderData = null), L2 < f2 && !n3) return this.remainderData = t5, { audioTrack: d3, videoTrack: s3, id3Track: h3, textTrack: p3 };
             var D2 = Math.max(0, e4.syncOffset(t5));
             (L2 -= (L2 - D2) % f2) < t5.byteLength && !n3 && (this.remainderData = new Uint8Array(t5.buffer, L2, t5.buffer.byteLength - L2));
-            for (var R2 = 0, I2 = D2; I2 < L2; I2 += f2)
-              if (71 === t5[I2]) {
-                var O2 = !!(64 & t5[I2 + 1]), w2 = ((31 & t5[I2 + 1]) << 8) + t5[I2 + 2], P2 = void 0;
-                if ((48 & t5[I2 + 3]) >> 4 > 1) {
-                  if ((P2 = I2 + 5 + t5[I2 + 4]) === I2 + f2)
-                    continue;
-                } else
-                  P2 = I2 + 4;
-                switch (w2) {
-                  case y3:
-                    O2 && (A3 && (a3 = m2(A3)) && this.parseAVCPES(s3, p3, a3, false), A3 = { data: [], size: 0 }), A3 && (A3.data.push(t5.subarray(P2, I2 + f2)), A3.size += I2 + f2 - P2);
-                    break;
-                  case E2:
-                    if (O2) {
-                      if (b2 && (a3 = m2(b2)))
-                        switch (d3.segmentCodec) {
-                          case "aac":
-                            this.parseAACPES(d3, a3);
-                            break;
-                          case "mp3":
-                            this.parseMPEGPES(d3, a3);
-                        }
-                      b2 = { data: [], size: 0 };
+            for (var R2 = 0, I2 = D2; I2 < L2; I2 += f2) if (71 === t5[I2]) {
+              var O2 = !!(64 & t5[I2 + 1]), w2 = ((31 & t5[I2 + 1]) << 8) + t5[I2 + 2], P2 = void 0;
+              if ((48 & t5[I2 + 3]) >> 4 > 1) {
+                if ((P2 = I2 + 5 + t5[I2 + 4]) === I2 + f2) continue;
+              } else P2 = I2 + 4;
+              switch (w2) {
+                case y3:
+                  O2 && (A3 && (a3 = m2(A3)) && this.parseAVCPES(s3, p3, a3, false), A3 = { data: [], size: 0 }), A3 && (A3.data.push(t5.subarray(P2, I2 + f2)), A3.size += I2 + f2 - P2);
+                  break;
+                case E2:
+                  if (O2) {
+                    if (b2 && (a3 = m2(b2))) switch (d3.segmentCodec) {
+                      case "aac":
+                        this.parseAACPES(d3, a3);
+                        break;
+                      case "mp3":
+                        this.parseMPEGPES(d3, a3);
                     }
-                    b2 && (b2.data.push(t5.subarray(P2, I2 + f2)), b2.size += I2 + f2 - P2);
-                    break;
-                  case T2:
-                    O2 && (k2 && (a3 = m2(k2)) && this.parseID3PES(h3, a3), k2 = { data: [], size: 0 }), k2 && (k2.data.push(t5.subarray(P2, I2 + f2)), k2.size += I2 + f2 - P2);
-                    break;
-                  case 0:
-                    O2 && (P2 += t5[P2] + 1), C2 = this._pmtId = g2(t5, P2);
-                    break;
-                  case C2:
-                    O2 && (P2 += t5[P2] + 1);
-                    var x2 = v2(t5, P2, this.typeSupported, i4);
-                    (y3 = x2.avc) > 0 && (s3.pid = y3), (E2 = x2.audio) > 0 && (d3.pid = E2, d3.segmentCodec = x2.segmentCodec), (T2 = x2.id3) > 0 && (h3.pid = T2), null === S2 || _2 || (u2.logger.log("unknown PID '" + S2 + "' in TS found"), S2 = null, I2 = D2 - 188), _2 = this.pmtParsed = true;
-                    break;
-                  case 17:
-                  case 8191:
-                    break;
-                  default:
-                    S2 = w2;
-                }
-              } else
-                R2++;
+                    b2 = { data: [], size: 0 };
+                  }
+                  b2 && (b2.data.push(t5.subarray(P2, I2 + f2)), b2.size += I2 + f2 - P2);
+                  break;
+                case T2:
+                  O2 && (k2 && (a3 = m2(k2)) && this.parseID3PES(h3, a3), k2 = { data: [], size: 0 }), k2 && (k2.data.push(t5.subarray(P2, I2 + f2)), k2.size += I2 + f2 - P2);
+                  break;
+                case 0:
+                  O2 && (P2 += t5[P2] + 1), C2 = this._pmtId = g2(t5, P2);
+                  break;
+                case C2:
+                  O2 && (P2 += t5[P2] + 1);
+                  var x2 = v2(t5, P2, this.typeSupported, i4);
+                  (y3 = x2.avc) > 0 && (s3.pid = y3), (E2 = x2.audio) > 0 && (d3.pid = E2, d3.segmentCodec = x2.segmentCodec), (T2 = x2.id3) > 0 && (h3.pid = T2), null === S2 || _2 || (u2.logger.log("unknown PID '" + S2 + "' in TS found"), S2 = null, I2 = D2 - 188), _2 = this.pmtParsed = true;
+                  break;
+                case 17:
+                case 8191:
+                  break;
+                default:
+                  S2 = w2;
+              }
+            } else R2++;
             R2 > 0 && this.observer.emit(o2.Events.ERROR, o2.Events.ERROR, { type: c2.ErrorTypes.MEDIA_ERROR, details: c2.ErrorDetails.FRAG_PARSING_ERROR, fatal: false, reason: "Found " + R2 + " TS packet/s that do not start with 0x47" }), s3.pesData = A3, d3.pesData = b2, h3.pesData = k2;
             var N2 = { audioTrack: d3, videoTrack: s3, id3Track: h3, textTrack: p3 };
             return n3 && this.extractRemainingSamples(N2), N2;
@@ -82743,8 +82138,7 @@ var Clappr = function() {
                   this.parseMPEGPES(r4, t5);
               }
               r4.pesData = null;
-            } else
-              null != o3 && o3.size && u2.logger.log("last AAC PES packet truncated,might overlap between fragments"), r4.pesData = o3;
+            } else null != o3 && o3.size && u2.logger.log("last AAC PES packet truncated,might overlap between fragments"), r4.pesData = o3;
             l3 && (t5 = m2(l3)) ? (this.parseID3PES(n3, t5), n3.pesData = null) : n3.pesData = l3;
           }, t4.demuxSampleAes = function(e5, t5, r4) {
             var i4 = this.demux(e5, r4, true, !this.config.progressive), n3 = this.sampleAes = new s2.default(this.observer, this.config, t5);
@@ -82814,30 +82208,22 @@ var Clappr = function() {
             return r4;
           }, t4.parseAVCNALu = function(e5, t5) {
             var r4, i4, n3 = t5.byteLength, a3 = e5.naluState || 0, s3 = a3, o3 = [], l3 = 0, u3 = -1, c3 = 0;
-            for (-1 === a3 && (u3 = 0, c3 = 31 & t5[0], a3 = 0, l3 = 1); l3 < n3; )
-              if (r4 = t5[l3++], a3)
-                if (1 !== a3)
-                  if (r4)
-                    if (1 === r4) {
-                      if (u3 >= 0) {
-                        var d3 = { data: t5.subarray(u3, l3 - a3 - 1), type: c3 };
-                        o3.push(d3);
-                      } else {
-                        var h3 = this.getLastNalUnit(e5.samples);
-                        if (h3 && (s3 && l3 <= 4 - s3 && h3.state && (h3.data = h3.data.subarray(0, h3.data.byteLength - s3)), (i4 = l3 - a3 - 1) > 0)) {
-                          var f3 = new Uint8Array(h3.data.byteLength + i4);
-                          f3.set(h3.data, 0), f3.set(t5.subarray(0, i4), h3.data.byteLength), h3.data = f3, h3.state = 0;
-                        }
-                      }
-                      l3 < n3 ? (u3 = l3, c3 = 31 & t5[l3], a3 = 0) : a3 = -1;
-                    } else
-                      a3 = 0;
-                  else
-                    a3 = 3;
-                else
-                  a3 = r4 ? 0 : 2;
-              else
-                a3 = r4 ? 0 : 1;
+            for (-1 === a3 && (u3 = 0, c3 = 31 & t5[0], a3 = 0, l3 = 1); l3 < n3; ) if (r4 = t5[l3++], a3) if (1 !== a3) if (r4) if (1 === r4) {
+              if (u3 >= 0) {
+                var d3 = { data: t5.subarray(u3, l3 - a3 - 1), type: c3 };
+                o3.push(d3);
+              } else {
+                var h3 = this.getLastNalUnit(e5.samples);
+                if (h3 && (s3 && l3 <= 4 - s3 && h3.state && (h3.data = h3.data.subarray(0, h3.data.byteLength - s3)), (i4 = l3 - a3 - 1) > 0)) {
+                  var f3 = new Uint8Array(h3.data.byteLength + i4);
+                  f3.set(h3.data, 0), f3.set(t5.subarray(0, i4), h3.data.byteLength), h3.data = f3, h3.state = 0;
+                }
+              }
+              l3 < n3 ? (u3 = l3, c3 = 31 & t5[l3], a3 = 0) : a3 = -1;
+            } else a3 = 0;
+            else a3 = 3;
+            else a3 = r4 ? 0 : 2;
+            else a3 = r4 ? 0 : 1;
             if (u3 >= 0 && a3 >= 0) {
               var p3 = { data: t5.subarray(u3, n3), type: c3, state: a3 };
               o3.push(p3);
@@ -82863,14 +82249,11 @@ var Clappr = function() {
                 h3.sample.unit.set(f3.subarray(0, p3), m3), e5.samples.push(h3.sample), d3 = h3.missing;
               }
             }
-            for (r4 = d3, n3 = f3.length; r4 < n3 - 1 && !i3.isHeader(f3, r4); r4++)
-              ;
+            for (r4 = d3, n3 = f3.length; r4 < n3 - 1 && !i3.isHeader(f3, r4); r4++) ;
             if (r4 === d3 || (r4 < n3 - 1 ? (a3 = "AAC PES did not start with ADTS header,offset:" + r4, s3 = false) : (a3 = "no ADTS header found in AAC PES", s3 = true), u2.logger.warn("parsing error:" + a3), this.observer.emit(o2.Events.ERROR, o2.Events.ERROR, { type: c2.ErrorTypes.MEDIA_ERROR, details: c2.ErrorDetails.FRAG_PARSING_ERROR, fatal: s3, reason: a3 }), !s3)) {
-              if (i3.initTrackConfig(e5, this.observer, f3, r4, this.audioCodec), void 0 !== t5.pts)
-                l3 = t5.pts;
+              if (i3.initTrackConfig(e5, this.observer, f3, r4, this.audioCodec), void 0 !== t5.pts) l3 = t5.pts;
               else {
-                if (!h3)
-                  return void u2.logger.warn("[tsdemuxer]: AAC PES unknown PTS");
+                if (!h3) return void u2.logger.warn("[tsdemuxer]: AAC PES unknown PTS");
                 var y3 = i3.getFrameDuration(e5.samplerate);
                 l3 = h3.sample.pts + y3;
               }
@@ -82879,29 +82262,22 @@ var Clappr = function() {
                   this.aacOverFlow = A3;
                   break;
                 }
-                for (E2++; r4 < n3 - 1 && !i3.isHeader(f3, r4); r4++)
-                  ;
+                for (E2++; r4 < n3 - 1 && !i3.isHeader(f3, r4); r4++) ;
               }
             }
           }, t4.parseMPEGPES = function(e5, t5) {
             var r4 = t5.data, i4 = r4.length, a3 = 0, s3 = 0, o3 = t5.pts;
-            if (void 0 !== o3)
-              for (; s3 < i4; )
-                if (n2.isHeader(r4, s3)) {
-                  var l3 = n2.appendFrame(e5, r4, s3, o3, a3);
-                  if (!l3)
-                    break;
-                  s3 += l3.length, a3++;
-                } else
-                  s3++;
-            else
-              u2.logger.warn("[tsdemuxer]: MPEG PES unknown PTS");
+            if (void 0 !== o3) for (; s3 < i4; ) if (n2.isHeader(r4, s3)) {
+              var l3 = n2.appendFrame(e5, r4, s3, o3, a3);
+              if (!l3) break;
+              s3 += l3.length, a3++;
+            } else s3++;
+            else u2.logger.warn("[tsdemuxer]: MPEG PES unknown PTS");
           }, t4.parseID3PES = function(e5, t5) {
             if (void 0 !== t5.pts) {
               var r4 = h2({}, t5, { type: this._avcTrack ? d2.MetadataSchema.emsg : d2.MetadataSchema.audioId3, duration: Number.POSITIVE_INFINITY });
               e5.samples.push(r4);
-            } else
-              u2.logger.warn("[tsdemuxer]: ID3 PES unknown PTS");
+            } else u2.logger.warn("[tsdemuxer]: ID3 PES unknown PTS");
           }, e4;
         }();
       }
@@ -82911,11 +82287,10 @@ var Clappr = function() {
           \*****************************************/
       (e3, t3, r3) => {
         r3.r(t3), r3.d(t3, { default: () => c2 });
-        var i3 = (function() {
+        var i3 = function() {
           var e4 = ENTRY_MODULE, t4 = {}, r4 = function r5(i5) {
             var n3 = t4[i5];
-            if (void 0 !== n3)
-              return n3.exports;
+            if (void 0 !== n3) return n3.exports;
             var a3 = t4[i5] = { exports: {} };
             return e4[i5].call(a3.exports, a3, a3.exports, r5), a3.exports;
           };
@@ -82927,8 +82302,7 @@ var Clappr = function() {
             };
             return r4.d(t5, { a: t5 }), t5;
           }, r4.d = function(e5, t5) {
-            for (var i5 in t5)
-              r4.o(t5, i5) && !r4.o(e5, i5) && Object.defineProperty(e5, i5, { enumerable: true, get: t5[i5] });
+            for (var i5 in t5) r4.o(t5, i5) && !r4.o(e5, i5) && Object.defineProperty(e5, i5, { enumerable: true, get: t5[i5] });
           }, r4.o = function(e5, t5) {
             return Object.prototype.hasOwnProperty.call(e5, t5);
           }, r4.r = function(e5) {
@@ -82936,7 +82310,7 @@ var Clappr = function() {
           };
           var i4 = r4(ENTRY_MODULE);
           return i4.default || i4;
-        }).toString().split("ENTRY_MODULE"), n2 = "[\\.|\\-|\\+|\\w|/|@]+", a2 = "\\(\\s*(/\\*.*?\\*/)?\\s*.*?(" + n2 + ").*?\\)";
+        }.toString().split("ENTRY_MODULE"), n2 = "[\\.|\\-|\\+|\\w|/|@]+", a2 = "\\(\\s*(/\\*.*?\\*/)?\\s*.*?(" + n2 + ").*?\\)";
         function s2(e4) {
           return (e4 + "").replace(/[.?*+^$[\]\\(){}|-]/g, "\\$&");
         }
@@ -82944,15 +82318,10 @@ var Clappr = function() {
           var o3 = {};
           o3[i4] = [];
           var l3 = t4.toString().replace(/^"[^"]+"/, "function"), u3 = l3.match(/^function\s?\w*\(\w+,\s*\w+,\s*(\w+)\)/) || l3.match(/^\(\w+,\s*\w+,\s*(\w+)\)\s?\=\s?\>/);
-          if (!u3)
-            return o3;
-          for (var c3, d2 = u3[1], h2 = new RegExp("(\\\\n|\\W)" + s2(d2) + a2, "g"); c3 = h2.exec(l3); )
-            "dll-reference" !== c3[3] && o3[i4].push(c3[3]);
-          for (h2 = new RegExp("\\(" + s2(d2) + '\\("(dll-reference\\s(' + n2 + '))"\\)\\)' + a2, "g"); c3 = h2.exec(l3); )
-            e4[c3[2]] || (o3[i4].push(c3[1]), e4[c3[2]] = r3(c3[1]).m), o3[c3[2]] = o3[c3[2]] || [], o3[c3[2]].push(c3[4]);
-          for (var f2, p2 = Object.keys(o3), g2 = 0; g2 < p2.length; g2++)
-            for (var v2 = 0; v2 < o3[p2[g2]].length; v2++)
-              f2 = o3[p2[g2]][v2], isNaN(1 * f2) || (o3[p2[g2]][v2] = 1 * o3[p2[g2]][v2]);
+          if (!u3) return o3;
+          for (var c3, d2 = u3[1], h2 = new RegExp("(\\\\n|\\W)" + s2(d2) + a2, "g"); c3 = h2.exec(l3); ) "dll-reference" !== c3[3] && o3[i4].push(c3[3]);
+          for (h2 = new RegExp("\\(" + s2(d2) + '\\("(dll-reference\\s(' + n2 + '))"\\)\\)' + a2, "g"); c3 = h2.exec(l3); ) e4[c3[2]] || (o3[i4].push(c3[1]), e4[c3[2]] = r3(c3[1]).m), o3[c3[2]] = o3[c3[2]] || [], o3[c3[2]].push(c3[4]);
+          for (var f2, p2 = Object.keys(o3), g2 = 0; g2 < p2.length; g2++) for (var v2 = 0; v2 < o3[p2[g2]].length; v2++) f2 = o3[p2[g2]][v2], isNaN(1 * f2) || (o3[p2[g2]][v2] = 1 * o3[p2[g2]][v2]);
           return o3;
         }
         function l2(e4) {
@@ -82969,22 +82338,19 @@ var Clappr = function() {
         function c2(e4, t4) {
           t4 = t4 || {};
           var i4 = { main: r3.m }, n3 = t4.all ? { main: Object.keys(i4.main) } : function(e5, t5) {
-            for (var r4 = { main: [t5] }, i5 = { main: [] }, n4 = { main: {} }; l2(r4); )
-              for (var a4 = Object.keys(r4), s4 = 0; s4 < a4.length; s4++) {
-                var u3 = a4[s4], c4 = r4[u3].pop();
-                if (n4[u3] = n4[u3] || {}, !n4[u3][c4] && e5[u3][c4]) {
-                  n4[u3][c4] = true, i5[u3] = i5[u3] || [], i5[u3].push(c4);
-                  for (var d3 = o2(e5, e5[u3][c4], u3), h2 = Object.keys(d3), f2 = 0; f2 < h2.length; f2++)
-                    r4[h2[f2]] = r4[h2[f2]] || [], r4[h2[f2]] = r4[h2[f2]].concat(d3[h2[f2]]);
-                }
+            for (var r4 = { main: [t5] }, i5 = { main: [] }, n4 = { main: {} }; l2(r4); ) for (var a4 = Object.keys(r4), s4 = 0; s4 < a4.length; s4++) {
+              var u3 = a4[s4], c4 = r4[u3].pop();
+              if (n4[u3] = n4[u3] || {}, !n4[u3][c4] && e5[u3][c4]) {
+                n4[u3][c4] = true, i5[u3] = i5[u3] || [], i5[u3].push(c4);
+                for (var d3 = o2(e5, e5[u3][c4], u3), h2 = Object.keys(d3), f2 = 0; f2 < h2.length; f2++) r4[h2[f2]] = r4[h2[f2]] || [], r4[h2[f2]] = r4[h2[f2]].concat(d3[h2[f2]]);
               }
+            }
             return i5;
           }(i4, e4), a3 = "";
           Object.keys(n3).filter(function(e5) {
             return "main" !== e5;
           }).forEach(function(e5) {
-            for (var t5 = 0; n3[e5][t5]; )
-              t5++;
+            for (var t5 = 0; n3[e5][t5]; ) t5++;
             n3[e5].push(t5), i4[e5][t5] = "(function(module, exports, __webpack_require__) { module.exports = __webpack_require__; })", a3 = a3 + "var " + e5 + " = (" + u2(n3, i4, t5, modules) + ")();\n";
           }), a3 = a3 + "new ((" + u2(n3, i4, e4, "main") + ")())(self);";
           var s3 = new window.Blob([a3], { type: "text/javascript" }), c3 = (window.URL || window.webkitURL || window.mozURL || window.msURL).createObjectURL(s3), d2 = new window.Worker(c3);
@@ -83103,8 +82469,7 @@ var Clappr = function() {
           }, A2.emit = function(e5, t5, r5) {
             return this._emitter.emit(e5, t5, r5);
           }, A2.trigger = function(e5, t5) {
-            if (this.config.debug)
-              return this.emit(e5, e5, t5);
+            if (this.config.debug) return this.emit(e5, e5, t5);
             try {
               return this.emit(e5, e5, t5);
             } catch (t6) {
@@ -83200,11 +82565,8 @@ var Clappr = function() {
             return this.levelController.manualLevel;
           } }, { key: "minAutoLevel", get: function() {
             var e5 = this.levels, t5 = this.config.minAutoBitrate;
-            if (!e5)
-              return 0;
-            for (var r5 = e5.length, i4 = 0; i4 < r5; i4++)
-              if (e5[i4].maxBitrate >= t5)
-                return i4;
+            if (!e5) return 0;
+            for (var r5 = e5.length, i4 = 0; i4 < r5; i4++) if (e5[i4].maxBitrate >= t5) return i4;
             return 0;
           } }, { key: "maxAutoLevel", get: function() {
             var e5 = this.levels, t5 = this.autoLevelCapping;
@@ -83278,8 +82640,7 @@ var Clappr = function() {
         }
         function a2() {
           var e4 = (0, i3.getMediaSource)();
-          if (!e4)
-            return false;
+          if (!e4) return false;
           var t4 = n2(), r4 = e4 && "function" == typeof e4.isTypeSupported && e4.isTypeSupported('video/mp4; codecs="avc1.42E01E,mp4a.40.2"'), a3 = !t4 || t4.prototype && "function" == typeof t4.prototype.appendBuffer && "function" == typeof t4.prototype.remove;
           return !!r4 && !!a3;
         }
@@ -83308,8 +82669,7 @@ var Clappr = function() {
           return o2 = Object.assign ? Object.assign.bind() : function(e4) {
             for (var t4 = 1; t4 < arguments.length; t4++) {
               var r4 = arguments[t4];
-              for (var i4 in r4)
-                Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
+              for (var i4 in r4) Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
             }
             return e4;
           }, o2.apply(this, arguments);
@@ -83327,11 +82687,10 @@ var Clappr = function() {
           function e4(e5, t5) {
             if (this.attr = void 0, this._startDate = void 0, this._endDate = void 0, this._badValueForSameId = void 0, t5) {
               var r5 = t5.attr;
-              for (var l3 in r5)
-                if (Object.prototype.hasOwnProperty.call(e5, l3) && e5[l3] !== r5[l3]) {
-                  s2.logger.warn('DATERANGE tag attribute: "' + l3 + '" does not match for tags with ID: "' + e5.ID + '"'), this._badValueForSameId = l3;
-                  break;
-                }
+              for (var l3 in r5) if (Object.prototype.hasOwnProperty.call(e5, l3) && e5[l3] !== r5[l3]) {
+                s2.logger.warn('DATERANGE tag attribute: "' + l3 + '" does not match for tags with ID: "' + e5.ID + '"'), this._badValueForSameId = l3;
+                break;
+              }
               e5 = o2(new a2.AttrList({}), r5, e5);
             }
             if (this.attr = e5, this._startDate = new Date(e5[i3.START_DATE]), i3.END_DATE in this.attr) {
@@ -83347,17 +82706,14 @@ var Clappr = function() {
           } }, { key: "startDate", get: function() {
             return this._startDate;
           } }, { key: "endDate", get: function() {
-            if (this._endDate)
-              return this._endDate;
+            if (this._endDate) return this._endDate;
             var e5 = this.duration;
             return null !== e5 ? new Date(this._startDate.getTime() + 1e3 * e5) : null;
           } }, { key: "duration", get: function() {
             if (i3.DURATION in this.attr) {
               var e5 = this.attr.decimalFloatingPoint(i3.DURATION);
-              if ((0, n2.isFiniteNumber)(e5))
-                return e5;
-            } else if (this._endDate)
-              return (this._endDate.getTime() - this._startDate.getTime()) / 1e3;
+              if ((0, n2.isFiniteNumber)(e5)) return e5;
+            } else if (this._endDate) return (this._endDate.getTime() - this._startDate.getTime()) / 1e3;
             return null;
           } }, { key: "plannedDuration", get: function() {
             return i3.PLANNED_DURATION in this.attr ? this.attr.decimalFloatingPoint(i3.PLANNED_DURATION) : null;
@@ -83384,14 +82740,11 @@ var Clappr = function() {
         function a2(e4) {
           var t4 = "function" == typeof Map ? /* @__PURE__ */ new Map() : void 0;
           return a2 = function(e5) {
-            if (null === e5 || (r4 = e5, -1 === Function.toString.call(r4).indexOf("[native code]")))
-              return e5;
+            if (null === e5 || (r4 = e5, -1 === Function.toString.call(r4).indexOf("[native code]"))) return e5;
             var r4;
-            if ("function" != typeof e5)
-              throw new TypeError("Super expression must either be null or a function");
+            if ("function" != typeof e5) throw new TypeError("Super expression must either be null or a function");
             if (void 0 !== t4) {
-              if (t4.has(e5))
-                return t4.get(e5);
+              if (t4.has(e5)) return t4.get(e5);
               t4.set(e5, i4);
             }
             function i4() {
@@ -83409,12 +82762,9 @@ var Clappr = function() {
           }, s2.apply(null, arguments);
         }
         function o2() {
-          if ("undefined" == typeof Reflect || !Reflect.construct)
-            return false;
-          if (Reflect.construct.sham)
-            return false;
-          if ("function" == typeof Proxy)
-            return true;
+          if ("undefined" == typeof Reflect || !Reflect.construct) return false;
+          if (Reflect.construct.sham) return false;
+          if ("function" == typeof Proxy) return true;
           try {
             return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
             })), true;
@@ -83443,8 +82793,7 @@ var Clappr = function() {
             this.loader && this.loader.abort();
           }, t4.load = function(e5, t5) {
             var r4 = this, i4 = e5.url;
-            if (!i4)
-              return Promise.reject(new f2({ type: n2.ErrorTypes.NETWORK_ERROR, details: n2.ErrorDetails.FRAG_LOAD_ERROR, fatal: false, frag: e5, networkDetails: null }, "Fragment does not have a " + (i4 ? "part list" : "url")));
+            if (!i4) return Promise.reject(new f2({ type: n2.ErrorTypes.NETWORK_ERROR, details: n2.ErrorDetails.FRAG_LOAD_ERROR, fatal: false, frag: e5, networkDetails: null }, "Fragment does not have a " + (i4 ? "part list" : "url")));
             this.abort();
             var a3 = this.config, s3 = a3.fLoader, o3 = a3.loader;
             return new Promise(function(i5, l3) {
@@ -83486,8 +82835,7 @@ var Clappr = function() {
             if (r4.loaded += i4.loaded, n3) {
               var a3 = Math.round(e5.duration / t5.duration), s3 = Math.min(Math.round(r4.loaded / n3), a3), o3 = (a3 - s3) * Math.round(r4.loaded / s3);
               r4.total = r4.loaded + o3;
-            } else
-              r4.total = Math.max(r4.loaded, r4.total);
+            } else r4.total = Math.max(r4.loaded, r4.total);
             var l3 = r4.loading, u3 = i4.loading;
             l3.start ? l3.first += u3.first - u3.start : (l3.start = u3.start, l3.first = u3.first), l3.end = u3.end;
           }, t4.resetLoader = function(e5, t5) {
@@ -83502,8 +82850,7 @@ var Clappr = function() {
         var f2 = function(e4) {
           var t4, r4;
           function i4(t5) {
-            for (var r5, i5 = arguments.length, n3 = new Array(i5 > 1 ? i5 - 1 : 0), a3 = 1; a3 < i5; a3++)
-              n3[a3 - 1] = arguments[a3];
+            for (var r5, i5 = arguments.length, n3 = new Array(i5 > 1 ? i5 - 1 : 0), a3 = 1; a3 < i5; a3++) n3[a3 - 1] = arguments[a3];
             return (r5 = e4.call.apply(e4, [this].concat(n3)) || this).data = void 0, r5.data = t5, r5;
           }
           return r4 = e4, (t4 = i4).prototype = Object.create(r4.prototype), t4.prototype.constructor = t4, l2(t4, r4), i4;
@@ -83578,8 +82925,7 @@ var Clappr = function() {
           u2(t4, e4);
           var r4 = t4.prototype;
           return r4.createInitializationVector = function(e5) {
-            for (var t5 = new Uint8Array(16), r5 = 12; r5 < 16; r5++)
-              t5[r5] = e5 >> 8 * (15 - r5) & 255;
+            for (var t5 = new Uint8Array(16), r5 = 12; r5 < 16; r5++) t5[r5] = e5 >> 8 * (15 - r5) & 255;
             return t5;
           }, r4.setDecryptDataFromLevelKey = function(e5, t5) {
             var r5 = e5;
@@ -83592,8 +82938,7 @@ var Clappr = function() {
             var e5 = this.elementaryStreams;
             e5[i3.AUDIO] = null, e5[i3.VIDEO] = null, e5[i3.AUDIOVIDEO] = null;
           }, h2(t4, [{ key: "decryptdata", get: function() {
-            if (!this.levelkey && !this._decryptdata)
-              return null;
+            if (!this.levelkey && !this._decryptdata) return null;
             if (!this._decryptdata && this.levelkey) {
               var e5 = this.sn;
               "number" != typeof e5 && (this.levelkey && "AES-128" === this.levelkey.method && !this.levelkey.iv && s2.logger.warn('missing IV for initialization segment with method="' + this.levelkey.method + '" - compliance issue'), e5 = 0), this._decryptdata = this.setDecryptDataFromLevelKey(this.levelkey, e5);
@@ -83602,10 +82947,8 @@ var Clappr = function() {
           } }, { key: "end", get: function() {
             return this.start + this.duration;
           } }, { key: "endProgramDateTime", get: function() {
-            if (null === this.programDateTime)
-              return null;
-            if (!(0, n2.isFiniteNumber)(this.programDateTime))
-              return null;
+            if (null === this.programDateTime) return null;
+            if (!(0, n2.isFiniteNumber)(this.programDateTime)) return null;
             var e5 = (0, n2.isFiniteNumber)(this.duration) ? this.duration : 0;
             return this.programDateTime + 1e3 * e5;
           } }, { key: "encrypted", get: function() {
@@ -83670,16 +83013,13 @@ var Clappr = function() {
               var o2 = r4.decryptdata.uri;
               if (o2 !== this.decrypturl || null === this.decryptkey) {
                 var l2 = this.hls.config;
-                if (s3 && (a2.logger.warn("abort previous key loader for type:" + n3), s3.abort()), !o2)
-                  return void a2.logger.warn("key uri is falsy");
+                if (s3 && (a2.logger.warn("abort previous key loader for type:" + n3), s3.abort()), !o2) return void a2.logger.warn("key uri is falsy");
                 var u2 = l2.loader, c2 = r4.loader = this.loaders[n3] = new u2(l2);
                 this.decrypturl = o2, this.decryptkey = null;
                 var d2 = { url: o2, frag: r4, responseType: "arraybuffer" }, h2 = { timeout: l2.fragLoadingTimeOut, maxRetry: 0, retryDelay: l2.fragLoadingRetryDelay, maxRetryDelay: l2.fragLoadingMaxRetryTimeout, highWaterMark: 0 }, f2 = { onSuccess: this.loadsuccess.bind(this), onError: this.loaderror.bind(this), onTimeout: this.loadtimeout.bind(this) };
                 c2.load(d2, h2, f2);
-              } else
-                this.decryptkey && (r4.decryptdata.key = this.decryptkey, this.hls.trigger(i3.Events.KEY_LOADED, { frag: r4 }));
-            } else
-              a2.logger.warn("Missing decryption data on fragment in onKeyLoading");
+              } else this.decryptkey && (r4.decryptdata.key = this.decryptkey, this.hls.trigger(i3.Events.KEY_LOADED, { frag: r4 }));
+            } else a2.logger.warn("Missing decryption data on fragment in onKeyLoading");
           }, t4.loadsuccess = function(e5, t5, r4) {
             var n3 = r4.frag;
             n3.decryptdata ? (this.decryptkey = n3.decryptdata.key = new Uint8Array(e5.data), n3.loader = null, delete this.loaders[n3.type], this.hls.trigger(i3.Events.KEY_LOADED, { frag: n3 })) : a2.logger.error("after key load, decryptdata unset");
@@ -83714,8 +83054,7 @@ var Clappr = function() {
           }
           var t4, r4, a3;
           return e4.prototype.reloaded = function(e5) {
-            if (!e5)
-              return this.advanced = true, void (this.updated = true);
+            if (!e5) return this.advanced = true, void (this.updated = true);
             var t5 = this.lastPartSn - e5.lastPartSn, r5 = this.lastPartIndex - e5.lastPartIndex;
             this.updated = this.endSN !== e5.endSN || !!r5 || !!t5, this.advanced = this.endSN > e5.endSN || t5 > 0 || 0 === t5 && r5 > 0, this.updated || this.advanced ? this.misses = Math.floor(0.6 * e5.misses) : this.misses = e5.misses + 1, this.availabilityDelay = e5.availabilityDelay;
           }, t4 = e4, (r4 = [{ key: "hasProgramDateTime", get: function() {
@@ -83823,8 +83162,7 @@ var Clappr = function() {
           return e4.findGroup = function(e5, t4) {
             for (var r4 = 0; r4 < e5.length; r4++) {
               var i4 = e5[r4];
-              if (i4.id === t4)
-                return i4;
+              if (i4.id === t4) return i4;
             }
           }, e4.convertAVC1ToAVCOTI = function(e5) {
             var t4 = e5.split(".");
@@ -83837,16 +83175,15 @@ var Clappr = function() {
             return n2.buildAbsoluteURL(t4, e5, { alwaysNormalize: true });
           }, e4.parseMasterPlaylist = function(t4, r4) {
             var i4, n3 = [], a3 = [], s3 = {}, o3 = false;
-            for (h2.lastIndex = 0; null != (i4 = h2.exec(t4)); )
-              if (i4[1]) {
-                var l3, c3 = new u2.AttrList(i4[1]), d3 = { attrs: c3, bitrate: c3.decimalInteger("AVERAGE-BANDWIDTH") || c3.decimalInteger("BANDWIDTH"), name: c3.NAME, url: e4.resolve(i4[2], r4) }, f3 = c3.decimalResolution("RESOLUTION");
-                f3 && (d3.width = f3.width, d3.height = f3.height), y2((c3.CODECS || "").split(/[ ,]+/).filter(function(e5) {
-                  return e5;
-                }), d3), d3.videoCodec && -1 !== d3.videoCodec.indexOf("avc1") && (d3.videoCodec = e4.convertAVC1ToAVCOTI(d3.videoCodec)), null !== (l3 = d3.unknownCodecs) && void 0 !== l3 && l3.length || a3.push(d3), n3.push(d3);
-              } else if (i4[3]) {
-                var p3 = new u2.AttrList(i4[3]);
-                p3["DATA-ID"] && (o3 = true, s3[p3["DATA-ID"]] = p3);
-              }
+            for (h2.lastIndex = 0; null != (i4 = h2.exec(t4)); ) if (i4[1]) {
+              var l3, c3 = new u2.AttrList(i4[1]), d3 = { attrs: c3, bitrate: c3.decimalInteger("AVERAGE-BANDWIDTH") || c3.decimalInteger("BANDWIDTH"), name: c3.NAME, url: e4.resolve(i4[2], r4) }, f3 = c3.decimalResolution("RESOLUTION");
+              f3 && (d3.width = f3.width, d3.height = f3.height), y2((c3.CODECS || "").split(/[ ,]+/).filter(function(e5) {
+                return e5;
+              }), d3), d3.videoCodec && -1 !== d3.videoCodec.indexOf("avc1") && (d3.videoCodec = e4.convertAVC1ToAVCOTI(d3.videoCodec)), null !== (l3 = d3.unknownCodecs) && void 0 !== l3 && l3.length || a3.push(d3), n3.push(d3);
+            } else if (i4[3]) {
+              var p3 = new u2.AttrList(i4[3]);
+              p3["DATA-ID"] && (o3 = true, s3[p3["DATA-ID"]] = p3);
+            }
             return { levels: a3.length > 0 && a3.length < n3.length ? a3 : n3, sessionData: o3 ? s3 : null };
           }, e4.parseMasterPlaylistMedia = function(t4, r4, i4, n3) {
             var a3;
@@ -83873,20 +83210,17 @@ var Clappr = function() {
                 R2.duration = parseFloat(w2);
                 var P2 = (" " + f3[2]).slice(1);
                 R2.title = P2 || null, R2.tagList.push(P2 ? ["INF", w2, P2] : ["INF", w2]);
-              } else if (f3[3])
-                (0, i3.isFiniteNumber)(R2.duration) && (R2.start = C2, y3 && (R2.levelkey = y3), R2.sn = S2, R2.level = r4, R2.cc = L2, R2.urlId = h3, b2.push(R2), R2.relurl = (" " + f3[3]).slice(1), E2(R2, D2), D2 = R2, C2 += R2.duration, S2++, _2 = 0, O2 = true);
+              } else if (f3[3]) (0, i3.isFiniteNumber)(R2.duration) && (R2.start = C2, y3 && (R2.levelkey = y3), R2.sn = S2, R2.level = r4, R2.cc = L2, R2.urlId = h3, b2.push(R2), R2.relurl = (" " + f3[3]).slice(1), E2(R2, D2), D2 = R2, C2 += R2.duration, S2++, _2 = 0, O2 = true);
               else if (f3[4]) {
                 var x2 = (" " + f3[4]).slice(1);
                 D2 ? R2.setByteRange(x2, D2) : R2.setByteRange(x2);
-              } else if (f3[5])
-                R2.rawProgramDateTime = (" " + f3[5]).slice(1), R2.tagList.push(["PROGRAM-DATE-TIME", R2.rawProgramDateTime]), -1 === I2 && (I2 = b2.length);
+              } else if (f3[5]) R2.rawProgramDateTime = (" " + f3[5]).slice(1), R2.tagList.push(["PROGRAM-DATE-TIME", R2.rawProgramDateTime]), -1 === I2 && (I2 = b2.length);
               else {
                 if (!(f3 = f3[0].match(g2))) {
                   c2.logger.warn("No matches on slow regex match for level playlist!");
                   continue;
                 }
-                for (m3 = 1; m3 < f3.length && void 0 === f3[m3]; m3++)
-                  ;
+                for (m3 = 1; m3 < f3.length && void 0 === f3[m3]; m3++) ;
                 var N2 = (" " + f3[m3]).slice(1), F2 = (" " + f3[m3 + 1]).slice(1), M2 = f3[m3 + 2] ? (" " + f3[m3 + 2]).slice(1) : "";
                 switch (N2) {
                   case "PLAYLIST-TYPE":
@@ -83899,8 +83233,7 @@ var Clappr = function() {
                     var B2 = new u2.AttrList(F2), U2 = B2.decimalInteger("SKIPPED-SEGMENTS");
                     if ((0, i3.isFiniteNumber)(U2)) {
                       A3.skippedSegments = U2;
-                      for (var G2 = U2; G2--; )
-                        b2.unshift(null);
+                      for (var G2 = U2; G2--; ) b2.unshift(null);
                       S2 += U2;
                     }
                     var V2 = B2.enumeratedString("RECENTLY-REMOVED-DATERANGES");
@@ -83942,8 +83275,7 @@ var Clappr = function() {
                       c2.logger.warn("Keyformat " + Z2 + " is not supported from the manifest");
                       continue;
                     }
-                    if ("identity" !== Z2)
-                      continue;
+                    if ("identity" !== Z2) continue;
                     W2 && (y3 = l2.LevelKey.fromURL(t4, $2), $2 && ["AES-128", "SAMPLE-AES", "SAMPLE-AES-CENC"].indexOf(W2) >= 0 && (y3.method = W2, y3.keyFormat = Z2, X2 && (y3.keyID = X2), q2 && (y3.keyFormatVersions = q2), y3.iv = z2));
                     break;
                   case "START":
@@ -83955,8 +83287,7 @@ var Clappr = function() {
                     if (R2.duration) {
                       var ee2 = new s2.Fragment(d3, t4);
                       T2(ee2, J2, r4, y3), k2 = ee2, R2.initSegment = k2, k2.rawProgramDateTime && !R2.rawProgramDateTime && (R2.rawProgramDateTime = k2.rawProgramDateTime);
-                    } else
-                      T2(R2, J2, r4, y3), k2 = R2, O2 = true;
+                    } else T2(R2, J2, r4, y3), k2 = R2, O2 = true;
                     break;
                   case "SERVER-CONTROL":
                     var te2 = new u2.AttrList(F2);
@@ -83994,13 +83325,11 @@ var Clappr = function() {
                 return e6.relurl && (t5 = e6.relurl, v2.test(null != (r5 = null === (i4 = n2.parseURL(t5)) || void 0 === i4 ? void 0 : i4.path) ? r5 : ""));
                 var t5, r5, i4;
               }) && (c2.logger.warn("MP4 fragments found but no init segment (probably no MAP, incomplete M3U8), trying to fetch SIDX"), (R2 = new s2.Fragment(d3, t4)).relurl = de2.relurl, R2.level = r4, R2.sn = "initSegment", ce2.initSegment = R2, A3.needSidxRanges = true));
-            } else
-              A3.endSN = 0, A3.startCC = 0;
+            } else A3.endSN = 0, A3.startCC = 0;
             return A3.fragmentHint && (C2 += A3.fragmentHint.duration), A3.totalduration = C2, A3.endCC = L2, I2 > 0 && function(e6, t5) {
               for (var r5 = e6[t5], i4 = t5; i4--; ) {
                 var n3 = e6[i4];
-                if (!n3)
-                  return;
+                if (!n3) return;
                 n3.programDateTime = r5.programDateTime - 1e3 * n3.duration, r5 = n3;
               }
             }(b2, I2), A3;
@@ -84111,8 +83440,7 @@ var Clappr = function() {
             var t5, r4, i4, n3, a3, o3, l3 = this.hls.config, c3 = this.getInternalLoader(e5);
             if (c3) {
               var d3 = c3.context;
-              if (d3 && d3.url === e5.url)
-                return void s2.logger.trace("[playlist-loader]: playlist request ongoing");
+              if (d3 && d3.url === e5.url) return void s2.logger.trace("[playlist-loader]: playlist request ongoing");
               s2.logger.log("[playlist-loader]: aborting previous loader for type: " + e5.type), c3.abort();
             }
             switch (e5.type) {
@@ -84134,8 +83462,7 @@ var Clappr = function() {
             var p2 = { timeout: i4, maxRetry: r4, retryDelay: n3, maxRetryDelay: a3, highWaterMark: 0 }, g2 = { onSuccess: this.loadsuccess.bind(this), onError: this.loaderror.bind(this), onTimeout: this.loadtimeout.bind(this) };
             c3.load(e5, p2, g2);
           }, t4.loadsuccess = function(e5, t5, r4, i4) {
-            if (void 0 === i4 && (i4 = null), r4.isSidxRequest)
-              return this.handleSidxRequest(e5, r4), void this.handlePlaylistLoaded(e5, t5, r4, i4);
+            if (void 0 === i4 && (i4 = null), r4.isSidxRequest) return this.handleSidxRequest(e5, r4), void this.handlePlaylistLoaded(e5, t5, r4, i4);
             this.resetInternalLoader(r4.type);
             var n3 = e5.data;
             0 === n3.indexOf("#EXTM3U") ? (t5.parsing.start = performance.now(), n3.indexOf("#EXTINF:") > 0 || n3.indexOf("#EXT-X-TARGETDURATION:") > 0 ? this.handleTrackOrLevelPlaylist(e5, t5, r4, i4) : this.handleMasterPlaylist(e5, t5, r4, i4)) : this.handleManifestParsingError(e5, r4, "no EXTM3U delimiter", i4);
@@ -84154,8 +83481,7 @@ var Clappr = function() {
               m2.length && (m2.some(function(e6) {
                 return !e6.url;
               }) || !f3[0].audioCodec || f3[0].attrs.AUDIO || (s2.logger.log("[playlist-loader]: audio codec signaled in quality level, but no embedded audio track signaled, create one"), m2.unshift({ type: "main", name: "main", default: false, autoselect: false, forced: false, id: -1, attrs: new c2.AttrList({}), bitrate: 0, url: "" }))), a3.trigger(n2.Events.MANIFEST_LOADED, { levels: f3, audioTracks: m2, subtitles: y2, captions: A2, url: u3, stats: t5, networkDetails: i4, sessionData: p2 });
-            } else
-              this.handleManifestParsingError(e5, r4, "no level found in manifest", i4);
+            } else this.handleManifestParsingError(e5, r4, "no level found in manifest", i4);
           }, t4.handleTrackOrLevelPlaylist = function(e5, t5, r4, s3) {
             var o3 = this.hls, h3 = r4.id, f3 = r4.level, p2 = r4.type, g2 = d2(e5, r4), v2 = (0, i3.isFiniteNumber)(h3) ? h3 : 0, m2 = (0, i3.isFiniteNumber)(f3) ? f3 : v2, y2 = function(e6) {
               switch (e6.type) {
@@ -84175,10 +83501,8 @@ var Clappr = function() {
               if (t5.parsing.end = performance.now(), A2.needSidxRanges) {
                 var T2, b2 = null === (T2 = A2.fragments[0].initSegment) || void 0 === T2 ? void 0 : T2.url;
                 this.load({ url: b2, isSidxRequest: true, type: p2, level: f3, levelDetails: A2, id: h3, groupId: null, rangeStart: 0, rangeEnd: 2048, responseType: "arraybuffer", deliveryDirectives: null });
-              } else
-                r4.levelDetails = A2, this.handlePlaylistLoaded(e5, t5, r4, s3);
-            } else
-              o3.trigger(n2.Events.ERROR, { type: a2.ErrorTypes.NETWORK_ERROR, details: a2.ErrorDetails.LEVEL_EMPTY_ERROR, fatal: false, url: g2, reason: "no fragments found in level", level: "number" == typeof r4.level ? r4.level : void 0 });
+              } else r4.levelDetails = A2, this.handlePlaylistLoaded(e5, t5, r4, s3);
+            } else o3.trigger(n2.Events.ERROR, { type: a2.ErrorTypes.NETWORK_ERROR, details: a2.ErrorDetails.LEVEL_EMPTY_ERROR, fatal: false, url: g2, reason: "no fragments found in level", level: "number" == typeof r4.level ? r4.level : void 0 });
           }, t4.handleSidxRequest = function(e5, t5) {
             var r4 = new Uint8Array(e5.data), i4 = (0, o2.findBox)(r4, ["sidx"])[0];
             if (i4) {
@@ -84218,20 +83542,18 @@ var Clappr = function() {
           }, t4.handlePlaylistLoaded = function(e5, t5, r4, i4) {
             var a3 = r4.type, s3 = r4.level, o3 = r4.id, l3 = r4.groupId, c3 = r4.loader, d3 = r4.levelDetails, h3 = r4.deliveryDirectives;
             if (null != d3 && d3.targetduration) {
-              if (c3)
-                switch (d3.live && (c3.getCacheAge && (d3.ageHeader = c3.getCacheAge() || 0), c3.getCacheAge && !isNaN(d3.ageHeader) || (d3.ageHeader = 0)), a3) {
-                  case u2.PlaylistContextType.MANIFEST:
-                  case u2.PlaylistContextType.LEVEL:
-                    this.hls.trigger(n2.Events.LEVEL_LOADED, { details: d3, level: s3 || 0, id: o3 || 0, stats: t5, networkDetails: i4, deliveryDirectives: h3 });
-                    break;
-                  case u2.PlaylistContextType.AUDIO_TRACK:
-                    this.hls.trigger(n2.Events.AUDIO_TRACK_LOADED, { details: d3, id: o3 || 0, groupId: l3 || "", stats: t5, networkDetails: i4, deliveryDirectives: h3 });
-                    break;
-                  case u2.PlaylistContextType.SUBTITLE_TRACK:
-                    this.hls.trigger(n2.Events.SUBTITLE_TRACK_LOADED, { details: d3, id: o3 || 0, groupId: l3 || "", stats: t5, networkDetails: i4, deliveryDirectives: h3 });
-                }
-            } else
-              this.handleManifestParsingError(e5, r4, "invalid target duration", i4);
+              if (c3) switch (d3.live && (c3.getCacheAge && (d3.ageHeader = c3.getCacheAge() || 0), c3.getCacheAge && !isNaN(d3.ageHeader) || (d3.ageHeader = 0)), a3) {
+                case u2.PlaylistContextType.MANIFEST:
+                case u2.PlaylistContextType.LEVEL:
+                  this.hls.trigger(n2.Events.LEVEL_LOADED, { details: d3, level: s3 || 0, id: o3 || 0, stats: t5, networkDetails: i4, deliveryDirectives: h3 });
+                  break;
+                case u2.PlaylistContextType.AUDIO_TRACK:
+                  this.hls.trigger(n2.Events.AUDIO_TRACK_LOADED, { details: d3, id: o3 || 0, groupId: l3 || "", stats: t5, networkDetails: i4, deliveryDirectives: h3 });
+                  break;
+                case u2.PlaylistContextType.SUBTITLE_TRACK:
+                  this.hls.trigger(n2.Events.SUBTITLE_TRACK_LOADED, { details: d3, id: o3 || 0, groupId: l3 || "", stats: t5, networkDetails: i4, deliveryDirectives: h3 });
+              }
+            } else this.handleManifestParsingError(e5, r4, "invalid target duration", i4);
           }, e4;
         }();
         const f2 = h2;
@@ -84257,25 +83579,16 @@ var Clappr = function() {
           }
           return e4.getSilentFrame = function(e5, t4) {
             if ("mp4a.40.2" === e5) {
-              if (1 === t4)
-                return new Uint8Array([0, 200, 0, 128, 35, 128]);
-              if (2 === t4)
-                return new Uint8Array([33, 0, 73, 144, 2, 25, 0, 35, 128]);
-              if (3 === t4)
-                return new Uint8Array([0, 200, 0, 128, 32, 132, 1, 38, 64, 8, 100, 0, 142]);
-              if (4 === t4)
-                return new Uint8Array([0, 200, 0, 128, 32, 132, 1, 38, 64, 8, 100, 0, 128, 44, 128, 8, 2, 56]);
-              if (5 === t4)
-                return new Uint8Array([0, 200, 0, 128, 32, 132, 1, 38, 64, 8, 100, 0, 130, 48, 4, 153, 0, 33, 144, 2, 56]);
-              if (6 === t4)
-                return new Uint8Array([0, 200, 0, 128, 32, 132, 1, 38, 64, 8, 100, 0, 130, 48, 4, 153, 0, 33, 144, 2, 0, 178, 0, 32, 8, 224]);
+              if (1 === t4) return new Uint8Array([0, 200, 0, 128, 35, 128]);
+              if (2 === t4) return new Uint8Array([33, 0, 73, 144, 2, 25, 0, 35, 128]);
+              if (3 === t4) return new Uint8Array([0, 200, 0, 128, 32, 132, 1, 38, 64, 8, 100, 0, 142]);
+              if (4 === t4) return new Uint8Array([0, 200, 0, 128, 32, 132, 1, 38, 64, 8, 100, 0, 128, 44, 128, 8, 2, 56]);
+              if (5 === t4) return new Uint8Array([0, 200, 0, 128, 32, 132, 1, 38, 64, 8, 100, 0, 130, 48, 4, 153, 0, 33, 144, 2, 56]);
+              if (6 === t4) return new Uint8Array([0, 200, 0, 128, 32, 132, 1, 38, 64, 8, 100, 0, 130, 48, 4, 153, 0, 33, 144, 2, 0, 178, 0, 32, 8, 224]);
             } else {
-              if (1 === t4)
-                return new Uint8Array([1, 64, 34, 128, 163, 78, 230, 128, 186, 8, 0, 0, 0, 28, 6, 241, 193, 10, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 94]);
-              if (2 === t4)
-                return new Uint8Array([1, 64, 34, 128, 163, 94, 230, 128, 186, 8, 0, 0, 0, 0, 149, 0, 6, 241, 161, 10, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 94]);
-              if (3 === t4)
-                return new Uint8Array([1, 64, 34, 128, 163, 94, 230, 128, 186, 8, 0, 0, 0, 0, 149, 0, 6, 241, 161, 10, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 94]);
+              if (1 === t4) return new Uint8Array([1, 64, 34, 128, 163, 78, 230, 128, 186, 8, 0, 0, 0, 28, 6, 241, 193, 10, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 94]);
+              if (2 === t4) return new Uint8Array([1, 64, 34, 128, 163, 94, 230, 128, 186, 8, 0, 0, 0, 0, 149, 0, 6, 241, 161, 10, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 94]);
+              if (3 === t4) return new Uint8Array([1, 64, 34, 128, 163, 94, 230, 128, 186, 8, 0, 0, 0, 0, 149, 0, 6, 241, 161, 10, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 94]);
             }
           }, e4;
         }();
@@ -84291,8 +83604,7 @@ var Clappr = function() {
           }
           return e4.init = function() {
             var t4;
-            for (t4 in e4.types = { avc1: [], avcC: [], btrt: [], dinf: [], dref: [], esds: [], ftyp: [], hdlr: [], mdat: [], mdhd: [], mdia: [], mfhd: [], minf: [], moof: [], moov: [], mp4a: [], ".mp3": [], mvex: [], mvhd: [], pasp: [], sdtp: [], stbl: [], stco: [], stsc: [], stsd: [], stsz: [], stts: [], tfdt: [], tfhd: [], traf: [], trak: [], trun: [], trex: [], tkhd: [], vmhd: [], smhd: [] }, e4.types)
-              e4.types.hasOwnProperty(t4) && (e4.types[t4] = [t4.charCodeAt(0), t4.charCodeAt(1), t4.charCodeAt(2), t4.charCodeAt(3)]);
+            for (t4 in e4.types = { avc1: [], avcC: [], btrt: [], dinf: [], dref: [], esds: [], ftyp: [], hdlr: [], mdat: [], mdhd: [], mdia: [], mfhd: [], minf: [], moof: [], moov: [], mp4a: [], ".mp3": [], mvex: [], mvhd: [], pasp: [], sdtp: [], stbl: [], stco: [], stsc: [], stsd: [], stsz: [], stts: [], tfdt: [], tfhd: [], traf: [], trak: [], trun: [], trex: [], tkhd: [], vmhd: [], smhd: [] }, e4.types) e4.types.hasOwnProperty(t4) && (e4.types[t4] = [t4.charCodeAt(0), t4.charCodeAt(1), t4.charCodeAt(2), t4.charCodeAt(3)]);
             var r4 = new Uint8Array([0, 0, 0, 0, 0, 0, 0, 0, 118, 105, 100, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 86, 105, 100, 101, 111, 72, 97, 110, 100, 108, 101, 114, 0]), i4 = new Uint8Array([0, 0, 0, 0, 0, 0, 0, 0, 115, 111, 117, 110, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 83, 111, 117, 110, 100, 72, 97, 110, 100, 108, 101, 114, 0]);
             e4.HDLR_TYPES = { video: r4, audio: i4 };
             var n3 = new Uint8Array([0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 12, 117, 114, 108, 32, 0, 0, 0, 1]), a3 = new Uint8Array([0, 0, 0, 0, 0, 0, 0, 0]);
@@ -84300,13 +83612,10 @@ var Clappr = function() {
             var s2 = new Uint8Array([105, 115, 111, 109]), o2 = new Uint8Array([97, 118, 99, 49]), l2 = new Uint8Array([0, 0, 0, 1]);
             e4.FTYP = e4.box(e4.types.ftyp, s2, l2, s2, o2), e4.DINF = e4.box(e4.types.dinf, e4.box(e4.types.dref, n3));
           }, e4.box = function(e5) {
-            for (var t4 = 8, r4 = arguments.length, i4 = new Array(r4 > 1 ? r4 - 1 : 0), n3 = 1; n3 < r4; n3++)
-              i4[n3 - 1] = arguments[n3];
-            for (var a3 = i4.length, s2 = a3; a3--; )
-              t4 += i4[a3].byteLength;
+            for (var t4 = 8, r4 = arguments.length, i4 = new Array(r4 > 1 ? r4 - 1 : 0), n3 = 1; n3 < r4; n3++) i4[n3 - 1] = arguments[n3];
+            for (var a3 = i4.length, s2 = a3; a3--; ) t4 += i4[a3].byteLength;
             var o2 = new Uint8Array(t4);
-            for (o2[0] = t4 >> 24 & 255, o2[1] = t4 >> 16 & 255, o2[2] = t4 >> 8 & 255, o2[3] = 255 & t4, o2.set(e5, 4), a3 = 0, t4 = 8; a3 < s2; a3++)
-              o2.set(i4[a3], t4), t4 += i4[a3].byteLength;
+            for (o2[0] = t4 >> 24 & 255, o2[1] = t4 >> 16 & 255, o2[2] = t4 >> 8 & 255, o2[3] = 255 & t4, o2.set(e5, 4), a3 = 0, t4 = 8; a3 < s2; a3++) o2.set(i4[a3], t4), t4 += i4[a3].byteLength;
             return o2;
           }, e4.hdlr = function(t4) {
             return e4.box(e4.types.hdlr, e4.HDLR_TYPES[t4]);
@@ -84325,12 +83634,10 @@ var Clappr = function() {
           }, e4.moof = function(t4, r4, i4) {
             return e4.box(e4.types.moof, e4.mfhd(t4), e4.traf(i4, r4));
           }, e4.moov = function(t4) {
-            for (var r4 = t4.length, i4 = []; r4--; )
-              i4[r4] = e4.trak(t4[r4]);
+            for (var r4 = t4.length, i4 = []; r4--; ) i4[r4] = e4.trak(t4[r4]);
             return e4.box.apply(null, [e4.types.moov, e4.mvhd(t4[0].timescale, t4[0].duration)].concat(i4).concat(e4.mvex(t4)));
           }, e4.mvex = function(t4) {
-            for (var r4 = t4.length, i4 = []; r4--; )
-              i4[r4] = e4.trex(t4[r4]);
+            for (var r4 = t4.length, i4 = []; r4--; ) i4[r4] = e4.trex(t4[r4]);
             return e4.box.apply(null, [e4.types.mvex].concat(i4));
           }, e4.mvhd = function(t4, r4) {
             r4 *= t4;
@@ -84338,17 +83645,14 @@ var Clappr = function() {
             return e4.box(e4.types.mvhd, s2);
           }, e4.sdtp = function(t4) {
             var r4, i4, n3 = t4.samples || [], a3 = new Uint8Array(4 + n3.length);
-            for (r4 = 0; r4 < n3.length; r4++)
-              i4 = n3[r4].flags, a3[r4 + 4] = i4.dependsOn << 4 | i4.isDependedOn << 2 | i4.hasRedundancy;
+            for (r4 = 0; r4 < n3.length; r4++) i4 = n3[r4].flags, a3[r4 + 4] = i4.dependsOn << 4 | i4.isDependedOn << 2 | i4.hasRedundancy;
             return e4.box(e4.types.sdtp, a3);
           }, e4.stbl = function(t4) {
             return e4.box(e4.types.stbl, e4.stsd(t4), e4.box(e4.types.stts, e4.STTS), e4.box(e4.types.stsc, e4.STSC), e4.box(e4.types.stsz, e4.STSZ), e4.box(e4.types.stco, e4.STCO));
           }, e4.avc1 = function(t4) {
             var r4, i4, n3, a3 = [], s2 = [];
-            for (r4 = 0; r4 < t4.sps.length; r4++)
-              n3 = (i4 = t4.sps[r4]).byteLength, a3.push(n3 >>> 8 & 255), a3.push(255 & n3), a3 = a3.concat(Array.prototype.slice.call(i4));
-            for (r4 = 0; r4 < t4.pps.length; r4++)
-              n3 = (i4 = t4.pps[r4]).byteLength, s2.push(n3 >>> 8 & 255), s2.push(255 & n3), s2 = s2.concat(Array.prototype.slice.call(i4));
+            for (r4 = 0; r4 < t4.sps.length; r4++) n3 = (i4 = t4.sps[r4]).byteLength, a3.push(n3 >>> 8 & 255), a3.push(255 & n3), a3 = a3.concat(Array.prototype.slice.call(i4));
+            for (r4 = 0; r4 < t4.pps.length; r4++) n3 = (i4 = t4.pps[r4]).byteLength, s2.push(n3 >>> 8 & 255), s2.push(255 & n3), s2 = s2.concat(Array.prototype.slice.call(i4));
             var o2 = e4.box(e4.types.avcC, new Uint8Array([1, a3[3], a3[4], a3[5], 255, 224 | t4.sps.length].concat(a3).concat([t4.pps.length]).concat(s2))), l2 = t4.width, u2 = t4.height, c2 = t4.pixelRatio[0], d2 = t4.pixelRatio[1];
             return e4.box(e4.types.avc1, new Uint8Array([0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, l2 >> 8 & 255, 255 & l2, u2 >> 8 & 255, 255 & u2, 0, 72, 0, 0, 0, 72, 0, 0, 0, 0, 0, 0, 0, 1, 18, 100, 97, 105, 108, 121, 109, 111, 116, 105, 111, 110, 47, 104, 108, 115, 46, 106, 115, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 17, 17]), o2, e4.box(e4.types.btrt, new Uint8Array([0, 28, 156, 128, 0, 45, 198, 192, 0, 45, 198, 192])), e4.box(e4.types.pasp, new Uint8Array([c2 >> 24, c2 >> 16 & 255, c2 >> 8 & 255, 255 & c2, d2 >> 24, d2 >> 16 & 255, d2 >> 8 & 255, 255 & d2])));
           }, e4.esds = function(e5) {
@@ -84375,8 +83679,7 @@ var Clappr = function() {
             return e4.box(e4.types.trex, new Uint8Array([0, 0, 0, 0, r4 >> 24, r4 >> 16 & 255, r4 >> 8 & 255, 255 & r4, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1]));
           }, e4.trun = function(t4, r4) {
             var i4, n3, a3, s2, o2, l2, u2 = t4.samples || [], c2 = u2.length, d2 = 12 + 16 * c2, h2 = new Uint8Array(d2);
-            for (r4 += 8 + d2, h2.set(["video" === t4.type ? 1 : 0, 0, 15, 1, c2 >>> 24 & 255, c2 >>> 16 & 255, c2 >>> 8 & 255, 255 & c2, r4 >>> 24 & 255, r4 >>> 16 & 255, r4 >>> 8 & 255, 255 & r4], 0), i4 = 0; i4 < c2; i4++)
-              a3 = (n3 = u2[i4]).duration, s2 = n3.size, o2 = n3.flags, l2 = n3.cts, h2.set([a3 >>> 24 & 255, a3 >>> 16 & 255, a3 >>> 8 & 255, 255 & a3, s2 >>> 24 & 255, s2 >>> 16 & 255, s2 >>> 8 & 255, 255 & s2, o2.isLeading << 2 | o2.dependsOn, o2.isDependedOn << 6 | o2.hasRedundancy << 4 | o2.paddingValue << 1 | o2.isNonSync, 61440 & o2.degradPrio, 15 & o2.degradPrio, l2 >>> 24 & 255, l2 >>> 16 & 255, l2 >>> 8 & 255, 255 & l2], 12 + 16 * i4);
+            for (r4 += 8 + d2, h2.set(["video" === t4.type ? 1 : 0, 0, 15, 1, c2 >>> 24 & 255, c2 >>> 16 & 255, c2 >>> 8 & 255, 255 & c2, r4 >>> 24 & 255, r4 >>> 16 & 255, r4 >>> 8 & 255, 255 & r4], 0), i4 = 0; i4 < c2; i4++) a3 = (n3 = u2[i4]).duration, s2 = n3.size, o2 = n3.flags, l2 = n3.cts, h2.set([a3 >>> 24 & 255, a3 >>> 16 & 255, a3 >>> 8 & 255, 255 & a3, s2 >>> 24 & 255, s2 >>> 16 & 255, s2 >>> 8 & 255, 255 & s2, o2.isLeading << 2 | o2.dependsOn, o2.isDependedOn << 6 | o2.hasRedundancy << 4 | o2.paddingValue << 1 | o2.isNonSync, 61440 & o2.degradPrio, 15 & o2.degradPrio, l2 >>> 24 & 255, l2 >>> 16 & 255, l2 >>> 8 & 255, 255 & l2], 12 + 16 * i4);
             return e4.box(e4.types.trun, h2);
           }, e4.initSegment = function(t4) {
             e4.types || e4.init();
@@ -84422,8 +83725,7 @@ var Clappr = function() {
           return d2 = Object.assign ? Object.assign.bind() : function(e4) {
             for (var t4 = 1; t4 < arguments.length; t4++) {
               var r4 = arguments[t4];
-              for (var i4 in r4)
-                Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
+              for (var i4 in r4) Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
             }
             return e4;
           }, d2.apply(this, arguments);
@@ -84459,17 +83761,13 @@ var Clappr = function() {
               this.ISGenerated || (h3 = this.generateIS(e5, t5, n3));
               var C2, L2 = this.isVideoContiguous, D2 = -1;
               if (_2 && (D2 = function(e6) {
-                for (var t6 = 0; t6 < e6.length; t6++)
-                  if (e6[t6].key)
-                    return t6;
+                for (var t6 = 0; t6 < e6.length; t6++) if (e6[t6].key) return t6;
                 return -1;
-              }(t5.samples), !L2 && this.config.forceKeyFrameOnDiscontinuity))
-                if (y3 = true, D2 > 0) {
-                  l2.logger.warn("[mp4-remuxer]: Dropped " + D2 + " out of " + k2 + " video samples due to a missing keyframe");
-                  var R2 = this.getVideoStartPts(t5.samples);
-                  t5.samples = t5.samples.slice(D2), t5.dropped += D2, C2 = E2 += (t5.samples[0].pts - R2) / t5.inputTimeScale;
-                } else
-                  -1 === D2 && (l2.logger.warn("[mp4-remuxer]: No keyframe found out of " + k2 + " video samples"), y3 = false);
+              }(t5.samples), !L2 && this.config.forceKeyFrameOnDiscontinuity)) if (y3 = true, D2 > 0) {
+                l2.logger.warn("[mp4-remuxer]: Dropped " + D2 + " out of " + k2 + " video samples due to a missing keyframe");
+                var R2 = this.getVideoStartPts(t5.samples);
+                t5.samples = t5.samples.slice(D2), t5.dropped += D2, C2 = E2 += (t5.samples[0].pts - R2) / t5.inputTimeScale;
+              } else -1 === D2 && (l2.logger.warn("[mp4-remuxer]: No keyframe found out of " + k2 + " video samples"), y3 = false);
               if (this.ISGenerated) {
                 if (S2 && _2) {
                   var I2 = this.getVideoStartPts(t5.samples), O2 = (g2(e5.samples[0].pts, I2) - I2) / t5.inputTimeScale;
@@ -84480,8 +83778,7 @@ var Clappr = function() {
                     var w2 = d3 ? d3.endPTS - d3.startPTS : 0;
                     t5.inputTimeScale || (l2.logger.warn("[mp4-remuxer]: regenerate InitSegment as video detected"), h3 = this.generateIS(e5, t5, n3)), c3 = this.remuxVideo(t5, E2, L2, w2);
                   }
-                } else
-                  _2 && (c3 = this.remuxVideo(t5, E2, L2, 0));
+                } else _2 && (c3 = this.remuxVideo(t5, E2, L2, 0));
                 c3 && (c3.firstKeyFrame = D2, c3.independent = -1 !== D2, c3.firstKeyFramePTS = C2);
               }
             }
@@ -84493,8 +83790,7 @@ var Clappr = function() {
               var p3 = this.getVideoStartPts(u3), v3 = Math.round(o3 * r4);
               s3 = Math.min(s3, g2(u3[0].dts, p3) - v3), n3 = Math.min(n3, p3 - v3);
             }
-            if (Object.keys(d3).length)
-              return this.ISGenerated = true, h3 && (this._initPTS = n3, this._initDTS = s3), { tracks: d3, initPTS: n3, timescale: o3 };
+            if (Object.keys(d3).length) return this.ISGenerated = true, h3 && (this._initPTS = n3, this._initDTS = s3), { tracks: d3, initPTS: n3, timescale: o3 };
           }, t4.remuxVideo = function(e5, t5, r4, i4) {
             var n3, u3, p3 = e5.inputTimeScale, v3 = e5.samples, m3 = [], A3 = v3.length, E2 = this._initPTS, T2 = this.nextAvcDts, b2 = 8, k2 = this.videoSampleDuration, S2 = Number.POSITIVE_INFINITY, _2 = Number.NEGATIVE_INFINITY, C2 = false;
             r4 && null !== T2 || (T2 = t5 * p3 - (v3[0].pts - g2(v3[0].dts, v3[0].pts)));
@@ -84517,8 +83813,7 @@ var Clappr = function() {
             }
             n3 = Math.max(0, n3);
             for (var N2 = 0, F2 = 0, M2 = 0; M2 < A3; M2++) {
-              for (var B2 = v3[M2], U2 = B2.units, G2 = U2.length, V2 = 0, K2 = 0; K2 < G2; K2++)
-                V2 += U2[K2].data.length;
+              for (var B2 = v3[M2], U2 = B2.units, G2 = U2.length, V2 = 0, K2 = 0; K2 < G2; K2++) V2 += U2[K2].data.length;
               F2 += V2, N2 += G2, B2.length = V2, B2.dts = Math.max(B2.dts, n3), S2 = Math.min(B2.pts, S2), _2 = Math.max(B2.pts, _2);
             }
             u3 = v3[A3 - 1].dts;
@@ -84536,15 +83831,13 @@ var Clappr = function() {
                 Y2.setUint32(b2, ae2), b2 += 4, j2.set(ne2, b2), b2 += ae2, ee2 += 4 + ae2;
               }
               var se2 = void 0;
-              if (Z2 < A3 - 1)
-                k2 = v3[Z2 + 1].dts - Q2.dts, se2 = v3[Z2 + 1].pts - Q2.pts;
+              if (Z2 < A3 - 1) k2 = v3[Z2 + 1].dts - Q2.dts, se2 = v3[Z2 + 1].pts - Q2.pts;
               else {
                 var oe2 = this.config, le2 = Z2 > 0 ? Q2.dts - v3[Z2 - 1].dts : I2;
                 if (se2 = Z2 > 0 ? Q2.pts - v3[Z2 - 1].pts : I2, oe2.stretchShortVideoTrack && null !== this.nextAudioPts) {
                   var ue2 = Math.floor(oe2.maxBufferHole * p3), ce2 = (i4 ? S2 + i4 * p3 : this.nextAudioPts) - Q2.pts;
                   ce2 > ue2 ? ((k2 = ce2 - le2) < 0 ? k2 = le2 : W2 = true, l2.logger.log("[mp4-remuxer]: It is approximately " + ce2 / 90 + " ms to the next segment; using duration " + k2 / 90 + " ms for the last video frame.")) : k2 = le2;
-                } else
-                  k2 = le2;
+                } else k2 = le2;
               }
               var de2 = Math.round(Q2.pts - Q2.dts);
               $2 = Math.min($2, k2), q2 = Math.max(q2, k2), z2 = Math.min(z2, se2), X2 = Math.max(X2, se2), m3.push(new y2(Q2.key, k2, ee2, de2));
@@ -84562,8 +83855,7 @@ var Clappr = function() {
                   if (pe2 < ge2 - 1) {
                     var ye2 = ve2 + m3[pe2 + 1].cts;
                     m3[pe2].duration = ye2 - me2;
-                  } else
-                    m3[pe2].duration = pe2 ? m3[pe2 - 1].duration : I2;
+                  } else m3[pe2].duration = pe2 ? m3[pe2 - 1].duration : I2;
                   m3[pe2].cts = 0, fe2 = ve2;
                 }
               }
@@ -84578,34 +83870,28 @@ var Clappr = function() {
             }), !r4 || k2 < 0) {
               if (T2 = T2.filter(function(e6) {
                 return e6.pts >= 0;
-              }), !T2.length)
-                return;
+              }), !T2.length) return;
               k2 = 0 === u3 ? 0 : i4 && !E2 ? Math.max(0, S2) : T2[0].pts;
             }
-            if ("aac" === e5.segmentCodec)
-              for (var _2 = this.config.maxAudioFramesDrift, C2 = 0, L2 = k2; C2 < T2.length; C2++) {
-                var D2 = T2[C2], R2 = D2.pts, I2 = R2 - L2, O2 = Math.abs(1e3 * I2 / c3);
-                if (I2 <= -_2 * p3 && E2)
-                  0 === C2 && (l2.logger.warn("Audio frame @ " + (R2 / c3).toFixed(3) + "s overlaps nextAudioPts by " + Math.round(1e3 * I2 / c3) + " ms."), this.nextAudioPts = k2 = L2 = R2);
-                else if (I2 >= _2 * p3 && O2 < 1e4 && E2) {
-                  var w2 = Math.round(I2 / p3);
-                  (L2 = R2 - w2 * p3) < 0 && (w2--, L2 += p3), 0 === C2 && (this.nextAudioPts = k2 = L2), l2.logger.warn("[mp4-remuxer]: Injecting " + w2 + " audio frame @ " + (L2 / c3).toFixed(3) + "s due to " + Math.round(1e3 * I2 / c3) + " ms gap.");
-                  for (var P2 = 0; P2 < w2; P2++) {
-                    var x2 = Math.max(L2, 0), N2 = n2.default.getSilentFrame(e5.manifestCodec || e5.codec, e5.channelCount);
-                    N2 || (l2.logger.log("[mp4-remuxer]: Unable to get silent frame for given audio codec; duplicating last frame instead."), N2 = D2.unit.subarray()), T2.splice(C2, 0, { unit: N2, pts: x2 }), L2 += p3, C2++;
-                  }
+            if ("aac" === e5.segmentCodec) for (var _2 = this.config.maxAudioFramesDrift, C2 = 0, L2 = k2; C2 < T2.length; C2++) {
+              var D2 = T2[C2], R2 = D2.pts, I2 = R2 - L2, O2 = Math.abs(1e3 * I2 / c3);
+              if (I2 <= -_2 * p3 && E2) 0 === C2 && (l2.logger.warn("Audio frame @ " + (R2 / c3).toFixed(3) + "s overlaps nextAudioPts by " + Math.round(1e3 * I2 / c3) + " ms."), this.nextAudioPts = k2 = L2 = R2);
+              else if (I2 >= _2 * p3 && O2 < 1e4 && E2) {
+                var w2 = Math.round(I2 / p3);
+                (L2 = R2 - w2 * p3) < 0 && (w2--, L2 += p3), 0 === C2 && (this.nextAudioPts = k2 = L2), l2.logger.warn("[mp4-remuxer]: Injecting " + w2 + " audio frame @ " + (L2 / c3).toFixed(3) + "s due to " + Math.round(1e3 * I2 / c3) + " ms gap.");
+                for (var P2 = 0; P2 < w2; P2++) {
+                  var x2 = Math.max(L2, 0), N2 = n2.default.getSilentFrame(e5.manifestCodec || e5.codec, e5.channelCount);
+                  N2 || (l2.logger.log("[mp4-remuxer]: Unable to get silent frame for given audio codec; duplicating last frame instead."), N2 = D2.unit.subarray()), T2.splice(C2, 0, { unit: N2, pts: x2 }), L2 += p3, C2++;
                 }
-                D2.pts = L2, L2 += p3;
               }
-            for (var F2, M2 = null, B2 = null, U2 = 0, G2 = T2.length; G2--; )
-              U2 += T2[G2].unit.byteLength;
+              D2.pts = L2, L2 += p3;
+            }
+            for (var F2, M2 = null, B2 = null, U2 = 0, G2 = T2.length; G2--; ) U2 += T2[G2].unit.byteLength;
             for (var V2 = 0, K2 = T2.length; V2 < K2; V2++) {
               var j2 = T2[V2], H2 = j2.unit, Y2 = j2.pts;
-              if (null !== B2)
-                A3[V2 - 1].duration = Math.round((Y2 - B2) / h3);
+              if (null !== B2) A3[V2 - 1].duration = Math.round((Y2 - B2) / h3);
               else {
-                if (r4 && "aac" === e5.segmentCodec && (Y2 = k2), M2 = Y2, !(U2 > 0))
-                  return;
+                if (r4 && "aac" === e5.segmentCodec && (Y2 = k2), M2 = Y2, !(U2 > 0)) return;
                 U2 += b2;
                 try {
                   F2 = new Uint8Array(U2);
@@ -84641,10 +83927,8 @@ var Clappr = function() {
         }();
         function g2(e4, t4) {
           var r4;
-          if (null === t4)
-            return e4;
-          for (r4 = t4 < e4 ? -8589934592 : 8589934592; Math.abs(e4 - t4) > 4294967296; )
-            e4 += r4;
+          if (null === t4) return e4;
+          for (r4 = t4 < e4 ? -8589934592 : 8589934592; Math.abs(e4 - t4) > 4294967296; ) e4 += r4;
           return e4;
         }
         function v2(e4, t4, r4, i4) {
@@ -84718,8 +84002,7 @@ var Clappr = function() {
             this.audioCodec = t5, this.videoCodec = r4, this.generateInitSegment(e5), this.emitInitSegment = true;
           }, t4.generateInitSegment = function(e5) {
             var t5 = this.audioCodec, r4 = this.videoCodec;
-            if (!e5 || !e5.byteLength)
-              return this.initTracks = void 0, void (this.initData = void 0);
+            if (!e5 || !e5.byteLength) return this.initTracks = void 0, void (this.initData = void 0);
             var i4 = this.initData = (0, a2.parseInitSegment)(e5);
             t5 || (t5 = l2(i4.audio, s2.ElementaryStreamTypes.AUDIO)), r4 || (r4 = l2(i4.video, s2.ElementaryStreamTypes.VIDEO));
             var n3 = {};
@@ -84728,11 +84011,9 @@ var Clappr = function() {
             var u3, c2 = this.initPTS, d2 = this.lastEndTime, h2 = { audio: void 0, video: void 0, text: s3, id3: r4, initSegment: void 0 };
             (0, i3.isFiniteNumber)(d2) || (d2 = this.lastEndTime = l3 || 0);
             var f2 = t5.samples;
-            if (!f2 || !f2.length)
-              return h2;
+            if (!f2 || !f2.length) return h2;
             var p2 = { initPTS: void 0, timescale: 1 }, g2 = this.initData;
-            if (g2 && g2.length || (this.generateInitSegment(f2), g2 = this.initData), !g2 || !g2.length)
-              return o2.logger.warn("[passthrough-remuxer.ts]: Failed to generate initSegment."), h2;
+            if (g2 && g2.length || (this.generateInitSegment(f2), g2 = this.initData), !g2 || !g2.length) return o2.logger.warn("[passthrough-remuxer.ts]: Failed to generate initSegment."), h2;
             this.emitInitSegment && (p2.tracks = this.initTracks, this.emitInitSegment = false);
             var v2 = (0, a2.getStartDTS)(g2, f2);
             (0, i3.isFiniteNumber)(c2) || (this.initPTS = p2.initPTS = c2 = v2 - l3);
@@ -84882,8 +84163,7 @@ var Clappr = function() {
         r3.r(t3), r3.d(t3, { AttrList: () => a2 });
         var i3 = /^(\d+)x(\d+)$/, n2 = /\s*(.+?)\s*=((?:\".*?\")|.*?)(?:,|$)/g, a2 = function() {
           function e4(t5) {
-            for (var r4 in "string" == typeof t5 && (t5 = e4.parseAttrList(t5)), t5)
-              t5.hasOwnProperty(r4) && (this[r4] = t5[r4]);
+            for (var r4 in "string" == typeof t5 && (t5 = e4.parseAttrList(t5)), t5) t5.hasOwnProperty(r4) && (this[r4] = t5[r4]);
           }
           var t4 = e4.prototype;
           return t4.decimalInteger = function(e5) {
@@ -84893,8 +84173,7 @@ var Clappr = function() {
             if (this[e5]) {
               var t5 = (this[e5] || "0x").slice(2);
               t5 = (1 & t5.length ? "0" : "") + t5;
-              for (var r4 = new Uint8Array(t5.length / 2), i4 = 0; i4 < t5.length / 2; i4++)
-                r4[i4] = parseInt(t5.slice(2 * i4, 2 * i4 + 2), 16);
+              for (var r4 = new Uint8Array(t5.length / 2), i4 = 0; i4 < t5.length / 2; i4++) r4[i4] = parseInt(t5.slice(2 * i4, 2 * i4 + 2), 16);
               return r4;
             }
             return null;
@@ -84912,8 +84191,7 @@ var Clappr = function() {
             return "YES" === this[e5];
           }, t4.decimalResolution = function(e5) {
             var t5 = i3.exec(this[e5]);
-            if (null !== t5)
-              return { width: parseInt(t5[1], 10), height: parseInt(t5[2], 10) };
+            if (null !== t5) return { width: parseInt(t5[1], 10), height: parseInt(t5[2], 10) };
           }, e4.parseAttrList = function(e5) {
             var t5, r4 = {};
             for (n2.lastIndex = 0; null !== (t5 = n2.exec(e5)); ) {
@@ -84933,11 +84211,9 @@ var Clappr = function() {
         const i3 = { search: function(e4, t4) {
           for (var r4 = 0, i4 = e4.length - 1, n2 = null, a2 = null; r4 <= i4; ) {
             var s2 = t4(a2 = e4[n2 = (r4 + i4) / 2 | 0]);
-            if (s2 > 0)
-              r4 = n2 + 1;
+            if (s2 > 0) r4 = n2 + 1;
             else {
-              if (!(s2 < 0))
-                return a2;
+              if (!(s2 < 0)) return a2;
               i4 = n2 - 1;
             }
           }
@@ -84963,9 +84239,7 @@ var Clappr = function() {
           return e4.isBuffered = function(t4, r4) {
             try {
               if (t4) {
-                for (var i4 = e4.getBuffered(t4), n3 = 0; n3 < i4.length; n3++)
-                  if (r4 >= i4.start(n3) && r4 <= i4.end(n3))
-                    return true;
+                for (var i4 = e4.getBuffered(t4), n3 = 0; n3 < i4.length; n3++) if (r4 >= i4.start(n3) && r4 <= i4.end(n3)) return true;
               }
             } catch (e5) {
             }
@@ -84974,8 +84248,7 @@ var Clappr = function() {
             try {
               if (t4) {
                 var n3, a3 = e4.getBuffered(t4), s2 = [];
-                for (n3 = 0; n3 < a3.length; n3++)
-                  s2.push({ start: a3.start(n3), end: a3.end(n3) });
+                for (n3 = 0; n3 < a3.length; n3++) s2.push({ start: a3.start(n3), end: a3.end(n3) });
                 return this.bufferedInfo(s2, r4, i4);
               }
             } catch (e5) {
@@ -84987,21 +84260,17 @@ var Clappr = function() {
               return r5 || t5.end - e6.end;
             });
             var i4 = [];
-            if (r4)
-              for (var n3 = 0; n3 < e5.length; n3++) {
-                var a3 = i4.length;
-                if (a3) {
-                  var s2 = i4[a3 - 1].end;
-                  e5[n3].start - s2 < r4 ? e5[n3].end > s2 && (i4[a3 - 1].end = e5[n3].end) : i4.push(e5[n3]);
-                } else
-                  i4.push(e5[n3]);
-              }
-            else
-              i4 = e5;
+            if (r4) for (var n3 = 0; n3 < e5.length; n3++) {
+              var a3 = i4.length;
+              if (a3) {
+                var s2 = i4[a3 - 1].end;
+                e5[n3].start - s2 < r4 ? e5[n3].end > s2 && (i4[a3 - 1].end = e5[n3].end) : i4.push(e5[n3]);
+              } else i4.push(e5[n3]);
+            }
+            else i4 = e5;
             for (var o2, l2 = 0, u2 = t4, c2 = t4, d2 = 0; d2 < i4.length; d2++) {
               var h2 = i4[d2].start, f2 = i4[d2].end;
-              if (t4 + r4 >= h2 && t4 < f2)
-                u2 = h2, l2 = (c2 = f2) - t4;
+              if (t4 + r4 >= h2 && t4 < f2) u2 = h2, l2 = (c2 = f2) - t4;
               else if (t4 + r4 < h2) {
                 o2 = h2;
                 break;
@@ -85041,8 +84310,7 @@ var Clappr = function() {
             this.verboseLevel >= e5 && n2.logger.log(this.time + " [" + e5 + "] " + t4);
           }, e4;
         }(), g2 = function(e4) {
-          for (var t4 = [], r4 = 0; r4 < e4.length; r4++)
-            t4.push(e4[r4].toString(16));
+          for (var t4 = [], r4 = 0; r4 < e4.length; r4++) t4.push(e4[r4].toString(16));
           return t4;
         }, v2 = function() {
           function e4(e5, t5, r4, i4, n3) {
@@ -85086,35 +84354,29 @@ var Clappr = function() {
         }(), y2 = function() {
           function e4(e5) {
             this.chars = void 0, this.pos = void 0, this.currPenState = void 0, this.cueStartTime = void 0, this.logger = void 0, this.chars = [];
-            for (var t5 = 0; t5 < l2; t5++)
-              this.chars.push(new m2());
+            for (var t5 = 0; t5 < l2; t5++) this.chars.push(new m2());
             this.logger = e5, this.pos = 0, this.currPenState = new v2();
           }
           var t4 = e4.prototype;
           return t4.equals = function(e5) {
-            for (var t5 = true, r4 = 0; r4 < l2; r4++)
-              if (!this.chars[r4].equals(e5.chars[r4])) {
-                t5 = false;
-                break;
-              }
+            for (var t5 = true, r4 = 0; r4 < l2; r4++) if (!this.chars[r4].equals(e5.chars[r4])) {
+              t5 = false;
+              break;
+            }
             return t5;
           }, t4.copy = function(e5) {
-            for (var t5 = 0; t5 < l2; t5++)
-              this.chars[t5].copy(e5.chars[t5]);
+            for (var t5 = 0; t5 < l2; t5++) this.chars[t5].copy(e5.chars[t5]);
           }, t4.isEmpty = function() {
-            for (var e5 = true, t5 = 0; t5 < l2; t5++)
-              if (!this.chars[t5].isEmpty()) {
-                e5 = false;
-                break;
-              }
+            for (var e5 = true, t5 = 0; t5 < l2; t5++) if (!this.chars[t5].isEmpty()) {
+              e5 = false;
+              break;
+            }
             return e5;
           }, t4.setCursor = function(e5) {
             this.pos !== e5 && (this.pos = e5), this.pos < 0 ? (this.logger.log(i3.DEBUG, "Negative cursor position " + this.pos), this.pos = 0) : this.pos > l2 && (this.logger.log(i3.DEBUG, "Too large cursor position " + this.pos), this.pos = l2);
           }, t4.moveCursor = function(e5) {
             var t5 = this.pos + e5;
-            if (e5 > 1)
-              for (var r4 = this.pos + 1; r4 < t5 + 1; r4++)
-                this.chars[r4].setPenState(this.currPenState);
+            if (e5 > 1) for (var r4 = this.pos + 1; r4 < t5 + 1; r4++) this.chars[r4].setPenState(this.currPenState);
             this.setCursor(t5);
           }, t4.backSpace = function() {
             this.moveCursor(-1), this.chars[this.pos].setChar(" ", this.currPenState);
@@ -85124,8 +84386,7 @@ var Clappr = function() {
             this.pos >= l2 ? this.logger.log(i3.ERROR, "Cannot insert " + e5.toString(16) + " (" + t5 + ") at position " + this.pos + ". Skipping it!") : (this.chars[this.pos].setChar(t5, this.currPenState), this.moveCursor(1));
           }, t4.clearFromPos = function(e5) {
             var t5;
-            for (t5 = e5; t5 < l2; t5++)
-              this.chars[t5].reset();
+            for (t5 = e5; t5 < l2; t5++) this.chars[t5].reset();
           }, t4.clear = function() {
             this.clearFromPos(0), this.pos = 0, this.currPenState.reset();
           }, t4.clearToEndOfRow = function() {
@@ -85142,31 +84403,26 @@ var Clappr = function() {
         }(), A2 = function() {
           function e4(e5) {
             this.rows = void 0, this.currRow = void 0, this.nrRollUpRows = void 0, this.lastOutputScreen = void 0, this.logger = void 0, this.rows = [];
-            for (var t5 = 0; t5 < o2; t5++)
-              this.rows.push(new y2(e5));
+            for (var t5 = 0; t5 < o2; t5++) this.rows.push(new y2(e5));
             this.logger = e5, this.currRow = 14, this.nrRollUpRows = null, this.lastOutputScreen = null, this.reset();
           }
           var t4 = e4.prototype;
           return t4.reset = function() {
-            for (var e5 = 0; e5 < o2; e5++)
-              this.rows[e5].clear();
+            for (var e5 = 0; e5 < o2; e5++) this.rows[e5].clear();
             this.currRow = 14;
           }, t4.equals = function(e5) {
-            for (var t5 = true, r4 = 0; r4 < o2; r4++)
-              if (!this.rows[r4].equals(e5.rows[r4])) {
-                t5 = false;
-                break;
-              }
+            for (var t5 = true, r4 = 0; r4 < o2; r4++) if (!this.rows[r4].equals(e5.rows[r4])) {
+              t5 = false;
+              break;
+            }
             return t5;
           }, t4.copy = function(e5) {
-            for (var t5 = 0; t5 < o2; t5++)
-              this.rows[t5].copy(e5.rows[t5]);
+            for (var t5 = 0; t5 < o2; t5++) this.rows[t5].copy(e5.rows[t5]);
           }, t4.isEmpty = function() {
-            for (var e5 = true, t5 = 0; t5 < o2; t5++)
-              if (!this.rows[t5].isEmpty()) {
-                e5 = false;
-                break;
-              }
+            for (var e5 = true, t5 = 0; t5 < o2; t5++) if (!this.rows[t5].isEmpty()) {
+              e5 = false;
+              break;
+            }
             return e5;
           }, t4.backSpace = function() {
             this.rows[this.currRow].backSpace();
@@ -85184,14 +84440,11 @@ var Clappr = function() {
             this.logger.log(i3.INFO, "pacData = " + JSON.stringify(e5));
             var t5 = e5.row - 1;
             if (this.nrRollUpRows && t5 < this.nrRollUpRows - 1 && (t5 = this.nrRollUpRows - 1), this.nrRollUpRows && this.currRow !== t5) {
-              for (var r4 = 0; r4 < o2; r4++)
-                this.rows[r4].clear();
+              for (var r4 = 0; r4 < o2; r4++) this.rows[r4].clear();
               var n3 = this.currRow + 1 - this.nrRollUpRows, a3 = this.lastOutputScreen;
               if (a3) {
                 var s3 = a3.rows[n3].cueStartTime, l3 = this.logger.time;
-                if (s3 && null !== l3 && s3 < l3)
-                  for (var u3 = 0; u3 < this.nrRollUpRows; u3++)
-                    this.rows[t5 - this.nrRollUpRows + u3 + 1].copy(a3.rows[n3 + u3]);
+                if (s3 && null !== l3 && s3 < l3) for (var u3 = 0; u3 < this.nrRollUpRows; u3++) this.rows[t5 - this.nrRollUpRows + u3 + 1].copy(a3.rows[n3 + u3]);
               }
             }
             this.currRow = t5;
@@ -85211,8 +84464,7 @@ var Clappr = function() {
               this.logger.log(i3.TEXT, this.getDisplayText());
               var e5 = this.currRow + 1 - this.nrRollUpRows, t5 = this.rows.splice(e5, 1)[0];
               t5.clear(), this.rows.splice(this.currRow, 0, t5), this.logger.log(i3.INFO, "Rolling up");
-            } else
-              this.logger.log(i3.DEBUG, "roll_up but nrRollUpRows not set yet");
+            } else this.logger.log(i3.DEBUG, "roll_up but nrRollUpRows not set yet");
           }, t4.getDisplayText = function(e5) {
             e5 = e5 || false;
             for (var t5 = [], r4 = "", i4 = -1, n3 = 0; n3 < o2; n3++) {
@@ -85241,8 +84493,7 @@ var Clappr = function() {
           }, t4.setMode = function(e5) {
             e5 !== this.mode && (this.mode = e5, this.logger.log(i3.INFO, "MODE=" + e5), "MODE_POP-ON" === this.mode ? this.writeScreen = this.nonDisplayedMemory : (this.writeScreen = this.displayedMemory, this.writeScreen.reset()), "MODE_ROLL-UP" !== this.mode && (this.displayedMemory.nrRollUpRows = null, this.nonDisplayedMemory.nrRollUpRows = null), this.mode = e5);
           }, t4.insertChars = function(e5) {
-            for (var t5 = 0; t5 < e5.length; t5++)
-              this.writeScreen.insertChar(e5[t5]);
+            for (var t5 = 0; t5 < e5.length; t5++) this.writeScreen.insertChar(e5[t5]);
             var r4 = this.writeScreen === this.displayedMemory ? "DISP" : "NON_DISP";
             this.logger.log(i3.INFO, r4 + ": " + this.writeScreen.getDisplayText(true)), "MODE_PAINT-ON" !== this.mode && "MODE_ROLL-UP" !== this.mode || (this.logger.log(i3.TEXT, "DISPLAYED: " + this.displayedMemory.getDisplayText(true)), this.outputDataUpdate());
           }, t4.ccRCL = function() {
@@ -85279,8 +84530,7 @@ var Clappr = function() {
             this.logger.log(i3.INFO, "TO(" + e5 + ") - Tab Offset"), this.writeScreen.moveCursor(e5);
           }, t4.ccMIDROW = function(e5) {
             var t5 = { flash: false };
-            if (t5.underline = e5 % 2 == 1, t5.italics = e5 >= 46, t5.italics)
-              t5.foreground = "white";
+            if (t5.underline = e5 % 2 == 1, t5.italics = e5 >= 46, t5.italics) t5.foreground = "white";
             else {
               var r4 = Math.floor(e5 / 2) - 16;
               t5.foreground = ["white", "green", "blue", "cyan", "red", "yellow", "magenta"][r4];
@@ -85307,37 +84557,31 @@ var Clappr = function() {
           }, t4.addData = function(e5, t5) {
             var r4, n3, a3, s3 = false;
             this.logger.time = e5;
-            for (var o3 = 0; o3 < t5.length; o3 += 2)
-              if (n3 = 127 & t5[o3], a3 = 127 & t5[o3 + 1], 0 !== n3 || 0 !== a3) {
-                if (this.logger.log(i3.DATA, "[" + g2([t5[o3], t5[o3 + 1]]) + "] -> (" + g2([n3, a3]) + ")"), (r4 = this.parseCmd(n3, a3)) || (r4 = this.parseMidrow(n3, a3)), r4 || (r4 = this.parsePAC(n3, a3)), r4 || (r4 = this.parseBackgroundAttributes(n3, a3)), !r4 && (s3 = this.parseChars(n3, a3))) {
-                  var l3 = this.currentChannel;
-                  l3 && l3 > 0 ? this.channels[l3].insertChars(s3) : this.logger.log(i3.WARNING, "No channel found yet. TEXT-MODE?");
-                }
-                r4 || s3 || this.logger.log(i3.WARNING, "Couldn't parse cleaned data " + g2([n3, a3]) + " orig: " + g2([t5[o3], t5[o3 + 1]]));
+            for (var o3 = 0; o3 < t5.length; o3 += 2) if (n3 = 127 & t5[o3], a3 = 127 & t5[o3 + 1], 0 !== n3 || 0 !== a3) {
+              if (this.logger.log(i3.DATA, "[" + g2([t5[o3], t5[o3 + 1]]) + "] -> (" + g2([n3, a3]) + ")"), (r4 = this.parseCmd(n3, a3)) || (r4 = this.parseMidrow(n3, a3)), r4 || (r4 = this.parsePAC(n3, a3)), r4 || (r4 = this.parseBackgroundAttributes(n3, a3)), !r4 && (s3 = this.parseChars(n3, a3))) {
+                var l3 = this.currentChannel;
+                l3 && l3 > 0 ? this.channels[l3].insertChars(s3) : this.logger.log(i3.WARNING, "No channel found yet. TEXT-MODE?");
               }
+              r4 || s3 || this.logger.log(i3.WARNING, "Couldn't parse cleaned data " + g2([n3, a3]) + " orig: " + g2([t5[o3], t5[o3 + 1]]));
+            }
           }, t4.parseCmd = function(e5, t5) {
             var r4 = this.cmdHistory;
-            if (!((20 === e5 || 28 === e5 || 21 === e5 || 29 === e5) && t5 >= 32 && t5 <= 47 || (23 === e5 || 31 === e5) && t5 >= 33 && t5 <= 35))
-              return false;
-            if (k2(e5, t5, r4))
-              return b2(null, null, r4), this.logger.log(i3.DEBUG, "Repeated command (" + g2([e5, t5]) + ") is dropped"), true;
+            if (!((20 === e5 || 28 === e5 || 21 === e5 || 29 === e5) && t5 >= 32 && t5 <= 47 || (23 === e5 || 31 === e5) && t5 >= 33 && t5 <= 35)) return false;
+            if (k2(e5, t5, r4)) return b2(null, null, r4), this.logger.log(i3.DEBUG, "Repeated command (" + g2([e5, t5]) + ") is dropped"), true;
             var n3 = 20 === e5 || 21 === e5 || 23 === e5 ? 1 : 2, a3 = this.channels[n3];
             return 20 === e5 || 21 === e5 || 28 === e5 || 29 === e5 ? 32 === t5 ? a3.ccRCL() : 33 === t5 ? a3.ccBS() : 34 === t5 ? a3.ccAOF() : 35 === t5 ? a3.ccAON() : 36 === t5 ? a3.ccDER() : 37 === t5 ? a3.ccRU(2) : 38 === t5 ? a3.ccRU(3) : 39 === t5 ? a3.ccRU(4) : 40 === t5 ? a3.ccFON() : 41 === t5 ? a3.ccRDC() : 42 === t5 ? a3.ccTR() : 43 === t5 ? a3.ccRTD() : 44 === t5 ? a3.ccEDM() : 45 === t5 ? a3.ccCR() : 46 === t5 ? a3.ccENM() : 47 === t5 && a3.ccEOC() : a3.ccTO(t5 - 32), b2(e5, t5, r4), this.currentChannel = n3, true;
           }, t4.parseMidrow = function(e5, t5) {
             var r4 = 0;
             if ((17 === e5 || 25 === e5) && t5 >= 32 && t5 <= 47) {
-              if ((r4 = 17 === e5 ? 1 : 2) !== this.currentChannel)
-                return this.logger.log(i3.ERROR, "Mismatch channel in midrow parsing"), false;
+              if ((r4 = 17 === e5 ? 1 : 2) !== this.currentChannel) return this.logger.log(i3.ERROR, "Mismatch channel in midrow parsing"), false;
               var n3 = this.channels[r4];
               return !!n3 && (n3.ccMIDROW(t5), this.logger.log(i3.DEBUG, "MIDROW (" + g2([e5, t5]) + ")"), true);
             }
             return false;
           }, t4.parsePAC = function(e5, t5) {
             var r4, i4 = this.cmdHistory;
-            if (!((e5 >= 17 && e5 <= 23 || e5 >= 25 && e5 <= 31) && t5 >= 64 && t5 <= 127 || (16 === e5 || 24 === e5) && t5 >= 64 && t5 <= 95))
-              return false;
-            if (k2(e5, t5, i4))
-              return b2(null, null, i4), true;
+            if (!((e5 >= 17 && e5 <= 23 || e5 >= 25 && e5 <= 31) && t5 >= 64 && t5 <= 127 || (16 === e5 || 24 === e5) && t5 >= 64 && t5 <= 95)) return false;
+            if (k2(e5, t5, i4)) return b2(null, null, i4), true;
             var n3 = e5 <= 23 ? 1 : 2;
             r4 = t5 >= 64 && t5 <= 95 ? 1 === n3 ? u2[e5] : d2[e5] : 1 === n3 ? c2[e5] : h2[e5];
             var a3 = this.channels[n3];
@@ -85354,8 +84598,7 @@ var Clappr = function() {
             return a3;
           }, t4.parseBackgroundAttributes = function(e5, t5) {
             var r4;
-            if (!((16 === e5 || 24 === e5) && t5 >= 32 && t5 <= 47 || (23 === e5 || 31 === e5) && t5 >= 45 && t5 <= 47))
-              return false;
+            if (!((16 === e5 || 24 === e5) && t5 >= 32 && t5 <= 47 || (23 === e5 || 31 === e5) && t5 >= 45 && t5 <= 47)) return false;
             var i4 = {};
             16 === e5 || 24 === e5 ? (r4 = Math.floor((t5 - 32) / 2), i4.background = f2[r4], t5 % 2 == 1 && (i4.background = i4.background + "_semi")) : 45 === t5 ? i4.background = "transparent" : (i4.foreground = "black", 47 === t5 && (i4.underline = true));
             var n3 = e5 <= 23 ? 1 : 2;
@@ -85413,14 +84656,12 @@ var Clappr = function() {
           "./src/utils/texttrack-utils.ts"
         ), s2 = /\s/;
         const o2 = { newCue: function(e4, t4, r4, o3) {
-          for (var l2, u2, c2, d2, h2, f2 = [], p2 = self.VTTCue || self.TextTrackCue, g2 = 0; g2 < o3.rows.length; g2++)
-            if (c2 = true, d2 = 0, h2 = "", !(l2 = o3.rows[g2]).isEmpty()) {
-              for (var v2 = 0; v2 < l2.chars.length; v2++)
-                s2.test(l2.chars[v2].uchar) && c2 ? d2++ : (h2 += l2.chars[v2].uchar, c2 = false);
-              l2.cueStartTime = t4, t4 === r4 && (r4 += 1e-4), d2 >= 16 ? d2-- : d2++;
-              var m2 = (0, i3.fixLineBreaks)(h2.trim()), y2 = (0, n2.generateCueId)(t4, r4, m2);
-              e4 && e4.cues && e4.cues.getCueById(y2) || ((u2 = new p2(t4, r4, m2)).id = y2, u2.line = g2 + 1, u2.align = "left", u2.position = 10 + Math.min(80, 10 * Math.floor(8 * d2 / 32)), f2.push(u2));
-            }
+          for (var l2, u2, c2, d2, h2, f2 = [], p2 = self.VTTCue || self.TextTrackCue, g2 = 0; g2 < o3.rows.length; g2++) if (c2 = true, d2 = 0, h2 = "", !(l2 = o3.rows[g2]).isEmpty()) {
+            for (var v2 = 0; v2 < l2.chars.length; v2++) s2.test(l2.chars[v2].uchar) && c2 ? d2++ : (h2 += l2.chars[v2].uchar, c2 = false);
+            l2.cueStartTime = t4, t4 === r4 && (r4 += 1e-4), d2 >= 16 ? d2-- : d2++;
+            var m2 = (0, i3.fixLineBreaks)(h2.trim()), y2 = (0, n2.generateCueId)(t4, r4, m2);
+            e4 && e4.cues && e4.cues.getCueById(y2) || ((u2 = new p2(t4, r4, m2)).id = y2, u2.line = g2 + 1, u2.align = "left", u2.position = 10 + Math.min(80, 10 * Math.floor(8 * d2 / 32)), f2.push(u2));
+          }
           return e4 && f2.length && (f2.sort(function(e5, t5) {
             return "auto" === e5.line || "auto" === t5.line ? 0 : e5.line > 8 && t5.line > 8 ? t5.line - e5.line : e5.line - t5.line;
           }), f2.forEach(function(t5) {
@@ -85461,11 +84702,9 @@ var Clappr = function() {
           var i4 = e4.fragments, a3 = t4.fragments;
           if (a3.length && i4.length) {
             var o3 = s2(i4, a3[0].cc);
-            if (o3 && (!o3 || o3.startPTS))
-              return o3;
+            if (o3 && (!o3 || o3.startPTS)) return o3;
             n2.logger.log("No frag in previous level to align on");
-          } else
-            n2.logger.log("No fragments to align");
+          } else n2.logger.log("No fragments to align");
         }
         function u2(e4, t4) {
           if (e4) {
@@ -85474,8 +84713,7 @@ var Clappr = function() {
           }
         }
         function c2(e4, t4) {
-          for (var r4 = t4.fragments, i4 = 0, n3 = r4.length; i4 < n3; i4++)
-            u2(r4[i4], e4);
+          for (var r4 = t4.fragments, i4 = 0, n3 = r4.length; i4 < n3; i4++) u2(r4[i4], e4);
           t4.fragmentHint && u2(t4.fragmentHint, e4), t4.alignedSliding = true;
         }
         function d2(e4, t4, r4) {
@@ -85551,8 +84789,7 @@ var Clappr = function() {
           }, t4.getEstimate = function() {
             if (this.alpha_) {
               var e5 = 1 - Math.pow(this.alpha_, this.totalWeight_);
-              if (e5)
-                return this.estimate_ / e5;
+              if (e5) return this.estimate_ / e5;
             }
             return this.estimate_;
           }, e4;
@@ -85577,14 +84814,11 @@ var Clappr = function() {
         function s2(e4) {
           var t4 = "function" == typeof Map ? /* @__PURE__ */ new Map() : void 0;
           return s2 = function(e5) {
-            if (null === e5 || (r4 = e5, -1 === Function.toString.call(r4).indexOf("[native code]")))
-              return e5;
+            if (null === e5 || (r4 = e5, -1 === Function.toString.call(r4).indexOf("[native code]"))) return e5;
             var r4;
-            if ("function" != typeof e5)
-              throw new TypeError("Super expression must either be null or a function");
+            if ("function" != typeof e5) throw new TypeError("Super expression must either be null or a function");
             if (void 0 !== t4) {
-              if (t4.has(e5))
-                return t4.get(e5);
+              if (t4.has(e5)) return t4.get(e5);
               t4.set(e5, i4);
             }
             function i4() {
@@ -85602,12 +84836,9 @@ var Clappr = function() {
           }, o2.apply(null, arguments);
         }
         function l2() {
-          if ("undefined" == typeof Reflect || !Reflect.construct)
-            return false;
-          if (Reflect.construct.sham)
-            return false;
-          if ("function" == typeof Proxy)
-            return true;
+          if ("undefined" == typeof Reflect || !Reflect.construct) return false;
+          if (Reflect.construct.sham) return false;
+          if ("function" == typeof Proxy) return true;
           try {
             return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
             })), true;
@@ -85629,18 +84860,16 @@ var Clappr = function() {
           return d2 = Object.assign ? Object.assign.bind() : function(e4) {
             for (var t4 = 1; t4 < arguments.length; t4++) {
               var r4 = arguments[t4];
-              for (var i4 in r4)
-                Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
+              for (var i4 in r4) Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
             }
             return e4;
           }, d2.apply(this, arguments);
         }
         function h2() {
-          if (self.fetch && self.AbortController && self.ReadableStream && self.Request)
-            try {
-              return new self.ReadableStream({}), true;
-            } catch (e4) {
-            }
+          if (self.fetch && self.AbortController && self.ReadableStream && self.Request) try {
+            return new self.ReadableStream({}), true;
+          } catch (e4) {
+          }
           return false;
         }
         var f2 = function() {
@@ -85658,8 +84887,7 @@ var Clappr = function() {
             this.abortInternal(), null !== (e5 = this.callbacks) && void 0 !== e5 && e5.onAbort && this.callbacks.onAbort(this.stats, this.context, this.response);
           }, t4.load = function(e5, t5, r4) {
             var n3 = this, a3 = this.stats;
-            if (a3.loading.start)
-              throw new Error("Loader can only be used once.");
+            if (a3.loading.start) throw new Error("Loader can only be used once.");
             a3.loading.start = self.performance.now();
             var s3 = function(e6, t6) {
               var r5 = { method: "GET", mode: "cors", credentials: "same-origin", signal: t6, headers: new self.Headers(d2({}, e6.headers)) };
@@ -85698,8 +84926,7 @@ var Clappr = function() {
             var s3 = new a2.default(), o3 = e5.body.getReader();
             return function a3() {
               return o3.read().then(function(o4) {
-                if (o4.done)
-                  return s3.dataLength && n3(t5, r4, s3.flush(), e5), Promise.resolve(new ArrayBuffer(0));
+                if (o4.done) return s3.dataLength && n3(t5, r4, s3.flush(), e5), Promise.resolve(new ArrayBuffer(0));
                 var l3 = o4.value, u3 = l3.length;
                 return t5.loaded += u3, u3 < i4 || s3.dataLength ? (s3.push(l3), s3.dataLength >= i4 && n3(t5, r4, s3.flush(), e5)) : n3(t5, r4, l3, e5), a3();
               }).catch(function() {
@@ -85750,8 +84977,7 @@ var Clappr = function() {
           return u2 = Object.assign ? Object.assign.bind() : function(e4) {
             for (var t4 = 1; t4 < arguments.length; t4++) {
               var r4 = arguments[t4];
-              for (var i4 in r4)
-                Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
+              for (var i4 in r4) Object.prototype.hasOwnProperty.call(r4, i4) && (e4[i4] = r4[i4]);
             }
             return e4;
           }, u2.apply(this, arguments);
@@ -85767,21 +84993,17 @@ var Clappr = function() {
               h3.forEach(function(e5) {
                 return n3(function(e6, t5) {
                   var r5 = new DOMParser().parseFromString(e6, "text/xml"), i4 = r5.getElementsByTagName("tt")[0];
-                  if (!i4)
-                    throw new Error("Invalid ttml");
+                  if (!i4) throw new Error("Invalid ttml");
                   var n4 = { frameRate: 30, subFrameRate: 1, frameRateMultiplier: 0, tickRate: 0 }, s3 = Object.keys(n4).reduce(function(e7, t6) {
                     return e7[t6] = i4.getAttribute("ttp:" + t6) || n4[t6], e7;
                   }, {}), o3 = "preserve" !== i4.getAttribute("xml:space"), c4 = v2(g2(i4, "styling", "style")), d4 = v2(g2(i4, "layout", "region")), h4 = g2(i4, "body", "[begin]");
                   return [].map.call(h4, function(e7) {
                     var r6 = m2(e7, o3);
-                    if (!r6 || !e7.hasAttribute("begin"))
-                      return null;
+                    if (!r6 || !e7.hasAttribute("begin")) return null;
                     var i5 = E2(e7.getAttribute("begin"), s3), n5 = E2(e7.getAttribute("dur"), s3), h5 = E2(e7.getAttribute("end"), s3);
-                    if (null === i5)
-                      throw A2(e7);
+                    if (null === i5) throw A2(e7);
                     if (null === h5) {
-                      if (null === n5)
-                        throw A2(e7);
+                      if (null === n5) throw A2(e7);
                       h5 = i5 + n5;
                     }
                     var p4 = new a2.default(i5 - t5, h5 - t5, r6);
@@ -85808,8 +85030,7 @@ var Clappr = function() {
             } catch (e5) {
               c3(e5);
             }
-          } else
-            c3(new Error("Could not parse IMSC1 mdat"));
+          } else c3(new Error("Could not parse IMSC1 mdat"));
         }
         function g2(e4, t4, r4) {
           var i4 = e4.getElementsByTagName(t4)[0];
@@ -85834,8 +85055,7 @@ var Clappr = function() {
           return new Error("Could not parse ttml timestamp " + e4);
         }
         function E2(e4, t4) {
-          if (!e4)
-            return null;
+          if (!e4) return null;
           var r4 = (0, n2.parseTimeStamp)(e4);
           return null === r4 && (d2.test(e4) ? r4 = function(e5, t5) {
             var r5 = d2.exec(e5), i4 = (0 | r5[4]) + (0 | r5[5]) / t5.subFrameRate;
@@ -85873,8 +85093,7 @@ var Clappr = function() {
         function o2(e4, t4) {
           if (self.console && true === e4 || "object" == typeof e4) {
             !function(e5) {
-              for (var t5 = arguments.length, r4 = new Array(t5 > 1 ? t5 - 1 : 0), i4 = 1; i4 < t5; i4++)
-                r4[i4 - 1] = arguments[i4];
+              for (var t5 = arguments.length, r4 = new Array(t5 > 1 ? t5 - 1 : 0), i4 = 1; i4 < t5; i4++) r4[i4 - 1] = arguments[i4];
               r4.forEach(function(t6) {
                 a2[t6] = e5[t6] ? e5[t6].bind(e5) : s2(t6);
               });
@@ -85884,8 +85103,7 @@ var Clappr = function() {
             } catch (e5) {
               a2 = n2;
             }
-          } else
-            a2 = n2;
+          } else a2 = n2;
         }
         var l2 = n2;
       }
@@ -85945,17 +85163,14 @@ var Clappr = function() {
         }
         function p2(e4, t4) {
           var r4 = [];
-          if (!t4.length)
-            return r4;
+          if (!t4.length) return r4;
           for (var i4 = e4.byteLength, n3 = 0; n3 < i4; ) {
             var a3 = d2(e4, n3), s3 = a3 > 1 ? n3 + a3 : i4;
-            if (u2(e4.subarray(n3 + 4, n3 + 8)) === t4[0])
-              if (1 === t4.length)
-                r4.push(e4.subarray(n3 + 8, s3));
-              else {
-                var l3 = p2(e4.subarray(n3 + 8, s3), t4.slice(1));
-                l3.length && o2.apply(r4, l3);
-              }
+            if (u2(e4.subarray(n3 + 4, n3 + 8)) === t4[0]) if (1 === t4.length) r4.push(e4.subarray(n3 + 8, s3));
+            else {
+              var l3 = p2(e4.subarray(n3 + 8, s3), t4.slice(1));
+              l3.length && o2.apply(r4, l3);
+            }
             n3 = s3;
           }
           return r4;
@@ -85969,8 +85184,7 @@ var Clappr = function() {
             var l3 = i4, u3 = d2(e4, l3);
             l3 += 4;
             var h3 = 2147483647 & u3;
-            if (1 == (2147483648 & u3) >>> 31)
-              return console.warn("SIDX has hierarchical references (not supported)"), null;
+            if (1 == (2147483648 & u3) >>> 31) return console.warn("SIDX has hierarchical references (not supported)"), null;
             var f3 = d2(e4, l3);
             l3 += 4, t4.push({ referenceSize: h3, subsegmentDuration: f3, info: { duration: f3 / n3, start: a3, end: a3 + h3 - 1 } }), a3 += h3, i4 = l3 += 4;
           }
@@ -86006,8 +85220,7 @@ var Clappr = function() {
                 var o3 = d2(i4, 4);
                 1 === n3 && (o3 *= Math.pow(2, 32), o3 += d2(i4, 8));
                 var l3 = o3 / (s3.timescale || 9e4);
-                if (isFinite(l3) && (null === t6 || l3 < t6))
-                  return l3;
+                if (isFinite(l3) && (null === t6 || l3 < t6)) return l3;
               }
               return t6;
             }, null);
@@ -86020,8 +85233,7 @@ var Clappr = function() {
             if (c3) {
               var h3 = c3.default, f3 = d2(u3, 0) | (null == h3 ? void 0 : h3.flags), v3 = null == h3 ? void 0 : h3.duration;
               8 & f3 && (v3 = d2(u3, 2 & f3 ? 12 : 8));
-              for (var m3 = c3.timescale || 9e4, y3 = p2(l3, ["trun"]), E3 = 0; E3 < y3.length; E3++)
-                !(r4 = A2(y3[E3])) && v3 && (r4 = v3 * d2(y3[E3], 4)), c3.type === n2.ElementaryStreamTypes.VIDEO ? i4 += r4 / m3 : c3.type === n2.ElementaryStreamTypes.AUDIO && (a3 += r4 / m3);
+              for (var m3 = c3.timescale || 9e4, y3 = p2(l3, ["trun"]), E3 = 0; E3 < y3.length; E3++) !(r4 = A2(y3[E3])) && v3 && (r4 = v3 * d2(y3[E3], 4)), c3.type === n2.ElementaryStreamTypes.VIDEO ? i4 += r4 / m3 : c3.type === n2.ElementaryStreamTypes.AUDIO && (a3 += r4 / m3);
             }
           }
           if (0 === i4 && 0 === a3) {
@@ -86038,8 +85250,7 @@ var Clappr = function() {
         function A2(e4) {
           var t4 = d2(e4, 0), r4 = 8;
           1 & t4 && (r4 += 4), 4 & t4 && (r4 += 4);
-          for (var i4 = 0, n3 = d2(e4, 4), a3 = 0; a3 < n3; a3++)
-            256 & t4 && (i4 += d2(e4, r4), r4 += 4), 512 & t4 && (r4 += 4), 1024 & t4 && (r4 += 4), 2048 & t4 && (r4 += 4);
+          for (var i4 = 0, n3 = d2(e4, 4), a3 = 0; a3 < n3; a3++) 256 & t4 && (i4 += d2(e4, r4), r4 += 4), 512 & t4 && (r4 += 4), 1024 & t4 && (r4 += 4), 2048 & t4 && (r4 += 4);
           return i4;
         }
         function E2(e4, t4, r4) {
@@ -86050,8 +85261,7 @@ var Clappr = function() {
                 var o3 = a3.timescale || 9e4;
                 p2(t5, ["tfdt"]).forEach(function(e5) {
                   var t6 = e5[0], i5 = d2(e5, 4);
-                  if (0 === t6)
-                    i5 -= r4 * o3, f2(e5, 4, i5 = Math.max(i5, 0));
+                  if (0 === t6) i5 -= r4 * o3, f2(e5, 4, i5 = Math.max(i5, 0));
                   else {
                     i5 *= Math.pow(2, 32), i5 += d2(e5, 8), i5 -= r4 * o3, i5 = Math.max(i5, 0);
                     var n4 = Math.floor(i5 / (s2 + 1)), a4 = Math.floor(i5 % (s2 + 1));
@@ -86064,10 +85274,8 @@ var Clappr = function() {
         }
         function T2(e4) {
           var t4 = { valid: null, remainder: null }, r4 = p2(e4, ["moof"]);
-          if (!r4)
-            return t4;
-          if (r4.length < 2)
-            return t4.remainder = e4, t4;
+          if (!r4) return t4;
+          if (r4.length < 2) return t4.remainder = e4, t4;
           var n3 = r4[r4.length - 1];
           return t4.valid = (0, i3.sliceUint8)(e4, 0, n3.byteOffset - 8), t4.remainder = (0, i3.sliceUint8)(e4, n3.byteOffset - 8), t4;
         }
@@ -86087,19 +85295,17 @@ var Clappr = function() {
               return void 0 !== c3 && (e4 = c3), p2(l4, ["tfhd"]).map(function(c4) {
                 var f3 = d2(c4, 4), g3 = 16777215 & d2(c4, 0), v3 = 0, m3 = 0 != (16 & g3), y3 = 0, A3 = 0 != (32 & g3), E3 = 8;
                 f3 === s3 && (0 != (1 & g3) && (E3 += 8), 0 != (2 & g3) && (E3 += 4), 0 != (8 & g3) && (v3 = d2(c4, E3), E3 += 4), m3 && (y3 = d2(c4, E3), E3 += 4), A3 && (E3 += 4), "video" === t4.type && (o3 = function(e5) {
-                  if (!e5)
-                    return false;
+                  if (!e5) return false;
                   var t5 = e5.indexOf("."), r5 = t5 < 0 ? e5 : e5.substring(0, t5);
                   return "hvc1" === r5 || "hev1" === r5 || "dvh1" === r5 || "dvhe" === r5;
                 }(t4.codec)), p2(l4, ["trun"]).map(function(s4) {
                   var l5 = s4[0], c5 = 16777215 & d2(s4, 0), f4 = 0 != (1 & c5), p3 = 0, g4 = 0 != (4 & c5), m4 = 0 != (256 & c5), A4 = 0, E4 = 0 != (512 & c5), T3 = 0, b3 = 0 != (1024 & c5), k3 = 0 != (2048 & c5), C3 = 0, L3 = d2(s4, 4), D2 = 8;
                   f4 && (p3 = d2(s4, D2), D2 += 4), g4 && (D2 += 4);
                   for (var R2 = p3 + u3, I2 = 0; I2 < L3; I2++) {
-                    if (m4 ? (A4 = d2(s4, D2), D2 += 4) : A4 = v3, E4 ? (T3 = d2(s4, D2), D2 += 4) : T3 = y3, b3 && (D2 += 4), k3 && (C3 = 0 === l5 ? d2(s4, D2) : h2(s4, D2), D2 += 4), t4.type === n2.ElementaryStreamTypes.VIDEO)
-                      for (var O2 = 0; O2 < T3; ) {
-                        var w2 = d2(i4, R2);
-                        S2(o3, i4[R2 += 4]) && _2(i4.subarray(R2, R2 + w2), o3 ? 2 : 1, e4 + C3 / a3, r4), R2 += w2, O2 += w2 + 4;
-                      }
+                    if (m4 ? (A4 = d2(s4, D2), D2 += 4) : A4 = v3, E4 ? (T3 = d2(s4, D2), D2 += 4) : T3 = y3, b3 && (D2 += 4), k3 && (C3 = 0 === l5 ? d2(s4, D2) : h2(s4, D2), D2 += 4), t4.type === n2.ElementaryStreamTypes.VIDEO) for (var O2 = 0; O2 < T3; ) {
+                      var w2 = d2(i4, R2);
+                      S2(o3, i4[R2 += 4]) && _2(i4.subarray(R2, R2 + w2), o3 ? 2 : 1, e4 + C3 / a3, r4), R2 += w2, O2 += w2 + 4;
+                    }
                     e4 += A4 / a3;
                   }
                 }));
@@ -86120,14 +85326,12 @@ var Clappr = function() {
           for (var o3 = 0, l3 = 0, u3 = false, h3 = 0; s3 < n3.length; ) {
             o3 = 0;
             do {
-              if (s3 >= n3.length)
-                break;
+              if (s3 >= n3.length) break;
               o3 += h3 = n3[s3++];
             } while (255 === h3);
             l3 = 0;
             do {
-              if (s3 >= n3.length)
-                break;
+              if (s3 >= n3.length) break;
               l3 += h3 = n3[s3++];
             } while (255 === h3);
             var f3 = n3.length - s3;
@@ -86142,8 +85346,7 @@ var Clappr = function() {
                       var m3 = n3[s3++], y3 = 64 & m3, A3 = y3 ? 2 + 3 * (31 & m3) : 0, E3 = new Uint8Array(A3);
                       if (y3) {
                         E3[0] = m3;
-                        for (var T3 = 1; T3 < A3; T3++)
-                          E3[T3] = n3[s3++];
+                        for (var T3 = 1; T3 < A3; T3++) E3[T3] = n3[s3++];
                       }
                       i4.push({ type: v3, payloadType: o3, pts: r4, bytes: E3 });
                     }
@@ -86156,41 +85359,31 @@ var Clappr = function() {
                   var S3 = n3[s3++].toString(16);
                   b3.push(1 == S3.length ? "0" + S3 : S3), 3 !== k3 && 5 !== k3 && 7 !== k3 && 9 !== k3 || b3.push("-");
                 }
-                for (var _3 = l3 - 16, L3 = new Uint8Array(_3), D2 = 0; D2 < _3; D2++)
-                  L3[D2] = n3[s3++];
+                for (var _3 = l3 - 16, L3 = new Uint8Array(_3), D2 = 0; D2 < _3; D2++) L3[D2] = n3[s3++];
                 i4.push({ payloadType: o3, pts: r4, uuid: b3.join(""), userData: (0, a2.utf8ArrayToStr)(L3), userDataBytes: L3 });
               }
-            } else if (l3 < f3)
-              s3 += l3;
-            else if (l3 > f3)
-              break;
+            } else if (l3 < f3) s3 += l3;
+            else if (l3 > f3) break;
           }
         }
         function C2(e4) {
-          for (var t4 = e4.byteLength, r4 = [], i4 = 1; i4 < t4 - 2; )
-            0 === e4[i4] && 0 === e4[i4 + 1] && 3 === e4[i4 + 2] ? (r4.push(i4 + 2), i4 += 2) : i4++;
-          if (0 === r4.length)
-            return e4;
+          for (var t4 = e4.byteLength, r4 = [], i4 = 1; i4 < t4 - 2; ) 0 === e4[i4] && 0 === e4[i4 + 1] && 3 === e4[i4 + 2] ? (r4.push(i4 + 2), i4 += 2) : i4++;
+          if (0 === r4.length) return e4;
           var n3 = t4 - r4.length, a3 = new Uint8Array(n3), s3 = 0;
-          for (i4 = 0; i4 < n3; s3++, i4++)
-            s3 === r4[0] && (s3++, r4.shift()), a3[i4] = e4[s3];
+          for (i4 = 0; i4 < n3; s3++, i4++) s3 === r4[0] && (s3++, r4.shift()), a3[i4] = e4[s3];
           return a3;
         }
         function L2(e4) {
           var t4 = e4[0], r4 = "", i4 = "", n3 = 0, a3 = 0, s3 = 0, o3 = 0, l3 = 0, c3 = 0;
           if (0 === t4) {
-            for (; "\0" !== u2(e4.subarray(c3, c3 + 1)); )
-              r4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1;
-            for (r4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1; "\0" !== u2(e4.subarray(c3, c3 + 1)); )
-              i4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1;
+            for (; "\0" !== u2(e4.subarray(c3, c3 + 1)); ) r4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1;
+            for (r4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1; "\0" !== u2(e4.subarray(c3, c3 + 1)); ) i4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1;
             i4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1, n3 = d2(e4, 12), a3 = d2(e4, 16), o3 = d2(e4, 20), l3 = d2(e4, 24), c3 = 28;
           } else if (1 === t4) {
             n3 = d2(e4, c3 += 4);
             var h3 = d2(e4, c3 += 4), f3 = d2(e4, c3 += 4);
-            for (c3 += 4, s3 = Math.pow(2, 32) * h3 + f3, Number.isSafeInteger(s3) || (s3 = Number.MAX_SAFE_INTEGER, console.warn("Presentation time exceeds safe integer limit and wrapped to max safe integer in parsing emsg box")), o3 = d2(e4, c3), l3 = d2(e4, c3 += 4), c3 += 4; "\0" !== u2(e4.subarray(c3, c3 + 1)); )
-              r4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1;
-            for (r4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1; "\0" !== u2(e4.subarray(c3, c3 + 1)); )
-              i4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1;
+            for (c3 += 4, s3 = Math.pow(2, 32) * h3 + f3, Number.isSafeInteger(s3) || (s3 = Number.MAX_SAFE_INTEGER, console.warn("Presentation time exceeds safe integer limit and wrapped to max safe integer in parsing emsg box")), o3 = d2(e4, c3), l3 = d2(e4, c3 += 4), c3 += 4; "\0" !== u2(e4.subarray(c3, c3 + 1)); ) r4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1;
+            for (r4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1; "\0" !== u2(e4.subarray(c3, c3 + 1)); ) i4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1;
             i4 += u2(e4.subarray(c3, c3 + 1)), c3 += 1;
           }
           return { schemeIdUri: r4, value: i4, timeScale: n3, presentationTime: s3, presentationTimeDelta: a3, eventDuration: o3, id: l3, payload: e4.subarray(c3, e4.byteLength) };
@@ -86237,58 +85430,45 @@ var Clappr = function() {
         }
         function a2(e4, t4) {
           var r4 = e4.mode;
-          if ("disabled" === r4 && (e4.mode = "hidden"), e4.cues && !e4.cues.getCueById(t4.id))
-            try {
-              if (e4.addCue(t4), !e4.cues.getCueById(t4.id))
-                throw new Error("addCue is failed for: " + t4);
-            } catch (r5) {
-              i3.logger.debug("[texttrack-utils]: " + r5);
-              var n3 = new self.TextTrackCue(t4.startTime, t4.endTime, t4.text);
-              n3.id = t4.id, e4.addCue(n3);
-            }
+          if ("disabled" === r4 && (e4.mode = "hidden"), e4.cues && !e4.cues.getCueById(t4.id)) try {
+            if (e4.addCue(t4), !e4.cues.getCueById(t4.id)) throw new Error("addCue is failed for: " + t4);
+          } catch (r5) {
+            i3.logger.debug("[texttrack-utils]: " + r5);
+            var n3 = new self.TextTrackCue(t4.startTime, t4.endTime, t4.text);
+            n3.id = t4.id, e4.addCue(n3);
+          }
           "disabled" === r4 && (e4.mode = r4);
         }
         function s2(e4) {
           var t4 = e4.mode;
-          if ("disabled" === t4 && (e4.mode = "hidden"), e4.cues)
-            for (var r4 = e4.cues.length; r4--; )
-              e4.removeCue(e4.cues[r4]);
+          if ("disabled" === t4 && (e4.mode = "hidden"), e4.cues) for (var r4 = e4.cues.length; r4--; ) e4.removeCue(e4.cues[r4]);
           "disabled" === t4 && (e4.mode = t4);
         }
         function o2(e4, t4, r4, i4) {
           var n3 = e4.mode;
-          if ("disabled" === n3 && (e4.mode = "hidden"), e4.cues && e4.cues.length > 0)
-            for (var a3 = l2(e4.cues, t4, r4), s3 = 0; s3 < a3.length; s3++)
-              i4 && !i4(a3[s3]) || e4.removeCue(a3[s3]);
+          if ("disabled" === n3 && (e4.mode = "hidden"), e4.cues && e4.cues.length > 0) for (var a3 = l2(e4.cues, t4, r4), s3 = 0; s3 < a3.length; s3++) i4 && !i4(a3[s3]) || e4.removeCue(a3[s3]);
           "disabled" === n3 && (e4.mode = n3);
         }
         function l2(e4, t4, r4) {
           var i4 = [], n3 = function(e5, t5) {
-            if (t5 < e5[0].startTime)
-              return 0;
+            if (t5 < e5[0].startTime) return 0;
             var r5 = e5.length - 1;
-            if (t5 > e5[r5].endTime)
-              return -1;
+            if (t5 > e5[r5].endTime) return -1;
             for (var i5 = 0, n4 = r5; i5 <= n4; ) {
               var a4 = Math.floor((n4 + i5) / 2);
-              if (t5 < e5[a4].startTime)
-                n4 = a4 - 1;
+              if (t5 < e5[a4].startTime) n4 = a4 - 1;
               else {
-                if (!(t5 > e5[a4].startTime && i5 < r5))
-                  return a4;
+                if (!(t5 > e5[a4].startTime && i5 < r5)) return a4;
                 i5 = a4 + 1;
               }
             }
             return e5[i5].startTime - t5 < t5 - e5[n4].startTime ? i5 : n4;
           }(e4, t4);
-          if (n3 > -1)
-            for (var a3 = n3, s3 = e4.length; a3 < s3; a3++) {
-              var o3 = e4[a3];
-              if (o3.startTime >= t4 && o3.endTime <= r4)
-                i4.push(o3);
-              else if (o3.startTime > r4)
-                return i4;
-            }
+          if (n3 > -1) for (var a3 = n3, s3 = e4.length; a3 < s3; a3++) {
+            var o3 = e4[a3];
+            if (o3.startTime >= t4 && o3.endTime <= r4) i4.push(o3);
+            else if (o3.startTime > r4) return i4;
+          }
           return i4;
         }
       }
@@ -86299,8 +85479,7 @@ var Clappr = function() {
       (e3, t3, r3) => {
         r3.r(t3), r3.d(t3, { default: () => i3 });
         const i3 = { toString: function(e4) {
-          for (var t4 = "", r4 = e4.length, i4 = 0; i4 < r4; i4++)
-            t4 += "[" + e4.start(i4).toFixed(3) + "," + e4.end(i4).toFixed(3) + "]";
+          for (var t4 = "", r4 = e4.length, i4 = 0; i4 < r4; i4++) t4 += "[" + e4.start(i4).toFixed(3) + "," + e4.end(i4).toFixed(3) + "]";
           return t4;
         } };
       }
@@ -86342,14 +85521,11 @@ var Clappr = function() {
       (e3, t3, r3) => {
         r3.r(t3), r3.d(t3, { default: () => i3 });
         const i3 = function() {
-          if ("undefined" != typeof self && self.VTTCue)
-            return self.VTTCue;
+          if ("undefined" != typeof self && self.VTTCue) return self.VTTCue;
           var e4 = ["", "lr", "rl"], t4 = ["start", "middle", "end", "left", "right"];
           function r4(e5, t5) {
-            if ("string" != typeof t5)
-              return false;
-            if (!Array.isArray(e5))
-              return false;
+            if ("string" != typeof t5) return false;
+            if (!Array.isArray(e5)) return false;
             var r5 = t5.toLowerCase();
             return !!~e5.indexOf(r5) && r5;
           }
@@ -86357,12 +85533,10 @@ var Clappr = function() {
             return r4(t4, e5);
           }
           function n2(e5) {
-            for (var t5 = arguments.length, r5 = new Array(t5 > 1 ? t5 - 1 : 0), i5 = 1; i5 < t5; i5++)
-              r5[i5 - 1] = arguments[i5];
+            for (var t5 = arguments.length, r5 = new Array(t5 > 1 ? t5 - 1 : 0), i5 = 1; i5 < t5; i5++) r5[i5 - 1] = arguments[i5];
             for (var n3 = 1; n3 < arguments.length; n3++) {
               var a3 = arguments[n3];
-              for (var s2 in a3)
-                e5[s2] = a3[s2];
+              for (var s2 in a3) e5[s2] = a3[s2];
             }
             return e5;
           }
@@ -86381,14 +85555,12 @@ var Clappr = function() {
             } })), Object.defineProperty(o2, "startTime", n2({}, l2, { get: function() {
               return d2;
             }, set: function(e5) {
-              if ("number" != typeof e5)
-                throw new TypeError("Start time must be set to a number.");
+              if ("number" != typeof e5) throw new TypeError("Start time must be set to a number.");
               d2 = e5, this.hasBeenReset = true;
             } })), Object.defineProperty(o2, "endTime", n2({}, l2, { get: function() {
               return h2;
             }, set: function(e5) {
-              if ("number" != typeof e5)
-                throw new TypeError("End time must be set to a number.");
+              if ("number" != typeof e5) throw new TypeError("End time must be set to a number.");
               h2 = e5, this.hasBeenReset = true;
             } })), Object.defineProperty(o2, "text", n2({}, l2, { get: function() {
               return f2;
@@ -86404,8 +85576,7 @@ var Clappr = function() {
               var i5 = function(t7) {
                 return r4(e4, t7);
               }(t6);
-              if (false === i5)
-                throw new SyntaxError("An invalid or illegal string was specified.");
+              if (false === i5) throw new SyntaxError("An invalid or illegal string was specified.");
               g2 = i5, this.hasBeenReset = true;
             } })), Object.defineProperty(o2, "snapToLines", n2({}, l2, { get: function() {
               return v2;
@@ -86414,41 +85585,35 @@ var Clappr = function() {
             } })), Object.defineProperty(o2, "line", n2({}, l2, { get: function() {
               return m2;
             }, set: function(e5) {
-              if ("number" != typeof e5 && "auto" !== e5)
-                throw new SyntaxError("An invalid number or illegal string was specified.");
+              if ("number" != typeof e5 && "auto" !== e5) throw new SyntaxError("An invalid number or illegal string was specified.");
               m2 = e5, this.hasBeenReset = true;
             } })), Object.defineProperty(o2, "lineAlign", n2({}, l2, { get: function() {
               return y2;
             }, set: function(e5) {
               var t6 = i4(e5);
-              if (!t6)
-                throw new SyntaxError("An invalid or illegal string was specified.");
+              if (!t6) throw new SyntaxError("An invalid or illegal string was specified.");
               y2 = t6, this.hasBeenReset = true;
             } })), Object.defineProperty(o2, "position", n2({}, l2, { get: function() {
               return A2;
             }, set: function(e5) {
-              if (e5 < 0 || e5 > 100)
-                throw new Error("Position must be between 0 and 100.");
+              if (e5 < 0 || e5 > 100) throw new Error("Position must be between 0 and 100.");
               A2 = e5, this.hasBeenReset = true;
             } })), Object.defineProperty(o2, "positionAlign", n2({}, l2, { get: function() {
               return E2;
             }, set: function(e5) {
               var t6 = i4(e5);
-              if (!t6)
-                throw new SyntaxError("An invalid or illegal string was specified.");
+              if (!t6) throw new SyntaxError("An invalid or illegal string was specified.");
               E2 = t6, this.hasBeenReset = true;
             } })), Object.defineProperty(o2, "size", n2({}, l2, { get: function() {
               return T2;
             }, set: function(e5) {
-              if (e5 < 0 || e5 > 100)
-                throw new Error("Size must be between 0 and 100.");
+              if (e5 < 0 || e5 > 100) throw new Error("Size must be between 0 and 100.");
               T2 = e5, this.hasBeenReset = true;
             } })), Object.defineProperty(o2, "align", n2({}, l2, { get: function() {
               return b2;
             }, set: function(e5) {
               var t6 = i4(e5);
-              if (!t6)
-                throw new SyntaxError("An invalid or illegal string was specified.");
+              if (!t6) throw new SyntaxError("An invalid or illegal string was specified.");
               b2 = t6, this.hasBeenReset = true;
             } })), o2.displayState = void 0;
           }
@@ -86470,10 +85635,8 @@ var Clappr = function() {
           function e4() {
           }
           return e4.prototype.decode = function(e5, t4) {
-            if (!e5)
-              return "";
-            if ("string" != typeof e5)
-              throw new Error("Error - expected string data.");
+            if (!e5) return "";
+            if ("string" != typeof e5) throw new Error("Error - expected string data.");
             return decodeURIComponent(encodeURIComponent(e5));
           }, e4;
         }();
@@ -86496,55 +85659,49 @@ var Clappr = function() {
           }, t4.has = function(e5) {
             return e5 in this.values;
           }, t4.alt = function(e5, t5, r4) {
-            for (var i4 = 0; i4 < r4.length; ++i4)
-              if (t5 === r4[i4]) {
-                this.set(e5, t5);
-                break;
-              }
+            for (var i4 = 0; i4 < r4.length; ++i4) if (t5 === r4[i4]) {
+              this.set(e5, t5);
+              break;
+            }
           }, t4.integer = function(e5, t5) {
             /^-?\d+$/.test(t5) && this.set(e5, parseInt(t5, 10));
           }, t4.percent = function(e5, t5) {
             if (/^([\d]{1,3})(\.[\d]*)?%$/.test(t5)) {
               var r4 = parseFloat(t5);
-              if (r4 >= 0 && r4 <= 100)
-                return this.set(e5, r4), true;
+              if (r4 >= 0 && r4 <= 100) return this.set(e5, r4), true;
             }
             return false;
           }, e4;
         }();
         function o2(e4, t4, r4, i4) {
           var n3 = i4 ? e4.split(i4) : [e4];
-          for (var a3 in n3)
-            if ("string" == typeof n3[a3]) {
-              var s3 = n3[a3].split(r4);
-              2 === s3.length && t4(s3[0], s3[1]);
-            }
+          for (var a3 in n3) if ("string" == typeof n3[a3]) {
+            var s3 = n3[a3].split(r4);
+            2 === s3.length && t4(s3[0], s3[1]);
+          }
         }
         var l2 = new i3.default(0, 0, ""), u2 = "middle" === l2.align ? "middle" : "center";
         function c2(e4, t4, r4) {
           var i4 = e4;
           function n3() {
             var t5 = a2(e4);
-            if (null === t5)
-              throw new Error("Malformed timestamp: " + i4);
+            if (null === t5) throw new Error("Malformed timestamp: " + i4);
             return e4 = e4.replace(/^[^\sa-zA-Z-]+/, ""), t5;
           }
           function c3() {
             e4 = e4.replace(/^\s+/, "");
           }
-          if (c3(), t4.startTime = n3(), c3(), "-->" !== e4.slice(0, 3))
-            throw new Error("Malformed time stamp (time stamps must be separated by '-->'): " + i4);
+          if (c3(), t4.startTime = n3(), c3(), "-->" !== e4.slice(0, 3)) throw new Error("Malformed time stamp (time stamps must be separated by '-->'): " + i4);
           e4 = e4.slice(3), c3(), t4.endTime = n3(), c3(), function(e5, t5) {
             var i5 = new s2();
             o2(e5, function(e6, t6) {
               var n5;
               switch (e6) {
                 case "region":
-                  for (var a4 = r4.length - 1; a4 >= 0; a4--)
-                    if (r4[a4].id === t6) {
-                      i5.set(e6, r4[a4].region);
-                      break;
-                    }
+                  for (var a4 = r4.length - 1; a4 >= 0; a4--) if (r4[a4].id === t6) {
+                    i5.set(e6, r4[a4].region);
+                    break;
+                  }
                   break;
                 case "vertical":
                   i5.alt(e6, t6, ["rl", "lr"]);
@@ -86580,8 +85737,7 @@ var Clappr = function() {
             var t5 = this;
             function r4() {
               var e6 = t5.buffer, r5 = 0;
-              for (e6 = d2(e6); r5 < e6.length && "\r" !== e6[r5] && "\n" !== e6[r5]; )
-                ++r5;
+              for (e6 = d2(e6); r5 < e6.length && "\r" !== e6[r5] && "\n" !== e6[r5]; ) ++r5;
               var i4 = e6.slice(0, r5);
               return "\r" === e6[r5] && ++r5, "\n" === e6[r5] && ++r5, t5.buffer = e6.slice(r5), i4;
             }
@@ -86589,16 +85745,13 @@ var Clappr = function() {
             try {
               var n3 = "";
               if ("INITIAL" === t5.state) {
-                if (!/\r\n|\n/.test(t5.buffer))
-                  return this;
+                if (!/\r\n|\n/.test(t5.buffer)) return this;
                 var a3 = (n3 = r4()).match(/^(ï»¿)?WEBVTT([ \t].*)?$/);
-                if (!a3 || !a3[0])
-                  throw new Error("Malformed WebVTT signature.");
+                if (!a3 || !a3[0]) throw new Error("Malformed WebVTT signature.");
                 t5.state = "HEADER";
               }
               for (var s3 = false; t5.buffer; ) {
-                if (!/\r\n|\n/.test(t5.buffer))
-                  return this;
+                if (!/\r\n|\n/.test(t5.buffer)) return this;
                 switch (s3 ? s3 = false : n3 = r4(), t5.state) {
                   case "HEADER":
                     /:/.test(n3) ? o2(n3, function(e6, t6) {
@@ -86612,8 +85765,7 @@ var Clappr = function() {
                       t5.state = "NOTE";
                       break;
                     }
-                    if (!n3)
-                      continue;
+                    if (!n3) continue;
                     if (t5.cue = new i3.default(0, 0, ""), t5.state = "CUE", -1 === n3.indexOf("-->")) {
                       t5.cue.id = n3;
                       continue;
@@ -86637,8 +85789,7 @@ var Clappr = function() {
                       t5.oncue && t5.cue && t5.oncue(t5.cue), t5.cue = null, t5.state = "ID";
                       continue;
                     }
-                    if (null === t5.cue)
-                      continue;
+                    if (null === t5.cue) continue;
                     t5.cue.text && (t5.cue.text += "\n"), t5.cue.text += n3;
                     continue;
                   case "BADCUE":
@@ -86652,8 +85803,7 @@ var Clappr = function() {
           }, t4.flush = function() {
             var e5 = this;
             try {
-              if ((e5.cue || "HEADER" === e5.state) && (e5.buffer += "\n\n", e5.parse()), "INITIAL" === e5.state || "BADWEBVTT" === e5.state)
-                throw new Error("Malformed WebVTT signature.");
+              if ((e5.cue || "HEADER" === e5.state) && (e5.buffer += "\n\n", e5.parse()), "INITIAL" === e5.state || "BADWEBVTT" === e5.state) throw new Error("Malformed WebVTT signature.");
             } catch (t5) {
               e5.onparsingerror && e5.onparsingerror(t5);
             }
@@ -86685,8 +85835,7 @@ var Clappr = function() {
         ), l2 = /\r\n|\n\r|\n|\r/g, u2 = function(e4, t4, r4) {
           return void 0 === r4 && (r4 = 0), e4.slice(r4, r4 + t4.length) === t4;
         }, c2 = function(e4) {
-          for (var t4 = 5381, r4 = e4.length; r4; )
-            t4 = 33 * t4 ^ e4.charCodeAt(--r4);
+          for (var t4 = 5381, r4 = e4.length; r4; ) t4 = 33 * t4 ^ e4.charCodeAt(--r4);
           return (t4 >>> 0).toString();
         };
         function d2(e4, t4, r4) {
@@ -86698,8 +85847,7 @@ var Clappr = function() {
             var t5 = c3[h3], r5 = c3.ccOffset, i4 = (b2 - E2) / 9e4;
             null != t5 && t5.new && (void 0 !== k2 ? r5 = c3.ccOffset = t5.start : function(e6, t6, r6) {
               var i5 = e6[t6], n4 = e6[i5.prevCC];
-              if (!n4 || !n4.new && i5.new)
-                return e6.ccOffset = e6.presentationOffset = i5.start, void (i5.new = false);
+              if (!n4 || !n4.new && i5.new) return e6.ccOffset = e6.presentationOffset = i5.start, void (i5.new = false);
               for (; null !== (a4 = n4) && void 0 !== a4 && a4.new; ) {
                 var a4;
                 e6.ccOffset += i5.start - n4.start, i5.new = false, n4 = e6[(i5 = n4).prevCC];
@@ -86723,8 +85871,7 @@ var Clappr = function() {
                 try {
                   k2 = function(e6) {
                     var t5 = parseInt(e6.slice(-3)), r5 = parseInt(e6.slice(-6, -4)), n3 = parseInt(e6.slice(-9, -7)), a3 = e6.length > 9 ? parseInt(e6.substring(0, e6.indexOf(":"))) : 0;
-                    if (!((0, i3.isFiniteNumber)(t5) && (0, i3.isFiniteNumber)(r5) && (0, i3.isFiniteNumber)(n3) && (0, i3.isFiniteNumber)(a3)))
-                      throw Error("Malformed X-TIMESTAMP-MAP: Local:" + e6);
+                    if (!((0, i3.isFiniteNumber)(t5) && (0, i3.isFiniteNumber)(r5) && (0, i3.isFiniteNumber)(n3) && (0, i3.isFiniteNumber)(a3))) throw Error("Malformed X-TIMESTAMP-MAP: Local:" + e6);
                     return t5 += 1e3 * r5, (t5 += 6e4 * n3) + 36e5 * a3;
                   }(T2) / 1e3;
                 } catch (e6) {
@@ -86765,8 +85912,7 @@ var Clappr = function() {
             var e5;
             this.abortInternal(), null !== (e5 = this.callbacks) && void 0 !== e5 && e5.onAbort && this.callbacks.onAbort(this.stats, this.context, this.loader);
           }, t4.load = function(e5, t5, r4) {
-            if (this.stats.loading.start)
-              throw new Error("Loader can only be used once.");
+            if (this.stats.loading.start) throw new Error("Loader can only be used once.");
             this.stats.loading.start = self.performance.now(), this.context = e5, this.config = t5, this.callbacks = r4, this.retryDelay = t5.retryDelay, this.loadInternal();
           }, t4.loadInternal = function() {
             var e5 = this.config, t5 = this.context;
@@ -86775,17 +85921,14 @@ var Clappr = function() {
               i4.loading.first = 0, i4.loaded = 0;
               var n3 = this.xhrSetup;
               try {
-                if (n3)
-                  try {
-                    n3(r4, t5.url);
-                  } catch (e6) {
-                    r4.open("GET", t5.url, true), n3(r4, t5.url);
-                  }
+                if (n3) try {
+                  n3(r4, t5.url);
+                } catch (e6) {
+                  r4.open("GET", t5.url, true), n3(r4, t5.url);
+                }
                 r4.readyState || r4.open("GET", t5.url, true);
                 var a3 = this.context.headers;
-                if (a3)
-                  for (var s3 in a3)
-                    r4.setRequestHeader(s3, a3[s3]);
+                if (a3) for (var s3 in a3) r4.setRequestHeader(s3, a3[s3]);
               } catch (e6) {
                 return void this.callbacks.onError({ code: r4.status, text: e6.message }, t5, r4);
               }
@@ -86795,23 +85938,18 @@ var Clappr = function() {
             var e5 = this.context, t5 = this.loader, r4 = this.stats;
             if (e5 && t5) {
               var n3 = t5.readyState, a3 = this.config;
-              if (!r4.aborted && n3 >= 2)
-                if (self.clearTimeout(this.requestTimeout), 0 === r4.loading.first && (r4.loading.first = Math.max(self.performance.now(), r4.loading.start)), 4 === n3) {
-                  t5.onreadystatechange = null, t5.onprogress = null;
-                  var s3 = t5.status, o2 = "arraybuffer" === t5.responseType;
-                  if (s3 >= 200 && s3 < 300 && (o2 && t5.response || null !== t5.responseText)) {
-                    var l2, u2;
-                    if (r4.loading.end = Math.max(self.performance.now(), r4.loading.first), u2 = o2 ? (l2 = t5.response).byteLength : (l2 = t5.responseText).length, r4.loaded = r4.total = u2, !this.callbacks)
-                      return;
-                    var c2 = this.callbacks.onProgress;
-                    if (c2 && c2(r4, e5, l2, t5), !this.callbacks)
-                      return;
-                    var d2 = { url: t5.responseURL, data: l2 };
-                    this.callbacks.onSuccess(d2, r4, e5, t5);
-                  } else
-                    r4.retry >= a3.maxRetry || s3 >= 400 && s3 < 499 ? (i3.logger.error(s3 + " while loading " + e5.url), this.callbacks.onError({ code: s3, text: t5.statusText }, e5, t5)) : (i3.logger.warn(s3 + " while loading " + e5.url + ", retrying in " + this.retryDelay + "..."), this.abortInternal(), this.loader = null, self.clearTimeout(this.retryTimeout), this.retryTimeout = self.setTimeout(this.loadInternal.bind(this), this.retryDelay), this.retryDelay = Math.min(2 * this.retryDelay, a3.maxRetryDelay), r4.retry++);
-                } else
-                  self.clearTimeout(this.requestTimeout), this.requestTimeout = self.setTimeout(this.loadtimeout.bind(this), a3.timeout);
+              if (!r4.aborted && n3 >= 2) if (self.clearTimeout(this.requestTimeout), 0 === r4.loading.first && (r4.loading.first = Math.max(self.performance.now(), r4.loading.start)), 4 === n3) {
+                t5.onreadystatechange = null, t5.onprogress = null;
+                var s3 = t5.status, o2 = "arraybuffer" === t5.responseType;
+                if (s3 >= 200 && s3 < 300 && (o2 && t5.response || null !== t5.responseText)) {
+                  var l2, u2;
+                  if (r4.loading.end = Math.max(self.performance.now(), r4.loading.first), u2 = o2 ? (l2 = t5.response).byteLength : (l2 = t5.responseText).length, r4.loaded = r4.total = u2, !this.callbacks) return;
+                  var c2 = this.callbacks.onProgress;
+                  if (c2 && c2(r4, e5, l2, t5), !this.callbacks) return;
+                  var d2 = { url: t5.responseURL, data: l2 };
+                  this.callbacks.onSuccess(d2, r4, e5, t5);
+                } else r4.retry >= a3.maxRetry || s3 >= 400 && s3 < 499 ? (i3.logger.error(s3 + " while loading " + e5.url), this.callbacks.onError({ code: s3, text: t5.statusText }, e5, t5)) : (i3.logger.warn(s3 + " while loading " + e5.url + ", retrying in " + this.retryDelay + "..."), this.abortInternal(), this.loader = null, self.clearTimeout(this.retryTimeout), this.retryTimeout = self.setTimeout(this.loadInternal.bind(this), this.retryDelay), this.retryDelay = Math.min(2 * this.retryDelay, a3.maxRetryDelay), r4.retry++);
+              } else self.clearTimeout(this.requestTimeout), this.requestTimeout = self.setTimeout(this.loadtimeout.bind(this), a3.timeout);
             }
           }, t4.loadtimeout = function() {
             i3.logger.warn("timeout while loading " + this.context.url);
@@ -86842,8 +85980,7 @@ var Clappr = function() {
           this.fn = e4, this.context = t4, this.once = r4 || false;
         }
         function a2(e4, t4, i4, a3, s3) {
-          if ("function" != typeof i4)
-            throw new TypeError("The listener must be a function");
+          if ("function" != typeof i4) throw new TypeError("The listener must be a function");
           var o3 = new n2(i4, a3 || e4, s3), l2 = r3 ? r3 + t4 : t4;
           return e4._events[l2] ? e4._events[l2].fn ? e4._events[l2] = [e4._events[l2], o3] : e4._events[l2].push(o3) : (e4._events[l2] = o3, e4._eventsCount++), e4;
         }
@@ -86855,27 +85992,21 @@ var Clappr = function() {
         }
         Object.create && (i3.prototype = /* @__PURE__ */ Object.create(null), new i3().__proto__ || (r3 = false)), o2.prototype.eventNames = function() {
           var e4, i4, n3 = [];
-          if (0 === this._eventsCount)
-            return n3;
-          for (i4 in e4 = this._events)
-            t3.call(e4, i4) && n3.push(r3 ? i4.slice(1) : i4);
+          if (0 === this._eventsCount) return n3;
+          for (i4 in e4 = this._events) t3.call(e4, i4) && n3.push(r3 ? i4.slice(1) : i4);
           return Object.getOwnPropertySymbols ? n3.concat(Object.getOwnPropertySymbols(e4)) : n3;
         }, o2.prototype.listeners = function(e4) {
           var t4 = r3 ? r3 + e4 : e4, i4 = this._events[t4];
-          if (!i4)
-            return [];
-          if (i4.fn)
-            return [i4.fn];
-          for (var n3 = 0, a3 = i4.length, s3 = new Array(a3); n3 < a3; n3++)
-            s3[n3] = i4[n3].fn;
+          if (!i4) return [];
+          if (i4.fn) return [i4.fn];
+          for (var n3 = 0, a3 = i4.length, s3 = new Array(a3); n3 < a3; n3++) s3[n3] = i4[n3].fn;
           return s3;
         }, o2.prototype.listenerCount = function(e4) {
           var t4 = r3 ? r3 + e4 : e4, i4 = this._events[t4];
           return i4 ? i4.fn ? 1 : i4.length : 0;
         }, o2.prototype.emit = function(e4, t4, i4, n3, a3, s3) {
           var o3 = r3 ? r3 + e4 : e4;
-          if (!this._events[o3])
-            return false;
+          if (!this._events[o3]) return false;
           var l2, u2, c2 = this._events[o3], d2 = arguments.length;
           if (c2.fn) {
             switch (c2.once && this.removeListener(e4, c2.fn, void 0, true), d2) {
@@ -86892,31 +86023,27 @@ var Clappr = function() {
               case 6:
                 return c2.fn.call(c2.context, t4, i4, n3, a3, s3), true;
             }
-            for (u2 = 1, l2 = new Array(d2 - 1); u2 < d2; u2++)
-              l2[u2 - 1] = arguments[u2];
+            for (u2 = 1, l2 = new Array(d2 - 1); u2 < d2; u2++) l2[u2 - 1] = arguments[u2];
             c2.fn.apply(c2.context, l2);
           } else {
             var h2, f2 = c2.length;
-            for (u2 = 0; u2 < f2; u2++)
-              switch (c2[u2].once && this.removeListener(e4, c2[u2].fn, void 0, true), d2) {
-                case 1:
-                  c2[u2].fn.call(c2[u2].context);
-                  break;
-                case 2:
-                  c2[u2].fn.call(c2[u2].context, t4);
-                  break;
-                case 3:
-                  c2[u2].fn.call(c2[u2].context, t4, i4);
-                  break;
-                case 4:
-                  c2[u2].fn.call(c2[u2].context, t4, i4, n3);
-                  break;
-                default:
-                  if (!l2)
-                    for (h2 = 1, l2 = new Array(d2 - 1); h2 < d2; h2++)
-                      l2[h2 - 1] = arguments[h2];
-                  c2[u2].fn.apply(c2[u2].context, l2);
-              }
+            for (u2 = 0; u2 < f2; u2++) switch (c2[u2].once && this.removeListener(e4, c2[u2].fn, void 0, true), d2) {
+              case 1:
+                c2[u2].fn.call(c2[u2].context);
+                break;
+              case 2:
+                c2[u2].fn.call(c2[u2].context, t4);
+                break;
+              case 3:
+                c2[u2].fn.call(c2[u2].context, t4, i4);
+                break;
+              case 4:
+                c2[u2].fn.call(c2[u2].context, t4, i4, n3);
+                break;
+              default:
+                if (!l2) for (h2 = 1, l2 = new Array(d2 - 1); h2 < d2; h2++) l2[h2 - 1] = arguments[h2];
+                c2[u2].fn.apply(c2[u2].context, l2);
+            }
           }
           return true;
         }, o2.prototype.on = function(e4, t4, r4) {
@@ -86925,16 +86052,12 @@ var Clappr = function() {
           return a2(this, e4, t4, r4, true);
         }, o2.prototype.removeListener = function(e4, t4, i4, n3) {
           var a3 = r3 ? r3 + e4 : e4;
-          if (!this._events[a3])
-            return this;
-          if (!t4)
-            return s2(this, a3), this;
+          if (!this._events[a3]) return this;
+          if (!t4) return s2(this, a3), this;
           var o3 = this._events[a3];
-          if (o3.fn)
-            o3.fn !== t4 || n3 && !o3.once || i4 && o3.context !== i4 || s2(this, a3);
+          if (o3.fn) o3.fn !== t4 || n3 && !o3.once || i4 && o3.context !== i4 || s2(this, a3);
           else {
-            for (var l2 = 0, u2 = [], c2 = o3.length; l2 < c2; l2++)
-              (o3[l2].fn !== t4 || n3 && !o3[l2].once || i4 && o3[l2].context !== i4) && u2.push(o3[l2]);
+            for (var l2 = 0, u2 = [], c2 = o3.length; l2 < c2; l2++) (o3[l2].fn !== t4 || n3 && !o3[l2].once || i4 && o3[l2].context !== i4) && u2.push(o3[l2]);
             u2.length ? this._events[a3] = 1 === u2.length ? u2[0] : u2 : s2(this, a3);
           }
           return this;
@@ -86951,40 +86074,32 @@ var Clappr = function() {
         var t3, r3, i3, n2, a2;
         t3 = /^(?=((?:[a-zA-Z0-9+\-.]+:)?))\1(?=((?:\/\/[^\/?#]*)?))\2(?=((?:(?:[^?#\/]*\/)*[^;?#\/]*)?))\3((?:;[^?#]*)?)(\?[^#]*)?(#[^]*)?$/, r3 = /^(?=([^\/?#]*))\1([^]*)$/, i3 = /(?:\/|^)\.(?=\/)/g, n2 = /(?:\/|^)\.\.\/(?!\.\.\/)[^\/]*(?=\/)/g, a2 = { buildAbsoluteURL: function(e4, t4, i4) {
           if (i4 = i4 || {}, e4 = e4.trim(), !(t4 = t4.trim())) {
-            if (!i4.alwaysNormalize)
-              return e4;
+            if (!i4.alwaysNormalize) return e4;
             var n3 = a2.parseURL(e4);
-            if (!n3)
-              throw new Error("Error trying to parse base URL.");
+            if (!n3) throw new Error("Error trying to parse base URL.");
             return n3.path = a2.normalizePath(n3.path), a2.buildURLFromParts(n3);
           }
           var s2 = a2.parseURL(t4);
-          if (!s2)
-            throw new Error("Error trying to parse relative URL.");
-          if (s2.scheme)
-            return i4.alwaysNormalize ? (s2.path = a2.normalizePath(s2.path), a2.buildURLFromParts(s2)) : t4;
+          if (!s2) throw new Error("Error trying to parse relative URL.");
+          if (s2.scheme) return i4.alwaysNormalize ? (s2.path = a2.normalizePath(s2.path), a2.buildURLFromParts(s2)) : t4;
           var o2 = a2.parseURL(e4);
-          if (!o2)
-            throw new Error("Error trying to parse base URL.");
+          if (!o2) throw new Error("Error trying to parse base URL.");
           if (!o2.netLoc && o2.path && "/" !== o2.path[0]) {
             var l2 = r3.exec(o2.path);
             o2.netLoc = l2[1], o2.path = l2[2];
           }
           o2.netLoc && !o2.path && (o2.path = "/");
           var u2 = { scheme: o2.scheme, netLoc: s2.netLoc, path: null, params: s2.params, query: s2.query, fragment: s2.fragment };
-          if (!s2.netLoc && (u2.netLoc = o2.netLoc, "/" !== s2.path[0]))
-            if (s2.path) {
-              var c2 = o2.path, d2 = c2.substring(0, c2.lastIndexOf("/") + 1) + s2.path;
-              u2.path = a2.normalizePath(d2);
-            } else
-              u2.path = o2.path, s2.params || (u2.params = o2.params, s2.query || (u2.query = o2.query));
+          if (!s2.netLoc && (u2.netLoc = o2.netLoc, "/" !== s2.path[0])) if (s2.path) {
+            var c2 = o2.path, d2 = c2.substring(0, c2.lastIndexOf("/") + 1) + s2.path;
+            u2.path = a2.normalizePath(d2);
+          } else u2.path = o2.path, s2.params || (u2.params = o2.params, s2.query || (u2.query = o2.query));
           return null === u2.path && (u2.path = i4.alwaysNormalize ? a2.normalizePath(s2.path) : s2.path), a2.buildURLFromParts(u2);
         }, parseURL: function(e4) {
           var r4 = t3.exec(e4);
           return r4 ? { scheme: r4[1] || "", netLoc: r4[2] || "", path: r4[3] || "", params: r4[4] || "", query: r4[5] || "", fragment: r4[6] || "" } : null;
         }, normalizePath: function(e4) {
-          for (e4 = e4.split("").reverse().join("").replace(i3, ""); e4.length !== (e4 = e4.replace(n2, "")).length; )
-            ;
+          for (e4 = e4.split("").reverse().join("").replace(i3, ""); e4.length !== (e4 = e4.replace(n2, "")).length; ) ;
           return e4.split("").reverse().join("");
         }, buildURLFromParts: function(e4) {
           return e4.scheme + e4.netLoc + e4.path + e4.params + e4.query + e4.fragment;
@@ -86993,8 +86108,7 @@ var Clappr = function() {
     ) }, t2 = {};
     function r2(i3) {
       var n2 = t2[i3];
-      if (void 0 !== n2)
-        return n2.exports;
+      if (void 0 !== n2) return n2.exports;
       var a2 = t2[i3] = { exports: {} };
       return e2[i3].call(a2.exports, a2, a2.exports, r2), a2.exports;
     }
@@ -87002,8 +86116,7 @@ var Clappr = function() {
       var t3 = e3 && e3.__esModule ? () => e3.default : () => e3;
       return r2.d(t3, { a: t3 }), t3;
     }, r2.d = (e3, t3) => {
-      for (var i3 in t3)
-        r2.o(t3, i3) && !r2.o(e3, i3) && Object.defineProperty(e3, i3, { enumerable: true, get: t3[i3] });
+      for (var i3 in t3) r2.o(t3, i3) && !r2.o(e3, i3) && Object.defineProperty(e3, i3, { enumerable: true, get: t3[i3] });
     }, r2.o = (e3, t3) => Object.prototype.hasOwnProperty.call(e3, t3), r2.r = (e3) => {
       "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e3, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e3, "__esModule", { value: true });
     };
@@ -87014,16 +86127,14 @@ var Clappr = function() {
   ce.register("PLAYBACK_FRAGMENT_CHANGED"), ce.register("PLAYBACK_FRAGMENT_PARSING_METADATA");
   var Tr = function(e2) {
     !function(e3, t3) {
-      if ("function" != typeof t3 && null !== t3)
-        throw new TypeError("Super expression must either be null or a function");
+      if ("function" != typeof t3 && null !== t3) throw new TypeError("Super expression must either be null or a function");
       e3.prototype = Object.create(t3 && t3.prototype, { constructor: { value: e3, writable: true, configurable: true } }), Object.defineProperty(e3, "prototype", { writable: false }), t3 && ar(e3, t3);
     }(a2, e2);
     var t2, r2, i2, n2 = or(a2);
     function a2() {
       var e3;
       tr(this, a2);
-      for (var t3 = arguments.length, r3 = new Array(t3), i3 = 0; i3 < t3; i3++)
-        r3[i3] = arguments[i3];
+      for (var t3 = arguments.length, r3 = new Array(t3), i3 = 0; i3 < t3; i3++) r3[i3] = arguments[i3];
       return (e3 = n2.call.apply(n2, [this].concat(r3))).options.playback = er(er({}, e3.options), e3.options.playback), e3.options.hlsPlayback = er(er({}, e3.defaultOptions), e3.options.hlsPlayback), e3._minDvrSize = void 0 === e3.options.hlsMinimumDvrSize ? 60 : e3.options.hlsMinimumDvrSize, e3._extrapolatedWindowNumSegments = e3.options.playback && void 0 !== e3.options.playback.extrapolatedWindowNumSegments ? e3.options.playback.extrapolatedWindowNumSegments : 2, e3._playbackType = Re.VOD, e3._lastTimeUpdate = { current: 0, total: 0 }, e3._lastDuration = null, e3._playableRegionStartTime = 0, e3._localStartTimeCorrelation = null, e3._localEndTimeCorrelation = null, e3._playableRegionDuration = 0, e3._programDateTime = 0, e3._durationExcludesAfterLiveSyncPoint = false, e3._segmentTargetDuration = null, e3._playlistType = null, e3._recoverAttemptsRemaining = e3.options.hlsRecoverAttempts || 16, e3;
     }
     return t2 = a2, r2 = [{ key: "name", get: function() {
@@ -87043,14 +86154,12 @@ var Clappr = function() {
     } }, { key: "_now", get: function() {
       return yr();
     } }, { key: "_extrapolatedStartTime", get: function() {
-      if (!this._localStartTimeCorrelation)
-        return this._playableRegionStartTime;
+      if (!this._localStartTimeCorrelation) return this._playableRegionStartTime;
       var e3 = this._localStartTimeCorrelation, t3 = this._now - e3.local, r3 = (e3.remote + t3) / 1e3;
       return Math.min(r3, this._playableRegionStartTime + this._extrapolatedWindowDuration);
     } }, { key: "_extrapolatedEndTime", get: function() {
       var e3 = this._playableRegionStartTime + this._playableRegionDuration;
-      if (!this._localEndTimeCorrelation)
-        return e3;
+      if (!this._localEndTimeCorrelation) return e3;
       var t3 = this._localEndTimeCorrelation, r3 = this._now - t3.local, i3 = (t3.remote + r3) / 1e3;
       return Math.max(e3 - this._extrapolatedWindowDuration, Math.min(i3, e3));
     } }, { key: "_duration", get: function() {
@@ -87107,15 +86216,12 @@ var Clappr = function() {
     } }, { key: "_ready", value: function() {
       this._isReadyState || (!this._hls && this._setup(), this._isReadyState = true, this.trigger(ce.PLAYBACK_READY, this.name));
     } }, { key: "_recover", value: function(e3, t3, r3) {
-      if (this._recoveredDecodingError)
-        if (this._recoveredAudioCodecError) {
-          ae.error("hlsjs: failed to recover", { evt: e3, data: t3 }), r3.level = _e.Levels.FATAL;
-          var i3 = this.createError(r3);
-          this.trigger(ce.PLAYBACK_ERROR, i3), this.stop();
-        } else
-          this._recoveredAudioCodecError = true, this._hls.swapAudioCodec(), this._hls.recoverMediaError();
-      else
-        this._recoveredDecodingError = true, this._hls.recoverMediaError();
+      if (this._recoveredDecodingError) if (this._recoveredAudioCodecError) {
+        ae.error("hlsjs: failed to recover", { evt: e3, data: t3 }), r3.level = _e.Levels.FATAL;
+        var i3 = this.createError(r3);
+        this.trigger(ce.PLAYBACK_ERROR, i3), this.stop();
+      } else this._recoveredAudioCodecError = true, this._hls.swapAudioCodec(), this._hls.recoverMediaError();
+      else this._recoveredDecodingError = true, this._hls.recoverMediaError();
     } }, { key: "_setupSrc", value: function(e3) {
     } }, { key: "_startTimeUpdateTimer", value: function() {
       var e3 = this;
@@ -87145,33 +86251,29 @@ var Clappr = function() {
       this._playbackType === Re.VOD ? this.settings.left = ["playpause", "position", "duration"] : this.dvrEnabled ? this.settings.left = ["playpause"] : this.settings.left = ["playstop"], this.settings.seekEnabled = this.isSeekEnabled(), this.trigger(ce.PLAYBACK_SETTINGSUPDATE);
     } }, { key: "_onHLSJSError", value: function(e3, t3) {
       var r3, i3 = { code: "".concat(t3.type, "_").concat(t3.details), description: "".concat(this.name, " error: type: ").concat(t3.type, ", details: ").concat(t3.details), raw: t3 };
-      if (t3.response && (i3.description += ", response: ".concat(JSON.stringify(t3.response))), t3.fatal)
-        if (this._recoverAttemptsRemaining > 0)
-          switch (this._recoverAttemptsRemaining -= 1, t3.type) {
-            case mr.ErrorTypes.NETWORK_ERROR:
-              switch (t3.details) {
-                case mr.ErrorDetails.MANIFEST_LOAD_ERROR:
-                case mr.ErrorDetails.MANIFEST_LOAD_TIMEOUT:
-                case mr.ErrorDetails.MANIFEST_PARSING_ERROR:
-                case mr.ErrorDetails.LEVEL_LOAD_ERROR:
-                case mr.ErrorDetails.LEVEL_LOAD_TIMEOUT:
-                  ae.error("hlsjs: unrecoverable network fatal error.", { evt: e3, data: t3 }), r3 = this.createError(i3), this.trigger(ce.PLAYBACK_ERROR, r3), this.stop();
-                  break;
-                default:
-                  ae.warn("hlsjs: trying to recover from network error.", { evt: e3, data: t3 }), i3.level = _e.Levels.WARN, this._hls.startLoad();
-              }
-              break;
-            case mr.ErrorTypes.MEDIA_ERROR:
-              ae.warn("hlsjs: trying to recover from media error.", { evt: e3, data: t3 }), i3.level = _e.Levels.WARN, this._recover(e3, t3, i3);
+      if (t3.response && (i3.description += ", response: ".concat(JSON.stringify(t3.response))), t3.fatal) if (this._recoverAttemptsRemaining > 0) switch (this._recoverAttemptsRemaining -= 1, t3.type) {
+        case mr.ErrorTypes.NETWORK_ERROR:
+          switch (t3.details) {
+            case mr.ErrorDetails.MANIFEST_LOAD_ERROR:
+            case mr.ErrorDetails.MANIFEST_LOAD_TIMEOUT:
+            case mr.ErrorDetails.MANIFEST_PARSING_ERROR:
+            case mr.ErrorDetails.LEVEL_LOAD_ERROR:
+            case mr.ErrorDetails.LEVEL_LOAD_TIMEOUT:
+              ae.error("hlsjs: unrecoverable network fatal error.", { evt: e3, data: t3 }), r3 = this.createError(i3), this.trigger(ce.PLAYBACK_ERROR, r3), this.stop();
               break;
             default:
-              ae.error("hlsjs: could not recover from error.", { evt: e3, data: t3 }), r3 = this.createError(i3), this.trigger(ce.PLAYBACK_ERROR, r3), this.stop();
+              ae.warn("hlsjs: trying to recover from network error.", { evt: e3, data: t3 }), i3.level = _e.Levels.WARN, this._hls.startLoad();
           }
-        else
-          ae.error("hlsjs: could not recover from error after maximum number of attempts.", { evt: e3, data: t3 }), r3 = this.createError(i3), this.trigger(ce.PLAYBACK_ERROR, r3), this.stop();
+          break;
+        case mr.ErrorTypes.MEDIA_ERROR:
+          ae.warn("hlsjs: trying to recover from media error.", { evt: e3, data: t3 }), i3.level = _e.Levels.WARN, this._recover(e3, t3, i3);
+          break;
+        default:
+          ae.error("hlsjs: could not recover from error.", { evt: e3, data: t3 }), r3 = this.createError(i3), this.trigger(ce.PLAYBACK_ERROR, r3), this.stop();
+      }
+      else ae.error("hlsjs: could not recover from error after maximum number of attempts.", { evt: e3, data: t3 }), r3 = this.createError(i3), this.trigger(ce.PLAYBACK_ERROR, r3), this.stop();
       else {
-        if (this.options.playback.triggerFatalErrorOnResourceDenied && this._keyIsDenied(t3))
-          return ae.error("hlsjs: could not load decrypt key.", { evt: e3, data: t3 }), r3 = this.createError(i3), this.trigger(ce.PLAYBACK_ERROR, r3), void this.stop();
+        if (this.options.playback.triggerFatalErrorOnResourceDenied && this._keyIsDenied(t3)) return ae.error("hlsjs: could not load decrypt key.", { evt: e3, data: t3 }), r3 = this.createError(i3), this.trigger(ce.PLAYBACK_ERROR, r3), void this.stop();
         i3.level = _e.Levels.WARN, ae.warn("hlsjs: non-fatal error occurred", { evt: e3, data: t3 });
       }
     } }, { key: "_keyIsDenied", value: function(e3) {
@@ -87184,8 +86286,7 @@ var Clappr = function() {
       this._lastDuration !== e3 && (this._lastDuration = e3, ur(nr(a2.prototype), "_onDurationChange", this).call(this));
     } }, { key: "_onProgress", value: function() {
       if (this.el.buffered.length) {
-        for (var e3 = [], t3 = 0, r3 = 0; r3 < this.el.buffered.length; r3++)
-          e3 = [].concat(cr(e3), [{ start: Math.max(0, this.el.buffered.start(r3) - this._playableRegionStartTime), end: Math.max(0, this.el.buffered.end(r3) - this._playableRegionStartTime) }]), this.el.currentTime >= e3[r3].start && this.el.currentTime <= e3[r3].end && (t3 = r3);
+        for (var e3 = [], t3 = 0, r3 = 0; r3 < this.el.buffered.length; r3++) e3 = [].concat(cr(e3), [{ start: Math.max(0, this.el.buffered.start(r3) - this._playableRegionStartTime), end: Math.max(0, this.el.buffered.end(r3) - this._playableRegionStartTime) }]), this.el.currentTime >= e3[r3].start && this.el.currentTime <= e3[r3].end && (t3 = r3);
         var i3 = { start: e3[t3].start, current: e3[t3].end, total: this.getDuration() };
         this.trigger(ce.PLAYBACK_PROGRESS, i3, e3);
       }
@@ -87207,12 +86308,10 @@ var Clappr = function() {
       this._segmentTargetDuration = t3.details.targetduration, this._playlistType = t3.details.type || null;
       var r3 = false, i3 = false, n3 = t3.details.fragments, a3 = this._playableRegionStartTime, s2 = this._playableRegionDuration;
       if (0 !== n3.length) {
-        if (n3[0].rawProgramDateTime && (this._programDateTime = n3[0].rawProgramDateTime), this._playableRegionStartTime !== n3[0].start && (r3 = true, this._playableRegionStartTime = n3[0].start), r3)
-          if (this._localStartTimeCorrelation) {
-            var o2 = this._localStartTimeCorrelation, l2 = this._now - o2.local, u2 = (o2.remote + l2) / 1e3;
-            u2 < n3[0].start ? this._localStartTimeCorrelation = { local: this._now, remote: 1e3 * n3[0].start } : u2 > a3 + this._extrapolatedWindowDuration && (this._localStartTimeCorrelation = { local: this._now, remote: 1e3 * Math.max(n3[0].start, a3 + this._extrapolatedWindowDuration) });
-          } else
-            this._localStartTimeCorrelation = { local: this._now, remote: 1e3 * (n3[0].start + this._extrapolatedWindowDuration / 2) };
+        if (n3[0].rawProgramDateTime && (this._programDateTime = n3[0].rawProgramDateTime), this._playableRegionStartTime !== n3[0].start && (r3 = true, this._playableRegionStartTime = n3[0].start), r3) if (this._localStartTimeCorrelation) {
+          var o2 = this._localStartTimeCorrelation, l2 = this._now - o2.local, u2 = (o2.remote + l2) / 1e3;
+          u2 < n3[0].start ? this._localStartTimeCorrelation = { local: this._now, remote: 1e3 * n3[0].start } : u2 > a3 + this._extrapolatedWindowDuration && (this._localStartTimeCorrelation = { local: this._now, remote: 1e3 * Math.max(n3[0].start, a3 + this._extrapolatedWindowDuration) });
+        } else this._localStartTimeCorrelation = { local: this._now, remote: 1e3 * (n3[0].start + this._extrapolatedWindowDuration / 2) };
         var c2 = t3.details.totalduration;
         if (this._playbackType === Re.LIVE) {
           var d2 = t3.details.targetduration * ((this.options.playback.hlsjsConfig || {}).liveSyncDurationCount || mr.DefaultConfig.liveSyncDurationCount);
@@ -87220,12 +86319,10 @@ var Clappr = function() {
         }
         c2 !== this._playableRegionDuration && (i3 = true, this._playableRegionDuration = c2);
         var h2 = n3[0].start + c2, f2 = a3 + s2;
-        if (h2 !== f2)
-          if (this._localEndTimeCorrelation) {
-            var p2 = this._localEndTimeCorrelation, g2 = this._now - p2.local, v2 = (p2.remote + g2) / 1e3;
-            v2 > h2 ? this._localEndTimeCorrelation = { local: this._now, remote: 1e3 * h2 } : v2 < h2 - this._extrapolatedWindowDuration ? this._localEndTimeCorrelation = { local: this._now, remote: 1e3 * (h2 - this._extrapolatedWindowDuration) } : v2 > f2 && (this._localEndTimeCorrelation = { local: this._now, remote: 1e3 * f2 });
-          } else
-            this._localEndTimeCorrelation = { local: this._now, remote: 1e3 * h2 };
+        if (h2 !== f2) if (this._localEndTimeCorrelation) {
+          var p2 = this._localEndTimeCorrelation, g2 = this._now - p2.local, v2 = (p2.remote + g2) / 1e3;
+          v2 > h2 ? this._localEndTimeCorrelation = { local: this._now, remote: 1e3 * h2 } : v2 < h2 - this._extrapolatedWindowDuration ? this._localEndTimeCorrelation = { local: this._now, remote: 1e3 * (h2 - this._extrapolatedWindowDuration) } : v2 > f2 && (this._localEndTimeCorrelation = { local: this._now, remote: 1e3 * f2 });
+        } else this._localEndTimeCorrelation = { local: this._now, remote: 1e3 * h2 };
         i3 && this._onDurationChange(), r3 && this._onProgress();
       }
     } }, { key: "_onFragmentChanged", value: function(e3, t3) {

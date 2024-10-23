@@ -29,6 +29,20 @@
             <div class="row">
               <div class="col-12">
                 <div class="form-group mb-3">
+
+                  <label for="crop" class="form-label">Crop</label>
+                  <select
+                    id="crop"
+                    class="form-select"
+                    [(ngModel)]="TaulParchi.crop"
+                    name="crop"
+                  >
+                    <option value="">Select Crop</option>
+                    <option *ngFor="let crop of Crops" [value]="crop._id">
+                      {{ crop.name }}
+                    </option>
+                  </select>
+
                   <label for="purchaseStatus" class="form-label"
                     >Purchase Status</label
                   >
@@ -237,19 +251,6 @@
                     placeholder="Net Weight"
                     readonly
                   />
-
-                  <label for="crop" class="form-label">Crop</label>
-                  <select
-                    id="crop"
-                    class="form-select"
-                    [(ngModel)]="TaulParchi.crop"
-                    name="crop"
-                  >
-                    <option value="">Select Crop</option>
-                    <option *ngFor="let crop of Crops" [value]="crop._id">
-                      {{ crop.name }}
-                    </option>
-                  </select>
                 </div>
               </div>
             </div>
