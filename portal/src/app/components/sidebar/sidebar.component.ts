@@ -32,6 +32,11 @@ export class SidebarComponent {
       link: '/taul-parchi'
     },
     {
+      title: 'All Taul Parchis',
+      icon: 'fi fi-rr-document',
+      link: '/taul-parchi-dashboard'
+    },
+    {
       title: 'Truck Loading Parchi',
       icon: 'fi-rr-wallet',
       link: '/truck-loading-parchi'

@@ -1,0 +1,72 @@
+<div class="container mt-2">
+  <div class="card shadow-sm border-0">
+    <div class="card-header bg-warning text-center text-white">
+      <h4>Taula Parchi Details</h4>
+    </div>
+    <div class="card-body p-4">
+      <!-- Farmer and Crop Details -->
+      <div class="row mb-3">
+        <div class="col-md-6 d-flex align-items-center" style="gap: 20px;">
+          <h6 class="mb-0">Farmer's Name:</h6>
+          <p class="mb-0">{{ taulaParchi?.farmerDetails.name }}</p>
+        </div>
+        
+        <div class="col-md-6 d-flex align-items-center" style="gap: 20px;">
+          <h6>Village:</h6>
+          <p>{{ taulaParchi?.farmerDetails.village }}</p>
+        </div>
+        <div class="col-md-6 d-flex align-items-center" style="gap: 20px;">
+          <h6>Mobile:</h6>
+          <p>{{ taulaParchi?.farmerDetails.mobile }}</p>
+        </div>
+      </div>
+
+      <!-- Storage, Purchase, and Crop Details -->
+      <div class="row mb-3">
+        <div class="col-md-6 d-flex align-items-center" style="gap: 20px;">
+          <h6>Storage Location:</h6>
+          <p>{{ taulaParchi?.wearhouseDetails.name }}</p>
+        </div>
+        <div class="col-md-6 d-flex align-items-center" style="gap: 20px;">
+          <h6>Crop:</h6>
+          <p>{{ taulaParchi?.cropDetails.name }}</p>
+        </div>
+        <div class="col-md-6 d-flex align-items-center" style="gap: 20px;">
+          <h6>Purchase Status:</h6>
+          <p>{{ taulaParchi?.purchase }}</p>
+        </div>
+        <div class="col-md-6 d-flex align-items-center" style="gap: 20px;">
+          <h6>Firm/Company:</h6>
+          <p>{{ taulaParchi?.firm_company }}</p>
+        </div>
+      </div>
+
+      <!-- Additional Fields like Rate, Hammal, etc. -->
+      <div class="row mb-3">
+        <div class="col-md-6 d-flex align-items-center" style="gap: 20px;">
+          <h6>Rate:</h6>
+          <p>{{ taulaParchi?.rate }}</p>
+        </div>
+        <div class="col-md-6 d-flex align-items-center" style="gap: 20px;">
+          <h6>Hammal:</h6>
+          <p>{{ taulaParchi?.hammal }}</p>
+        </div>
+        <div class="col-md-6 d-flex align-items-center" style="gap: 20px;">
+          <h6>Bora Quantity:</h6>
+          <p>{{ taulaParchi?.boraQuantity }}</p>
+        </div>
+        <div class="col-md-6 d-flex align-items-center" style="gap: 20px;">
+          <h6>Net Weight:</h6>
+          <p>{{ taulaParchi?.netWeight }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back Button -->
+  <div class="text-center mt-4">
+    <button type="button" class="btn btn-secondary px-5" (click)="goBack()">
+      <i class="fas fa-arrow-left"></i> Back
+    </button>
+  </div>
+</div>

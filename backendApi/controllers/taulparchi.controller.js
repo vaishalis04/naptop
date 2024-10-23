@@ -32,12 +32,12 @@ module.exports = {
       if (!data.boraQuantity) {
         return res.status(400).json({ error: "Bora Quantity is required." });
       }
-      if (!data.unitBora) {
-        return res.status(400).json({ error: "Unit Bora is required." });
-      }
-      if (!data.bharti) {
-        return res.status(400).json({ error: "Bharti is required." });
-      }
+      // if (!data.unitBora) {
+      //   return res.status(400).json({ error: "Unit Bora is required." });
+      // }
+      // if (!data.bharti) {
+      //   return res.status(400).json({ error: "Bharti is required." });
+      // }
       if (!data.crop) {
         return res.status(400).json({ error: "Crop is required." });
       }
@@ -354,12 +354,12 @@ module.exports = {
       if (data.boraQuantity === undefined) {
         return res.status(400).json({ error: "Bora Quantity is required." });
       }
-      if (data.unitBora === undefined) {
-        return res.status(400).json({ error: "Unit Bora is required." });
-      }
-      if (data.bharti === undefined) {
-        return res.status(400).json({ error: "Bharti is required." });
-      }
+      // if (data.unitBora === undefined) {
+      //   return res.status(400).json({ error: "Unit Bora is required." });
+      // }
+      // if (data.bharti === undefined) {
+      //   return res.status(400).json({ error: "Bharti is required." });
+      // }
       if (data.crop === undefined) {
         return res.status(400).json({ error: "Crop is required." });
       }
@@ -414,27 +414,137 @@ module.exports = {
     }
   },
 
+  // get: async (req, res, next) => {
+  //   try {
+  //     const { id } = req.params;
+
+  //     if (!id) {
+  //       throw createError.BadRequest("Invalid Parameters: Missing ID");
+  //     }
+
+  //     // Finding the TaulParchi document by its ID
+  //     const result = await Model.findOne({ _id: mongoose.Types.ObjectId(id) });
+
+  //     if (!result) {
+  //       throw createError.NotFound("No TaulParchi Found");
+  //     }
+
+  //     // Sending the found TaulParchi document as a response
+  //     res.json(result);
+  //   } catch (error) {
+  //     next(error);
+  //   }
+  // },
+
   get: async (req, res, next) => {
     try {
       const { id } = req.params;
-
+  
       if (!id) {
         throw createError.BadRequest("Invalid Parameters: Missing ID");
       }
-
-      // Finding the TaulParchi document by its ID
-      const result = await Model.findOne({ _id: mongoose.Types.ObjectId(id) });
-
-      if (!result) {
+  
+      // Aggregation pipeline to fetch the TaulParchi document and related data
+      const result = await Model.aggregate([
+        {
+          $match: { _id: mongoose.Types.ObjectId(id) }, // Match the ID
+        },
+        {
+          $lookup: {
+            from: "farmers",
+            localField: "farmer",
+            foreignField: "_id",
+            as: "farmerDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "villages",
+            localField: "village",
+            foreignField: "_id",
+            as: "villageDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "hammals",
+            localField: "hammal",
+            foreignField: "_id",
+            as: "hammalDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "crops",
+            localField: "crop",
+            foreignField: "_id",
+            as: "cropDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "users",
+            localField: "createdBy",
+            foreignField: "_id",
+            as: "userDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "storages",
+            localField: "storage",
+            foreignField: "_id",
+            as: "wearhouseDetails",
+          },
+        },
+        {
+          $unwind: {
+            path: "$cropDetails",
+            preserveNullAndEmptyArrays: true,
+          },
+        },
+        {
+          $unwind: {
+            path: "$hammalDetails",
+            preserveNullAndEmptyArrays: true,
+          },
+        },
+        {
+          $unwind: {
+            path: "$villageDetails",
+            preserveNullAndEmptyArrays: true,
+          },
+        },
+        {
+          $unwind: {
+            path: "$farmerDetails",
+            preserveNullAndEmptyArrays: true,
+          },
+        },
+        {
+          $unwind: {
+            path: "$userDetails",
+            preserveNullAndEmptyArrays: true,
+          },
+        },
+        {
+          $unwind: {
+            path: "$wearhouseDetails",
+            preserveNullAndEmptyArrays: true,
+          },
+        },
+      ]);
+  
+      if (!result || result.length === 0) {
         throw createError.NotFound("No TaulParchi Found");
       }
-
-      // Sending the found TaulParchi document as a response
-      res.json(result);
+  
+      // Send the first result (since it's an array)
+      res.json(result[0]);
     } catch (error) {
       next(error);
     }
-  },
+  },  
   getTaulparchisAggregatedData: async (req, res) => {
     try {
       const result = await Model.aggregate([

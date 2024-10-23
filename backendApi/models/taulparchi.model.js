@@ -39,12 +39,12 @@ const TaulParchiSchema = new mongoose.Schema({
     boraQuantity: {
         type: Number,   
     },
-    unitBora: {
+    bharti: {
         type: Number,   
     },
-    bharti: {
+    looseQuantity: {
         type: Number,
-        enum: [60,55,40],
+        
     },
     netWeight:{
         type: Number,
@@ -56,6 +56,9 @@ const TaulParchiSchema = new mongoose.Schema({
     tulai:{
         type: String,     
         enum: ['Labour', 'Dharamkata'],
+    },
+    amount:{
+        type: Number,
     },
     created_at: {
         type: Date,

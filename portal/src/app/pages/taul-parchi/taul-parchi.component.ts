@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 })
 export class TaulParchiComponent implements OnInit {
   Farmers: any[] = [];
-  // Villages: any[] = [];
   Hammals: any[] = [];
   Crops: any[] = [];
   Storage: any[] = [];
@@ -31,9 +30,11 @@ export class TaulParchiComponent implements OnInit {
     boraQuantity: 0,
     unitBora: 0,
     bharti: 0,
+    looseQuantity:0,
     netWeight: 0,
     purchase: '',
     crop: '',
+    amount:0,
     id: Date.now(),
     created_at: new Date(),
     createdBy: '',
@@ -50,8 +51,15 @@ export class TaulParchiComponent implements OnInit {
   }
 
   calculateNetWeight(): void {
-    const { boraQuantity, unitBora, bharti } = this.TaulParchi;
-    this.TaulParchi.netWeight = (boraQuantity * unitBora) + bharti;
+    const { boraQuantity, bharti, looseQuantity } = this.TaulParchi;
+    this.TaulParchi.netWeight = (boraQuantity * bharti) + looseQuantity;
+  }
+  calculateAmount(): void {
+    const { netWeight, rate } = this.TaulParchi;
+    // const netWeightInQuintals = Number(netWeight) / 100; 
+  const rateValue = Number(rate);
+    this.TaulParchi.amount = (netWeight * rateValue)
+    console.log("calculate amount", this.TaulParchi.amount)
   }
 
   // Fetch Farmers from backend
@@ -180,12 +188,13 @@ export class TaulParchiComponent implements OnInit {
       alert('Please enter Bora');
       return;
     }
-    if (!this.TaulParchi.unitBora) {
-      alert('Please enter Bora');
-      return;
-    }
+   
     if (!this.TaulParchi.bharti) {
       alert('Please enter Bharti');
+      return;
+    }
+     if (!this.TaulParchi.looseQuantity) {
+      alert('Please enter looseQuantity');
       return;
     }
     if (!this.TaulParchi.crop) {

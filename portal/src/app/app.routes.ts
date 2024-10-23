@@ -28,6 +28,8 @@ import { AdvancePaymentComponent } from './pages/advance-payment/advance-payment
 import { StorageComponent } from './pages/storage/storage.component';
 import { WearhouseAccountsComponent } from './pages/wearhouse-accounts/wearhouse-accounts.component';
 import { WearhouseInventoryComponent } from './pages/wearhouse-inventory/wearhouse-inventory.component';
+import { TaulparchiDashboardComponent } from './pages/taulparchi-dashboard/taulparchi-dashboard.component';
+import { TaulparchiViewComponent } from './pages/taulparchi-view/taulparchi-view.component';
 
 export const routes: Routes = [
   {
@@ -66,6 +68,16 @@ export const routes: Routes = [
         path: 'taul-parchi',
         component: TaulParchiComponent,
         data: { title: 'Taul Parchi' },
+      },
+      {
+        path: 'taul-parchi-dashboard',
+        component: TaulparchiDashboardComponent,
+        data: { title: 'Taul Parchi Dashboard' },
+      },
+      {
+        path: 'taul-parchi-view/:id',
+        component:TaulparchiViewComponent ,
+        data: { title: 'Taul Parchi View' },
       },
       {
         path: 'truck-loading-parchi',

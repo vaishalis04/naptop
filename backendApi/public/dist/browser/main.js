@@ -1417,7 +1417,7 @@ function __await(v) {
 function __asyncGenerator(thisArg, _arguments, generator) {
   if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
   var g = generator.apply(thisArg, _arguments || []), i, q = [];
-  return i = {}, verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function() {
+  return i = Object.create((typeof AsyncIterator === "function" ? AsyncIterator : Object).prototype), verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function() {
     return this;
   }, i;
   function awaitReturn(f) {
@@ -42394,7 +42394,7 @@ var LoginComponent = class _LoginComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoginComponent, { className: "LoginComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoginComponent, { className: "LoginComponent", filePath: "src\\app\\pages\\login\\login.component.ts", lineNumber: 21 });
 })();
 
 // src/app/pages/page-not-found/page-not-found.component.ts
@@ -42418,7 +42418,7 @@ var PageNotFoundComponent = class _PageNotFoundComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PageNotFoundComponent, { className: "PageNotFoundComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PageNotFoundComponent, { className: "PageNotFoundComponent", filePath: "src\\app\\pages\\page-not-found\\page-not-found.component.ts", lineNumber: 10 });
 })();
 
 // src/app/pages/sign-up/sign-up.component.ts
@@ -42553,7 +42553,7 @@ var SignUpComponent = class _SignUpComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SignUpComponent, { className: "SignUpComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SignUpComponent, { className: "SignUpComponent", filePath: "src\\app\\pages\\sign-up\\sign-up.component.ts", lineNumber: 15 });
 })();
 
 // src/app/pages/forgot-password/forgot-password.component.ts
@@ -42574,7 +42574,7 @@ var ForgotPasswordComponent = class _ForgotPasswordComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ForgotPasswordComponent, { className: "ForgotPasswordComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ForgotPasswordComponent, { className: "ForgotPasswordComponent", filePath: "src\\app\\pages\\forgot-password\\forgot-password.component.ts", lineNumber: 10 });
 })();
 
 // src/app/pages/dashboard/dashboard.component.ts
@@ -42915,7 +42915,7 @@ var DashboardComponent = class _DashboardComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DashboardComponent, { className: "DashboardComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DashboardComponent, { className: "DashboardComponent", filePath: "src\\app\\pages\\dashboard\\dashboard.component.ts", lineNumber: 13 });
 })();
 
 // node_modules/@angular/core/fesm2022/rxjs-interop.mjs
@@ -46543,8 +46543,8 @@ var NgbAlert = class _NgbAlert {
       consts: () => {
         let i18n_0;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0 = goog.getMsg("Close");
-          i18n_0 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0 = goog.getMsg("Close");
+          i18n_0 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0;
         } else {
           i18n_0 = $localize`:@@ngb.alert.close:Close`;
         }
@@ -47092,7 +47092,7 @@ var NgbCarousel = class _NgbCarousel {
       consts: () => {
         let i18n_1;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1 = goog.getMsg(" Slide {$interpolation} of {$interpolation_1} ", {
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1 = goog.getMsg(" Slide {$interpolation} of {$interpolation_1} ", {
             "interpolation": "\uFFFD0\uFFFD",
             "interpolation_1": "\uFFFD1\uFFFD"
           }, {
@@ -47101,21 +47101,21 @@ var NgbCarousel = class _NgbCarousel {
               "interpolation_1": "{{ c }}"
             }
           });
-          i18n_1 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1;
+          i18n_1 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1;
         } else {
           i18n_1 = $localize`:Currently selected slide number read by screen reader@@ngb.carousel.slide-number: Slide ${"\uFFFD0\uFFFD"}:INTERPOLATION: of ${"\uFFFD1\uFFFD"}:INTERPOLATION_1: `;
         }
         let i18n_2;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2 = goog.getMsg("Previous");
-          i18n_2 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2 = goog.getMsg("Previous");
+          i18n_2 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2;
         } else {
           i18n_2 = $localize`:@@ngb.carousel.previous:Previous`;
         }
         let i18n_3;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3 = goog.getMsg("Next");
-          i18n_3 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3 = goog.getMsg("Next");
+          i18n_3 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3;
         } else {
           i18n_3 = $localize`:@@ngb.carousel.next:Next`;
         }
@@ -48422,29 +48422,29 @@ var NgbDatepickerNavigationSelect = class _NgbDatepickerNavigationSelect {
       consts: () => {
         let i18n_4;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4 = goog.getMsg("Select month");
-          i18n_4 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4 = goog.getMsg("Select month");
+          i18n_4 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4;
         } else {
           i18n_4 = $localize`:@@ngb.datepicker.select-month:Select month`;
         }
         let i18n_5;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5 = goog.getMsg("Select month");
-          i18n_5 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5 = goog.getMsg("Select month");
+          i18n_5 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5;
         } else {
           i18n_5 = $localize`:@@ngb.datepicker.select-month:Select month`;
         }
         let i18n_6;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6 = goog.getMsg("Select year");
-          i18n_6 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6 = goog.getMsg("Select year");
+          i18n_6 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6;
         } else {
           i18n_6 = $localize`:@@ngb.datepicker.select-year:Select year`;
         }
         let i18n_7;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7 = goog.getMsg("Select year");
-          i18n_7 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7 = goog.getMsg("Select year");
+          i18n_7 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7;
         } else {
           i18n_7 = $localize`:@@ngb.datepicker.select-year:Select year`;
         }
@@ -48602,29 +48602,29 @@ var NgbDatepickerNavigation = class _NgbDatepickerNavigation {
       consts: () => {
         let i18n_8;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8 = goog.getMsg("Previous month");
-          i18n_8 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8 = goog.getMsg("Previous month");
+          i18n_8 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8;
         } else {
           i18n_8 = $localize`:@@ngb.datepicker.previous-month:Previous month`;
         }
         let i18n_9;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9 = goog.getMsg("Previous month");
-          i18n_9 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9 = goog.getMsg("Previous month");
+          i18n_9 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9;
         } else {
           i18n_9 = $localize`:@@ngb.datepicker.previous-month:Previous month`;
         }
         let i18n_10;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10 = goog.getMsg("Next month");
-          i18n_10 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10 = goog.getMsg("Next month");
+          i18n_10 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10;
         } else {
           i18n_10 = $localize`:@@ngb.datepicker.next-month:Next month`;
         }
         let i18n_11;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11 = goog.getMsg("Next month");
-          i18n_11 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11 = goog.getMsg("Next month");
+          i18n_11 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11;
         } else {
           i18n_11 = $localize`:@@ngb.datepicker.next-month:Next month`;
         }
@@ -54820,57 +54820,57 @@ var NgbPagination = class _NgbPagination {
       consts: () => {
         let i18n_12;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12 = goog.getMsg("\xAB\xAB");
-          i18n_12 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12 = goog.getMsg("\xAB\xAB");
+          i18n_12 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12;
         } else {
           i18n_12 = $localize`:@@ngb.pagination.first:««`;
         }
         let i18n_13;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13 = goog.getMsg("\xAB");
-          i18n_13 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13 = goog.getMsg("\xAB");
+          i18n_13 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13;
         } else {
           i18n_13 = $localize`:@@ngb.pagination.previous:«`;
         }
         let i18n_14;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14 = goog.getMsg("\xBB");
-          i18n_14 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14 = goog.getMsg("\xBB");
+          i18n_14 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14;
         } else {
           i18n_14 = $localize`:@@ngb.pagination.next:»`;
         }
         let i18n_15;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15 = goog.getMsg("\xBB\xBB");
-          i18n_15 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15 = goog.getMsg("\xBB\xBB");
+          i18n_15 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15;
         } else {
           i18n_15 = $localize`:@@ngb.pagination.last:»»`;
         }
         let i18n_16;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16 = goog.getMsg("First");
-          i18n_16 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16 = goog.getMsg("First");
+          i18n_16 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16;
         } else {
           i18n_16 = $localize`:@@ngb.pagination.first-aria:First`;
         }
         let i18n_17;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17 = goog.getMsg("Previous");
-          i18n_17 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17 = goog.getMsg("Previous");
+          i18n_17 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17;
         } else {
           i18n_17 = $localize`:@@ngb.pagination.previous-aria:Previous`;
         }
         let i18n_18;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18 = goog.getMsg("Next");
-          i18n_18 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18 = goog.getMsg("Next");
+          i18n_18 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18;
         } else {
           i18n_18 = $localize`:@@ngb.pagination.next-aria:Next`;
         }
         let i18n_19;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19 = goog.getMsg("Last");
-          i18n_19 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19 = goog.getMsg("Last");
+          i18n_19 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19;
         } else {
           i18n_19 = $localize`:@@ngb.pagination.last-aria:Last`;
         }
@@ -55684,14 +55684,14 @@ var NgbProgressbar = class _NgbProgressbar {
       consts: () => {
         let i18n_20;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20 = goog.getMsg("{$interpolation}", {
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20 = goog.getMsg("{$interpolation}", {
             "interpolation": "\uFFFD0\uFFFD"
           }, {
             original_code: {
               "interpolation": "{{ getValue() / max | percent }}"
             }
           });
-          i18n_20 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20;
+          i18n_20 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20;
         } else {
           i18n_20 = $localize`:@@ngb.progressbar.value:${"\uFFFD0\uFFFD"}:INTERPOLATION:`;
         }
@@ -57277,98 +57277,98 @@ var NgbTimepicker = class _NgbTimepicker {
       consts: () => {
         let i18n_21;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21 = goog.getMsg("HH");
-          i18n_21 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21 = goog.getMsg("HH");
+          i18n_21 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21;
         } else {
           i18n_21 = $localize`:@@ngb.timepicker.HH:HH`;
         }
         let i18n_22;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22 = goog.getMsg("Hours");
-          i18n_22 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22 = goog.getMsg("Hours");
+          i18n_22 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22;
         } else {
           i18n_22 = $localize`:@@ngb.timepicker.hours:Hours`;
         }
         let i18n_23;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23 = goog.getMsg("MM");
-          i18n_23 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23 = goog.getMsg("MM");
+          i18n_23 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23;
         } else {
           i18n_23 = $localize`:@@ngb.timepicker.MM:MM`;
         }
         let i18n_24;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24 = goog.getMsg("Minutes");
-          i18n_24 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24 = goog.getMsg("Minutes");
+          i18n_24 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24;
         } else {
           i18n_24 = $localize`:@@ngb.timepicker.minutes:Minutes`;
         }
         let i18n_25;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25 = goog.getMsg("Increment hours");
-          i18n_25 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25 = goog.getMsg("Increment hours");
+          i18n_25 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25;
         } else {
           i18n_25 = $localize`:@@ngb.timepicker.increment-hours:Increment hours`;
         }
         let i18n_26;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26 = goog.getMsg("Decrement hours");
-          i18n_26 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26 = goog.getMsg("Decrement hours");
+          i18n_26 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26;
         } else {
           i18n_26 = $localize`:@@ngb.timepicker.decrement-hours:Decrement hours`;
         }
         let i18n_27;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27 = goog.getMsg("Increment minutes");
-          i18n_27 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27 = goog.getMsg("Increment minutes");
+          i18n_27 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27;
         } else {
           i18n_27 = $localize`:@@ngb.timepicker.increment-minutes:Increment minutes`;
         }
         let i18n_28;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28 = goog.getMsg("Decrement minutes");
-          i18n_28 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28 = goog.getMsg("Decrement minutes");
+          i18n_28 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28;
         } else {
           i18n_28 = $localize`:@@ngb.timepicker.decrement-minutes:Decrement minutes`;
         }
         let i18n_29;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29 = goog.getMsg("SS");
-          i18n_29 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29 = goog.getMsg("SS");
+          i18n_29 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29;
         } else {
           i18n_29 = $localize`:@@ngb.timepicker.SS:SS`;
         }
         let i18n_30;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30 = goog.getMsg("Seconds");
-          i18n_30 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30 = goog.getMsg("Seconds");
+          i18n_30 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30;
         } else {
           i18n_30 = $localize`:@@ngb.timepicker.seconds:Seconds`;
         }
         let i18n_31;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31 = goog.getMsg("Increment seconds");
-          i18n_31 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31 = goog.getMsg("Increment seconds");
+          i18n_31 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31;
         } else {
           i18n_31 = $localize`:@@ngb.timepicker.increment-seconds:Increment seconds`;
         }
         let i18n_32;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32 = goog.getMsg("Decrement seconds");
-          i18n_32 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32 = goog.getMsg("Decrement seconds");
+          i18n_32 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32;
         } else {
           i18n_32 = $localize`:@@ngb.timepicker.decrement-seconds:Decrement seconds`;
         }
         let i18n_33;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33 = goog.getMsg("{$interpolation}", {
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33 = goog.getMsg("{$interpolation}", {
             "interpolation": "\uFFFD0\uFFFD"
           }, {
             original_code: {
               "interpolation": "{{ i18n.getAfternoonPeriod() }}"
             }
           });
-          i18n_33 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33;
+          i18n_33 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33;
         } else {
           i18n_33 = $localize`:@@ngb.timepicker.PM:${"\uFFFD0\uFFFD"}:INTERPOLATION:`;
         }
@@ -57912,8 +57912,8 @@ var NgbToast = class _NgbToast {
       consts: () => {
         let i18n_34;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34 = goog.getMsg("Close");
-          i18n_34 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34;
+          const MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34 = goog.getMsg("Close");
+          i18n_34 = MSG_C__USERS_DELL_DOWNLOADS_ARCHIVE_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34;
         } else {
           i18n_34 = $localize`:@@ngb.toast.close-aria:Close`;
         }
@@ -60014,7 +60014,7 @@ var HeaderComponent = class _HeaderComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src\\app\\components\\header\\header.component.ts", lineNumber: 14 });
 })();
 
 // src/app/components/sidebar/sidebar.component.ts
@@ -60055,6 +60055,11 @@ var SidebarComponent = class _SidebarComponent {
         title: "Taul Parchi",
         icon: "fi fi-rr-document",
         link: "/taul-parchi"
+      },
+      {
+        title: "All Taul Parchis",
+        icon: "fi fi-rr-document",
+        link: "/taul-parchi-dashboard"
       },
       {
         title: "Truck Loading Parchi",
@@ -60203,7 +60208,7 @@ var SidebarComponent = class _SidebarComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SidebarComponent, { className: "SidebarComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SidebarComponent, { className: "SidebarComponent", filePath: "src\\app\\components\\sidebar\\sidebar.component.ts", lineNumber: 13 });
 })();
 
 // src/app/layouts/portal-layout/portal-layout.component.ts
@@ -60237,7 +60242,7 @@ var PortalLayoutComponent = class _PortalLayoutComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PortalLayoutComponent, { className: "PortalLayoutComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PortalLayoutComponent, { className: "PortalLayoutComponent", filePath: "src\\app\\layouts\\portal-layout\\portal-layout.component.ts", lineNumber: 13 });
 })();
 
 // src/app/pages/profile/profile.component.ts
@@ -60258,7 +60263,7 @@ var ProfileComponent = class _ProfileComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ProfileComponent, { className: "ProfileComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ProfileComponent, { className: "ProfileComponent", filePath: "src\\app\\pages\\profile\\profile.component.ts", lineNumber: 10 });
 })();
 
 // src/app/pages/settings/settings.component.ts
@@ -60279,7 +60284,7 @@ var SettingsComponent = class _SettingsComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SettingsComponent, { className: "SettingsComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SettingsComponent, { className: "SettingsComponent", filePath: "src\\app\\pages\\settings\\settings.component.ts", lineNumber: 10 });
 })();
 
 // src/app/guards/auth.guard.ts
@@ -60303,9 +60308,9 @@ var authGuard = (route, state) => {
 };
 
 // src/app/pages/taul-parchi/taul-parchi.component.ts
-function TaulParchiComponent_option_34_Template(rf, ctx) {
+function TaulParchiComponent_option_33_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 55);
+    \u0275\u0275elementStart(0, "option", 52);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -60316,9 +60321,9 @@ function TaulParchiComponent_option_34_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", crop_r1.name, " ");
   }
 }
-function TaulParchiComponent_option_49_Template(rf, ctx) {
+function TaulParchiComponent_option_48_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 55);
+    \u0275\u0275elementStart(0, "option", 52);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -60329,9 +60334,9 @@ function TaulParchiComponent_option_49_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", farmer_r2.name, " ");
   }
 }
-function TaulParchiComponent_option_55_Template(rf, ctx) {
+function TaulParchiComponent_option_54_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 55);
+    \u0275\u0275elementStart(0, "option", 52);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -60342,9 +60347,9 @@ function TaulParchiComponent_option_55_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", village_r3.village, " ");
   }
 }
-function TaulParchiComponent_option_61_Template(rf, ctx) {
+function TaulParchiComponent_option_60_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 55);
+    \u0275\u0275elementStart(0, "option", 52);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -60355,9 +60360,9 @@ function TaulParchiComponent_option_61_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", mobile_r4.mobile, " ");
   }
 }
-function TaulParchiComponent_option_67_Template(rf, ctx) {
+function TaulParchiComponent_option_66_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 55);
+    \u0275\u0275elementStart(0, "option", 52);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -60368,9 +60373,9 @@ function TaulParchiComponent_option_67_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", storage_r5.name, " ");
   }
 }
-function TaulParchiComponent_div_86_option_6_Template(rf, ctx) {
+function TaulParchiComponent_div_85_option_6_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 49);
+    \u0275\u0275elementStart(0, "option", 56);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -60381,23 +60386,23 @@ function TaulParchiComponent_div_86_option_6_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", hammal_r8.name, " ");
   }
 }
-function TaulParchiComponent_div_86_Template(rf, ctx) {
+function TaulParchiComponent_div_85_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div")(1, "label", 56);
+    \u0275\u0275elementStart(0, "div")(1, "label", 53);
     \u0275\u0275text(2, "Assigned Hammal");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "select", 57);
-    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_86_Template_select_ngModelChange_3_listener($event) {
+    \u0275\u0275elementStart(3, "select", 54);
+    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_85_Template_select_ngModelChange_3_listener($event) {
       \u0275\u0275restoreView(_r6);
       const ctx_r6 = \u0275\u0275nextContext();
       \u0275\u0275twoWayBindingSet(ctx_r6.TaulParchi.hammal, $event) || (ctx_r6.TaulParchi.hammal = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275elementStart(4, "option", 17);
+    \u0275\u0275elementStart(4, "option", 14);
     \u0275\u0275text(5, "Select Hammal");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(6, TaulParchiComponent_div_86_option_6_Template, 2, 2, "option", 58);
+    \u0275\u0275template(6, TaulParchiComponent_div_85_option_6_Template, 2, 2, "option", 55);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -60428,9 +60433,11 @@ var TaulParchiComponent = class _TaulParchiComponent {
       boraQuantity: 0,
       unitBora: 0,
       bharti: 0,
+      looseQuantity: 0,
       netWeight: 0,
       purchase: "",
       crop: "",
+      amount: 0,
       id: Date.now(),
       created_at: /* @__PURE__ */ new Date(),
       createdBy: ""
@@ -60443,8 +60450,14 @@ var TaulParchiComponent = class _TaulParchiComponent {
     this.fetchStorage();
   }
   calculateNetWeight() {
-    const { boraQuantity, unitBora, bharti } = this.TaulParchi;
-    this.TaulParchi.netWeight = boraQuantity * unitBora + bharti;
+    const { boraQuantity, bharti, looseQuantity } = this.TaulParchi;
+    this.TaulParchi.netWeight = boraQuantity * bharti + looseQuantity;
+  }
+  calculateAmount() {
+    const { netWeight, rate } = this.TaulParchi;
+    const rateValue = Number(rate);
+    this.TaulParchi.amount = netWeight * rateValue;
+    console.log("calculate amount", this.TaulParchi.amount);
   }
   // Fetch Farmers from backend
   fetchFarmers() {
@@ -60554,12 +60567,12 @@ var TaulParchiComponent = class _TaulParchiComponent {
       alert("Please enter Bora");
       return;
     }
-    if (!this.TaulParchi.unitBora) {
-      alert("Please enter Bora");
-      return;
-    }
     if (!this.TaulParchi.bharti) {
       alert("Please enter Bharti");
+      return;
+    }
+    if (!this.TaulParchi.looseQuantity) {
+      alert("Please enter looseQuantity");
       return;
     }
     if (!this.TaulParchi.crop) {
@@ -60604,7 +60617,7 @@ var TaulParchiComponent = class _TaulParchiComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulParchiComponent, selectors: [["app-taul-parchi"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 111, vars: 27, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "ps-2", "text-link"], [1, "col", "text-end"], [1, "text-muted", "pe-2"], [1, "text-link"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "crop", 1, "form-label"], ["id", "crop", "name", "crop", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "purchaseStatus", 1, "form-label"], ["id", "purchaseStatus", "name", "purchaseStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "directPurchase"], ["value", "AuctionMandiPurchase"], ["for", "farmerName", 1, "form-label"], ["id", "farmerName", "name", "farmerName", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "village", 1, "form-label"], ["id", "village", "name", "village", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "mobile", 1, "form-label"], ["id", "mobile", "name", "mobile", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "storage", 1, "form-label"], ["id", "storage", "name", "storage", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "firmCompany", 1, "form-label"], ["id", "firmCompany", "name", "firmCompany", "type", "text", "placeholder", "Firm / Company", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "rate", 1, "form-label"], [1, "input-group"], [1, "input-group-text", "bg-transparent", "border-0", "p-0"], ["id", "rate", "name", "rate", "type", "number", "placeholder", "Rate", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "tulai", 1, "form-label"], ["id", "tulai", "name", "tulai", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "Labour"], ["value", "Dharamkata"], [4, "ngIf"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", "type", "number", "placeholder", "Bora Quantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "unitBora", 1, "form-label"], ["id", "unitBora", "name", "unitBora", "type", "number", "placeholder", "Unit Bora", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "bharti", 1, "form-label"], ["id", "bharti", "name", "bharti", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", "", "disabled", "", "selected", ""], [3, "ngValue"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "placeholder", "Net Weight", "readonly", "", 1, "form-control", 3, "value"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"], [3, "value"], ["for", "assignedHammal", 1, "form-label"], ["id", "assignedHammal", "name", "assignedHammal", 1, "form-select", 3, "ngModelChange", "ngModel"], [3, "ngValue", 4, "ngFor", "ngForOf"]], template: function TaulParchiComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulParchiComponent, selectors: [["app-taul-parchi"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 105, vars: 28, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-end"], [1, "text-muted", "pe-2"], [1, "text-link"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "crop", 1, "form-label"], ["id", "crop", "name", "crop", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "purchaseStatus", 1, "form-label"], ["id", "purchaseStatus", "name", "purchaseStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "directPurchase"], ["value", "AuctionMandiPurchase"], ["for", "farmerName", 1, "form-label"], ["id", "farmerName", "name", "farmerName", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "village", 1, "form-label"], ["id", "village", "name", "village", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "mobile", 1, "form-label"], ["id", "mobile", "name", "mobile", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "storage", 1, "form-label"], ["id", "storage", "name", "storage", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "firmCompany", 1, "form-label"], ["id", "firmCompany", "name", "firmCompany", "type", "text", "placeholder", "Firm / Company", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "rate", 1, "form-label"], [1, "input-group"], [1, "input-group-text", "bg-transparent", "border-0", "p-0"], ["id", "rate", "name", "rate", "type", "number", "placeholder", "Rate", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "tulai", 1, "form-label"], ["id", "tulai", "name", "tulai", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "Labour"], ["value", "Dharamkata"], [4, "ngIf"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", "type", "number", "placeholder", "Bora Quantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "bharti", 1, "form-label"], ["id", "bharti", "name", "bharti", "type", "number", "placeholder", "Bharti", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "looseQuantity", 1, "form-label"], ["id", "looseQuantity", "name", "looseQuantity", "type", "number", "placeholder", "Enter looseQuantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "placeholder", "Net Weight", "readonly", "", 1, "form-control", 3, "value"], ["for", "amount", 1, "form-label"], ["id", "amount", "name", "amount", "type", "number", "placeholder", "Amount", "readonly", "", 1, "form-control", 3, "value"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"], [3, "value"], ["for", "assignedHammal", 1, "form-label"], ["id", "assignedHammal", "name", "assignedHammal", 1, "form-select", 3, "ngModelChange", "ngModel"], [3, "ngValue", 4, "ngFor", "ngForOf"], [3, "ngValue"]], template: function TaulParchiComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "h4", 5);
         \u0275\u0275text(7, "Taula Parchi");
@@ -60613,206 +60626,206 @@ var TaulParchiComponent = class _TaulParchiComponent {
         \u0275\u0275text(10, "M+M");
         \u0275\u0275elementEnd()();
         \u0275\u0275elementStart(11, "div", 0)(12, "div", 6)(13, "b")(14, "span", 7);
-        \u0275\u0275text(15, "Serial Number:");
+        \u0275\u0275text(15, "Date:");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(16, "span", 8);
         \u0275\u0275text(17);
-        \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(18, "div", 9)(19, "b")(20, "span", 10);
-        \u0275\u0275text(21, "Date:");
+        \u0275\u0275pipe(18, "date");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(22, "span", 11);
-        \u0275\u0275text(23);
-        \u0275\u0275pipe(24, "date");
+        \u0275\u0275elementStart(19, "span", 7);
+        \u0275\u0275text(20, "Time:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(21, "span", 8);
+        \u0275\u0275text(22);
+        \u0275\u0275pipe(23, "date");
         \u0275\u0275elementEnd()()()()();
-        \u0275\u0275elementStart(25, "div", 12)(26, "div", 0)(27, "div", 13)(28, "div", 14)(29, "label", 15);
-        \u0275\u0275text(30, "Crop");
+        \u0275\u0275elementStart(24, "div", 9)(25, "div", 0)(26, "div", 10)(27, "div", 11)(28, "label", 12);
+        \u0275\u0275text(29, "Crop");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(31, "select", 16);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_31_listener($event) {
+        \u0275\u0275elementStart(30, "select", 13);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_30_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.crop, $event) || (ctx.TaulParchi.crop = $event);
           return $event;
         });
-        \u0275\u0275elementStart(32, "option", 17);
-        \u0275\u0275text(33, "Select Crop");
+        \u0275\u0275elementStart(31, "option", 14);
+        \u0275\u0275text(32, "Select Crop");
         \u0275\u0275elementEnd();
-        \u0275\u0275template(34, TaulParchiComponent_option_34_Template, 2, 2, "option", 18);
+        \u0275\u0275template(33, TaulParchiComponent_option_33_Template, 2, 2, "option", 15);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(35, "label", 19);
-        \u0275\u0275text(36, "Purchase Status");
+        \u0275\u0275elementStart(34, "label", 16);
+        \u0275\u0275text(35, "Purchase Status");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(37, "select", 20);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_37_listener($event) {
+        \u0275\u0275elementStart(36, "select", 17);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_36_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.purchase, $event) || (ctx.TaulParchi.purchase = $event);
           return $event;
         });
-        \u0275\u0275elementStart(38, "option", 17);
-        \u0275\u0275text(39, "Select Purchase");
+        \u0275\u0275elementStart(37, "option", 14);
+        \u0275\u0275text(38, "Select Purchase");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(40, "option", 21);
-        \u0275\u0275text(41, "Direct Purchase");
+        \u0275\u0275elementStart(39, "option", 18);
+        \u0275\u0275text(40, "Direct Purchase");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(42, "option", 22);
-        \u0275\u0275text(43, " Auction Mandi Purchase ");
+        \u0275\u0275elementStart(41, "option", 19);
+        \u0275\u0275text(42, " Auction Mandi Purchase ");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(44, "label", 23);
-        \u0275\u0275text(45, "Farmer's Name");
+        \u0275\u0275elementStart(43, "label", 20);
+        \u0275\u0275text(44, "Farmer's Name");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(46, "select", 24);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_46_listener($event) {
+        \u0275\u0275elementStart(45, "select", 21);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_45_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.farmer, $event) || (ctx.TaulParchi.farmer = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_46_listener() {
+        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_45_listener() {
           return ctx.autoFillFirmOrCompany();
         });
-        \u0275\u0275elementStart(47, "option", 17);
-        \u0275\u0275text(48, "Select Farmer");
+        \u0275\u0275elementStart(46, "option", 14);
+        \u0275\u0275text(47, "Select Farmer");
         \u0275\u0275elementEnd();
-        \u0275\u0275template(49, TaulParchiComponent_option_49_Template, 2, 2, "option", 18);
+        \u0275\u0275template(48, TaulParchiComponent_option_48_Template, 2, 2, "option", 15);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(50, "label", 25);
-        \u0275\u0275text(51, "Village");
+        \u0275\u0275elementStart(49, "label", 22);
+        \u0275\u0275text(50, "Village");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(52, "select", 26);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_52_listener($event) {
+        \u0275\u0275elementStart(51, "select", 23);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_51_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.village, $event) || (ctx.TaulParchi.village = $event);
           return $event;
         });
-        \u0275\u0275elementStart(53, "option", 17);
-        \u0275\u0275text(54, "Select Village");
+        \u0275\u0275elementStart(52, "option", 14);
+        \u0275\u0275text(53, "Select Village");
         \u0275\u0275elementEnd();
-        \u0275\u0275template(55, TaulParchiComponent_option_55_Template, 2, 2, "option", 18);
+        \u0275\u0275template(54, TaulParchiComponent_option_54_Template, 2, 2, "option", 15);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(56, "label", 27);
-        \u0275\u0275text(57, "Mobile");
+        \u0275\u0275elementStart(55, "label", 24);
+        \u0275\u0275text(56, "Mobile");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(58, "select", 28);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_58_listener($event) {
+        \u0275\u0275elementStart(57, "select", 25);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_57_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.mobile, $event) || (ctx.TaulParchi.mobile = $event);
           return $event;
         });
-        \u0275\u0275elementStart(59, "option", 17);
-        \u0275\u0275text(60, "Select Mobile Number");
+        \u0275\u0275elementStart(58, "option", 14);
+        \u0275\u0275text(59, "Select Mobile Number");
         \u0275\u0275elementEnd();
-        \u0275\u0275template(61, TaulParchiComponent_option_61_Template, 2, 2, "option", 18);
+        \u0275\u0275template(60, TaulParchiComponent_option_60_Template, 2, 2, "option", 15);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(62, "label", 29);
-        \u0275\u0275text(63, "Storage Location");
+        \u0275\u0275elementStart(61, "label", 26);
+        \u0275\u0275text(62, "Storage Location");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(64, "select", 30);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_64_listener($event) {
+        \u0275\u0275elementStart(63, "select", 27);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_63_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.storage, $event) || (ctx.TaulParchi.storage = $event);
           return $event;
         });
-        \u0275\u0275elementStart(65, "option", 17);
-        \u0275\u0275text(66, "Select Storage Location");
+        \u0275\u0275elementStart(64, "option", 14);
+        \u0275\u0275text(65, "Select Storage Location");
         \u0275\u0275elementEnd();
-        \u0275\u0275template(67, TaulParchiComponent_option_67_Template, 2, 2, "option", 18);
+        \u0275\u0275template(66, TaulParchiComponent_option_66_Template, 2, 2, "option", 15);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(68, "label", 31);
-        \u0275\u0275text(69, "Firm / Company");
+        \u0275\u0275elementStart(67, "label", 28);
+        \u0275\u0275text(68, "Firm / Company");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(70, "input", 32);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_70_listener($event) {
+        \u0275\u0275elementStart(69, "input", 29);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_69_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.firm_company, $event) || (ctx.TaulParchi.firm_company = $event);
           return $event;
         });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(71, "label", 33);
-        \u0275\u0275text(72, "Rate");
+        \u0275\u0275elementStart(70, "label", 30);
+        \u0275\u0275text(71, "Rate");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(73, "div", 34)(74, "span", 35);
-        \u0275\u0275text(75, "\u20B9");
+        \u0275\u0275elementStart(72, "div", 31)(73, "span", 32);
+        \u0275\u0275text(74, "\u20B9");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(76, "input", 36);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_76_listener($event) {
+        \u0275\u0275elementStart(75, "input", 33);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_75_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.rate, $event) || (ctx.TaulParchi.rate = $event);
           return $event;
         });
+        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_75_listener() {
+          return ctx.calculateAmount();
+        });
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(77, "label", 37);
-        \u0275\u0275text(78, "Tulai Options");
+        \u0275\u0275elementStart(76, "label", 34);
+        \u0275\u0275text(77, "Tulai Options");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(79, "select", 38);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_79_listener($event) {
+        \u0275\u0275elementStart(78, "select", 35);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_78_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.tulai, $event) || (ctx.TaulParchi.tulai = $event);
           return $event;
         });
-        \u0275\u0275elementStart(80, "option", 17);
-        \u0275\u0275text(81, "Select Tulai");
+        \u0275\u0275elementStart(79, "option", 14);
+        \u0275\u0275text(80, "Select Tulai");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(82, "option", 39);
-        \u0275\u0275text(83, "Labour");
+        \u0275\u0275elementStart(81, "option", 36);
+        \u0275\u0275text(82, "Labour");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(84, "option", 40);
-        \u0275\u0275text(85, "Dharamkanta");
+        \u0275\u0275elementStart(83, "option", 37);
+        \u0275\u0275text(84, "Dharamkanta");
         \u0275\u0275elementEnd()();
-        \u0275\u0275template(86, TaulParchiComponent_div_86_Template, 7, 2, "div", 41);
-        \u0275\u0275elementStart(87, "label", 42);
-        \u0275\u0275text(88, "Bora Quantity");
+        \u0275\u0275template(85, TaulParchiComponent_div_85_Template, 7, 2, "div", 38);
+        \u0275\u0275elementStart(86, "label", 39);
+        \u0275\u0275text(87, "Bora Quantity");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(89, "input", 43);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_89_listener($event) {
+        \u0275\u0275elementStart(88, "input", 40);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_88_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.boraQuantity, $event) || (ctx.TaulParchi.boraQuantity = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_89_listener() {
-          return ctx.calculateNetWeight();
+        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_88_listener() {
+          ctx.calculateNetWeight();
+          return ctx.calculateAmount();
         });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(90, "label", 44);
-        \u0275\u0275text(91, "Unit Bora");
+        \u0275\u0275elementStart(89, "label", 41);
+        \u0275\u0275text(90, "Bharti(Kg)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(92, "input", 45);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_92_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.TaulParchi.unitBora, $event) || (ctx.TaulParchi.unitBora = $event);
-          return $event;
-        });
-        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_92_listener() {
-          return ctx.calculateNetWeight();
-        });
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(93, "label", 46);
-        \u0275\u0275text(94, "Bharti");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(95, "select", 47);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_95_listener($event) {
+        \u0275\u0275elementStart(91, "input", 42);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_91_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.bharti, $event) || (ctx.TaulParchi.bharti = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_95_listener() {
-          return ctx.calculateNetWeight();
+        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_91_listener() {
+          ctx.calculateNetWeight();
+          return ctx.calculateAmount();
         });
-        \u0275\u0275elementStart(96, "option", 48);
-        \u0275\u0275text(97, "Select Bharti");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(98, "option", 49);
-        \u0275\u0275text(99, "60");
+        \u0275\u0275elementStart(92, "label", 43);
+        \u0275\u0275text(93, "Loose Quantity(Kg)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(100, "option", 49);
-        \u0275\u0275text(101, "55");
+        \u0275\u0275elementStart(94, "input", 44);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_94_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.TaulParchi.looseQuantity, $event) || (ctx.TaulParchi.looseQuantity = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_94_listener() {
+          ctx.calculateNetWeight();
+          return ctx.calculateAmount();
+        });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(102, "option", 49);
-        \u0275\u0275text(103, "40");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(104, "label", 50);
-        \u0275\u0275text(105, "Net Weight");
+        \u0275\u0275elementStart(95, "label", 45);
+        \u0275\u0275text(96, "Net Weight (in Quintal)");
         \u0275\u0275elementEnd();
-        \u0275\u0275element(106, "input", 51);
+        \u0275\u0275element(97, "input", 46);
+        \u0275\u0275elementStart(98, "label", 47);
+        \u0275\u0275text(99, "Amount(\u20B9)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275element(100, "input", 48);
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(107, "div", 52)(108, "div", 53)(109, "button", 54);
-        \u0275\u0275listener("click", function TaulParchiComponent_Template_button_click_109_listener() {
+        \u0275\u0275elementStart(101, "div", 49)(102, "div", 50)(103, "button", 51);
+        \u0275\u0275listener("click", function TaulParchiComponent_Template_button_click_103_listener() {
           return ctx.saveTaulParchi();
         });
-        \u0275\u0275text(110, " Submit ");
+        \u0275\u0275text(104, " Submit ");
         \u0275\u0275elementEnd()()()()()()()();
       }
       if (rf & 2) {
         \u0275\u0275advance(17);
-        \u0275\u0275textInterpolate(ctx.TaulParchi.id);
-        \u0275\u0275advance(6);
-        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(24, 24, ctx.TaulParchi.created_at, "dd-MM-YYYY"));
+        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(18, 22, ctx.TaulParchi.created_at, "dd-MM-YYYY"));
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(23, 25, ctx.TaulParchi.created_at, "HH:mm:ss"));
         \u0275\u0275advance(8);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.crop);
         \u0275\u0275advance(3);
@@ -60846,23 +60859,19 @@ var TaulParchiComponent = class _TaulParchiComponent {
         \u0275\u0275advance(3);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.boraQuantity);
         \u0275\u0275advance(3);
-        \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.unitBora);
-        \u0275\u0275advance(3);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.bharti);
         \u0275\u0275advance(3);
-        \u0275\u0275property("ngValue", 60);
-        \u0275\u0275advance(2);
-        \u0275\u0275property("ngValue", 55);
-        \u0275\u0275advance(2);
-        \u0275\u0275property("ngValue", 40);
-        \u0275\u0275advance(4);
-        \u0275\u0275property("value", ctx.TaulParchi.netWeight);
+        \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.looseQuantity);
+        \u0275\u0275advance(3);
+        \u0275\u0275property("value", ctx.TaulParchi.netWeight / 100);
+        \u0275\u0275advance(3);
+        \u0275\u0275property("value", ctx.TaulParchi.amount);
       }
     }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, ReactiveFormsModule, CommonModule, NgForOf, NgIf, DatePipe], styles: ["\n\ninput[_ngcontent-%COMP%], \nselect[_ngcontent-%COMP%] {\n  background-color: transparent;\n  border: none;\n  border-bottom: 1px dotted #000;\n  margin-bottom: 10px;\n  border-radius: 0;\n  -webkit-border-radius: 0;\n  -moz-border-radius: 0;\n  -ms-border-radius: 0;\n  -o-border-radius: 0;\n}\n.input-group-text[_ngcontent-%COMP%] {\n  position: relative;\n  top: -5px;\n}\ninput[_ngcontent-%COMP%]:-webkit-autofill {\n  -webkit-box-shadow: 0 0 0 1000px white inset;\n  -webkit-text-fill-color: black;\n  background-color: transparent;\n}\n/*# sourceMappingURL=taul-parchi.component.css.map */"] });
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulParchiComponent, { className: "TaulParchiComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulParchiComponent, { className: "TaulParchiComponent", filePath: "src\\app\\pages\\taul-parchi\\taul-parchi.component.ts", lineNumber: 14 });
 })();
 
 // src/app/pages/truck-loading-parchi/truck-loading-parchi.component.ts
@@ -61347,7 +61356,7 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiComponent, { className: "TruckLoadingParchiComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiComponent, { className: "TruckLoadingParchiComponent", filePath: "src\\app\\pages\\truck-loading-parchi\\truck-loading-parchi.component.ts", lineNumber: 111 });
 })();
 
 // src/app/services/shared.service.ts
@@ -61829,7 +61838,7 @@ var MastersComponent = class _MastersComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MastersComponent, { className: "MastersComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MastersComponent, { className: "MastersComponent", filePath: "src\\app\\pages\\masters\\masters.component.ts", lineNumber: 17 });
 })();
 
 // node_modules/ngx-pagination/fesm2020/ngx-pagination.mjs
@@ -63086,7 +63095,7 @@ var FarmersComponent = class _FarmersComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FarmersComponent, { className: "FarmersComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FarmersComponent, { className: "FarmersComponent", filePath: "src\\app\\pages\\farmers\\farmers.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/villages/villages.component.ts
@@ -63323,7 +63332,7 @@ var VillagesComponent = class _VillagesComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(VillagesComponent, { className: "VillagesComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(VillagesComponent, { className: "VillagesComponent", filePath: "src\\app\\pages\\villages\\villages.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/hammals/hammals.component.ts
@@ -63580,7 +63589,7 @@ var HammalsComponent = class _HammalsComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HammalsComponent, { className: "HammalsComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HammalsComponent, { className: "HammalsComponent", filePath: "src\\app\\pages\\hammals\\hammals.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/crop/crop.component.ts
@@ -63817,7 +63826,7 @@ var CropComponent = class _CropComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(CropComponent, { className: "CropComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(CropComponent, { className: "CropComponent", filePath: "src\\app\\pages\\crop\\crop.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/parties/parties.component.ts
@@ -64054,7 +64063,7 @@ var PartiesComponent = class _PartiesComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PartiesComponent, { className: "PartiesComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PartiesComponent, { className: "PartiesComponent", filePath: "src\\app\\pages\\parties\\parties.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/delivery/delivery.component.ts
@@ -64291,7 +64300,7 @@ var DeliveryComponent = class _DeliveryComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DeliveryComponent, { className: "DeliveryComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DeliveryComponent, { className: "DeliveryComponent", filePath: "src\\app\\pages\\delivery\\delivery.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/accounts/accounts.component.ts
@@ -64878,7 +64887,7 @@ var AccountsComponent = class _AccountsComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AccountsComponent, { className: "AccountsComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AccountsComponent, { className: "AccountsComponent", filePath: "src\\app\\pages\\accounts\\accounts.component.ts", lineNumber: 28 });
 })();
 
 // src/app/pages/inventory/inventory.component.ts
@@ -65378,7 +65387,7 @@ var InventoryComponent = class _InventoryComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(InventoryComponent, { className: "InventoryComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(InventoryComponent, { className: "InventoryComponent", filePath: "src\\app\\pages\\inventory\\inventory.component.ts", lineNumber: 20 });
 })();
 
 // src/app/pages/transaction/transaction.component.ts
@@ -65812,7 +65821,7 @@ var TransactionComponent = class _TransactionComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionComponent, { className: "TransactionComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionComponent, { className: "TransactionComponent", filePath: "src\\app\\pages\\transaction\\transaction.component.ts", lineNumber: 14 });
 })();
 
 // src/app/pages/transactionlist/transactionlist.component.ts
@@ -66009,7 +66018,7 @@ var TransactionlistComponent = class _TransactionlistComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionlistComponent, { className: "TransactionlistComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionlistComponent, { className: "TransactionlistComponent", filePath: "src\\app\\pages\\transactionlist\\transactionlist.component.ts", lineNumber: 21 });
 })();
 
 // src/app/pages/truck/truck.component.ts
@@ -66336,7 +66345,7 @@ var TruckComponent = class _TruckComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckComponent, { className: "TruckComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckComponent, { className: "TruckComponent", filePath: "src\\app\\pages\\truck\\truck.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/list/list.component.ts
@@ -66895,7 +66904,7 @@ var ListComponent = class _ListComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListComponent, { className: "ListComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListComponent, { className: "ListComponent", filePath: "src\\app\\pages\\list\\list.component.ts", lineNumber: 21 });
 })();
 
 // src/app/pages/my-list/my-list.component.ts
@@ -67406,7 +67415,7 @@ var MyListComponent = class _MyListComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MyListComponent, { className: "MyListComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MyListComponent, { className: "MyListComponent", filePath: "src\\app\\pages\\my-list\\my-list.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/advance-payment/advance-payment.component.ts
@@ -67863,7 +67872,7 @@ var AdvancePaymentComponent = class _AdvancePaymentComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AdvancePaymentComponent, { className: "AdvancePaymentComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AdvancePaymentComponent, { className: "AdvancePaymentComponent", filePath: "src\\app\\pages\\advance-payment\\advance-payment.component.ts", lineNumber: 17 });
 })();
 
 // src/app/pages/storage/storage.component.ts
@@ -68100,7 +68109,7 @@ var StorageComponent = class _StorageComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(StorageComponent, { className: "StorageComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(StorageComponent, { className: "StorageComponent", filePath: "src\\app\\pages\\storage\\storage.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/wearhouse-accounts/wearhouse-accounts.component.ts
@@ -68614,7 +68623,7 @@ var WearhouseAccountsComponent = class _WearhouseAccountsComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(WearhouseAccountsComponent, { className: "WearhouseAccountsComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(WearhouseAccountsComponent, { className: "WearhouseAccountsComponent", filePath: "src\\app\\pages\\wearhouse-accounts\\wearhouse-accounts.component.ts", lineNumber: 27 });
 })();
 
 // src/app/pages/wearhouse-inventory/wearhouse-inventory.component.ts
@@ -69122,7 +69131,443 @@ var WearhouseInventoryComponent = class _WearhouseInventoryComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(WearhouseInventoryComponent, { className: "WearhouseInventoryComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(WearhouseInventoryComponent, { className: "WearhouseInventoryComponent", filePath: "src\\app\\pages\\wearhouse-inventory\\wearhouse-inventory.component.ts", lineNumber: 20 });
+})();
+
+// src/app/pages/taulparchi-dashboard/taulparchi-dashboard.component.ts
+var _c018 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
+var _c121 = (a0) => ["/taul-parchi-view", a0];
+function TaulparchiDashboardComponent_tr_49_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
+    \u0275\u0275pipe(5, "date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "td");
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "td");
+    \u0275\u0275text(9);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "td");
+    \u0275\u0275text(11);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "td");
+    \u0275\u0275text(13);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(14, "td");
+    \u0275\u0275text(15);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(16, "td")(17, "button", 21);
+    \u0275\u0275listener("click", function TaulparchiDashboardComponent_tr_49_Template_button_click_17_listener() {
+      const taulaParchi_r2 = \u0275\u0275restoreView(_r1).$implicit;
+      const ctx_r2 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r2.printReceipt(taulaParchi_r2));
+    });
+    \u0275\u0275text(18, " Print ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(19, "button", 22);
+    \u0275\u0275text(20, " View\n");
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const taulaParchi_r2 = ctx.$implicit;
+    const i_r4 = ctx.index;
+    const ctx_r2 = \u0275\u0275nextContext();
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r2.currentPage * ctx_r2.perPage - ctx_r2.perPage + (i_r4 + 1));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 8, taulaParchi_r2.created_at, "MM-dd-YYYY"));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.purchase);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.farmerDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.wearhouseDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.cropDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.firm_company);
+    \u0275\u0275advance(4);
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(11, _c121, taulaParchi_r2._id));
+  }
+}
+var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
+  constructor(apiService) {
+    this.apiService = apiService;
+    this.TaulaParchi = [];
+    this.TaulaParchiCount = 0;
+    this.TruckLoadingParchi = [];
+    this.TruckLoadingParchiCount = 0;
+    this.currentPage = 1;
+    this.perPage = 5;
+    this.totalItems = 0;
+    this.Storage = [];
+    this.getTaulaParchis();
+  }
+  getTaulaParchis() {
+    let params = {
+      page: this.currentPage,
+      limit: this.perPage
+    };
+    this.apiService.get("taulparchi", {
+      params
+    }).subscribe({
+      next: (res) => {
+        this.TaulaParchi = res.data;
+        this.TaulaParchiCount = res.meta.total || this.TaulaParchi.length;
+      },
+      error: (err) => {
+        console.error("Error fetching TaulaParchis:", err);
+      }
+    });
+  }
+  printReceipt(taulaParchi) {
+    const receiptContent = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taula Parchi Receipt</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Courier New', monospace;
+        margin: 20px;
+        background-color: #f8f9fa;
+      }
+
+      .card {
+        padding: 20px;
+        border: 1px solid #000;
+        width: 350px; /* Restrict width for a vertical look */
+        margin: 0 auto; /* Center the box horizontally */
+        background-color: white;
+      }
+
+      h1, h4 {
+        text-align: center;
+      }
+
+      .section {
+        text-align: center;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+      }
+
+      .section-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .section p {
+        margin: 0;
+      }
+
+      .btn-print {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        display: block;
+        margin: 20px auto;
+      }
+      
+      .btn-print:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <div class="card">
+        <h4 class="mb-4">Taula Parchi Receipt</h4>
+
+        <!-- Sr. No and Date Section -->
+        <div class="section">
+          <p><strong>Sr.No:</strong> ${taulaParchi._id}</p>
+          <p><strong>Date:</strong> ${new Date(taulaParchi.created_at).toLocaleDateString()}</p>
+        </div>
+
+        <!-- Farmer and Crop Details -->
+        <div class="section">
+          <p><strong>Farmer's Name:</strong> ${taulaParchi.farmerDetails.name}</p>
+          <p><strong>Village:</strong> ${taulaParchi.farmerDetails.village}</p>
+          <p><strong>Mobile:</strong> ${taulaParchi.farmerDetails.mobile}</p>
+          <p><strong>Storage Location:</strong> ${taulaParchi.wearhouseDetails.name}</p>
+          <p><strong>Crop:</strong> ${taulaParchi.cropDetails.name}</p>
+        </div>
+
+        <!-- Purchase and Firm Details -->
+        <div class="section">
+          <p><strong>Purchase Status:</strong> ${taulaParchi.purchase}</p>
+          <p><strong>Firm/Company:</strong> ${taulaParchi.firm_company}</p>
+        </div>
+
+        <!-- Additional Fields -->
+        <div class="section">
+          <p><strong>Rate:</strong> ${taulaParchi.rate}</p>
+          <p><strong>Hammal:</strong> ${taulaParchi.hammal}</p>
+          <p><strong>Bora Quantity:</strong> ${taulaParchi.boraQuantity}</p>
+          <p><strong>Bharti:</strong> ${taulaParchi.bharti}</p>
+          <p><strong>Loose Quantity:</strong> ${taulaParchi.looseQuantity}</p>
+          <p><strong>Net Weight:</strong> ${taulaParchi.netWeight}</p>
+        </div>
+
+        <!-- Print Button -->
+        <button class="btn-print" onclick="window.print()">Print Receipt</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+    `;
+    const newWindow = window.open("", "", "width=800,height=600");
+    newWindow.document.write(receiptContent);
+    newWindow.document.close();
+    newWindow.print();
+  }
+  static {
+    this.\u0275fac = function TaulparchiDashboardComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _TaulparchiDashboardComponent)(\u0275\u0275directiveInject(ApiService));
+    };
+  }
+  static {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiDashboardComponent, selectors: [["app-taulparchi-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 51, vars: 8, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["type", "button", 1, "btn", "btn-primary"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["type", "button", 1, "btn", "btn-primary", 2, "margin-right", "10px", 3, "click"], ["type", "button", 1, "btn", "btn-primary", 3, "routerLink"]], template: function TaulparchiDashboardComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4");
+        \u0275\u0275text(3, "All Taula Parchi");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(4, "div", 2)(5, "div", 3)(6, "div", 4)(7, "div", 5)(8, "label", 6);
+        \u0275\u0275text(9, "From");
+        \u0275\u0275elementEnd();
+        \u0275\u0275element(10, "input", 7);
+        \u0275\u0275elementStart(11, "small", 8);
+        \u0275\u0275text(12, "From Date");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(13, "div", 4)(14, "div", 5)(15, "label", 9);
+        \u0275\u0275text(16, "To");
+        \u0275\u0275elementEnd();
+        \u0275\u0275element(17, "input", 10);
+        \u0275\u0275elementStart(18, "small", 11);
+        \u0275\u0275text(19, "To Date");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(20, "div", 4)(21, "button", 12);
+        \u0275\u0275text(22, "Submit");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(23, "div", 13)(24, "div", 14)(25, "h4", 15);
+        \u0275\u0275text(26, "Taula Parchis");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(27, "div", 2)(28, "div", 16)(29, "table", 17)(30, "thead", 18)(31, "tr")(32, "th", 19);
+        \u0275\u0275text(33, "Sr.no");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(34, "th", 19);
+        \u0275\u0275text(35, "Date");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(36, "th", 19);
+        \u0275\u0275text(37, "Purchase Status");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(38, "th", 19);
+        \u0275\u0275text(39, "Farmer's Name");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(40, "th", 19);
+        \u0275\u0275text(41, "Storage Location");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(42, "th", 19);
+        \u0275\u0275text(43, "Crop");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(44, "th", 19);
+        \u0275\u0275text(45, "Firm/Company");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(46, "th", 19);
+        \u0275\u0275text(47, "Action");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(48, "tbody");
+        \u0275\u0275template(49, TaulparchiDashboardComponent_tr_49_Template, 21, 13, "tr", 20);
+        \u0275\u0275pipe(50, "paginate");
+        \u0275\u0275elementEnd()()()()()()();
+      }
+      if (rf & 2) {
+        \u0275\u0275advance(49);
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(50, 1, ctx.TaulaParchi, \u0275\u0275pureFunction3(4, _c018, ctx.perPage, ctx.currentPage, ctx.TaulaParchiCount)));
+      }
+    }, dependencies: [
+      CommonModule,
+      NgForOf,
+      DatePipe,
+      FormsModule,
+      ReactiveFormsModule,
+      NgxPaginationModule,
+      PaginatePipe,
+      RouterModule,
+      RouterLink
+    ] });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulparchiDashboardComponent, { className: "TaulparchiDashboardComponent", filePath: "src\\app\\pages\\taulparchi-dashboard\\taulparchi-dashboard.component.ts", lineNumber: 22 });
+})();
+
+// src/app/pages/taulparchi-view/taulparchi-view.component.ts
+var TaulparchiViewComponent = class _TaulparchiViewComponent {
+  constructor(apiService, route, router) {
+    this.apiService = apiService;
+    this.route = route;
+    this.router = router;
+    this.taulaParchi = {};
+  }
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get("id");
+    if (id) {
+      this.getTaulaParchiById(id);
+    }
+  }
+  // Fetch Taula Parchi by ID
+  getTaulaParchiById(id) {
+    this.apiService.get(`taulparchi/${id}`).subscribe({
+      next: (res) => {
+        console.log("res", res);
+        this.taulaParchi = res;
+        console.log("taulparchi", res);
+      },
+      error: (err) => {
+        console.error("Error fetching Taula Parchi details:", err);
+      }
+    });
+  }
+  // Navigate back to the previous page
+  goBack() {
+    this.router.navigate(["/taul-parchi-dashboard"]);
+  }
+  static {
+    this.\u0275fac = function TaulparchiViewComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _TaulparchiViewComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(ActivatedRoute), \u0275\u0275directiveInject(Router));
+    };
+  }
+  static {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiViewComponent, selectors: [["app-taulparchi-view"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 68, vars: 11, consts: [[1, "container", "mt-2"], [1, "card", "shadow-sm", "border-0"], [1, "card-header", "bg-warning", "text-center", "text-white"], [1, "card-body", "p-4"], [1, "row", "mb-3"], [1, "col-md-6", "d-flex", "align-items-center", 2, "gap", "20px"], [1, "mb-0"], [1, "text-center", "mt-4"], ["type", "button", 1, "btn", "btn-secondary", "px-5", 3, "click"], [1, "fas", "fa-arrow-left"]], template: function TaulparchiViewComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "h4");
+        \u0275\u0275text(4, "Taula Parchi Details");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(5, "div", 3)(6, "div", 4)(7, "div", 5)(8, "h6", 6);
+        \u0275\u0275text(9, "Farmer's Name:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(10, "p", 6);
+        \u0275\u0275text(11);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(12, "div", 5)(13, "h6");
+        \u0275\u0275text(14, "Village:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(15, "p");
+        \u0275\u0275text(16);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(17, "div", 5)(18, "h6");
+        \u0275\u0275text(19, "Mobile:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(20, "p");
+        \u0275\u0275text(21);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(22, "div", 4)(23, "div", 5)(24, "h6");
+        \u0275\u0275text(25, "Storage Location:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(26, "p");
+        \u0275\u0275text(27);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(28, "div", 5)(29, "h6");
+        \u0275\u0275text(30, "Crop:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(31, "p");
+        \u0275\u0275text(32);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(33, "div", 5)(34, "h6");
+        \u0275\u0275text(35, "Purchase Status:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(36, "p");
+        \u0275\u0275text(37);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(38, "div", 5)(39, "h6");
+        \u0275\u0275text(40, "Firm/Company:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(41, "p");
+        \u0275\u0275text(42);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(43, "div", 4)(44, "div", 5)(45, "h6");
+        \u0275\u0275text(46, "Rate:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(47, "p");
+        \u0275\u0275text(48);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(49, "div", 5)(50, "h6");
+        \u0275\u0275text(51, "Hammal:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(52, "p");
+        \u0275\u0275text(53);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(54, "div", 5)(55, "h6");
+        \u0275\u0275text(56, "Bora Quantity:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(57, "p");
+        \u0275\u0275text(58);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(59, "div", 5)(60, "h6");
+        \u0275\u0275text(61, "Net Weight:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(62, "p");
+        \u0275\u0275text(63);
+        \u0275\u0275elementEnd()()()()();
+        \u0275\u0275elementStart(64, "div", 7)(65, "button", 8);
+        \u0275\u0275listener("click", function TaulparchiViewComponent_Template_button_click_65_listener() {
+          return ctx.goBack();
+        });
+        \u0275\u0275element(66, "i", 9);
+        \u0275\u0275text(67, " Back ");
+        \u0275\u0275elementEnd()()();
+      }
+      if (rf & 2) {
+        \u0275\u0275advance(11);
+        \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.farmerDetails.name);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.farmerDetails.village);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.farmerDetails.mobile);
+        \u0275\u0275advance(6);
+        \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.wearhouseDetails.name);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.cropDetails.name);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.purchase);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.firm_company);
+        \u0275\u0275advance(6);
+        \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.rate);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.hammal);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.boraQuantity);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.netWeight);
+      }
+    }, dependencies: [
+      CommonModule,
+      FormsModule,
+      ReactiveFormsModule,
+      NgxPaginationModule
+    ] });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulparchiViewComponent, { className: "TaulparchiViewComponent", filePath: "src\\app\\pages\\taulparchi-view\\taulparchi-view.component.ts", lineNumber: 21 });
 })();
 
 // src/app/app.routes.ts
@@ -69163,6 +69608,16 @@ var routes = [
         path: "taul-parchi",
         component: TaulParchiComponent,
         data: { title: "Taul Parchi" }
+      },
+      {
+        path: "taul-parchi-dashboard",
+        component: TaulparchiDashboardComponent,
+        data: { title: "Taul Parchi Dashboard" }
+      },
+      {
+        path: "taul-parchi-view/:id",
+        component: TaulparchiViewComponent,
+        data: { title: "Taul Parchi View" }
       },
       {
         path: "truck-loading-parchi",
@@ -69768,6 +70223,14 @@ var roleWiseAccess = [
   {
     page: "wearhouse-inventory",
     roles: ["Admin"]
+  },
+  {
+    page: "taul-parchi-dashboard",
+    roles: ["Admin"]
+  },
+  {
+    page: "taul-parchi-view",
+    roles: ["Admin"]
   }
 ];
 
@@ -69874,7 +70337,7 @@ var AppComponent = class _AppComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src\\app\\app.component.ts", lineNumber: 15 });
 })();
 
 // src/main.ts

@@ -110,4 +110,12 @@ export const roleWiseAccess = [
     page: 'wearhouse-inventory',
     roles: ['Admin'],
   },
+  {
+    page: 'taul-parchi-dashboard',
+    roles: ['Admin'],
+  },
+  {
+    page: 'taul-parchi-view',
+    roles: ['Admin'],
+  },
 ];

@@ -9,19 +9,19 @@
               <b>M+M</b>
             </p>
             <div class="row">
-              <div class="col text-start">
-                <b>
-                  <span class="text-muted ps-2">Serial Number:</span>
-                  <span class="ps-2 text-link">{{ TaulParchi.id }}</span>
-                </b>
-              </div>
               <div class="col text-end">
                 <b>
                   <span class="text-muted pe-2">Date:</span>
                   <span class="text-link">{{
                     TaulParchi.created_at | date : "dd-MM-YYYY"
                   }}</span>
+                  <span class="text-muted pe-2">Time:</span>
+                  <span class="text-link">{{
+                    TaulParchi.created_at | date : "HH:mm:ss"
+                  }}</span>
                 </b>
+                
+                
               </div>
             </div>
           </div>
@@ -29,7 +29,6 @@
             <div class="row">
               <div class="col-12">
                 <div class="form-group mb-3">
-
                   <label for="crop" class="form-label">Crop</label>
                   <select
                     id="crop"
@@ -137,13 +136,14 @@
                       >₹</span
                     >
                     <input
-                      id="rate"
-                      class="form-control"
-                      [(ngModel)]="TaulParchi.rate"
-                      name="rate"
-                      type="number"
-                      placeholder="Rate"
-                    />
+                    id="rate"
+                    class="form-control"
+                    [(ngModel)]="TaulParchi.rate"
+                    name="rate"
+                    type="number"
+                    placeholder="Rate"
+                    (ngModelChange)="calculateAmount()"  
+                  />
                   </div>
                   <label for="tulai" class="form-label">Tulai Options</label>
                   <select
@@ -156,20 +156,7 @@
                     <option value="Labour">Labour</option>
                     <option value="Dharamkata">Dharamkanta</option>
                   </select>
-                  <!-- <label for="assignedHammal" class="form-label"
-                    >Assigned Hammal</label
-                  >
-                  <select
-                    id="assignedHammal"
-                    class="form-select"
-                    [(ngModel)]="TaulParchi.hammal"
-                    name="assignedHammal"
-                  >
-                    <option value="">Select Hammal</option>
-                    <option *ngFor="let hammal of Hammals" [value]="hammal._id">
-                      {{ hammal.name }}
-                    </option>
-                  </select> -->
+
                   <div *ngIf="TaulParchi.tulai === 'Labour'">
                     <label for="assignedHammal" class="form-label"
                       >Assigned Hammal</label
@@ -200,55 +187,54 @@
                     name="boraQuantity"
                     type="number"
                     placeholder="Bora Quantity"
-                    (ngModelChange)="calculateNetWeight()"
+                    (ngModelChange)="calculateNetWeight(); calculateAmount()"
                   />
 
-                  <label for="unitBora" class="form-label">Unit Bora</label>
+                  <label for="bharti" class="form-label">Bharti(Kg)</label>
                   <input
-                    id="unitBora"
+                    id="bharti"
                     class="form-control"
-                    [(ngModel)]="TaulParchi.unitBora"
-                    name="unitBora"
+                    [(ngModel)]="TaulParchi.bharti"
+                    name="bharti"
                     type="number"
-                    placeholder="Unit Bora"
-                    (ngModelChange)="calculateNetWeight()"
+                    placeholder="Bharti"
+                    (ngModelChange)="calculateNetWeight(); calculateAmount()"
                   />
 
-                  <!-- <label for="bharti" class="form-label">Bharti</label>
-                  <select
-                    id="bharti"
-                    class="form-control"
-                    [(ngModel)]="TaulParchi.bharti"
-                    name="bharti"
-                    (ngModelChange)="calculateNetWeight()"
+                  <label for="looseQuantity" class="form-label"
+                    >Loose Quantity(Kg)</label
                   >
-                    <option value="" disabled selected>Select Bharti</option>
-                    <option value="30">30</option>
-                    <option value="60">60</option>
-                  </select> -->
-                  <label for="bharti" class="form-label">Bharti</label>
-                  <select
-                    id="bharti"
+                  <input
+                    id="looseQuantity"
                     class="form-control"
-                    [(ngModel)]="TaulParchi.bharti"
-                    name="bharti"
-                    (ngModelChange)="calculateNetWeight()"
-                  >
-                    <option value="" disabled selected>Select Bharti</option>
+                    [(ngModel)]="TaulParchi.looseQuantity"
+                    name="looseQuantity"
+                    type="number"
+                    placeholder="Enter looseQuantity"
+                    (ngModelChange)="calculateNetWeight(); calculateAmount()"
+                  />
 
-                    <option [ngValue]="60">60</option>
-                    <option [ngValue]="55">55</option>
-                    <option [ngValue]="40">40</option>
-                  </select>
-                  <label for="netWeight" class="form-label">Net Weight</label>
-                  <!-- The calculated Net Weight will be displayed here -->
+                  <label for="netWeight" class="form-label"
+                    >Net Weight (in Quintal)</label
+                  >
                   <input
                     id="netWeight"
                     class="form-control"
-                    [value]="TaulParchi.netWeight"
+                    [value]="TaulParchi.netWeight / 100"
                     name="netWeight"
                     type="number"
                     placeholder="Net Weight"
+                    
+                    readonly
+                  />
+                  <label for="amount" class="form-label">Amount(₹)</label>
+                  <input
+                    id="amount"
+                    class="form-control"
+                    [value]="TaulParchi.amount"
+                    name="amount"
+                    type="number"
+                    placeholder="Amount"
                     readonly
                   />
                 </div>
