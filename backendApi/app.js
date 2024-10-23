@@ -19,7 +19,8 @@ const options = {
   cert: fs.readFileSync("./certs/certificate.pem"),
 };
 
-const server = https.createServer(options, app);
+// const server = https.createServer(options, app);
+const server = app;
 
 if (process.env.ENV === "development") {
   app.use(morgan("dev"));

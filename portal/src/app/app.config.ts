@@ -1,17 +1,20 @@
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, isDevMode } from '@angular/core';
 import { provideRouter, withHashLocation } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor, errorHandlingInterceptor } from './http.interceptor';
+import { provideServiceWorker } from '@angular/service-worker';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
-    provideHttpClient(
-      withInterceptors([authInterceptor, errorHandlingInterceptor])
-    ),
-  ],
+    provideRouter(routes, withHashLocation()),
+    provideHttpClient(withInterceptors([authInterceptor, errorHandlingInterceptor])),
+    provideServiceWorker('ngsw-worker.js', {
+        enabled: !isDevMode(),
+        registrationStrategy: 'registerWhenStable:30000'
+    })
+],
 };
 
 export const roleWiseAccess = [

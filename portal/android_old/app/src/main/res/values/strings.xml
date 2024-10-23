@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Naaptol</string>
+    <string name="title_activity_main">Naaptol</string>
+    <string name="package_name">parking.innobimbinfotech.com</string>
+    <string name="custom_url_scheme">parking.innobimbinfotech.com</string>
+</resources>

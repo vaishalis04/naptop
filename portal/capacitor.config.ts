@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'parking.innobimbinfotech.com',
-  appName: 'Parking Management Solution',
+  appName: 'Naptol',
   webDir: '../backendApi/public/dist/browser',
   server: {
     androidScheme: 'https'

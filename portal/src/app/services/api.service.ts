@@ -7,8 +7,8 @@ import { Injectable } from '@angular/core';
 export class ApiService {
 
   // API_URL = '//'+window.location.host;
-  API_URL = '//'+window.location.host + '/api';
-  // API_URL = 'https://parking.sensecure.in';
+  // API_URL = '//'+window.location.host + '/api';
+  API_URL = 'https://naaptol.innobimbinfotech.com/api';
 
   constructor(
     private http: HttpClient
