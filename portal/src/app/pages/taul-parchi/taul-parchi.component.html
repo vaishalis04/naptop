@@ -53,6 +53,7 @@
                   <label for="farmerName" class="form-label">Farmer's Name</label>
                   <select id="farmerName" class="form-select" [(ngModel)]="TaulParchi.farmer" name="farmerName"
                     (ngModelChange)="autoFillFirmOrCompany()">
+                    <option value="addNewFarmer">Add New Farmer</option>
                     <option value="">Select Farmer</option>
                     <option *ngFor="let farmer of Farmers" [value]="farmer._id">
                       {{ farmer.name }} ({{ farmer.farmerType || 'regular' | titlecase }})
@@ -78,10 +79,12 @@
                       {{ mobile.mobile }}
                     </option>
                   </select> -->
-
                   <label for="firmCompany" class="form-label">Purchasing Firm / Company</label>
-                  <input id="firmCompany" class="form-control" [(ngModel)]="TaulParchi.firm_company" name="firmCompany"
-                    type="text" placeholder="Firm / Company" />
+                  <select id="firmCompany" class="form-select" [(ngModel)]="TaulParchi.firm_company" name="firmCompany">
+                    <option value="">Select Firm / Company</option>
+                    <option *ngFor="let firm of firm_company" [value]="firm._id">{{ firm.name }}</option>
+                  </select>
+                  
 
                   <label for="storage" class="form-label">Storage Location</label>
                   <select id="storage" class="form-select" [(ngModel)]="TaulParchi.storage" name="storage">
@@ -108,7 +111,7 @@
                   <div *ngIf="TaulParchi.tulai === 'Labour'">
                     <label for="assignedHammal" class="form-label">Assigned Hammal</label>
                     <select id="assignedHammal" class="form-select" [(ngModel)]="TaulParchi.hammal"
-                      name="assignedHammal" (ngModelChange)="calculateAmount()">
+                      name="assignedHammal" (ngModelChange)="calculateAmount(); calculateHammali()">
                       <option value="">Select Hammal</option>
                       <option *ngFor="let hammal of Hammals" [ngValue]="hammal._id">
                         {{ hammal.name }}
@@ -119,7 +122,7 @@
                   <div class="form-group mb-3" *ngIf="TaulParchi.farmer && TaulParchi.tulai === 'Labour'">
                     <label for="exemptHammali" class="form-label">Exempt Hammali</label>
                     <select id="exemptHammali" class="form-select" [(ngModel)]="TaulParchi.exemptHammali"
-                      name="exemptHammali" (ngModelChange)="calculateAmount()">
+                      name="exemptHammali" (ngModelChange)="calculateAmount(); calculateHammali()">
                       <option value="">Select Exempt Hammali</option>
                       <option value="deduct">Deduct</option>
                       <option value="exempted">Exempted</option>
@@ -129,16 +132,16 @@
                   <label for="boraQuantity" class="form-label">Bora Quantity</label>
                   <input id="boraQuantity" class="form-control" [(ngModel)]="TaulParchi.boraQuantity"
                     name="boraQuantity" type="number" placeholder="Bora Quantity"
-                    (ngModelChange)="calculateNetWeight(); calculateAmount()" />
+                    (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
 
                   <label for="bharti" class="form-label">Bharti(in Kgs)</label>
                   <input id="bharti" class="form-control" [(ngModel)]="TaulParchi.bharti" name="bharti" type="number"
-                    placeholder="Bharti" (ngModelChange)="calculateNetWeight(); calculateAmount()" />
+                    placeholder="Bharti" (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
 
                   <label for="looseQuantity" class="form-label">Loose Quantity(in Kgs)</label>
                   <input id="looseQuantity" class="form-control" [(ngModel)]="TaulParchi.looseQuantity"
                     name="looseQuantity" type="number" placeholder="Enter looseQuantity"
-                    (ngModelChange)="calculateNetWeight(); calculateAmount()" />
+                    (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
 
                   <label for="netWeight" class="form-label">Net Weight (in Quintal)</label>
                   <input id="netWeight" class="form-control" [value]="TaulParchi.netWeight / 100" name="netWeight"
@@ -151,6 +154,20 @@
                   <input id="amount" class="form-control" [value]="TaulParchi.amount" name="amount" type="number"
                     placeholder="Amount" readonly />
                 </div>
+                <div class="form-group mb-3">
+                  <label for="hammali" class="form-label">Hammali Amount(in ₹)</label>
+                  <input id="hammali" class="form-control" [value]="TaulParchi.hammali" name="hammali" type="number"
+                    placeholder="hammali" readonly />
+                </div>
+                <label for="other" class="form-label">Remark</label>
+                  <input
+                    id="other"
+                    class="form-control"
+                    [(ngModel)]="TaulParchi.other"
+                    name="other"
+                    type="text"
+                    placeholder="Other"
+                  />
               </div>
             </div>
           </div>

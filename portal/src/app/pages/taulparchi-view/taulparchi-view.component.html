@@ -44,7 +44,7 @@
       </div>
       <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
         <h6 class="card-subtitle mb-2 text-muted">Firm/Company:</h6>
-        <p class="card-text">{{ taulaParchi?.firm_company ? taulaParchi.firm_company : 'N/A' }}</p>
+        <p class="card-text">{{ taulaParchi?.companyDetails?.name ? taulaParchi.companyDetails?.name : 'N/A' }}</p>
       </div>
       <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
         <h6 class="card-subtitle mb-2 text-muted">Rate (Per Quintal):</h6>
@@ -79,7 +79,10 @@
         <h6 class="card-subtitle mb-2 text-muted">Loose Quantity (in Kgs):</h6>
         <p class="card-text">{{ taulaParchi?.looseQuantity ? taulaParchi.looseQuantity : 'N/A' }}</p>
       </div>
-
+      <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+        <h6 class="card-subtitle mb-2 text-muted">Hammali (in ₹):</h6>
+        <p class="card-text">{{ taulaParchi?.hammali ? taulaParchi.hammali : 'N/A' }}</p>
+      </div>
       <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
         <h6 class="card-subtitle mb-2 text-muted">Net Weight (in Quintal):</h6>
         <p class="card-text">{{ taulaParchi?.netWeight }}</p>

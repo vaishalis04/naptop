@@ -17,6 +17,8 @@ export class TaulParchiComponent implements OnInit {
   Crops: any[] = [];
   Storage: any[] = [];
   Villages: any[] = [];
+  firm_company: any[] = [];
+
 
   TaulParchi = {
     farmer: '',
@@ -35,6 +37,8 @@ export class TaulParchiComponent implements OnInit {
     purchase: '',
     crop: '',
     amount: 0,
+    other:'',
+    hammali:0,
     exemptHammali: 'deduct',
     id: Date.now(),
     created_at: new Date(),
@@ -49,6 +53,7 @@ export class TaulParchiComponent implements OnInit {
     this.fetchHammals();
     this.fetchCrops();
     this.fetchStorage()
+    this.fetchCompany()
   }
 
   calculateNetWeight(): void {
@@ -61,6 +66,11 @@ export class TaulParchiComponent implements OnInit {
     const rateValue = Number(rate);
     const hammaliAmount = this.Hammals.find((hammal) => hammal._id === this.TaulParchi.hammal)?.rate;
     this.TaulParchi.amount = ((netWeight / 100) * rateValue) + (this.TaulParchi.exemptHammali == 'deduct' ? (hammaliAmount || 0) : 0);
+  }
+  calculateHammali() {
+    const netWeightQuintal = this.TaulParchi.netWeight / 100;
+    const hammaliAmount = this.Hammals.find((hammal) => hammal._id === this.TaulParchi.hammal)?.rate;
+    this.TaulParchi.hammali = netWeightQuintal * hammaliAmount
   }
 
   // Fetch Farmers from backend
@@ -79,6 +89,24 @@ export class TaulParchiComponent implements OnInit {
         },
         error: (err: any) => {
           console.error('Error fetching Farmers:', err);
+        },
+      });
+  }
+  fetchCompany() {
+    this.apiService
+      .get('company', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.firm_company = res.data;
+          console.log('fgfvasyh', res.data);
+        },
+        error: (err: any) => {
+          console.error('Error fetching Companies:', err);
         },
       });
   }

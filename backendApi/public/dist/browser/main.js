@@ -1417,7 +1417,7 @@ function __await(v) {
 function __asyncGenerator(thisArg, _arguments, generator) {
   if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
   var g = generator.apply(thisArg, _arguments || []), i, q = [];
-  return i = {}, verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function() {
+  return i = Object.create((typeof AsyncIterator === "function" ? AsyncIterator : Object).prototype), verb("next"), verb("throw"), verb("return", awaitReturn), i[Symbol.asyncIterator] = function() {
     return this;
   }, i;
   function awaitReturn(f) {
@@ -42394,7 +42394,7 @@ var LoginComponent = class _LoginComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoginComponent, { className: "LoginComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoginComponent, { className: "LoginComponent", filePath: "src\\app\\pages\\login\\login.component.ts", lineNumber: 21 });
 })();
 
 // src/app/pages/page-not-found/page-not-found.component.ts
@@ -42418,7 +42418,7 @@ var PageNotFoundComponent = class _PageNotFoundComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PageNotFoundComponent, { className: "PageNotFoundComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PageNotFoundComponent, { className: "PageNotFoundComponent", filePath: "src\\app\\pages\\page-not-found\\page-not-found.component.ts", lineNumber: 10 });
 })();
 
 // src/app/pages/sign-up/sign-up.component.ts
@@ -42553,7 +42553,7 @@ var SignUpComponent = class _SignUpComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SignUpComponent, { className: "SignUpComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SignUpComponent, { className: "SignUpComponent", filePath: "src\\app\\pages\\sign-up\\sign-up.component.ts", lineNumber: 15 });
 })();
 
 // src/app/pages/forgot-password/forgot-password.component.ts
@@ -42574,7 +42574,7 @@ var ForgotPasswordComponent = class _ForgotPasswordComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ForgotPasswordComponent, { className: "ForgotPasswordComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ForgotPasswordComponent, { className: "ForgotPasswordComponent", filePath: "src\\app\\pages\\forgot-password\\forgot-password.component.ts", lineNumber: 10 });
 })();
 
 // src/app/pages/dashboard/dashboard.component.ts
@@ -42915,7 +42915,7 @@ var DashboardComponent = class _DashboardComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DashboardComponent, { className: "DashboardComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DashboardComponent, { className: "DashboardComponent", filePath: "src\\app\\pages\\dashboard\\dashboard.component.ts", lineNumber: 13 });
 })();
 
 // node_modules/@angular/core/fesm2022/rxjs-interop.mjs
@@ -46543,8 +46543,8 @@ var NgbAlert = class _NgbAlert {
       consts: () => {
         let i18n_0;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0 = goog.getMsg("Close");
-          i18n_0 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0 = goog.getMsg("Close");
+          i18n_0 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0;
         } else {
           i18n_0 = $localize`:@@ngb.alert.close:Close`;
         }
@@ -47092,7 +47092,7 @@ var NgbCarousel = class _NgbCarousel {
       consts: () => {
         let i18n_1;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1 = goog.getMsg(" Slide {$interpolation} of {$interpolation_1} ", {
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1 = goog.getMsg(" Slide {$interpolation} of {$interpolation_1} ", {
             "interpolation": "\uFFFD0\uFFFD",
             "interpolation_1": "\uFFFD1\uFFFD"
           }, {
@@ -47101,21 +47101,21 @@ var NgbCarousel = class _NgbCarousel {
               "interpolation_1": "{{ c }}"
             }
           });
-          i18n_1 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1;
+          i18n_1 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1;
         } else {
           i18n_1 = $localize`:Currently selected slide number read by screen reader@@ngb.carousel.slide-number: Slide ${"\uFFFD0\uFFFD"}:INTERPOLATION: of ${"\uFFFD1\uFFFD"}:INTERPOLATION_1: `;
         }
         let i18n_2;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2 = goog.getMsg("Previous");
-          i18n_2 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2 = goog.getMsg("Previous");
+          i18n_2 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2;
         } else {
           i18n_2 = $localize`:@@ngb.carousel.previous:Previous`;
         }
         let i18n_3;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3 = goog.getMsg("Next");
-          i18n_3 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3 = goog.getMsg("Next");
+          i18n_3 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3;
         } else {
           i18n_3 = $localize`:@@ngb.carousel.next:Next`;
         }
@@ -48422,29 +48422,29 @@ var NgbDatepickerNavigationSelect = class _NgbDatepickerNavigationSelect {
       consts: () => {
         let i18n_4;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4 = goog.getMsg("Select month");
-          i18n_4 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4 = goog.getMsg("Select month");
+          i18n_4 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4;
         } else {
           i18n_4 = $localize`:@@ngb.datepicker.select-month:Select month`;
         }
         let i18n_5;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5 = goog.getMsg("Select month");
-          i18n_5 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5 = goog.getMsg("Select month");
+          i18n_5 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5;
         } else {
           i18n_5 = $localize`:@@ngb.datepicker.select-month:Select month`;
         }
         let i18n_6;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6 = goog.getMsg("Select year");
-          i18n_6 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6 = goog.getMsg("Select year");
+          i18n_6 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6;
         } else {
           i18n_6 = $localize`:@@ngb.datepicker.select-year:Select year`;
         }
         let i18n_7;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7 = goog.getMsg("Select year");
-          i18n_7 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7 = goog.getMsg("Select year");
+          i18n_7 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7;
         } else {
           i18n_7 = $localize`:@@ngb.datepicker.select-year:Select year`;
         }
@@ -48602,29 +48602,29 @@ var NgbDatepickerNavigation = class _NgbDatepickerNavigation {
       consts: () => {
         let i18n_8;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8 = goog.getMsg("Previous month");
-          i18n_8 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8 = goog.getMsg("Previous month");
+          i18n_8 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8;
         } else {
           i18n_8 = $localize`:@@ngb.datepicker.previous-month:Previous month`;
         }
         let i18n_9;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9 = goog.getMsg("Previous month");
-          i18n_9 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9 = goog.getMsg("Previous month");
+          i18n_9 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9;
         } else {
           i18n_9 = $localize`:@@ngb.datepicker.previous-month:Previous month`;
         }
         let i18n_10;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10 = goog.getMsg("Next month");
-          i18n_10 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10 = goog.getMsg("Next month");
+          i18n_10 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10;
         } else {
           i18n_10 = $localize`:@@ngb.datepicker.next-month:Next month`;
         }
         let i18n_11;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11 = goog.getMsg("Next month");
-          i18n_11 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11 = goog.getMsg("Next month");
+          i18n_11 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11;
         } else {
           i18n_11 = $localize`:@@ngb.datepicker.next-month:Next month`;
         }
@@ -54820,57 +54820,57 @@ var NgbPagination = class _NgbPagination {
       consts: () => {
         let i18n_12;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12 = goog.getMsg("\xAB\xAB");
-          i18n_12 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12 = goog.getMsg("\xAB\xAB");
+          i18n_12 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12;
         } else {
           i18n_12 = $localize`:@@ngb.pagination.first:««`;
         }
         let i18n_13;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13 = goog.getMsg("\xAB");
-          i18n_13 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13 = goog.getMsg("\xAB");
+          i18n_13 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13;
         } else {
           i18n_13 = $localize`:@@ngb.pagination.previous:«`;
         }
         let i18n_14;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14 = goog.getMsg("\xBB");
-          i18n_14 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14 = goog.getMsg("\xBB");
+          i18n_14 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14;
         } else {
           i18n_14 = $localize`:@@ngb.pagination.next:»`;
         }
         let i18n_15;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15 = goog.getMsg("\xBB\xBB");
-          i18n_15 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15 = goog.getMsg("\xBB\xBB");
+          i18n_15 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15;
         } else {
           i18n_15 = $localize`:@@ngb.pagination.last:»»`;
         }
         let i18n_16;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16 = goog.getMsg("First");
-          i18n_16 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16 = goog.getMsg("First");
+          i18n_16 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16;
         } else {
           i18n_16 = $localize`:@@ngb.pagination.first-aria:First`;
         }
         let i18n_17;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17 = goog.getMsg("Previous");
-          i18n_17 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17 = goog.getMsg("Previous");
+          i18n_17 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17;
         } else {
           i18n_17 = $localize`:@@ngb.pagination.previous-aria:Previous`;
         }
         let i18n_18;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18 = goog.getMsg("Next");
-          i18n_18 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18 = goog.getMsg("Next");
+          i18n_18 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18;
         } else {
           i18n_18 = $localize`:@@ngb.pagination.next-aria:Next`;
         }
         let i18n_19;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19 = goog.getMsg("Last");
-          i18n_19 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19 = goog.getMsg("Last");
+          i18n_19 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19;
         } else {
           i18n_19 = $localize`:@@ngb.pagination.last-aria:Last`;
         }
@@ -55684,14 +55684,14 @@ var NgbProgressbar = class _NgbProgressbar {
       consts: () => {
         let i18n_20;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20 = goog.getMsg("{$interpolation}", {
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20 = goog.getMsg("{$interpolation}", {
             "interpolation": "\uFFFD0\uFFFD"
           }, {
             original_code: {
               "interpolation": "{{ getValue() / max | percent }}"
             }
           });
-          i18n_20 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20;
+          i18n_20 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20;
         } else {
           i18n_20 = $localize`:@@ngb.progressbar.value:${"\uFFFD0\uFFFD"}:INTERPOLATION:`;
         }
@@ -57277,98 +57277,98 @@ var NgbTimepicker = class _NgbTimepicker {
       consts: () => {
         let i18n_21;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21 = goog.getMsg("HH");
-          i18n_21 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21 = goog.getMsg("HH");
+          i18n_21 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21;
         } else {
           i18n_21 = $localize`:@@ngb.timepicker.HH:HH`;
         }
         let i18n_22;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22 = goog.getMsg("Hours");
-          i18n_22 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22 = goog.getMsg("Hours");
+          i18n_22 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22;
         } else {
           i18n_22 = $localize`:@@ngb.timepicker.hours:Hours`;
         }
         let i18n_23;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23 = goog.getMsg("MM");
-          i18n_23 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23 = goog.getMsg("MM");
+          i18n_23 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23;
         } else {
           i18n_23 = $localize`:@@ngb.timepicker.MM:MM`;
         }
         let i18n_24;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24 = goog.getMsg("Minutes");
-          i18n_24 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24 = goog.getMsg("Minutes");
+          i18n_24 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24;
         } else {
           i18n_24 = $localize`:@@ngb.timepicker.minutes:Minutes`;
         }
         let i18n_25;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25 = goog.getMsg("Increment hours");
-          i18n_25 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25 = goog.getMsg("Increment hours");
+          i18n_25 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25;
         } else {
           i18n_25 = $localize`:@@ngb.timepicker.increment-hours:Increment hours`;
         }
         let i18n_26;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26 = goog.getMsg("Decrement hours");
-          i18n_26 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26 = goog.getMsg("Decrement hours");
+          i18n_26 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26;
         } else {
           i18n_26 = $localize`:@@ngb.timepicker.decrement-hours:Decrement hours`;
         }
         let i18n_27;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27 = goog.getMsg("Increment minutes");
-          i18n_27 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27 = goog.getMsg("Increment minutes");
+          i18n_27 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27;
         } else {
           i18n_27 = $localize`:@@ngb.timepicker.increment-minutes:Increment minutes`;
         }
         let i18n_28;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28 = goog.getMsg("Decrement minutes");
-          i18n_28 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28 = goog.getMsg("Decrement minutes");
+          i18n_28 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28;
         } else {
           i18n_28 = $localize`:@@ngb.timepicker.decrement-minutes:Decrement minutes`;
         }
         let i18n_29;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29 = goog.getMsg("SS");
-          i18n_29 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29 = goog.getMsg("SS");
+          i18n_29 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29;
         } else {
           i18n_29 = $localize`:@@ngb.timepicker.SS:SS`;
         }
         let i18n_30;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30 = goog.getMsg("Seconds");
-          i18n_30 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30 = goog.getMsg("Seconds");
+          i18n_30 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30;
         } else {
           i18n_30 = $localize`:@@ngb.timepicker.seconds:Seconds`;
         }
         let i18n_31;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31 = goog.getMsg("Increment seconds");
-          i18n_31 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31 = goog.getMsg("Increment seconds");
+          i18n_31 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31;
         } else {
           i18n_31 = $localize`:@@ngb.timepicker.increment-seconds:Increment seconds`;
         }
         let i18n_32;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32 = goog.getMsg("Decrement seconds");
-          i18n_32 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32 = goog.getMsg("Decrement seconds");
+          i18n_32 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32;
         } else {
           i18n_32 = $localize`:@@ngb.timepicker.decrement-seconds:Decrement seconds`;
         }
         let i18n_33;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33 = goog.getMsg("{$interpolation}", {
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33 = goog.getMsg("{$interpolation}", {
             "interpolation": "\uFFFD0\uFFFD"
           }, {
             original_code: {
               "interpolation": "{{ i18n.getAfternoonPeriod() }}"
             }
           });
-          i18n_33 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33;
+          i18n_33 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33;
         } else {
           i18n_33 = $localize`:@@ngb.timepicker.PM:${"\uFFFD0\uFFFD"}:INTERPOLATION:`;
         }
@@ -57912,8 +57912,8 @@ var NgbToast = class _NgbToast {
       consts: () => {
         let i18n_34;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34 = goog.getMsg("Close");
-          i18n_34 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34 = goog.getMsg("Close");
+          i18n_34 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34;
         } else {
           i18n_34 = $localize`:@@ngb.toast.close-aria:Close`;
         }
@@ -60014,7 +60014,7 @@ var HeaderComponent = class _HeaderComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src\\app\\components\\header\\header.component.ts", lineNumber: 14 });
 })();
 
 // src/app/components/sidebar/sidebar.component.ts
@@ -60095,6 +60095,16 @@ var SidebarComponent = class _SidebarComponent {
         title: "Parties",
         icon: "fi fi-rr-users",
         link: "/parties"
+      },
+      {
+        title: "Company",
+        icon: "fi fi-rr-users",
+        link: "/companies"
+      },
+      {
+        title: "Transport",
+        icon: "fi fi-rr-users",
+        link: "/transport"
       },
       {
         title: "Delivery Locations",
@@ -60213,7 +60223,7 @@ var SidebarComponent = class _SidebarComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SidebarComponent, { className: "SidebarComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SidebarComponent, { className: "SidebarComponent", filePath: "src\\app\\components\\sidebar\\sidebar.component.ts", lineNumber: 13 });
 })();
 
 // src/app/layouts/portal-layout/portal-layout.component.ts
@@ -60247,7 +60257,7 @@ var PortalLayoutComponent = class _PortalLayoutComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PortalLayoutComponent, { className: "PortalLayoutComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PortalLayoutComponent, { className: "PortalLayoutComponent", filePath: "src\\app\\layouts\\portal-layout\\portal-layout.component.ts", lineNumber: 13 });
 })();
 
 // src/app/pages/profile/profile.component.ts
@@ -60268,7 +60278,7 @@ var ProfileComponent = class _ProfileComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ProfileComponent, { className: "ProfileComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ProfileComponent, { className: "ProfileComponent", filePath: "src\\app\\pages\\profile\\profile.component.ts", lineNumber: 10 });
 })();
 
 // src/app/pages/settings/settings.component.ts
@@ -60289,7 +60299,7 @@ var SettingsComponent = class _SettingsComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SettingsComponent, { className: "SettingsComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SettingsComponent, { className: "SettingsComponent", filePath: "src\\app\\pages\\settings\\settings.component.ts", lineNumber: 10 });
 })();
 
 // src/app/guards/auth.guard.ts
@@ -60315,7 +60325,7 @@ var authGuard = (route, state) => {
 // src/app/pages/taul-parchi/taul-parchi.component.ts
 function TaulParchiComponent_option_43_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 52);
+    \u0275\u0275elementStart(0, "option", 57);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -60326,9 +60336,9 @@ function TaulParchiComponent_option_43_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", crop_r1.name, " ");
   }
 }
-function TaulParchiComponent_option_50_Template(rf, ctx) {
+function TaulParchiComponent_option_52_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 52);
+    \u0275\u0275elementStart(0, "option", 57);
     \u0275\u0275text(1);
     \u0275\u0275pipe(2, "titlecase");
     \u0275\u0275elementEnd();
@@ -60340,9 +60350,9 @@ function TaulParchiComponent_option_50_Template(rf, ctx) {
     \u0275\u0275textInterpolate2(" ", farmer_r2.name, " (", \u0275\u0275pipeBind1(2, 3, farmer_r2.farmerType || "regular"), ") ");
   }
 }
-function TaulParchiComponent_option_56_Template(rf, ctx) {
+function TaulParchiComponent_option_58_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 52);
+    \u0275\u0275elementStart(0, "option", 57);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -60353,96 +60363,111 @@ function TaulParchiComponent_option_56_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", village_r3.name, " ");
   }
 }
-function TaulParchiComponent_option_65_Template(rf, ctx) {
+function TaulParchiComponent_option_64_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 52);
+    \u0275\u0275elementStart(0, "option", 57);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const storage_r4 = ctx.$implicit;
-    \u0275\u0275property("value", storage_r4._id);
+    const firm_r4 = ctx.$implicit;
+    \u0275\u0275property("value", firm_r4._id);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", storage_r4.name, " ");
+    \u0275\u0275textInterpolate(firm_r4.name);
   }
 }
-function TaulParchiComponent_div_81_option_6_Template(rf, ctx) {
+function TaulParchiComponent_option_70_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 56);
+    \u0275\u0275elementStart(0, "option", 57);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const hammal_r7 = ctx.$implicit;
-    \u0275\u0275property("ngValue", hammal_r7._id);
+    const storage_r5 = ctx.$implicit;
+    \u0275\u0275property("value", storage_r5._id);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", hammal_r7.name, " ");
+    \u0275\u0275textInterpolate1(" ", storage_r5.name, " ");
   }
 }
-function TaulParchiComponent_div_81_Template(rf, ctx) {
+function TaulParchiComponent_div_86_option_6_Template(rf, ctx) {
   if (rf & 1) {
-    const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div")(1, "label", 53);
+    \u0275\u0275elementStart(0, "option", 61);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const hammal_r8 = ctx.$implicit;
+    \u0275\u0275property("ngValue", hammal_r8._id);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", hammal_r8.name, " ");
+  }
+}
+function TaulParchiComponent_div_86_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r6 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div")(1, "label", 58);
     \u0275\u0275text(2, "Assigned Hammal");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "select", 54);
-    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_81_Template_select_ngModelChange_3_listener($event) {
-      \u0275\u0275restoreView(_r5);
-      const ctx_r5 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r5.TaulParchi.hammal, $event) || (ctx_r5.TaulParchi.hammal = $event);
+    \u0275\u0275elementStart(3, "select", 59);
+    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_86_Template_select_ngModelChange_3_listener($event) {
+      \u0275\u0275restoreView(_r6);
+      const ctx_r6 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r6.TaulParchi.hammal, $event) || (ctx_r6.TaulParchi.hammal = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275listener("ngModelChange", function TaulParchiComponent_div_81_Template_select_ngModelChange_3_listener() {
-      \u0275\u0275restoreView(_r5);
-      const ctx_r5 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r5.calculateAmount());
+    \u0275\u0275listener("ngModelChange", function TaulParchiComponent_div_86_Template_select_ngModelChange_3_listener() {
+      \u0275\u0275restoreView(_r6);
+      const ctx_r6 = \u0275\u0275nextContext();
+      ctx_r6.calculateAmount();
+      return \u0275\u0275resetView(ctx_r6.calculateHammali());
     });
     \u0275\u0275elementStart(4, "option", 15);
     \u0275\u0275text(5, "Select Hammal");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(6, TaulParchiComponent_div_81_option_6_Template, 2, 2, "option", 55);
+    \u0275\u0275template(6, TaulParchiComponent_div_86_option_6_Template, 2, 2, "option", 60);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const ctx_r5 = \u0275\u0275nextContext();
+    const ctx_r6 = \u0275\u0275nextContext();
     \u0275\u0275advance(3);
-    \u0275\u0275twoWayProperty("ngModel", ctx_r5.TaulParchi.hammal);
+    \u0275\u0275twoWayProperty("ngModel", ctx_r6.TaulParchi.hammal);
     \u0275\u0275advance(3);
-    \u0275\u0275property("ngForOf", ctx_r5.Hammals);
+    \u0275\u0275property("ngForOf", ctx_r6.Hammals);
   }
 }
-function TaulParchiComponent_div_82_Template(rf, ctx) {
+function TaulParchiComponent_div_87_Template(rf, ctx) {
   if (rf & 1) {
-    const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 12)(1, "label", 57);
+    const _r9 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 12)(1, "label", 62);
     \u0275\u0275text(2, "Exempt Hammali");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "select", 58);
-    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_82_Template_select_ngModelChange_3_listener($event) {
-      \u0275\u0275restoreView(_r8);
-      const ctx_r5 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r5.TaulParchi.exemptHammali, $event) || (ctx_r5.TaulParchi.exemptHammali = $event);
+    \u0275\u0275elementStart(3, "select", 63);
+    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_87_Template_select_ngModelChange_3_listener($event) {
+      \u0275\u0275restoreView(_r9);
+      const ctx_r6 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r6.TaulParchi.exemptHammali, $event) || (ctx_r6.TaulParchi.exemptHammali = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275listener("ngModelChange", function TaulParchiComponent_div_82_Template_select_ngModelChange_3_listener() {
-      \u0275\u0275restoreView(_r8);
-      const ctx_r5 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r5.calculateAmount());
+    \u0275\u0275listener("ngModelChange", function TaulParchiComponent_div_87_Template_select_ngModelChange_3_listener() {
+      \u0275\u0275restoreView(_r9);
+      const ctx_r6 = \u0275\u0275nextContext();
+      ctx_r6.calculateAmount();
+      return \u0275\u0275resetView(ctx_r6.calculateHammali());
     });
     \u0275\u0275elementStart(4, "option", 15);
     \u0275\u0275text(5, "Select Exempt Hammali");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "option", 59);
+    \u0275\u0275elementStart(6, "option", 64);
     \u0275\u0275text(7, "Deduct");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "option", 60);
+    \u0275\u0275elementStart(8, "option", 65);
     \u0275\u0275text(9, "Exempted");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const ctx_r5 = \u0275\u0275nextContext();
+    const ctx_r6 = \u0275\u0275nextContext();
     \u0275\u0275advance(3);
-    \u0275\u0275twoWayProperty("ngModel", ctx_r5.TaulParchi.exemptHammali);
+    \u0275\u0275twoWayProperty("ngModel", ctx_r6.TaulParchi.exemptHammali);
   }
 }
 var TaulParchiComponent = class _TaulParchiComponent {
@@ -60454,6 +60479,7 @@ var TaulParchiComponent = class _TaulParchiComponent {
     this.Crops = [];
     this.Storage = [];
     this.Villages = [];
+    this.firm_company = [];
     this.TaulParchi = {
       farmer: "",
       village: "",
@@ -60471,6 +60497,8 @@ var TaulParchiComponent = class _TaulParchiComponent {
       purchase: "",
       crop: "",
       amount: 0,
+      other: "",
+      hammali: 0,
       exemptHammali: "deduct",
       id: Date.now(),
       created_at: /* @__PURE__ */ new Date(),
@@ -60483,6 +60511,7 @@ var TaulParchiComponent = class _TaulParchiComponent {
     this.fetchHammals();
     this.fetchCrops();
     this.fetchStorage();
+    this.fetchCompany();
   }
   calculateNetWeight() {
     const { boraQuantity, bharti, looseQuantity } = this.TaulParchi;
@@ -60493,6 +60522,11 @@ var TaulParchiComponent = class _TaulParchiComponent {
     const rateValue = Number(rate);
     const hammaliAmount = this.Hammals.find((hammal) => hammal._id === this.TaulParchi.hammal)?.rate;
     this.TaulParchi.amount = netWeight / 100 * rateValue + (this.TaulParchi.exemptHammali == "deduct" ? hammaliAmount || 0 : 0);
+  }
+  calculateHammali() {
+    const netWeightQuintal = this.TaulParchi.netWeight / 100;
+    const hammaliAmount = this.Hammals.find((hammal) => hammal._id === this.TaulParchi.hammal)?.rate;
+    this.TaulParchi.hammali = netWeightQuintal * hammaliAmount;
   }
   // Fetch Farmers from backend
   fetchFarmers() {
@@ -60508,6 +60542,22 @@ var TaulParchiComponent = class _TaulParchiComponent {
       },
       error: (err) => {
         console.error("Error fetching Farmers:", err);
+      }
+    });
+  }
+  fetchCompany() {
+    this.apiService.get("company", {
+      params: {
+        page: 1,
+        limit: 1e3
+      }
+    }).subscribe({
+      next: (res) => {
+        this.firm_company = res.data;
+        console.log("fgfvasyh", res.data);
+      },
+      error: (err) => {
+        console.error("Error fetching Companies:", err);
       }
     });
   }
@@ -60667,7 +60717,7 @@ var TaulParchiComponent = class _TaulParchiComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulParchiComponent, selectors: [["app-taul-parchi"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 103, vars: 27, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-end"], [1, "text-muted", "pe-2"], [1, "text-link"], [1, "text-muted", "pe-2", "ms-2"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "purchaseStatus", 1, "form-label"], ["id", "purchaseStatus", "name", "purchaseStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "directPurchase"], ["value", "AuctionMandiPurchase"], ["for", "crop", 1, "form-label"], ["id", "crop", "name", "crop", 1, "form-select", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], ["for", "farmerName", 1, "form-label"], ["id", "farmerName", "name", "farmerName", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "village", 1, "form-label"], ["id", "village", "name", "village", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "firmCompany", 1, "form-label"], ["id", "firmCompany", "name", "firmCompany", "type", "text", "placeholder", "Firm / Company", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "storage", 1, "form-label"], ["id", "storage", "name", "storage", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "rate", 1, "form-label"], [1, "input-group"], [1, "input-group-text", "bg-transparent", "border-0", "p-0"], ["id", "rate", "name", "rate", "type", "number", "placeholder", "Rate", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "tulai", 1, "form-label"], ["id", "tulai", "name", "tulai", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "Labour"], ["value", "Dharamkata"], [4, "ngIf"], ["class", "form-group mb-3", 4, "ngIf"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", "type", "number", "placeholder", "Bora Quantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "bharti", 1, "form-label"], ["id", "bharti", "name", "bharti", "type", "number", "placeholder", "Bharti", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "looseQuantity", 1, "form-label"], ["id", "looseQuantity", "name", "looseQuantity", "type", "number", "placeholder", "Enter looseQuantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "placeholder", "Net Weight", "readonly", "", 1, "form-control", 3, "value"], ["for", "amount", 1, "form-label"], ["id", "amount", "name", "amount", "type", "number", "placeholder", "Amount", "readonly", "", 1, "form-control", 3, "value"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"], [3, "value"], ["for", "assignedHammal", 1, "form-label"], ["id", "assignedHammal", "name", "assignedHammal", 1, "form-select", 3, "ngModelChange", "ngModel"], [3, "ngValue", 4, "ngFor", "ngForOf"], [3, "ngValue"], ["for", "exemptHammali", 1, "form-label"], ["id", "exemptHammali", "name", "exemptHammali", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", "deduct"], ["value", "exempted"]], template: function TaulParchiComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulParchiComponent, selectors: [["app-taul-parchi"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 115, vars: 30, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-end"], [1, "text-muted", "pe-2"], [1, "text-link"], [1, "text-muted", "pe-2", "ms-2"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "purchaseStatus", 1, "form-label"], ["id", "purchaseStatus", "name", "purchaseStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "directPurchase"], ["value", "AuctionMandiPurchase"], ["for", "crop", 1, "form-label"], ["id", "crop", "name", "crop", 1, "form-select", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], ["for", "farmerName", 1, "form-label"], ["id", "farmerName", "name", "farmerName", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", "addNewFarmer"], ["for", "village", 1, "form-label"], ["id", "village", "name", "village", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "firmCompany", 1, "form-label"], ["id", "firmCompany", "name", "firmCompany", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "storage", 1, "form-label"], ["id", "storage", "name", "storage", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "rate", 1, "form-label"], [1, "input-group"], [1, "input-group-text", "bg-transparent", "border-0", "p-0"], ["id", "rate", "name", "rate", "type", "number", "placeholder", "Rate", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "tulai", 1, "form-label"], ["id", "tulai", "name", "tulai", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "Labour"], ["value", "Dharamkata"], [4, "ngIf"], ["class", "form-group mb-3", 4, "ngIf"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", "type", "number", "placeholder", "Bora Quantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "bharti", 1, "form-label"], ["id", "bharti", "name", "bharti", "type", "number", "placeholder", "Bharti", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "looseQuantity", 1, "form-label"], ["id", "looseQuantity", "name", "looseQuantity", "type", "number", "placeholder", "Enter looseQuantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "placeholder", "Net Weight", "readonly", "", 1, "form-control", 3, "value"], ["for", "amount", 1, "form-label"], ["id", "amount", "name", "amount", "type", "number", "placeholder", "Amount", "readonly", "", 1, "form-control", 3, "value"], ["for", "hammali", 1, "form-label"], ["id", "hammali", "name", "hammali", "type", "number", "placeholder", "hammali", "readonly", "", 1, "form-control", 3, "value"], ["for", "other", 1, "form-label"], ["id", "other", "name", "other", "type", "text", "placeholder", "Other", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"], [3, "value"], ["for", "assignedHammal", 1, "form-label"], ["id", "assignedHammal", "name", "assignedHammal", 1, "form-select", 3, "ngModelChange", "ngModel"], [3, "ngValue", 4, "ngFor", "ngForOf"], [3, "ngValue"], ["for", "exemptHammali", 1, "form-label"], ["id", "exemptHammali", "name", "exemptHammali", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", "deduct"], ["value", "exempted"]], template: function TaulParchiComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "h4", 5);
         \u0275\u0275text(7, "Taula Parchi");
@@ -60730,140 +60780,164 @@ var TaulParchiComponent = class _TaulParchiComponent {
         \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_47_listener() {
           return ctx.autoFillFirmOrCompany();
         });
-        \u0275\u0275elementStart(48, "option", 15);
-        \u0275\u0275text(49, "Select Farmer");
+        \u0275\u0275elementStart(48, "option", 23);
+        \u0275\u0275text(49, "Add New Farmer");
         \u0275\u0275elementEnd();
-        \u0275\u0275template(50, TaulParchiComponent_option_50_Template, 3, 5, "option", 20);
+        \u0275\u0275elementStart(50, "option", 15);
+        \u0275\u0275text(51, "Select Farmer");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(51, "label", 23);
-        \u0275\u0275text(52, "Village");
+        \u0275\u0275template(52, TaulParchiComponent_option_52_Template, 3, 5, "option", 20);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(53, "select", 24);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_53_listener($event) {
+        \u0275\u0275elementStart(53, "label", 24);
+        \u0275\u0275text(54, "Village");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(55, "select", 25);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_55_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.village, $event) || (ctx.TaulParchi.village = $event);
           return $event;
         });
-        \u0275\u0275elementStart(54, "option", 15);
-        \u0275\u0275text(55, "Select Village");
+        \u0275\u0275elementStart(56, "option", 15);
+        \u0275\u0275text(57, "Select Village");
         \u0275\u0275elementEnd();
-        \u0275\u0275template(56, TaulParchiComponent_option_56_Template, 2, 2, "option", 20);
+        \u0275\u0275template(58, TaulParchiComponent_option_58_Template, 2, 2, "option", 20);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(57, "label", 25);
-        \u0275\u0275text(58, "Purchasing Firm / Company");
+        \u0275\u0275elementStart(59, "label", 26);
+        \u0275\u0275text(60, "Purchasing Firm / Company");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(59, "input", 26);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_59_listener($event) {
+        \u0275\u0275elementStart(61, "select", 27);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_61_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.firm_company, $event) || (ctx.TaulParchi.firm_company = $event);
           return $event;
         });
+        \u0275\u0275elementStart(62, "option", 15);
+        \u0275\u0275text(63, "Select Firm / Company");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(60, "label", 27);
-        \u0275\u0275text(61, "Storage Location");
+        \u0275\u0275template(64, TaulParchiComponent_option_64_Template, 2, 2, "option", 20);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(62, "select", 28);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_62_listener($event) {
+        \u0275\u0275elementStart(65, "label", 28);
+        \u0275\u0275text(66, "Storage Location");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(67, "select", 29);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_67_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.storage, $event) || (ctx.TaulParchi.storage = $event);
           return $event;
         });
-        \u0275\u0275elementStart(63, "option", 15);
-        \u0275\u0275text(64, "Select Storage Location");
+        \u0275\u0275elementStart(68, "option", 15);
+        \u0275\u0275text(69, "Select Storage Location");
         \u0275\u0275elementEnd();
-        \u0275\u0275template(65, TaulParchiComponent_option_65_Template, 2, 2, "option", 20);
+        \u0275\u0275template(70, TaulParchiComponent_option_70_Template, 2, 2, "option", 20);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(66, "label", 29);
-        \u0275\u0275text(67, "Rate (Per Quintal)");
+        \u0275\u0275elementStart(71, "label", 30);
+        \u0275\u0275text(72, "Rate (Per Quintal)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(68, "div", 30)(69, "span", 31);
-        \u0275\u0275text(70, "\u20B9");
+        \u0275\u0275elementStart(73, "div", 31)(74, "span", 32);
+        \u0275\u0275text(75, "\u20B9");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(71, "input", 32);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_71_listener($event) {
+        \u0275\u0275elementStart(76, "input", 33);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_76_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.rate, $event) || (ctx.TaulParchi.rate = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_71_listener() {
+        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_76_listener() {
           return ctx.calculateAmount();
         });
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(72, "label", 33);
-        \u0275\u0275text(73, "Tulai Options");
+        \u0275\u0275elementStart(77, "label", 34);
+        \u0275\u0275text(78, "Tulai Options");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(74, "select", 34);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_74_listener($event) {
+        \u0275\u0275elementStart(79, "select", 35);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_79_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.tulai, $event) || (ctx.TaulParchi.tulai = $event);
           return $event;
         });
-        \u0275\u0275elementStart(75, "option", 15);
-        \u0275\u0275text(76, "Select Tulai");
+        \u0275\u0275elementStart(80, "option", 15);
+        \u0275\u0275text(81, "Select Tulai");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(77, "option", 35);
-        \u0275\u0275text(78, "Labour");
+        \u0275\u0275elementStart(82, "option", 36);
+        \u0275\u0275text(83, "Labour");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(79, "option", 36);
-        \u0275\u0275text(80, "Dharamkanta");
+        \u0275\u0275elementStart(84, "option", 37);
+        \u0275\u0275text(85, "Dharamkanta");
         \u0275\u0275elementEnd()();
-        \u0275\u0275template(81, TaulParchiComponent_div_81_Template, 7, 2, "div", 37)(82, TaulParchiComponent_div_82_Template, 10, 1, "div", 38);
-        \u0275\u0275elementStart(83, "label", 39);
-        \u0275\u0275text(84, "Bora Quantity");
+        \u0275\u0275template(86, TaulParchiComponent_div_86_Template, 7, 2, "div", 38)(87, TaulParchiComponent_div_87_Template, 10, 1, "div", 39);
+        \u0275\u0275elementStart(88, "label", 40);
+        \u0275\u0275text(89, "Bora Quantity");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(85, "input", 40);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_85_listener($event) {
+        \u0275\u0275elementStart(90, "input", 41);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_90_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.boraQuantity, $event) || (ctx.TaulParchi.boraQuantity = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_85_listener() {
+        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_90_listener() {
           ctx.calculateNetWeight();
-          return ctx.calculateAmount();
+          ctx.calculateAmount();
+          return ctx.calculateHammali();
         });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(86, "label", 41);
-        \u0275\u0275text(87, "Bharti(in Kgs)");
+        \u0275\u0275elementStart(91, "label", 42);
+        \u0275\u0275text(92, "Bharti(in Kgs)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(88, "input", 42);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_88_listener($event) {
+        \u0275\u0275elementStart(93, "input", 43);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_93_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.bharti, $event) || (ctx.TaulParchi.bharti = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_88_listener() {
+        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_93_listener() {
           ctx.calculateNetWeight();
-          return ctx.calculateAmount();
+          ctx.calculateAmount();
+          return ctx.calculateHammali();
         });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(89, "label", 43);
-        \u0275\u0275text(90, "Loose Quantity(in Kgs)");
+        \u0275\u0275elementStart(94, "label", 44);
+        \u0275\u0275text(95, "Loose Quantity(in Kgs)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(91, "input", 44);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_91_listener($event) {
+        \u0275\u0275elementStart(96, "input", 45);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_96_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.looseQuantity, $event) || (ctx.TaulParchi.looseQuantity = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_91_listener() {
+        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_96_listener() {
           ctx.calculateNetWeight();
-          return ctx.calculateAmount();
+          ctx.calculateAmount();
+          return ctx.calculateHammali();
         });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(92, "label", 45);
-        \u0275\u0275text(93, "Net Weight (in Quintal)");
+        \u0275\u0275elementStart(97, "label", 46);
+        \u0275\u0275text(98, "Net Weight (in Quintal)");
         \u0275\u0275elementEnd();
-        \u0275\u0275element(94, "input", 46);
+        \u0275\u0275element(99, "input", 47);
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(95, "div", 12)(96, "label", 47);
-        \u0275\u0275text(97, "Payable Amount(in \u20B9)");
+        \u0275\u0275elementStart(100, "div", 12)(101, "label", 48);
+        \u0275\u0275text(102, "Payable Amount(in \u20B9)");
         \u0275\u0275elementEnd();
-        \u0275\u0275element(98, "input", 48);
+        \u0275\u0275element(103, "input", 49);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(104, "div", 12)(105, "label", 50);
+        \u0275\u0275text(106, "Hammali Amount(in \u20B9)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275element(107, "input", 51);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(108, "label", 52);
+        \u0275\u0275text(109, "Remark");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(110, "input", 53);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_110_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.TaulParchi.other, $event) || (ctx.TaulParchi.other = $event);
+          return $event;
+        });
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(99, "div", 49)(100, "div", 50)(101, "button", 51);
-        \u0275\u0275listener("click", function TaulParchiComponent_Template_button_click_101_listener() {
+        \u0275\u0275elementStart(111, "div", 54)(112, "div", 55)(113, "button", 56);
+        \u0275\u0275listener("click", function TaulParchiComponent_Template_button_click_113_listener() {
           return ctx.saveTaulParchi();
         });
-        \u0275\u0275text(102, " Submit ");
+        \u0275\u0275text(114, " Submit ");
         \u0275\u0275elementEnd()()()()()()()();
       }
       if (rf & 2) {
         \u0275\u0275advance(17);
-        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(18, 21, ctx.TaulParchi.created_at, "dd-MM-YYYY"));
+        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(18, 24, ctx.TaulParchi.created_at, "dd-MM-YYYY"));
         \u0275\u0275advance(5);
-        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(23, 24, ctx.TaulParchi.created_at, "HH:mm:ss"));
+        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(23, 27, ctx.TaulParchi.created_at, "HH:mm:ss"));
         \u0275\u0275advance(8);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.purchase);
         \u0275\u0275advance(10);
@@ -60872,7 +60946,7 @@ var TaulParchiComponent = class _TaulParchiComponent {
         \u0275\u0275property("ngForOf", ctx.Crops);
         \u0275\u0275advance(4);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.farmer);
-        \u0275\u0275advance(3);
+        \u0275\u0275advance(5);
         \u0275\u0275property("ngForOf", ctx.Farmers);
         \u0275\u0275advance(3);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.village);
@@ -60880,6 +60954,8 @@ var TaulParchiComponent = class _TaulParchiComponent {
         \u0275\u0275property("ngForOf", ctx.Villages);
         \u0275\u0275advance(3);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.firm_company);
+        \u0275\u0275advance(3);
+        \u0275\u0275property("ngForOf", ctx.firm_company);
         \u0275\u0275advance(3);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.storage);
         \u0275\u0275advance(3);
@@ -60902,12 +60978,16 @@ var TaulParchiComponent = class _TaulParchiComponent {
         \u0275\u0275property("value", ctx.TaulParchi.netWeight / 100);
         \u0275\u0275advance(4);
         \u0275\u0275property("value", ctx.TaulParchi.amount);
+        \u0275\u0275advance(4);
+        \u0275\u0275property("value", ctx.TaulParchi.hammali);
+        \u0275\u0275advance(3);
+        \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.other);
       }
     }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, ReactiveFormsModule, CommonModule, NgForOf, NgIf, TitleCasePipe, DatePipe], styles: ["\n\ninput[_ngcontent-%COMP%], \nselect[_ngcontent-%COMP%] {\n  background-color: transparent;\n  border: none;\n  border-bottom: 1px dotted #000;\n  margin-bottom: 10px;\n  border-radius: 0;\n  -webkit-border-radius: 0;\n  -moz-border-radius: 0;\n  -ms-border-radius: 0;\n  -o-border-radius: 0;\n}\n.input-group-text[_ngcontent-%COMP%] {\n  position: relative;\n  top: -5px;\n}\ninput[_ngcontent-%COMP%]:-webkit-autofill {\n  -webkit-box-shadow: 0 0 0 1000px white inset;\n  -webkit-text-fill-color: black;\n  background-color: transparent;\n}\n/*# sourceMappingURL=taul-parchi.component.css.map */"] });
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulParchiComponent, { className: "TaulParchiComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulParchiComponent, { className: "TaulParchiComponent", filePath: "src\\app\\pages\\taul-parchi\\taul-parchi.component.ts", lineNumber: 14 });
 })();
 
 // src/app/pages/truck-loading-parchi/truck-loading-parchi.component.ts
@@ -61438,7 +61518,7 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiComponent, { className: "TruckLoadingParchiComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiComponent, { className: "TruckLoadingParchiComponent", filePath: "src\\app\\pages\\truck-loading-parchi\\truck-loading-parchi.component.ts", lineNumber: 111 });
 })();
 
 // src/app/services/shared.service.ts
@@ -61920,7 +62000,7 @@ var MastersComponent = class _MastersComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MastersComponent, { className: "MastersComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MastersComponent, { className: "MastersComponent", filePath: "src\\app\\pages\\masters\\masters.component.ts", lineNumber: 17 });
 })();
 
 // node_modules/ngx-pagination/fesm2020/ngx-pagination.mjs
@@ -63177,7 +63257,7 @@ var FarmersComponent = class _FarmersComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FarmersComponent, { className: "FarmersComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FarmersComponent, { className: "FarmersComponent", filePath: "src\\app\\pages\\farmers\\farmers.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/villages/villages.component.ts
@@ -63414,7 +63494,7 @@ var VillagesComponent = class _VillagesComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(VillagesComponent, { className: "VillagesComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(VillagesComponent, { className: "VillagesComponent", filePath: "src\\app\\pages\\villages\\villages.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/hammals/hammals.component.ts
@@ -63671,7 +63751,7 @@ var HammalsComponent = class _HammalsComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HammalsComponent, { className: "HammalsComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HammalsComponent, { className: "HammalsComponent", filePath: "src\\app\\pages\\hammals\\hammals.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/crop/crop.component.ts
@@ -63908,7 +63988,7 @@ var CropComponent = class _CropComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(CropComponent, { className: "CropComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(CropComponent, { className: "CropComponent", filePath: "src\\app\\pages\\crop\\crop.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/parties/parties.component.ts
@@ -64145,7 +64225,7 @@ var PartiesComponent = class _PartiesComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PartiesComponent, { className: "PartiesComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PartiesComponent, { className: "PartiesComponent", filePath: "src\\app\\pages\\parties\\parties.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/delivery/delivery.component.ts
@@ -64382,7 +64462,7 @@ var DeliveryComponent = class _DeliveryComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DeliveryComponent, { className: "DeliveryComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DeliveryComponent, { className: "DeliveryComponent", filePath: "src\\app\\pages\\delivery\\delivery.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/accounts/accounts.component.ts
@@ -64969,7 +65049,7 @@ var AccountsComponent = class _AccountsComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AccountsComponent, { className: "AccountsComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AccountsComponent, { className: "AccountsComponent", filePath: "src\\app\\pages\\accounts\\accounts.component.ts", lineNumber: 28 });
 })();
 
 // src/app/pages/inventory/inventory.component.ts
@@ -65469,7 +65549,7 @@ var InventoryComponent = class _InventoryComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(InventoryComponent, { className: "InventoryComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(InventoryComponent, { className: "InventoryComponent", filePath: "src\\app\\pages\\inventory\\inventory.component.ts", lineNumber: 20 });
 })();
 
 // src/app/pages/transaction/transaction.component.ts
@@ -65903,7 +65983,7 @@ var TransactionComponent = class _TransactionComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionComponent, { className: "TransactionComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionComponent, { className: "TransactionComponent", filePath: "src\\app\\pages\\transaction\\transaction.component.ts", lineNumber: 14 });
 })();
 
 // src/app/pages/transactionlist/transactionlist.component.ts
@@ -66100,7 +66180,7 @@ var TransactionlistComponent = class _TransactionlistComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionlistComponent, { className: "TransactionlistComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionlistComponent, { className: "TransactionlistComponent", filePath: "src\\app\\pages\\transactionlist\\transactionlist.component.ts", lineNumber: 21 });
 })();
 
 // src/app/pages/truck/truck.component.ts
@@ -66427,7 +66507,7 @@ var TruckComponent = class _TruckComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckComponent, { className: "TruckComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckComponent, { className: "TruckComponent", filePath: "src\\app\\pages\\truck\\truck.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/list/list.component.ts
@@ -66986,7 +67066,7 @@ var ListComponent = class _ListComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListComponent, { className: "ListComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListComponent, { className: "ListComponent", filePath: "src\\app\\pages\\list\\list.component.ts", lineNumber: 21 });
 })();
 
 // src/app/pages/my-list/my-list.component.ts
@@ -67497,7 +67577,7 @@ var MyListComponent = class _MyListComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MyListComponent, { className: "MyListComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MyListComponent, { className: "MyListComponent", filePath: "src\\app\\pages\\my-list\\my-list.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/advance-payment/advance-payment.component.ts
@@ -67954,7 +68034,7 @@ var AdvancePaymentComponent = class _AdvancePaymentComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AdvancePaymentComponent, { className: "AdvancePaymentComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AdvancePaymentComponent, { className: "AdvancePaymentComponent", filePath: "src\\app\\pages\\advance-payment\\advance-payment.component.ts", lineNumber: 17 });
 })();
 
 // src/app/pages/storage/storage.component.ts
@@ -68191,7 +68271,7 @@ var StorageComponent = class _StorageComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(StorageComponent, { className: "StorageComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(StorageComponent, { className: "StorageComponent", filePath: "src\\app\\pages\\storage\\storage.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/wearhouse-accounts/wearhouse-accounts.component.ts
@@ -68705,7 +68785,7 @@ var WearhouseAccountsComponent = class _WearhouseAccountsComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(WearhouseAccountsComponent, { className: "WearhouseAccountsComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(WearhouseAccountsComponent, { className: "WearhouseAccountsComponent", filePath: "src\\app\\pages\\wearhouse-accounts\\wearhouse-accounts.component.ts", lineNumber: 27 });
 })();
 
 // src/app/pages/wearhouse-inventory/wearhouse-inventory.component.ts
@@ -69213,7 +69293,7 @@ var WearhouseInventoryComponent = class _WearhouseInventoryComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(WearhouseInventoryComponent, { className: "WearhouseInventoryComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(WearhouseInventoryComponent, { className: "WearhouseInventoryComponent", filePath: "src\\app\\pages\\wearhouse-inventory\\wearhouse-inventory.component.ts", lineNumber: 20 });
 })();
 
 // src/app/pages/taulparchi-dashboard/taulparchi-dashboard.component.ts
@@ -69279,7 +69359,7 @@ function TaulparchiDashboardComponent_tr_53_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.cropDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.firm_company);
+    \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.companyDetails.name);
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(taulaParchi_r2.netWeight);
     \u0275\u0275advance(2);
@@ -69450,7 +69530,7 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
             </div>
             <div class="row">
               <div class="label"><b>Firm/Company:</b></div>
-              <div class="value">${taulaParchi.firm_company || "N/A"}</div>
+              <div class="value">${taulaParchi.companyDetails.name || "N/A"}</div>
             </div>
           </div>
 
@@ -69487,6 +69567,10 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
             <div class="row">
               <div class="label"><b>Net Weight (Quintal):</b></div>
               <div class="value">${taulaParchi.netWeight}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Hammali (\u20B9):</b></div>
+              <div class="value">${taulaParchi.hammali}</div>
             </div>
             <div class="row">
               <div class="label"><b>Amount (\u20B9):</b></div>
@@ -69606,7 +69690,7 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulparchiDashboardComponent, { className: "TaulparchiDashboardComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulparchiDashboardComponent, { className: "TaulparchiDashboardComponent", filePath: "src\\app\\pages\\taulparchi-dashboard\\taulparchi-dashboard.component.ts", lineNumber: 22 });
 })();
 
 // src/app/pages/taulparchi-view/taulparchi-view.component.ts
@@ -69783,7 +69867,7 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
             </div>
             <div class="row">
               <div class="label"><b>Firm/Company:</b></div>
-              <div class="value">${taulaParchi.firm_company || "N/A"}</div>
+              <div class="value">${taulaParchi.companyDetails.name || "N/A"}</div>
             </div>
           </div>
 
@@ -69820,6 +69904,10 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
             <div class="row">
               <div class="label"><b>Net Weight (Quintal):</b></div>
               <div class="value">${taulaParchi.netWeight || "N/A"}</div>
+            </div>
+             <div class="row">
+              <div class="label"><b>Hammali (\u20B9):</b></div>
+              <div class="value">${taulaParchi.hammali}</div>
             </div>
             <div class="row">
               <div class="label"><b>Amount (\u20B9):</b></div>
@@ -69861,7 +69949,7 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiViewComponent, selectors: [["app-taulparchi-view"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 104, vars: 24, consts: [[1, "container", "mt-2"], [1, "card", "bg-white", "mb-3"], [1, "card-header"], [1, "text-center"], [1, "mb-0"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "fas", "fa-print"], [1, "card-title"], [1, "row"], [1, "col", "text-start"], [1, "col", "text-end"], [1, "ms-2"], [1, "card-body", "bg-warning"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["class", "border-bottom border-dark border-bottom-dotted mb-2 pb-2", 4, "ngIf"], [1, "text-center", "mt-4"], ["type", "button", 1, "btn", "btn-secondary", "px-5", 3, "click"], [1, "fas", "fa-arrow-left"]], template: function TaulparchiViewComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiViewComponent, selectors: [["app-taulparchi-view"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 109, vars: 25, consts: [[1, "container", "mt-2"], [1, "card", "bg-white", "mb-3"], [1, "card-header"], [1, "text-center"], [1, "mb-0"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "fas", "fa-print"], [1, "card-title"], [1, "row"], [1, "col", "text-start"], [1, "col", "text-end"], [1, "ms-2"], [1, "card-body", "bg-warning"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["class", "border-bottom border-dark border-bottom-dotted mb-2 pb-2", 4, "ngIf"], [1, "text-center", "mt-4"], ["type", "button", 1, "btn", "btn-secondary", "px-5", 3, "click"], [1, "fas", "fa-arrow-left"]], template: function TaulparchiViewComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h4", 4);
         \u0275\u0275text(5, " Taul Parchi ");
@@ -69947,50 +70035,56 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
         \u0275\u0275text(74);
         \u0275\u0275elementEnd()();
         \u0275\u0275elementStart(75, "div", 13)(76, "h6", 14);
-        \u0275\u0275text(77, "Net Weight (in Quintal):");
+        \u0275\u0275text(77, "Hammali (in \u20B9):");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(78, "p", 15);
         \u0275\u0275text(79);
         \u0275\u0275elementEnd()();
         \u0275\u0275elementStart(80, "div", 13)(81, "h6", 14);
-        \u0275\u0275text(82, "Hammal:");
+        \u0275\u0275text(82, "Net Weight (in Quintal):");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(83, "p", 15);
         \u0275\u0275text(84);
         \u0275\u0275elementEnd()();
         \u0275\u0275elementStart(85, "div", 13)(86, "h6", 14);
-        \u0275\u0275text(87, "Storage Location:");
+        \u0275\u0275text(87, "Hammal:");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(88, "p", 15);
         \u0275\u0275text(89);
         \u0275\u0275elementEnd()();
         \u0275\u0275elementStart(90, "div", 13)(91, "h6", 14);
-        \u0275\u0275text(92, "Village:");
+        \u0275\u0275text(92, "Storage Location:");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(93, "p", 15);
         \u0275\u0275text(94);
         \u0275\u0275elementEnd()();
         \u0275\u0275elementStart(95, "div", 13)(96, "h6", 14);
-        \u0275\u0275text(97, "Amount (in \u20B9):");
+        \u0275\u0275text(97, "Village:");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(98, "p", 15);
         \u0275\u0275text(99);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(100, "div", 13)(101, "h6", 14);
+        \u0275\u0275text(102, "Amount (in \u20B9):");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(103, "p", 15);
+        \u0275\u0275text(104);
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(100, "div", 17)(101, "button", 18);
-        \u0275\u0275listener("click", function TaulparchiViewComponent_Template_button_click_101_listener() {
+        \u0275\u0275elementStart(105, "div", 17)(106, "button", 18);
+        \u0275\u0275listener("click", function TaulparchiViewComponent_Template_button_click_106_listener() {
           return ctx.goBack();
         });
-        \u0275\u0275element(102, "i", 19);
-        \u0275\u0275text(103, " Back ");
+        \u0275\u0275element(107, "i", 19);
+        \u0275\u0275text(108, " Back ");
         \u0275\u0275elementEnd()()();
       }
       if (rf & 2) {
         \u0275\u0275advance(17);
         \u0275\u0275textInterpolate1(" ", ctx.getTaulaParchiSrNo(ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at), " ");
         \u0275\u0275advance(4);
-        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(22, 18, ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at, "dd-MM-YYYY"), " ");
+        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(22, 19, ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at, "dd-MM-YYYY"), " ");
         \u0275\u0275advance(5);
-        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(27, 21, ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at, "HH:mm:ss"), " ");
+        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(27, 22, ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at, "HH:mm:ss"), " ");
         \u0275\u0275advance(7);
         \u0275\u0275textInterpolate1(" ", (ctx.taulaParchi == null ? null : ctx.taulaParchi.purchase) == "directPurchase" ? "Direct Purchase" : (ctx.taulaParchi == null ? null : ctx.taulaParchi.purchase) == "AuctionMandiPurchase" ? "Auction Mandi Purchase" : "N/A", " ");
         \u0275\u0275advance(5);
@@ -69998,7 +70092,7 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.farmerDetails == null ? null : ctx.taulaParchi.farmerDetails.name) ? ctx.taulaParchi.farmerDetails.name : "N/A");
         \u0275\u0275advance(5);
-        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.firm_company) ? ctx.taulaParchi.firm_company : "N/A");
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.companyDetails == null ? null : ctx.taulaParchi.companyDetails.name) ? ctx.taulaParchi.companyDetails == null ? null : ctx.taulaParchi.companyDetails.name : "N/A");
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.rate) ? "\u20B9" + ctx.taulaParchi.rate : "N/A");
         \u0275\u0275advance(5);
@@ -70011,6 +70105,8 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.boraQuantity) ? ctx.taulaParchi.boraQuantity : "N/A");
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.looseQuantity) ? ctx.taulaParchi.looseQuantity : "N/A");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.hammali) ? ctx.taulaParchi.hammali : "N/A");
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.netWeight);
         \u0275\u0275advance(5);
@@ -70033,7 +70129,7 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulparchiViewComponent, { className: "TaulparchiViewComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulparchiViewComponent, { className: "TaulparchiViewComponent", filePath: "src\\app\\pages\\taulparchi-view\\taulparchi-view.component.ts", lineNumber: 21 });
 })();
 
 // src/app/pages/truck-loading-parchi-dashboard/truck-loading-parchi-dashboard.component.ts
@@ -70374,7 +70470,7 @@ var TruckLoadingParchiDashboardComponent = class _TruckLoadingParchiDashboardCom
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiDashboardComponent, { className: "TruckLoadingParchiDashboardComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiDashboardComponent, { className: "TruckLoadingParchiDashboardComponent", filePath: "src\\app\\pages\\truck-loading-parchi-dashboard\\truck-loading-parchi-dashboard.component.ts", lineNumber: 22 });
 })();
 
 // src/app/pages/truck-loading-parchi-view/truck-loading-parchi-view.component.ts
@@ -70681,7 +70777,481 @@ var TruckLoadingParchiViewComponent = class _TruckLoadingParchiViewComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiViewComponent, { className: "TruckLoadingParchiViewComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiViewComponent, { className: "TruckLoadingParchiViewComponent", filePath: "src\\app\\pages\\truck-loading-parchi-view\\truck-loading-parchi-view.component.ts", lineNumber: 21 });
+})();
+
+// src/app/pages/company/company.component.ts
+var _c020 = (a0) => ({ show: a0 });
+var _c123 = (a0, a1, a2) => ({ id: "masters_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
+function CompanyComponent_button_18_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "button", 32);
+    \u0275\u0275listener("click", function CompanyComponent_button_18_Template_button_click_0_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.addNewItem());
+    });
+    \u0275\u0275text(1, " Add ");
+    \u0275\u0275elementEnd();
+  }
+}
+function CompanyComponent_button_19_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "button", 32);
+    \u0275\u0275listener("click", function CompanyComponent_button_19_Template_button_click_0_listener() {
+      \u0275\u0275restoreView(_r3);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.editItem(ctx_r1.masterToAddOrEditIndex));
+    });
+    \u0275\u0275text(1, " Update ");
+    \u0275\u0275elementEnd();
+  }
+}
+function CompanyComponent_tr_54_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "td")(6, "button", 33);
+    \u0275\u0275listener("click", function CompanyComponent_tr_54_Template_button_click_6_listener() {
+      const i_r5 = \u0275\u0275restoreView(_r4).index;
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.selectItemToEdit(i_r5));
+    });
+    \u0275\u0275element(7, "i", 34);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "button", 35);
+    \u0275\u0275listener("click", function CompanyComponent_tr_54_Template_button_click_8_listener() {
+      const i_r5 = \u0275\u0275restoreView(_r4).index;
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.deleteItem(i_r5));
+    });
+    \u0275\u0275element(9, "i", 36);
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const item_r6 = ctx.$implicit;
+    const i_r5 = ctx.index;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(i_r5 + 1);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(item_r6.name);
+  }
+}
+var CompanyComponent = class _CompanyComponent {
+  constructor(apiService) {
+    this.apiService = apiService;
+    this.data = [];
+    this.masterToAddOrEdit = {};
+    this.masterToAddOrEditIndex = -1;
+    this.p = 1;
+    this.limit = 10;
+    this.total = 0;
+    this.masterName = "Company";
+    this.getData();
+  }
+  getData() {
+    this.apiService.get("company", {
+      params: {
+        page: this.p,
+        limit: this.limit
+      }
+    }).subscribe((data) => {
+      this.data = data.data;
+      this.total = data.meta.total;
+      this.p = data.meta.current_page;
+      this.limit = data.meta.per_page;
+    });
+  }
+  selectItemToEdit(index) {
+    this.masterToAddOrEdit = Object.assign({}, this.data[index]);
+    this.masterToAddOrEditIndex = index;
+    this.isEdit = "Update";
+  }
+  selectItemToAdd() {
+    this.masterToAddOrEdit = {};
+    this.isEdit = "Add";
+  }
+  addNewItem() {
+    if (this.masterToAddOrEdit.name === "") {
+      return;
+    }
+    this.apiService.post("company", this.masterToAddOrEdit).subscribe((data) => {
+      this.getData();
+      this.resetMasterToAddOrEdit();
+    });
+  }
+  resetMasterToAddOrEdit() {
+    this.masterToAddOrEdit = {};
+    this.masterToAddOrEditIndex = -1;
+    this.isEdit = void 0;
+  }
+  editItem(index) {
+    if (this.masterToAddOrEditIndex === -1) {
+      return;
+    }
+    if (this.masterToAddOrEdit.name === "") {
+      return;
+    }
+    if (confirm("Are you sure you want to update this Company?")) {
+      if (this.masterToAddOrEditIndex === -1) {
+        return;
+      }
+      this.apiService.put(`company/${this.masterToAddOrEdit._id}`, this.masterToAddOrEdit).subscribe((data) => {
+        this.getData();
+        this.resetMasterToAddOrEdit();
+      });
+    }
+  }
+  deleteItem(index) {
+    if (confirm("Are you sure you want to delete this Company?")) {
+      this.apiService.delete(`company/${this.data[index]._id}`).subscribe((data) => {
+        this.getData();
+      });
+    }
+  }
+  static {
+    this.\u0275fac = function CompanyComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _CompanyComponent)(\u0275\u0275directiveInject(ApiService));
+    };
+  }
+  static {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _CompanyComponent, selectors: [["app-company"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 56, vars: 18, consts: [["id", "addUpdateMasterModal", "tabindex", "-1", "aria-labelledby", "addUpdateMasterModalLabel", "aria-hidden", "true", 1, "modal", "fade", 3, "ngClass"], [1, "modal-dialog", "modal-dialog-centered"], [1, "modal-content"], [1, "modal-header"], ["id", "addUpdateMasterModalLabel", 1, "modal-title"], ["type", "button", "data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", 3, "click"], [1, "modal-body"], [1, "container"], [1, "row"], [1, "col-12"], [1, "form-group"], ["for", "masterName", 1, "form-label"], ["id", "masterName", "name", "masterName", "type", "text", "placeholder", "Name", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "modal-footer"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-secondary", 3, "click"], ["type", "button", "class", "btn btn-primary", 3, "click", 4, "ngIf"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header"], [1, "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "d-flex", "flex-column", "flex-md-row", "justify-content-between"], ["data-bs-toggle", "modal", "data-bs-target", "#addUpdateMasterModal", 1, "btn", "btn-primary", "w-100", "w-md-auto", 3, "click"], [1, "fi", "fi-rr-add"], [1, "ms-2"], [1, "row", "mt-3"], [1, "d-flex", "justify-content-between", "align-items-center"], ["id", "masters_list", 3, "pageChange"], [1, "table-responsive"], [1, "table", "table-hover", "table-striped"], [4, "ngFor", "ngForOf"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "btn", "btn-outline-primary", "btn-sm", 3, "click"], [1, "fi", "fi-rr-pencil"], [1, "btn", "btn-outline-danger", "btn-sm", 3, "click"], [1, "fi", "fi-rr-trash"]], template: function CompanyComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h5", 4);
+        \u0275\u0275text(5);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(6, "button", 5);
+        \u0275\u0275listener("click", function CompanyComponent_Template_button_click_6_listener() {
+          return ctx.isEdit = void 0;
+        });
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(7, "div", 6)(8, "div", 7)(9, "div", 8)(10, "div", 9)(11, "div", 10)(12, "label", 11);
+        \u0275\u0275text(13, "Name");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(14, "input", 12);
+        \u0275\u0275twoWayListener("ngModelChange", function CompanyComponent_Template_input_ngModelChange_14_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.masterToAddOrEdit.name, $event) || (ctx.masterToAddOrEdit.name = $event);
+          return $event;
+        });
+        \u0275\u0275elementEnd()()()()()();
+        \u0275\u0275elementStart(15, "div", 13)(16, "button", 14);
+        \u0275\u0275listener("click", function CompanyComponent_Template_button_click_16_listener() {
+          return ctx.isEdit = void 0;
+        });
+        \u0275\u0275text(17, " Close ");
+        \u0275\u0275elementEnd();
+        \u0275\u0275template(18, CompanyComponent_button_18_Template, 2, 0, "button", 15)(19, CompanyComponent_button_19_Template, 2, 0, "button", 15);
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(20, "div", 8)(21, "div", 16)(22, "div", 8)(23, "div", 17)(24, "div", 18)(25, "div", 19)(26, "div", 20)(27, "h2");
+        \u0275\u0275text(28);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(29, "div", 21)(30, "div", 7)(31, "div", 8)(32, "div", 9)(33, "div", 22)(34, "div")(35, "button", 23);
+        \u0275\u0275listener("click", function CompanyComponent_Template_button_click_35_listener() {
+          return ctx.selectItemToAdd();
+        });
+        \u0275\u0275element(36, "i", 24);
+        \u0275\u0275elementStart(37, "span", 25);
+        \u0275\u0275text(38);
+        \u0275\u0275elementEnd()()()()()();
+        \u0275\u0275elementStart(39, "div", 26)(40, "div", 9)(41, "div", 27)(42, "pagination-controls", 28);
+        \u0275\u0275listener("pageChange", function CompanyComponent_Template_pagination_controls_pageChange_42_listener($event) {
+          ctx.p = $event;
+          return ctx.getData();
+        });
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(43, "div", 29)(44, "table", 30)(45, "thead")(46, "tr")(47, "th");
+        \u0275\u0275text(48, "#");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(49, "th");
+        \u0275\u0275text(50, "Name");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(51, "th");
+        \u0275\u0275text(52, "Actions");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(53, "tbody");
+        \u0275\u0275template(54, CompanyComponent_tr_54_Template, 10, 2, "tr", 31);
+        \u0275\u0275pipe(55, "paginate");
+        \u0275\u0275elementEnd()()()()()()()()()()()();
+      }
+      if (rf & 2) {
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c020, ctx.isEdit));
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate2(" ", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, " ");
+        \u0275\u0275advance(9);
+        \u0275\u0275twoWayProperty("ngModel", ctx.masterToAddOrEdit.name);
+        \u0275\u0275advance(4);
+        \u0275\u0275property("ngIf", ctx.isEdit == "Add");
+        \u0275\u0275advance();
+        \u0275\u0275property("ngIf", ctx.isEdit == "Update");
+        \u0275\u0275advance(9);
+        \u0275\u0275textInterpolate1("", ctx.masterName, " Management");
+        \u0275\u0275advance(10);
+        \u0275\u0275textInterpolate1(" Add ", ctx.masterName, " ");
+        \u0275\u0275advance(16);
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(55, 9, ctx.data, \u0275\u0275pureFunction3(14, _c123, ctx.limit, ctx.p, ctx.total)));
+      }
+    }, dependencies: [
+      FormsModule,
+      DefaultValueAccessor,
+      NgControlStatus,
+      NgModel,
+      ReactiveFormsModule,
+      CommonModule,
+      NgClass,
+      NgForOf,
+      NgIf,
+      NgxPaginationModule,
+      PaginatePipe,
+      PaginationControlsComponent
+    ] });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(CompanyComponent, { className: "CompanyComponent", filePath: "src\\app\\pages\\company\\company.component.ts", lineNumber: 20 });
+})();
+
+// src/app/pages/transport/transport.component.ts
+var _c021 = (a0) => ({ show: a0 });
+var _c124 = (a0, a1, a2) => ({ id: "masters_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
+function TransportComponent_button_18_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "button", 32);
+    \u0275\u0275listener("click", function TransportComponent_button_18_Template_button_click_0_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.addNewItem());
+    });
+    \u0275\u0275text(1, " Add ");
+    \u0275\u0275elementEnd();
+  }
+}
+function TransportComponent_button_19_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "button", 32);
+    \u0275\u0275listener("click", function TransportComponent_button_19_Template_button_click_0_listener() {
+      \u0275\u0275restoreView(_r3);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.editItem(ctx_r1.masterToAddOrEditIndex));
+    });
+    \u0275\u0275text(1, " Update ");
+    \u0275\u0275elementEnd();
+  }
+}
+function TransportComponent_tr_54_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "td")(6, "button", 33);
+    \u0275\u0275listener("click", function TransportComponent_tr_54_Template_button_click_6_listener() {
+      const i_r5 = \u0275\u0275restoreView(_r4).index;
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.selectItemToEdit(i_r5));
+    });
+    \u0275\u0275element(7, "i", 34);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "button", 35);
+    \u0275\u0275listener("click", function TransportComponent_tr_54_Template_button_click_8_listener() {
+      const i_r5 = \u0275\u0275restoreView(_r4).index;
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.deleteItem(i_r5));
+    });
+    \u0275\u0275element(9, "i", 36);
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const item_r6 = ctx.$implicit;
+    const i_r5 = ctx.index;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(i_r5 + 1);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(item_r6.name);
+  }
+}
+var TransportComponent = class _TransportComponent {
+  constructor(apiService) {
+    this.apiService = apiService;
+    this.data = [];
+    this.masterToAddOrEdit = {};
+    this.masterToAddOrEditIndex = -1;
+    this.p = 1;
+    this.limit = 10;
+    this.total = 0;
+    this.masterName = "Transport";
+    this.getData();
+  }
+  getData() {
+    this.apiService.get("transport", {
+      params: {
+        page: this.p,
+        limit: this.limit
+      }
+    }).subscribe((data) => {
+      this.data = data.data;
+      this.total = data.meta.total;
+      this.p = data.meta.current_page;
+      this.limit = data.meta.per_page;
+    });
+  }
+  selectItemToEdit(index) {
+    this.masterToAddOrEdit = Object.assign({}, this.data[index]);
+    this.masterToAddOrEditIndex = index;
+    this.isEdit = "Update";
+  }
+  selectItemToAdd() {
+    this.masterToAddOrEdit = {};
+    this.isEdit = "Add";
+  }
+  addNewItem() {
+    if (this.masterToAddOrEdit.name === "") {
+      return;
+    }
+    this.apiService.post("transport", this.masterToAddOrEdit).subscribe((data) => {
+      this.getData();
+      this.resetMasterToAddOrEdit();
+    });
+  }
+  resetMasterToAddOrEdit() {
+    this.masterToAddOrEdit = {};
+    this.masterToAddOrEditIndex = -1;
+    this.isEdit = void 0;
+  }
+  editItem(index) {
+    if (this.masterToAddOrEditIndex === -1) {
+      return;
+    }
+    if (this.masterToAddOrEdit.name === "") {
+      return;
+    }
+    if (confirm("Are you sure you want to update this Transport?")) {
+      if (this.masterToAddOrEditIndex === -1) {
+        return;
+      }
+      this.apiService.put(`transport/${this.masterToAddOrEdit._id}`, this.masterToAddOrEdit).subscribe((data) => {
+        this.getData();
+        this.resetMasterToAddOrEdit();
+      });
+    }
+  }
+  deleteItem(index) {
+    if (confirm("Are you sure you want to delete this Transport?")) {
+      this.apiService.delete(`transport/${this.data[index]._id}`).subscribe((data) => {
+        this.getData();
+      });
+    }
+  }
+  static {
+    this.\u0275fac = function TransportComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _TransportComponent)(\u0275\u0275directiveInject(ApiService));
+    };
+  }
+  static {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TransportComponent, selectors: [["app-transport"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 56, vars: 18, consts: [["id", "addUpdateMasterModal", "tabindex", "-1", "aria-labelledby", "addUpdateMasterModalLabel", "aria-hidden", "true", 1, "modal", "fade", 3, "ngClass"], [1, "modal-dialog", "modal-dialog-centered"], [1, "modal-content"], [1, "modal-header"], ["id", "addUpdateMasterModalLabel", 1, "modal-title"], ["type", "button", "data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", 3, "click"], [1, "modal-body"], [1, "container"], [1, "row"], [1, "col-12"], [1, "form-group"], ["for", "masterName", 1, "form-label"], ["id", "masterName", "name", "masterName", "type", "text", "placeholder", "Name", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "modal-footer"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-secondary", 3, "click"], ["type", "button", "class", "btn btn-primary", 3, "click", 4, "ngIf"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header"], [1, "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "d-flex", "flex-column", "flex-md-row", "justify-content-between"], ["data-bs-toggle", "modal", "data-bs-target", "#addUpdateMasterModal", 1, "btn", "btn-primary", "w-100", "w-md-auto", 3, "click"], [1, "fi", "fi-rr-add"], [1, "ms-2"], [1, "row", "mt-3"], [1, "d-flex", "justify-content-between", "align-items-center"], ["id", "masters_list", 3, "pageChange"], [1, "table-responsive"], [1, "table", "table-hover", "table-striped"], [4, "ngFor", "ngForOf"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "btn", "btn-outline-primary", "btn-sm", 3, "click"], [1, "fi", "fi-rr-pencil"], [1, "btn", "btn-outline-danger", "btn-sm", 3, "click"], [1, "fi", "fi-rr-trash"]], template: function TransportComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h5", 4);
+        \u0275\u0275text(5);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(6, "button", 5);
+        \u0275\u0275listener("click", function TransportComponent_Template_button_click_6_listener() {
+          return ctx.isEdit = void 0;
+        });
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(7, "div", 6)(8, "div", 7)(9, "div", 8)(10, "div", 9)(11, "div", 10)(12, "label", 11);
+        \u0275\u0275text(13, "Name");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(14, "input", 12);
+        \u0275\u0275twoWayListener("ngModelChange", function TransportComponent_Template_input_ngModelChange_14_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.masterToAddOrEdit.name, $event) || (ctx.masterToAddOrEdit.name = $event);
+          return $event;
+        });
+        \u0275\u0275elementEnd()()()()()();
+        \u0275\u0275elementStart(15, "div", 13)(16, "button", 14);
+        \u0275\u0275listener("click", function TransportComponent_Template_button_click_16_listener() {
+          return ctx.isEdit = void 0;
+        });
+        \u0275\u0275text(17, " Close ");
+        \u0275\u0275elementEnd();
+        \u0275\u0275template(18, TransportComponent_button_18_Template, 2, 0, "button", 15)(19, TransportComponent_button_19_Template, 2, 0, "button", 15);
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(20, "div", 8)(21, "div", 16)(22, "div", 8)(23, "div", 17)(24, "div", 18)(25, "div", 19)(26, "div", 20)(27, "h2");
+        \u0275\u0275text(28);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(29, "div", 21)(30, "div", 7)(31, "div", 8)(32, "div", 9)(33, "div", 22)(34, "div")(35, "button", 23);
+        \u0275\u0275listener("click", function TransportComponent_Template_button_click_35_listener() {
+          return ctx.selectItemToAdd();
+        });
+        \u0275\u0275element(36, "i", 24);
+        \u0275\u0275elementStart(37, "span", 25);
+        \u0275\u0275text(38);
+        \u0275\u0275elementEnd()()()()()();
+        \u0275\u0275elementStart(39, "div", 26)(40, "div", 9)(41, "div", 27)(42, "pagination-controls", 28);
+        \u0275\u0275listener("pageChange", function TransportComponent_Template_pagination_controls_pageChange_42_listener($event) {
+          ctx.p = $event;
+          return ctx.getData();
+        });
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(43, "div", 29)(44, "table", 30)(45, "thead")(46, "tr")(47, "th");
+        \u0275\u0275text(48, "#");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(49, "th");
+        \u0275\u0275text(50, "Name");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(51, "th");
+        \u0275\u0275text(52, "Actions");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(53, "tbody");
+        \u0275\u0275template(54, TransportComponent_tr_54_Template, 10, 2, "tr", 31);
+        \u0275\u0275pipe(55, "paginate");
+        \u0275\u0275elementEnd()()()()()()()()()()()();
+      }
+      if (rf & 2) {
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c021, ctx.isEdit));
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate2(" ", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, " ");
+        \u0275\u0275advance(9);
+        \u0275\u0275twoWayProperty("ngModel", ctx.masterToAddOrEdit.name);
+        \u0275\u0275advance(4);
+        \u0275\u0275property("ngIf", ctx.isEdit == "Add");
+        \u0275\u0275advance();
+        \u0275\u0275property("ngIf", ctx.isEdit == "Update");
+        \u0275\u0275advance(9);
+        \u0275\u0275textInterpolate1("", ctx.masterName, " Management");
+        \u0275\u0275advance(10);
+        \u0275\u0275textInterpolate1(" Add ", ctx.masterName, " ");
+        \u0275\u0275advance(16);
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(55, 9, ctx.data, \u0275\u0275pureFunction3(14, _c124, ctx.limit, ctx.p, ctx.total)));
+      }
+    }, dependencies: [
+      FormsModule,
+      DefaultValueAccessor,
+      NgControlStatus,
+      NgModel,
+      ReactiveFormsModule,
+      CommonModule,
+      NgClass,
+      NgForOf,
+      NgIf,
+      NgxPaginationModule,
+      PaginatePipe,
+      PaginationControlsComponent
+    ] });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransportComponent, { className: "TransportComponent", filePath: "src\\app\\pages\\transport\\transport.component.ts", lineNumber: 19 });
 })();
 
 // src/app/app.routes.ts
@@ -70772,6 +71342,16 @@ var routes = [
         path: "crops",
         component: CropComponent,
         data: { title: "Crops" }
+      },
+      {
+        path: "companies",
+        component: CompanyComponent,
+        data: { title: "companies" }
+      },
+      {
+        path: "transport",
+        component: TransportComponent,
+        data: { title: "transport" }
       },
       {
         path: "parties",
@@ -71289,6 +71869,14 @@ var roleWiseAccess = [
     roles: ["Admin"]
   },
   {
+    page: "companies",
+    roles: ["Admin"]
+  },
+  {
+    page: "transport",
+    roles: ["Admin"]
+  },
+  {
     page: "parties",
     roles: ["Admin"]
   },
@@ -71469,7 +72057,7 @@ var AppComponent = class _AppComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src\\app\\app.component.ts", lineNumber: 15 });
 })();
 
 // src/main.ts

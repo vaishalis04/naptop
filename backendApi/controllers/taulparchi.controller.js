@@ -260,6 +260,20 @@ module.exports = {
           },
         },
         {
+          $lookup: {
+            from: "companies",
+            localField: "firm_company",
+            foreignField: "_id",
+            as: "companyDetails",
+          },
+        },
+        {
+          $unwind: {
+            path: "$companyDetails",
+            preserveNullAndEmptyArrays: true,
+          },
+        },
+        {
           $unwind: {
             path: "$cropDetails",
             preserveNullAndEmptyArrays: true,
@@ -498,6 +512,15 @@ module.exports = {
           },
         },
         {
+          $lookup: {
+            from: "companies",
+            localField: "firm_company",
+            foreignField: "_id",
+            as: "companyDetails",
+          },
+        },
+       
+        {
           $unwind: {
             path: "$cropDetails",
             preserveNullAndEmptyArrays: true,
@@ -530,6 +553,12 @@ module.exports = {
         {
           $unwind: {
             path: "$wearhouseDetails",
+            preserveNullAndEmptyArrays: true,
+          },
+        },
+        {
+          $unwind: {
+            path: "$companyDetails",
             preserveNullAndEmptyArrays: true,
           },
         },

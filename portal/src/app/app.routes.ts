@@ -32,6 +32,8 @@ import { TaulparchiDashboardComponent } from './pages/taulparchi-dashboard/taulp
 import { TaulparchiViewComponent } from './pages/taulparchi-view/taulparchi-view.component';
 import { TruckLoadingParchiDashboardComponent } from './pages/truck-loading-parchi-dashboard/truck-loading-parchi-dashboard.component';
 import { TruckLoadingParchiViewComponent } from './pages/truck-loading-parchi-view/truck-loading-parchi-view.component';
+import { CompanyComponent } from './pages/company/company.component';
+import { TransportComponent } from './pages/transport/transport.component';
 
 export const routes: Routes = [
   {
@@ -121,6 +123,16 @@ export const routes: Routes = [
         path: 'crops',
         component: CropComponent,
         data: { title: 'Crops' },
+      },
+      {
+        path: 'companies',
+        component: CompanyComponent,
+        data: { title: 'companies' },
+      },
+      {
+        path: 'transport',
+        component: TransportComponent,
+        data: { title: 'transport' },
       },
       {
         path: 'parties',

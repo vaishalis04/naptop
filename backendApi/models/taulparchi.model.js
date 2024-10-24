@@ -19,7 +19,7 @@ const TaulParchiSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
     },
     firm_company: {
-        type: String,
+        type: mongoose.Types.ObjectId,
     },
     rate: {
         type: Number,
@@ -60,6 +60,12 @@ const TaulParchiSchema = new mongoose.Schema({
     },
     amount: {
         type: Number,
+    },
+    other:{
+        type: String
+    },
+    hammali:{
+        type: Number
     },
     created_at: {
         type: Date,

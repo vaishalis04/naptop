@@ -72,6 +72,16 @@ export class SidebarComponent {
       link:'/parties'
     },
     {
+      title:'Company',
+      icon: 'fi fi-rr-users',
+      link:'/companies'
+    },
+    {
+      title:'Transport',
+      icon: 'fi fi-rr-users',
+      link:'/transport'
+    },
+    {
       title:'Delivery Locations',
       icon: 'fi fi-rr-map-marker',
       link:'/delivery'

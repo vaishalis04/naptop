@@ -189,7 +189,7 @@ export class TaulparchiDashboardComponent {
             </div>
             <div class="row">
               <div class="label"><b>Firm/Company:</b></div>
-              <div class="value">${taulaParchi.firm_company || 'N/A'}</div>
+              <div class="value">${taulaParchi.companyDetails.name || 'N/A'}</div>
             </div>
           </div>
 
@@ -228,6 +228,10 @@ export class TaulparchiDashboardComponent {
             <div class="row">
               <div class="label"><b>Net Weight (Quintal):</b></div>
               <div class="value">${taulaParchi.netWeight}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Hammali (₹):</b></div>
+              <div class="value">${taulaParchi.hammali}</div>
             </div>
             <div class="row">
               <div class="label"><b>Amount (₹):</b></div>
