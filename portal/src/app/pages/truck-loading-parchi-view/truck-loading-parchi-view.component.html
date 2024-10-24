@@ -1,0 +1,89 @@
+<div class="card bg-white mb-3">
+    <div class="card-header text-center">
+        <h4 class="mb-0">Truck Loading Parchi</h4>
+        <p><b>M+M</b></p>
+        <div class="row">
+            <div class="col text-start">
+                <b>Serial Number:</b> {{ getTruckLoadingParchiSrNo(truckLoadingParchi?.created_at) }}
+            </div>
+            <div class="col text-end">
+                <b>Date:</b> {{ truckLoadingParchi?.created_at | date: 'dd-MM-YYYY' }}
+            </div>
+        </div>
+    </div>
+    <div class="card-body bg-warning">
+        <div class="row">
+            <div class="col-12">
+                <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Party Name:</h6>
+                    <p class="card-text">{{ truckLoadingParchi?.partyDetails?.name }}</p>
+                </div>
+
+                <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Truck:</h6>
+                    <p class="card-text">{{ truckLoadingParchi?.truckDetails?.truckNumber }}</p>
+                </div>
+
+                <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Delivery Location:</h6>
+                    <p class="card-text">{{ truckLoadingParchi?.deliveryDetails?.name }}</p>
+                </div>
+
+                <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Assigned Hammal:</h6>
+                    <p class="card-text">{{ truckLoadingParchi?.hammalDetails?.name }}</p>
+                </div>
+
+                <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Bora Quantity:</h6>
+                    <p class="card-text">{{ truckLoadingParchi?.boraQuantity }}</p>
+                </div>
+
+                <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Unit Bora:</h6>
+                    <p class="card-text">{{ truckLoadingParchi?.unitBora }}Kg</p>
+                </div>
+
+                <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Net Weight:</h6>
+                    <p class="card-text">{{ truckLoadingParchi?.netWeight }}Kg</p>
+                </div>
+
+                <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Rate:</h6>
+                    <p class="card-text">{{ truckLoadingParchi?.rate }}</p>
+                </div>
+
+                <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Amount:</h6>
+                    <p class="card-text">₹{{ truckLoadingParchi?.amount }}</p>
+                </div>
+
+                <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Remark:</h6>
+                    <p class="card-text">{{ truckLoadingParchi?.other }}</p>
+                </div>
+
+                <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Bardana Bag 650g:</h6>
+                    <p class="card-text">{{ truckLoadingParchi?.bardanaBag650g }}</p>
+                </div>
+
+                <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+                    <h6 class="card-subtitle mb-2 text-muted">Bardana Bag 1kg:</h6>
+                    <p class="card-text">{{ truckLoadingParchi?.bardanaBag1kg }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Back and Print Buttons -->
+<div class="text-center mt-4">
+    <button type="button" class="btn btn-secondary px-5" (click)="goBack()">
+        <i class="fas fa-arrow-left"></i> Back
+    </button>
+    <button type="button" class="btn btn-primary px-5" (click)="printReceipt()">
+        <i class="fas fa-print"></i> Print
+    </button>
+</div>

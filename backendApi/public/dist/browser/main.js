@@ -60067,6 +60067,11 @@ var SidebarComponent = class _SidebarComponent {
         link: "/truck-loading-parchi"
       },
       {
+        title: "All Truck Loading Parchis",
+        icon: "fi-rr-wallet",
+        link: "/truck-loading-parchi-dashboard"
+      },
+      {
         title: "Farmers",
         icon: "fi-rr-database",
         link: "/farmers"
@@ -60147,12 +60152,12 @@ var SidebarComponent = class _SidebarComponent {
         link: "/advance-payment"
       },
       {
-        title: "Wearhouse Accounts",
+        title: "Warehouse Accounts",
         icon: "fi fi-rr-wallet",
         link: "/wearhouse-accounts"
       },
       {
-        title: "Wearhouse Inventory",
+        title: "Warehouse Inventory",
         icon: "fi fi-rr-wallet",
         link: "/wearhouse-inventory"
       }
@@ -60908,7 +60913,7 @@ var TaulParchiComponent = class _TaulParchiComponent {
 // src/app/pages/truck-loading-parchi/truck-loading-parchi.component.ts
 function TruckLoadingParchiComponent_option_34_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 41);
+    \u0275\u0275elementStart(0, "option", 47);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -60921,67 +60926,67 @@ function TruckLoadingParchiComponent_option_34_Template(rf, ctx) {
 }
 function TruckLoadingParchiComponent_option_40_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 41);
+    \u0275\u0275elementStart(0, "option", 47);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const truck_r2 = ctx.$implicit;
-    \u0275\u0275property("value", truck_r2._id);
+    const crop_r2 = ctx.$implicit;
+    \u0275\u0275property("value", crop_r2._id);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", truck_r2.truckNumber, " ");
+    \u0275\u0275textInterpolate1(" ", crop_r2.name, " ");
   }
 }
 function TruckLoadingParchiComponent_option_46_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 41);
+    \u0275\u0275elementStart(0, "option", 47);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const location_r3 = ctx.$implicit;
-    \u0275\u0275property("value", location_r3._id);
+    const truck_r3 = ctx.$implicit;
+    \u0275\u0275property("value", truck_r3._id);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", location_r3.name, " ");
+    \u0275\u0275textInterpolate1(" ", truck_r3.truckNumber, " ");
   }
 }
 function TruckLoadingParchiComponent_option_52_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 41);
+    \u0275\u0275elementStart(0, "option", 47);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const hammal_r4 = ctx.$implicit;
-    \u0275\u0275property("value", hammal_r4._id);
+    const location_r4 = ctx.$implicit;
+    \u0275\u0275property("value", location_r4._id);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", hammal_r4.name, " ");
+    \u0275\u0275textInterpolate1(" ", location_r4.name, " ");
   }
 }
 function TruckLoadingParchiComponent_option_58_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 41);
+    \u0275\u0275elementStart(0, "option", 47);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const storage_r5 = ctx.$implicit;
-    \u0275\u0275property("value", storage_r5._id);
+    const hammal_r5 = ctx.$implicit;
+    \u0275\u0275property("value", hammal_r5._id);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", storage_r5.name, " ");
+    \u0275\u0275textInterpolate1(" ", hammal_r5.name, " ");
   }
 }
-function TruckLoadingParchiComponent_option_73_Template(rf, ctx) {
+function TruckLoadingParchiComponent_option_64_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 41);
+    \u0275\u0275elementStart(0, "option", 47);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const crop_r6 = ctx.$implicit;
-    \u0275\u0275property("value", crop_r6._id);
+    const storage_r6 = ctx.$implicit;
+    \u0275\u0275property("value", storage_r6._id);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", crop_r6.name, " ");
+    \u0275\u0275textInterpolate1(" ", storage_r6.name, " ");
   }
 }
 var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
@@ -61005,7 +61010,11 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
       unitBora: 0,
       crop: 0,
       rate: 0,
+      bardanaBag650g: 0,
+      bardanaBag1kg: 0,
       netWeight: 0,
+      // To be calculated
+      amount: 0,
       // To be calculated
       other: "",
       id: Date.now(),
@@ -61022,8 +61031,13 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
     this.fetchStorage();
   }
   calculateNetWeight() {
-    const { boraQuantity, unitBora } = this.TruckLoadingParchi;
-    this.TruckLoadingParchi.netWeight = boraQuantity * unitBora;
+    const { boraQuantity, unitBora, bardanaBag650g, bardanaBag1kg } = this.TruckLoadingParchi;
+    this.TruckLoadingParchi.netWeight = (boraQuantity * unitBora + bardanaBag650g * 0.65 + bardanaBag1kg * 1) / 100;
+    this.calculateAmount();
+  }
+  calculateAmount() {
+    const { netWeight, rate } = this.TruckLoadingParchi;
+    this.TruckLoadingParchi.amount = netWeight * rate;
   }
   // Fetch Party Names from backend
   fetchParties() {
@@ -61191,7 +61205,7 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TruckLoadingParchiComponent, selectors: [["app-truck-loading-parchi"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 84, vars: 22, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "text-link"], [1, "col", "text-end"], [1, "text-muted", "pe-2"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "partyName", 1, "form-label"], ["id", "partyName", "name", "partyName", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "truck", 1, "form-label"], ["id", "truck", "name", "truck", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "deliveryLocation", 1, "form-label"], ["id", "deliveryLocation", "name", "deliveryLocation", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "assignedHammal", 1, "form-label"], ["id", "assignedHammal", "name", "assignedHammal", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "storage", 1, "form-label"], ["id", "storage", "name", "storage", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", "type", "number", "placeholder", "Bora Quantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "unitBora", 1, "form-label"], ["id", "unitBora", "name", "unitBora", "type", "number", "placeholder", "Unit Bora", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "placeholder", "Net Weight", "readonly", "", 1, "form-control", 3, "value"], ["for", "crop", 1, "form-label"], ["id", "crop", "name", "crop", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "rate", 1, "form-label"], ["id", "rate", "name", "rate", "type", "text", "placeholder", "rate", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "other", 1, "form-label"], ["id", "other", "name", "other", "type", "text", "placeholder", "Other", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], ["type", "button", 1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"], [3, "value"]], template: function TruckLoadingParchiComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TruckLoadingParchiComponent, selectors: [["app-truck-loading-parchi"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 93, vars: 25, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "text-link"], [1, "col", "text-end"], [1, "text-muted", "pe-2"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "partyName", 1, "form-label"], ["id", "partyName", "name", "partyName", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "crop", 1, "form-label"], ["id", "crop", "name", "crop", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "truck", 1, "form-label"], ["id", "truck", "name", "truck", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "deliveryLocation", 1, "form-label"], ["id", "deliveryLocation", "name", "deliveryLocation", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "assignedHammal", 1, "form-label"], ["id", "assignedHammal", "name", "assignedHammal", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "storage", 1, "form-label"], ["id", "storage", "name", "storage", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", "type", "number", "placeholder", "Bora Quantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "unitBora", 1, "form-label"], ["id", "unitBora", "name", "unitBora", "type", "number", "placeholder", "Unit Bora", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "bardanaBag650g", 1, "form-label"], ["id", "bardanaBag650g", "name", "bardanaBag650g", "type", "number", "placeholder", "Bardana Bag 650g", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "bardanaBag1kg", 1, "form-label"], ["id", "bardanaBag1kg", "name", "bardanaBag1kg", "type", "number", "placeholder", "Bardana Bag 1kg", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "placeholder", "Net Weight", "readonly", "", 1, "form-control", 3, "value"], ["for", "rate", 1, "form-label"], ["id", "rate", "name", "rate", "type", "text", "placeholder", "rate", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "amount", 1, "form-label"], ["id", "amount", "name", "amount", "type", "number", "placeholder", "Amount", "readonly", "", 1, "form-control", 3, "value"], ["for", "other", 1, "form-label"], ["id", "other", "name", "other", "type", "text", "placeholder", "Other", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], ["type", "button", 1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"], [3, "value"]], template: function TruckLoadingParchiComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "h4", 5);
         \u0275\u0275text(7, "Truck Loading Parchi");
@@ -61226,132 +61240,167 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
         \u0275\u0275template(34, TruckLoadingParchiComponent_option_34_Template, 2, 2, "option", 17);
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(35, "label", 18);
-        \u0275\u0275text(36, "Select Truck");
+        \u0275\u0275text(36, "Crop");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(37, "select", 19);
         \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_select_ngModelChange_37_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.truck, $event) || (ctx.TruckLoadingParchi.truck = $event);
+          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.crop, $event) || (ctx.TruckLoadingParchi.crop = $event);
           return $event;
         });
         \u0275\u0275elementStart(38, "option", 16);
-        \u0275\u0275text(39, "Select Truck");
+        \u0275\u0275text(39, "Select Crop");
         \u0275\u0275elementEnd();
         \u0275\u0275template(40, TruckLoadingParchiComponent_option_40_Template, 2, 2, "option", 17);
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(41, "label", 20);
-        \u0275\u0275text(42, "Delivery Location");
+        \u0275\u0275text(42, "Select Truck");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(43, "select", 21);
         \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_select_ngModelChange_43_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.deliveryLocation, $event) || (ctx.TruckLoadingParchi.deliveryLocation = $event);
+          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.truck, $event) || (ctx.TruckLoadingParchi.truck = $event);
           return $event;
         });
         \u0275\u0275elementStart(44, "option", 16);
-        \u0275\u0275text(45, "Select Location");
+        \u0275\u0275text(45, "Select Truck");
         \u0275\u0275elementEnd();
         \u0275\u0275template(46, TruckLoadingParchiComponent_option_46_Template, 2, 2, "option", 17);
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(47, "label", 22);
-        \u0275\u0275text(48, "Assigned Hammal");
+        \u0275\u0275text(48, "Delivery Location");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(49, "select", 23);
         \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_select_ngModelChange_49_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.assignedHammal, $event) || (ctx.TruckLoadingParchi.assignedHammal = $event);
+          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.deliveryLocation, $event) || (ctx.TruckLoadingParchi.deliveryLocation = $event);
           return $event;
         });
         \u0275\u0275elementStart(50, "option", 16);
-        \u0275\u0275text(51, "Select Hammal");
+        \u0275\u0275text(51, "Select Location");
         \u0275\u0275elementEnd();
         \u0275\u0275template(52, TruckLoadingParchiComponent_option_52_Template, 2, 2, "option", 17);
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(53, "label", 24);
-        \u0275\u0275text(54, "Storage Location");
+        \u0275\u0275text(54, "Assigned Hammal");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(55, "select", 25);
         \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_select_ngModelChange_55_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.storage, $event) || (ctx.TruckLoadingParchi.storage = $event);
+          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.assignedHammal, $event) || (ctx.TruckLoadingParchi.assignedHammal = $event);
           return $event;
         });
         \u0275\u0275elementStart(56, "option", 16);
-        \u0275\u0275text(57, "Select Storage Location");
+        \u0275\u0275text(57, "Select Hammal");
         \u0275\u0275elementEnd();
         \u0275\u0275template(58, TruckLoadingParchiComponent_option_58_Template, 2, 2, "option", 17);
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(59, "label", 26);
-        \u0275\u0275text(60, "Bora Quantity");
+        \u0275\u0275text(60, "Storage Location");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(61, "input", 27);
-        \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_61_listener($event) {
+        \u0275\u0275elementStart(61, "select", 27);
+        \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_select_ngModelChange_61_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.storage, $event) || (ctx.TruckLoadingParchi.storage = $event);
+          return $event;
+        });
+        \u0275\u0275elementStart(62, "option", 16);
+        \u0275\u0275text(63, "Select Storage Location");
+        \u0275\u0275elementEnd();
+        \u0275\u0275template(64, TruckLoadingParchiComponent_option_64_Template, 2, 2, "option", 17);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(65, "label", 28);
+        \u0275\u0275text(66, "Bora Quantity");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(67, "input", 29);
+        \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_67_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.boraQuantity, $event) || (ctx.TruckLoadingParchi.boraQuantity = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_61_listener() {
+        \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_67_listener() {
           return ctx.calculateNetWeight();
         });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(62, "label", 28);
-        \u0275\u0275text(63, "Unit Bora");
+        \u0275\u0275elementStart(68, "label", 30);
+        \u0275\u0275text(69, "Unit Bora");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(64, "input", 29);
-        \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_64_listener($event) {
+        \u0275\u0275elementStart(70, "input", 31);
+        \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_70_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.unitBora, $event) || (ctx.TruckLoadingParchi.unitBora = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_64_listener() {
+        \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_70_listener() {
           return ctx.calculateNetWeight();
         });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(65, "label", 30);
-        \u0275\u0275text(66, "Net Weight");
+        \u0275\u0275elementStart(71, "label", 32);
+        \u0275\u0275text(72, "Bardana Bag 650g");
         \u0275\u0275elementEnd();
-        \u0275\u0275element(67, "input", 31);
-        \u0275\u0275elementStart(68, "label", 32);
-        \u0275\u0275text(69, "Crop");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(70, "select", 33);
-        \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_select_ngModelChange_70_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.crop, $event) || (ctx.TruckLoadingParchi.crop = $event);
+        \u0275\u0275elementStart(73, "input", 33);
+        \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_73_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.bardanaBag650g, $event) || (ctx.TruckLoadingParchi.bardanaBag650g = $event);
           return $event;
         });
-        \u0275\u0275elementStart(71, "option", 16);
-        \u0275\u0275text(72, "Select Crop");
-        \u0275\u0275elementEnd();
-        \u0275\u0275template(73, TruckLoadingParchiComponent_option_73_Template, 2, 2, "option", 17);
+        \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_73_listener() {
+          return ctx.calculateNetWeight();
+        });
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(74, "label", 34);
-        \u0275\u0275text(75, "rate");
+        \u0275\u0275text(75, "Bardana Bag 1kg");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(76, "input", 35);
         \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_76_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.rate, $event) || (ctx.TruckLoadingParchi.rate = $event);
+          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.bardanaBag1kg, $event) || (ctx.TruckLoadingParchi.bardanaBag1kg = $event);
           return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_76_listener() {
+          return ctx.calculateNetWeight();
         });
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(77, "label", 36);
-        \u0275\u0275text(78, "Other");
+        \u0275\u0275text(78, "Net Weight(in Quintal)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(79, "input", 37);
-        \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_79_listener($event) {
+        \u0275\u0275element(79, "input", 37);
+        \u0275\u0275elementStart(80, "label", 38);
+        \u0275\u0275text(81, "Rate(Per Quintal)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(82, "input", 39);
+        \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_82_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.rate, $event) || (ctx.TruckLoadingParchi.rate = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_82_listener() {
+          return ctx.calculateAmount();
+        });
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(83, "label", 40);
+        \u0275\u0275text(84, "Payable Amount");
+        \u0275\u0275elementEnd();
+        \u0275\u0275element(85, "input", 41);
+        \u0275\u0275elementStart(86, "label", 42);
+        \u0275\u0275text(87, "Remark");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(88, "input", 43);
+        \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_Template_input_ngModelChange_88_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.TruckLoadingParchi.other, $event) || (ctx.TruckLoadingParchi.other = $event);
           return $event;
         });
         \u0275\u0275elementEnd()()()()()();
-        \u0275\u0275elementStart(80, "div", 38)(81, "div", 39)(82, "button", 40);
-        \u0275\u0275listener("click", function TruckLoadingParchiComponent_Template_button_click_82_listener() {
+        \u0275\u0275elementStart(89, "div", 44)(90, "div", 45)(91, "button", 46);
+        \u0275\u0275listener("click", function TruckLoadingParchiComponent_Template_button_click_91_listener() {
           return ctx.saveTruckLoadingParchi();
         });
-        \u0275\u0275text(83, " Save ");
+        \u0275\u0275text(92, " Save ");
         \u0275\u0275elementEnd()()()()()()();
       }
       if (rf & 2) {
         \u0275\u0275advance(17);
         \u0275\u0275textInterpolate(ctx.TruckLoadingParchi.id);
         \u0275\u0275advance(6);
-        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(24, 19, ctx.TruckLoadingParchi.created_at, "dd-MM-YYYY"));
+        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(24, 22, ctx.TruckLoadingParchi.created_at, "dd-MM-YYYY"));
         \u0275\u0275advance(8);
         \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.partyName);
         \u0275\u0275advance(3);
         \u0275\u0275property("ngForOf", ctx.Parties);
+        \u0275\u0275advance(3);
+        \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.crop);
+        \u0275\u0275advance(3);
+        \u0275\u0275property("ngForOf", ctx.Crops);
         \u0275\u0275advance(3);
         \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.truck);
         \u0275\u0275advance(3);
@@ -61373,13 +61422,15 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
         \u0275\u0275advance(3);
         \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.unitBora);
         \u0275\u0275advance(3);
+        \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.bardanaBag650g);
+        \u0275\u0275advance(3);
+        \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.bardanaBag1kg);
+        \u0275\u0275advance(3);
         \u0275\u0275property("value", ctx.TruckLoadingParchi.netWeight);
         \u0275\u0275advance(3);
-        \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.crop);
-        \u0275\u0275advance(3);
-        \u0275\u0275property("ngForOf", ctx.Crops);
-        \u0275\u0275advance(3);
         \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.rate);
+        \u0275\u0275advance(3);
+        \u0275\u0275property("value", ctx.TruckLoadingParchi.amount);
         \u0275\u0275advance(3);
         \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.other);
       }
@@ -68556,7 +68607,7 @@ var WearhouseAccountsComponent = class _WearhouseAccountsComponent {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _WearhouseAccountsComponent, selectors: [["app-wearhouse-accounts"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 40, vars: 12, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-item-center"], [1, "card-body"], [1, "nav", "nav-pills", "nav-stacked"], [1, "nav-item"], [1, "nav-link", 3, "click", "ngClass"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["for", "storage"], ["name", "storage", "id", "storage", 1, "form-control", 3, "ngModelChange", "ngModel"], [3, "value"], [3, "value", 4, "ngFor", "ngForOf"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], ["class", "col-auto", 4, "ngFor", "ngForOf"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "col-auto"], ["type", "button", 1, "btn", "btn-primary"], ["id", "truckloading", 3, "pageChange"]], template: function WearhouseAccountsComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4");
-        \u0275\u0275text(3, "Wearhouse Transactions");
+        \u0275\u0275text(3, "Warehouse Transactions");
         \u0275\u0275elementEnd()();
         \u0275\u0275elementStart(4, "div", 2)(5, "ul", 3)(6, "li", 4)(7, "a", 5);
         \u0275\u0275listener("click", function WearhouseAccountsComponent_Template_a_click_7_listener() {
@@ -69079,7 +69130,7 @@ var WearhouseInventoryComponent = class _WearhouseInventoryComponent {
     this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _WearhouseInventoryComponent, selectors: [["app-wearhouse-inventory"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 40, vars: 10, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-item-center"], [1, "card-body"], [1, "nav", "nav-pills", "nav-stacked"], [1, "nav-item"], [1, "nav-link", 3, "click", "ngClass"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["for", "storage"], ["name", "storage", "id", "storage", 1, "form-control", 3, "ngModelChange", "ngModel"], [3, "value"], [3, "value", 4, "ngFor", "ngForOf"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], ["class", "col-auto", 4, "ngFor", "ngForOf"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "col-auto"], ["type", "button", 1, "btn", "btn-primary"], ["id", "truckloading", 3, "pageChange"]], template: function WearhouseInventoryComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4");
-        \u0275\u0275text(3, "Wearhouse Inventory");
+        \u0275\u0275text(3, "Warehouse Inventory");
         \u0275\u0275elementEnd()();
         \u0275\u0275elementStart(4, "div", 2)(5, "ul", 3)(6, "li", 4)(7, "a", 5);
         \u0275\u0275listener("click", function WearhouseInventoryComponent_Template_a_click_7_listener() {
@@ -69168,7 +69219,7 @@ var WearhouseInventoryComponent = class _WearhouseInventoryComponent {
 // src/app/pages/taulparchi-dashboard/taulparchi-dashboard.component.ts
 var _c018 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
 var _c121 = (a0) => ["/taul-parchi-view", a0];
-function TaulparchiDashboardComponent_tr_49_Template(rf, ctx) {
+function TaulparchiDashboardComponent_tr_53_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "tr")(1, "td");
@@ -69193,16 +69244,22 @@ function TaulparchiDashboardComponent_tr_49_Template(rf, ctx) {
     \u0275\u0275elementStart(14, "td");
     \u0275\u0275text(15);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "td")(17, "button", 21);
-    \u0275\u0275listener("click", function TaulparchiDashboardComponent_tr_49_Template_button_click_17_listener() {
+    \u0275\u0275elementStart(16, "td");
+    \u0275\u0275text(17);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(18, "td");
+    \u0275\u0275text(19);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(20, "td")(21, "button", 22);
+    \u0275\u0275listener("click", function TaulparchiDashboardComponent_tr_53_Template_button_click_21_listener() {
       const taulaParchi_r2 = \u0275\u0275restoreView(_r1).$implicit;
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.printReceipt(taulaParchi_r2));
     });
-    \u0275\u0275text(18, " Print ");
+    \u0275\u0275text(22, " Print ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(19, "button", 22);
-    \u0275\u0275text(20, " View\n");
+    \u0275\u0275elementStart(23, "button", 23);
+    \u0275\u0275text(24, " View\n");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -69212,7 +69269,7 @@ function TaulparchiDashboardComponent_tr_49_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(ctx_r2.currentPage * ctx_r2.perPage - ctx_r2.perPage + (i_r4 + 1));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 8, taulaParchi_r2.created_at, "MM-dd-YYYY"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 10, taulaParchi_r2.created_at, "MM-dd-YYYY"));
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.purchase);
     \u0275\u0275advance(2);
@@ -69223,8 +69280,12 @@ function TaulparchiDashboardComponent_tr_49_Template(rf, ctx) {
     \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.cropDetails.name);
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.firm_company);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r2.netWeight);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r2.amount);
     \u0275\u0275advance(4);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(11, _c121, taulaParchi_r2._id));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(13, _c121, taulaParchi_r2._id));
   }
 }
 var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
@@ -69460,7 +69521,7 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiDashboardComponent, selectors: [["app-taulparchi-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 51, vars: 8, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["type", "button", 1, "btn", "btn-primary"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["type", "button", 1, "btn", "btn-primary", 2, "margin-right", "10px", 3, "click"], ["type", "button", 1, "btn", "btn-primary", 3, "routerLink"]], template: function TaulparchiDashboardComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiDashboardComponent, selectors: [["app-taulparchi-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 56, vars: 8, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["type", "button", 1, "btn", "btn-primary"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], ["type", "button", 1, "btn", "btn-primary", 2, "margin-right", "10px", 3, "click"], ["type", "button", 1, "btn", "btn-primary", 3, "routerLink"]], template: function TaulparchiDashboardComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4");
         \u0275\u0275text(3, "All Taula Parchi");
@@ -69507,16 +69568,28 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
         \u0275\u0275text(45, "Firm/Company");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(46, "th", 19);
-        \u0275\u0275text(47, "Action");
+        \u0275\u0275text(47, "Net Weight(in Quintal)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(48, "th", 19);
+        \u0275\u0275text(49, "Amount (\u20B9)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(50, "th", 19);
+        \u0275\u0275text(51, "Action");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(48, "tbody");
-        \u0275\u0275template(49, TaulparchiDashboardComponent_tr_49_Template, 21, 13, "tr", 20);
-        \u0275\u0275pipe(50, "paginate");
-        \u0275\u0275elementEnd()()()()()()();
+        \u0275\u0275elementStart(52, "tbody");
+        \u0275\u0275template(53, TaulparchiDashboardComponent_tr_53_Template, 25, 15, "tr", 20);
+        \u0275\u0275pipe(54, "paginate");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(55, "pagination-controls", 21);
+        \u0275\u0275listener("pageChange", function TaulparchiDashboardComponent_Template_pagination_controls_pageChange_55_listener($event) {
+          ctx.currentPage = $event;
+          return ctx.getTaulaParchis();
+        });
+        \u0275\u0275elementEnd()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275advance(49);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(50, 1, ctx.TaulaParchi, \u0275\u0275pureFunction3(4, _c018, ctx.perPage, ctx.currentPage, ctx.TaulaParchiCount)));
+        \u0275\u0275advance(53);
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(54, 1, ctx.TaulaParchi, \u0275\u0275pureFunction3(4, _c018, ctx.perPage, ctx.currentPage, ctx.TaulaParchiCount)));
       }
     }, dependencies: [
       CommonModule,
@@ -69526,6 +69599,7 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
       ReactiveFormsModule,
       NgxPaginationModule,
       PaginatePipe,
+      PaginationControlsComponent,
       RouterModule,
       RouterLink
     ] });
@@ -69962,6 +70036,654 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulparchiViewComponent, { className: "TaulparchiViewComponent" });
 })();
 
+// src/app/pages/truck-loading-parchi-dashboard/truck-loading-parchi-dashboard.component.ts
+var _c019 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloadingparchi", totalItems: a2 });
+var _c122 = (a0) => ["/truck-loading-parchi-view", a0];
+function TruckLoadingParchiDashboardComponent_tr_55_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
+    \u0275\u0275pipe(5, "date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "td");
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "td");
+    \u0275\u0275text(9);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "td");
+    \u0275\u0275text(11);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "td");
+    \u0275\u0275text(13);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(14, "td");
+    \u0275\u0275text(15);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(16, "td");
+    \u0275\u0275text(17);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(18, "td");
+    \u0275\u0275text(19);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(20, "td");
+    \u0275\u0275text(21);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(22, "td")(23, "button", 22);
+    \u0275\u0275listener("click", function TruckLoadingParchiDashboardComponent_tr_55_Template_button_click_23_listener() {
+      const truckLoadingParchi_r2 = \u0275\u0275restoreView(_r1).$implicit;
+      const ctx_r2 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r2.printReceipt(truckLoadingParchi_r2));
+    });
+    \u0275\u0275text(24, " Print ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(25, "button", 23);
+    \u0275\u0275text(26, " View ");
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const truckLoadingParchi_r2 = ctx.$implicit;
+    const i_r4 = ctx.index;
+    const ctx_r2 = \u0275\u0275nextContext();
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r2.currentPage * ctx_r2.perPage - ctx_r2.perPage + (i_r4 + 1));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 11, truckLoadingParchi_r2.created_at, "MM-dd-YYYY"));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r2 == null ? null : truckLoadingParchi_r2.cropDetails == null ? null : truckLoadingParchi_r2.cropDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r2 == null ? null : truckLoadingParchi_r2.partyDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r2 == null ? null : truckLoadingParchi_r2.truckDetails == null ? null : truckLoadingParchi_r2.truckDetails.truckNumber);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r2 == null ? null : truckLoadingParchi_r2.deliveryDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r2 == null ? null : truckLoadingParchi_r2.hammalDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r2.boraQuantity);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r2.netWeight);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r2.amount);
+    \u0275\u0275advance(4);
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(14, _c122, truckLoadingParchi_r2._id));
+  }
+}
+var TruckLoadingParchiDashboardComponent = class _TruckLoadingParchiDashboardComponent {
+  constructor(apiService) {
+    this.apiService = apiService;
+    this.TruckLoadingParchis = [];
+    this.TruckLoadingParchiCount = 0;
+    this.currentPage = 1;
+    this.perPage = 5;
+    this.totalItems = 0;
+    this.Storage = [];
+    this.getTruckLoadingParchis();
+  }
+  getTruckLoadingParchis() {
+    let params = {
+      page: this.currentPage,
+      limit: this.perPage
+    };
+    this.apiService.get("truckloading", {
+      params
+    }).subscribe({
+      next: (res) => {
+        this.TruckLoadingParchis = res.data;
+        this.TruckLoadingParchiCount = res.meta.total || this.TruckLoadingParchis.length;
+      },
+      error: (err) => {
+        console.error("Error fetching TaulaParchis:", err);
+      }
+    });
+  }
+  printReceipt(truckLoadingParchi) {
+    const receiptContent = `
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Truck Loading Parchi Receipt</title>
+        <style>
+          body {
+            font-family: 'Courier New', monospace;
+            margin: 20px;
+            background-color: #f8f9fa;
+          }
+          .card {
+            padding: 20px;
+            border: 1px solid #000;
+            width: 350px;
+            margin: 0 auto;
+            background-color: white;
+          }
+          .header {
+            text-align: center;
+          }
+          .section {
+            margin-bottom: 15px;
+          }
+          .row {
+            display: flex;
+            justify-content: space-between;
+          }
+          .btn-print {
+            display: none;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="card">
+          <div class="header">
+            <h4>Truck Loading Parchi</h4>
+            <p><b>M+M</b></p>
+          </div>
+          <hr />
+          <div class="section">
+            <div class="row">
+            <span><b>Serial Number:</b></span>
+            <span>${this.getTruckLoadingParchiSrNo(truckLoadingParchi.created_at)}</span>
+          </div>
+          <div class="row">
+            <span><b>Date:</b></span>
+            <span>${new Date(truckLoadingParchi.created_at).toLocaleDateString()}</span>
+          </div>
+          <div class="row">
+            <span><b>Party Name:</b></span>
+            <span>${truckLoadingParchi?.partyDetails.name}</span>
+          </div>
+          <div class="row">
+            <span><b>Truck:</b></span>
+            <span>${truckLoadingParchi?.truckDetails?.truckNumber}</span>
+          </div>
+          <div class="row">
+            <span><b>Delivery Location:</b></span>
+            <span>${truckLoadingParchi?.deliveryDetails.name}</span>
+          </div>
+          <div class="row">
+            <span><b>Hammal:</b></span>
+            <span>${truckLoadingParchi?.hammalDetails.name}</span>
+          </div>
+          <div class="row">
+            <span><b>Bora Quantity:</b></span>
+            <span>${truckLoadingParchi.boraQuantity}</span>
+          </div>
+          <div class="row">
+            <span><b>Unit Bora:</b></span>
+            <span>${truckLoadingParchi.unitBora}</span>
+          </div>
+          <div class="row">
+            <span><b>Bardana Bag 650g:</b></span>
+            <span>${truckLoadingParchi.bardanaBag650g}</span>
+          </div>
+          <div class="row">
+            <span><b>Bardana Bag 1kg:</b></span>
+            <span>${truckLoadingParchi.bardanaBag1kg}</span>
+          </div>
+          <div class="row">
+            <span><b>Net Weight (Quintal):</b></span>
+            <span>${truckLoadingParchi.netWeight}</span>
+          </div>
+          <div class="row">
+            <span><b>Rate (\u20B9):</b></span>
+            <span>${truckLoadingParchi.rate}</span>
+          </div>
+          <div class="row">
+            <span><b>Amount (\u20B9):</b></span>
+            <span>${truckLoadingParchi.amount}</span>
+          </div>
+          <div class="row">
+            <span><b>Remark:</b></span>
+            <span>${truckLoadingParchi.other}</span>
+          </div>
+          </div>
+        </div>
+      </body>
+    </html>
+      `;
+    const printWindow = window.open("", "", "width=800,height=600");
+    printWindow.document.write(receiptContent);
+    printWindow.document.close();
+    printWindow.print();
+  }
+  // Helper function to generate the Sr.No based on created_at timestamp
+  getTruckLoadingParchiSrNo(created_at) {
+    if (created_at) {
+      const date = new Date(created_at);
+      const srNo = `TL${date.getDate().toString().padStart(2, "0")}${(date.getMonth() + 1).toString().padStart(2, "0")}${date.getFullYear().toString().substr(2)}${date.getHours().toString().padStart(2, "0")}${date.getMinutes().toString().padStart(2, "0")}${date.getSeconds().toString().padStart(2, "0")}`;
+      return srNo;
+    }
+    return "";
+  }
+  static {
+    this.\u0275fac = function TruckLoadingParchiDashboardComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _TruckLoadingParchiDashboardComponent)(\u0275\u0275directiveInject(ApiService));
+    };
+  }
+  static {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TruckLoadingParchiDashboardComponent, selectors: [["app-truck-loading-parchi-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 58, vars: 10, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", 1, "form-control", 3, "ngModelChange", "ngModel"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", 1, "form-control", 3, "ngModelChange", "ngModel"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "truckloadingparchi", 3, "pageChange"], ["type", "button", 1, "btn", "btn-primary", 2, "margin-right", "10px", 3, "click"], ["type", "button", 1, "btn", "btn-primary", 3, "routerLink"]], template: function TruckLoadingParchiDashboardComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4");
+        \u0275\u0275text(3, "All Truck Loading Parchi");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(4, "div", 2)(5, "div", 3)(6, "div", 4)(7, "div", 5)(8, "label", 6);
+        \u0275\u0275text(9, "From");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(10, "input", 7);
+        \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiDashboardComponent_Template_input_ngModelChange_10_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.fromDate, $event) || (ctx.fromDate = $event);
+          return $event;
+        });
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(11, "small", 8);
+        \u0275\u0275text(12, "From Date");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(13, "div", 4)(14, "div", 5)(15, "label", 9);
+        \u0275\u0275text(16, "To");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(17, "input", 10);
+        \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiDashboardComponent_Template_input_ngModelChange_17_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.toDate, $event) || (ctx.toDate = $event);
+          return $event;
+        });
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(18, "small", 11);
+        \u0275\u0275text(19, "To Date");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(20, "div", 4)(21, "button", 12);
+        \u0275\u0275listener("click", function TruckLoadingParchiDashboardComponent_Template_button_click_21_listener() {
+          return ctx.getTruckLoadingParchis();
+        });
+        \u0275\u0275text(22, "Submit");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(23, "div", 13)(24, "div", 14)(25, "h4", 15);
+        \u0275\u0275text(26, "Truck Loading Parchis");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(27, "div", 2)(28, "div", 16)(29, "table", 17)(30, "thead", 18)(31, "tr")(32, "th", 19);
+        \u0275\u0275text(33, "Sr.no");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(34, "th", 19);
+        \u0275\u0275text(35, "Date");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(36, "th", 19);
+        \u0275\u0275text(37, "Crop");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(38, "th", 19);
+        \u0275\u0275text(39, "Party Name");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(40, "th", 19);
+        \u0275\u0275text(41, "Truck");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(42, "th", 19);
+        \u0275\u0275text(43, "Delivery Location");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(44, "th", 19);
+        \u0275\u0275text(45, "Assigned Hammal");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(46, "th", 19);
+        \u0275\u0275text(47, "Bora Quantity");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(48, "th", 19);
+        \u0275\u0275text(49, "Net Weight(in Quintal)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(50, "th", 19);
+        \u0275\u0275text(51, "Amount (\u20B9)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(52, "th", 19);
+        \u0275\u0275text(53, "Action");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(54, "tbody");
+        \u0275\u0275template(55, TruckLoadingParchiDashboardComponent_tr_55_Template, 27, 16, "tr", 20);
+        \u0275\u0275pipe(56, "paginate");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(57, "pagination-controls", 21);
+        \u0275\u0275listener("pageChange", function TruckLoadingParchiDashboardComponent_Template_pagination_controls_pageChange_57_listener($event) {
+          ctx.currentPage = $event;
+          return ctx.getTruckLoadingParchis();
+        });
+        \u0275\u0275elementEnd()()()()();
+      }
+      if (rf & 2) {
+        \u0275\u0275advance(10);
+        \u0275\u0275twoWayProperty("ngModel", ctx.fromDate);
+        \u0275\u0275advance(7);
+        \u0275\u0275twoWayProperty("ngModel", ctx.toDate);
+        \u0275\u0275advance(38);
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(56, 3, ctx.TruckLoadingParchis, \u0275\u0275pureFunction3(6, _c019, ctx.perPage, ctx.currentPage, ctx.TruckLoadingParchiCount)));
+      }
+    }, dependencies: [
+      CommonModule,
+      NgForOf,
+      DatePipe,
+      FormsModule,
+      DefaultValueAccessor,
+      NgControlStatus,
+      NgModel,
+      ReactiveFormsModule,
+      NgxPaginationModule,
+      PaginatePipe,
+      PaginationControlsComponent,
+      RouterModule,
+      RouterLink
+    ] });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiDashboardComponent, { className: "TruckLoadingParchiDashboardComponent" });
+})();
+
+// src/app/pages/truck-loading-parchi-view/truck-loading-parchi-view.component.ts
+var TruckLoadingParchiViewComponent = class _TruckLoadingParchiViewComponent {
+  constructor(apiService, route, router) {
+    this.apiService = apiService;
+    this.route = route;
+    this.router = router;
+    this.truckLoadingParchi = {};
+  }
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get("id");
+    if (id) {
+      this.getTruckLoadingParchiById(id);
+    }
+  }
+  // Fetch Taula Parchi by ID
+  getTruckLoadingParchiById(id) {
+    this.apiService.get(`truckloading/${id}`).subscribe({
+      next: (res) => {
+        console.log("res", res);
+        this.truckLoadingParchi = res;
+      },
+      error: (err) => {
+        console.error("Error fetching Truck Loading Slip details:", err);
+      }
+    });
+  }
+  printReceipt() {
+    const receiptContent = `
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Truck Loading Parchi Receipt</title>
+      <style>
+        body {
+          font-family: 'Courier New', monospace;
+          margin: 20px;
+          background-color: #f8f9fa;
+        }
+        .card {
+          padding: 20px;
+          border: 1px solid #000;
+          width: 350px;
+          margin: 0 auto;
+          background-color: white;
+        }
+        .header {
+          text-align: center;
+        }
+        .section {
+          margin-bottom: 15px;
+        }
+        .row {
+          display: flex;
+          justify-content: space-between;
+        }
+        .btn-print {
+          display: none;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="card">
+        <div class="header">
+          <h4>Truck Loading Parchi</h4>
+          <p><b>M+M</b></p>
+        </div>
+        <hr />
+        <div class="section">
+          <div class="row">
+            <span><b>Serial Number:</b></span>
+            <span>${this.getTruckLoadingParchiSrNo(this.truckLoadingParchi.created_at)}</span>
+          </div>
+          <div class="row">
+            <span><b>Date:</b></span>
+            <span>${new Date(this.truckLoadingParchi.created_at).toLocaleDateString()}</span>
+          </div>
+          <div class="row">
+            <span><b>Party Name:</b></span>
+            <span>${this.truckLoadingParchi?.partyDetails.name}</span>
+          </div>
+          <div class="row">
+            <span><b>Truck:</b></span>
+            <span>${this.truckLoadingParchi?.truckDetails?.truckNumber}</span>
+          </div>
+          <div class="row">
+            <span><b>Delivery Location:</b></span>
+            <span>${this.truckLoadingParchi?.deliveryDetails.name}</span>
+          </div>
+          <div class="row">
+            <span><b>Hammal:</b></span>
+            <span>${this.truckLoadingParchi?.hammalDetails.name}</span>
+          </div>
+          <div class="row">
+            <span><b>Bora Quantity:</b></span>
+            <span>${this.truckLoadingParchi.boraQuantity}</span>
+          </div>
+          <div class="row">
+            <span><b>Unit Bora:</b></span>
+            <span>${this.truckLoadingParchi.unitBora}</span>
+          </div>
+          <div class="row">
+            <span><b>Bardana Bag 650g:</b></span>
+            <span>${this.truckLoadingParchi.bardanaBag650g}</span>
+          </div>
+          <div class="row">
+            <span><b>Bardana Bag 1kg:</b></span>
+            <span>${this.truckLoadingParchi.bardanaBag1kg}</span>
+          </div>
+          <div class="row">
+            <span><b>Net Weight (Quintal):</b></span>
+            <span>${this.truckLoadingParchi.netWeight}</span>
+          </div>
+          <div class="row">
+            <span><b>Rate (\u20B9):</b></span>
+            <span>${this.truckLoadingParchi.rate}</span>
+          </div>
+          <div class="row">
+            <span><b>Amount (\u20B9):</b></span>
+            <span>${this.truckLoadingParchi.amount}</span>
+          </div>
+          <div class="row">
+            <span><b>Remark:</b></span>
+            <span>${this.truckLoadingParchi.other}</span>
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>
+    `;
+    const printWindow = window.open("", "", "width=800,height=600");
+    printWindow.document.write(receiptContent);
+    printWindow.document.close();
+    printWindow.print();
+  }
+  /**
+   * <!-- SRNO. TL{DD}{MM}{YY}{HH}{MM}{SS} -->
+            <b>Sr.no:</b> {{ getTruckLoadingParchiSrNo(truckLoadingParchi?.created_at) }}
+   */
+  getTruckLoadingParchiSrNo(created_at) {
+    if (created_at) {
+      const date = new Date(created_at);
+      const srNo = `TL${date.getDate().toString().padStart(2, "0")}${date.getMonth().toString().padStart(2, "0")}${date.getFullYear()}${date.getHours().toString().padStart(2, "0")}${date.getMinutes().toString().padStart(2, "0")}${date.getSeconds().toString().padStart(2, "0")}`;
+      return srNo;
+    }
+    return "";
+  }
+  // Navigate back to the previous page
+  goBack() {
+    this.router.navigate(["/taul-parchi-dashboard"]);
+  }
+  static {
+    this.\u0275fac = function TruckLoadingParchiViewComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _TruckLoadingParchiViewComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(ActivatedRoute), \u0275\u0275directiveInject(Router));
+    };
+  }
+  static {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TruckLoadingParchiViewComponent, selectors: [["app-truck-loading-parchi-view"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 87, vars: 17, consts: [[1, "card", "bg-white", "mb-3"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "row"], [1, "col", "text-start"], [1, "col", "text-end"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], [1, "text-center", "mt-4"], ["type", "button", 1, "btn", "btn-secondary", "px-5", 3, "click"], [1, "fas", "fa-arrow-left"], ["type", "button", 1, "btn", "btn-primary", "px-5", 3, "click"], [1, "fas", "fa-print"]], template: function TruckLoadingParchiViewComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4", 2);
+        \u0275\u0275text(3, "Truck Loading Parchi");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(4, "p")(5, "b");
+        \u0275\u0275text(6, "M+M");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(7, "div", 3)(8, "div", 4)(9, "b");
+        \u0275\u0275text(10, "Serial Number:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275text(11);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(12, "div", 5)(13, "b");
+        \u0275\u0275text(14, "Date:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275text(15);
+        \u0275\u0275pipe(16, "date");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(17, "div", 6)(18, "div", 3)(19, "div", 7)(20, "div", 8)(21, "h6", 9);
+        \u0275\u0275text(22, "Party Name:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(23, "p", 10);
+        \u0275\u0275text(24);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(25, "div", 8)(26, "h6", 9);
+        \u0275\u0275text(27, "Truck:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(28, "p", 10);
+        \u0275\u0275text(29);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(30, "div", 8)(31, "h6", 9);
+        \u0275\u0275text(32, "Delivery Location:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(33, "p", 10);
+        \u0275\u0275text(34);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(35, "div", 8)(36, "h6", 9);
+        \u0275\u0275text(37, "Assigned Hammal:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(38, "p", 10);
+        \u0275\u0275text(39);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(40, "div", 8)(41, "h6", 9);
+        \u0275\u0275text(42, "Bora Quantity:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(43, "p", 10);
+        \u0275\u0275text(44);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(45, "div", 8)(46, "h6", 9);
+        \u0275\u0275text(47, "Unit Bora:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(48, "p", 10);
+        \u0275\u0275text(49);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(50, "div", 8)(51, "h6", 9);
+        \u0275\u0275text(52, "Net Weight:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(53, "p", 10);
+        \u0275\u0275text(54);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(55, "div", 8)(56, "h6", 9);
+        \u0275\u0275text(57, "Rate:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(58, "p", 10);
+        \u0275\u0275text(59);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(60, "div", 8)(61, "h6", 9);
+        \u0275\u0275text(62, "Amount:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(63, "p", 10);
+        \u0275\u0275text(64);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(65, "div", 8)(66, "h6", 9);
+        \u0275\u0275text(67, "Remark:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(68, "p", 10);
+        \u0275\u0275text(69);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(70, "div", 8)(71, "h6", 9);
+        \u0275\u0275text(72, "Bardana Bag 650g:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(73, "p", 10);
+        \u0275\u0275text(74);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(75, "div", 8)(76, "h6", 9);
+        \u0275\u0275text(77, "Bardana Bag 1kg:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(78, "p", 10);
+        \u0275\u0275text(79);
+        \u0275\u0275elementEnd()()()()()();
+        \u0275\u0275elementStart(80, "div", 11)(81, "button", 12);
+        \u0275\u0275listener("click", function TruckLoadingParchiViewComponent_Template_button_click_81_listener() {
+          return ctx.goBack();
+        });
+        \u0275\u0275element(82, "i", 13);
+        \u0275\u0275text(83, " Back ");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(84, "button", 14);
+        \u0275\u0275listener("click", function TruckLoadingParchiViewComponent_Template_button_click_84_listener() {
+          return ctx.printReceipt();
+        });
+        \u0275\u0275element(85, "i", 15);
+        \u0275\u0275text(86, " Print ");
+        \u0275\u0275elementEnd()();
+      }
+      if (rf & 2) {
+        \u0275\u0275advance(11);
+        \u0275\u0275textInterpolate1(" ", ctx.getTruckLoadingParchiSrNo(ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.created_at), " ");
+        \u0275\u0275advance(4);
+        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(16, 14, ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.created_at, "dd-MM-YYYY"), " ");
+        \u0275\u0275advance(9);
+        \u0275\u0275textInterpolate(ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.partyDetails == null ? null : ctx.truckLoadingParchi.partyDetails.name);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.truckDetails == null ? null : ctx.truckLoadingParchi.truckDetails.truckNumber);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.deliveryDetails == null ? null : ctx.truckLoadingParchi.deliveryDetails.name);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.hammalDetails == null ? null : ctx.truckLoadingParchi.hammalDetails.name);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.boraQuantity);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate1("", ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.unitBora, "Kg");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate1("", ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.netWeight, "Kg");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.rate);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate1("\u20B9", ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.amount, "");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.other);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.bardanaBag650g);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.bardanaBag1kg);
+      }
+    }, dependencies: [
+      CommonModule,
+      DatePipe,
+      FormsModule,
+      ReactiveFormsModule,
+      NgxPaginationModule
+    ] });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiViewComponent, { className: "TruckLoadingParchiViewComponent" });
+})();
+
 // src/app/app.routes.ts
 var routes = [
   {
@@ -70015,6 +70737,16 @@ var routes = [
         path: "truck-loading-parchi",
         component: TruckLoadingParchiComponent,
         data: { title: "Truck Loading Parchi" }
+      },
+      {
+        path: "truck-loading-parchi-dashboard",
+        component: TruckLoadingParchiDashboardComponent,
+        data: { title: "Truck Loading Parchi Dashboard" }
+      },
+      {
+        path: "truck-loading-parchi-view/:id",
+        component: TruckLoadingParchiViewComponent,
+        data: { title: "Truck Loading Parchi View" }
       },
       {
         path: "masters",
@@ -70622,6 +71354,14 @@ var roleWiseAccess = [
   },
   {
     page: "taul-parchi-view",
+    roles: ["Admin"]
+  },
+  {
+    page: "truck-loading-parchi-dashboard",
+    roles: ["Admin"]
+  },
+  {
+    page: "truck-loading-parchi-view",
     roles: ["Admin"]
   }
 ];

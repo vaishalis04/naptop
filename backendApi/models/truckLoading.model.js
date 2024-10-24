@@ -6,34 +6,49 @@ const TruckLoadingSchema = new mongoose.Schema({
     partyName: {
         type: mongoose.Types.ObjectId,
         ref: 'Party',
-        },
+    },
     vehicleNumber: {
         type: String,
     },
-    deliveryLocation:{
+    truck: {
+        type: mongoose.Types.ObjectId,
+        ref: 'Truck',
+    },
+    deliveryLocation: {
         type: mongoose.Types.ObjectId,
         ref: 'Delivery',
-},
+    },
     assignedHammal: {
         type: mongoose.Types.ObjectId,
         ref: 'Hammal',
-       
+
     },
     storage: {
         type: mongoose.Types.ObjectId,
-             
+
     },
     boraQuantity: {
-        type: Number,   
-    },
-    unitBora: {
-        type: Number,   
-    },
-    netWeight:{
         type: Number,
     },
-    rate:{
-type:Number
+    unitBora: {
+        type: Number,
+    },
+    bardanaBag650g: {
+        type: Number,
+        default: 0,
+    },
+    bardanaBag1kg: {
+        type: Number,
+        default: 0,
+    },
+    netWeight: {
+        type: Number,
+    },
+    rate: {
+        type: Number
+    },
+    amount: {
+        type: Number,
     },
     crop: {
         type: mongoose.Types.ObjectId,
@@ -42,7 +57,7 @@ type:Number
     },
     other: {
         type: String,
-        default: '', 
+        default: '',
     },
     created_at: {
         type: Date,
@@ -50,7 +65,7 @@ type:Number
     },
     createdBy: {
         type: mongoose.Types.ObjectId,
-        ref: 'user', 
+        ref: 'user',
     },
     updated_at: {
         type: Date,

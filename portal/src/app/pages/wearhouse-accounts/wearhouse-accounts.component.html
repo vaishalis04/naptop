@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header d-flex justify-content-center align-item-center">
-      <h4>Wearhouse Transactions</h4>
+      <h4>Warehouse Transactions</h4>
     </div>
     <div class="card-body">
       <ul class="nav nav-pills nav-stacked">
@@ -60,7 +60,7 @@
             <select [(ngModel)]="selectedLocation" class="form-control" name="storage" id="storage">
               <option [value]="">Select</option>
               <option *ngFor="let item of Storage" [value]="item._id">{{item.name}}</option>
-              
+
             </select>
           </div>
         </div>
@@ -152,7 +152,7 @@
           *ngFor="let item of TruckLoadingParchiTransactionSummary"
         >
           <!-- <span class="badge badge-pill bg-primary">
-              
+
             </span> -->
           <button type="button" class="btn btn-primary">
             {{ item.storageName }}: ₹{{ item.totalRate }}
@@ -221,7 +221,7 @@
               </tbody>
             </table>
           </div>
-  
+
           <!-- Pagination Controls -->
           <pagination-controls
             id="truckloading"
@@ -232,4 +232,3 @@
       }
     </div>
   </div>
-  

@@ -128,7 +128,10 @@ export class TruckLoadingParchiComponent implements OnInit {
     unitBora: 0,
     crop: 0,
     rate: 0,
+    bardanaBag650g: 0,
+    bardanaBag1kg: 0,
     netWeight: 0, // To be calculated
+    amount: 0, // To be calculated
     other: '',
     id: Date.now(),
     created_at: new Date(),
@@ -147,8 +150,14 @@ export class TruckLoadingParchiComponent implements OnInit {
   }
 
   calculateNetWeight(): void {
-    const { boraQuantity, unitBora } = this.TruckLoadingParchi;
-    this.TruckLoadingParchi.netWeight = boraQuantity * unitBora;
+    const { boraQuantity, unitBora, bardanaBag650g, bardanaBag1kg } = this.TruckLoadingParchi;
+    this.TruckLoadingParchi.netWeight = ((boraQuantity * unitBora) + (bardanaBag650g * 0.65) + (bardanaBag1kg * 1)) / 100;
+    this.calculateAmount();
+  }
+
+  calculateAmount(): void {
+    const { netWeight, rate } = this.TruckLoadingParchi;
+    this.TruckLoadingParchi.amount = netWeight * rate;
   }
 
   // Fetch Party Names from backend

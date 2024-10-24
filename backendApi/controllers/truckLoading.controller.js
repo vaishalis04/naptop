@@ -152,6 +152,20 @@ module.exports = {
           },
         },
         {
+          $lookup: {
+            from: "trucks",
+            localField: "truck",
+            foreignField: "_id",
+            as: "truckDetails",
+          },
+        },
+        {
+          $unwind: {
+            preserveNullAndEmptyArrays: true,
+            path: "$truckDetails",
+          },
+        },
+        {
           $unwind: "$cropDetails",
         },
         {
@@ -288,13 +302,96 @@ module.exports = {
       }
 
       // Finding the TruckLoading document by its ID
-      const result = await Model.findOne({ _id: mongoose.Types.ObjectId(id) });
+      // const result = await Model.findOne({ _id: mongoose.Types.ObjectId(id) });
+      const result = await Model.aggregate([
+        { $match: { _id: mongoose.Types.ObjectId(id) } },
+        {
+          $lookup: {
+            from: "parties",
+            localField: "partyName",
+            foreignField: "_id",
+            as: "partyDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "deliveries",
+            localField: "deliveryLocation",
+            foreignField: "_id",
+            as: "deliveryDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "hammals",
+            localField: "assignedHammal",
+            foreignField: "_id",
+            as: "hammalDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "crops",
+            localField: "crop",
+            foreignField: "_id",
+            as: "cropDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "users",
+            localField: "createdBy",
+            foreignField: "_id",
+            as: "userDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "storages",
+            localField: "storage",
+            foreignField: "_id",
+            as: "wearhouseDetails",
+          },
+        },
+        {
+          $lookup: {
+            from: "trucks",
+            localField: "truck",
+            foreignField: "_id",
+            as: "truckDetails",
+          },
+        },
+        {
+          $unwind: {
+            preserveNullAndEmptyArrays: true,
+            path: "$truckDetails",
+          },
+        },
+        {
+          $unwind: "$cropDetails",
+        },
+        {
+          $unwind: "$hammalDetails",
+        },
+        {
+          $unwind: "$deliveryDetails",
+        },
+        {
+          $unwind: "$partyDetails",
+        },
+        {
+          $unwind: "$userDetails",
+        },
+        {
+          $unwind: "$wearhouseDetails",
+        },
+      ]);
 
-      if (!result) {
+      if (!result.length) {
         throw createError.NotFound("No TruckLoading Found");
       }
 
-      res.json(result);
+      res.json(result[0]);
     } catch (error) {
       next(error);
     }
@@ -613,11 +710,11 @@ module.exports = {
   getByUser: async function (req, res) {
     const { id } = req.params;
     const { page, limit, order_by, order_in } = req.query;
-  
+
     const _page = page ? parseInt(page) : 1;
     const _limit = limit ? parseInt(limit) : 10;
     const _skip = (_page - 1) * _limit;
-  
+
     try {
       // Define sorting logic
       let sorting = {};
@@ -626,13 +723,13 @@ module.exports = {
       } else {
         sorting["_id"] = -1; // Default sorting by _id (descending)
       }
-  
+
       // Aggregation pipeline to filter by createdBy and disabled fields
       const query = {
         createdBy: mongoose.Types.ObjectId(id),
         disabled: false
       };
-  
+
       let result = await Model.aggregate([
         { $match: query }, // Match the query for createdBy and disabled fields
         { $sort: sorting }, // Apply sorting
@@ -692,10 +789,10 @@ module.exports = {
           $unwind: "$partyDetails",
         }, // Unwind the user details if necessary
       ]);
-  
+
       // Count total number of results for pagination metadata
       const resultCount = await Model.countDocuments(query);
-  
+
       // Respond with data and pagination metadata
       res.json({
         data: result,
@@ -722,23 +819,23 @@ module.exports = {
   //       order_in,
   //       from,
   //       to, } = req.query;
-  
+
   //     const _page = page ? parseInt(page) : 1;
   //     const _limit = limit ? parseInt(limit) : 20;
   //     const _skip = (_page - 1) * _limit;
-  
+
   //     let sorting = {};
   //     if (order_by) {
   //       sorting[order_by] = order_in === "desc" ? -1 : 1;
   //     } else {
   //       sorting["_id"] = -1;
   //     }
-  
+
   //     const query = {};
   //     if (partyName) {
   //       query.partyName = new RegExp(partyName, "i");
   //     }
-  
+
   //     if (from || to) {
   //       query.created_at = {};
   //       if (from) {
@@ -748,12 +845,12 @@ module.exports = {
   //         query.created_at.$lte = new Date(to);
   //       }
   //     }
-  
+
   //     query.disabled = { $ne: true };
   //     query.is_inactive = { $ne: true };
-  
+
   //     console.log(query);
-  
+
   //     let result = await Model.aggregate([
   //       { $match: query },
   //       { $sort: sorting },
@@ -786,7 +883,7 @@ module.exports = {
   //       { $unwind: "$farmerDetails" },
   //       { $unwind: "$cropDetails" },
   //       { $unwind: "$wearhouseDetails" }, // Unwind the wearhouse details
-  
+
   //       {
   //         $group: {
   //           _id: "$wearhouseDetails._id", // Group by wearhouseDetails
@@ -796,10 +893,10 @@ module.exports = {
   //       },
   //       { $sort: sorting },
   //     ]);
-  
+
   //     console.log("result", result);
   //     const resultCount = await Model.countDocuments(query);
-  
+
   //     res.json({
   //       data: result,
   //       meta: {
@@ -814,7 +911,7 @@ module.exports = {
   //   } catch (error) {
   //     throw new Error(error);
   //   }
-  // }  
+  // }
 
   getWearhouseSummary: async (req, res) => {
     try {
@@ -828,24 +925,24 @@ module.exports = {
         from,
         to,
       } = req.query;
-  
+
       const _page = page ? parseInt(page) : 1;
       const _limit = limit ? parseInt(limit) : 20;
       const _skip = (_page - 1) * _limit;
-  
+
       let sorting = {};
       if (order_by) {
         sorting[order_by] = order_in === "desc" ? -1 : 1;
       } else {
         sorting["_id"] = -1;
       }
-  
+
       // Build query object
       const query = {};
       if (partyName) {
         query.partyName = new RegExp(partyName, "i");
       }
-  
+
       if (from || to) {
         query.created_at = {};
         if (from) {
@@ -855,12 +952,12 @@ module.exports = {
           query.created_at.$lte = new Date(to);
         }
       }
-  
+
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
-  
+
       console.log("Query being used:", query);
-  
+
       // Debugging: Test base query without lookups and grouping
       let baseResult = await Model.aggregate([
         { $match: query },
@@ -868,14 +965,14 @@ module.exports = {
         { $skip: _skip },
         { $limit: _limit },
       ]);
-  
+
       console.log("Base query result:", baseResult);
-  
+
       // If baseResult is empty, there's an issue with the query, sorting, or pagination
       if (baseResult.length === 0) {
         console.log("No records found for base query.");
       }
-  
+
       // Now reintroduce the lookups and grouping step-by-step to identify issues
       let result = await Model.aggregate([
         { $match: query },
@@ -910,9 +1007,9 @@ module.exports = {
         // { $unwind: "$farmerDetails" },
         // { $unwind: "$cropDetails" },
         // { $unwind: "$wearhouseDetails" },
-        
+
         // Test result after lookups without grouping
-        { 
+        {
           $project: {
             farmerDetails: 1,
             cropDetails: 1,
@@ -921,14 +1018,14 @@ module.exports = {
           }
         }
       ]);
-  
+
       console.log("Aggregation result before grouping:", result);
-  
+
       // If there’s no data, it's likely an issue with the lookups or matching conditions.
       if (result.length === 0) {
         console.log("No results found after lookup stages.");
       }
-  
+
       // Now proceed with the grouping step if there is data
       let groupedResult = await Model.aggregate([
         { $match: query },
@@ -971,11 +1068,11 @@ module.exports = {
         },
         { $sort: sorting },
       ]);
-  
+
       console.log("Grouped result:", groupedResult);
-  
+
       const resultCount = await Model.countDocuments(query);
-  
+
       res.json({
         data: groupedResult,
         meta: {

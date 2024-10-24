@@ -42,6 +42,11 @@ export class SidebarComponent {
       link: '/truck-loading-parchi'
     },
     {
+      title: 'All Truck Loading Parchis',
+      icon: 'fi-rr-wallet',
+      link: '/truck-loading-parchi-dashboard'
+    },
+    {
       title:'Farmers',
       icon: 'fi-rr-database',
       link:'/farmers'
@@ -122,12 +127,12 @@ export class SidebarComponent {
       link: '/advance-payment'
     },
     {
-      title: 'Wearhouse Accounts',
+      title: 'Warehouse Accounts',
       icon: 'fi fi-rr-wallet',
       link: '/wearhouse-accounts'
     },
     {
-      title: 'Wearhouse Inventory',
+      title: 'Warehouse Inventory',
       icon: 'fi fi-rr-wallet',
       link: '/wearhouse-inventory'
     }

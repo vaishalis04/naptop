@@ -1,0 +1,86 @@
+<div class="card">
+    <div class="card-header d-flex justify-content-center align-items-center">
+        <h4>All Truck Loading Parchi</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="fromDate">From</label>
+                    <input type="date" class="form-control" name="fromDate" id="fromDate" [(ngModel)]="fromDate" />
+                    <small id="fromdatehelpid" class="form-text text-muted">From Date</small>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="toDate">To</label>
+                    <input type="date" class="form-control" name="toDate" id="toDate" [(ngModel)]="toDate" />
+                    <small id="todatehelpid" class="form-text text-muted">To Date</small>
+                </div>
+            </div>
+
+            <div class="col">
+                <button type="button" class="btn btn-primary" (click)="getTruckLoadingParchis()">Submit</button>
+            </div>
+        </div>
+
+        <div class="card bg-white mt-4">
+            <div class="card-header">
+                <h4 class="mb-0">Truck Loading Parchis</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Sr.no</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Crop</th>
+                                <th scope="col">Party Name</th>
+                                <th scope="col">Truck</th>
+                                <th scope="col">Delivery Location</th>
+                                <th scope="col">Assigned Hammal</th>
+                                <th scope="col">Bora Quantity</th>
+                                <th scope="col">Net Weight(in Quintal)</th>
+                                <th scope="col">Amount (₹)</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Iterate through TruckLoadingParchi data -->
+                            <tr *ngFor="let truckLoadingParchi of TruckLoadingParchis
+                  | paginate : { itemsPerPage: perPage, currentPage: currentPage, id: 'truckloadingparchi', totalItems: TruckLoadingParchiCount };
+                  let i = index;">
+                                <td>{{ currentPage * perPage - perPage + (i + 1) }}</td>
+                                <td>{{ truckLoadingParchi.created_at | date: 'MM-dd-YYYY' }}</td>
+                                <td>{{ truckLoadingParchi?.cropDetails?.name }}</td>
+                                <td>{{ truckLoadingParchi?.partyDetails.name }}</td>
+                                <td>{{ truckLoadingParchi?.truckDetails?.truckNumber }}</td>
+                                <td>{{ truckLoadingParchi?.deliveryDetails.name }}</td>
+                                <td>{{ truckLoadingParchi?.hammalDetails.name }}</td>
+                                <td>{{ truckLoadingParchi.boraQuantity }}</td>
+                                <td>{{ truckLoadingParchi.netWeight }}</td>
+                                <td>{{ truckLoadingParchi.amount }}</td>
+
+                                <td>
+                                    <button type="button" class="btn btn-primary"
+                                        (click)="printReceipt(truckLoadingParchi)" style="margin-right: 10px;">
+                                        Print
+                                    </button>
+
+                                    <button type="button" class="btn btn-primary"
+                                        [routerLink]="['/truck-loading-parchi-view', truckLoadingParchi._id]">
+                                        View
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <pagination-controls id="truckloadingparchi"
+                    (pageChange)="currentPage = $event; getTruckLoadingParchis()"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

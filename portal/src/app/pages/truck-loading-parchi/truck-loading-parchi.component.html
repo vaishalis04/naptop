@@ -42,6 +42,19 @@
                     </option>
                   </select>
 
+                  <label for="crop" class="form-label">Crop</label>
+                  <select
+                    id="crop"
+                    class="form-select"
+                    [(ngModel)]="TruckLoadingParchi.crop"
+                    name="crop"
+                  >
+                    <option value="">Select Crop</option>
+                    <option *ngFor="let crop of Crops" [value]="crop._id">
+                      {{ crop.name }}
+                    </option>
+                  </select>
+
                   <!-- <label for="vehicleNumber" class="form-label
                                     ">Vehicle Number</label>
                                     <input id="vehicleNumber" class="form-control" [(ngModel)]="TruckLoadingParchi.vehicleNumber"
@@ -133,7 +146,33 @@
                     (ngModelChange)="calculateNetWeight()"
                   />
 
-                  <label for="netWeight" class="form-label">Net Weight</label>
+                  <label for="bardanaBag650g" class="form-label"
+                    >Bardana Bag 650g</label
+                  >
+                  <input
+                    id="bardanaBag650g"
+                    class="form-control"
+                    [(ngModel)]="TruckLoadingParchi.bardanaBag650g"
+                    name="bardanaBag650g"
+                    type="number"
+                    placeholder="Bardana Bag 650g"
+                    (ngModelChange)="calculateNetWeight()"
+                  />
+
+                  <label for="bardanaBag1kg" class="form-label"
+                    >Bardana Bag 1kg</label
+                  >
+                  <input
+                    id="bardanaBag1kg"
+                    class="form-control"
+                    [(ngModel)]="TruckLoadingParchi.bardanaBag1kg"
+                    name="bardanaBag1kg"
+                    type="number"
+                    placeholder="Bardana Bag 1kg"
+                    (ngModelChange)="calculateNetWeight()"
+                  />
+
+                  <label for="netWeight" class="form-label">Net Weight(in Quintal)</label>
                   <!-- The calculated Net Weight will be displayed here -->
                   <input
                     id="netWeight"
@@ -145,20 +184,7 @@
                     readonly
                   />
 
-                  <label for="crop" class="form-label">Crop</label>
-                  <select
-                    id="crop"
-                    class="form-select"
-                    [(ngModel)]="TruckLoadingParchi.crop"
-                    name="crop"
-                  >
-                    <option value="">Select Crop</option>
-                    <option *ngFor="let crop of Crops" [value]="crop._id">
-                      {{ crop.name }}
-                    </option>
-                  </select>
-
-                  <label for="rate" class="form-label">rate</label>
+                  <label for="rate" class="form-label">Rate(Per Quintal)</label>
                   <input
                     id="rate"
                     class="form-control"
@@ -166,9 +192,21 @@
                     name="rate"
                     type="text"
                     placeholder="rate"
+                    (ngModelChange)="calculateAmount()"
                   />
 
-                  <label for="other" class="form-label">Other</label>
+                  <label for="amount" class="form-label">Payable Amount</label>
+                  <input
+                    id="amount"
+                    class="form-control"
+                    [value]="TruckLoadingParchi.amount"
+                    name="amount"
+                    type="number"
+                    placeholder="Amount"
+                    readonly
+                  />
+
+                  <label for="other" class="form-label">Remark</label>
                   <input
                     id="other"
                     class="form-control"

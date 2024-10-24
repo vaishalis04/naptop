@@ -118,4 +118,12 @@ export const roleWiseAccess = [
     page: 'taul-parchi-view',
     roles: ['Admin'],
   },
+  {
+    page: 'truck-loading-parchi-dashboard',
+    roles: ['Admin'],
+  },
+  {
+    page: 'truck-loading-parchi-view',
+    roles: ['Admin'],
+  }
 ];

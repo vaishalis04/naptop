@@ -30,6 +30,8 @@ import { WearhouseAccountsComponent } from './pages/wearhouse-accounts/wearhouse
 import { WearhouseInventoryComponent } from './pages/wearhouse-inventory/wearhouse-inventory.component';
 import { TaulparchiDashboardComponent } from './pages/taulparchi-dashboard/taulparchi-dashboard.component';
 import { TaulparchiViewComponent } from './pages/taulparchi-view/taulparchi-view.component';
+import { TruckLoadingParchiDashboardComponent } from './pages/truck-loading-parchi-dashboard/truck-loading-parchi-dashboard.component';
+import { TruckLoadingParchiViewComponent } from './pages/truck-loading-parchi-view/truck-loading-parchi-view.component';
 
 export const routes: Routes = [
   {
@@ -85,6 +87,16 @@ export const routes: Routes = [
         data: { title: 'Truck Loading Parchi' },
       },
       {
+        path: 'truck-loading-parchi-dashboard',
+        component: TruckLoadingParchiDashboardComponent,
+        data: { title: 'Truck Loading Parchi Dashboard' },
+      },
+      {
+        path: 'truck-loading-parchi-view/:id',
+        component: TruckLoadingParchiViewComponent,
+        data: { title: 'Truck Loading Parchi View' },
+      },
+      {
         path: 'masters',
         component: MastersComponent,
         data: { title: 'Masters' },
@@ -104,7 +116,7 @@ export const routes: Routes = [
         component: HammalsComponent,
         data: { title: 'Hammals' },
       },
-     
+
       {
         path: 'crops',
         component: CropComponent,
@@ -186,7 +198,7 @@ export const routes: Routes = [
         data: { title: 'wearhouse-inventory' },
       },
     ],
-    
+
   },
   {
     path: '**',

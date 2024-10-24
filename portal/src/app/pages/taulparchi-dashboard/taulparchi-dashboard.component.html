@@ -56,6 +56,8 @@
                 <th scope="col">Storage Location</th>
                 <th scope="col">Crop</th>
                 <th scope="col">Firm/Company</th>
+                <th scope="col">Net Weight(in Quintal)</th>
+                <th scope="col">Amount (₹)</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -81,6 +83,8 @@
                 <td>{{ taulaParchi?.wearhouseDetails.name }}</td>
                 <td>{{ taulaParchi?.cropDetails.name }}</td>
                 <td>{{ taulaParchi?.firm_company }}</td>
+                <td>{{ taulaParchi.netWeight }}</td>
+                <td>{{ taulaParchi.amount }}</td>
 
                 <td>
                   <button
@@ -89,7 +93,7 @@
                     (click)="printReceipt(taulaParchi)"
                     style="margin-right: 10px;"
                   >
-                    Print 
+                    Print
                   </button>
 
                   <button
@@ -105,6 +109,10 @@
             </tbody>
           </table>
         </div>
+        <pagination-controls
+          id="taulaparchi"
+          (pageChange)="currentPage = $event; getTaulaParchis()"
+        ></pagination-controls>
       </div>
     </div>
   </div>
