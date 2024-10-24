@@ -1,63 +1,64 @@
 const mongoose = require("mongoose");
 
 const TaulParchiSchema = new mongoose.Schema({
-    purchase:{
-        type:String,
-    enum: ['directPurchase', 'AuctionMandiPurchase'],
+    purchase: {
+        type: String,
+        enum: ['directPurchase', 'AuctionMandiPurchase'],
     },
     farmer: {
         type: mongoose.Types.ObjectId,
-        ref:'farmers'      
+        ref: 'farmers'
     },
     village: {
-        type: mongoose.Types.ObjectId, 
-             
+        type: mongoose.Types.ObjectId,
     },
-    mobile:{
-        type: mongoose.Types.ObjectId, 
-
-    },
+    // mobile:{
+    //     type: mongoose.Types.ObjectId,
+    // },
     storage: {
         type: mongoose.Types.ObjectId,
-             
     },
     firm_company: {
-        type: String,     
+        type: String,
     },
     rate: {
-        type: Number,    
+        type: Number,
     },
     hammal: {
         type: mongoose.Types.ObjectId,
-        ref:'hammals',
+        ref: 'hammals',
         required: function () {
-        return this.tulai === 'Labour';
+            return this.tulai === 'Labour';
         },
         default: null,
 
     },
     boraQuantity: {
-        type: Number,   
+        type: Number,
     },
     bharti: {
-        type: Number,   
+        type: Number,
     },
     looseQuantity: {
         type: Number,
-        
+
     },
-    netWeight:{
+    netWeight: {
         type: Number,
     },
     crop: {
-        type: mongoose.Types.ObjectId,  
-        ref:'crop'
+        type: mongoose.Types.ObjectId,
+        ref: 'crop'
     },
-    tulai:{
-        type: String,     
+    tulai: {
+        type: String,
         enum: ['Labour', 'Dharamkata'],
     },
-    amount:{
+    exemptHammali: {
+        type: String,
+        enum: ['deduct', 'exempted'],
+    },
+    amount: {
         type: Number,
     },
     created_at: {
@@ -65,8 +66,8 @@ const TaulParchiSchema = new mongoose.Schema({
         default: Date.now
     },
     createdBy: {
-        type: mongoose.Types.ObjectId,   
-        ref: 'user',   
+        type: mongoose.Types.ObjectId,
+        ref: 'user',
     },
     updated_at: {
         type: Date
@@ -84,7 +85,7 @@ const TaulParchiSchema = new mongoose.Schema({
     }
 });
 
-TaulParchiSchema.pre('save', function(next) {
+TaulParchiSchema.pre('save', function (next) {
     if (this.isModified()) {
         this.updated_at = Date.now();
     }

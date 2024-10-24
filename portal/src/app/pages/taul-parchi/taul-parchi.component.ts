@@ -16,13 +16,13 @@ export class TaulParchiComponent implements OnInit {
   Hammals: any[] = [];
   Crops: any[] = [];
   Storage: any[] = [];
-  
+  Villages: any[] = [];
 
   TaulParchi = {
     farmer: '',
     village: '',
     mobile: '',
-    storage:'',
+    storage: '',
     firm_company: '',
     rate: '',
     tulai: '',
@@ -30,21 +30,22 @@ export class TaulParchiComponent implements OnInit {
     boraQuantity: 0,
     unitBora: 0,
     bharti: 0,
-    looseQuantity:0,
+    looseQuantity: 0,
     netWeight: 0,
     purchase: '',
     crop: '',
-    amount:0,
+    amount: 0,
+    exemptHammali: 'deduct',
     id: Date.now(),
     created_at: new Date(),
     createdBy: '',
   };
 
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.fetchFarmers();
-    // this.fetchVillages();
+    this.fetchVillages();
     this.fetchHammals();
     this.fetchCrops();
     this.fetchStorage()
@@ -56,10 +57,10 @@ export class TaulParchiComponent implements OnInit {
   }
   calculateAmount(): void {
     const { netWeight, rate } = this.TaulParchi;
-    // const netWeightInQuintals = Number(netWeight) / 100; 
-  const rateValue = Number(rate);
-    this.TaulParchi.amount = (netWeight * rateValue)
-    console.log("calculate amount", this.TaulParchi.amount)
+    // const netWeightInQuintals = Number(netWeight) / 100;
+    const rateValue = Number(rate);
+    const hammaliAmount = this.Hammals.find((hammal) => hammal._id === this.TaulParchi.hammal)?.rate;
+    this.TaulParchi.amount = ((netWeight / 100) * rateValue) + (this.TaulParchi.exemptHammali == 'deduct' ? (hammaliAmount || 0) : 0);
   }
 
   // Fetch Farmers from backend
@@ -154,6 +155,25 @@ export class TaulParchiComponent implements OnInit {
         },
       });
   }
+
+  fetchVillages() {
+    this.apiService
+      .get('village', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.Villages = res.data;
+        },
+        error: (err: any) => {
+          console.error('Error fetching Villages:', err);
+        },
+      });
+  }
+
   // Autofill the firm/company based on the selected farmer
   autoFillFirmOrCompany() {
     const selectedFarmer = this.Farmers.find(
@@ -188,12 +208,12 @@ export class TaulParchiComponent implements OnInit {
       alert('Please enter Bora');
       return;
     }
-   
+
     if (!this.TaulParchi.bharti) {
       alert('Please enter Bharti');
       return;
     }
-     if (!this.TaulParchi.looseQuantity) {
+    if (!this.TaulParchi.looseQuantity) {
       alert('Please enter looseQuantity');
       return;
     }
@@ -227,7 +247,8 @@ export class TaulParchiComponent implements OnInit {
       this.apiService.post('taulparchi', this.TaulParchi).subscribe({
         next: (res: any) => {
           console.log('TaulParchi saved successfully');
-          this.router.navigate(['/dashboard']);
+          // this.router.navigate(['/dashboard']);
+          this.router.navigate(['/taul-parchi-view/'+res._id]);
         },
         error: (err: any) => {
           console.error('Error saving TaulParchi:', err);
