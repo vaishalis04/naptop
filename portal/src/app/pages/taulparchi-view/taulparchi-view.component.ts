@@ -4,6 +4,7 @@ import { ApiService } from '../../services/api.service';
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { QRCodeModule,QRCodeElementType } from 'angularx-qrcode';
 
 @Component({
   selector: 'app-taulparchi-view',
@@ -14,13 +15,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     DatePipe,
     NgxPaginationModule,
+    QRCodeModule
   ],
   templateUrl: './taulparchi-view.component.html',
   styleUrl: './taulparchi-view.component.css',
 })
 export class TaulparchiViewComponent implements OnInit {
   taulaParchi: any = {}; // Store the specific taulaParchi details here
-
+  qrCodeUrl: string | null = null;
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute, // Inject ActivatedRoute to capture route parameters
@@ -48,8 +50,11 @@ export class TaulparchiViewComponent implements OnInit {
       },
     });
   }
-
+  generateQRCode(data: string) {
+    this.qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${data}&size=150x150`;
+  }
   printReceipt(taulaParchi: any) {
+    this.generateQRCode(taulaParchi._id || 'N/A');
     // Format the receipt content as HTML
     const receiptContent = `
   <!DOCTYPE html>
@@ -231,6 +236,10 @@ export class TaulparchiViewComponent implements OnInit {
               <div class="value">${taulaParchi.amount || 'N/A'}</div>
             </div>
           </div>
+          <div class="section">
+              <div class="row"><div class="label"><b>QR Code:</b></div><div class="value"><img src="${this.qrCodeUrl}" alt="QR Code" /></div></div>
+            </div>
+          
 
           <!-- Print Button -->
           <button class="btn-print" onclick="window.print()">Print Receipt</button>

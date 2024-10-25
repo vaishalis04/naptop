@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { CommonModule, DatePipe, } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
-
+import { QRCodeModule,QRCodeElementType } from 'angularx-qrcode';
 
 @Component({
   selector: 'app-taulparchi-dashboard',
@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
     DatePipe,
     NgxPaginationModule,
     RouterModule,
+    QRCodeModule
   ],
   templateUrl: './taulparchi-dashboard.component.html',
   styleUrl: './taulparchi-dashboard.component.css',
@@ -31,6 +32,8 @@ export class TaulparchiDashboardComponent {
   fromDate: any;
   toDate: any;
   Storage: any[] = [];
+  qrCodeUrl: string | null = null;
+
 
   constructor(private apiService: ApiService) {
     this.getTaulaParchis();
@@ -56,8 +59,12 @@ export class TaulparchiDashboardComponent {
         },
       });
   }
+  generateQRCode(data: string) {
+    this.qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${data}&size=150x150`;
+  }
 
   printReceipt(taulaParchi: any) {
+    this.generateQRCode(taulaParchi._id || 'N/A');
     // Format the receipt content as HTML
     const receiptContent = `
   <!DOCTYPE html>
@@ -160,11 +167,7 @@ export class TaulparchiDashboardComponent {
           </div>
 
           <!-- Farmer and Crop Details -->
-          <div class="section">
-            <div class="row">
-              <div class="label"><b>Id:</b></div>
-              <div class="value">${taulaParchi._id || 'N/A'}</div>
-            </div>
+       
           <div class="section">
             <div class="row">
               <div class="label"><b>Farmer's Name:</b></div>
@@ -245,6 +248,9 @@ export class TaulparchiDashboardComponent {
               <div class="value">${taulaParchi.amount || 'N/A'}</div>
             </div>
           </div>
+          <div class="section">
+              <div class="row"><div class="label"><b>QR Code:</b></div><div class="value"><img src="${this.qrCodeUrl}" alt="QR Code" /></div></div>
+            </div>
 
           <!-- Print Button -->
           <button class="btn-print" onclick="window.print()">Print Receipt</button>

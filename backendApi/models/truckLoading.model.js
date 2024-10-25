@@ -40,7 +40,7 @@ const TruckLoadingSchema = new mongoose.Schema({
     bardanaType:{
       
         type: Number,
-        enum: [650, 1, null],
+        enum: [650 , 1],
     },
     bardanaUnit:{
         type: Number,
