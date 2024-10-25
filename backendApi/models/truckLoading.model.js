@@ -23,6 +23,10 @@ const TruckLoadingSchema = new mongoose.Schema({
         ref: 'Hammal',
 
     },
+    tranport:{
+        type: mongoose.Types.ObjectId,
+        ref: 'Transport',
+    },
     storage: {
         type: mongoose.Types.ObjectId,
 
@@ -33,14 +37,22 @@ const TruckLoadingSchema = new mongoose.Schema({
     unitBora: {
         type: Number,
     },
-    bardanaBag650g: {
+    bardanaType:{
+      
         type: Number,
-        default: 0,
+        enum: [650, 1, null],
     },
-    bardanaBag1kg: {
+    bardanaUnit:{
         type: Number,
-        default: 0,
     },
+    // bardanaBag650g: {
+    //     type: Number,
+    //     default: 0,
+    // },
+    // bardanaBag1kg: {
+    //     type: Number,
+    //     default: 0,
+    // },
     netWeight: {
         type: Number,
     },
@@ -58,6 +70,9 @@ const TruckLoadingSchema = new mongoose.Schema({
     other: {
         type: String,
         default: '',
+    },
+    advance:{
+        type: String,
     },
     created_at: {
         type: Date,

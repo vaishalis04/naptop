@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
 
@@ -12,12 +12,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./taul-parchi.component.css'],
 })
 export class TaulParchiComponent implements OnInit {
+  isEdit: 'Update' | 'Add' | undefined;
   Farmers: any[] = [];
   Hammals: any[] = [];
   Crops: any[] = [];
   Storage: any[] = [];
   Villages: any[] = [];
   firm_company: any[] = [];
+  masterToAddOrEdit: any = {};
 
 
   TaulParchi = {
@@ -44,7 +46,44 @@ export class TaulParchiComponent implements OnInit {
     created_at: new Date(),
     createdBy: '',
   };
+  newFarmer: any = {
+    farmerType: '',
+   
+    name: '',
+    mobile: '',
+    village: ''
+  };
+ 
 
+  
+  addNewItem() {
+    if (this.masterToAddOrEdit.name === '') {
+      return;
+    }
+    
+    this.apiService.post('farmer', this.masterToAddOrEdit).subscribe(
+      (data: any) => {
+        this.fetchFarmers();
+        this.resetMasterToAddOrEdit();
+      },
+      (error: any) => {
+        if (error.status === 400) {
+          alert('Mobile number already exists. Please use another mobile number.');
+        } else {
+          alert('An error occurred. Please try again.');
+        }
+      }
+      
+    );
+  }
+  resetMasterToAddOrEdit() {
+    this.masterToAddOrEdit = {};
+    this.isEdit = undefined;
+  }
+  setFarmerForEdit(farmer: any) {
+    this.isEdit = "Add";
+    this.newFarmer = { ...farmer }; 
+  }
   constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {

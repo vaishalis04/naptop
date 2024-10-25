@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-taulparchi-dashboard',
@@ -142,6 +143,7 @@ export class TaulparchiDashboardComponent {
           <p class="text-center"><b>M+M</b></p>
 
           <!-- Sr. No and Date Section -->
+          
           <div class="section">
             <div class="row">
               <div class="label"><b>Sr.No:</b></div>
@@ -158,6 +160,11 @@ export class TaulparchiDashboardComponent {
           </div>
 
           <!-- Farmer and Crop Details -->
+          <div class="section">
+            <div class="row">
+              <div class="label"><b>Id:</b></div>
+              <div class="value">${taulaParchi._id || 'N/A'}</div>
+            </div>
           <div class="section">
             <div class="row">
               <div class="label"><b>Farmer's Name:</b></div>

@@ -55,6 +55,19 @@
                     </option>
                   </select>
 
+                  <label for="transport" class="form-label">Transport Name</label>
+                  <select
+                    id="transport"
+                    class="form-select"
+                    [(ngModel)]="TruckLoadingParchi.transport"
+                    name="transport"
+                  >
+                    <option value="">Select Transport</option>
+                    <option *ngFor="let transport of Transport" [value]="transport._id">
+                      {{ transport.name }}
+                    </option>
+                  </select>
+
                   <!-- <label for="vehicleNumber" class="form-label
                                     ">Vehicle Number</label>
                                     <input id="vehicleNumber" class="form-control" [(ngModel)]="TruckLoadingParchi.vehicleNumber"
@@ -105,22 +118,22 @@
                     </option>
                   </select>
                   <label for="storage" class="form-label"
-                  >Storage Location</label
-                >
-                <select
-                  id="storage"
-                  class="form-select"
-                  [(ngModel)]="TruckLoadingParchi.storage"
-                  name="storage"
-                >
-                  <option value="">Select Storage Location</option>
-                  <option
-                    *ngFor="let storage of Storage"
-                    [value]="storage._id"
+                    >Storage Location</label
                   >
-                    {{ storage.name }}
-                  </option>
-                </select>
+                  <select
+                    id="storage"
+                    class="form-select"
+                    [(ngModel)]="TruckLoadingParchi.storage"
+                    name="storage"
+                  >
+                    <option value="">Select Storage Location</option>
+                    <option
+                      *ngFor="let storage of Storage"
+                      [value]="storage._id"
+                    >
+                      {{ storage.name }}
+                    </option>
+                  </select>
 
                   <label for="boraQuantity" class="form-label"
                     >Bora Quantity</label
@@ -145,41 +158,55 @@
                     placeholder="Unit Bora"
                     (ngModelChange)="calculateNetWeight()"
                   />
-
-                  <label for="bardanaBag650g" class="form-label"
-                    >Bardana Bag 650g</label
+                  <label for="bardanaType" class="form-label"
+                    >Bardana Type</label
                   >
-                  <input
-                    id="bardanaBag650g"
-                    class="form-control"
-                    [(ngModel)]="TruckLoadingParchi.bardanaBag650g"
-                    name="bardanaBag650g"
-                    type="number"
-                    placeholder="Bardana Bag 650g"
+                  <select
+                    id="bardanaType"
+                    class="form-select"
+                    [(ngModel)]="TruckLoadingParchi.bardanaType"
+                    name="bardanaType"
+                    (change)="updateBardanaUnit()"
                     (ngModelChange)="calculateNetWeight()"
-                  />
-
-                  <label for="bardanaBag1kg" class="form-label"
-                    >Bardana Bag 1kg</label
                   >
-                  <input
-                    id="bardanaBag1kg"
-                    class="form-control"
-                    [(ngModel)]="TruckLoadingParchi.bardanaBag1kg"
-                    name="bardanaBag1kg"
-                    type="number"
-                    placeholder="Bardana Bag 1kg"
-                    (ngModelChange)="calculateNetWeight()"
-                  />
+                    <option [ngValue]="null">Select Bardana Type</option>
+                    <option [ngValue]="null">No Bardana</option>
+                    <option [ngValue]=650>650g</option>
+                    <option [ngValue]=1000>1Kg</option>
+                  </select>
 
-                  <label for="netWeight" class="form-label">Net Weight(in Quintal)</label>
-                  <!-- The calculated Net Weight will be displayed here -->
+                  <div
+                    *ngIf="
+                      TruckLoadingParchi.bardanaType === 650 ||
+                      TruckLoadingParchi.bardanaType === 1
+                    "
+                  >
+                    <label for="bardanaUnit" class="form-label">
+                      Bardana Unit
+                    </label>
+                    <input
+                      id="bardanaUnit"
+                      class="form-control"
+                      [(ngModel)]="TruckLoadingParchi.bardanaUnit"
+                      name="bardanaUnit"
+                      type="number"
+                      step="0.01"
+                      (ngModelChange)="calculateNetWeight()"
+                      readonly
+                    />
+                  </div>
+
+
+                  <label for="netWeight" class="form-label"
+                    >Net Weight(in Quintal)</label
+                  >
                   <input
                     id="netWeight"
                     class="form-control"
                     [value]="TruckLoadingParchi.netWeight"
                     name="netWeight"
                     type="number"
+                    step="0.01"
                     placeholder="Net Weight"
                     readonly
                   />
@@ -205,7 +232,15 @@
                     placeholder="Amount"
                     readonly
                   />
-
+                  <label for="advance" class="form-label">Freight Advance</label>
+                  <input
+                    id="advance"
+                    class="form-control"
+                    [(ngModel)]="TruckLoadingParchi.advance"
+                    name="advance"
+                    type="text"
+                    placeholder="Freight Advance"
+                  />
                   <label for="other" class="form-label">Remark</label>
                   <input
                     id="other"

@@ -115,6 +115,7 @@ export class TruckLoadingParchiComponent implements OnInit {
   Hammals: any[] = [];
   Crops: any[] = [];
   Storage: any[] = [];
+  Transport: any[] = [];
 
 
   TruckLoadingParchi = {
@@ -130,9 +131,13 @@ export class TruckLoadingParchiComponent implements OnInit {
     rate: 0,
     bardanaBag650g: 0,
     bardanaBag1kg: 0,
+    bardanaType:0,
+    bardanaUnit:0,
     netWeight: 0, // To be calculated
     amount: 0, // To be calculated
     other: '',
+    transport:'',
+    advance:'',
     id: Date.now(),
     created_at: new Date(),
     createdBy: '',
@@ -147,13 +152,15 @@ export class TruckLoadingParchiComponent implements OnInit {
     this.fetchCrops();
     this.fetchTrucks();
     this.fetchStorage()
+    this.fetchTransport()
   }
 
   calculateNetWeight(): void {
-    const { boraQuantity, unitBora, bardanaBag650g, bardanaBag1kg } = this.TruckLoadingParchi;
-    this.TruckLoadingParchi.netWeight = ((boraQuantity * unitBora) + (bardanaBag650g * 0.65) + (bardanaBag1kg * 1)) / 100;
+    const { boraQuantity, unitBora, bardanaUnit } = this.TruckLoadingParchi;
+    const bardanaInKg = bardanaUnit / 1000; // Convert bardanaUnit from grams to kilograms
+    this.TruckLoadingParchi.netWeight = (boraQuantity * unitBora) - bardanaInKg;
     this.calculateAmount();
-  }
+}
 
   calculateAmount(): void {
     const { netWeight, rate } = this.TruckLoadingParchi;
@@ -269,6 +276,23 @@ export class TruckLoadingParchiComponent implements OnInit {
         },
       });
   }
+  fetchTransport() {
+    this.apiService
+      .get('transport', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.Transport = res.data;
+        },
+        error: (err: any) => {
+          console.error('Error fetching Transport Name:', err);
+        },
+      });
+  }
   // Save TruckLoadingParchi to the backend
   saveTruckLoadingParchi() {
     if (!this.TruckLoadingParchi.partyName) {
@@ -343,4 +367,16 @@ export class TruckLoadingParchiComponent implements OnInit {
       alert('Please fill in all required fields.');
     }
   }
+  updateBardanaUnit() {
+    if (this.TruckLoadingParchi.bardanaType === 650) {
+      this.TruckLoadingParchi.bardanaUnit = 650;
+    } else if (this.TruckLoadingParchi.bardanaType === 1) {
+      this.TruckLoadingParchi.bardanaUnit = 1000; 
+    } 
+  }
+  
+  
+  
+  
+  
 }
