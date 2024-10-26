@@ -362,6 +362,14 @@ module.exports = {
           },
         },
         {
+          $lookup: {
+            from: "transports",
+            localField: "transport",
+            foreignField: "_id",
+            as: "transportDetails",
+          },
+        },
+        {
           $unwind: {
             preserveNullAndEmptyArrays: true,
             path: "$truckDetails",
@@ -385,6 +393,12 @@ module.exports = {
         {
           $unwind: "$wearhouseDetails",
         },
+        {
+          $unwind: {
+            path: "$transportDetails",
+            preserveNullAndEmptyArrays: true,
+          },
+        }
       ]);
 
       if (!result.length) {

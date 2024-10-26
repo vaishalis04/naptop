@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
 import { QRCodeModule,QRCodeElementType } from 'angularx-qrcode';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-taulparchi-dashboard',
@@ -33,10 +34,15 @@ export class TaulparchiDashboardComponent {
   toDate: any;
   Storage: any[] = [];
   qrCodeUrl: string | null = null;
+  currentUser: any = {};
 
 
-  constructor(private apiService: ApiService) {
+  constructor(
+    private apiService: ApiService,
+    private authService: AuthService
+  ) {
     this.getTaulaParchis();
+    this.authService.setCurrentUser();
   }
 
   getTaulaParchis() {
@@ -150,7 +156,7 @@ export class TaulparchiDashboardComponent {
           <p class="text-center"><b>M+M</b></p>
 
           <!-- Sr. No and Date Section -->
-          
+
           <div class="section">
             <div class="row">
               <div class="label"><b>Sr.No:</b></div>
@@ -167,7 +173,7 @@ export class TaulparchiDashboardComponent {
           </div>
 
           <!-- Farmer and Crop Details -->
-       
+
           <div class="section">
             <div class="row">
               <div class="label"><b>Farmer's Name:</b></div>
@@ -282,5 +288,21 @@ export class TaulparchiDashboardComponent {
       return srNo;
     }
     return '';
+  }
+
+  sendToPrintReceipt(taulaParchi: any) {
+    this.apiService.put(`taulparchi/${taulaParchi._id}`, {
+      enableToPrint: true,
+      enableToPrintBy: this.authService?.currentUser?.email || 'N/A',
+    }).subscribe({
+      next: (res: any) => {
+        console.log('Taula Parchi updated successfully:', res);
+        alert('Sent to printer.');
+        // this.printReceipt(taulaParchi);
+      },
+      error: (err: any) => {
+        console.error('Error updating Taula Parchi:', err);
+      },
+    });
   }
 }

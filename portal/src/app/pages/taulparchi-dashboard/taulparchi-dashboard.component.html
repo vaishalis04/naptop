@@ -58,6 +58,7 @@
                 <th scope="col">Firm/Company</th>
                 <th scope="col">Net Weight(in Quintal)</th>
                 <th scope="col">Amount (₹)</th>
+                <th scope="col">-</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -79,13 +80,22 @@
                 <td>{{ currentPage * perPage - perPage + (i + 1) }}</td>
                 <td>{{ taulaParchi.created_at | date : "MM-dd-YYYY" }}</td>
                 <td>{{ taulaParchi?.purchase }}</td>
-                <td>{{ taulaParchi?.farmerDetails.name }}</td>
-                <td>{{ taulaParchi?.wearhouseDetails.name }}</td>
-                <td>{{ taulaParchi?.cropDetails.name }}</td>
-                <td>{{ taulaParchi?.companyDetails.name }}</td>
+                <td>{{ taulaParchi?.farmerDetails?.name }}</td>
+                <td>{{ taulaParchi?.wearhouseDetails?.name }}</td>
+                <td>{{ taulaParchi?.cropDetails?.name }}</td>
+                <td>{{ taulaParchi?.companyDetails?.name }}</td>
                 <td>{{ taulaParchi.netWeight }}</td>
                 <td>{{ taulaParchi.amount }}</td>
-
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    (click)="sendToPrintReceipt(taulaParchi)"
+                    style="margin-right: 10px;"
+                  >
+                    Print
+                  </button>
+                </td>
                 <td>
                   <button
                     type="button"

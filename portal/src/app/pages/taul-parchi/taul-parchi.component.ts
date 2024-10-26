@@ -3,24 +3,30 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
+import { ButtonModule } from "primeng/button";
 
 @Component({
   selector: 'app-taul-parchi',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    ButtonModule
+  ],
   templateUrl: './taul-parchi.component.html',
   styleUrls: ['./taul-parchi.component.css'],
 })
 export class TaulParchiComponent implements OnInit {
-  isEdit: 'Update' | 'Add' | undefined;
+  // isEdit: 'Update' | 'Add' | undefined;
   Farmers: any[] = [];
   Hammals: any[] = [];
   Crops: any[] = [];
   Storage: any[] = [];
   Villages: any[] = [];
   firm_company: any[] = [];
-  masterToAddOrEdit: any = {};
-
+  isNewFarmerPopUpOpen = false;
+  farmerToAddOrEdit: any = {};
 
   TaulParchi = {
     farmer: '',
@@ -39,51 +45,15 @@ export class TaulParchiComponent implements OnInit {
     purchase: '',
     crop: '',
     amount: 0,
-    other:'',
-    hammali:0,
+    other: '',
+    hammali: 0,
     exemptHammali: 'deduct',
     id: Date.now(),
     created_at: new Date(),
     createdBy: '',
   };
-  newFarmer: any = {
-    farmerType: '',
-   
-    name: '',
-    mobile: '',
-    village: ''
-  };
- 
 
-  
-  addNewItem() {
-    if (this.masterToAddOrEdit.name === '') {
-      return;
-    }
-    
-    this.apiService.post('farmer', this.masterToAddOrEdit).subscribe(
-      (data: any) => {
-        this.fetchFarmers();
-        this.resetMasterToAddOrEdit();
-      },
-      (error: any) => {
-        if (error.status === 400) {
-          alert('Mobile number already exists. Please use another mobile number.');
-        } else {
-          alert('An error occurred. Please try again.');
-        }
-      }
-      
-    );
-  }
-  resetMasterToAddOrEdit() {
-    this.masterToAddOrEdit = {};
-    this.isEdit = undefined;
-  }
-  setFarmerForEdit(farmer: any) {
-    this.isEdit = "Add";
-    this.newFarmer = { ...farmer }; 
-  }
+
   constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
@@ -315,7 +285,7 @@ export class TaulParchiComponent implements OnInit {
         next: (res: any) => {
           console.log('TaulParchi saved successfully');
           // this.router.navigate(['/dashboard']);
-          this.router.navigate(['/taul-parchi-view/'+res._id]);
+          this.router.navigate(['/taul-parchi-view/' + res._id]);
         },
         error: (err: any) => {
           console.error('Error saving TaulParchi:', err);
@@ -324,5 +294,33 @@ export class TaulParchiComponent implements OnInit {
     } else {
       alert('Please fill in all required fields.');
     }
+  }
+
+  openFarmerPopUp() {
+    this.isNewFarmerPopUpOpen = true;
+  }
+
+  addNewFarmer() {
+    if (this.farmerToAddOrEdit.name === '') {
+      return;
+    }
+
+    this.apiService.post('farmer', this.farmerToAddOrEdit).subscribe(
+      {
+        next: (data: any) => {
+          this.isNewFarmerPopUpOpen = false;
+          this.farmerToAddOrEdit = {};
+          this.fetchFarmers();
+          this.TaulParchi.farmer = data._id;
+        },
+        error: (error: any) => {
+          if (error.status === 400) {
+            alert('Mobile number already exists. Please use another mobile number.');
+          } else {
+            alert('An error occurred. Please try again.');
+          }
+        }
+      }
+    );
   }
 }

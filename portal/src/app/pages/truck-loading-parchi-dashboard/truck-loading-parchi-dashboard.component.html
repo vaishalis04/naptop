@@ -54,10 +54,10 @@
                                 <td>{{ currentPage * perPage - perPage + (i + 1) }}</td>
                                 <td>{{ truckLoadingParchi.created_at | date: 'MM-dd-YYYY' }}</td>
                                 <td>{{ truckLoadingParchi?.cropDetails?.name }}</td>
-                                <td>{{ truckLoadingParchi?.partyDetails.name }}</td>
+                                <td>{{ truckLoadingParchi?.partyDetails?.name }}</td>
                                 <td>{{ truckLoadingParchi?.truckDetails?.truckNumber }}</td>
-                                <td>{{ truckLoadingParchi?.deliveryDetails.name }}</td>
-                                <td>{{ truckLoadingParchi?.hammalDetails.name }}</td>
+                                <td>{{ truckLoadingParchi?.deliveryDetails?.name }}</td>
+                                <td>{{ truckLoadingParchi?.hammalDetails?.name }}</td>
                                 <td>{{ truckLoadingParchi.boraQuantity }}</td>
                                 <td>{{ truckLoadingParchi.netWeight }}</td>
                                 <td>{{ truckLoadingParchi.amount }}</td>

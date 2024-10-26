@@ -127,17 +127,15 @@ export class TruckLoadingParchiComponent implements OnInit {
     storage:'',
     boraQuantity: 0,
     unitBora: 0,
-    crop: 0,
+    crop: '',
     rate: 0,
-    bardanaBag650g: 0,
-    bardanaBag1kg: 0,
     bardanaType:0,
     bardanaUnit:0,
     netWeight: 0, // To be calculated
     amount: 0, // To be calculated
     other: '',
     transport:'',
-    advance:'',
+    advance:0,
     id: Date.now(),
     created_at: new Date(),
     createdBy: '',
@@ -156,8 +154,8 @@ export class TruckLoadingParchiComponent implements OnInit {
   }
 
   calculateNetWeight(): void {
-    const { boraQuantity, unitBora, bardanaUnit } = this.TruckLoadingParchi;
-    const bardanaInKg = bardanaUnit / 1000; // Convert bardanaUnit from grams to kilograms
+    const { boraQuantity, unitBora, bardanaUnit, bardanaType } = this.TruckLoadingParchi;
+    const bardanaInKg = (bardanaUnit * (bardanaType/1000)); // Convert bardanaUnit from grams to kilograms
     this.TruckLoadingParchi.netWeight = (boraQuantity * unitBora) - bardanaInKg;
     this.calculateAmount();
 }
@@ -357,7 +355,8 @@ export class TruckLoadingParchiComponent implements OnInit {
       this.apiService.post('truckloading', this.TruckLoadingParchi).subscribe({
         next: (res: any) => {
           console.log('TruckLoadingParchi saved successfully');
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/truck-loading-parchi-view/' + res._id]);
+          // this.router.navigate(['/dashboard']);
         },
         error: (err: any) => {
           console.error('Error saving TruckLoadingParchi:', err);
@@ -371,12 +370,12 @@ export class TruckLoadingParchiComponent implements OnInit {
     if (this.TruckLoadingParchi.bardanaType === 650) {
       this.TruckLoadingParchi.bardanaUnit = 650;
     } else if (this.TruckLoadingParchi.bardanaType === 1) {
-      this.TruckLoadingParchi.bardanaUnit = 1000; 
-    } 
+      this.TruckLoadingParchi.bardanaUnit = 1000;
+    }
   }
-  
-  
-  
-  
-  
+
+
+
+
+
 }

@@ -109,6 +109,10 @@ export class TruckLoadingParchiViewComponent {
             <span>${this.truckLoadingParchi?.truckDetails?.truckNumber}</span>
           </div>
           <div class="row">
+            <span><b>Transport Name:</b></span>
+            <span>${this.truckLoadingParchi?.transportDetails?.name}</span>
+          </div>
+          <div class="row">
             <span><b>Delivery Location:</b></span>
             <span>${this.truckLoadingParchi?.deliveryDetails.name}</span>
           </div>
@@ -125,12 +129,12 @@ export class TruckLoadingParchiViewComponent {
             <span>${this.truckLoadingParchi.unitBora}</span>
           </div>
           <div class="row">
-            <span><b>Bardana Bag 650g:</b></span>
-            <span>${this.truckLoadingParchi.bardanaBag650g}</span>
+            <span><b>Bardana Weight:</b></span>
+            <span>${this.truckLoadingParchi?.bardanaType == 1000 ? '1 Kg' : (this.truckLoadingParchi?.bardanaType == 650 ? '0.650 Kg' : 'No Bradana Weight')}</span>
           </div>
           <div class="row">
-            <span><b>Bardana Bag 1kg:</b></span>
-            <span>${this.truckLoadingParchi.bardanaBag1kg}</span>
+            <span><b>Bardana Bag Unit:</b></span>
+            <span>${this.truckLoadingParchi.bardanaUnit}</span>
           </div>
           <div class="row">
             <span><b>Net Weight (Quintal):</b></span>
@@ -141,8 +145,8 @@ export class TruckLoadingParchiViewComponent {
             <span>${this.truckLoadingParchi.rate}</span>
           </div>
           <div class="row">
-            <span><b>Amount (₹):</b></span>
-            <span>${this.truckLoadingParchi.amount}</span>
+            <span><b>Freight Advance (₹):</b></span>
+            <span>${this.truckLoadingParchi.advance}</span>
           </div>
           <div class="row">
             <span><b>Remark:</b></span>

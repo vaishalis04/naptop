@@ -58,49 +58,49 @@ export class TruckLoadingParchiDashboardComponent {
 
   printReceipt(truckLoadingParchi: any) {
     const receiptContent = `
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Truck Loading Parchi Receipt</title>
-        <style>
-          body {
-            font-family: 'Courier New', monospace;
-            margin: 20px;
-            background-color: #f8f9fa;
-          }
-          .card {
-            padding: 20px;
-            border: 1px solid #000;
-            width: 350px;
-            margin: 0 auto;
-            background-color: white;
-          }
-          .header {
-            text-align: center;
-          }
-          .section {
-            margin-bottom: 15px;
-          }
-          .row {
-            display: flex;
-            justify-content: space-between;
-          }
-          .btn-print {
-            display: none;
-          }
-        </style>
-      </head>
-      <body>
-        <div class="card">
-          <div class="header">
-            <h4>Truck Loading Parchi</h4>
-            <p><b>M+M</b></p>
-          </div>
-          <hr />
-          <div class="section">
-            <div class="row">
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Truck Loading Parchi Receipt</title>
+      <style>
+        body {
+          font-family: 'Courier New', monospace;
+          margin: 20px;
+          background-color: #f8f9fa;
+        }
+        .card {
+          padding: 20px;
+          border: 1px solid #000;
+          width: 350px;
+          margin: 0 auto;
+          background-color: white;
+        }
+        .header {
+          text-align: center;
+        }
+        .section {
+          margin-bottom: 15px;
+        }
+        .row {
+          display: flex;
+          justify-content: space-between;
+        }
+        .btn-print {
+          display: none;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="card">
+        <div class="header">
+          <h4>Truck Loading Parchi</h4>
+          <p><b>M+M</b></p>
+        </div>
+        <hr />
+        <div class="section">
+          <div class="row">
             <span><b>Serial Number:</b></span>
             <span>${this.getTruckLoadingParchiSrNo(truckLoadingParchi.created_at)}</span>
           </div>
@@ -115,6 +115,10 @@ export class TruckLoadingParchiDashboardComponent {
           <div class="row">
             <span><b>Truck:</b></span>
             <span>${truckLoadingParchi?.truckDetails?.truckNumber}</span>
+          </div>
+          <div class="row">
+            <span><b>Transport Name:</b></span>
+            <span>${truckLoadingParchi?.transportDetails?.name}</span>
           </div>
           <div class="row">
             <span><b>Delivery Location:</b></span>
@@ -133,12 +137,12 @@ export class TruckLoadingParchiDashboardComponent {
             <span>${truckLoadingParchi.unitBora}</span>
           </div>
           <div class="row">
-            <span><b>Bardana Bag 650g:</b></span>
-            <span>${truckLoadingParchi.bardanaBag650g}</span>
+            <span><b>Bardana Weight:</b></span>
+            <span>${truckLoadingParchi?.bardanaType == 1000 ? '1 Kg' : (truckLoadingParchi?.bardanaType == 650 ? '0.650 Kg' : 'No Bradana Weight')}</span>
           </div>
           <div class="row">
-            <span><b>Bardana Bag 1kg:</b></span>
-            <span>${truckLoadingParchi.bardanaBag1kg}</span>
+            <span><b>Bardana Bag Unit:</b></span>
+            <span>${truckLoadingParchi.bardanaUnit}</span>
           </div>
           <div class="row">
             <span><b>Net Weight (Quintal):</b></span>
@@ -149,18 +153,18 @@ export class TruckLoadingParchiDashboardComponent {
             <span>${truckLoadingParchi.rate}</span>
           </div>
           <div class="row">
-            <span><b>Amount (₹):</b></span>
-            <span>${truckLoadingParchi.amount}</span>
+            <span><b>Freight Advance (₹):</b></span>
+            <span>${truckLoadingParchi.advance}</span>
           </div>
           <div class="row">
             <span><b>Remark:</b></span>
             <span>${truckLoadingParchi.other}</span>
           </div>
-          </div>
         </div>
-      </body>
-    </html>
-      `;
+      </div>
+    </body>
+  </html>
+    `;
 
     const printWindow = window.open('', '', 'width=800,height=600');
     printWindow!.document.write(receiptContent);

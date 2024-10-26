@@ -349,37 +349,15 @@ module.exports = {
         return res.status(400).json({ error: "No data provided for update." });
       }
 
-      // Validate required fields
-      if (data.farmer === undefined) {
-        return res.status(400).json({ error: "Farmer is required." });
-      }
-      if (data.village === undefined) {
-        return res.status(400).json({ error: "Village is required." });
-      }
-      if (data.firm_company === undefined) {
-        return res.status(400).json({ error: "Firm/Company is required." });
-      }
-      if (data.rate === undefined) {
-        return res.status(400).json({ error: "Rate is required." });
-      }
-      if (data.hammal === undefined) {
-        return res.status(400).json({ error: "Hammal is required." });
-      }
-      if (data.boraQuantity === undefined) {
-        return res.status(400).json({ error: "Bora Quantity is required." });
-      }
-      // if (data.unitBora === undefined) {
-      //   return res.status(400).json({ error: "Unit Bora is required." });
-      // }
-      // if (data.bharti === undefined) {
-      //   return res.status(400).json({ error: "Bharti is required." });
-      // }
-      if (data.crop === undefined) {
-        return res.status(400).json({ error: "Crop is required." });
-      }
-
       // Calculate netWeight using the formula: netWeight = (boraQuantity * unitBora) + bharti
-      data.netWeight = data.boraQuantity * data.unitBora + data.bharti;
+      // data.netWeight = data.boraQuantity * data.unitBora + data.bharti;
+      if (
+        data.boraQuantity !== undefined &&
+        data.unitBora !== undefined &&
+        data.bharti !== undefined
+      ) {
+        data.netWeight = data.boraQuantity * data.unitBora + data.bharti;
+      }
 
       // Assign the `updated_at` field
       data.updated_at = Date.now();
@@ -453,11 +431,11 @@ module.exports = {
   get: async (req, res, next) => {
     try {
       const { id } = req.params;
-  
+
       if (!id) {
         throw createError.BadRequest("Invalid Parameters: Missing ID");
       }
-  
+
       // Aggregation pipeline to fetch the TaulParchi document and related data
       const result = await Model.aggregate([
         {
@@ -519,7 +497,7 @@ module.exports = {
             as: "companyDetails",
           },
         },
-       
+
         {
           $unwind: {
             path: "$cropDetails",
@@ -563,17 +541,17 @@ module.exports = {
           },
         },
       ]);
-  
+
       if (!result || result.length === 0) {
         throw createError.NotFound("No TaulParchi Found");
       }
-  
+
       // Send the first result (since it's an array)
       res.json(result[0]);
     } catch (error) {
       next(error);
     }
-  },  
+  },
   getTaulparchisAggregatedData: async (req, res) => {
     try {
       const result = await Model.aggregate([
@@ -684,7 +662,7 @@ module.exports = {
       const _limit = limit ? parseInt(limit) : 20;
       const _skip = (_page - 1) * _limit;
 
-     
+
       let sorting = {};
       if (order_by) {
         sorting[order_by] = order_in === "desc" ? -1 : 1;
@@ -725,7 +703,7 @@ module.exports = {
             as: "farmerDetails",
           },
         },
-  
+
         {
           $lookup: {
             from: "crops",
@@ -735,7 +713,7 @@ module.exports = {
           },
         },
         { $unwind: "$farmerDetails" },
-        
+
         { $unwind: "$cropDetails" },
 
         {
@@ -1129,23 +1107,23 @@ module.exports = {
   getWearhouseSummary: async (req, res) => {
     try {
       const { firm_company, page, limit, order_by, order_in, from, to } = req.query;
-  
+
       const _page = page ? parseInt(page) : 1;
       const _limit = limit ? parseInt(limit) : 20;
       const _skip = (_page - 1) * _limit;
-  
+
       let sorting = {};
       if (order_by) {
         sorting[order_by] = order_in === "desc" ? -1 : 1;
       } else {
         sorting["_id"] = -1;
       }
-  
+
       const query = {};
       if (firm_company) {
         query.firm_company = new RegExp(firm_company, "i");
       }
-  
+
       if (from || to) {
         query.created_at = {};
         if (from) {
@@ -1155,12 +1133,12 @@ module.exports = {
           query.created_at.$lte = new Date(to);
         }
       }
-  
+
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
-  
+
       console.log(query);
-  
+
       let result = await Model.aggregate([
         { $match: query },
         { $sort: sorting },
@@ -1193,7 +1171,7 @@ module.exports = {
         { $unwind: "$farmerDetails" },
         { $unwind: "$cropDetails" },
         { $unwind: "$wearhouseDetails" }, // Unwind the wearhouse details
-  
+
         {
           $group: {
             _id: "$wearhouseDetails._id", // Group by wearhouseDetails
@@ -1203,10 +1181,10 @@ module.exports = {
         },
         { $sort: sorting },
       ]);
-  
+
       console.log("result", result);
       const resultCount = await Model.countDocuments(query);
-  
+
       res.json({
         data: result,
         meta: {
@@ -1250,7 +1228,7 @@ module.exports = {
       if (firm_company) {
         query.firm_company = mongoose.Types.ObjectId(firm_company);
       }
-     
+
 
       // Add date range filter based on 'from' and 'to' params
       if (from || to) {

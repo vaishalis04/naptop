@@ -33,6 +33,8 @@
     "ng-qrcode": "^18.0.0",
     "ngx-pagination": "^6.0.3",
     "ngx-toastr": "^18.0.0",
+    "primeicons": "^7.0.0",
+    "primeng": "^17.18.11",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "video.js": "^8.9.0",

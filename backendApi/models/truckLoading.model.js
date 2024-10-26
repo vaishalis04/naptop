@@ -23,7 +23,7 @@ const TruckLoadingSchema = new mongoose.Schema({
         ref: 'Hammal',
 
     },
-    tranport:{
+    transport:{
         type: mongoose.Types.ObjectId,
         ref: 'Transport',
     },
@@ -38,9 +38,8 @@ const TruckLoadingSchema = new mongoose.Schema({
         type: Number,
     },
     bardanaType:{
-      
         type: Number,
-        enum: [650 , 1],
+        enum: [0, 650 , 1000],
     },
     bardanaUnit:{
         type: Number,

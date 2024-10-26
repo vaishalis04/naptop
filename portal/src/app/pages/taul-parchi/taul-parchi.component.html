@@ -1,3 +1,115 @@
+<!-- modal for add/update -->
+<div
+  class="modal fade"
+  [ngClass]="{ show: isNewFarmerPopUpOpen }"
+  id="addUpdateMasterModal"
+  tabindex="-1"
+  aria-labelledby="addUpdateMasterModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addUpdateMasterModalLabel">
+          Add Farmer
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="isNewFarmerPopUpOpen = false"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="farmerType" class="form-label">Farmer Type</label>
+                <select
+                  id="farmerType"
+                  class="form-control"
+                  [(ngModel)]="farmerToAddOrEdit.farmerType"
+                  name="farmerType"
+                >
+                  <option value="" >Select Farmer Type</option>
+                  <option value="regular">Regular</option>
+                  <option value="premium">Premium</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="masterName" class="form-label">Name</label>
+                <input
+                  id="masterName"
+                  class="form-control"
+                  [(ngModel)]="farmerToAddOrEdit.name"
+                  name="masterName"
+                  type="text"
+                  placeholder="Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="mobile" class="form-label">Mobile</label>
+                <input
+                  id="mobile"
+                  class="form-control"
+                  [(ngModel)]="farmerToAddOrEdit.mobile"
+                  name="mobile"
+                  type="text"
+                  placeholder="Mobile"
+                  maxlength="10"
+                  minlength="10"
+                  pattern="[0-9]{10}"
+                  required
+                  #mobileInput="ngModel"
+
+                />
+                <div class="form-group">
+                  <label for="village" class="form-label">Village</label>
+                  <input
+                    id="village"
+                    class="form-control"
+                    [(ngModel)]="farmerToAddOrEdit.village"
+                    name="village"
+                    type="text"
+                    placeholder="Enter Village Name"
+                    maxlength="30"
+                    minlength="3"
+                    pattern="^[a-zA-Z\s]+$"
+                    required
+                    #villageInput="ngModel"
+                  />
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          (click)="isNewFarmerPopUpOpen = false"
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="addNewFarmer()"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- masters -->
+
 <div class="row">
   <div class="col-12 col-md">
     <div class="row">
@@ -50,63 +162,23 @@
                   </select>
                 </div>
                 <div class="form-group mb-3">
-                  <label for="farmerName" [ngClass]="{ show: isEdit }" class="form-label">Farmer's Name</label>
-                  <select id="farmerName" class="form-select" [(ngModel)]="TaulParchi.farmer" name="farmerName" (ngModelChange)="autoFillFirmOrCompany()">
-                    <option value="addNewFarmer">Add New Farmer</option>
+                  <div class="row">
+                    <div class="col">
+                      <label for="farmerName" class="form-label">
+                        Farmer's Name
+                      </label>
+                    </div>
+                    <div class="col-auto">
+                      <p-button (onClick)="openFarmerPopUp()" label="Add New Farmer" icon="pi pi-plus" [raised]="true" severity="success" [rounded]="true" size="small" />
+                    </div>
+                  </div>
+                  <select id="farmerName" class="form-select" [(ngModel)]="TaulParchi.farmer" name="farmerName"
+                    (ngModelChange)="autoFillFirmOrCompany()">
                     <option value="">Select Farmer</option>
-                    <option *ngFor="let farmer of Farmers" [value]="farmer._id" (click)="setFarmerForEdit(farmer)">
+                    <option *ngFor="let farmer of Farmers" [value]="farmer._id">
                       {{ farmer.name }} ({{ farmer.farmerType || 'regular' | titlecase }})
                     </option>
                   </select>
-
-<!-- Modal -->
-<div class="modal fade" [ngClass]="{ show: isEdit }"    id="addFarmerModal" tabindex="-1" aria-labelledby="addFarmerLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addFarmerLabel">Add Farmer</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form #farmerForm="ngForm">
-          <!-- Farmer Type -->
-          <div class="mb-3">
-            <label for="farmerType" class="form-label">Farmer Type</label>
-            <input type="text" id="farmerType" class="form-control" [(ngModel)]="newFarmer.farmerType" name="farmerType" required>
-          </div>
-
-          <!-- Name -->
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" id="name" class="form-control" [(ngModel)]="newFarmer.name" name="name" required>
-          </div>
-
-          <!-- Mobile -->
-          <div class="mb-3">
-            <label for="mobile" class="form-label">Mobile</label>
-            <input type="text" id="mobile" class="form-control" [(ngModel)]="newFarmer.mobile" name="mobile" required>
-          </div>
-
-          <!-- Village -->
-          <div class="mb-3">
-            <label for="village" class="form-label">Village</label>
-            <input type="text" id="village" class="form-control" [(ngModel)]="newFarmer.village" name="village" required>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="addNewItem()">
-          Add
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
 
 
                   <label for="village" class="form-label">Village</label>
@@ -116,13 +188,13 @@
                       {{ village.name }}
                     </option>
                   </select>
-                 
+
                   <label for="firmCompany" class="form-label">Purchasing Firm / Company</label>
                   <select id="firmCompany" class="form-select" [(ngModel)]="TaulParchi.firm_company" name="firmCompany">
                     <option value="">Select Firm / Company</option>
                     <option *ngFor="let firm of firm_company" [value]="firm._id">{{ firm.name }}</option>
                   </select>
-                  
+
 
                   <label for="storage" class="form-label">Storage Location</label>
                   <select id="storage" class="form-select" [(ngModel)]="TaulParchi.storage" name="storage">
@@ -174,7 +246,8 @@
 
                   <label for="bharti" class="form-label">Bharti(in Kgs)</label>
                   <input id="bharti" class="form-control" [(ngModel)]="TaulParchi.bharti" name="bharti" type="number"
-                    placeholder="Bharti" (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
+                    placeholder="Bharti"
+                    (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
 
                   <label for="looseQuantity" class="form-label">Loose Quantity(in Kgs)</label>
                   <input id="looseQuantity" class="form-control" [(ngModel)]="TaulParchi.looseQuantity"
@@ -198,14 +271,8 @@
                     placeholder="hammali" readonly />
                 </div>
                 <label for="other" class="form-label">Remark</label>
-                  <input
-                    id="other"
-                    class="form-control"
-                    [(ngModel)]="TaulParchi.other"
-                    name="other"
-                    type="text"
-                    placeholder="Other"
-                  />
+                <input id="other" class="form-control" [(ngModel)]="TaulParchi.other" name="other" type="text"
+                  placeholder="Enter Remark" />
               </div>
             </div>
           </div>

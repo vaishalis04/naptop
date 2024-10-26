@@ -58,6 +58,13 @@ const TaulParchiSchema = new mongoose.Schema({
         type: String,
         enum: ['deduct', 'exempted'],
     },
+    enableToPrint: {
+        type: Boolean,
+        default: false
+    },
+    enableToPrintBy: {
+        type: String,
+    },
     amount: {
         type: Number,
     },

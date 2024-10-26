@@ -4,7 +4,7 @@ import { ApiService } from '../../services/api.service';
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { QRCodeModule,QRCodeElementType } from 'angularx-qrcode';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @Component({
   selector: 'app-taulparchi-view',
@@ -239,7 +239,7 @@ export class TaulparchiViewComponent implements OnInit {
           <div class="section">
               <div class="row"><div class="label"><b>QR Code:</b></div><div class="value"><img src="${this.qrCodeUrl}" alt="QR Code" /></div></div>
             </div>
-          
+
 
           <!-- Print Button -->
           <button class="btn-print" onclick="window.print()">Print Receipt</button>

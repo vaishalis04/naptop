@@ -148,7 +148,7 @@
                     (ngModelChange)="calculateNetWeight()"
                   />
 
-                  <label for="unitBora" class="form-label">Unit Bora</label>
+                  <label for="unitBora" class="form-label">Bora Bharti (in Kgs)</label>
                   <input
                     id="unitBora"
                     class="form-control"
@@ -166,14 +166,25 @@
                     class="form-select"
                     [(ngModel)]="TruckLoadingParchi.bardanaType"
                     name="bardanaType"
-                    (change)="updateBardanaUnit()"
                     (ngModelChange)="calculateNetWeight()"
                   >
-                    <option [ngValue]="null">Select Bardana Type</option>
-                    <option [ngValue]="null">No Bardana</option>
+                    <option [ngValue]="">Select Bardana Type</option>
+                    <option [ngValue]="0">No Bardana</option>
                     <option [ngValue]=650>650g</option>
                     <option [ngValue]=1000>1Kg</option>
                   </select>
+
+                  <div class="form-group" *ngIf="TruckLoadingParchi.bardanaType">
+                    <label for="bardanaUnit" class="form-label">Bardana Unit</label>
+                    <input
+                      id="bardanaUnit"
+                      class="form-control"
+                      [(ngModel)]="TruckLoadingParchi.bardanaUnit"
+                      name="bardanaUnit"
+                      type="number"
+                      (ngModelChange)="calculateNetWeight()"
+                    />
+                  </div>
 
                   <div
                     *ngIf="
@@ -219,10 +230,9 @@
                     name="rate"
                     type="text"
                     placeholder="rate"
-                    (ngModelChange)="calculateAmount()"
                   />
 
-                  <label for="amount" class="form-label">Payable Amount</label>
+                  <!-- <label for="amount" class="form-label">Payable Amount</label>
                   <input
                     id="amount"
                     class="form-control"
@@ -231,7 +241,7 @@
                     type="number"
                     placeholder="Amount"
                     readonly
-                  />
+                  /> -->
                   <label for="advance" class="form-label">Freight Advance</label>
                   <input
                     id="advance"
@@ -248,7 +258,7 @@
                     [(ngModel)]="TruckLoadingParchi.other"
                     name="other"
                     type="text"
-                    placeholder="Other"
+                    placeholder="Enter Remark"
                   />
                 </div>
               </div>
