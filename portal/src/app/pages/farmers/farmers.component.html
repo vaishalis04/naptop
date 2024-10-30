@@ -63,11 +63,11 @@
                   pattern="[0-9]{10}"
                   required
                   #mobileInput="ngModel"
-                 
+
                 />
                 <div class="form-group">
                   <label for="village" class="form-label">Village</label>
-                  <input
+                  <!-- <input
                     id="village"
                     class="form-control"
                     [(ngModel)]="masterToAddOrEdit.village"
@@ -78,9 +78,21 @@
                     minlength="3"
                     pattern="^[a-zA-Z\s]+$"
                     required
-                    #villageInput="ngModel"  
-                  />
-                 
+                    #villageInput="ngModel"
+                  /> -->
+                  <select
+                    id="village"
+                    class="form-control"
+                    [(ngModel)]="masterToAddOrEdit.village"
+                    name="village"
+                    required
+                  >
+                    <option value="" >Select Village
+                    </option>
+                    <option *ngFor="let village of villages" [value]="village._id">
+                      {{ village.name }}
+                    </option>
+                  </select>
                 </div>
               </div>
             </div>

@@ -32,6 +32,18 @@ export class StorageComponent {
   selectedWarehouseId: any;
   stockData: any[] = [];
 
+  stockItemToAddOrEdit: any = {
+    crop: '',
+    quantity: 0,
+    warehouse: '',
+    price: 0,
+    logType: '',
+    meta_data: {},
+  };
+  isStockUpdateModelOpen: boolean = false;
+
+  crops: any[] = [];
+
   constructor(
     private apiService: ApiService
   ) {
@@ -50,6 +62,18 @@ export class StorageComponent {
       this.limit = data.meta.per_page;
     });
   }
+
+  getCrops() {
+    this.apiService.get('crop', {
+      params: {
+        page: 1,
+        limit: 100
+      }
+    }).subscribe((data: any) => {
+      this.crops = data.data;
+    });
+  }
+
   selectItemToEdit(index: number) {
     // this.masterToAddOrEdit = this.data[index];
     this.masterToAddOrEdit = Object.assign({}, this.data[index]);
@@ -114,6 +138,7 @@ export class StorageComponent {
       }).subscribe({
         next: (res: any) => {
           this.stockData = res;
+          this.getCrops();
         },
         error: (err: any) => {
           console.error('Error fetching stock:', err);
@@ -135,5 +160,27 @@ export class StorageComponent {
     link.setAttribute('download', 'stock.csv');
     document.body.appendChild(link);
     link.click();
+  }
+
+  selectStockItemToAdd() {
+    this.stockItemToAddOrEdit = {
+      crop: '',
+      quantity: 0,
+      warehouse: this.selectedWarehouseId,
+      price: 0,
+      logType: '',
+      meta_data: {},
+    };
+    this.isStockUpdateModelOpen = true;
+  }
+
+  updateStock() {
+    if (this.stockItemToAddOrEdit.crop === '') {
+      return;
+    }
+    this.apiService.post('stock', this.stockItemToAddOrEdit).subscribe((data: any) => {
+      this.viewStock(this.selectedWarehouseId);
+      this.isStockUpdateModelOpen = false;
+    });
   }
 }

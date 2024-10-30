@@ -38,6 +38,89 @@
     </div>
 </div>
 
+<!-- Stock Modal -->
+<div class="modal fade" [ngClass]="{'show': isStockUpdateModelOpen}" id="addUpdateStockModal" tabindex="-1"
+    aria-labelledby="addUpdateStockModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addUpdateStockModalLabel">Update Stock</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="isStockUpdateModelOpen=false"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <!-- Form:
+                    stockItemToAddOrEdit.crop: crops dropdown,
+                    stockItemToAddOrEdit.quantity: in quintals,
+                    stockItemToAddOrEdit.warehouse: warehouses dropdown,
+                    stockItemToAddOrEdit.price: in ₹,
+                    stockItemToAddOrEdit.logType: 'purchase', 'sale', 'transfer in', 'transfer out',
+                    stockItemToAddOrEdit.meta_data.remark: text,
+                    -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group mb-3">
+                                <label for="crop" class="form-label">Crop</label>
+                                <select id="crop" class="form-select" [(ngModel)]="stockItemToAddOrEdit.crop"
+                                    name="crop">
+                                    <option value="">Select Crop</option>
+                                    <option *ngFor="let crop of crops" [value]="crop._id">{{ crop.name }}</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="quantity" class="form-label">Quantity (In Quintals)</label>
+                                <input id="quantity" class="form-control" [(ngModel)]="stockItemToAddOrEdit.quantity"
+                                    name="quantity" type="number" placeholder="Quantity" />
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="warehouse" class="form-label">
+                                    Warehouse (Storage Location)
+                                </label>
+                                <select id="warehouse" class="form-select" [(ngModel)]="stockItemToAddOrEdit.warehouse"
+                                    name="warehouse">
+                                    <option value="">Select Warehouse</option>
+                                    <option *ngFor="let warehouse of data" [value]="warehouse._id">
+                                        {{ warehouse.name }}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="price" class="form-label">Rate (in ₹)</label>
+                                <input id="price" class="form-control" [(ngModel)]="stockItemToAddOrEdit.price"
+                                    name="price" type="number" placeholder="Price" />
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="logType" class="form-label">Log Type</label>
+                                <select id="logType" class="form-select" [(ngModel)]="stockItemToAddOrEdit.logType"
+                                    name="logType">
+                                    <option value="">Select Log Type</option>
+                                    <option value="purchase">Purchase</option>
+                                    <option value="sale">Sale</option>
+                                    <option value="transfer in">Transfer In</option>
+                                    <option value="transfer out">Transfer Out</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="remark" class="form-label">Remark</label>
+                                <textarea id="remark" class="form-control"
+                                    [(ngModel)]="stockItemToAddOrEdit.meta_data.remark" name="remark"
+                                    placeholder="Remark"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    (click)="isStockUpdateModelOpen=false">Close</button>
+                <button type="button" class="btn btn-primary" (click)="updateStock()">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Storage Management -->
 <div class="row">
     <div class="col-12 col-md">
@@ -94,7 +177,7 @@
                                                     <td>{{ item.name }}</td>
                                                     <td>
                                                         <!-- View Stock -->
-                                                        <button class="btn btn-outline-primary btn-sm"
+                                                        <button class="btn btn-outline-success btn-sm"
                                                             (click)="viewStock(item._id)">
                                                             <i class="fi fi-rr-eye"></i>
                                                             View Stock
@@ -124,7 +207,7 @@
 
 <!-- Stock Table -->
 <!-- crop, quantity, averagePrice -->
-<div class="row mt-3" *ngIf="selectedWarehouseId && stockData.length">
+<div class="row mt-3" *ngIf="selectedWarehouseId">
     <div class="col-12">
         <div class="card bg-white">
             <div class="card-header">
@@ -142,48 +225,58 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="d-flex justify-content-end">
-                                    <button class="btn btn-primary" (click)="exportToExcel()">
+                                    <button class="btn btn-primary" (click)="exportToExcel()"
+                                        [disabled]="!stockData.length">
                                         <i class="fi fi-rr-file-excel"></i>
                                         Export to Excel
+                                    </button>
+                                    <!-- Update Stock -->
+                                    <button class="btn btn-primary ms-2" data-bs-toggle="modal"
+                                        data-bs-target="#addUpdateStockModal" (click)="selectStockItemToAdd()">
+                                        <i class="fi fi-rr-add"></i>
+                                        <span class="ms-2">
+                                            Update Stock
+                                        </span>
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="table-responsive">
-                                <table class="table table-hover table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Crop</th>
-                                            <th>Quantity (In Quintals)</th>
-                                            <th>Average Price (in ₹)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr
-                                            *ngFor="let item of stockData; let i = index">
-                                            <td>{{ i + 1 }}</td>
-                                            <td>{{ item.crop }}</td>
-                                            <td>{{ item.quantity }}</td>
-                                            <td>{{ item.averagePrice }}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                <div class="row mt-3" *ngIf="selectedWarehouseId && !stockData.length">
+                    <div class="alert bg-warning">
+                        No Crops are available in stock
+                    </div>
+                </div>
+                <div *ngIf="selectedWarehouseId && stockData.length">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Crop</th>
+                                                <th>Quantity (In Quintals)</th>
+                                                <th>Average Price (in ₹)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let item of stockData; let i = index">
+                                                <td>{{ i + 1 }}</td>
+                                                <td>{{ item.crop }}</td>
+                                                <td>{{ item.quantity }}</td>
+                                                <td>{{ item.averagePrice | number:'0.2' }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="row mt-3" *ngIf="selectedWarehouseId && !stockData.length">
-    <div class="alert bg-warning">
-        No Crops are available in stock
     </div>
 </div>

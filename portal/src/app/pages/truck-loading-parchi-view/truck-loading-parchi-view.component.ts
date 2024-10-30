@@ -181,6 +181,6 @@ export class TruckLoadingParchiViewComponent {
 
   // Navigate back to the previous page
   goBack() {
-    this.router.navigate(['/taul-parchi-dashboard']); // Adjust the route as needed
+    this.router.navigate(['/truck-loading-parchi-dashboard']); // Adjust the route as needed
   }
 }

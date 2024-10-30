@@ -71,7 +71,7 @@ export class TruckLoadingParchiComponent implements OnInit {
   calculateNetWeight(): void {
     const { boraQuantity, unitBora, bardanaType } = this.TruckLoadingParchi;
     const bardanaInKg = (boraQuantity * (bardanaType/1000)); // Convert bardanaUnit from grams to kilograms
-    this.TruckLoadingParchi.netWeight = (boraQuantity * unitBora) - bardanaInKg;
+    this.TruckLoadingParchi.netWeight = ((boraQuantity * unitBora) - bardanaInKg)/100;
     this.calculateAmount();
 }
 

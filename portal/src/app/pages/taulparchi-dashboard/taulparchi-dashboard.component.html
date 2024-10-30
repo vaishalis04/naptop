@@ -7,30 +7,16 @@
       <div class="col">
         <div class="form-group">
           <label for="fromDate">From</label>
-          <input
-            type="date"
-            class="form-control"
-            name="fromDate"
-            id="fromDate"
-            aria-describedby="fromdatehelpid"
-            placeholder=""
-          />
-          <small id="fromdatehelpid" class="form-text text-muted"
-            >From Date</small
-          >
+          <input type="date" class="form-control" name="fromDate" id="fromDate" aria-describedby="fromdatehelpid"
+            placeholder="" />
+          <small id="fromdatehelpid" class="form-text text-muted">From Date</small>
         </div>
       </div>
       <div class="col">
         <div class="form-group">
           <label for="toDate">To</label>
-          <input
-            type="date"
-            class="form-control"
-            name="toDate"
-            id="toDate"
-            aria-describedby="todatehelpid"
-            placeholder=""
-          />
+          <input type="date" class="form-control" name="toDate" id="toDate" aria-describedby="todatehelpid"
+            placeholder="" />
           <small id="todatehelpid" class="form-text text-muted">To Date</small>
         </div>
       </div>
@@ -65,8 +51,7 @@
             </thead>
             <tbody>
               <!-- Iterate through TaulaParchi data -->
-              <tr
-                *ngFor="
+              <tr *ngFor="
                   let taulaParchi of TaulaParchi
                     | paginate
                       : {
@@ -76,8 +61,7 @@
                           totalItems: TaulaParchiCount
                         };
                   let i = index
-                "
-              >
+                ">
                 <td>{{ currentPage * perPage - perPage + (i + 1) }}</td>
                 <td>{{ taulaParchi.created_at | date : "MM-dd-YYYY" }}</td>
                 <td>{{ taulaParchi?.purchase }}</td>
@@ -89,42 +73,35 @@
                 <td>{{ taulaParchi.amount }}</td>
                 <td>{{ taulaParchi?.userDetails?.name }}</td>
                 <td>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    (click)="sendToPrintReceipt(taulaParchi)"
-                    style="margin-right: 10px;"
-                  >
+                  <button type="button" class="btn btn-primary" (click)="sendToPrintReceipt(taulaParchi)"
+                    style="margin-right: 10px;">
                     Print
                   </button>
                 </td>
                 <td>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    (click)="printReceipt(taulaParchi)"
-                    style="margin-right: 10px;"
-                  >
-                    Print
-                  </button>
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="button" class="btn btn-primary" (click)="printReceipt(taulaParchi)">
+                        <!-- Print -->
+                        <i class="fi fi-rr-print"></i>
+                      </button>
+                    </div>
+                    <div class="col-6">
+                      <button type="button" class="btn btn-primary" [routerLink]="['/taul-parchi-view', taulaParchi._id]">
+                        <!-- View -->
+                        <i class="fi fi-rr-eye"></i>
+                      </button>
+                    </div>
+                  </div>
 
-                  <button
-  type="button"
-  class="btn btn-primary"
-  [routerLink]="['/taul-parchi-view', taulaParchi._id]"
->
-  View
-</button>
 
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-        <pagination-controls
-          id="taulaparchi"
-          (pageChange)="currentPage = $event; getTaulaParchis()"
-        ></pagination-controls>
+        <pagination-controls id="taulaparchi"
+          (pageChange)="currentPage = $event; getTaulaParchis()"></pagination-controls>
       </div>
     </div>
   </div>

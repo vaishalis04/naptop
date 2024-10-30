@@ -215,10 +215,11 @@ export class TaulParchiComponent implements OnInit {
   // Autofill the firm/company based on the selected farmer
   autoFillFirmOrCompany() {
     const selectedFarmer = this.Farmers.find(
-      (farmer) => farmer.name === this.TaulParchi.farmer
+      (farmer) => farmer._id === this.TaulParchi.farmer
     );
     if (selectedFarmer) {
       this.TaulParchi.firm_company = selectedFarmer.firm_company;
+      this.TaulParchi.village = selectedFarmer.village;
     } else {
       this.TaulParchi.firm_company = '';
     }

@@ -8,7 +8,8 @@ const FarmerSchema = new mongoose.Schema({
     type: Number,
   },
   village: {
-    type: String,
+    type: mongoose.Types.ObjectId,
+    ref: "Village",
   },
   farmerType: {
     type: String,

@@ -26,12 +26,12 @@ export class FarmersComponent {
   limit: number = 10;
   total: number = 0;
   masterName: string = 'Farmer';
+  villages: any[] = [];
 
   constructor(
     private apiService: ApiService
   ) {
     this.getData();
-    
   }
 
 
@@ -47,6 +47,18 @@ export class FarmersComponent {
       this.total = data.meta.total;
       this.p = data.meta.current_page;
       this.limit = data.meta.per_page;
+      this.getVillages();
+    });
+  }
+
+  getVillages() {
+    this.apiService.get('village',{
+      params: {
+        page: 1,
+        limit: 1000
+      }
+    }).subscribe((data: any) => {
+      this.villages = data.data;
     });
   }
 
@@ -75,7 +87,7 @@ export class FarmersComponent {
     if (this.masterToAddOrEdit.name === '') {
       return;
     }
-    
+
     this.apiService.post('farmer', this.masterToAddOrEdit).subscribe(
       (data: any) => {
         this.getData();
@@ -88,10 +100,10 @@ export class FarmersComponent {
           alert('An error occurred. Please try again.');
         }
       }
-      
+
     );
   }
-  
+
 
   resetMasterToAddOrEdit() {
     this.masterToAddOrEdit = {};
