@@ -3,6 +3,10 @@ const { type } = require("@hapi/joi/lib/extend");
 const mongoose = require("mongoose");
 
 const TruckLoadingSchema = new mongoose.Schema({
+    transferType: {
+        type: String,
+        enum: ['Sale', 'Stock Transfer']
+    },
     partyName: {
         type: mongoose.Types.ObjectId,
         ref: 'Party',

@@ -29,11 +29,13 @@ export class StorageComponent {
   total: number = 0;
   masterName: string = 'Storage Location';
 
+  selectedWarehouseId: any;
+  stockData: any[] = [];
+
   constructor(
     private apiService: ApiService
   ) {
     this.getData();
-    
   }
   getData() {
     this.apiService.get('storage', {
@@ -96,5 +98,42 @@ export class StorageComponent {
         this.getData();
       });
     }
+  }
+
+  getSelectedWarehouse() {
+    return this.data.find((item: any) => item._id === this.selectedWarehouseId);
+  }
+
+  viewStock(warehouseId: string) {
+    if (warehouseId) {
+      this.selectedWarehouseId = warehouseId;
+      this.apiService.get(`stock/warehouse-stock-crop-wise`, {
+        params: {
+          warehouse: warehouseId,
+        },
+      }).subscribe({
+        next: (res: any) => {
+          this.stockData = res;
+        },
+        error: (err: any) => {
+          console.error('Error fetching stock:', err);
+        },
+      });
+    }
+  }
+
+  exportToExcel() {
+    // export to CSV
+    let csvContent = 'data:text/csv;charset=utf-8,';
+    csvContent += 'Sr No.,Crop Name,Quantity,Average Price\n';
+    this.stockData.forEach((item: any, index: number) => {
+      csvContent += `${index + 1},${item.crop},${item.quantity},${item.averagePrice}\n`;
+    });
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', 'stock.csv');
+    document.body.appendChild(link);
+    link.click();
   }
 }

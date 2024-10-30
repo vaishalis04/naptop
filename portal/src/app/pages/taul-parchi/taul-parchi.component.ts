@@ -67,19 +67,20 @@ export class TaulParchiComponent implements OnInit {
 
   calculateNetWeight(): void {
     const { boraQuantity, bharti, looseQuantity } = this.TaulParchi;
-    this.TaulParchi.netWeight = (boraQuantity * bharti) + looseQuantity;
+    this.TaulParchi.netWeight = ((boraQuantity * bharti) + looseQuantity) / 100;
   }
   calculateAmount(): void {
     const { netWeight, rate } = this.TaulParchi;
     // const netWeightInQuintals = Number(netWeight) / 100;
     const rateValue = Number(rate);
     const hammaliAmount = this.Hammals.find((hammal) => hammal._id === this.TaulParchi.hammal)?.rate;
-    this.TaulParchi.amount = ((netWeight / 100) * rateValue) + (this.TaulParchi.exemptHammali == 'deduct' ? (hammaliAmount || 0) : 0);
+    this.TaulParchi.amount = ((netWeight) * rateValue) + (this.TaulParchi.exemptHammali == 'deduct' ? ((hammaliAmount * netWeight) || 0) : 0);
   }
   calculateHammali() {
-    const netWeightQuintal = this.TaulParchi.netWeight / 100;
+    // const netWeightQuintal = this.TaulParchi.netWeight / 100;
     const hammaliAmount = this.Hammals.find((hammal) => hammal._id === this.TaulParchi.hammal)?.rate;
-    this.TaulParchi.hammali = netWeightQuintal * hammaliAmount
+    // this.TaulParchi.hammali = netWeightQuintal * hammaliAmount
+    this.TaulParchi.hammali = this.TaulParchi.netWeight * hammaliAmount
   }
 
   // Fetch Farmers from backend
@@ -225,6 +226,11 @@ export class TaulParchiComponent implements OnInit {
 
   // Save TaulParchi to the backend
   saveTaulParchi() {
+    if (this.TaulParchi.tulai == 'Labour') {
+      this.calculateNetWeight();
+      this.calculateHammali();
+    }
+    this.calculateAmount();
     if (!this.TaulParchi.farmer) {
       alert('Please select Farmer');
       return;
@@ -241,19 +247,19 @@ export class TaulParchiComponent implements OnInit {
     //   alert('Please select Hammal');
     //   return;
     // }
-    if (!this.TaulParchi.boraQuantity) {
-      alert('Please enter Bora');
+    if (this.TaulParchi.tulai == 'Labour' && !this.TaulParchi.boraQuantity) {
+      alert('Please enter Bora Quantity');
       return;
     }
 
-    if (!this.TaulParchi.bharti) {
+    if (this.TaulParchi.tulai == 'Labour' && !this.TaulParchi.bharti) {
       alert('Please enter Bharti');
       return;
     }
-    if (!this.TaulParchi.looseQuantity) {
-      alert('Please enter looseQuantity');
-      return;
-    }
+    // if (!this.TaulParchi.looseQuantity) {
+    //   alert('Please enter looseQuantity');
+    //   return;
+    // }
     if (!this.TaulParchi.crop) {
       alert('Please select Crop');
       return;
@@ -281,6 +287,8 @@ export class TaulParchiComponent implements OnInit {
     this.TaulParchi.createdBy = user.id;
 
     if (this.TaulParchi) {
+      // console.log('TaulParchi:', this.TaulParchi);
+      // return;
       this.apiService.post('taulparchi', this.TaulParchi).subscribe({
         next: (res: any) => {
           console.log('TaulParchi saved successfully');

@@ -1,25 +1,14 @@
 <!-- modal for add/update -->
-<div
-  class="modal fade"
-  [ngClass]="{ show: isNewFarmerPopUpOpen }"
-  id="addUpdateMasterModal"
-  tabindex="-1"
-  aria-labelledby="addUpdateMasterModalLabel"
-  aria-hidden="true"
->
+<div class="modal fade" [ngClass]="{ show: isNewFarmerPopUpOpen }" id="addUpdateMasterModal" tabindex="-1"
+  aria-labelledby="addUpdateMasterModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="addUpdateMasterModalLabel">
           Add Farmer
         </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-          (click)="isNewFarmerPopUpOpen = false"
-        ></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          (click)="isNewFarmerPopUpOpen = false"></button>
       </div>
       <div class="modal-body">
         <div class="container">
@@ -27,59 +16,28 @@
             <div class="col-12">
               <div class="form-group">
                 <label for="farmerType" class="form-label">Farmer Type</label>
-                <select
-                  id="farmerType"
-                  class="form-control"
-                  [(ngModel)]="farmerToAddOrEdit.farmerType"
-                  name="farmerType"
-                >
-                  <option value="" >Select Farmer Type</option>
+                <select id="farmerType" class="form-control" [(ngModel)]="farmerToAddOrEdit.farmerType"
+                  name="farmerType">
+                  <option value="">Select Farmer Type</option>
                   <option value="regular">Regular</option>
                   <option value="premium">Premium</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="masterName" class="form-label">Name</label>
-                <input
-                  id="masterName"
-                  class="form-control"
-                  [(ngModel)]="farmerToAddOrEdit.name"
-                  name="masterName"
-                  type="text"
-                  placeholder="Name"
-                />
+                <input id="masterName" class="form-control" [(ngModel)]="farmerToAddOrEdit.name" name="masterName"
+                  type="text" placeholder="Name" />
               </div>
               <div class="form-group">
                 <label for="mobile" class="form-label">Mobile</label>
-                <input
-                  id="mobile"
-                  class="form-control"
-                  [(ngModel)]="farmerToAddOrEdit.mobile"
-                  name="mobile"
-                  type="text"
-                  placeholder="Mobile"
-                  maxlength="10"
-                  minlength="10"
-                  pattern="[0-9]{10}"
-                  required
-                  #mobileInput="ngModel"
-
-                />
+                <input id="mobile" class="form-control" [(ngModel)]="farmerToAddOrEdit.mobile" name="mobile" type="text"
+                  placeholder="Mobile" maxlength="10" minlength="10" pattern="[0-9]{10}" required
+                  #mobileInput="ngModel" />
                 <div class="form-group">
                   <label for="village" class="form-label">Village</label>
-                  <input
-                    id="village"
-                    class="form-control"
-                    [(ngModel)]="farmerToAddOrEdit.village"
-                    name="village"
-                    type="text"
-                    placeholder="Enter Village Name"
-                    maxlength="30"
-                    minlength="3"
-                    pattern="^[a-zA-Z\s]+$"
-                    required
-                    #villageInput="ngModel"
-                  />
+                  <input id="village" class="form-control" [(ngModel)]="farmerToAddOrEdit.village" name="village"
+                    type="text" placeholder="Enter Village Name" maxlength="30" minlength="3" pattern="^[a-zA-Z\s]+$"
+                    required #villageInput="ngModel" />
 
                 </div>
               </div>
@@ -89,19 +47,10 @@
       </div>
 
       <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          data-bs-dismiss="modal"
-          (click)="isNewFarmerPopUpOpen = false"
-        >
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="isNewFarmerPopUpOpen = false">
           Close
         </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          (click)="addNewFarmer()"
-        >
+        <button type="button" class="btn btn-primary" (click)="addNewFarmer()">
           Add
         </button>
       </div>
@@ -169,7 +118,8 @@
                       </label>
                     </div>
                     <div class="col-auto">
-                      <p-button (onClick)="openFarmerPopUp()" label="Add New Farmer" icon="pi pi-plus" [raised]="true" severity="success" [rounded]="true" size="small" />
+                      <p-button (onClick)="openFarmerPopUp()" label="Add New Farmer" icon="pi pi-plus" [raised]="true"
+                        severity="success" [rounded]="true" size="small" />
                     </div>
                   </div>
                   <select id="farmerName" class="form-select" [(ngModel)]="TaulParchi.farmer" name="farmerName"
@@ -238,26 +188,29 @@
                       <option value="exempted">Exempted</option>
                     </select>
                   </div>
+                  <div class="form-group mb-3"  *ngIf="TaulParchi.farmer && TaulParchi.tulai === 'Labour'" >
+                    <label for="boraQuantity" class="form-label">Bora Quantity</label>
+                    <input id="boraQuantity" class="form-control" [(ngModel)]="TaulParchi.boraQuantity"
+                      name="boraQuantity" type="number" placeholder="Bora Quantity"
+                      (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
 
-                  <label for="boraQuantity" class="form-label">Bora Quantity</label>
-                  <input id="boraQuantity" class="form-control" [(ngModel)]="TaulParchi.boraQuantity"
-                    name="boraQuantity" type="number" placeholder="Bora Quantity"
-                    (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
+                    <label for="bharti" class="form-label">Bharti(in Kgs)</label>
+                    <input id="bharti" class="form-control" [(ngModel)]="TaulParchi.bharti" name="bharti" type="number"
+                      placeholder="Bharti"
+                      (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
 
-                  <label for="bharti" class="form-label">Bharti(in Kgs)</label>
-                  <input id="bharti" class="form-control" [(ngModel)]="TaulParchi.bharti" name="bharti" type="number"
-                    placeholder="Bharti"
-                    (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
-
-                  <label for="looseQuantity" class="form-label">Loose Quantity(in Kgs)</label>
-                  <input id="looseQuantity" class="form-control" [(ngModel)]="TaulParchi.looseQuantity"
-                    name="looseQuantity" type="number" placeholder="Enter looseQuantity"
-                    (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
+                    <label for="looseQuantity" class="form-label">Loose Quantity(in Kgs)</label>
+                    <input id="looseQuantity" class="form-control" [(ngModel)]="TaulParchi.looseQuantity"
+                      name="looseQuantity" type="number" placeholder="Enter looseQuantity"
+                      (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
+                  </div>
 
                   <label for="netWeight" class="form-label">Net Weight (in Quintal)</label>
-                  <input id="netWeight" class="form-control" [value]="TaulParchi.netWeight / 100" name="netWeight"
-                    type="number" placeholder="Net Weight" readonly />
-
+                  <input id="netWeight" class="form-control" name="netWeight"
+                    type="number" placeholder="Net Weight" [readonly]="TaulParchi.tulai != 'Dharamkata'"
+                    [(ngModel)]="TaulParchi.netWeight"
+                    (ngModelChange)="calculateAmount();"
+                    />
                 </div>
 
                 <div class="form-group mb-3">
@@ -265,7 +218,8 @@
                   <input id="amount" class="form-control" [value]="TaulParchi.amount" name="amount" type="number"
                     placeholder="Amount" readonly />
                 </div>
-                <div class="form-group mb-3">
+                <div class="form-group mb-3"
+                  *ngIf="TaulParchi.tulai === 'Labour' && TaulParchi.farmer && TaulParchi.hammal">
                   <label for="hammali" class="form-label">Hammali Amount(in ₹)</label>
                   <input id="hammali" class="form-control" [value]="TaulParchi.hammali" name="hammali" type="number"
                     placeholder="hammali" readonly />

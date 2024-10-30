@@ -1,6 +1,7 @@
 const Model = require("../models/taulparchi.model");
 const createError = require("http-errors");
 const mongoose = require("mongoose");
+const StockModel = require("../models/stock.model");
 
 module.exports = {
   create: async (req, res, next) => {
@@ -29,7 +30,7 @@ module.exports = {
         return res.status(400).json({ error: "Rate is required." });
       }
 
-      if (!data.boraQuantity) {
+      if (data.tulai === "Labour" && !data.boraQuantity) {
         return res.status(400).json({ error: "Bora Quantity is required." });
       }
       // if (!data.unitBora) {
@@ -42,21 +43,21 @@ module.exports = {
         return res.status(400).json({ error: "Crop is required." });
       }
 
-      // Calculate netWeight using the formula: netWeight = (boraQuantity * unitBora) + bharti
-      data.netWeight = data.boraQuantity * data.unitBora + data.bharti;
+      // // Calculate netWeight using the formula: netWeight = (boraQuantity * unitBora) + bharti
+      // data.netWeight = data.boraQuantity * data.unitBora + data.bharti;
 
       // Check for duplicates (optional)
-      const existingTaulParchi = await Model.findOne({
-        farmer: data.farmer,
-        village: data.village,
-        firm_company: data.firm_company,
-      });
-      if (existingTaulParchi) {
-        return res.status(400).json({
-          error:
-            "A TaulParchi entry already exists with the same Farmer, Village, and Firm/Company.",
-        });
-      }
+      // const existingTaulParchi = await Model.findOne({
+      //   farmer: data.farmer,
+      //   village: data.village,
+      //   firm_company: data.firm_company,
+      // });
+      // if (existingTaulParchi) {
+      //   return res.status(400).json({
+      //     error:
+      //       "A TaulParchi entry already exists with the same Farmer, Village, and Firm/Company.",
+      //   });
+      // }
 
       // Assign the `created_by` field from the authenticated user's ID
       if (req.user) {
@@ -66,6 +67,20 @@ module.exports = {
       // Create a new TaulParchi instance with the provided data
       const newTaulParchi = new Model(data);
       const result = await newTaulParchi.save();
+
+      // Create a new Stock instance with the provided data
+      const newStock = new StockModel({
+        crop: data.crop,
+        quantity: data.netWeight,
+        warehouse: data.storage,
+        price: data.rate,
+        logType: "purchase",
+        meta_data: {
+          taulParchi: result._id,
+        },
+      });
+      const stockResult = await newStock.save();
+
       console.log("data", result);
 
       res.status(201).json(result);

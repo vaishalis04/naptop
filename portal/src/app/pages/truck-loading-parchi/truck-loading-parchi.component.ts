@@ -1,105 +1,9 @@
-// import { Component } from '@angular/core';
-// import { SharedService } from '../../services/shared.service';
-// import { CommonModule } from '@angular/common';
-// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { Router } from '@angular/router';
-
-// @Component({
-//   selector: 'app-truck-loading-parchi',
-//   standalone: true,
-//   imports: [
-//     FormsModule,
-//     ReactiveFormsModule,
-//     CommonModule
-//   ],
-//   templateUrl: './truck-loading-parchi.component.html',
-//   styleUrl: './truck-loading-parchi.component.css'
-// })
-// export class TruckLoadingParchiComponent {
-
-//   /**
-//    * Party Name - Dropdown
-//    * Vehicle Number - Text
-//    * Delivery Location - Dropdown
-//    * Hammal - Dropdown
-//    * Bora Nag - Number
-//    * Kaanta Weight - Number
-//    * jins - Number
-//    * Other - Text
-//    */
-
-//   Parties: any[] = [];
-
-//   DeliveryLocations: any[] = [];
-
-//   Hammals: any[] = [];
-
-//   TruckLoadingParchi = {
-//     party_name: '',
-//     vehicle_number: '',
-//     delivery_location: '',
-//     hammal: '',
-//     bora_nag: '',
-//     kaanta_weight: '',
-//     jins: '',
-//     other: '',
-//     id: Date.now(),
-//     created_at: new Date(),
-//   }
-
-//   constructor(
-//     private sharedService: SharedService,
-//     private router: Router
-//   ) {
-//     this.Parties = this.sharedService.Parties;
-//     this.DeliveryLocations = this.sharedService.DeliveryLocations;
-//     this.Hammals = this.sharedService.Hammals;
-//   }
-
-//   saveTruckLoadingParchi() {
-//     if (!this.TruckLoadingParchi.party_name) {
-//       alert('Please select Party Name');
-//       return;
-//     }
-//     if (!this.TruckLoadingParchi.vehicle_number) {
-//       alert('Please enter Vehicle Number');
-//       return;
-//     }
-//     if (!this.TruckLoadingParchi.delivery_location) {
-//       alert('Please select Delivery Location');
-//       return;
-//     }
-//     if (!this.TruckLoadingParchi.hammal) {
-//       alert('Please select Hammal');
-//       return;
-//     }
-//     if (!this.TruckLoadingParchi.bora_nag) {
-//       alert('Please enter Bora Nag');
-//       return;
-//     }
-//     if (!this.TruckLoadingParchi.kaanta_weight) {
-//       alert('Please enter Kaanta Weight');
-//       return;
-//     }
-//     if (!this.TruckLoadingParchi.jins) {
-//       alert('Please enter Jins');
-//       return;
-//     }
-//     if (!this.TruckLoadingParchi.other) {
-//       alert('Please enter Other');
-//       return;
-//     }
-//     if (confirm('Are you sure you want to save this Truck Loading Parchi?')) {
-//       this.sharedService.addItem('Truck Loading Parchis', this.TruckLoadingParchi);
-//       this.router.navigate(['/dashboard']);
-//     }
-//   }
-// }
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-truck-loading-parchi',
@@ -117,8 +21,16 @@ export class TruckLoadingParchiComponent implements OnInit {
   Storage: any[] = [];
   Transport: any[] = [];
 
+  stockInfo = {
+    averagePrice: 0,
+    crop: '',
+    quantity: 0,
+  };
+
+  isStockFetched = false;
 
   TruckLoadingParchi = {
+    transferType: 'Sale',
     partyName: '',
     vehicleNumber: '',
     deliveryLocation: '',
@@ -130,7 +42,6 @@ export class TruckLoadingParchiComponent implements OnInit {
     crop: '',
     rate: 0,
     bardanaType:0,
-    bardanaUnit:0,
     netWeight: 0, // To be calculated
     amount: 0, // To be calculated
     other: '',
@@ -141,7 +52,11 @@ export class TruckLoadingParchiComponent implements OnInit {
     createdBy: '',
   };
 
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(
+    private apiService: ApiService,
+    private router: Router,
+    private sharedService: SharedService
+  ) {}
 
   ngOnInit(): void {
     this.fetchParties();
@@ -154,8 +69,8 @@ export class TruckLoadingParchiComponent implements OnInit {
   }
 
   calculateNetWeight(): void {
-    const { boraQuantity, unitBora, bardanaUnit, bardanaType } = this.TruckLoadingParchi;
-    const bardanaInKg = (bardanaUnit * (bardanaType/1000)); // Convert bardanaUnit from grams to kilograms
+    const { boraQuantity, unitBora, bardanaType } = this.TruckLoadingParchi;
+    const bardanaInKg = (boraQuantity * (bardanaType/1000)); // Convert bardanaUnit from grams to kilograms
     this.TruckLoadingParchi.netWeight = (boraQuantity * unitBora) - bardanaInKg;
     this.calculateAmount();
 }
@@ -366,16 +281,75 @@ export class TruckLoadingParchiComponent implements OnInit {
       alert('Please fill in all required fields.');
     }
   }
-  updateBardanaUnit() {
-    if (this.TruckLoadingParchi.bardanaType === 650) {
-      this.TruckLoadingParchi.bardanaUnit = 650;
-    } else if (this.TruckLoadingParchi.bardanaType === 1) {
-      this.TruckLoadingParchi.bardanaUnit = 1000;
+  // updateBardanaUnit() {
+  //   if (this.TruckLoadingParchi.bardanaType === 650) {
+  //     this.TruckLoadingParchi.bardanaUnit = 650;
+  //   } else if (this.TruckLoadingParchi.bardanaType === 1) {
+  //     this.TruckLoadingParchi.bardanaUnit = 1000;
+  //   }
+  // }
+
+  getStockInfo() {
+    const warehouse = this.TruckLoadingParchi.storage;
+    if (!warehouse) {
+      console.error('Please select a warehouse');
+      this.sharedService.addToast(
+        {
+          header: 'Oops',
+          body: 'Please select a warehouse',
+          classname: 'bg-danger text-light',
+          delay: 5000
+        }
+      );
+      return;
     }
+
+    this.isStockFetched = false;
+    this.stockInfo = {
+      averagePrice: 0,
+      crop: '',
+      quantity: 0,
+    };
+    this.apiService.get(`stock/warehouse-stock-crop-wise`, {
+      params: {
+        warehouse,
+      },
+    }).subscribe({
+      next: (res: any) => {
+        console.log('Stock Info:', res);
+        const crop = this.Crops.find((crop) => crop._id === this.TruckLoadingParchi.crop);
+        if (crop) {
+          const stockInfo = res.find((stock: any) => stock.crop === crop.name);
+          if (stockInfo) {
+            this.isStockFetched = true;
+            this.stockInfo = stockInfo;
+            this.TruckLoadingParchi.rate = stockInfo.averagePrice;
+          } else {
+            console.error('Please select a valid crop available in the stock');
+            this.sharedService.addToast(
+              {
+                header: 'Oops',
+                body: 'Please select a valid crop available in the stock',
+                classname: 'bg-danger text-light',
+                delay: 5000
+              }
+            );
+          }
+        } else {
+          console.error('Please select a valid crop available in the stock');
+          this.sharedService.addToast(
+            {
+              header: 'Oops',
+              body: 'Please select a valid crop available in the stock',
+              classname: 'bg-danger text-light',
+              delay: 5000
+            }
+          );
+        }
+      },
+      error: (err: any) => {
+        console.error('Error fetching Stock Info:', err);
+      },
+    })
   }
-
-
-
-
-
 }

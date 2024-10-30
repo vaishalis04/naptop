@@ -2,6 +2,7 @@ const Model = require("../models/truckLoading.model");
 const createError = require("http-errors");
 const mongoose = require("mongoose");
 const ObjectId = mongoose.Types.ObjectId;
+const StockModel = require("../models/stock.model");
 
 module.exports = {
   create: async (req, res, next) => {
@@ -30,7 +31,7 @@ module.exports = {
       }
 
       // Calculate netWeight using the formula: netWeight = boraQuantity * unitBora
-      data.netWeight = data.boraQuantity * data.unitBora;
+      // data.netWeight = data.boraQuantity * data.unitBora;
 
       // Optional: You can check for duplicates or other conditions if required.
       // const existingTruckLoading = await Model.findOne({
@@ -49,6 +50,49 @@ module.exports = {
 
       // Save the new TruckLoading entry to the database
       const result = await newTruckLoading.save();
+
+      // Create a new Stock entry for the TruckLoading
+      if (data.transferType === "Stock Transfer") {
+        const stockData = {
+          crop: data.crop,
+          quantity: data.netWeight,
+          warehouse: data.storage,
+          price: data.rate,
+          logType: "transfer out",
+          meta_data: {
+            truckLoading: result._id,
+          },
+        };
+
+        const stockDataIn = {
+          crop: data.crop,
+          quantity: data.netWeight,
+          warehouse: data.deliveryLocation,
+          price: data.rate,
+          logType: "transfer in",
+          meta_data: {
+            truckLoading: result._id,
+          },
+        };
+
+        // Create a new Stock entry using the StockModel
+        const stockResult = await StockModel.createOrUpdateStock(null, stockData);
+      } else {
+        // Create a new Stock entry for the TruckLoading
+        const stockData = {
+          crop: data.crop,
+          quantity: data.netWeight,
+          warehouse: data.storage,
+          price: data.rate,
+          logType: "sale",
+          meta_data: {
+            truckLoading: result._id,
+          },
+        };
+
+        // Create a new Stock entry using the StockModel
+        const stockResult = await StockModel.createOrUpdateStock(null, stockData);
+      }
 
       // Respond with the saved TruckLoading and a status of 201 (Created)
       res.status(201).json(result);

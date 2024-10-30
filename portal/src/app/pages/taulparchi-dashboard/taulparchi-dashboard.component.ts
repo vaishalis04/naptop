@@ -227,7 +227,7 @@ export class TaulparchiDashboardComponent {
             </div>
             <div class="row">
               <div class="label"><b>Hammal:</b></div>
-              <div class="value">${taulaParchi?.hammalDetails.name || 'N/A'}</div>
+              <div class="value">${taulaParchi?.hammalDetails?.name || 'N/A'}</div>
             </div>
             <div class="row">
               <div class="label"><b>Bora Quantity:</b></div>

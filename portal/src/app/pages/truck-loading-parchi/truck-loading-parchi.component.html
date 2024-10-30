@@ -22,12 +22,35 @@
                     TruckLoadingParchi.created_at | date : "dd-MM-YYYY"
                   }}</span>
                 </b>
+                <b>
+                  <span class="text-muted ps-2">Time:</span>
+                  <span class="text-link">{{
+                    TruckLoadingParchi.created_at | date : "hh:mm"
+                  }}</span>
+                </b>
               </div>
             </div>
           </div>
           <div class="card-body bg-warning">
             <div class="row">
               <div class="col-12">
+                <div class="form-group mb-3">
+                  <!-- transferType: {
+                    type: String,
+                    enum: ['Sale', 'Stock Transfer']
+                }, -->
+                  <label for="transferType" class="form-label mb-0">Transfer Type</label>
+                  <select
+                    id="transferType"
+                    class="form-select"
+                    [(ngModel)]="TruckLoadingParchi.transferType"
+                    name="transferType"
+                  >
+                    <option value="">Select Transfer Type</option>
+                    <option value="Sale">Sale</option>
+                    <option value="Stock Transfer">Stock Transfer</option>
+                  </select>
+                </div>
                 <div class="form-group mb-3">
                   <label for="partyName" class="form-label">Party Name</label>
                   <select
@@ -85,24 +108,6 @@
                     </option>
                   </select>
 
-                  <label for="deliveryLocation" class="form-label"
-                    >Delivery Location</label
-                  >
-                  <select
-                    id="deliveryLocation"
-                    class="form-select"
-                    [(ngModel)]="TruckLoadingParchi.deliveryLocation"
-                    name="deliveryLocation"
-                  >
-                    <option value="">Select Location</option>
-                    <option
-                      *ngFor="let location of DeliveryLocations"
-                      [value]="location._id"
-                    >
-                      {{ location.name }}
-                    </option>
-                  </select>
-
                   <label for="assignedHammal" class="form-label"
                     >Assigned Hammal</label
                   >
@@ -135,131 +140,190 @@
                     </option>
                   </select>
 
-                  <label for="boraQuantity" class="form-label"
-                    >Bora Quantity</label
-                  >
-                  <input
-                    id="boraQuantity"
-                    class="form-control"
-                    [(ngModel)]="TruckLoadingParchi.boraQuantity"
-                    name="boraQuantity"
-                    type="number"
-                    placeholder="Bora Quantity"
-                    (ngModelChange)="calculateNetWeight()"
-                  />
 
-                  <label for="unitBora" class="form-label">Bora Bharti (in Kgs)</label>
-                  <input
-                    id="unitBora"
-                    class="form-control"
-                    [(ngModel)]="TruckLoadingParchi.unitBora"
-                    name="unitBora"
-                    type="number"
-                    placeholder="Unit Bora"
-                    (ngModelChange)="calculateNetWeight()"
-                  />
-                  <label for="bardanaType" class="form-label"
-                    >Bardana Type</label
+                  <label for="deliveryLocation" class="form-label"
+                    >Delivery Location</label
                   >
                   <select
-                    id="bardanaType"
+                    *ngIf="TruckLoadingParchi.transferType === 'Sale'"
+                    id="deliveryLocation"
                     class="form-select"
-                    [(ngModel)]="TruckLoadingParchi.bardanaType"
-                    name="bardanaType"
-                    (ngModelChange)="calculateNetWeight()"
+                    [(ngModel)]="TruckLoadingParchi.deliveryLocation"
+                    name="deliveryLocation"
                   >
-                    <option [ngValue]="">Select Bardana Type</option>
-                    <option [ngValue]="0">No Bardana</option>
-                    <option [ngValue]=650>650g</option>
-                    <option [ngValue]=1000>1Kg</option>
+                    <option value="">Select Location</option>
+                    <option
+                      *ngFor="let location of DeliveryLocations"
+                      [value]="location._id"
+                    >
+                      {{ location.name }}
+                    </option>
                   </select>
 
-                  <div class="form-group" *ngIf="TruckLoadingParchi.bardanaType">
-                    <label for="bardanaUnit" class="form-label">Bardana Unit</label>
-                    <input
-                      id="bardanaUnit"
-                      class="form-control"
-                      [(ngModel)]="TruckLoadingParchi.bardanaUnit"
-                      name="bardanaUnit"
-                      type="number"
-                      (ngModelChange)="calculateNetWeight()"
-                    />
-                  </div>
+                  <select *ngIf="TruckLoadingParchi.transferType === 'Stock Transfer'" id="deliveryLocation" class="form-select" [(ngModel)]="TruckLoadingParchi.deliveryLocation" name="deliveryLocation">
+                    <option value="">Select Location</option>
+                    <option *ngFor="let location of Storage" [value]="location._id">
+                      {{ location.name }}
+                    </option>
+                  </select>
 
-                  <div
-                    *ngIf="
-                      TruckLoadingParchi.bardanaType === 0.65 ||
-                      TruckLoadingParchi.bardanaType === 1
-                    "
-                  >
-                    <label for="bardanaUnit" class="form-label">
-                      Bardana Unit
+                  <div>
+                    <button class="btn btn-primary mt-3" type="button" (click)="getStockInfo()">
+                      Get Stock Information
+                    </button>
+                  </div>
+                  <hr>
+                  <!-- Show StockInfo -->
+                   <!-- quantity, averagePrice in badges -->
+                  <div *ngIf="isStockFetched">
+                    <div class="row">
+                      <div class="col">
+                        <div class="card bg-light">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col">
+                                <h6 class="card-subtitle mb-2 text-muted">Stock Quantity</h6>
+                                <p class="card-text">{{ stockInfo?.quantity }}</p>
+                              </div>
+                              <div class="col">
+                                <h6 class="card-subtitle mb-2 text-muted">Average Price</h6>
+                                <p class="card-text">{{ stockInfo?.averagePrice }}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <hr>
+                  <div>
+
+                  <div *ngIf="isStockFetched">
+                    <label for="boraQuantity" class="form-label">
+                      Bora Quantity
                     </label>
                     <input
-                      id="bardanaUnit"
+                      id="boraQuantity"
                       class="form-control"
-                      [(ngModel)]="TruckLoadingParchi.bardanaUnit"
-                      name="bardanaUnit"
+                      [(ngModel)]="TruckLoadingParchi.boraQuantity"
+                      name="boraQuantity"
+                      type="number"
+                      placeholder="Bora Quantity"
+                      (ngModelChange)="calculateNetWeight()"
+                    />
+
+                    <label for="unitBora" class="form-label">Bora Bharti (in Kgs)</label>
+                    <input
+                      id="unitBora"
+                      class="form-control"
+                      [(ngModel)]="TruckLoadingParchi.unitBora"
+                      name="unitBora"
+                      type="number"
+                      placeholder="Unit Bora"
+                      (ngModelChange)="calculateNetWeight()"
+                    />
+                    <label for="bardanaType" class="form-label"
+                      >Bardana Type</label
+                    >
+                    <select
+                      id="bardanaType"
+                      class="form-select"
+                      [(ngModel)]="TruckLoadingParchi.bardanaType"
+                      name="bardanaType"
+                      (ngModelChange)="calculateNetWeight()"
+                    >
+                      <option [ngValue]="">Select Bardana Type</option>
+                      <option [ngValue]="0">No Bardana</option>
+                      <option [ngValue]=650>650g</option>
+                      <option [ngValue]=1000>1Kg</option>
+                    </select>
+                    <!--
+                    <div class="form-group" *ngIf="TruckLoadingParchi.bardanaType">
+                      <label for="bardanaUnit" class="form-label">Bardana Unit</label>
+                      <input
+                        id="bardanaUnit"
+                        class="form-control"
+                        [(ngModel)]="TruckLoadingParchi.bardanaUnit"
+                        name="bardanaUnit"
+                        type="number"
+                        (ngModelChange)="calculateNetWeight()"
+                      />
+                    </div> -->
+
+                    <!-- <div
+                      *ngIf="
+                        TruckLoadingParchi.bardanaType === 0.65 ||
+                        TruckLoadingParchi.bardanaType === 1
+                      "
+                    >
+                      <label for="bardanaUnit" class="form-label">
+                        Bardana Unit
+                      </label>
+                      <input
+                        id="bardanaUnit"
+                        class="form-control"
+                        [(ngModel)]="TruckLoadingParchi.bardanaUnit"
+                        name="bardanaUnit"
+                        type="number"
+                        step="0.01"
+                        (ngModelChange)="calculateNetWeight()"
+                        readonly
+                      />
+                    </div> -->
+
+
+                    <label for="netWeight" class="form-label"
+                      >Net Weight(in Quintal)</label
+                    >
+                    <input
+                      id="netWeight"
+                      class="form-control"
+                      [value]="TruckLoadingParchi.netWeight"
+                      name="netWeight"
                       type="number"
                       step="0.01"
-                      (ngModelChange)="calculateNetWeight()"
+                      placeholder="Net Weight"
                       readonly
                     />
+
+                    <label for="rate" class="form-label">Rate(Per Quintal)</label>
+                    <input
+                      id="rate"
+                      class="form-control"
+                      [(ngModel)]="TruckLoadingParchi.rate"
+                      name="rate"
+                      type="text"
+                      placeholder="rate"
+                    />
+
+                    <!-- <label for="amount" class="form-label">Payable Amount</label>
+                    <input
+                      id="amount"
+                      class="form-control"
+                      [value]="TruckLoadingParchi.amount"
+                      name="amount"
+                      type="number"
+                      placeholder="Amount"
+                      readonly
+                    /> -->
+                    <label for="advance" class="form-label">Freight Advance</label>
+                    <input
+                      id="advance"
+                      class="form-control"
+                      [(ngModel)]="TruckLoadingParchi.advance"
+                      name="advance"
+                      type="text"
+                      placeholder="Freight Advance"
+                    />
+                    <label for="other" class="form-label">Remark</label>
+                    <input
+                      id="other"
+                      class="form-control"
+                      [(ngModel)]="TruckLoadingParchi.other"
+                      name="other"
+                      type="text"
+                      placeholder="Enter Remark"
+                    />
                   </div>
-
-
-                  <label for="netWeight" class="form-label"
-                    >Net Weight(in Quintal)</label
-                  >
-                  <input
-                    id="netWeight"
-                    class="form-control"
-                    [value]="TruckLoadingParchi.netWeight"
-                    name="netWeight"
-                    type="number"
-                    step="0.01"
-                    placeholder="Net Weight"
-                    readonly
-                  />
-
-                  <label for="rate" class="form-label">Rate(Per Quintal)</label>
-                  <input
-                    id="rate"
-                    class="form-control"
-                    [(ngModel)]="TruckLoadingParchi.rate"
-                    name="rate"
-                    type="text"
-                    placeholder="rate"
-                  />
-
-                  <!-- <label for="amount" class="form-label">Payable Amount</label>
-                  <input
-                    id="amount"
-                    class="form-control"
-                    [value]="TruckLoadingParchi.amount"
-                    name="amount"
-                    type="number"
-                    placeholder="Amount"
-                    readonly
-                  /> -->
-                  <label for="advance" class="form-label">Freight Advance</label>
-                  <input
-                    id="advance"
-                    class="form-control"
-                    [(ngModel)]="TruckLoadingParchi.advance"
-                    name="advance"
-                    type="text"
-                    placeholder="Freight Advance"
-                  />
-                  <label for="other" class="form-label">Remark</label>
-                  <input
-                    id="other"
-                    class="form-control"
-                    [(ngModel)]="TruckLoadingParchi.other"
-                    name="other"
-                    type="text"
-                    placeholder="Enter Remark"
-                  />
                 </div>
               </div>
             </div>
@@ -272,6 +336,7 @@
               class="btn btn-primary btn-lg m-3"
               type="button"
               (click)="saveTruckLoadingParchi()"
+              [disabled]="!isStockFetched"
             >
               Save
             </button>

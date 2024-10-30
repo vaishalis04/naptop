@@ -9,7 +9,7 @@ const debug = require("debug")(process.env.DEBUG + "server");
 const path = require("path");
 const compression = require("compression");
 const createError = require("http-errors");
-const https = require("https");
+// const https = require("https");
 const fs = require("fs");
 
 const app = express();
@@ -68,8 +68,7 @@ app.use("/api/advance", require("./routes/advancePayment.route"));
 app.use("/api/storage", require("./routes/storage.route"));
 app.use("/api/company", require("./routes/company.route"));
 app.use("/api/transport", require("./routes/transport.route"));
-
-
+app.use("/api/stock", require("./routes/stock.route"));
 
 
 app.use("/api", (req, res, next) => {

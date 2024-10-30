@@ -101,6 +101,10 @@ export class TruckLoadingParchiViewComponent {
             <span>${new Date(this.truckLoadingParchi.created_at).toLocaleDateString()}</span>
           </div>
           <div class="row">
+            <span><b>Time:</b></span>
+            <span>${new Date(this.truckLoadingParchi.created_at).toLocaleTimeString()}</span>
+          </div>
+          <div class="row">
             <span><b>Party Name:</b></span>
             <span>${this.truckLoadingParchi?.partyDetails.name}</span>
           </div>
@@ -131,10 +135,6 @@ export class TruckLoadingParchiViewComponent {
           <div class="row">
             <span><b>Bardana Weight:</b></span>
             <span>${this.truckLoadingParchi?.bardanaType == 1000 ? '1 Kg' : (this.truckLoadingParchi?.bardanaType == 650 ? '0.650 Kg' : 'No Bradana Weight')}</span>
-          </div>
-          <div class="row">
-            <span><b>Bardana Bag Unit:</b></span>
-            <span>${this.truckLoadingParchi.bardanaUnit}</span>
           </div>
           <div class="row">
             <span><b>Net Weight (Quintal):</b></span>
