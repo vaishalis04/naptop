@@ -11,6 +11,13 @@ const StockSchema = new Schema({
         type: Number,
         required: true
     },
+    /**
+     * BagUnits: [{unit_weight_of_bags, no_of_bags}, .....]
+     */
+    bag_units: {
+        type: Schema.Types.Mixed,
+        default: [],
+    },
     warehouse: {
         type: Schema.Types.ObjectId,
         ref: 'Storage',

@@ -73618,7 +73618,7 @@ var _c119 = (a0, a1, a2) => ({ id: "storage_list", itemsPerPage: a0, currentPage
 function StorageComponent_button_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 37);
+    \u0275\u0275elementStart(0, "button", 47);
     \u0275\u0275listener("click", function StorageComponent_button_18_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r1);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -73631,7 +73631,7 @@ function StorageComponent_button_18_Template(rf, ctx) {
 function StorageComponent_button_19_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "button", 37);
+    \u0275\u0275elementStart(0, "button", 47);
     \u0275\u0275listener("click", function StorageComponent_button_19_Template_button_click_0_listener() {
       \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -73643,7 +73643,7 @@ function StorageComponent_button_19_Template(rf, ctx) {
 }
 function StorageComponent_option_37_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 55);
+    \u0275\u0275elementStart(0, "option", 62);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -73654,71 +73654,103 @@ function StorageComponent_option_37_Template(rf, ctx) {
     \u0275\u0275textInterpolate(crop_r4.name);
   }
 }
-function StorageComponent_option_48_Template(rf, ctx) {
+function StorageComponent_tr_67_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 55);
-    \u0275\u0275text(1);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const warehouse_r5 = ctx.$implicit;
-    \u0275\u0275property("value", warehouse_r5._id);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", warehouse_r5.name, " ");
-  }
-}
-function StorageComponent_tr_110_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r6 = \u0275\u0275getCurrentView();
+    const _r5 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "tr")(1, "td");
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "td");
     \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "td")(6, "button", 56);
-    \u0275\u0275listener("click", function StorageComponent_tr_110_Template_button_click_6_listener() {
-      const item_r7 = \u0275\u0275restoreView(_r6).$implicit;
-      const ctx_r1 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r1.viewStock(item_r7._id));
-    });
-    \u0275\u0275element(7, "i", 57);
-    \u0275\u0275text(8, " View Stock ");
+    \u0275\u0275elementStart(5, "td");
+    \u0275\u0275text(6);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "button", 58);
-    \u0275\u0275listener("click", function StorageComponent_tr_110_Template_button_click_9_listener() {
-      const i_r8 = \u0275\u0275restoreView(_r6).index;
+    \u0275\u0275elementStart(7, "td")(8, "button", 63);
+    \u0275\u0275listener("click", function StorageComponent_tr_67_Template_button_click_8_listener() {
+      const i_r6 = \u0275\u0275restoreView(_r5).index;
       const ctx_r1 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r1.selectItemToEdit(i_r8));
+      return \u0275\u0275resetView(ctx_r1.removeBag(i_r6));
     });
-    \u0275\u0275element(10, "i", 59);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(11, "button", 60);
-    \u0275\u0275listener("click", function StorageComponent_tr_110_Template_button_click_11_listener() {
-      const i_r8 = \u0275\u0275restoreView(_r6).index;
-      const ctx_r1 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r1.deleteItem(i_r8));
-    });
-    \u0275\u0275element(12, "i", 61);
+    \u0275\u0275element(9, "i", 64);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const item_r7 = ctx.$implicit;
-    const i_r8 = ctx.index;
+    const bag_r7 = ctx.$implicit;
+    const i_r6 = ctx.index;
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(i_r8 + 1);
+    \u0275\u0275textInterpolate(i_r6 + 1);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(item_r7.name);
+    \u0275\u0275textInterpolate(bag_r7.no_of_bags);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(bag_r7.unit_weight_of_bags);
   }
 }
-function StorageComponent_div_112_div_20_Template(rf, ctx) {
+function StorageComponent_option_78_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 48)(1, "div", 68);
+    \u0275\u0275elementStart(0, "option", 62);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const warehouse_r8 = ctx.$implicit;
+    \u0275\u0275property("value", warehouse_r8._id);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", warehouse_r8.name, " ");
+  }
+}
+function StorageComponent_tr_140_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r9 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "td")(6, "button", 65);
+    \u0275\u0275listener("click", function StorageComponent_tr_140_Template_button_click_6_listener() {
+      const item_r10 = \u0275\u0275restoreView(_r9).$implicit;
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.viewStock(item_r10._id));
+    });
+    \u0275\u0275element(7, "i", 66);
+    \u0275\u0275text(8, " View Stock ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "button", 67);
+    \u0275\u0275listener("click", function StorageComponent_tr_140_Template_button_click_9_listener() {
+      const i_r11 = \u0275\u0275restoreView(_r9).index;
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.selectItemToEdit(i_r11));
+    });
+    \u0275\u0275element(10, "i", 68);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(11, "button", 63);
+    \u0275\u0275listener("click", function StorageComponent_tr_140_Template_button_click_11_listener() {
+      const i_r11 = \u0275\u0275restoreView(_r9).index;
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.deleteItem(i_r11));
+    });
+    \u0275\u0275element(12, "i", 69);
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const item_r10 = ctx.$implicit;
+    const i_r11 = ctx.index;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(i_r11 + 1);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(item_r10.name);
+  }
+}
+function StorageComponent_div_142_div_20_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 57)(1, "div", 76);
     \u0275\u0275text(2, " No Crops are available in stock ");
     \u0275\u0275elementEnd()();
   }
 }
-function StorageComponent_div_112_div_21_tr_17_Template(rf, ctx) {
+function StorageComponent_div_142_div_21_tr_17_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "tr")(1, "td");
     \u0275\u0275text(2);
@@ -73735,21 +73767,21 @@ function StorageComponent_div_112_div_21_tr_17_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const item_r10 = ctx.$implicit;
-    const i_r11 = ctx.index;
+    const item_r13 = ctx.$implicit;
+    const i_r14 = ctx.index;
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(i_r11 + 1);
+    \u0275\u0275textInterpolate(i_r14 + 1);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(item_r10.crop);
+    \u0275\u0275textInterpolate(item_r13.crop);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(item_r10.quantity);
+    \u0275\u0275textInterpolate(item_r13.quantity);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(9, 4, item_r10.averagePrice, "0.2"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(9, 4, item_r13.averagePrice, "0.2"));
   }
 }
-function StorageComponent_div_112_div_21_Template(rf, ctx) {
+function StorageComponent_div_142_div_21_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div")(1, "div", 7)(2, "div", 8)(3, "div", 9)(4, "div", 51)(5, "table", 52)(6, "thead")(7, "tr")(8, "th");
+    \u0275\u0275elementStart(0, "div")(1, "div", 7)(2, "div", 8)(3, "div", 9)(4, "div", 60)(5, "table", 31)(6, "thead")(7, "tr")(8, "th");
     \u0275\u0275text(9, "#");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(10, "th");
@@ -73762,7 +73794,7 @@ function StorageComponent_div_112_div_21_Template(rf, ctx) {
     \u0275\u0275text(15, "Average Price (in \u20B9)");
     \u0275\u0275elementEnd()()();
     \u0275\u0275elementStart(16, "tbody");
-    \u0275\u0275template(17, StorageComponent_div_112_div_21_tr_17_Template, 10, 7, "tr", 53);
+    \u0275\u0275template(17, StorageComponent_div_142_div_21_tr_17_Template, 10, 7, "tr", 32);
     \u0275\u0275elementEnd()()()()()()();
   }
   if (rf & 2) {
@@ -73771,32 +73803,32 @@ function StorageComponent_div_112_div_21_Template(rf, ctx) {
     \u0275\u0275property("ngForOf", ctx_r1.stockData);
   }
 }
-function StorageComponent_div_112_Template(rf, ctx) {
+function StorageComponent_div_142_Template(rf, ctx) {
   if (rf & 1) {
-    const _r9 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 48)(1, "div", 9)(2, "div", 40)(3, "div", 41)(4, "div", 42)(5, "h2");
+    const _r12 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 57)(1, "div", 9)(2, "div", 49)(3, "div", 50)(4, "div", 51)(5, "h2");
     \u0275\u0275text(6);
     \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(7, "div", 43)(8, "section", 62)(9, "div", 7)(10, "div", 8)(11, "div", 9)(12, "div", 63)(13, "button", 64);
-    \u0275\u0275listener("click", function StorageComponent_div_112_Template_button_click_13_listener() {
-      \u0275\u0275restoreView(_r9);
+    \u0275\u0275elementStart(7, "div", 52)(8, "section", 70)(9, "div", 7)(10, "div", 8)(11, "div", 9)(12, "div", 71)(13, "button", 72);
+    \u0275\u0275listener("click", function StorageComponent_div_142_Template_button_click_13_listener() {
+      \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.exportToExcel());
     });
-    \u0275\u0275element(14, "i", 65);
+    \u0275\u0275element(14, "i", 73);
     \u0275\u0275text(15, " Export to Excel ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "button", 66);
-    \u0275\u0275listener("click", function StorageComponent_div_112_Template_button_click_16_listener() {
-      \u0275\u0275restoreView(_r9);
+    \u0275\u0275elementStart(16, "button", 74);
+    \u0275\u0275listener("click", function StorageComponent_div_142_Template_button_click_16_listener() {
+      \u0275\u0275restoreView(_r12);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.selectStockItemToAdd());
     });
-    \u0275\u0275element(17, "i", 46);
-    \u0275\u0275elementStart(18, "span", 47);
+    \u0275\u0275element(17, "i", 55);
+    \u0275\u0275elementStart(18, "span", 56);
     \u0275\u0275text(19, " Update Stock ");
     \u0275\u0275elementEnd()()()()()()();
-    \u0275\u0275template(20, StorageComponent_div_112_div_20_Template, 3, 0, "div", 54)(21, StorageComponent_div_112_div_21_Template, 18, 1, "div", 67);
+    \u0275\u0275template(20, StorageComponent_div_142_div_20_Template, 3, 0, "div", 61)(21, StorageComponent_div_142_div_21_Template, 18, 1, "div", 75);
     \u0275\u0275elementEnd()()()();
   }
   if (rf & 2) {
@@ -73828,6 +73860,7 @@ var StorageComponent = class _StorageComponent {
       warehouse: "",
       price: 0,
       logType: "",
+      bag_units: [],
       meta_data: {}
     };
     this.isStockUpdateModelOpen = false;
@@ -73946,7 +73979,8 @@ var StorageComponent = class _StorageComponent {
       warehouse: this.selectedWarehouseId,
       price: 0,
       logType: "",
-      meta_data: {}
+      meta_data: {},
+      bag_units: []
     };
     this.isStockUpdateModelOpen = true;
   }
@@ -73959,13 +73993,32 @@ var StorageComponent = class _StorageComponent {
       this.isStockUpdateModelOpen = false;
     });
   }
+  addBags() {
+    const noOfBags = document.getElementById("no_of_bags");
+    const bagWeightInKgs = document.getElementById("unit_weight_of_bags");
+    if (noOfBags && bagWeightInKgs) {
+      this.stockItemToAddOrEdit.bag_units.push({
+        unit_weight_of_bags: parseFloat(bagWeightInKgs.value),
+        no_of_bags: parseInt(noOfBags.value)
+      });
+      this.stockItemToAddOrEdit.quantity = this.stockItemToAddOrEdit.bag_units.reduce((acc, bag) => {
+        return acc + bag.unit_weight_of_bags * bag.no_of_bags / 100;
+      }, 0);
+    }
+  }
+  removeBag(index) {
+    this.stockItemToAddOrEdit.bag_units.splice(index, 1);
+    this.stockItemToAddOrEdit.quantity = this.stockItemToAddOrEdit.bag_units.reduce((acc, bag) => {
+      return acc + bag.unit_weight_of_bags * bag.no_of_bags / 100;
+    }, 0);
+  }
   static {
     this.\u0275fac = function StorageComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || _StorageComponent)(\u0275\u0275directiveInject(ApiService));
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _StorageComponent, selectors: [["app-storage"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 113, vars: 30, consts: [["id", "addUpdateStorageModal", "tabindex", "-1", "aria-labelledby", "addUpdateStorageModalLabel", "aria-hidden", "true", 1, "modal", "fade", 3, "ngClass"], [1, "modal-dialog", "modal-dialog-centered"], [1, "modal-content"], [1, "modal-header"], ["id", "addUpdateStorageModalLabel", 1, "modal-title"], ["type", "button", "data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", 3, "click"], [1, "modal-body"], [1, "container"], [1, "row"], [1, "col-12"], [1, "form-group"], ["for", "storageName", 1, "form-label"], ["id", "storageName", "name", "storageName", "type", "text", "placeholder", "Name", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "modal-footer"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-secondary", 3, "click"], ["type", "button", "class", "btn btn-primary", 3, "click", 4, "ngIf"], ["id", "addUpdateStockModal", "tabindex", "-1", "aria-labelledby", "addUpdateStockModalLabel", "aria-hidden", "true", 1, "modal", "fade", 3, "ngClass"], ["id", "addUpdateStockModalLabel", 1, "modal-title"], [1, "form-group", "mb-3"], ["for", "crop", 1, "form-label"], ["id", "crop", "name", "crop", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "quantity", 1, "form-label"], ["id", "quantity", "name", "quantity", "type", "number", "placeholder", "Quantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "warehouse", 1, "form-label"], ["id", "warehouse", "name", "warehouse", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "price", 1, "form-label"], ["id", "price", "name", "price", "type", "number", "placeholder", "Price", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "logType", 1, "form-label"], ["id", "logType", "name", "logType", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", "purchase"], ["value", "sale"], ["value", "transfer in"], ["value", "transfer out"], ["for", "remark", 1, "form-label"], ["id", "remark", "name", "remark", "placeholder", "Remark", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header"], [1, "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "d-flex", "flex-column", "flex-md-row", "justify-content-between"], ["data-bs-toggle", "modal", "data-bs-target", "#addUpdateStorageModal", 1, "btn", "btn-primary", "w-100", "w-md-auto", 3, "click"], [1, "fi", "fi-rr-add"], [1, "ms-2"], [1, "row", "mt-3"], [1, "d-flex", "justify-content-between", "align-items-center"], ["id", "storage_list", 3, "pageChange"], [1, "table-responsive"], [1, "table", "table-hover", "table-striped"], [4, "ngFor", "ngForOf"], ["class", "row mt-3", 4, "ngIf"], [3, "value"], [1, "btn", "btn-outline-success", "btn-sm", 3, "click"], [1, "fi", "fi-rr-eye"], [1, "btn", "btn-outline-primary", "btn-sm", 3, "click"], [1, "fi", "fi-rr-pencil"], [1, "btn", "btn-outline-danger", "btn-sm", 3, "click"], [1, "fi", "fi-rr-trash"], ["id", "operations"], [1, "d-flex", "justify-content-end"], [1, "btn", "btn-primary", 3, "click", "disabled"], [1, "fi", "fi-rr-file-excel"], ["data-bs-toggle", "modal", "data-bs-target", "#addUpdateStockModal", 1, "btn", "btn-primary", "ms-2", 3, "click"], [4, "ngIf"], [1, "alert", "bg-warning"]], template: function StorageComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _StorageComponent, selectors: [["app-storage"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 143, vars: 31, consts: [["id", "addUpdateStorageModal", "tabindex", "-1", "aria-labelledby", "addUpdateStorageModalLabel", "aria-hidden", "true", 1, "modal", "fade", 3, "ngClass"], [1, "modal-dialog", "modal-dialog-centered"], [1, "modal-content"], [1, "modal-header"], ["id", "addUpdateStorageModalLabel", 1, "modal-title"], ["type", "button", "data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", 3, "click"], [1, "modal-body"], [1, "container"], [1, "row"], [1, "col-12"], [1, "form-group"], ["for", "storageName", 1, "form-label"], ["id", "storageName", "name", "storageName", "type", "text", "placeholder", "Name", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "modal-footer"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-secondary", 3, "click"], ["type", "button", "class", "btn btn-primary", 3, "click", 4, "ngIf"], ["id", "addUpdateStockModal", "tabindex", "-1", "aria-labelledby", "addUpdateStockModalLabel", "aria-hidden", "true", 1, "modal", "fade", 3, "ngClass"], ["id", "addUpdateStockModalLabel", 1, "modal-title"], [1, "form-group", "mb-3"], ["for", "crop", 1, "form-label"], ["id", "crop", "name", "crop", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "col"], ["for", "no_of_bags", 1, "form-label"], ["id", "no_of_bags", "name", "no_of_bags", "type", "number", "placeholder", "No of Bags", 1, "form-control"], ["for", "unit_weight_of_bags", 1, "form-label"], ["id", "unit_weight_of_bags", "name", "unit_weight_of_bags", "type", "number", "placeholder", "Unit Weight of Bags", 1, "form-control"], [1, "col-auto"], ["for", "add_button", 1, "form-label"], ["id", "add_button", 1, "btn", "btn-primary", "w-100", 3, "click"], [1, "table", "table-hover", "table-striped"], [4, "ngFor", "ngForOf"], ["for", "quantity", 1, "form-label"], ["id", "quantity", "name", "quantity", "type", "number", "placeholder", "Quantity", "readonly", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "warehouse", 1, "form-label"], ["id", "warehouse", "name", "warehouse", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "price", 1, "form-label"], ["id", "price", "name", "price", "type", "number", "placeholder", "Price", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "logType", 1, "form-label"], ["id", "logType", "name", "logType", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", "purchase"], ["value", "sale"], ["value", "transfer in"], ["value", "transfer out"], ["for", "remark", 1, "form-label"], ["id", "remark", "name", "remark", "placeholder", "Remark", 1, "form-control", 3, "ngModelChange", "ngModel"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "col-12", "col-md"], [1, "card", "bg-white"], [1, "card-header"], [1, "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "d-flex", "flex-column", "flex-md-row", "justify-content-between"], ["data-bs-toggle", "modal", "data-bs-target", "#addUpdateStorageModal", 1, "btn", "btn-primary", "w-100", "w-md-auto", 3, "click"], [1, "fi", "fi-rr-add"], [1, "ms-2"], [1, "row", "mt-3"], [1, "d-flex", "justify-content-between", "align-items-center"], ["id", "storage_list", 3, "pageChange"], [1, "table-responsive"], ["class", "row mt-3", 4, "ngIf"], [3, "value"], [1, "btn", "btn-outline-danger", "btn-sm", 3, "click"], [1, "fi", "fi-rr-cross"], [1, "btn", "btn-outline-success", "btn-sm", 3, "click"], [1, "fi", "fi-rr-eye"], [1, "btn", "btn-outline-primary", "btn-sm", 3, "click"], [1, "fi", "fi-rr-pencil"], [1, "fi", "fi-rr-trash"], ["id", "operations"], [1, "d-flex", "justify-content-end"], [1, "btn", "btn-primary", 3, "click", "disabled"], [1, "fi", "fi-rr-file-excel"], ["data-bs-toggle", "modal", "data-bs-target", "#addUpdateStockModal", 1, "btn", "btn-primary", "ms-2", 3, "click"], [4, "ngIf"], [1, "alert", "bg-warning"]], template: function StorageComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h5", 4);
         \u0275\u0275text(5);
@@ -74013,115 +74066,149 @@ var StorageComponent = class _StorageComponent {
         \u0275\u0275elementEnd();
         \u0275\u0275template(37, StorageComponent_option_37_Template, 2, 2, "option", 22);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(38, "div", 18)(39, "label", 23);
-        \u0275\u0275text(40, "Quantity (In Quintals)");
+        \u0275\u0275elementStart(38, "div", 8)(39, "div", 23)(40, "div", 18)(41, "label", 24);
+        \u0275\u0275text(42, "No of Bags");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(41, "input", 24);
-        \u0275\u0275twoWayListener("ngModelChange", function StorageComponent_Template_input_ngModelChange_41_listener($event) {
+        \u0275\u0275element(43, "input", 25);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(44, "div", 23)(45, "div", 18)(46, "label", 26);
+        \u0275\u0275text(47, "Unit Weight of Bags (in Kgs)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275element(48, "input", 27);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(49, "div", 28)(50, "div", 18)(51, "label", 29);
+        \u0275\u0275text(52, "Add");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(53, "button", 30);
+        \u0275\u0275listener("click", function StorageComponent_Template_button_click_53_listener() {
+          return ctx.addBags();
+        });
+        \u0275\u0275text(54, " Add ");
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(55, "table", 31)(56, "thead")(57, "tr")(58, "th");
+        \u0275\u0275text(59, "#");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(60, "th");
+        \u0275\u0275text(61, "No of Bags");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(62, "th");
+        \u0275\u0275text(63, "Weight (in Kgs)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(64, "th");
+        \u0275\u0275text(65, "Actions");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(66, "tbody");
+        \u0275\u0275template(67, StorageComponent_tr_67_Template, 10, 3, "tr", 32);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(68, "div", 18)(69, "label", 33);
+        \u0275\u0275text(70, "Quantity (In Quintals)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(71, "input", 34);
+        \u0275\u0275twoWayListener("ngModelChange", function StorageComponent_Template_input_ngModelChange_71_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.stockItemToAddOrEdit.quantity, $event) || (ctx.stockItemToAddOrEdit.quantity = $event);
           return $event;
         });
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(42, "div", 18)(43, "label", 25);
-        \u0275\u0275text(44, " Warehouse (Storage Location) ");
+        \u0275\u0275elementStart(72, "div", 18)(73, "label", 35);
+        \u0275\u0275text(74, " Warehouse (Storage Location) ");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(45, "select", 26);
-        \u0275\u0275twoWayListener("ngModelChange", function StorageComponent_Template_select_ngModelChange_45_listener($event) {
+        \u0275\u0275elementStart(75, "select", 36);
+        \u0275\u0275twoWayListener("ngModelChange", function StorageComponent_Template_select_ngModelChange_75_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.stockItemToAddOrEdit.warehouse, $event) || (ctx.stockItemToAddOrEdit.warehouse = $event);
           return $event;
         });
-        \u0275\u0275elementStart(46, "option", 21);
-        \u0275\u0275text(47, "Select Warehouse");
+        \u0275\u0275elementStart(76, "option", 21);
+        \u0275\u0275text(77, "Select Warehouse");
         \u0275\u0275elementEnd();
-        \u0275\u0275template(48, StorageComponent_option_48_Template, 2, 2, "option", 22);
+        \u0275\u0275template(78, StorageComponent_option_78_Template, 2, 2, "option", 22);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(49, "div", 18)(50, "label", 27);
-        \u0275\u0275text(51, "Rate (in \u20B9)");
+        \u0275\u0275elementStart(79, "div", 18)(80, "label", 37);
+        \u0275\u0275text(81, "Rate (in \u20B9)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(52, "input", 28);
-        \u0275\u0275twoWayListener("ngModelChange", function StorageComponent_Template_input_ngModelChange_52_listener($event) {
+        \u0275\u0275elementStart(82, "input", 38);
+        \u0275\u0275twoWayListener("ngModelChange", function StorageComponent_Template_input_ngModelChange_82_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.stockItemToAddOrEdit.price, $event) || (ctx.stockItemToAddOrEdit.price = $event);
           return $event;
         });
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(53, "div", 18)(54, "label", 29);
-        \u0275\u0275text(55, "Log Type");
+        \u0275\u0275elementStart(83, "div", 18)(84, "label", 39);
+        \u0275\u0275text(85, "Log Type");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(56, "select", 30);
-        \u0275\u0275twoWayListener("ngModelChange", function StorageComponent_Template_select_ngModelChange_56_listener($event) {
+        \u0275\u0275elementStart(86, "select", 40);
+        \u0275\u0275twoWayListener("ngModelChange", function StorageComponent_Template_select_ngModelChange_86_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.stockItemToAddOrEdit.logType, $event) || (ctx.stockItemToAddOrEdit.logType = $event);
           return $event;
         });
-        \u0275\u0275elementStart(57, "option", 21);
-        \u0275\u0275text(58, "Select Log Type");
+        \u0275\u0275elementStart(87, "option", 21);
+        \u0275\u0275text(88, "Select Log Type");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(59, "option", 31);
-        \u0275\u0275text(60, "Purchase");
+        \u0275\u0275elementStart(89, "option", 41);
+        \u0275\u0275text(90, "Purchase");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(61, "option", 32);
-        \u0275\u0275text(62, "Sale");
+        \u0275\u0275elementStart(91, "option", 42);
+        \u0275\u0275text(92, "Sale");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(63, "option", 33);
-        \u0275\u0275text(64, "Transfer In");
+        \u0275\u0275elementStart(93, "option", 43);
+        \u0275\u0275text(94, "Transfer In");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(65, "option", 34);
-        \u0275\u0275text(66, "Transfer Out");
+        \u0275\u0275elementStart(95, "option", 44);
+        \u0275\u0275text(96, "Transfer Out");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(67, "div", 18)(68, "label", 35);
-        \u0275\u0275text(69, "Remark");
+        \u0275\u0275elementStart(97, "div", 18)(98, "label", 45);
+        \u0275\u0275text(99, "Remark");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(70, "textarea", 36);
-        \u0275\u0275twoWayListener("ngModelChange", function StorageComponent_Template_textarea_ngModelChange_70_listener($event) {
+        \u0275\u0275elementStart(100, "textarea", 46);
+        \u0275\u0275twoWayListener("ngModelChange", function StorageComponent_Template_textarea_ngModelChange_100_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.stockItemToAddOrEdit.meta_data.remark, $event) || (ctx.stockItemToAddOrEdit.meta_data.remark = $event);
           return $event;
         });
         \u0275\u0275elementEnd()()()()()();
-        \u0275\u0275elementStart(71, "div", 13)(72, "button", 14);
-        \u0275\u0275listener("click", function StorageComponent_Template_button_click_72_listener() {
+        \u0275\u0275elementStart(101, "div", 13)(102, "button", 14);
+        \u0275\u0275listener("click", function StorageComponent_Template_button_click_102_listener() {
           return ctx.isStockUpdateModelOpen = false;
         });
-        \u0275\u0275text(73, "Close");
+        \u0275\u0275text(103, "Close");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(74, "button", 37);
-        \u0275\u0275listener("click", function StorageComponent_Template_button_click_74_listener() {
+        \u0275\u0275elementStart(104, "button", 47);
+        \u0275\u0275listener("click", function StorageComponent_Template_button_click_104_listener() {
           return ctx.updateStock();
         });
-        \u0275\u0275text(75, "Update");
+        \u0275\u0275text(105, "Update");
         \u0275\u0275elementEnd()()()()();
-        \u0275\u0275elementStart(76, "div", 8)(77, "div", 38)(78, "div", 8)(79, "div", 39)(80, "div", 40)(81, "div", 41)(82, "div", 42)(83, "h2");
-        \u0275\u0275text(84);
+        \u0275\u0275elementStart(106, "div", 8)(107, "div", 48)(108, "div", 8)(109, "div", 23)(110, "div", 49)(111, "div", 50)(112, "div", 51)(113, "h2");
+        \u0275\u0275text(114);
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(85, "div", 43)(86, "div", 7)(87, "div", 8)(88, "div", 9)(89, "div", 44)(90, "div")(91, "button", 45);
-        \u0275\u0275listener("click", function StorageComponent_Template_button_click_91_listener() {
+        \u0275\u0275elementStart(115, "div", 52)(116, "div", 7)(117, "div", 8)(118, "div", 9)(119, "div", 53)(120, "div")(121, "button", 54);
+        \u0275\u0275listener("click", function StorageComponent_Template_button_click_121_listener() {
           return ctx.selectItemToAdd();
         });
-        \u0275\u0275element(92, "i", 46);
-        \u0275\u0275elementStart(93, "span", 47);
-        \u0275\u0275text(94);
+        \u0275\u0275element(122, "i", 55);
+        \u0275\u0275elementStart(123, "span", 56);
+        \u0275\u0275text(124);
         \u0275\u0275elementEnd()()()()()();
-        \u0275\u0275elementStart(95, "div", 48)(96, "div", 9)(97, "div", 49)(98, "pagination-controls", 50);
-        \u0275\u0275listener("pageChange", function StorageComponent_Template_pagination_controls_pageChange_98_listener($event) {
+        \u0275\u0275elementStart(125, "div", 57)(126, "div", 9)(127, "div", 58)(128, "pagination-controls", 59);
+        \u0275\u0275listener("pageChange", function StorageComponent_Template_pagination_controls_pageChange_128_listener($event) {
           ctx.p = $event;
           return ctx.getData();
         });
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(99, "div", 51)(100, "table", 52)(101, "thead")(102, "tr")(103, "th");
-        \u0275\u0275text(104, "#");
+        \u0275\u0275elementStart(129, "div", 60)(130, "table", 31)(131, "thead")(132, "tr")(133, "th");
+        \u0275\u0275text(134, "#");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(105, "th");
-        \u0275\u0275text(106, "Name");
+        \u0275\u0275elementStart(135, "th");
+        \u0275\u0275text(136, "Name");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(107, "th");
-        \u0275\u0275text(108, "Actions");
+        \u0275\u0275elementStart(137, "th");
+        \u0275\u0275text(138, "Actions");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(109, "tbody");
-        \u0275\u0275template(110, StorageComponent_tr_110_Template, 13, 2, "tr", 53);
-        \u0275\u0275pipe(111, "paginate");
+        \u0275\u0275elementStart(139, "tbody");
+        \u0275\u0275template(140, StorageComponent_tr_140_Template, 13, 2, "tr", 32);
+        \u0275\u0275pipe(141, "paginate");
         \u0275\u0275elementEnd()()()()()()()()()()()();
-        \u0275\u0275template(112, StorageComponent_div_112_Template, 22, 4, "div", 54);
+        \u0275\u0275template(142, StorageComponent_div_142_Template, 22, 4, "div", 61);
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(22, _c019, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(23, _c019, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2("", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, "");
         \u0275\u0275advance(9);
@@ -74131,11 +74218,13 @@ var StorageComponent = class _StorageComponent {
         \u0275\u0275advance();
         \u0275\u0275property("ngIf", ctx.isEdit == "Update");
         \u0275\u0275advance();
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(24, _c019, ctx.isStockUpdateModelOpen));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(25, _c019, ctx.isStockUpdateModelOpen));
         \u0275\u0275advance(14);
         \u0275\u0275twoWayProperty("ngModel", ctx.stockItemToAddOrEdit.crop);
         \u0275\u0275advance(3);
         \u0275\u0275property("ngForOf", ctx.crops);
+        \u0275\u0275advance(30);
+        \u0275\u0275property("ngForOf", ctx.stockItemToAddOrEdit.bag_units);
         \u0275\u0275advance(4);
         \u0275\u0275twoWayProperty("ngModel", ctx.stockItemToAddOrEdit.quantity);
         \u0275\u0275advance(4);
@@ -74153,7 +74242,7 @@ var StorageComponent = class _StorageComponent {
         \u0275\u0275advance(10);
         \u0275\u0275textInterpolate1(" Add ", ctx.masterName, " ");
         \u0275\u0275advance(16);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(111, 19, ctx.data, \u0275\u0275pureFunction3(26, _c119, ctx.limit, ctx.p, ctx.total)));
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(141, 20, ctx.data, \u0275\u0275pureFunction3(27, _c119, ctx.limit, ctx.p, ctx.total)));
         \u0275\u0275advance(2);
         \u0275\u0275property("ngIf", ctx.selectedWarehouseId);
       }

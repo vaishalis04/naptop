@@ -74,6 +74,17 @@ module.exports = {
         quantity: data.netWeight,
         warehouse: data.storage,
         price: data.rate,
+        bag_units:
+          data.tulai == 'Labour'
+          ?
+            [
+              {
+                unit_weight_of_bags: data.bharti,
+                no_of_bags: data.boraQuantity
+              }
+            ]
+          :
+            [],
         logType: "purchase",
         meta_data: {
           taulParchi: result._id,

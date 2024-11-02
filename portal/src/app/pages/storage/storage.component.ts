@@ -32,12 +32,21 @@ export class StorageComponent {
   selectedWarehouseId: any;
   stockData: any[] = [];
 
-  stockItemToAddOrEdit: any = {
+  stockItemToAddOrEdit: {
+    crop: string;
+    quantity: number;
+    warehouse: string;
+    price: number;
+    logType: string;
+    bag_units: { unit_weight_of_bags: number; no_of_bags: number }[];
+    meta_data: any;
+  } = {
     crop: '',
     quantity: 0,
     warehouse: '',
     price: 0,
     logType: '',
+    bag_units : [],
     meta_data: {},
   };
   isStockUpdateModelOpen: boolean = false;
@@ -170,6 +179,7 @@ export class StorageComponent {
       price: 0,
       logType: '',
       meta_data: {},
+      bag_units: [],
     };
     this.isStockUpdateModelOpen = true;
   }
@@ -182,5 +192,26 @@ export class StorageComponent {
       this.viewStock(this.selectedWarehouseId);
       this.isStockUpdateModelOpen = false;
     });
+  }
+
+  addBags() {
+    const noOfBags = document.getElementById('no_of_bags') as HTMLInputElement;
+    const bagWeightInKgs = document.getElementById('unit_weight_of_bags') as HTMLInputElement;
+    if (noOfBags && bagWeightInKgs) {
+      this.stockItemToAddOrEdit.bag_units.push({
+        unit_weight_of_bags: parseFloat(bagWeightInKgs.value),
+        no_of_bags: parseInt(noOfBags.value)
+      });
+      this.stockItemToAddOrEdit.quantity = this.stockItemToAddOrEdit.bag_units.reduce((acc: number, bag: any) => {
+        return acc + ((bag.unit_weight_of_bags * bag.no_of_bags) / 100);
+      }, 0);
+    }
+  }
+
+  removeBag(index: number) {
+    this.stockItemToAddOrEdit.bag_units.splice(index, 1);
+    this.stockItemToAddOrEdit.quantity = this.stockItemToAddOrEdit.bag_units.reduce((acc: number, bag: any) => {
+      return acc + ((bag.unit_weight_of_bags * bag.no_of_bags) / 100);
+    }, 0);
   }
 }
