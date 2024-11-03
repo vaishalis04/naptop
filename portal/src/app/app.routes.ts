@@ -34,6 +34,7 @@ import { TruckLoadingParchiDashboardComponent } from './pages/truck-loading-parc
 import { TruckLoadingParchiViewComponent } from './pages/truck-loading-parchi-view/truck-loading-parchi-view.component';
 import { CompanyComponent } from './pages/company/company.component';
 import { TransportComponent } from './pages/transport/transport.component';
+import { StockViewComponent } from './pages/stock-view/stock-view.component';
 
 export const routes: Routes = [
   {
@@ -148,6 +149,11 @@ export const routes: Routes = [
         path: 'storage',
         component: StorageComponent,
         data: { title: 'Storage Locations' },
+      },
+      {
+        path: 'stock-view/:crop_id/:warehouse_id',
+        component: StockViewComponent,
+        data: { title: 'Stock View' },
       },
       {
         path: 'profile',

@@ -174,7 +174,7 @@
                   </div>
                   <hr>
                   <!-- Show StockInfo -->
-                   <!-- quantity, averagePrice in badges -->
+                  <!-- quantity, averagePrice in badges -->
                   <div *ngIf="isStockFetched">
                     <div class="row">
                       <div class="col">
@@ -189,6 +189,24 @@
                                 <h6 class="card-subtitle mb-2 text-muted">Average Price</h6>
                                 <p class="card-text">{{ stockInfo.averagePrice }}</p>
                               </div>
+                              <!-- <div class="col-12">
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">#</th>
+                                      <th scope="col">No of Bags</th>
+                                      <th scope="col">Weight (in Kgs)</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr *ngFor="let bag of stockInfo.bags; let i = index">
+                                      <th scope="row">{{ i + 1 }}</th>
+                                      <td>{{ bag.no_of_bags }}</td>
+                                      <td>{{ bag.unit_weight_of_bags }}</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div> -->
                             </div>
                           </div>
                         </div>

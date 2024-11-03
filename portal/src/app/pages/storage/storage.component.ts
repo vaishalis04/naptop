@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ApiService } from '../../services/api.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-storage',
@@ -11,7 +12,8 @@ import { ApiService } from '../../services/api.service';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    RouterModule
   ],
   templateUrl: './storage.component.html',
   styleUrl: './storage.component.css'

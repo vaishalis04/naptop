@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/app.component.css"],
-  "sourcesContent": [".toastr-container {\n    z-index: 999999 !important;\n    position: fixed !important;\n    bottom: 0 !important;\n    right: 0 !important;\n    width: 300px !important;\n    margin-bottom: 15px !important;\n    margin-right: 15px !important;\n}\n\n.loader-container {\n    position: fixed;\n    top: 0;\n    left: 0;\n    z-index: 999999;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.5);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.loader {\n    width: 50px;\n    height: 50px;\n    border: 5px solid #fff;\n    border-top-color: #000;\n    border-radius: 50%;\n    animation: spin 1s infinite linear;\n}\n\n@keyframes spin {\n    0% {\n        transform: rotate(0deg);\n    }\n    100% {\n        transform: rotate(360deg);\n    }\n}\n"],
-  "mappings": ";AAAA,CAAC;AACG,WAAS;AACT,YAAU;AACV,UAAQ;AACR,SAAO;AACP,SAAO;AACP,iBAAe;AACf,gBAAc;AAClB;AAEA,CAAC;AACG,YAAU;AACV,OAAK;AACL,QAAM;AACN,WAAS;AACT,SAAO;AACP,UAAQ;AACR,oBAAkB,KAAK,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE;AAChC,WAAS;AACT,eAAa;AACb,mBAAiB;AACrB;AAEA,CAAC;AACG,SAAO;AACP,UAAQ;AACR,UAAQ,IAAI,MAAM;AAClB,oBAAkB;AAClB,iBAAe;AACf,aAAW,KAAK,GAAG,SAAS;AAChC;AAEA,WAHe;AAIX;AACI,eAAW,OAAO;AACtB;AACA;AACI,eAAW,OAAO;AACtB;AACJ;",
-  "names": []
-}

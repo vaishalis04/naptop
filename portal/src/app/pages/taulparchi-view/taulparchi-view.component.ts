@@ -163,7 +163,7 @@ export class TaulparchiViewComponent implements OnInit {
             </div>
             <div class="row">
               <div class="label"><b>Village:</b></div>
-              <div class="value">${taulaParchi.farmerDetails?.village || 'N/A'}</div>
+              <div class="value">${taulaParchi.villageDetails?.name || 'N/A'}</div>
             </div>
             <div class="row">
               <div class="label"><b>Mobile:</b></div>

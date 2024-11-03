@@ -21,10 +21,16 @@ export class TruckLoadingParchiComponent implements OnInit {
   Storage: any[] = [];
   Transport: any[] = [];
 
-  stockInfo = {
+  stockInfo: {
+    averagePrice: number;
+    crop: string;
+    quantity: number;
+    bags: any[];
+  } = {
     averagePrice: 0,
     crop: '',
     quantity: 0,
+    bags: [],
   };
 
   isStockFetched = false;
@@ -309,6 +315,7 @@ export class TruckLoadingParchiComponent implements OnInit {
       averagePrice: 0,
       crop: '',
       quantity: 0,
+      bags: [],
     };
     this.apiService.get(`stock/warehouse-stock-crop-wise`, {
       params: {

@@ -305,6 +305,7 @@
                                                 <th>Crop</th>
                                                 <th>Quantity (In Quintals)</th>
                                                 <th>Average Price (in ₹)</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -313,6 +314,13 @@
                                                 <td>{{ item.crop }}</td>
                                                 <td>{{ item.quantity }}</td>
                                                 <td>{{ item.averagePrice | number:'0.2' }}</td>
+                                                <td>
+                                                    <a class="btn btn-outline-primary btn-sm"
+                                                        [routerLink]="['/stock-view/'+item.crop_id+'/'+selectedWarehouseId]">
+                                                        <i class="fi fi-rr-eye"></i>
+                                                        View
+                                                    </a>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>

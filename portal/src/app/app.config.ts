@@ -71,6 +71,10 @@ export const roleWiseAccess = [
     roles: ['Admin'],
   },
   {
+    page: 'stock-view',
+    roles: ['Admin'],
+  },
+  {
     page: 'profile',
     roles: ['Admin'],
   },

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/components/header/header.component.css"],
-  "sourcesContent": [".header {\n    position: fixed;\n    top: 0;\n    left: 0;\n    height: 70px !important;\n    padding: 20px;\n    z-index: 999;\n    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);\n}\n@media (min-width: 767px) {\n    .header {\n        margin-left: 250px;\n        width: calc(100% - 250px);\n    }\n}\n@media (max-width: 767px) {\n    .header {\n        width: 100%;\n    }\n}\ni.fi {\n    position: relative;\n    top: 2px;\n}\n.notifications-card {\n    min-width: 350px;\n}\n@media screen and (max-width: 768px) {\n    .dropdown-menu[aria-labelledby=\"dropdownMenu1\"] {\n        left: -190px !important;\n    }\n}\n"],
-  "mappings": ";AAAA,CAAC;AACG,YAAU;AACV,OAAK;AACL,QAAM;AACN,UAAQ;AACR,WAAS;AACT,WAAS;AACT,cAAY,EAAE,IAAI,IAAI,EAAE,KAAK,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE;AAC1C;AACA,OAAO,CAAC,SAAS,EAAE;AACf,GAVH;AAWO,iBAAa;AACb,WAAO,KAAK,KAAK,EAAE;AACvB;AACJ;AACA,OAAO,CAAC,SAAS,EAAE;AACf,GAhBH;AAiBO,WAAO;AACX;AACJ;AACA,CAAC,CAAC;AACE,YAAU;AACV,OAAK;AACT;AACA,CAAC;AACG,aAAW;AACf;AACA,OAAO,OAAO,IAAI,CAAC,SAAS,EAAE;AAC1B,GAAC,aAAa,CAAC;AACX,UAAM;AACV;AACJ;",
-  "names": []
-}

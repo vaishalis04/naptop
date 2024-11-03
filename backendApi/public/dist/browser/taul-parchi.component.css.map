@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/pages/taul-parchi/taul-parchi.component.css"],
-  "sourcesContent": ["/* input and select should be transparent and dotted bottom border */\ninput, select {\n  background-color: transparent;\n  border: none;\n  border-bottom: 1px dotted #000;\n  margin-bottom: 10px;\n  border-radius: 0;\n  -webkit-border-radius: 0;\n  -moz-border-radius: 0;\n  -ms-border-radius: 0;\n  -o-border-radius: 0;\n}\n.input-group-text {\n    position: relative;\n    top: -5px;\n}\n/* If input field is autofilled keep the background transparent */\ninput:-webkit-autofill {\n    -webkit-box-shadow: 0 0 0 1000px white inset;\n    -webkit-text-fill-color: black;\n    background-color: transparent;\n}"],
-  "mappings": ";AACA;AAAO;AACL,oBAAkB;AAClB,UAAQ;AACR,iBAAe,IAAI,OAAO;AAC1B,iBAAe;AACf,iBAAe;AACf,yBAAuB;AACvB,sBAAoB;AACpB,qBAAmB;AACnB,oBAAkB;AACpB;AACA,CAAC;AACG,YAAU;AACV,OAAK;AACT;AAEA,KAAK;AACD,sBAAoB,EAAE,EAAE,EAAE,OAAO,MAAM;AACvC,2BAAyB;AACzB,oBAAkB;AACtB;",
-  "names": []
-}

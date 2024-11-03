@@ -80,7 +80,19 @@ module.exports = {
                 .populate("crop")
                 .populate("warehouse");
 
-            res.json(result);
+            const total = await Model.countDocuments(query);
+
+            res.json({
+                data: result,
+                meta: {
+                current_page: _page,
+                from: _skip + 1,
+                last_page: Math.ceil(total / _limit),
+                per_page: _limit,
+                to: _skip + result.length,
+                total: total,
+                },
+            });
         } catch (error) {
             console.error("Error fetching stock items:", error);
             next(createError(500, "Failed to fetch stock items."));
@@ -115,7 +127,8 @@ module.exports = {
                                 ]
                             }
                         },
-                        averagePrice: { $avg: "$price" }
+                        averagePrice: { $avg: "$price" },
+                        bag_units: { $push: "$bag_units" }
                     }
                 },
                 // Populate crop details
@@ -132,9 +145,11 @@ module.exports = {
                 {
                     $project: {
                         _id: 0,
+                        crop_id: "$crop._id",
                         crop: "$crop.name",
                         quantity: 1,
-                        averagePrice: 1
+                        averagePrice: 1,
+                        bag_units: 1
                     }
                 }
             ]);
