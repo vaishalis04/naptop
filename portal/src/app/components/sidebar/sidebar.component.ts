@@ -96,16 +96,16 @@ export class SidebarComponent {
       icon: 'fi fi-rr-route',
       link: '/truck'
     },
-    {
-      title: 'Profile',
-      icon: 'fi-rr-user',
-      link: '/profile'
-    },
-    {
-      title: 'Settings',
-      icon: 'fi-rr-settings',
-      link: '/settings'
-    },
+    // {
+    //   title: 'Profile',
+    //   icon: 'fi-rr-user',
+    //   link: '/profile'
+    // },
+    // {
+    //   title: 'Settings',
+    //   icon: 'fi-rr-settings',
+    //   link: '/settings'
+    // },
     {
       title: 'Accounts',
       icon: 'fi fi-rr-user-check',

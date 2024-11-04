@@ -53,7 +53,7 @@
                 </div>
                 <div class="form-group mb-3">
                   <label for="partyName" class="form-label">Party Name</label>
-                  <select
+                  <!-- <select
                     id="partyName"
                     class="form-select"
                     [(ngModel)]="TruckLoadingParchi.partyName"
@@ -63,10 +63,20 @@
                     <option *ngFor="let party of Parties" [value]="party._id">
                       {{ party.name }}
                     </option>
-                  </select>
+                  </select> -->
+                  <!-- convert to p-dropdown according to above select -->
+                  <p-dropdown
+                    [options]="Parties"
+                    [(ngModel)]="TruckLoadingParchi.partyName"
+                    optionLabel="name"
+                    placeholder="Select Party"
+                    optionValue="_id"
+                    [style]="{ width: '100%' }"
+                    [showClear]="true" [filter]="true"
+                  ></p-dropdown>
 
                   <label for="crop" class="form-label">Crop</label>
-                  <select
+                  <!-- <select
                     id="crop"
                     class="form-select"
                     [(ngModel)]="TruckLoadingParchi.crop"
@@ -76,10 +86,19 @@
                     <option *ngFor="let crop of Crops" [value]="crop._id">
                       {{ crop.name }}
                     </option>
-                  </select>
+                  </select> -->
+                  <p-dropdown
+                    [options]="Crops"
+                    [(ngModel)]="TruckLoadingParchi.crop"
+                    optionLabel="name"
+                    placeholder="Select Crop"
+                    optionValue="_id"
+                    [style]="{ width: '100%' }"
+                    [showClear]="true" [filter]="true"
+                  ></p-dropdown>
 
                   <label for="transport" class="form-label">Transport Name</label>
-                  <select
+                  <!-- <select
                     id="transport"
                     class="form-select"
                     [(ngModel)]="TruckLoadingParchi.transport"
@@ -89,14 +108,23 @@
                     <option *ngFor="let transport of Transport" [value]="transport._id">
                       {{ transport.name }}
                     </option>
-                  </select>
+                  </select> -->
+                  <p-dropdown
+                    [options]="Transport"
+                    [(ngModel)]="TruckLoadingParchi.transport"
+                    optionLabel="name"
+                    placeholder="Select Transport"
+                    optionValue="_id"
+                    [style]="{ width: '100%' }"
+                    [showClear]="true" [filter]="true"
+                  ></p-dropdown>
 
                   <!-- <label for="vehicleNumber" class="form-label
                                     ">Vehicle Number</label>
                                     <input id="vehicleNumber" class="form-control" [(ngModel)]="TruckLoadingParchi.vehicleNumber"
                                         name="vehicleNumber" type="text" placeholder="Vehicle Number" /> -->
                   <label for="truck" class="form-label">Select Truck</label>
-                  <select
+                  <!-- <select
                     id="truck"
                     class="form-select"
                     [(ngModel)]="TruckLoadingParchi.truck"
@@ -106,12 +134,21 @@
                     <option *ngFor="let truck of Trucks" [value]="truck._id">
                       {{ truck.truckNumber }}
                     </option>
-                  </select>
+                  </select> -->
+                  <p-dropdown
+                    [options]="Trucks"
+                    [(ngModel)]="TruckLoadingParchi.truck"
+                    optionLabel="truckNumber"
+                    placeholder="Select Truck"
+                    optionValue="_id"
+                    [style]="{ width: '100%' }"
+                    [showClear]="true" [filter]="true"
+                  ></p-dropdown>
 
                   <label for="assignedHammal" class="form-label"
                     >Assigned Hammal</label
                   >
-                  <select
+                  <!-- <select
                     id="assignedHammal"
                     class="form-select"
                     [(ngModel)]="TruckLoadingParchi.assignedHammal"
@@ -121,11 +158,22 @@
                     <option *ngFor="let hammal of Hammals" [value]="hammal._id">
                       {{ hammal.name }}
                     </option>
-                  </select>
+                  </select> -->
+                  <p-dropdown
+                    [options]="Hammals"
+                    [(ngModel)]="TruckLoadingParchi.assignedHammal"
+                    optionLabel="name"
+                    placeholder="Select Hammal"
+                    optionValue="_id"
+                    [style]="{ width: '100%' }"
+                    [showClear]="true" [filter]="true"
+                  ></p-dropdown>
+
+
                   <label for="storage" class="form-label"
                     >Storage Location</label
                   >
-                  <select
+                  <!-- <select
                     id="storage"
                     class="form-select"
                     [(ngModel)]="TruckLoadingParchi.storage"
@@ -138,13 +186,22 @@
                     >
                       {{ storage.name }}
                     </option>
-                  </select>
+                  </select> -->
+                  <p-dropdown
+                    [options]="Storage"
+                    [(ngModel)]="TruckLoadingParchi.storage"
+                    optionLabel="name"
+                    placeholder="Select Storage Location"
+                    optionValue="_id"
+                    [style]="{ width: '100%' }"
+                    [showClear]="true" [filter]="true"
+                  ></p-dropdown>
 
 
                   <label for="deliveryLocation" class="form-label"
                     >Delivery Location</label
                   >
-                  <select
+                  <!-- <select
                     *ngIf="TruckLoadingParchi.transferType === 'Sale'"
                     id="deliveryLocation"
                     class="form-select"
@@ -158,14 +215,34 @@
                     >
                       {{ location.name }}
                     </option>
-                  </select>
+                  </select> -->
+                  <p-dropdown
+                    *ngIf="TruckLoadingParchi.transferType === 'Sale'"
+                    [options]="DeliveryLocations"
+                    [(ngModel)]="TruckLoadingParchi.deliveryLocation"
+                    optionLabel="name"
+                    placeholder="Select Delivery Location"
+                    optionValue="_id"
+                    [style]="{ width: '100%' }"
+                    [showClear]="true" [filter]="true"
+                  ></p-dropdown>
 
-                  <select *ngIf="TruckLoadingParchi.transferType === 'Stock Transfer'" id="deliveryLocation" class="form-select" [(ngModel)]="TruckLoadingParchi.deliveryLocation" name="deliveryLocation">
+                  <!-- <select *ngIf="TruckLoadingParchi.transferType === 'Stock Transfer'" id="deliveryLocation" class="form-select" [(ngModel)]="TruckLoadingParchi.deliveryLocation" name="deliveryLocation">
                     <option value="">Select Location</option>
                     <option *ngFor="let location of Storage" [value]="location._id">
                       {{ location.name }}
                     </option>
-                  </select>
+                  </select> -->
+                  <p-dropdown
+                    *ngIf="TruckLoadingParchi.transferType === 'Stock Transfer'"
+                    [options]="Storage"
+                    [(ngModel)]="TruckLoadingParchi.deliveryLocation"
+                    optionLabel="name"
+                    placeholder="Select Delivery Location"
+                    optionValue="_id"
+                    [style]="{ width: '100%' }"
+                    [showClear]="true" [filter]="true"
+                  ></p-dropdown>
 
                   <div>
                     <button class="btn btn-primary mt-3" type="button" (click)="getStockInfo()">
@@ -187,7 +264,9 @@
                               </div>
                               <div class="col">
                                 <h6 class="card-subtitle mb-2 text-muted">Average Price</h6>
-                                <p class="card-text">{{ stockInfo.averagePrice }}</p>
+                                <p class="card-text">
+                                  {{ stockInfo.averagePrice | currency: 'INR' }}
+                                </p>
                               </div>
                               <!-- <div class="col-12">
                                 <table class="table table-bordered">

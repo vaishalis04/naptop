@@ -1,14 +1,12 @@
 const Model = require("../models/truckLoading.model");
 const createError = require("http-errors");
 const mongoose = require("mongoose");
-const ObjectId = mongoose.Types.ObjectId;
 const StockModel = require("../models/stock.model");
 
 module.exports = {
   create: async (req, res, next) => {
     try {
       const data = req.body;
-      console.log("data", data);
 
       // Validate required fields
       if (!data.partyName) {
@@ -77,6 +75,7 @@ module.exports = {
 
         // Create a new Stock entry using the StockModel
         const stockResult = await StockModel.createOrUpdateStock(null, stockData);
+        const stockResultIn = await StockModel.createOrUpdateStock(null, stockDataIn);
       } else {
         // Create a new Stock entry for the TruckLoading
         const stockData = {
@@ -95,7 +94,7 @@ module.exports = {
       }
 
       // Respond with the saved TruckLoading and a status of 201 (Created)
-      res.status(201).json(result);
+      return res.status(201).json(result);
     } catch (error) {
       console.error("Error saving TruckLoading:", error);
       next(createError(500, "Failed to save Truck Loading.")); // Handle errors and send a 500 response
@@ -155,14 +154,14 @@ module.exports = {
             as: "partyDetails",
           },
         },
-        {
-          $lookup: {
-            from: "deliveries",
-            localField: "deliveryLocation",
-            foreignField: "_id",
-            as: "deliveryDetails",
-          },
-        },
+        // {
+        //   $lookup: {
+        //     from: "deliveries",
+        //     localField: "deliveryLocation",
+        //     foreignField: "_id",
+        //     as: "deliveryDetails",
+        //   },
+        // },
         {
           $lookup: {
             from: "hammals",
@@ -204,6 +203,14 @@ module.exports = {
           },
         },
         {
+          $lookup: {
+            from: "transports",
+            localField: "transport",
+            foreignField: "_id",
+            as: "transportDetails",
+          },
+        },
+        {
           $unwind: {
             preserveNullAndEmptyArrays: true,
             path: "$truckDetails",
@@ -215,9 +222,9 @@ module.exports = {
         {
           $unwind: "$hammalDetails",
         },
-        {
-          $unwind: "$deliveryDetails",
-        },
+        // {
+        //   $unwind: "$deliveryDetails",
+        // },
         {
           $unwind: "$partyDetails",
         },
@@ -227,6 +234,47 @@ module.exports = {
         {
           $unwind: "$wearhouseDetails",
         },
+        {
+          $unwind: {
+            preserveNullAndEmptyArrays: true,
+            path: "$transportDetails",
+          }
+        },
+        {
+          $facet: {
+            sale: [
+              { $match: { transferType: "Sale" } },
+              {
+                $lookup: {
+                  from: "deliveries",
+                  localField: "deliveryLocation",
+                  foreignField: "_id",
+                  as: "deliveryDetails",
+                },
+              },
+              { $unwind: { path: "$deliveryDetails", preserveNullAndEmptyArrays: true } },
+            ],
+            stockTransfer: [
+              { $match: { transferType: "Stock Transfer" } },
+              {
+                $lookup: {
+                  from: "storages",
+                  localField: "deliveryLocation",
+                  foreignField: "_id",
+                  as: "deliveryDetails",
+                },
+              },
+              { $unwind: { path: "$deliveryDetails", preserveNullAndEmptyArrays: true } },
+            ]
+          }
+        },
+        {
+          $project: {
+            results: { $concatArrays: ["$sale", "$stockTransfer"] }
+          }
+        },
+        { $unwind: "$results" },
+        { $replaceRoot: { newRoot: "$results" } }
       ]);
 
       // Count total number of results for pagination metadata
@@ -322,6 +370,13 @@ module.exports = {
 
       const deleted_at = Date.now();
 
+      // delete the stock item related to the truck loading
+      const stockResult = await StockModel.deleteMany({ "meta_data.truckLoading": mongoose.Types.ObjectId(id) });
+
+      console.log('Deleted stock item:', stockResult);
+
+      // return res.json({ message: "Stock item deleted successfully." });
+
       // Performing a soft delete by marking the TruckLoading as inactive and setting the deleted_at timestamp
       const result = await Model.updateOne(
         { _id: mongoose.Types.ObjectId(id) },
@@ -357,14 +412,14 @@ module.exports = {
             as: "partyDetails",
           },
         },
-        {
-          $lookup: {
-            from: "deliveries",
-            localField: "deliveryLocation",
-            foreignField: "_id",
-            as: "deliveryDetails",
-          },
-        },
+        // {
+        //   $lookup: {
+        //     from: "deliveries",
+        //     localField: "deliveryLocation",
+        //     foreignField: "_id",
+        //     as: "deliveryDetails",
+        //   },
+        // },
         {
           $lookup: {
             from: "hammals",
@@ -425,9 +480,9 @@ module.exports = {
         {
           $unwind: "$hammalDetails",
         },
-        {
-          $unwind: "$deliveryDetails",
-        },
+        // {
+        //   $unwind: "$deliveryDetails",
+        // },
         {
           $unwind: "$partyDetails",
         },
@@ -442,7 +497,42 @@ module.exports = {
             path: "$transportDetails",
             preserveNullAndEmptyArrays: true,
           },
-        }
+        },
+        {
+          $facet: {
+              sale: [
+                  { $match: { transferType: "Sale" } },
+                  {
+                      $lookup: {
+                          from: "deliveries",
+                          localField: "deliveryLocation",
+                          foreignField: "_id",
+                          as: "deliveryDetails",
+                      },
+                  },
+                  { $unwind: { path: "$deliveryDetails", preserveNullAndEmptyArrays: true } },
+              ],
+              stockTransfer: [
+                  { $match: { transferType: "Stock Transfer" } },
+                  {
+                      $lookup: {
+                          from: "storages",
+                          localField: "deliveryLocation",
+                          foreignField: "_id",
+                          as: "deliveryDetails",
+                      },
+                  },
+                  { $unwind: { path: "$deliveryDetails", preserveNullAndEmptyArrays: true } },
+              ]
+          }
+      },
+      {
+          $project: {
+              results: { $concatArrays: ["$sale", "$stockTransfer"] }
+          }
+      },
+      { $unwind: "$results" },
+      { $replaceRoot: { newRoot: "$results" } }
       ]);
 
       if (!result.length) {

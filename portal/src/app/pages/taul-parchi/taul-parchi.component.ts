@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
 import { ButtonModule } from "primeng/button";
+import { DropdownModule } from "primeng/dropdown";
 
 @Component({
   selector: 'app-taul-parchi',
@@ -12,7 +13,8 @@ import { ButtonModule } from "primeng/button";
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    ButtonModule
+    ButtonModule,
+    DropdownModule
   ],
   templateUrl: './taul-parchi.component.html',
   styleUrls: ['./taul-parchi.component.css'],

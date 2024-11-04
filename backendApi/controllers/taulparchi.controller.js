@@ -416,6 +416,13 @@ module.exports = {
 
       const deleted_at = Date.now();
 
+      // delete the stock item related to the TaulParchi
+      const stockResult = await StockModel.deleteMany({
+        "meta_data.taulParchi": mongoose.Types.ObjectId(id),
+      });
+
+      console.log("Deleted stock items:", stockResult);
+
       // Performing a soft delete by marking the TaulParchi as inactive and setting the deleted_at timestamp
       const result = await Model.updateOne(
         { _id: mongoose.Types.ObjectId(id) },

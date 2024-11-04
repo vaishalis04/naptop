@@ -4,11 +4,17 @@ import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
+import { DropdownModule } from 'primeng/dropdown';
 
 @Component({
   selector: 'app-truck-loading-parchi',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    DropdownModule
+  ],
   templateUrl: './truck-loading-parchi.component.html',
   styleUrls: ['./truck-loading-parchi.component.css'],
 })

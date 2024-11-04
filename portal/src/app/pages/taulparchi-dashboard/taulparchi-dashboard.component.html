@@ -45,7 +45,6 @@
                 <th scope="col">Net Weight(in Quintal)</th>
                 <th scope="col">Amount (₹)</th>
                 <th scope="col">Created By</th>
-                <th scope="col">-</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -70,26 +69,26 @@
                 <td>{{ taulaParchi?.cropDetails?.name }}</td>
                 <td>{{ taulaParchi?.companyDetails?.name }}</td>
                 <td>{{ taulaParchi.netWeight }}</td>
-                <td>{{ taulaParchi.amount }}</td>
+                <td>{{ taulaParchi.amount | number: '.2' }}</td>
                 <td>{{ taulaParchi?.userDetails?.name }}</td>
                 <td>
-                  <button type="button" class="btn btn-primary" (click)="sendToPrintReceipt(taulaParchi)"
-                    style="margin-right: 10px;">
-                    Print
-                  </button>
-                </td>
-                <td>
                   <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                       <button type="button" class="btn btn-primary" (click)="printReceipt(taulaParchi)">
                         <!-- Print -->
                         <i class="fi fi-rr-print"></i>
                       </button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                       <button type="button" class="btn btn-primary" [routerLink]="['/taul-parchi-view', taulaParchi._id]">
                         <!-- View -->
                         <i class="fi fi-rr-eye"></i>
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <!-- delete -->
+                      <button type="button" class="btn btn-danger" (click)="deleteTaulaParchi(taulaParchi._id)">
+                        <i class="fi fi-rr-trash"></i>
                       </button>
                     </div>
                   </div>

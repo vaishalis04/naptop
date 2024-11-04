@@ -105,12 +105,14 @@
                 </div>
                 <div class="form-group mb-3">
                   <label for="crop" class="form-label">Crop</label>
-                  <select id="crop" class="form-select" [(ngModel)]="TaulParchi.crop" name="crop">
+                  <!-- <select id="crop" class="form-select" [(ngModel)]="TaulParchi.crop" name="crop">
                     <option value="">Select Crop</option>
                     <option *ngFor="let crop of Crops" [value]="crop._id">
                       {{ crop.name }}
                     </option>
-                  </select>
+                  </select> -->
+                  <p-dropdown [options]="Crops" [(ngModel)]="TaulParchi.crop" optionLabel="name" optionValue="_id"
+                    placeholder="Select Crop" [showClear]="true" [filter]="true" [style]="{'width':'100%'}"></p-dropdown>
                 </div>
                 <div class="form-group mb-3">
                   <div class="row">
@@ -124,14 +126,35 @@
                         severity="success" [rounded]="true" size="small" />
                     </div>
                   </div>
-                  <select id="farmerName" class="form-select" [(ngModel)]="TaulParchi.farmer" name="farmerName"
+                  <!-- <select id="farmerName" class="form-select" [(ngModel)]="TaulParchi.farmer" name="farmerName"
                     (ngModelChange)="autoFillFirmOrCompany()">
                     <option value="">Select Farmer</option>
                     <option *ngFor="let farmer of Farmers" [value]="farmer._id">
                       {{ farmer.name }} ({{ farmer.farmerType || 'regular' | titlecase }})
                     </option>
-                  </select>
-
+                  </select> -->
+                  <!-- <p-dropdown [options]="Farmers" [(ngModel)]="TaulParchi.farmer" optionLabel="name" optionValue="_id"
+                    placeholder="Select Farmer" [showClear]="true" [filter]="true" [style]="{'width':'100%'}"
+                    (onChange)="autoFillFirmOrCompany()"></p-dropdown> -->
+                    <!-- template in option label -->
+                    <p-dropdown
+                      [options]="Farmers"
+                      [(ngModel)]="TaulParchi.farmer"
+                      optionLabel="name"
+                      optionValue="_id"
+                      placeholder="Select Farmer"
+                      [showClear]="true"
+                      [filter]="true"
+                      [style]="{'width':'100%'}"
+                      (onChange)="autoFillFirmOrCompany()"
+                    >
+                      <ng-template let-farmer pTemplate="item">
+                        <div class="d-flex justify-content-between">
+                          <div>{{farmer.name}}</div>
+                          <div>{{farmer.mobile}}({{farmer.farmerType || 'regular' | titlecase}})</div>
+                        </div>
+                      </ng-template>
+                    </p-dropdown>
 
                   <!-- <label for="village" class="form-label">Village</label>
                   <select id="village" class="form-select" [(ngModel)]="TaulParchi.village" name="village" [disabled]="true">
@@ -149,12 +172,14 @@
 
 
                   <label for="storage" class="form-label">Storage Location</label>
-                  <select id="storage" class="form-select" [(ngModel)]="TaulParchi.storage" name="storage">
+                  <!-- <select id="storage" class="form-select" [(ngModel)]="TaulParchi.storage" name="storage">
                     <option value="">Select Storage Location</option>
                     <option *ngFor="let storage of Storage" [value]="storage._id">
                       {{ storage.name }}
                     </option>
-                  </select>
+                  </select> -->
+                  <p-dropdown [options]="Storage" [(ngModel)]="TaulParchi.storage" optionLabel="name" optionValue="_id"
+                    placeholder="Select Storage Location" [showClear]="true" [filter]="true" [style]="{'width':'100%'}"></p-dropdown>
 
                   <label for="rate" class="form-label">Rate (Per Quintal)</label>
                   <div class="input-group">
@@ -172,13 +197,16 @@
 
                   <div *ngIf="TaulParchi.tulai === 'Labour'">
                     <label for="assignedHammal" class="form-label">Assigned Hammal</label>
-                    <select id="assignedHammal" class="form-select" [(ngModel)]="TaulParchi.hammal"
+                    <!-- <select id="assignedHammal" class="form-select" [(ngModel)]="TaulParchi.hammal"
                       name="assignedHammal" (ngModelChange)="calculateAmount(); calculateHammali()">
                       <option value="">Select Hammal</option>
                       <option *ngFor="let hammal of Hammals" [ngValue]="hammal._id">
                         {{ hammal.name }}
                       </option>
-                    </select>
+                    </select> -->
+                    <p-dropdown [options]="Hammals" [(ngModel)]="TaulParchi.hammal" optionLabel="name" optionValue="_id"
+                      placeholder="Select Hammal" [showClear]="true" [filter]="true" [style]="{'width':'100%'}"
+                      (onChange)="calculateAmount(); calculateHammali()"></p-dropdown>
                   </div>
 
                   <div class="form-group mb-3" *ngIf="TaulParchi.farmer && TaulParchi.tulai === 'Labour'">

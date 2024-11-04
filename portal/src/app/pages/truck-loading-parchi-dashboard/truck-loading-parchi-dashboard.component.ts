@@ -150,7 +150,7 @@ export class TruckLoadingParchiDashboardComponent {
           </div>
           <div class="row">
             <span><b>Rate (₹):</b></span>
-            <span>${truckLoadingParchi.rate}</span>
+            <span>${truckLoadingParchi.rate.toFixed(2)}</span>
           </div>
           <div class="row">
             <span><b>Freight Advance (₹):</b></span>
@@ -185,5 +185,18 @@ export class TruckLoadingParchiDashboardComponent {
       return srNo;
     }
     return '';
+  }
+
+  deleteTruckLoadingParchi(truckLoadingParchiId: any) {
+    if (confirm('Are you sure you want to delete this Truck Loading Parchi?')) {
+      this.apiService.delete(`truckloading/${truckLoadingParchiId}`).subscribe({
+        next: (res: any) => {
+          this.getTruckLoadingParchis();
+        },
+        error: (err: any) => {
+          console.error('Error deleting Truck Loading Parchi:', err);
+        },
+      });
+    }
   }
 }

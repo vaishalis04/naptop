@@ -40,7 +40,7 @@
                                 <th scope="col">Truck</th>
                                 <th scope="col">Delivery Location</th>
                                 <th scope="col">Assigned Hammal</th>
-                                <th scope="col">Bora Quantity</th>
+                                <th scope="col">Storage Location</th>
                                 <th scope="col">Net Weight(in Quintal)</th>
                                 <th scope="col">Amount (₹)</th>
                                 <th scope="col">Created By</th>
@@ -59,21 +59,37 @@
                                 <td>{{ truckLoadingParchi?.truckDetails?.truckNumber }}</td>
                                 <td>{{ truckLoadingParchi?.deliveryDetails?.name }}</td>
                                 <td>{{ truckLoadingParchi?.hammalDetails?.name }}</td>
-                                <td>{{ truckLoadingParchi.boraQuantity }}</td>
+                                <td>
+                                    {{ truckLoadingParchi?.wearhouseDetails?.name }}
+                                </td>
                                 <td>{{ truckLoadingParchi.netWeight }}</td>
-                                <td>{{ truckLoadingParchi.amount }}</td>
+                                <td>{{ truckLoadingParchi.amount | number: '.2' }}</td>
                                 <td>{{ truckLoadingParchi?.userDetails?.name }}</td>
 
                                 <td>
-                                    <button type="button" class="btn btn-primary"
-                                        (click)="printReceipt(truckLoadingParchi)" style="margin-right: 10px;">
-                                        Print
-                                    </button>
-
-                                    <button type="button" class="btn btn-primary"
-                                        [routerLink]="['/truck-loading-parchi-view', truckLoadingParchi._id]">
-                                        View
-                                    </button>
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-primary"
+                                                (click)="printReceipt(truckLoadingParchi)" style="margin-right: 10px;">
+                                                <!-- Print -->
+                                                <i class="fi fi-rr-print"></i>
+                                            </button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-primary"
+                                                [routerLink]="['/truck-loading-parchi-view', truckLoadingParchi._id]">
+                                                <!-- View -->
+                                                <i class="fi fi-rr-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-danger"
+                                                (click)="deleteTruckLoadingParchi(truckLoadingParchi._id)">
+                                                <!-- Delete -->
+                                                <i class="fi fi-rr-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>

@@ -142,7 +142,7 @@ export class TruckLoadingParchiViewComponent {
           </div>
           <div class="row">
             <span><b>Rate (₹):</b></span>
-            <span>${this.truckLoadingParchi.rate}</span>
+            <span>${this.truckLoadingParchi.rate.toFixed(2)}</span>
           </div>
           <div class="row">
             <span><b>Freight Advance (₹):</b></span>

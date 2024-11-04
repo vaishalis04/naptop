@@ -275,6 +275,20 @@ export class TaulparchiDashboardComponent {
     newWindow!.print();
   }
 
+  deleteTaulaParchi(taulaParchiId: any) {
+    if (confirm('Are you sure you want to delete this Taula Parchi?')) {
+      this.apiService.delete(`taulparchi/${taulaParchiId}`).subscribe({
+        next: (res: any) => {
+          console.log('Taula Parchi deleted successfully:', res);
+          this.getTaulaParchis();
+        },
+        error: (err: any) => {
+          console.error('Error deleting Taula Parchi:', err);
+        },
+      });
+    }
+  }
+
   // Helper function to generate the Sr.No based on created_at timestamp
   getTaulaParchiSrNo(created_at: string): string {
     if (created_at) {
