@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/truck-loading-parchi/truck-loading-parchi.component.css"],
+  "sourcesContent": ["input, select {\n    background-color: transparent;\n    border: none;\n    border-bottom: 1px dotted #000;\n    margin-bottom: 10px;\n    border-radius: 0;\n    -webkit-border-radius: 0;\n    -moz-border-radius: 0;\n    -ms-border-radius: 0;\n    -o-border-radius: 0;\n  }\n  .p-dropdown {\n    width: 100%;\n  }"],
+  "mappings": ";AAAA;AAAO;AACH,oBAAkB;AAClB,UAAQ;AACR,iBAAe,IAAI,OAAO;AAC1B,iBAAe;AACf,iBAAe;AACf,yBAAuB;AACvB,sBAAoB;AACpB,qBAAmB;AACnB,oBAAkB;AACpB;AACA,CAAC;AACC,SAAO;AACT;",
+  "names": []
+}
