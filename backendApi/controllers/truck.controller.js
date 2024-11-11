@@ -7,8 +7,7 @@ module.exports = {
     create: async (req, res, next) => {
         try {
             const data = req.body;
-            console.log("data", data);
-            
+
             if (!data.truckNumber) {
                 return res.status(400).json({ error: "Truck number is required." });
             }
@@ -44,19 +43,17 @@ module.exports = {
             if (order_by) {
                 sorting[order_by] = order_in === "desc" ? -1 : 1;
             } else {
-                sorting["_id"] = -1; 
+                sorting["_id"] = -1;
             }
 
             const query = {};
 
             if (truckNumber) {
-                query.truckNumber = new RegExp(truckNumber, "i"); 
+                query.truckNumber = new RegExp(truckNumber, "i");
             }
 
-            query.disabled = { $ne: true }; 
-            query.is_inactive = { $ne: true }; 
-    
-            console.log(query);
+            query.disabled = { $ne: true };
+            query.is_inactive = { $ne: true };
 
             const result = await Model.aggregate([
                 { $match: query },
@@ -80,18 +77,18 @@ module.exports = {
             });
         } catch (error) {
             next(error);
-        }  
+        }
     },
 
     update: async (req, res, next) => {
         try {
-            const { id } = req.params; 
+            const { id } = req.params;
 
             if (!id) {
                 throw createError.BadRequest("Invalid Parameters: Missing ID");
             }
 
-            const data = req.body; 
+            const data = req.body;
 
             if (!data || Object.keys(data).length === 0) {
                 throw createError.BadRequest("Invalid Parameters: No data provided");
@@ -100,9 +97,9 @@ module.exports = {
             data.updated_at = Date.now();
 
             const result = await Model.findByIdAndUpdate(
-                id,                    
-                { $set: data },        
-                { new: true }           
+                id,
+                { $set: data },
+                { new: true }
             );
 
             if (!result) {
@@ -111,7 +108,7 @@ module.exports = {
 
             res.json(result);
         } catch (error) {
-            if (error.isJoi === true) error.status = 422; 
+            if (error.isJoi === true) error.status = 422;
             res.status(error.status || 500).send({
                 error: {
                     status: error.status || 500,
@@ -123,7 +120,7 @@ module.exports = {
 
     delete: async (req, res, next) => {
         try {
-            const { id } = req.params; 
+            const { id } = req.params;
 
             if (!id) {
                 throw createError.BadRequest("Invalid Parameters: Missing ID");
@@ -132,7 +129,7 @@ module.exports = {
             const deleted_at = Date.now();
 
             const result = await Model.updateOne(
-                { _id: mongoose.Types.ObjectId(id) },   
+                { _id: mongoose.Types.ObjectId(id) },
                 { $set: { disabled: true, deleted_at } }
             );
 
@@ -142,13 +139,13 @@ module.exports = {
 
             res.json({ message: "Truck deleted successfully", result });
         } catch (error) {
-            next(error); 
+            next(error);
         }
     },
 
     get: async (req, res, next) => {
         try {
-            const { id } = req.params; 
+            const { id } = req.params;
 
             if (!id) {
                 throw createError.BadRequest("Invalid Parameters: Missing ID");
@@ -162,47 +159,45 @@ module.exports = {
 
             res.json(result);
         } catch (error) {
-            next(error); 
+            next(error);
         }
     },
     getByType: async (req, res, next) => {
         try {
             const { truckNumber, disabled, page, limit, order_by, order_in } = req.query;
-    
+
             const _page = page ? parseInt(page) : 1;
             const _limit = limit ? parseInt(limit) : 20;
             const _skip = (_page - 1) * _limit;
-    
+
             let sorting = {};
             if (order_by) {
                 sorting[order_by] = order_in === "desc" ? -1 : 1;
             } else {
-                sorting["_id"] = -1; 
+                sorting["_id"] = -1;
             }
-    
+
             const query = {};
-    
+
             // Filtering only premium truck type
             query.truckType = 'premium';
-    
+
             if (truckNumber) {
                 query.truckNumber = new RegExp(truckNumber, "i");
             }
-    
+
             query.disabled = { $ne: true };
             query.is_inactive = { $ne: true };
-    
-            console.log(query);
-    
+
             const result = await Model.aggregate([
                 { $match: query },
                 { $sort: sorting },
                 { $skip: _skip },
                 { $limit: _limit },
             ]);
-    
+
             const resultCount = await Model.countDocuments(query);
-    
+
             res.json({
                 data: result,
                 meta: {
@@ -217,6 +212,6 @@ module.exports = {
         } catch (error) {
             next(error);
         }
-        
+
 }
 }

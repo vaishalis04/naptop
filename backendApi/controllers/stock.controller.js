@@ -8,7 +8,6 @@ module.exports = {
     create: async (req, res, next) => {
         try {
             const data = req.body;
-            console.log("data", data);
 
             if (!data.crop) {
                 return res.status(400).json({ error: "Crop is required." });

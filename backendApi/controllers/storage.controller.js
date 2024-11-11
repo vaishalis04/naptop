@@ -6,7 +6,6 @@ module.exports = {
     create: async (req, res, next) => {
         try {
             const data = req.body; // Extracting data from request body
-            console.log("data", data);
 
             // Check if the name is provided
             if (!data.name) {
@@ -61,10 +60,9 @@ module.exports = {
                 query.name = new RegExp(name, "i");
             }
 
-            query.disabled = { $ne: true }; 
+            query.disabled = { $ne: true };
             query.is_inactive = { $ne: true };
 
-            console.log(query);
 
             // Aggregate query to get storage items with applied filters, pagination, and sorting
             let result = await Model.aggregate([

@@ -44555,6 +44555,9 @@ var AuthService = class _AuthService {
   getAuthToken() {
     return localStorage.getItem("accessToken");
   }
+  getCurrentUser() {
+    return this.currentUser;
+  }
   static {
     this.\u0275fac = function AuthService_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || _AuthService)(\u0275\u0275inject(Router), \u0275\u0275inject(ApiService));
@@ -62537,20 +62540,102 @@ var PortalLayoutComponent = class _PortalLayoutComponent {
 })();
 
 // src/app/pages/profile/profile.component.ts
+function ProfileComponent_div_6_div_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 9)(1, "p", 10)(2, "strong");
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const key_r1 = ctx.$implicit;
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", key_r1, ":");
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r1.currentUser[key_r1], " ");
+  }
+}
+function ProfileComponent_div_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 5)(1, "div", 6)(2, "h2");
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "div", 7);
+    \u0275\u0275template(5, ProfileComponent_div_6_div_5_Template, 5, 2, "div", 8);
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(ctx_r1.currentUser.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngForOf", ctx_r1.getKeys());
+  }
+}
+function ProfileComponent_div_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div")(1, "div", 11)(2, "div", 12)(3, "span", 13);
+    \u0275\u0275text(4, "Loading...");
+    \u0275\u0275elementEnd()()()();
+  }
+}
 var ProfileComponent = class _ProfileComponent {
+  constructor(authService) {
+    this.authService = authService;
+    this.isAlive = true;
+    this.getCurrentUser();
+  }
+  getCurrentUser() {
+    this.currentUser = this.authService.getCurrentUser();
+    if (!this.currentUser) {
+      setTimeout(() => {
+        if (this.isAlive) {
+          this.getCurrentUser();
+        }
+      }, 1e3);
+    } else {
+      Object.keys(this.currentUser).forEach((key) => (this.currentUser[key] === null || this.currentUser[key] === "" || key == "permissions" || key == "id") && delete this.currentUser[key]);
+      if (this.currentUser.dob) {
+        this.currentUser.Age = (/* @__PURE__ */ new Date()).getFullYear() - new Date(this.currentUser.dob).getFullYear();
+        delete this.currentUser.dob;
+      }
+      delete this.currentUser.role;
+      this.currentUser = Object.keys(this.currentUser).reduce((acc, key) => {
+        acc[key.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())] = this.currentUser[key];
+        return acc;
+      }, {});
+    }
+  }
+  getInitials() {
+    return this.currentUser?.name?.split(" ").map((n) => n[0]).join("");
+  }
+  getKeys() {
+    return Object.keys(this.currentUser);
+  }
   static {
     this.\u0275fac = function ProfileComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _ProfileComponent)();
+      return new (__ngFactoryType__ || _ProfileComponent)(\u0275\u0275directiveInject(AuthService));
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ProfileComponent, selectors: [["app-profile"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 2, vars: 0, template: function ProfileComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ProfileComponent, selectors: [["app-profile"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 8, vars: 2, consts: [[1, "card", "bg-white", "p-3"], [1, "profile-container"], [1, "profile-header"], ["class", "profile-content", 4, "ngIf"], [4, "ngIf"], [1, "profile-content"], [1, "profile-details"], [1, "row"], ["class", "col-12 col-lg-6", 4, "ngFor", "ngForOf"], [1, "col-12", "col-lg-6"], [1, "border", "rounded", "m-2", "p-2", "px-3"], [1, "d-flex", "justify-content-center"], ["role", "status", 1, "spinner-border", "text-primary"], [1, "visually-hidden"]], template: function ProfileComponent_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275elementStart(0, "p");
-        \u0275\u0275text(1, "profile works!");
-        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "h1");
+        \u0275\u0275text(4, "User Profile");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275element(5, "hr");
+        \u0275\u0275template(6, ProfileComponent_div_6_Template, 6, 2, "div", 3)(7, ProfileComponent_div_7_Template, 5, 0, "div", 4);
+        \u0275\u0275elementEnd()();
       }
-    } });
+      if (rf & 2) {
+        \u0275\u0275advance(6);
+        \u0275\u0275property("ngIf", ctx.currentUser);
+        \u0275\u0275advance();
+        \u0275\u0275property("ngIf", !ctx.currentUser);
+      }
+    }, dependencies: [CommonModule, NgForOf, NgIf] });
   }
 };
 (() => {
@@ -72585,7 +72670,7 @@ var _c08 = (a0) => ({ show: a0 });
 var _c19 = () => ({ "width": "100%" });
 function TaulParchiComponent_option_36_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 72);
+    \u0275\u0275elementStart(0, "option", 74);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -72596,182 +72681,164 @@ function TaulParchiComponent_option_36_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", village_r2.name, " ");
   }
 }
-function TaulParchiComponent_ng_template_91_Template(rf, ctx) {
+function TaulParchiComponent_option_110_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 73)(1, "div");
-    \u0275\u0275text(2);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div");
-    \u0275\u0275text(4);
-    \u0275\u0275pipe(5, "titlecase");
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const farmer_r3 = ctx.$implicit;
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(farmer_r3.name);
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate2("", farmer_r3.mobile, "(", \u0275\u0275pipeBind1(5, 3, farmer_r3.farmerType || "regular"), ")");
-  }
-}
-function TaulParchiComponent_option_97_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 72);
+    \u0275\u0275elementStart(0, "option", 74);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const firm_r4 = ctx.$implicit;
-    \u0275\u0275property("value", firm_r4._id);
+    const firm_r3 = ctx.$implicit;
+    \u0275\u0275property("value", firm_r3._id);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(firm_r4.name);
+    \u0275\u0275textInterpolate(firm_r3.name);
   }
 }
-function TaulParchiComponent_div_116_Template(rf, ctx) {
+function TaulParchiComponent_div_130_Template(rf, ctx) {
   if (rf & 1) {
-    const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div")(1, "label", 74);
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div")(1, "label", 75);
     \u0275\u0275text(2, "Assigned Hammal");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "p-dropdown", 75);
-    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_116_Template_p_dropdown_ngModelChange_3_listener($event) {
-      \u0275\u0275restoreView(_r5);
-      const ctx_r5 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r5.TaulParchi.hammal, $event) || (ctx_r5.TaulParchi.hammal = $event);
+    \u0275\u0275elementStart(3, "p-dropdown", 76);
+    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_130_Template_p_dropdown_ngModelChange_3_listener($event) {
+      \u0275\u0275restoreView(_r4);
+      const ctx_r4 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r4.TaulParchi.hammal, $event) || (ctx_r4.TaulParchi.hammal = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275listener("onChange", function TaulParchiComponent_div_116_Template_p_dropdown_onChange_3_listener() {
-      \u0275\u0275restoreView(_r5);
-      const ctx_r5 = \u0275\u0275nextContext();
-      ctx_r5.calculateAmount();
-      return \u0275\u0275resetView(ctx_r5.calculateHammali());
+    \u0275\u0275listener("onChange", function TaulParchiComponent_div_130_Template_p_dropdown_onChange_3_listener() {
+      \u0275\u0275restoreView(_r4);
+      const ctx_r4 = \u0275\u0275nextContext();
+      ctx_r4.calculateAmount();
+      return \u0275\u0275resetView(ctx_r4.calculateHammali());
     });
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const ctx_r5 = \u0275\u0275nextContext();
+    const ctx_r4 = \u0275\u0275nextContext();
     \u0275\u0275advance(3);
     \u0275\u0275styleMap(\u0275\u0275pureFunction0(6, _c19));
-    \u0275\u0275property("options", ctx_r5.Hammals);
-    \u0275\u0275twoWayProperty("ngModel", ctx_r5.TaulParchi.hammal);
+    \u0275\u0275property("options", ctx_r4.Hammals);
+    \u0275\u0275twoWayProperty("ngModel", ctx_r4.TaulParchi.hammal);
     \u0275\u0275property("showClear", true)("filter", true);
   }
 }
-function TaulParchiComponent_div_117_Template(rf, ctx) {
+function TaulParchiComponent_div_131_Template(rf, ctx) {
   if (rf & 1) {
-    const _r7 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 37)(1, "label", 76);
+    const _r6 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 37)(1, "label", 77);
     \u0275\u0275text(2, "Exempt Hammali");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "select", 77);
-    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_117_Template_select_ngModelChange_3_listener($event) {
-      \u0275\u0275restoreView(_r7);
-      const ctx_r5 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r5.TaulParchi.exemptHammali, $event) || (ctx_r5.TaulParchi.exemptHammali = $event);
+    \u0275\u0275elementStart(3, "select", 78);
+    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_131_Template_select_ngModelChange_3_listener($event) {
+      \u0275\u0275restoreView(_r6);
+      const ctx_r4 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r4.TaulParchi.exemptHammali, $event) || (ctx_r4.TaulParchi.exemptHammali = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275listener("ngModelChange", function TaulParchiComponent_div_117_Template_select_ngModelChange_3_listener() {
-      \u0275\u0275restoreView(_r7);
-      const ctx_r5 = \u0275\u0275nextContext();
-      ctx_r5.calculateAmount();
-      return \u0275\u0275resetView(ctx_r5.calculateHammali());
+    \u0275\u0275listener("ngModelChange", function TaulParchiComponent_div_131_Template_select_ngModelChange_3_listener() {
+      \u0275\u0275restoreView(_r6);
+      const ctx_r4 = \u0275\u0275nextContext();
+      ctx_r4.calculateAmount();
+      return \u0275\u0275resetView(ctx_r4.calculateHammali());
     });
     \u0275\u0275elementStart(4, "option", 14);
     \u0275\u0275text(5, "Select Exempt Hammali");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "option", 78);
+    \u0275\u0275elementStart(6, "option", 79);
     \u0275\u0275text(7, "Deduct");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "option", 79);
+    \u0275\u0275elementStart(8, "option", 80);
     \u0275\u0275text(9, "Exempted");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const ctx_r5 = \u0275\u0275nextContext();
+    const ctx_r4 = \u0275\u0275nextContext();
     \u0275\u0275advance(3);
-    \u0275\u0275twoWayProperty("ngModel", ctx_r5.TaulParchi.exemptHammali);
+    \u0275\u0275twoWayProperty("ngModel", ctx_r4.TaulParchi.exemptHammali);
   }
 }
-function TaulParchiComponent_div_118_Template(rf, ctx) {
+function TaulParchiComponent_div_132_Template(rf, ctx) {
   if (rf & 1) {
-    const _r8 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 37)(1, "label", 80);
+    const _r7 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 37)(1, "label", 81);
     \u0275\u0275text(2, "Bora Quantity");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "input", 81);
-    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_118_Template_input_ngModelChange_3_listener($event) {
-      \u0275\u0275restoreView(_r8);
-      const ctx_r5 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r5.TaulParchi.boraQuantity, $event) || (ctx_r5.TaulParchi.boraQuantity = $event);
+    \u0275\u0275elementStart(3, "input", 82);
+    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_132_Template_input_ngModelChange_3_listener($event) {
+      \u0275\u0275restoreView(_r7);
+      const ctx_r4 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r4.TaulParchi.boraQuantity, $event) || (ctx_r4.TaulParchi.boraQuantity = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275listener("ngModelChange", function TaulParchiComponent_div_118_Template_input_ngModelChange_3_listener() {
-      \u0275\u0275restoreView(_r8);
-      const ctx_r5 = \u0275\u0275nextContext();
-      ctx_r5.calculateNetWeight();
-      ctx_r5.calculateAmount();
-      return \u0275\u0275resetView(ctx_r5.calculateHammali());
+    \u0275\u0275listener("ngModelChange", function TaulParchiComponent_div_132_Template_input_ngModelChange_3_listener() {
+      \u0275\u0275restoreView(_r7);
+      const ctx_r4 = \u0275\u0275nextContext();
+      ctx_r4.calculateNetWeight();
+      ctx_r4.calculateAmount();
+      return \u0275\u0275resetView(ctx_r4.calculateHammali());
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "label", 82);
+    \u0275\u0275elementStart(4, "label", 83);
     \u0275\u0275text(5, "Bharti(in Kgs)");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "input", 83);
-    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_118_Template_input_ngModelChange_6_listener($event) {
-      \u0275\u0275restoreView(_r8);
-      const ctx_r5 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r5.TaulParchi.bharti, $event) || (ctx_r5.TaulParchi.bharti = $event);
+    \u0275\u0275elementStart(6, "input", 84);
+    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_132_Template_input_ngModelChange_6_listener($event) {
+      \u0275\u0275restoreView(_r7);
+      const ctx_r4 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r4.TaulParchi.bharti, $event) || (ctx_r4.TaulParchi.bharti = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275listener("ngModelChange", function TaulParchiComponent_div_118_Template_input_ngModelChange_6_listener() {
-      \u0275\u0275restoreView(_r8);
-      const ctx_r5 = \u0275\u0275nextContext();
-      ctx_r5.calculateNetWeight();
-      ctx_r5.calculateAmount();
-      return \u0275\u0275resetView(ctx_r5.calculateHammali());
+    \u0275\u0275listener("ngModelChange", function TaulParchiComponent_div_132_Template_input_ngModelChange_6_listener() {
+      \u0275\u0275restoreView(_r7);
+      const ctx_r4 = \u0275\u0275nextContext();
+      ctx_r4.calculateNetWeight();
+      ctx_r4.calculateAmount();
+      return \u0275\u0275resetView(ctx_r4.calculateHammali());
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "label", 84);
+    \u0275\u0275elementStart(7, "label", 85);
     \u0275\u0275text(8, "Loose Quantity(in Kgs)");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "input", 85);
-    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_118_Template_input_ngModelChange_9_listener($event) {
-      \u0275\u0275restoreView(_r8);
-      const ctx_r5 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r5.TaulParchi.looseQuantity, $event) || (ctx_r5.TaulParchi.looseQuantity = $event);
+    \u0275\u0275elementStart(9, "input", 86);
+    \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_div_132_Template_input_ngModelChange_9_listener($event) {
+      \u0275\u0275restoreView(_r7);
+      const ctx_r4 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r4.TaulParchi.looseQuantity, $event) || (ctx_r4.TaulParchi.looseQuantity = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275listener("ngModelChange", function TaulParchiComponent_div_118_Template_input_ngModelChange_9_listener() {
-      \u0275\u0275restoreView(_r8);
-      const ctx_r5 = \u0275\u0275nextContext();
-      ctx_r5.calculateNetWeight();
-      ctx_r5.calculateAmount();
-      return \u0275\u0275resetView(ctx_r5.calculateHammali());
+    \u0275\u0275listener("ngModelChange", function TaulParchiComponent_div_132_Template_input_ngModelChange_9_listener() {
+      \u0275\u0275restoreView(_r7);
+      const ctx_r4 = \u0275\u0275nextContext();
+      ctx_r4.calculateNetWeight();
+      ctx_r4.calculateAmount();
+      return \u0275\u0275resetView(ctx_r4.calculateHammali());
     });
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const ctx_r5 = \u0275\u0275nextContext();
+    const ctx_r4 = \u0275\u0275nextContext();
     \u0275\u0275advance(3);
-    \u0275\u0275twoWayProperty("ngModel", ctx_r5.TaulParchi.boraQuantity);
+    \u0275\u0275twoWayProperty("ngModel", ctx_r4.TaulParchi.boraQuantity);
     \u0275\u0275advance(3);
-    \u0275\u0275twoWayProperty("ngModel", ctx_r5.TaulParchi.bharti);
+    \u0275\u0275twoWayProperty("ngModel", ctx_r4.TaulParchi.bharti);
     \u0275\u0275advance(3);
-    \u0275\u0275twoWayProperty("ngModel", ctx_r5.TaulParchi.looseQuantity);
+    \u0275\u0275twoWayProperty("ngModel", ctx_r4.TaulParchi.looseQuantity);
   }
 }
-function TaulParchiComponent_div_126_Template(rf, ctx) {
+function TaulParchiComponent_div_140_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 37)(1, "label", 86);
+    \u0275\u0275elementStart(0, "div", 37)(1, "label", 87);
     \u0275\u0275text(2, "Hammali Amount(in \u20B9)");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(3, "input", 87);
+    \u0275\u0275element(3, "input", 88);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const ctx_r5 = \u0275\u0275nextContext();
+    const ctx_r4 = \u0275\u0275nextContext();
     \u0275\u0275advance(3);
-    \u0275\u0275property("value", ctx_r5.TaulParchi.hammali);
+    \u0275\u0275property("value", ctx_r4.TaulParchi.hammali);
   }
 }
 var TaulParchiComponent = class _TaulParchiComponent {
@@ -72787,9 +72854,9 @@ var TaulParchiComponent = class _TaulParchiComponent {
     this.isNewFarmerPopUpOpen = false;
     this.farmerToAddOrEdit = {};
     this.TaulParchi = {
-      farmer: "",
-      village: "",
-      mobile: "",
+      farmerName: "",
+      farmerMobile: "",
+      farmerVillage: "",
       storage: "",
       firm_company: "",
       rate: "",
@@ -72945,16 +73012,18 @@ var TaulParchiComponent = class _TaulParchiComponent {
       }
     });
   }
-  // Autofill the firm/company based on the selected farmer
-  autoFillFirmOrCompany() {
-    const selectedFarmer = this.Farmers.find((farmer) => farmer._id === this.TaulParchi.farmer);
-    if (selectedFarmer) {
-      this.TaulParchi.firm_company = selectedFarmer.firm_company;
-      this.TaulParchi.village = selectedFarmer.village;
-    } else {
-      this.TaulParchi.firm_company = "";
-    }
-  }
+  // // Autofill the firm/company based on the selected farmer
+  // autoFillFirmOrCompany() {
+  //   const selectedFarmer = this.Farmers.find(
+  //     (farmer) => farmer._id === this.TaulParchi.farmer
+  //   );
+  //   if (selectedFarmer) {
+  //     this.TaulParchi.firm_company = selectedFarmer.firm_company;
+  //     this.TaulParchi.village = selectedFarmer.village;
+  //   } else {
+  //     this.TaulParchi.firm_company = '';
+  //   }
+  // }
   // Save TaulParchi to the backend
   saveTaulParchi() {
     if (this.TaulParchi.tulai == "Labour") {
@@ -72962,12 +73031,12 @@ var TaulParchiComponent = class _TaulParchiComponent {
       this.calculateHammali();
     }
     this.calculateAmount();
-    if (!this.TaulParchi.farmer) {
-      alert("Please select Farmer");
+    if (!this.TaulParchi.farmerName) {
+      alert("Please provide farmer details");
       return;
     }
-    if (!this.TaulParchi.village) {
-      alert("Please select Village");
+    if (!this.TaulParchi.farmerVillage) {
+      alert("Please provide farmer village details");
       return;
     }
     if (!this.TaulParchi.rate) {
@@ -73030,7 +73099,6 @@ var TaulParchiComponent = class _TaulParchiComponent {
         this.isNewFarmerPopUpOpen = false;
         this.farmerToAddOrEdit = {};
         this.fetchFarmers();
-        this.TaulParchi.farmer = data._id;
       },
       error: (error) => {
         if (error.status === 400) {
@@ -73047,7 +73115,7 @@ var TaulParchiComponent = class _TaulParchiComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulParchiComponent, selectors: [["app-taul-parchi"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 134, vars: 52, consts: [["mobileInput", "ngModel"], ["id", "addUpdateMasterModal", "tabindex", "-1", "aria-labelledby", "addUpdateMasterModalLabel", "aria-hidden", "true", 1, "modal", "fade", 3, "ngClass"], [1, "modal-dialog", "modal-dialog-centered"], [1, "modal-content"], [1, "modal-header"], ["id", "addUpdateMasterModalLabel", 1, "modal-title"], ["type", "button", "data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", 3, "click"], [1, "modal-body"], [1, "container"], [1, "row"], [1, "col-12"], [1, "form-group"], ["for", "farmerType", 1, "form-label"], ["id", "farmerType", "name", "farmerType", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "regular"], ["value", "premium"], ["for", "masterName", 1, "form-label"], ["id", "masterName", "name", "masterName", "type", "text", "placeholder", "Name", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "mobile", 1, "form-label"], ["id", "mobile", "name", "mobile", "type", "text", "placeholder", "Mobile", "maxlength", "10", "minlength", "10", "pattern", "[0-9]{10}", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "village", 1, "form-label"], ["id", "village", "name", "village", 1, "form-control", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [1, "modal-footer"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-secondary", 3, "click"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-end"], [1, "text-muted", "pe-2"], [1, "text-link"], [1, "text-muted", "pe-2", "ms-2"], [1, "card-body", "bg-warning"], [1, "form-group", "mb-3"], ["for", "purchaseStatus", 1, "form-label"], ["id", "purchaseStatus", "name", "purchaseStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "directPurchase"], ["value", "AuctionMandiPurchase"], ["for", "crop", 1, "form-label"], ["optionLabel", "name", "optionValue", "_id", "placeholder", "Select Crop", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "farmerName", 1, "form-label"], [1, "col-auto"], ["label", "Add New Farmer", "icon", "pi pi-plus", "severity", "success", "size", "small", 3, "onClick", "raised", "rounded"], ["optionLabel", "name", "optionValue", "_id", "placeholder", "Select Farmer", 3, "ngModelChange", "onChange", "options", "ngModel", "showClear", "filter"], ["pTemplate", "item"], ["for", "firmCompany", 1, "form-label"], ["id", "firmCompany", "name", "firmCompany", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "storage", 1, "form-label"], ["optionLabel", "name", "optionValue", "_id", "placeholder", "Select Storage Location", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "rate", 1, "form-label"], [1, "input-group"], [1, "input-group-text", "bg-transparent", "border-0", "p-0"], ["id", "rate", "name", "rate", "type", "number", "placeholder", "Rate", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "tulai", 1, "form-label"], ["id", "tulai", "name", "tulai", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "Labour"], ["value", "Dharamkata"], [4, "ngIf"], ["class", "form-group mb-3", 4, "ngIf"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "placeholder", "Net Weight", 1, "form-control", 3, "ngModelChange", "readonly", "ngModel"], ["for", "amount", 1, "form-label"], ["id", "amount", "name", "amount", "type", "number", "placeholder", "Amount", "readonly", "", 1, "form-control", 3, "value"], ["for", "other", 1, "form-label"], ["id", "other", "name", "other", "type", "text", "placeholder", "Enter Remark", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"], [3, "value"], [1, "d-flex", "justify-content-between"], ["for", "assignedHammal", 1, "form-label"], ["optionLabel", "name", "optionValue", "_id", "placeholder", "Select Hammal", 3, "ngModelChange", "onChange", "options", "ngModel", "showClear", "filter"], ["for", "exemptHammali", 1, "form-label"], ["id", "exemptHammali", "name", "exemptHammali", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", "deduct"], ["value", "exempted"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", "type", "number", "placeholder", "Bora Quantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "bharti", 1, "form-label"], ["id", "bharti", "name", "bharti", "type", "number", "placeholder", "Bharti", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "looseQuantity", 1, "form-label"], ["id", "looseQuantity", "name", "looseQuantity", "type", "number", "placeholder", "Enter looseQuantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "hammali", 1, "form-label"], ["id", "hammali", "name", "hammali", "type", "number", "placeholder", "hammali", "readonly", "", 1, "form-control", 3, "value"]], template: function TaulParchiComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulParchiComponent, selectors: [["app-taul-parchi"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 148, vars: 46, consts: [["mobileInput", "ngModel"], ["id", "addUpdateMasterModal", "tabindex", "-1", "aria-labelledby", "addUpdateMasterModalLabel", "aria-hidden", "true", 1, "modal", "fade", 3, "ngClass"], [1, "modal-dialog", "modal-dialog-centered"], [1, "modal-content"], [1, "modal-header"], ["id", "addUpdateMasterModalLabel", 1, "modal-title"], ["type", "button", "data-bs-dismiss", "modal", "aria-label", "Close", 1, "btn-close", 3, "click"], [1, "modal-body"], [1, "container"], [1, "row"], [1, "col-12"], [1, "form-group"], ["for", "farmerType", 1, "form-label"], ["id", "farmerType", "name", "farmerType", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "regular"], ["value", "premium"], ["for", "masterName", 1, "form-label"], ["id", "masterName", "name", "masterName", "type", "text", "placeholder", "Name", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "mobile", 1, "form-label"], ["id", "mobile", "name", "mobile", "type", "text", "placeholder", "Mobile", "maxlength", "10", "minlength", "10", "pattern", "[0-9]{10}", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "village", 1, "form-label"], ["id", "village", "name", "village", 1, "form-control", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [1, "modal-footer"], ["type", "button", "data-bs-dismiss", "modal", 1, "btn", "btn-secondary", 3, "click"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-end"], [1, "text-muted", "pe-2"], [1, "text-link"], [1, "text-muted", "pe-2", "ms-2"], [1, "card-body", "bg-warning"], [1, "form-group", "mb-3"], [1, "col-12", "col-md-6", "col-lg-4"], ["for", "farmerName", 1, "form-label"], ["id", "farmerName", "name", "farmerName", "type", "text", "placeholder", "Farmer's Name", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerMobile", 1, "form-label"], ["id", "farmerMobile", "name", "farmerMobile", "type", "text", "placeholder", "Farmer's Mobile", "maxlength", "10", "minlength", "10", "pattern", "[0-9]{10}", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerVillage", 1, "form-label"], ["id", "farmerVillage", "name", "farmerVillage", "type", "text", "placeholder", "Farmer's Village", "required", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "purchaseStatus", 1, "form-label"], ["id", "purchaseStatus", "name", "purchaseStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "directPurchase"], ["value", "AuctionMandiPurchase"], ["for", "crop", 1, "form-label"], ["optionLabel", "name", "optionValue", "_id", "placeholder", "Select Crop", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "firmCompany", 1, "form-label"], ["id", "firmCompany", "name", "firmCompany", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "storage", 1, "form-label"], ["optionLabel", "name", "optionValue", "_id", "placeholder", "Select Storage Location", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "rate", 1, "form-label"], [1, "input-group"], [1, "input-group-text", "bg-transparent", "border-0", "p-0"], ["id", "rate", "name", "rate", "type", "number", "placeholder", "Rate", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "tulai", 1, "form-label"], ["id", "tulai", "name", "tulai", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "Labour"], ["value", "Dharamkata"], [4, "ngIf"], ["class", "form-group mb-3", 4, "ngIf"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "placeholder", "Net Weight", 1, "form-control", 3, "ngModelChange", "readonly", "ngModel"], ["for", "amount", 1, "form-label"], ["id", "amount", "name", "amount", "type", "number", "placeholder", "Amount", "readonly", "", 1, "form-control", 3, "value"], ["for", "other", 1, "form-label"], ["id", "other", "name", "other", "type", "text", "placeholder", "Enter Remark", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"], [3, "value"], ["for", "assignedHammal", 1, "form-label"], ["optionLabel", "name", "optionValue", "_id", "placeholder", "Select Hammal", 3, "ngModelChange", "onChange", "options", "ngModel", "showClear", "filter"], ["for", "exemptHammali", 1, "form-label"], ["id", "exemptHammali", "name", "exemptHammali", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", "deduct"], ["value", "exempted"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", "type", "number", "placeholder", "Bora Quantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "bharti", 1, "form-label"], ["id", "bharti", "name", "bharti", "type", "number", "placeholder", "Bharti", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "looseQuantity", 1, "form-label"], ["id", "looseQuantity", "name", "looseQuantity", "type", "number", "placeholder", "Enter looseQuantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "hammali", 1, "form-label"], ["id", "hammali", "name", "hammali", "type", "number", "placeholder", "hammali", "readonly", "", 1, "form-control", 3, "value"]], template: function TaulParchiComponent_Template(rf, ctx) {
       if (rf & 1) {
         const _r1 = \u0275\u0275getCurrentView();
         \u0275\u0275elementStart(0, "div", 1)(1, "div", 2)(2, "div", 3)(3, "div", 4)(4, "h5", 5);
@@ -73145,155 +73213,164 @@ var TaulParchiComponent = class _TaulParchiComponent {
         \u0275\u0275text(64);
         \u0275\u0275pipe(65, "date");
         \u0275\u0275elementEnd()()()()();
-        \u0275\u0275elementStart(66, "div", 36)(67, "div", 9)(68, "div", 10)(69, "div", 37)(70, "label", 38);
-        \u0275\u0275text(71, "Purchase Status");
+        \u0275\u0275elementStart(66, "div", 36)(67, "div", 9)(68, "div", 10)(69, "div", 37)(70, "div", 9)(71, "div", 38)(72, "div", 11)(73, "label", 39);
+        \u0275\u0275text(74, "Farmer's Name");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(72, "select", 39);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_72_listener($event) {
+        \u0275\u0275elementStart(75, "input", 40);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_75_listener($event) {
+          \u0275\u0275restoreView(_r1);
+          \u0275\u0275twoWayBindingSet(ctx.TaulParchi.farmerName, $event) || (ctx.TaulParchi.farmerName = $event);
+          return \u0275\u0275resetView($event);
+        });
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(76, "div", 38)(77, "div", 11)(78, "label", 41);
+        \u0275\u0275text(79, "Farmer's Mobile");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(80, "input", 42);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_80_listener($event) {
+          \u0275\u0275restoreView(_r1);
+          \u0275\u0275twoWayBindingSet(ctx.TaulParchi.farmerMobile, $event) || (ctx.TaulParchi.farmerMobile = $event);
+          return \u0275\u0275resetView($event);
+        });
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(81, "div", 38)(82, "div", 11)(83, "label", 43);
+        \u0275\u0275text(84, "Farmer's Village");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(85, "input", 44);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_85_listener($event) {
+          \u0275\u0275restoreView(_r1);
+          \u0275\u0275twoWayBindingSet(ctx.TaulParchi.farmerVillage, $event) || (ctx.TaulParchi.farmerVillage = $event);
+          return \u0275\u0275resetView($event);
+        });
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(86, "div", 9)(87, "div", 38)(88, "div", 11)(89, "label", 45);
+        \u0275\u0275text(90, "Purchase Status");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(91, "select", 46);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_91_listener($event) {
           \u0275\u0275restoreView(_r1);
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.purchase, $event) || (ctx.TaulParchi.purchase = $event);
           return \u0275\u0275resetView($event);
         });
-        \u0275\u0275elementStart(73, "option", 14);
-        \u0275\u0275text(74, "Select Purchase");
+        \u0275\u0275elementStart(92, "option", 14);
+        \u0275\u0275text(93, "Select Purchase");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(75, "option", 40);
-        \u0275\u0275text(76, "Direct Purchase");
+        \u0275\u0275elementStart(94, "option", 47);
+        \u0275\u0275text(95, "Direct Purchase");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(77, "option", 41);
-        \u0275\u0275text(78, " Auction Mandi Purchase ");
-        \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(79, "div", 37)(80, "label", 42);
-        \u0275\u0275text(81, "Crop");
+        \u0275\u0275elementStart(96, "option", 48);
+        \u0275\u0275text(97, " Auction Mandi Purchase ");
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(98, "div", 38)(99, "div", 11)(100, "label", 49);
+        \u0275\u0275text(101, "Crop");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(82, "p-dropdown", 43);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_p_dropdown_ngModelChange_82_listener($event) {
+        \u0275\u0275elementStart(102, "p-dropdown", 50);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_p_dropdown_ngModelChange_102_listener($event) {
           \u0275\u0275restoreView(_r1);
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.crop, $event) || (ctx.TaulParchi.crop = $event);
           return \u0275\u0275resetView($event);
         });
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(83, "div", 37)(84, "div", 9)(85, "div", 28)(86, "label", 44);
-        \u0275\u0275text(87, " Farmer's Name ");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(88, "div", 45)(89, "p-button", 46);
-        \u0275\u0275listener("onClick", function TaulParchiComponent_Template_p_button_onClick_89_listener() {
-          \u0275\u0275restoreView(_r1);
-          return \u0275\u0275resetView(ctx.openFarmerPopUp());
-        });
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(90, "p-dropdown", 47);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_p_dropdown_ngModelChange_90_listener($event) {
-          \u0275\u0275restoreView(_r1);
-          \u0275\u0275twoWayBindingSet(ctx.TaulParchi.farmer, $event) || (ctx.TaulParchi.farmer = $event);
-          return \u0275\u0275resetView($event);
-        });
-        \u0275\u0275listener("onChange", function TaulParchiComponent_Template_p_dropdown_onChange_90_listener() {
-          \u0275\u0275restoreView(_r1);
-          return \u0275\u0275resetView(ctx.autoFillFirmOrCompany());
-        });
-        \u0275\u0275template(91, TaulParchiComponent_ng_template_91_Template, 6, 5, "ng-template", 48);
+        \u0275\u0275elementStart(103, "div", 38)(104, "div", 11)(105, "label", 51);
+        \u0275\u0275text(106, "Purchasing Firm / Company");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(92, "label", 49);
-        \u0275\u0275text(93, "Purchasing Firm / Company");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(94, "select", 50);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_94_listener($event) {
+        \u0275\u0275elementStart(107, "select", 52);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_107_listener($event) {
           \u0275\u0275restoreView(_r1);
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.firm_company, $event) || (ctx.TaulParchi.firm_company = $event);
           return \u0275\u0275resetView($event);
         });
-        \u0275\u0275elementStart(95, "option", 14);
-        \u0275\u0275text(96, "Select Firm / Company");
+        \u0275\u0275elementStart(108, "option", 14);
+        \u0275\u0275text(109, "Select Firm / Company");
         \u0275\u0275elementEnd();
-        \u0275\u0275template(97, TaulParchiComponent_option_97_Template, 2, 2, "option", 23);
+        \u0275\u0275template(110, TaulParchiComponent_option_110_Template, 2, 2, "option", 23);
+        \u0275\u0275elementEnd()()()()();
+        \u0275\u0275elementStart(111, "div", 11)(112, "label", 53);
+        \u0275\u0275text(113, "Storage Location");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(98, "label", 51);
-        \u0275\u0275text(99, "Storage Location");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(100, "p-dropdown", 52);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_p_dropdown_ngModelChange_100_listener($event) {
+        \u0275\u0275elementStart(114, "p-dropdown", 54);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_p_dropdown_ngModelChange_114_listener($event) {
           \u0275\u0275restoreView(_r1);
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.storage, $event) || (ctx.TaulParchi.storage = $event);
           return \u0275\u0275resetView($event);
         });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(101, "label", 53);
-        \u0275\u0275text(102, "Rate (Per Quintal)");
+        \u0275\u0275elementStart(115, "label", 55);
+        \u0275\u0275text(116, "Rate (Per Quintal)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(103, "div", 54)(104, "span", 55);
-        \u0275\u0275text(105, "\u20B9");
+        \u0275\u0275elementStart(117, "div", 56)(118, "span", 57);
+        \u0275\u0275text(119, "\u20B9");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(106, "input", 56);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_106_listener($event) {
+        \u0275\u0275elementStart(120, "input", 58);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_120_listener($event) {
           \u0275\u0275restoreView(_r1);
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.rate, $event) || (ctx.TaulParchi.rate = $event);
           return \u0275\u0275resetView($event);
         });
-        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_106_listener() {
+        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_120_listener() {
           \u0275\u0275restoreView(_r1);
           return \u0275\u0275resetView(ctx.calculateAmount());
         });
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(107, "label", 57);
-        \u0275\u0275text(108, "Tulai Options");
+        \u0275\u0275elementStart(121, "label", 59);
+        \u0275\u0275text(122, "Tulai Options");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(109, "select", 58);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_109_listener($event) {
+        \u0275\u0275elementStart(123, "select", 60);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_select_ngModelChange_123_listener($event) {
           \u0275\u0275restoreView(_r1);
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.tulai, $event) || (ctx.TaulParchi.tulai = $event);
           return \u0275\u0275resetView($event);
         });
-        \u0275\u0275elementStart(110, "option", 14);
-        \u0275\u0275text(111, "Select Tulai");
+        \u0275\u0275elementStart(124, "option", 14);
+        \u0275\u0275text(125, "Select Tulai");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(112, "option", 59);
-        \u0275\u0275text(113, "Labour");
+        \u0275\u0275elementStart(126, "option", 61);
+        \u0275\u0275text(127, "Labour");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(114, "option", 60);
-        \u0275\u0275text(115, "Dharamkanta");
+        \u0275\u0275elementStart(128, "option", 62);
+        \u0275\u0275text(129, "Dharamkanta");
         \u0275\u0275elementEnd()();
-        \u0275\u0275template(116, TaulParchiComponent_div_116_Template, 4, 7, "div", 61)(117, TaulParchiComponent_div_117_Template, 10, 1, "div", 62)(118, TaulParchiComponent_div_118_Template, 10, 3, "div", 62);
-        \u0275\u0275elementStart(119, "label", 63);
-        \u0275\u0275text(120, "Net Weight (in Quintal)");
+        \u0275\u0275template(130, TaulParchiComponent_div_130_Template, 4, 7, "div", 63)(131, TaulParchiComponent_div_131_Template, 10, 1, "div", 64)(132, TaulParchiComponent_div_132_Template, 10, 3, "div", 64);
+        \u0275\u0275elementStart(133, "label", 65);
+        \u0275\u0275text(134, "Net Weight (in Quintal)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(121, "input", 64);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_121_listener($event) {
+        \u0275\u0275elementStart(135, "input", 66);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_135_listener($event) {
           \u0275\u0275restoreView(_r1);
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.netWeight, $event) || (ctx.TaulParchi.netWeight = $event);
           return \u0275\u0275resetView($event);
         });
-        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_121_listener() {
+        \u0275\u0275listener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_135_listener() {
           \u0275\u0275restoreView(_r1);
           return \u0275\u0275resetView(ctx.calculateAmount());
         });
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(122, "div", 37)(123, "label", 65);
-        \u0275\u0275text(124, "Payable Amount(in \u20B9)");
+        \u0275\u0275elementStart(136, "div", 37)(137, "label", 67);
+        \u0275\u0275text(138, "Payable Amount(in \u20B9)");
         \u0275\u0275elementEnd();
-        \u0275\u0275element(125, "input", 66);
+        \u0275\u0275element(139, "input", 68);
         \u0275\u0275elementEnd();
-        \u0275\u0275template(126, TaulParchiComponent_div_126_Template, 4, 1, "div", 62);
-        \u0275\u0275elementStart(127, "label", 67);
-        \u0275\u0275text(128, "Remark");
+        \u0275\u0275template(140, TaulParchiComponent_div_140_Template, 4, 1, "div", 64);
+        \u0275\u0275elementStart(141, "label", 69);
+        \u0275\u0275text(142, "Remark");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(129, "input", 68);
-        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_129_listener($event) {
+        \u0275\u0275elementStart(143, "input", 70);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulParchiComponent_Template_input_ngModelChange_143_listener($event) {
           \u0275\u0275restoreView(_r1);
           \u0275\u0275twoWayBindingSet(ctx.TaulParchi.other, $event) || (ctx.TaulParchi.other = $event);
           return \u0275\u0275resetView($event);
         });
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(130, "div", 69)(131, "div", 70)(132, "button", 71);
-        \u0275\u0275listener("click", function TaulParchiComponent_Template_button_click_132_listener() {
+        \u0275\u0275elementStart(144, "div", 71)(145, "div", 72)(146, "button", 73);
+        \u0275\u0275listener("click", function TaulParchiComponent_Template_button_click_146_listener() {
           \u0275\u0275restoreView(_r1);
           return \u0275\u0275resetView(ctx.saveTaulParchi());
         });
-        \u0275\u0275text(133, " Submit ");
+        \u0275\u0275text(147, " Submit ");
         \u0275\u0275elementEnd()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(47, _c08, ctx.isNewFarmerPopUpOpen));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(42, _c08, ctx.isNewFarmerPopUpOpen));
         \u0275\u0275advance(14);
         \u0275\u0275twoWayProperty("ngModel", ctx.farmerToAddOrEdit.farmerType);
         \u0275\u0275advance(10);
@@ -73305,29 +73382,28 @@ var TaulParchiComponent = class _TaulParchiComponent {
         \u0275\u0275advance(3);
         \u0275\u0275property("ngForOf", ctx.Villages);
         \u0275\u0275advance(23);
-        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(60, 41, ctx.TaulParchi.created_at, "dd-MM-YYYY"));
+        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(60, 36, ctx.TaulParchi.created_at, "dd-MM-YYYY"));
         \u0275\u0275advance(5);
-        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(65, 44, ctx.TaulParchi.created_at, "HH:mm:ss"));
-        \u0275\u0275advance(8);
+        \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(65, 39, ctx.TaulParchi.created_at, "HH:mm:ss"));
+        \u0275\u0275advance(11);
+        \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.farmerName);
+        \u0275\u0275advance(5);
+        \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.farmerMobile);
+        \u0275\u0275advance(5);
+        \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.farmerVillage);
+        \u0275\u0275advance(6);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.purchase);
-        \u0275\u0275advance(10);
-        \u0275\u0275styleMap(\u0275\u0275pureFunction0(49, _c19));
+        \u0275\u0275advance(11);
+        \u0275\u0275styleMap(\u0275\u0275pureFunction0(44, _c19));
         \u0275\u0275property("options", ctx.Crops);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.crop);
         \u0275\u0275property("showClear", true)("filter", true);
-        \u0275\u0275advance(7);
-        \u0275\u0275property("raised", true)("rounded", true);
-        \u0275\u0275advance();
-        \u0275\u0275styleMap(\u0275\u0275pureFunction0(50, _c19));
-        \u0275\u0275property("options", ctx.Farmers);
-        \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.farmer);
-        \u0275\u0275property("showClear", true)("filter", true);
-        \u0275\u0275advance(4);
+        \u0275\u0275advance(5);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.firm_company);
         \u0275\u0275advance(3);
         \u0275\u0275property("ngForOf", ctx.firm_company);
-        \u0275\u0275advance(3);
-        \u0275\u0275styleMap(\u0275\u0275pureFunction0(51, _c19));
+        \u0275\u0275advance(4);
+        \u0275\u0275styleMap(\u0275\u0275pureFunction0(45, _c19));
         \u0275\u0275property("options", ctx.Storage);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.storage);
         \u0275\u0275property("showClear", true)("filter", true);
@@ -73338,16 +73414,16 @@ var TaulParchiComponent = class _TaulParchiComponent {
         \u0275\u0275advance(7);
         \u0275\u0275property("ngIf", ctx.TaulParchi.tulai === "Labour");
         \u0275\u0275advance();
-        \u0275\u0275property("ngIf", ctx.TaulParchi.farmer && ctx.TaulParchi.tulai === "Labour");
+        \u0275\u0275property("ngIf", ctx.TaulParchi.farmerName && ctx.TaulParchi.tulai === "Labour");
         \u0275\u0275advance();
-        \u0275\u0275property("ngIf", ctx.TaulParchi.farmer && ctx.TaulParchi.tulai === "Labour");
+        \u0275\u0275property("ngIf", ctx.TaulParchi.farmerName && ctx.TaulParchi.tulai === "Labour");
         \u0275\u0275advance(3);
         \u0275\u0275property("readonly", ctx.TaulParchi.tulai != "Dharamkata");
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.netWeight);
         \u0275\u0275advance(4);
         \u0275\u0275property("value", ctx.TaulParchi.amount);
         \u0275\u0275advance();
-        \u0275\u0275property("ngIf", ctx.TaulParchi.tulai === "Labour" && ctx.TaulParchi.farmer && ctx.TaulParchi.hammal);
+        \u0275\u0275property("ngIf", ctx.TaulParchi.tulai === "Labour" && ctx.TaulParchi.farmerName && ctx.TaulParchi.hammal);
         \u0275\u0275advance(3);
         \u0275\u0275twoWayProperty("ngModel", ctx.TaulParchi.other);
       }
@@ -73369,11 +73445,8 @@ var TaulParchiComponent = class _TaulParchiComponent {
       NgClass,
       NgForOf,
       NgIf,
-      TitleCasePipe,
       DatePipe,
       ButtonModule,
-      Button,
-      PrimeTemplate,
       DropdownModule,
       Dropdown
     ], styles: ["\n\ninput[_ngcontent-%COMP%], \nselect[_ngcontent-%COMP%] {\n  background-color: transparent;\n  border: none;\n  border-bottom: 1px dotted #000;\n  margin-bottom: 10px;\n  border-radius: 0;\n  -webkit-border-radius: 0;\n  -moz-border-radius: 0;\n  -ms-border-radius: 0;\n  -o-border-radius: 0;\n}\n.input-group-text[_ngcontent-%COMP%] {\n  position: relative;\n  top: -5px;\n}\ninput[_ngcontent-%COMP%]:-webkit-autofill {\n  -webkit-box-shadow: 0 0 0 1000px white inset;\n  -webkit-text-fill-color: black;\n  background-color: transparent;\n}\n/*# sourceMappingURL=taul-parchi.component.css.map */"] });
@@ -82696,73 +82769,79 @@ var QRCodeModule = class _QRCodeModule {
 // src/app/pages/taulparchi-dashboard/taulparchi-dashboard.component.ts
 var _c027 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
 var _c128 = (a0) => ["/taul-parchi-view", a0];
-function TaulparchiDashboardComponent_tr_55_Template(rf, ctx) {
+function TaulparchiDashboardComponent_tr_53_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "tr")(1, "td");
     \u0275\u0275text(2);
+    \u0275\u0275pipe(3, "date");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "td");
-    \u0275\u0275text(4);
-    \u0275\u0275pipe(5, "date");
+    \u0275\u0275elementStart(4, "td");
+    \u0275\u0275text(5);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "td");
     \u0275\u0275text(7);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "td");
-    \u0275\u0275text(9);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "td");
+    \u0275\u0275element(8, "br");
+    \u0275\u0275elementStart(9, "span", 22);
+    \u0275\u0275element(10, "i", 23);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "td");
-    \u0275\u0275text(13);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "td");
+    \u0275\u0275element(12, "br");
+    \u0275\u0275elementStart(13, "span", 22);
+    \u0275\u0275element(14, "i", 24);
     \u0275\u0275text(15);
-    \u0275\u0275elementEnd();
+    \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(16, "td");
     \u0275\u0275text(17);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(18, "td");
     \u0275\u0275text(19);
-    \u0275\u0275pipe(20, "number");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(21, "td");
-    \u0275\u0275text(22);
+    \u0275\u0275elementStart(20, "td");
+    \u0275\u0275text(21);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(23, "td")(24, "div", 3)(25, "div", 22)(26, "button", 23);
-    \u0275\u0275listener("click", function TaulparchiDashboardComponent_tr_55_Template_button_click_26_listener() {
+    \u0275\u0275elementStart(22, "td");
+    \u0275\u0275text(23);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(24, "td");
+    \u0275\u0275text(25);
+    \u0275\u0275pipe(26, "number");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(27, "td");
+    \u0275\u0275text(28);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(29, "td")(30, "button", 25);
+    \u0275\u0275listener("click", function TaulparchiDashboardComponent_tr_53_Template_button_click_30_listener() {
       const taulaParchi_r2 = \u0275\u0275restoreView(_r1).$implicit;
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.printReceipt(taulaParchi_r2));
     });
-    \u0275\u0275element(27, "i", 24);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(28, "div", 22)(29, "button", 25);
-    \u0275\u0275element(30, "i", 26);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(31, "div", 22)(32, "button", 27);
-    \u0275\u0275listener("click", function TaulparchiDashboardComponent_tr_55_Template_button_click_32_listener() {
+    \u0275\u0275element(31, "i", 26);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(32, "button", 27);
+    \u0275\u0275element(33, "i", 28);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(34, "button", 29);
+    \u0275\u0275listener("click", function TaulparchiDashboardComponent_tr_53_Template_button_click_34_listener() {
       const taulaParchi_r2 = \u0275\u0275restoreView(_r1).$implicit;
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.deleteTaulaParchi(taulaParchi_r2._id));
     });
-    \u0275\u0275element(33, "i", 28);
-    \u0275\u0275elementEnd()()()()();
+    \u0275\u0275element(35, "i", 30);
+    \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
     const taulaParchi_r2 = ctx.$implicit;
-    const i_r4 = ctx.index;
-    const ctx_r2 = \u0275\u0275nextContext();
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r2.currentPage * ctx_r2.perPage - ctx_r2.perPage + (i_r4 + 1));
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 11, taulaParchi_r2.created_at, "MM-dd-YYYY"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(3, 12, taulaParchi_r2.created_at, "MM-dd-YYYY hh:mm"));
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.purchase);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.farmerDetails == null ? null : taulaParchi_r2.farmerDetails.name);
+    \u0275\u0275textInterpolate1(" ", taulaParchi_r2 == null ? null : taulaParchi_r2.farmerName, " ");
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate1(" | ", taulaParchi_r2 == null ? null : taulaParchi_r2.farmerMobile, " ");
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate1(" | ", taulaParchi_r2 == null ? null : taulaParchi_r2.farmerVillage, " ");
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.wearhouseDetails == null ? null : taulaParchi_r2.wearhouseDetails.name);
     \u0275\u0275advance(2);
@@ -82772,11 +82851,11 @@ function TaulparchiDashboardComponent_tr_55_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(taulaParchi_r2.netWeight);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(20, 14, taulaParchi_r2.amount, ".2"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(26, 15, taulaParchi_r2.amount, ".2"));
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.userDetails == null ? null : taulaParchi_r2.userDetails.name);
-    \u0275\u0275advance(7);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(17, _c128, taulaParchi_r2._id));
+    \u0275\u0275advance(4);
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(18, _c128, taulaParchi_r2._id));
   }
 }
 var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
@@ -82923,15 +83002,15 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
           <div class="section">
             <div class="row">
               <div class="label"><b>Farmer's Name:</b></div>
-              <div class="value">${taulaParchi.farmerDetails?.name || "N/A"}</div>
-            </div>
-            <div class="row">
-              <div class="label"><b>Village:</b></div>
-              <div class="value">${taulaParchi.villageDetails?.name || "N/A"}</div>
+              <div class="value">${taulaParchi.farmerName || "N/A"}</div>
             </div>
             <div class="row">
               <div class="label"><b>Mobile:</b></div>
-              <div class="value">${taulaParchi.farmerDetails?.mobile || "N/A"}</div>
+              <div class="value">${taulaParchi.farmerMobile || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Village:</b></div>
+              <div class="value">${taulaParchi.farmerVillage || "N/A"}</div>
             </div>
             <div class="row">
               <div class="label"><b>Storage Location:</b></div>
@@ -83056,7 +83135,7 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiDashboardComponent, selectors: [["app-taulparchi-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 58, vars: 8, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["type", "button", 1, "btn", "btn-primary"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "col-4"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "fi", "fi-rr-print"], ["type", "button", 1, "btn", "btn-primary", 3, "routerLink"], [1, "fi", "fi-rr-eye"], ["type", "button", 1, "btn", "btn-danger", 3, "click"], [1, "fi", "fi-rr-trash"]], template: function TaulparchiDashboardComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiDashboardComponent, selectors: [["app-taulparchi-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 56, vars: 8, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["type", "button", 1, "btn", "btn-primary"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table", "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "badge", "bg-primary"], [1, "fi", "fi-rr-mobile"], [1, "fi", "fi-rr-marker"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "click"], [1, "fi", "fi-rr-print"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"], [1, "fi", "fi-rr-eye"], ["type", "button", 1, "btn", "btn-sm", "btn-danger", "me-2", "mb-2", 3, "click"], [1, "fi", "fi-rr-trash"]], template: function TaulparchiDashboardComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4");
         \u0275\u0275text(3, "All Taula Parchi");
@@ -83082,52 +83161,49 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
         \u0275\u0275text(26, "Taula Parchis");
         \u0275\u0275elementEnd()();
         \u0275\u0275elementStart(27, "div", 2)(28, "div", 16)(29, "table", 17)(30, "thead", 18)(31, "tr")(32, "th", 19);
-        \u0275\u0275text(33, "Sr.no");
+        \u0275\u0275text(33, "Date");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(34, "th", 19);
-        \u0275\u0275text(35, "Date");
+        \u0275\u0275text(35, "Purchase Status");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(36, "th", 19);
-        \u0275\u0275text(37, "Purchase Status");
+        \u0275\u0275text(37, "Farmer's Name");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(38, "th", 19);
-        \u0275\u0275text(39, "Farmer's Name");
+        \u0275\u0275text(39, "Storage Location");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(40, "th", 19);
-        \u0275\u0275text(41, "Storage Location");
+        \u0275\u0275text(41, "Crop");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(42, "th", 19);
-        \u0275\u0275text(43, "Crop");
+        \u0275\u0275text(43, "Firm/Company");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(44, "th", 19);
-        \u0275\u0275text(45, "Firm/Company");
+        \u0275\u0275text(45, "Net Weight(in Quintal)");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(46, "th", 19);
-        \u0275\u0275text(47, "Net Weight(in Quintal)");
+        \u0275\u0275text(47, "Amount (\u20B9)");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(48, "th", 19);
-        \u0275\u0275text(49, "Amount (\u20B9)");
+        \u0275\u0275text(49, "Created By");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(50, "th", 19);
-        \u0275\u0275text(51, "Created By");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(52, "th", 19);
-        \u0275\u0275text(53, "Action");
+        \u0275\u0275text(51, "Action");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(54, "tbody");
-        \u0275\u0275template(55, TaulparchiDashboardComponent_tr_55_Template, 34, 19, "tr", 20);
-        \u0275\u0275pipe(56, "paginate");
+        \u0275\u0275elementStart(52, "tbody");
+        \u0275\u0275template(53, TaulparchiDashboardComponent_tr_53_Template, 36, 20, "tr", 20);
+        \u0275\u0275pipe(54, "paginate");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(57, "pagination-controls", 21);
-        \u0275\u0275listener("pageChange", function TaulparchiDashboardComponent_Template_pagination_controls_pageChange_57_listener($event) {
+        \u0275\u0275elementStart(55, "pagination-controls", 21);
+        \u0275\u0275listener("pageChange", function TaulparchiDashboardComponent_Template_pagination_controls_pageChange_55_listener($event) {
           ctx.currentPage = $event;
           return ctx.getTaulaParchis();
         });
         \u0275\u0275elementEnd()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275advance(55);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(56, 1, ctx.TaulaParchi, \u0275\u0275pureFunction3(4, _c027, ctx.perPage, ctx.currentPage, ctx.TaulaParchiCount)));
+        \u0275\u0275advance(53);
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(54, 1, ctx.TaulaParchi, \u0275\u0275pureFunction3(4, _c027, ctx.perPage, ctx.currentPage, ctx.TaulaParchiCount)));
       }
     }, dependencies: [
       CommonModule,
@@ -83150,12 +83226,12 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
 })();
 
 // src/app/pages/taulparchi-view/taulparchi-view.component.ts
-function TaulparchiViewComponent_div_59_Template(rf, ctx) {
+function TaulparchiViewComponent_div_77_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 13)(1, "h6", 14);
+    \u0275\u0275elementStart(0, "div", 14)(1, "h6", 15);
     \u0275\u0275text(2, "Exempt Hammali:");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "p", 15);
+    \u0275\u0275elementStart(3, "p", 16);
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
   }
@@ -83300,15 +83376,15 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
           <div class="section">
             <div class="row">
               <div class="label"><b>Farmer's Name:</b></div>
-              <div class="value">${taulaParchi.farmerDetails?.name || "N/A"}</div>
-            </div>
-            <div class="row">
-              <div class="label"><b>Village:</b></div>
-              <div class="value">${taulaParchi.villageDetails?.name || "N/A"}</div>
+              <div class="value">${taulaParchi.farmerName || "N/A"}</div>
             </div>
             <div class="row">
               <div class="label"><b>Mobile:</b></div>
-              <div class="value">${taulaParchi.farmerDetails?.mobile || "N/A"}</div>
+              <div class="value">${taulaParchi.farmerMobile || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Village:</b></div>
+              <div class="value">${taulaParchi.farmerVillage || "N/A"}</div>
             </div>
             <div class="row">
               <div class="label"><b>Storage Location:</b></div>
@@ -83414,7 +83490,7 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiViewComponent, selectors: [["app-taulparchi-view"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 109, vars: 25, consts: [[1, "container", "mt-2"], [1, "card", "bg-white", "mb-3"], [1, "card-header"], [1, "text-center"], [1, "mb-0"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "fas", "fa-print"], [1, "card-title"], [1, "row"], [1, "col", "text-start"], [1, "col", "text-end"], [1, "ms-2"], [1, "card-body", "bg-warning"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["class", "border-bottom border-dark border-bottom-dotted mb-2 pb-2", 4, "ngIf"], [1, "text-center", "mt-4"], ["type", "button", 1, "btn", "btn-secondary", "px-5", 3, "click"], [1, "fas", "fa-arrow-left"]], template: function TaulparchiViewComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiViewComponent, selectors: [["app-taulparchi-view"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 122, vars: 26, consts: [[1, "container", "mt-2"], [1, "card", "bg-white", "mb-3"], [1, "card-header"], [1, "text-center"], [1, "mb-0"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "fas", "fa-print"], [1, "card-title"], [1, "row"], [1, "col", "text-start"], [1, "col", "text-end"], [1, "ms-2"], [1, "card-body", "bg-warning"], [1, "col-12", "col-md-6", "col-lg-4"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["class", "border-bottom border-dark border-bottom-dotted mb-2 pb-2", 4, "ngIf"], [1, "text-center", "mt-4"], ["type", "button", 1, "btn", "btn-secondary", "px-5", 3, "click"], [1, "fas", "fa-arrow-left"]], template: function TaulparchiViewComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h4", 4);
         \u0275\u0275text(5, " Taul Parchi ");
@@ -83444,119 +83520,129 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
         \u0275\u0275text(26);
         \u0275\u0275pipe(27, "date");
         \u0275\u0275elementEnd()()()()();
-        \u0275\u0275elementStart(28, "div", 12)(29, "div", 13)(30, "h6", 14);
-        \u0275\u0275text(31, "Purchase Status:");
+        \u0275\u0275elementStart(28, "div", 12)(29, "div", 8)(30, "div", 13)(31, "div", 14)(32, "h6", 15);
+        \u0275\u0275text(33, "Farmer's Name:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(32, "p", 15);
-        \u0275\u0275text(33);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(34, "div", 13)(35, "h6", 14);
-        \u0275\u0275text(36, "Crop:");
+        \u0275\u0275elementStart(34, "p", 16);
+        \u0275\u0275text(35);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(36, "div", 13)(37, "div", 14)(38, "h6", 15);
+        \u0275\u0275text(39, "Mobile:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(37, "p", 15);
-        \u0275\u0275text(38);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(39, "div", 13)(40, "h6", 14);
-        \u0275\u0275text(41, "Farmer's Name:");
+        \u0275\u0275elementStart(40, "p", 16);
+        \u0275\u0275text(41);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(42, "div", 13)(43, "div", 14)(44, "h6", 15);
+        \u0275\u0275text(45, "Village:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(42, "p", 15);
-        \u0275\u0275text(43);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(44, "div", 13)(45, "h6", 14);
-        \u0275\u0275text(46, "Firm/Company:");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(47, "p", 15);
-        \u0275\u0275text(48);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(49, "div", 13)(50, "h6", 14);
-        \u0275\u0275text(51, "Rate (Per Quintal):");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(52, "p", 15);
-        \u0275\u0275text(53);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(54, "div", 13)(55, "h6", 14);
-        \u0275\u0275text(56, "Tulai Options:");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(57, "p", 15);
-        \u0275\u0275text(58);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275template(59, TaulparchiViewComponent_div_59_Template, 5, 1, "div", 16);
-        \u0275\u0275elementStart(60, "div", 13)(61, "h6", 14);
-        \u0275\u0275text(62, "Bharti (in Kgs):");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(63, "p", 15);
-        \u0275\u0275text(64);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(65, "div", 13)(66, "h6", 14);
-        \u0275\u0275text(67, "Bora Quantity:");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(68, "p", 15);
-        \u0275\u0275text(69);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(70, "div", 13)(71, "h6", 14);
-        \u0275\u0275text(72, "Loose Quantity (in Kgs):");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(73, "p", 15);
-        \u0275\u0275text(74);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(75, "div", 13)(76, "h6", 14);
-        \u0275\u0275text(77, "Hammali (in \u20B9):");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(78, "p", 15);
-        \u0275\u0275text(79);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(80, "div", 13)(81, "h6", 14);
-        \u0275\u0275text(82, "Net Weight (in Quintal):");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(83, "p", 15);
-        \u0275\u0275text(84);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(85, "div", 13)(86, "h6", 14);
-        \u0275\u0275text(87, "Hammal:");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(88, "p", 15);
-        \u0275\u0275text(89);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(90, "div", 13)(91, "h6", 14);
-        \u0275\u0275text(92, "Storage Location:");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(93, "p", 15);
-        \u0275\u0275text(94);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(95, "div", 13)(96, "h6", 14);
-        \u0275\u0275text(97, "Village:");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(98, "p", 15);
-        \u0275\u0275text(99);
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(100, "div", 13)(101, "h6", 14);
-        \u0275\u0275text(102, "Amount (in \u20B9):");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(103, "p", 15);
-        \u0275\u0275text(104);
+        \u0275\u0275elementStart(46, "p", 16);
+        \u0275\u0275text(47);
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(105, "div", 17)(106, "button", 18);
-        \u0275\u0275listener("click", function TaulparchiViewComponent_Template_button_click_106_listener() {
+        \u0275\u0275elementStart(48, "div", 8)(49, "div", 13)(50, "div", 14)(51, "h6", 15);
+        \u0275\u0275text(52, "Purchase Status:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(53, "p", 16);
+        \u0275\u0275text(54);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(55, "div", 13)(56, "div", 14)(57, "h6", 15);
+        \u0275\u0275text(58, "Crop:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(59, "p", 16);
+        \u0275\u0275text(60);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(61, "div", 13)(62, "div", 14)(63, "h6", 15);
+        \u0275\u0275text(64, "Firm/Company:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(65, "p", 16);
+        \u0275\u0275text(66);
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(67, "div", 14)(68, "h6", 15);
+        \u0275\u0275text(69, "Rate (Per Quintal):");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(70, "p", 16);
+        \u0275\u0275text(71);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(72, "div", 14)(73, "h6", 15);
+        \u0275\u0275text(74, "Tulai Options:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(75, "p", 16);
+        \u0275\u0275text(76);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275template(77, TaulparchiViewComponent_div_77_Template, 5, 1, "div", 17);
+        \u0275\u0275elementStart(78, "div", 14)(79, "h6", 15);
+        \u0275\u0275text(80, "Bora Quantity:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(81, "p", 16);
+        \u0275\u0275text(82);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(83, "div", 14)(84, "h6", 15);
+        \u0275\u0275text(85, "Bharti (in Kgs):");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(86, "p", 16);
+        \u0275\u0275text(87);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(88, "div", 14)(89, "h6", 15);
+        \u0275\u0275text(90, "Loose Quantity (in Kgs):");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(91, "p", 16);
+        \u0275\u0275text(92);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(93, "div", 14)(94, "h6", 15);
+        \u0275\u0275text(95, "Hammali (in \u20B9):");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(96, "p", 16);
+        \u0275\u0275text(97);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(98, "div", 14)(99, "h6", 15);
+        \u0275\u0275text(100, "Net Weight (in Quintal):");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(101, "p", 16);
+        \u0275\u0275text(102);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(103, "div", 14)(104, "h6", 15);
+        \u0275\u0275text(105, "Hammal:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(106, "p", 16);
+        \u0275\u0275text(107);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(108, "div", 14)(109, "h6", 15);
+        \u0275\u0275text(110, "Storage Location:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(111, "p", 16);
+        \u0275\u0275text(112);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(113, "div", 14)(114, "h6", 15);
+        \u0275\u0275text(115, "Amount (in \u20B9):");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(116, "p", 16);
+        \u0275\u0275text(117);
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(118, "div", 18)(119, "button", 19);
+        \u0275\u0275listener("click", function TaulparchiViewComponent_Template_button_click_119_listener() {
           return ctx.goBack();
         });
-        \u0275\u0275element(107, "i", 19);
-        \u0275\u0275text(108, " Back ");
+        \u0275\u0275element(120, "i", 20);
+        \u0275\u0275text(121, " Back ");
         \u0275\u0275elementEnd()()();
       }
       if (rf & 2) {
         \u0275\u0275advance(17);
         \u0275\u0275textInterpolate1(" ", ctx.getTaulaParchiSrNo(ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at), " ");
         \u0275\u0275advance(4);
-        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(22, 19, ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at, "dd-MM-YYYY"), " ");
+        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(22, 20, ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at, "dd-MM-YYYY"), " ");
         \u0275\u0275advance(5);
-        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(27, 22, ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at, "HH:mm:ss"), " ");
+        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(27, 23, ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at, "HH:mm:ss"), " ");
+        \u0275\u0275advance(9);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.farmerName) ? ctx.taulaParchi.farmerName : "N/A");
+        \u0275\u0275advance(6);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.farmerMobile) ? ctx.taulaParchi.farmerMobile : "N/A");
+        \u0275\u0275advance(6);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.farmerVillage) ? ctx.taulaParchi.farmerVillage : "N/A");
         \u0275\u0275advance(7);
         \u0275\u0275textInterpolate1(" ", (ctx.taulaParchi == null ? null : ctx.taulaParchi.purchase) == "directPurchase" ? "Direct Purchase" : (ctx.taulaParchi == null ? null : ctx.taulaParchi.purchase) == "AuctionMandiPurchase" ? "Auction Mandi Purchase" : "N/A", " ");
-        \u0275\u0275advance(5);
+        \u0275\u0275advance(6);
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.cropDetails == null ? null : ctx.taulaParchi.cropDetails.name) ? ctx.taulaParchi.cropDetails.name : "N/A");
-        \u0275\u0275advance(5);
-        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.farmerDetails == null ? null : ctx.taulaParchi.farmerDetails.name) ? ctx.taulaParchi.farmerDetails.name : "N/A");
-        \u0275\u0275advance(5);
+        \u0275\u0275advance(6);
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.companyDetails == null ? null : ctx.taulaParchi.companyDetails.name) ? ctx.taulaParchi.companyDetails == null ? null : ctx.taulaParchi.companyDetails.name : "N/A");
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.rate) ? "\u20B9" + ctx.taulaParchi.rate : "N/A");
@@ -83565,9 +83651,9 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
         \u0275\u0275advance();
         \u0275\u0275property("ngIf", (ctx.taulaParchi == null ? null : ctx.taulaParchi.tulai) === "Labour");
         \u0275\u0275advance(5);
-        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.bharti) ? ctx.taulaParchi.bharti : "N/A");
-        \u0275\u0275advance(5);
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.boraQuantity) ? ctx.taulaParchi.boraQuantity : "N/A");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.bharti) ? ctx.taulaParchi.bharti : "N/A");
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.looseQuantity) ? ctx.taulaParchi.looseQuantity : "N/A");
         \u0275\u0275advance(5);
@@ -83578,8 +83664,6 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.hammalDetails == null ? null : ctx.taulaParchi.hammalDetails.name) ? ctx.taulaParchi.hammalDetails.name : "N/A");
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.wearhouseDetails == null ? null : ctx.taulaParchi.wearhouseDetails.name) ? ctx.taulaParchi.wearhouseDetails.name : "N/A");
-        \u0275\u0275advance(5);
-        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.villageDetails.name) ? ctx.taulaParchi.villageDetails.name : "N/A");
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.amount) ? "\u20B9" + ctx.taulaParchi.amount : "N/A");
       }

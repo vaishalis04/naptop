@@ -9,31 +9,31 @@ module.exports = {
     create: async (req, res, next) => {
         try {
             const data = req.body;
-            
+
             if (!data.name) {
                 return res.status(400).json({ error: "Village Name is required." });
             }
-    
+
             const existingVillage = await Model.findOne({ name: data.name });
             if (existingVillage) {
                 return res.status(400).json({ error: "Village Name must be unique." });
             }
-    
+
             if (req.user) {
                 data.created_by = req.user.id;
             }
-    
+
             const newVillage = new Model(data);
-            
+
             const result = await newVillage.save();
-    
+
             res.status(201).json(result);
         } catch (error) {
-            console.error("Error saving village:", error); 
-            next(createError(500, "Failed to save village.")); 
+            console.error("Error saving village:", error);
+            next(createError(500, "Failed to save village."));
         }
     },
-    
+
 list: async (req, res, next) => {
     try {
         const { name, disabled, is_inactive, page, limit, order_by, order_in } = req.query;
@@ -46,20 +46,18 @@ list: async (req, res, next) => {
         if (order_by) {
             sorting[order_by] = order_in === "desc" ? -1 : 1;
         } else {
-            sorting["_id"] = -1; 
+            sorting["_id"] = -1;
         }
 
         const query = {};
 
         if (name) {
-            query.name = new RegExp(name, "i"); 
+            query.name = new RegExp(name, "i");
         }
 
-        query.disabled = { $ne: true }; 
+        query.disabled = { $ne: true };
 
-        query.is_inactive = { $ne: true }; 
-    
-        console.log(query);
+        query.is_inactive = { $ne: true };
 
         let result = await Model.aggregate([
             {
@@ -95,13 +93,13 @@ list: async (req, res, next) => {
 },
 update: async (req, res, next) => {
     try {
-        const { id } = req.params; 
+        const { id } = req.params;
 
         if (!id) {
             throw createError.BadRequest("Invalid Parameters: Missing ID");
         }
 
-        const data = req.body; 
+        const data = req.body;
 
         if (!data || Object.keys(data).length === 0) {
             throw createError.BadRequest("Invalid Parameters: No data provided");
@@ -110,18 +108,18 @@ update: async (req, res, next) => {
         data.updated_at = Date.now();
 
         const result = await Model.findByIdAndUpdate(
-            id,                    
-            { $set: data },         
-            { new: true }           
+            id,
+            { $set: data },
+            { new: true }
         );
 
         if (!result) {
             throw createError.NotFound("Village not found");
         }
 
-        res.json(result); 
+        res.json(result);
     } catch (error) {
-        if (error.isJoi === true) error.status = 422; 
+        if (error.isJoi === true) error.status = 422;
         res.status(error.status || 500).send({
             error: {
                 status: error.status || 500,
@@ -132,16 +130,16 @@ update: async (req, res, next) => {
 },
 delete: async (req, res, next) => {
     try {
-        const { id } = req.params; 
+        const { id } = req.params;
 
         if (!id) {
             throw createError.BadRequest("Invalid Parameters: Missing ID");
         }
 
-        const deleted_at = Date.now(); 
+        const deleted_at = Date.now();
 
         const result = await Model.updateOne(
-            { _id: mongoose.Types.ObjectId(id) },   
+            { _id: mongoose.Types.ObjectId(id) },
             { $set: { disabled: true, deleted_at } }
         );
 
@@ -151,12 +149,12 @@ delete: async (req, res, next) => {
 
         res.json({ message: "Village deleted successfully", result });
     } catch (error) {
-        next(error); 
+        next(error);
     }
 },
 get: async (req, res, next) => {
     try {
-        const { id } = req.params; 
+        const { id } = req.params;
 
         if (!id) {
             throw createError.BadRequest("Invalid Parameters: Missing ID");

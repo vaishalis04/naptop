@@ -138,8 +138,6 @@ module.exports = {
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
 
-      console.log(query);
-
       // Aggregate query to get truck loading data with filters, pagination, and sorting
       let result = await Model.aggregate([
         { $match: query },
@@ -685,8 +683,6 @@ module.exports = {
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
 
-      console.log(query);
-
       // Aggregate query to get truck loading data with filters, pagination, and sorting
       let result = await Model.aggregate([
         { $match: query },
@@ -780,8 +776,6 @@ module.exports = {
 
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
-
-      console.log(query);
 
       // Aggregate query to get truck loading data with filters, pagination, and sorting
       let result = await Model.aggregate([
@@ -997,8 +991,6 @@ module.exports = {
   //     query.disabled = { $ne: true };
   //     query.is_inactive = { $ne: true };
 
-  //     console.log(query);
-
   //     let result = await Model.aggregate([
   //       { $match: query },
   //       { $sort: sorting },
@@ -1042,7 +1034,6 @@ module.exports = {
   //       { $sort: sorting },
   //     ]);
 
-  //     console.log("result", result);
   //     const resultCount = await Model.countDocuments(query);
 
   //     res.json({
@@ -1104,8 +1095,6 @@ module.exports = {
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
 
-      console.log("Query being used:", query);
-
       // Debugging: Test base query without lookups and grouping
       let baseResult = await Model.aggregate([
         { $match: query },
@@ -1114,12 +1103,6 @@ module.exports = {
         { $limit: _limit },
       ]);
 
-      console.log("Base query result:", baseResult);
-
-      // If baseResult is empty, there's an issue with the query, sorting, or pagination
-      if (baseResult.length === 0) {
-        console.log("No records found for base query.");
-      }
 
       // Now reintroduce the lookups and grouping step-by-step to identify issues
       let result = await Model.aggregate([
@@ -1167,13 +1150,6 @@ module.exports = {
         }
       ]);
 
-      console.log("Aggregation result before grouping:", result);
-
-      // If there’s no data, it's likely an issue with the lookups or matching conditions.
-      if (result.length === 0) {
-        console.log("No results found after lookup stages.");
-      }
-
       // Now proceed with the grouping step if there is data
       let groupedResult = await Model.aggregate([
         { $match: query },
@@ -1216,8 +1192,6 @@ module.exports = {
         },
         { $sort: sorting },
       ]);
-
-      console.log("Grouped result:", groupedResult);
 
       const resultCount = await Model.countDocuments(query);
 
@@ -1283,8 +1257,6 @@ module.exports = {
 
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
-
-      console.log(query);
 
       // Aggregate query to get truck loading data with filters, pagination, and sorting
       let result = await Model.aggregate([

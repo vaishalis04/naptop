@@ -11,7 +11,6 @@ module.exports = {
     create: async (req, res, next) => {
         try {
             const data = req.body;
-            console.log("data", data);
 
             if (!data.name) {
                 return res.status(400).json({ error: "hammal is required." });
@@ -60,8 +59,6 @@ module.exports = {
             query.disabled = { $ne: true };
 
             query.is_inactive = { $ne: true };
-
-            console.log(query);
 
             const result = await Model.aggregate([
                 { $match: query },

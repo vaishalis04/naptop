@@ -404,3 +404,36 @@ a:hover::before {
 .border-bottom-dotted {
     border-bottom-style: dotted !important;
 }
+
+/* p-element p-dropdown-label p-inputtext p-placeholder ng-star-inserted */
+.p-element.p-dropdown-label.p-inputtext.ng-star-inserted {
+    border: none;
+    border-bottom: 1px dotted #000;
+    margin-bottom: 10px;
+    border-radius: 0;
+    padding: 5px;
+    background-color: transparent;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+/* p-dropdown p-component p-inputwrapper p-dropdown-clearable p-inputwrapper-filled */
+.p-dropdown.p-component.p-inputwrapper.p-dropdown-clearable {
+    border: none;
+    background-color: transparent;
+}
+.p-dropdown-items {
+    margin: 0;
+    padding: 0 !important;
+    list-style-type: none;
+}
+.p-dropdown-header.ng-star-inserted {
+    padding: 0 !important;
+}
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+    padding: 0.5rem;
+}
+.p-dropdown-panel .p-dropdown-header .p-dropdown-filter {
+    padding: .5rem !important;
+}

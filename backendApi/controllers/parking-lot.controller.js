@@ -85,9 +85,7 @@ module.exports = {
             query.updated_at = updated_at;
         }
         if (released_at) {
-            console.log(released_at)
             query.released_at = (released_at == 1 ? {$exists: true} : {$exists: false});
-            console.log(query.released_at)
         }
         if (deleted_at) {
             query.deleted_at = deleted_at;
@@ -225,7 +223,6 @@ module.exports = {
         try {
         const { id } = req.params;
         const data = req.body;
-        console.log(data);
         if (!id) {
             throw createError.BadRequest('Invalid Parameters');
         }

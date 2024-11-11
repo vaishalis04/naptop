@@ -31,11 +31,11 @@
         <h4 class="mb-0">Taula Parchis</h4>
       </div>
       <div class="card-body">
-        <div class="table-responsive">
+        <div class="table table-responsive">
           <table class="table table-bordered">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">Sr.no</th>
+                <!-- <th scope="col">Sr.no</th> -->
                 <th scope="col">Date</th>
                 <th scope="col">Purchase Status</th>
                 <th scope="col">Farmer's Name</th>
@@ -61,10 +61,20 @@
                         };
                   let i = index
                 ">
-                <td>{{ currentPage * perPage - perPage + (i + 1) }}</td>
-                <td>{{ taulaParchi.created_at | date : "MM-dd-YYYY" }}</td>
+                <!-- <td>{{ currentPage * perPage - perPage + (i + 1) }}</td> -->
+                <td>{{ taulaParchi.created_at | date : "MM-dd-YYYY hh:mm" }}</td>
                 <td>{{ taulaParchi?.purchase }}</td>
-                <td>{{ taulaParchi?.farmerDetails?.name }}</td>
+                <td>
+                  {{ taulaParchi?.farmerName }}
+                  <br>
+                  <span class="badge bg-primary">
+                    <i class="fi fi-rr-mobile"></i> | {{ taulaParchi?.farmerMobile }}
+                  </span>
+                  <br>
+                  <span class="badge bg-primary">
+                    <i class="fi fi-rr-marker"></i> | {{ taulaParchi?.farmerVillage }}
+                  </span>
+                </td>
                 <td>{{ taulaParchi?.wearhouseDetails?.name }}</td>
                 <td>{{ taulaParchi?.cropDetails?.name }}</td>
                 <td>{{ taulaParchi?.companyDetails?.name }}</td>
@@ -72,28 +82,18 @@
                 <td>{{ taulaParchi.amount | number: '.2' }}</td>
                 <td>{{ taulaParchi?.userDetails?.name }}</td>
                 <td>
-                  <div class="row">
-                    <div class="col-4">
-                      <button type="button" class="btn btn-primary" (click)="printReceipt(taulaParchi)">
-                        <!-- Print -->
-                        <i class="fi fi-rr-print"></i>
-                      </button>
-                    </div>
-                    <div class="col-4">
-                      <button type="button" class="btn btn-primary" [routerLink]="['/taul-parchi-view', taulaParchi._id]">
-                        <!-- View -->
-                        <i class="fi fi-rr-eye"></i>
-                      </button>
-                    </div>
-                    <div class="col-4">
-                      <!-- delete -->
-                      <button type="button" class="btn btn-danger" (click)="deleteTaulaParchi(taulaParchi._id)">
-                        <i class="fi fi-rr-trash"></i>
-                      </button>
-                    </div>
-                  </div>
-
-
+                  <button type="button" class="btn btn-sm btn-primary me-2 mb-2" (click)="printReceipt(taulaParchi)">
+                    <!-- Print -->
+                    <i class="fi fi-rr-print"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-primary me-2 mb-2" [routerLink]="['/taul-parchi-view', taulaParchi._id]">
+                    <!-- View -->
+                    <i class="fi fi-rr-eye"></i>
+                  </button>
+                  <!-- delete -->
+                  <button type="button" class="btn btn-sm btn-danger me-2 mb-2" (click)="deleteTaulaParchi(taulaParchi._id)">
+                    <i class="fi fi-rr-trash"></i>
+                  </button>
                 </td>
               </tr>
             </tbody>

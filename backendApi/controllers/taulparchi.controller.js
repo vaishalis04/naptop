@@ -7,7 +7,7 @@ module.exports = {
   create: async (req, res, next) => {
     try {
       const data = req.body;
-      console.log("data", data);
+
       if (data.tulai === "Labour" && (!data.hammal || data.hammal === "")) {
         return res
           .status(400)
@@ -17,10 +17,10 @@ module.exports = {
         data.hammal = null;
       }
       // Validate required fields
-      if (!data.farmer) {
+      if (!data.farmerName) {
         return res.status(400).json({ error: "Farmer is required." });
       }
-      if (!data.village) {
+      if (!data.farmerVillage) {
         return res.status(400).json({ error: "Village is required." });
       }
       if (!data.firm_company) {
@@ -92,8 +92,6 @@ module.exports = {
       });
       const stockResult = await newStock.save();
 
-      console.log("data", result);
-
       res.status(201).json(result);
     } catch (error) {
       console.error("Error saving TaulParchi:", error);
@@ -127,7 +125,6 @@ module.exports = {
   //     query.disabled = { $ne: true };
   //     query.is_inactive = { $ne: true };
 
-  //     console.log(query);
 
   //     // Aggregate query to get taul parchis with applied filters, pagination, and sorting
   //     let result = await Model.aggregate([
@@ -196,7 +193,6 @@ module.exports = {
   //         total: resultCount,
   //       },
   //     });
-  //     console.log("gvgcav",result)
   //   } catch (error) {
   //     next(error); // Handle errors
   //   }
@@ -228,8 +224,6 @@ module.exports = {
       }
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
-
-      console.log("Query:", query);
 
       // Aggregate query to get taul parchis with applied filters, pagination, and sorting
       let result = await Model.aggregate([
@@ -336,8 +330,6 @@ module.exports = {
           },
         },
       ]);
-
-      console.log("Result:", result);
 
       // Count total number of results for pagination metadata
       const resultCount = await Model.countDocuments(query);
@@ -721,8 +713,6 @@ module.exports = {
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
 
-      console.log(query);
-
       let result = await Model.aggregate([
         { $match: query },
         { $sort: sorting },
@@ -758,7 +748,6 @@ module.exports = {
         },
         { $sort: sorting },
       ]);
-      console.log("result", result);
       const resultCount = await Model.countDocuments(query);
 
       res.json({
@@ -811,8 +800,6 @@ module.exports = {
 
   //     query.disabled = { $ne: true };
   //     query.is_inactive = { $ne: true };
-
-  //     console.log(query);
 
   //     // Aggregate query to get total weight per crop
   //     let result = await Model.aggregate([
@@ -940,8 +927,6 @@ module.exports = {
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
 
-      console.log(query);
-
       // Perform aggregation to calculate total weight per crop
       const result = await Model.aggregate([
         { $match: query },
@@ -1038,8 +1023,6 @@ module.exports = {
     const _limit = limit ? parseInt(limit) : 20;
     const _skip = (_page - 1) * _limit;
 
-    console.log("Request Parameters:", req.params, req.query); // Log request parameters
-
     try {
       // Define sorting logic
       let sorting = {};
@@ -1059,8 +1042,6 @@ module.exports = {
       // }
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
-
-      console.log("Final Query Object:", query); // Log the final query
 
       let result = await Model.aggregate([
         { $match: query },
@@ -1118,8 +1099,6 @@ module.exports = {
         { $unwind: "$farmerDetails" },
       ]);
 
-      console.log("Result:", result);
-
       const resultCount = await Model.countDocuments(query);
 
       res.json({
@@ -1170,8 +1149,6 @@ module.exports = {
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
 
-      console.log(query);
-
       let result = await Model.aggregate([
         { $match: query },
         { $sort: sorting },
@@ -1215,7 +1192,6 @@ module.exports = {
         { $sort: sorting },
       ]);
 
-      console.log("result", result);
       const resultCount = await Model.countDocuments(query);
 
       res.json({
@@ -1276,8 +1252,6 @@ module.exports = {
 
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
-
-      console.log(query);
 
       // Aggregate query to get truck loading data with filters, pagination, and sorting
       let result = await Model.aggregate([

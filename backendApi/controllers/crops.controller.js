@@ -12,31 +12,30 @@ module.exports = {
     create: async (req, res, next) => {
         try {
             const data = req.body;
-            console.log("data", data);
-            
+
             if (!data.name) {
                 return res.status(400).json({ error: "Crop Name is required." });
             }
-    
+
             const existingCrop = await Model.findOne({ name: data.name });
             if (existingCrop) {
                 return res.status(400).json({ error: "Crop Name must be unique." });
             }
-    
+
             if (req.user) {
                 data.created_by = req.user.id;
             }
-    
+
             const newCrop = new Model(data);
             const result = await newCrop.save();
-    
+
             res.status(201).json(result);
         } catch (error) {
             console.error("Error saving crop:", error);
             next(createError(500, "Failed to save crop."));
         }
     },
-    
+
  list : async (req, res, next) => {
     try {
         const { name, disabled, page, limit, order_by, order_in } = req.query;
@@ -49,21 +48,18 @@ module.exports = {
         if (order_by) {
             sorting[order_by] = order_in === "desc" ? -1 : 1;
         } else {
-            sorting["_id"] = -1; 
+            sorting["_id"] = -1;
         }
 
         const query = {};
 
         if (name) {
-            query.name = new RegExp(name, "i"); 
+            query.name = new RegExp(name, "i");
         }
 
-        query.disabled = { $ne: true }; 
+        query.disabled = { $ne: true };
 
-        query.is_inactive = { $ne: true }; 
-    
-        console.log(query);
-    
+        query.is_inactive = { $ne: true };
 
         const result = await Model.aggregate([
             {
@@ -94,12 +90,12 @@ module.exports = {
             },
         });
     } catch (error) {
-        next(error); 
+        next(error);
     }
 },
  update: async (req, res, next) => {
     try {
-        const { id } = req.params; 
+        const { id } = req.params;
 
         if (!id) {
             throw createError.BadRequest("Invalid Parameters: Missing ID");
@@ -110,21 +106,21 @@ module.exports = {
             throw createError.BadRequest("Invalid Parameters: No data provided");
         }
 
-        data.updated_at = Date.now(); 
+        data.updated_at = Date.now();
 
         const result = await Model.findByIdAndUpdate(
-            id,                   
-            { $set: data },      
-            { new: true }          
+            id,
+            { $set: data },
+            { new: true }
         );
 
         if (!result) {
             throw createError.NotFound("Crop not found");
         }
 
-        res.json(result); 
+        res.json(result);
     } catch (error) {
-        if (error.isJoi === true) error.status = 422; 
+        if (error.isJoi === true) error.status = 422;
         res.status(error.status || 500).send({
             error: {
                 status: error.status || 500,
@@ -135,17 +131,17 @@ module.exports = {
 },
  delete : async (req, res, next) => {
     try {
-        const { id } = req.params; 
+        const { id } = req.params;
 
         if (!id) {
             throw createError.BadRequest("Invalid Parameters: Missing ID");
         }
 
-        const deleted_at = Date.now(); 
+        const deleted_at = Date.now();
 
         const result = await Model.updateOne(
-            { _id: mongoose.Types.ObjectId(id) },     
-            { $set: { disabled: true, deleted_at } }  
+            { _id: mongoose.Types.ObjectId(id) },
+            { $set: { disabled: true, deleted_at } }
         );
 
         if (result.nModified === 0) {
@@ -154,12 +150,12 @@ module.exports = {
 
         res.json({ message: "Crop deleted successfully", result });
     } catch (error) {
-        next(error); 
+        next(error);
     }
 },
  get: async (req, res, next) => {
     try {
-        const { id } = req.params; 
+        const { id } = req.params;
 
         if (!id) {
             throw createError.BadRequest("Invalid Parameters: Missing ID");
@@ -173,7 +169,7 @@ module.exports = {
 
         res.json(result);
     } catch (error) {
-        next(error); 
+        next(error);
     }
 }
 

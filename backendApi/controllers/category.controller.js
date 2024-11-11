@@ -146,7 +146,6 @@ const createCategory = async (req, res, next) => {
         res.status(201).json(newCategory);
     } catch (error) {
         next(error);
-        // console.log(error);
         // res.status(500).json({ message: error.message });
     }
 };
@@ -156,8 +155,7 @@ const updateCategoryById = async (req, res, next) => {
     try {
         const categoryId = req.params.id; // Assuming the ID is passed as a URL parameter
         const { name, description, parentId, disabled, is_inactive } = req.body;
-        console.log(categoryId);
-        console.log({ name, description, parentId, disabled, is_inactive });
+
         // Find the category by ID and update its fields
         const updatedCategory = await Category.findByIdAndUpdate(
             categoryId,

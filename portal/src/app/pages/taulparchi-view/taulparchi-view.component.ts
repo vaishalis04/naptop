@@ -159,15 +159,15 @@ export class TaulparchiViewComponent implements OnInit {
           <div class="section">
             <div class="row">
               <div class="label"><b>Farmer's Name:</b></div>
-              <div class="value">${taulaParchi.farmerDetails?.name || 'N/A'}</div>
-            </div>
-            <div class="row">
-              <div class="label"><b>Village:</b></div>
-              <div class="value">${taulaParchi.villageDetails?.name || 'N/A'}</div>
+              <div class="value">${taulaParchi.farmerName || 'N/A'}</div>
             </div>
             <div class="row">
               <div class="label"><b>Mobile:</b></div>
-              <div class="value">${taulaParchi.farmerDetails?.mobile || 'N/A'}</div>
+              <div class="value">${taulaParchi.farmerMobile || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Village:</b></div>
+              <div class="value">${taulaParchi.farmerVillage || 'N/A'}</div>
             </div>
             <div class="row">
               <div class="label"><b>Storage Location:</b></div>

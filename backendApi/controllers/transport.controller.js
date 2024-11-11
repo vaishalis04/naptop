@@ -11,8 +11,7 @@ module.exports = {
 create: async (req, res, next) => {
     try {
         const data = req.body; // Extracting data from request body
-        console.log("data", data);
-        
+
         // Check if the name is provided
         if (!data.name ) {
             return res.status(400).json({ error: "Name and Vehicle Number are required." });
@@ -31,7 +30,7 @@ create: async (req, res, next) => {
 
         // Create a new Transport instance with the provided data
         const newTransport = new Model(data);
-        
+
         // Save the new transport entry to the database
         const result = await newTransport.save();
 
@@ -68,9 +67,7 @@ list: async (req, res, next) => {
         }
 
         query.disabled = { $ne: true };
-        query.is_inactive = { $ne: true }; 
-    
-        console.log(query);
+        query.is_inactive = { $ne: true };
 
         // Aggregate query to get transport entries with filters, pagination, and sorting
         let result = await Model.aggregate([

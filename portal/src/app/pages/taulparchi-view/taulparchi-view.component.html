@@ -26,25 +26,52 @@
         </div>
       </h6>
     </div>
+
+
     <div class="card-body bg-warning">
-      <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
-        <h6 class="card-subtitle mb-2 text-muted">Purchase Status:</h6>
-        <p class="card-text">
-          {{ taulaParchi?.purchase == 'directPurchase' ? 'Direct Purchase' : taulaParchi?.purchase ==
-          'AuctionMandiPurchase' ? 'Auction Mandi Purchase' : 'N/A' }}
-        </p>
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+            <h6 class="card-subtitle mb-2 text-muted">Farmer's Name:</h6>
+            <p class="card-text">{{ taulaParchi?.farmerName ? taulaParchi.farmerName : 'N/A' }}</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+            <h6 class="card-subtitle mb-2 text-muted">Mobile:</h6>
+            <p class="card-text">{{ taulaParchi?.farmerMobile ? taulaParchi.farmerMobile : 'N/A' }}</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+            <h6 class="card-subtitle mb-2 text-muted">Village:</h6>
+            <p class="card-text">{{ taulaParchi?.farmerVillage ? taulaParchi.farmerVillage : 'N/A' }}</p>
+          </div>
+        </div>
       </div>
-      <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
-        <h6 class="card-subtitle mb-2 text-muted">Crop:</h6>
-        <p class="card-text">{{ taulaParchi?.cropDetails?.name ? taulaParchi.cropDetails.name : 'N/A' }}</p>
-      </div>
-      <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
-        <h6 class="card-subtitle mb-2 text-muted">Farmer's Name:</h6>
-        <p class="card-text">{{ taulaParchi?.farmerDetails?.name ? taulaParchi.farmerDetails.name : 'N/A' }}</p>
-      </div>
-      <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
-        <h6 class="card-subtitle mb-2 text-muted">Firm/Company:</h6>
-        <p class="card-text">{{ taulaParchi?.companyDetails?.name ? taulaParchi.companyDetails?.name : 'N/A' }}</p>
+
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+            <h6 class="card-subtitle mb-2 text-muted">Purchase Status:</h6>
+            <p class="card-text">
+              {{ taulaParchi?.purchase == 'directPurchase' ? 'Direct Purchase' : taulaParchi?.purchase ==
+              'AuctionMandiPurchase' ? 'Auction Mandi Purchase' : 'N/A' }}
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+            <h6 class="card-subtitle mb-2 text-muted">Crop:</h6>
+            <p class="card-text">{{ taulaParchi?.cropDetails?.name ? taulaParchi.cropDetails.name : 'N/A' }}</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+            <h6 class="card-subtitle mb-2 text-muted">Firm/Company:</h6>
+            <p class="card-text">{{ taulaParchi?.companyDetails?.name ? taulaParchi.companyDetails?.name : 'N/A' }}</p>
+          </div>
+        </div>
       </div>
       <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
         <h6 class="card-subtitle mb-2 text-muted">Rate (Per Quintal):</h6>
@@ -64,15 +91,15 @@
         </p>
       </div>
 
+      <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
+        <h6 class="card-subtitle mb-2 text-muted">Bora Quantity:</h6>
+        <p class="card-text">{{ taulaParchi?.boraQuantity ? taulaParchi.boraQuantity : 'N/A' }}</p>
+      </div>
+
       <!-- Bharti field -->
       <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
         <h6 class="card-subtitle mb-2 text-muted">Bharti (in Kgs):</h6>
         <p class="card-text">{{ taulaParchi?.bharti ? taulaParchi.bharti : 'N/A' }}</p>
-      </div>
-
-      <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
-        <h6 class="card-subtitle mb-2 text-muted">Bora Quantity:</h6>
-        <p class="card-text">{{ taulaParchi?.boraQuantity ? taulaParchi.boraQuantity : 'N/A' }}</p>
       </div>
 
       <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
@@ -98,10 +125,6 @@
         <p class="card-text">{{ taulaParchi?.wearhouseDetails?.name ? taulaParchi.wearhouseDetails.name : 'N/A' }}</p>
       </div>
 
-      <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
-        <h6 class="card-subtitle mb-2 text-muted">Village:</h6>
-        <p class="card-text">{{ taulaParchi?.villageDetails.name ? taulaParchi.villageDetails.name : 'N/A' }}</p>
-      </div>
       <div class="border-bottom border-dark border-bottom-dotted mb-2 pb-2">
         <h6 class="card-subtitle mb-2 text-muted">Amount (in ₹):</h6>
         <p class="card-text">{{ taulaParchi?.amount ? '₹' + taulaParchi.amount : 'N/A' }}</p>

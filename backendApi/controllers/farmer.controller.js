@@ -8,7 +8,6 @@ module.exports = {
   create: async (req, res, next) => {
     try {
       const data = req.body;
-      console.log("data", data);
 
       if (!data.mobile) {
         return res.status(400).json({ error: "mobile is required." });
@@ -58,8 +57,6 @@ module.exports = {
       query.disabled = { $ne: true };
 
       query.is_inactive = { $ne: true };
-
-      console.log(query);
 
       let result = await Model.aggregate([
         {
@@ -178,32 +175,30 @@ module.exports = {
     try {
       const { name, disabled, is_inactive, page, limit, order_by, order_in } =
         req.query;
-  
+
       const _page = page ? parseInt(page) : 1;
       const _limit = limit ? parseInt(limit) : 20;
       const _skip = (_page - 1) * _limit;
-  
+
       let sorting = {};
       if (order_by) {
         sorting[order_by] = order_in === "desc" ? -1 : 1;
       } else {
         sorting["_id"] = -1;
       }
-  
+
       // Set up the query to only get premium farmers
       const query = {};
-      
+
       query.farmerType = "premium"; // Only get farmers with farmerType premium
-  
+
       if (name) {
         query.name = new RegExp(name, "i");
       }
-  
+
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
-  
-      console.log(query);
-  
+
       // Fetching farmers with the query
       let result = await Model.aggregate([
         {
@@ -219,9 +214,9 @@ module.exports = {
           $limit: _limit,
         },
       ]);
-  
+
       const resultCount = await Model.countDocuments(query);
-  
+
       res.json({
         data: result,
         meta: {
@@ -237,5 +232,5 @@ module.exports = {
       next(error);
     }
   }
-  
+
 };

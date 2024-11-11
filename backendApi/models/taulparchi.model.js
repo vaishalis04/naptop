@@ -15,6 +15,15 @@ const TaulParchiSchema = new mongoose.Schema({
     // mobile:{
     //     type: mongoose.Types.ObjectId,
     // },
+    farmerName: {
+        type: String,
+    },
+    farmerMobile: {
+        type: String,
+    },
+    farmerVillage: {
+        type: String,
+    },
     storage: {
         type: mongoose.Types.ObjectId,
     },

@@ -79,7 +79,6 @@ module.exports = {
       }
       // query.disabled = disabled && disabled == "true" ? true : false;
       // query.is_inactive = is_inactive && is_inactive == "true" ? true : false;
-      // console.log(query);
       let result = await Model.aggregate([
         {
           $match: query,

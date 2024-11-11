@@ -31,9 +31,9 @@ export class TaulParchiComponent implements OnInit {
   farmerToAddOrEdit: any = {};
 
   TaulParchi = {
-    farmer: '',
-    village: '',
-    mobile: '',
+    farmerName: '',
+    farmerMobile: '',
+    farmerVillage: '',
     storage: '',
     firm_company: '',
     rate: '',
@@ -214,18 +214,18 @@ export class TaulParchiComponent implements OnInit {
       });
   }
 
-  // Autofill the firm/company based on the selected farmer
-  autoFillFirmOrCompany() {
-    const selectedFarmer = this.Farmers.find(
-      (farmer) => farmer._id === this.TaulParchi.farmer
-    );
-    if (selectedFarmer) {
-      this.TaulParchi.firm_company = selectedFarmer.firm_company;
-      this.TaulParchi.village = selectedFarmer.village;
-    } else {
-      this.TaulParchi.firm_company = '';
-    }
-  }
+  // // Autofill the firm/company based on the selected farmer
+  // autoFillFirmOrCompany() {
+  //   const selectedFarmer = this.Farmers.find(
+  //     (farmer) => farmer._id === this.TaulParchi.farmer
+  //   );
+  //   if (selectedFarmer) {
+  //     this.TaulParchi.firm_company = selectedFarmer.firm_company;
+  //     this.TaulParchi.village = selectedFarmer.village;
+  //   } else {
+  //     this.TaulParchi.firm_company = '';
+  //   }
+  // }
 
   // Save TaulParchi to the backend
   saveTaulParchi() {
@@ -234,12 +234,12 @@ export class TaulParchiComponent implements OnInit {
       this.calculateHammali();
     }
     this.calculateAmount();
-    if (!this.TaulParchi.farmer) {
-      alert('Please select Farmer');
+    if (!this.TaulParchi.farmerName) {
+      alert('Please provide farmer details');
       return;
     }
-    if (!this.TaulParchi.village) {
-      alert('Please select Village');
+    if (!this.TaulParchi.farmerVillage) {
+      alert('Please provide farmer village details');
       return;
     }
     if (!this.TaulParchi.rate) {
@@ -322,7 +322,6 @@ export class TaulParchiComponent implements OnInit {
           this.isNewFarmerPopUpOpen = false;
           this.farmerToAddOrEdit = {};
           this.fetchFarmers();
-          this.TaulParchi.farmer = data._id;
         },
         error: (error: any) => {
           if (error.status === 400) {
