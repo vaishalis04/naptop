@@ -47,6 +47,46 @@ export class SidebarComponent {
       link: '/truck-loading-parchi-dashboard'
     },
     {
+      title: 'Accounts',
+      icon: 'fi fi-rr-user-check',
+      link: '/accounts'
+    },
+    {
+      title: 'Inventory',
+      icon: 'fi fi-rr-list',
+      link: '/inventory'
+    },
+    {
+      title: 'Transaction List',
+      icon: 'fi fi-rr-receipt',
+      link: '/transactionlist'
+    },
+    {
+      title: 'List',
+      icon: 'fi fi-rr-list-check',
+      link: '/list'
+    },
+    {
+      title: 'My List',
+      icon: 'fi fi-rr-clipboard',
+      link: '/my-list'
+    },
+    {
+      title: 'Advance Payments',
+      icon: 'fi fi-rr-wallet',
+      link: '/advance-payment'
+    },
+    {
+      title: 'Warehouse Accounts',
+      icon: 'fi fi-rr-wallet',
+      link: '/wearhouse-accounts'
+    },
+    {
+      title: 'Warehouse Inventory',
+      icon: 'fi fi-rr-wallet',
+      link: '/wearhouse-inventory'
+    },
+    {
       title:'Farmers',
       icon: 'fi-rr-database',
       link:'/farmers'
@@ -106,46 +146,6 @@ export class SidebarComponent {
     //   icon: 'fi-rr-settings',
     //   link: '/settings'
     // },
-    {
-      title: 'Accounts',
-      icon: 'fi fi-rr-user-check',
-      link: '/accounts'
-    },
-    {
-      title: 'Inventory',
-      icon: 'fi fi-rr-list',
-      link: '/inventory'
-    },
-    {
-      title: 'Transaction List',
-      icon: 'fi fi-rr-receipt',
-      link: '/transactionlist'
-    },
-     {
-      title: 'List',
-      icon: 'fi fi-rr-list-check',
-      link: '/list'
-    },
-    {
-      title: 'My List',
-      icon: 'fi fi-rr-clipboard',
-      link: '/my-list'
-    },
-    {
-      title: 'Advance Payments',
-      icon: 'fi fi-rr-wallet',
-      link: '/advance-payment'
-    },
-    {
-      title: 'Warehouse Accounts',
-      icon: 'fi fi-rr-wallet',
-      link: '/wearhouse-accounts'
-    },
-    {
-      title: 'Warehouse Inventory',
-      icon: 'fi fi-rr-wallet',
-      link: '/wearhouse-inventory'
-    }
   ];
 
   constructor(

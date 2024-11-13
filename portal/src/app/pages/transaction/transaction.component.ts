@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-transaction',
@@ -17,17 +17,18 @@ export class TransactionComponent implements OnInit {
   Hammals: any[] = [];
   Crops: any[] = [];
   TaulaParchi: any[] = [];
-  selectedCrop:any
+  selectedCrop: any
   TaulaParchiCount = 0;
   TruckLoadingParchi: any[] = [];
   TruckLoadingParchiCount = 0;
   transactions = {
     transactionStatus: '',
     transactionDetails: '',
-    
+
   };
 
   transaction = {
+    parchi_id: '',
     farmer: '',
     village: '',
     firm_company: '',
@@ -43,13 +44,22 @@ export class TransactionComponent implements OnInit {
     created_at: new Date(),
     transactionStatus: '',
     transactionMode: '',
-    transactionType:'',
+    transactionType: '',
     discount: 0,
     paidAmount: 0,
     remainingAmount: 0,
     totalAmount: 0,
   };
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(
+    private apiService: ApiService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+    this.route.params.subscribe((params) => {
+      this.transaction.transactionType = params['parchiType'];
+      this.transaction.parchi_id = params['id'];
+    });
+  }
 
   ngOnInit(): void {
     this.fetchFarmers();
@@ -57,7 +67,7 @@ export class TransactionComponent implements OnInit {
     this.fetchHammals();
     this.fetchCrops();
     this.getTaulaParchis()
-    this.getTruckLoadingParchis() 
+    this.getTruckLoadingParchis()
   }
 
   calculateNetWeight(): void {
@@ -153,7 +163,7 @@ export class TransactionComponent implements OnInit {
   }
   getTaulaParchis() {
     let params;
-   
+
     this.apiService
       .get('taulparchi', {
         params
@@ -170,7 +180,7 @@ export class TransactionComponent implements OnInit {
   }
   getTruckLoadingParchis() {
     let params
-   
+
     this.apiService
       .get('truckloading', {
         params
@@ -187,14 +197,13 @@ export class TransactionComponent implements OnInit {
         },
       });
   }
-  
-  saveTransaction() 
-  {
+
+  saveTransaction() {
     if (!this.transaction.transactionStatus) {
       alert('Please select Farmer');
       return;
     }
-    
+
     if (this.transaction) {
       this.apiService.post('transaction', this.transaction).subscribe({
         next: (res: any) => {
@@ -214,8 +223,8 @@ export class TransactionComponent implements OnInit {
     this.transaction.remainingAmount = discountedTotal - this.transaction.paidAmount;
 
     // Ensure remainingAmount is never negative
-    if (this.transaction.remainingAmount < 0) {
-      this.transaction.remainingAmount = 0;
-    }
+    // if (this.transaction.remainingAmount < 0) {
+    //   this.transaction.remainingAmount = 0;
+    // }
   }
 }

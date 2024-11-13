@@ -84,14 +84,14 @@ export const roleWiseAccess = [
     page: 'settings',
     roles: ['Admin'],
   },
-  {
-    page: 'accounts',
-    roles: ['Admin','cashier'],
-  },
-  {
-    page: 'inventory',
-    roles: ['Admin','cashier'],
-  },
+  // {
+  //   page: 'accounts',
+  //   roles: ['Admin','cashier'],
+  // },
+  // {
+  //   page: 'inventory',
+  //   roles: ['Admin','cashier'],
+  // },
   {
     page: 'transaction',
     roles: ['Admin','cashier'],
@@ -104,40 +104,44 @@ export const roleWiseAccess = [
     page: 'truck',
     roles: ['Admin'],
   },
-  {
-    page: 'list',
-    roles: ['Admin','cashier'],
-  },
-  {
-    page: 'my-list',
-    roles: ['Admin','Employee'],
-  },
+  // {
+  //   page: 'list',
+  //   roles: ['Admin','cashier'],
+  // },
+  // {
+  //   page: 'my-list',
+  //   roles: ['Admin','Employee'],
+  // },
   {
     page: 'advance-payment',
     roles: ['Admin'],
   },
-  {
-    page: 'wearhouse-accounts',
-    roles: ['Admin'],
-  },
-  {
-    page: 'wearhouse-inventory',
-    roles: ['Admin'],
-  },
+  // {
+  //   page: 'wearhouse-accounts',
+  //   roles: ['Admin'],
+  // },
+  // {
+  //   page: 'wearhouse-inventory',
+  //   roles: ['Admin'],
+  // },
   {
     page: 'taul-parchi-dashboard',
-    roles: ['Admin'],
+    roles: ['Admin','Employee'],
   },
   {
     page: 'taul-parchi-view',
-    roles: ['Admin'],
+    roles: ['Admin','Employee'],
   },
   {
     page: 'truck-loading-parchi-dashboard',
-    roles: ['Admin'],
+    roles: ['Admin','Employee'],
   },
   {
     page: 'truck-loading-parchi-view',
-    roles: ['Admin'],
+    roles: ['Admin','Employee'],
+  },
+  {
+    page: 'cashier-payment',
+    roles: ['Admin','cashier'],
   }
 ];

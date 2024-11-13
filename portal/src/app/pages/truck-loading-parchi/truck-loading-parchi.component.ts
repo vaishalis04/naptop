@@ -31,13 +31,14 @@ export class TruckLoadingParchiComponent implements OnInit {
     averagePrice: number;
     crop: string;
     quantity: number;
-    bags: any[];
+    bag_units: any[];
   } = {
     averagePrice: 0,
     crop: '',
     quantity: 0,
-    bags: [],
+    bag_units: [],
   };
+  selectedStockInfo: any = null;
 
   isStockFetched = false;
 
@@ -85,7 +86,10 @@ export class TruckLoadingParchiComponent implements OnInit {
     const bardanaInKg = (boraQuantity * (bardanaType/1000)); // Convert bardanaUnit from grams to kilograms
     this.TruckLoadingParchi.netWeight = ((boraQuantity * unitBora) - bardanaInKg)/100;
     this.calculateAmount();
-}
+    if (this.TruckLoadingParchi.unitBora) {
+      this.selectedStockInfo = this.stockInfo.bag_units.find((unit: any) => unit.unit_weight_of_bags === this.TruckLoadingParchi.unitBora);
+    }
+  }
 
   calculateAmount(): void {
     const { netWeight, rate } = this.TruckLoadingParchi;
@@ -321,7 +325,7 @@ export class TruckLoadingParchiComponent implements OnInit {
       averagePrice: 0,
       crop: '',
       quantity: 0,
-      bags: [],
+      bag_units: [],
     };
     this.apiService.get(`stock/warehouse-stock-crop-wise`, {
       params: {
@@ -364,5 +368,9 @@ export class TruckLoadingParchiComponent implements OnInit {
         console.error('Error fetching Stock Info:', err);
       },
     })
+  }
+
+  getArray(n: number): any[] {
+    return Array(n);
   }
 }

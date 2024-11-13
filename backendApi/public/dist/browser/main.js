@@ -44856,167 +44856,1245 @@ var ForgotPasswordComponent = class _ForgotPasswordComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ForgotPasswordComponent, { className: "ForgotPasswordComponent" });
 })();
 
+// node_modules/ngx-pagination/fesm2020/ngx-pagination.mjs
+function PaginationControlsComponent_ul_3_li_1_a_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r2 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 12);
+    \u0275\u0275listener("keyup.enter", function PaginationControlsComponent_ul_3_li_1_a_1_Template_a_keyup_enter_0_listener() {
+      \u0275\u0275restoreView(_r2);
+      \u0275\u0275nextContext(3);
+      const p_r3 = \u0275\u0275reference(1);
+      return \u0275\u0275resetView(p_r3.previous());
+    })("click", function PaginationControlsComponent_ul_3_li_1_a_1_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r2);
+      \u0275\u0275nextContext(3);
+      const p_r3 = \u0275\u0275reference(1);
+      return \u0275\u0275resetView(p_r3.previous());
+    });
+    \u0275\u0275text(1);
+    \u0275\u0275elementStart(2, "span", 13);
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r3 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r3.previousLabel, " ");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r3.screenReaderPageLabel);
+  }
+}
+function PaginationControlsComponent_ul_3_li_1_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 14);
+    \u0275\u0275text(1);
+    \u0275\u0275elementStart(2, "span", 13);
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r3 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r3.previousLabel, " ");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r3.screenReaderPageLabel);
+  }
+}
+function PaginationControlsComponent_ul_3_li_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "li", 9);
+    \u0275\u0275template(1, PaginationControlsComponent_ul_3_li_1_a_1_Template, 4, 2, "a", 10)(2, PaginationControlsComponent_ul_3_li_1_span_2_Template, 4, 2, "span", 11);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    \u0275\u0275nextContext(2);
+    const p_r3 = \u0275\u0275reference(1);
+    \u0275\u0275classProp("disabled", p_r3.isFirstPage());
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", 1 < p_r3.getCurrent());
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", p_r3.isFirstPage());
+  }
+}
+function PaginationControlsComponent_ul_3_li_4_a_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r5 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 12);
+    \u0275\u0275listener("keyup.enter", function PaginationControlsComponent_ul_3_li_4_a_1_Template_a_keyup_enter_0_listener() {
+      \u0275\u0275restoreView(_r5);
+      const page_r6 = \u0275\u0275nextContext().$implicit;
+      \u0275\u0275nextContext(2);
+      const p_r3 = \u0275\u0275reference(1);
+      return \u0275\u0275resetView(p_r3.setCurrent(page_r6.value));
+    })("click", function PaginationControlsComponent_ul_3_li_4_a_1_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r5);
+      const page_r6 = \u0275\u0275nextContext().$implicit;
+      \u0275\u0275nextContext(2);
+      const p_r3 = \u0275\u0275reference(1);
+      return \u0275\u0275resetView(p_r3.setCurrent(page_r6.value));
+    });
+    \u0275\u0275elementStart(1, "span", 13);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "span");
+    \u0275\u0275text(4);
+    \u0275\u0275pipe(5, "number");
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const page_r6 = \u0275\u0275nextContext().$implicit;
+    const ctx_r3 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1("", ctx_r3.screenReaderPageLabel, " ");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(page_r6.label === "..." ? page_r6.label : \u0275\u0275pipeBind2(5, 2, page_r6.label, ""));
+  }
+}
+function PaginationControlsComponent_ul_3_li_4_ng_container_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275elementStart(1, "span", 16)(2, "span", 13);
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "span");
+    \u0275\u0275text(5);
+    \u0275\u0275pipe(6, "number");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const page_r6 = \u0275\u0275nextContext().$implicit;
+    const ctx_r3 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate1("", ctx_r3.screenReaderCurrentLabel, " ");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(page_r6.label === "..." ? page_r6.label : \u0275\u0275pipeBind2(6, 2, page_r6.label, ""));
+  }
+}
+function PaginationControlsComponent_ul_3_li_4_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "li");
+    \u0275\u0275template(1, PaginationControlsComponent_ul_3_li_4_a_1_Template, 6, 5, "a", 10)(2, PaginationControlsComponent_ul_3_li_4_ng_container_2_Template, 7, 5, "ng-container", 15);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const page_r6 = ctx.$implicit;
+    \u0275\u0275nextContext(2);
+    const p_r3 = \u0275\u0275reference(1);
+    \u0275\u0275classProp("current", p_r3.getCurrent() === page_r6.value)("ellipsis", page_r6.label === "...");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", p_r3.getCurrent() !== page_r6.value);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", p_r3.getCurrent() === page_r6.value);
+  }
+}
+function PaginationControlsComponent_ul_3_li_5_a_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r7 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "a", 12);
+    \u0275\u0275listener("keyup.enter", function PaginationControlsComponent_ul_3_li_5_a_1_Template_a_keyup_enter_0_listener() {
+      \u0275\u0275restoreView(_r7);
+      \u0275\u0275nextContext(3);
+      const p_r3 = \u0275\u0275reference(1);
+      return \u0275\u0275resetView(p_r3.next());
+    })("click", function PaginationControlsComponent_ul_3_li_5_a_1_Template_a_click_0_listener() {
+      \u0275\u0275restoreView(_r7);
+      \u0275\u0275nextContext(3);
+      const p_r3 = \u0275\u0275reference(1);
+      return \u0275\u0275resetView(p_r3.next());
+    });
+    \u0275\u0275text(1);
+    \u0275\u0275elementStart(2, "span", 13);
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r3 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r3.nextLabel, " ");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r3.screenReaderPageLabel);
+  }
+}
+function PaginationControlsComponent_ul_3_li_5_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 14);
+    \u0275\u0275text(1);
+    \u0275\u0275elementStart(2, "span", 13);
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r3 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", ctx_r3.nextLabel, " ");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r3.screenReaderPageLabel);
+  }
+}
+function PaginationControlsComponent_ul_3_li_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "li", 17);
+    \u0275\u0275template(1, PaginationControlsComponent_ul_3_li_5_a_1_Template, 4, 2, "a", 10)(2, PaginationControlsComponent_ul_3_li_5_span_2_Template, 4, 2, "span", 11);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    \u0275\u0275nextContext(2);
+    const p_r3 = \u0275\u0275reference(1);
+    \u0275\u0275classProp("disabled", p_r3.isLastPage());
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !p_r3.isLastPage());
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", p_r3.isLastPage());
+  }
+}
+function PaginationControlsComponent_ul_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "ul", 4);
+    \u0275\u0275template(1, PaginationControlsComponent_ul_3_li_1_Template, 3, 4, "li", 5);
+    \u0275\u0275elementStart(2, "li", 6);
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(4, PaginationControlsComponent_ul_3_li_4_Template, 3, 6, "li", 7)(5, PaginationControlsComponent_ul_3_li_5_Template, 3, 4, "li", 8);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r3 = \u0275\u0275nextContext();
+    const p_r3 = \u0275\u0275reference(1);
+    \u0275\u0275classProp("responsive", ctx_r3.responsive);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r3.directionLinks);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate2(" ", p_r3.getCurrent(), " / ", p_r3.getLastPage(), " ");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", p_r3.pages)("ngForTrackBy", ctx_r3.trackByIndex);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r3.directionLinks);
+  }
+}
+var PaginationService = class {
+  constructor() {
+    this.change = new EventEmitter();
+    this.instances = {};
+    this.DEFAULT_ID = "DEFAULT_PAGINATION_ID";
+  }
+  defaultId() {
+    return this.DEFAULT_ID;
+  }
+  /**
+   * Register a PaginationInstance with this service. Returns a
+   * boolean value signifying whether the instance is new or
+   * updated (true = new or updated, false = unchanged).
+   */
+  register(instance) {
+    if (instance.id == null) {
+      instance.id = this.DEFAULT_ID;
+    }
+    if (!this.instances[instance.id]) {
+      this.instances[instance.id] = instance;
+      return true;
+    } else {
+      return this.updateInstance(instance);
+    }
+  }
+  /**
+   * Check each property of the instance and update any that have changed. Return
+   * true if any changes were made, else return false.
+   */
+  updateInstance(instance) {
+    let changed = false;
+    for (let prop in this.instances[instance.id]) {
+      if (instance[prop] !== this.instances[instance.id][prop]) {
+        this.instances[instance.id][prop] = instance[prop];
+        changed = true;
+      }
+    }
+    return changed;
+  }
+  /**
+   * Returns the current page number.
+   */
+  getCurrentPage(id) {
+    if (this.instances[id]) {
+      return this.instances[id].currentPage;
+    }
+    return 1;
+  }
+  /**
+   * Sets the current page number.
+   */
+  setCurrentPage(id, page) {
+    if (this.instances[id]) {
+      let instance = this.instances[id];
+      let maxPage = Math.ceil(instance.totalItems / instance.itemsPerPage);
+      if (page <= maxPage && 1 <= page) {
+        this.instances[id].currentPage = page;
+        this.change.emit(id);
+      }
+    }
+  }
+  /**
+   * Sets the value of instance.totalItems
+   */
+  setTotalItems(id, totalItems) {
+    if (this.instances[id] && 0 <= totalItems) {
+      this.instances[id].totalItems = totalItems;
+      this.change.emit(id);
+    }
+  }
+  /**
+   * Sets the value of instance.itemsPerPage.
+   */
+  setItemsPerPage(id, itemsPerPage) {
+    if (this.instances[id]) {
+      this.instances[id].itemsPerPage = itemsPerPage;
+      this.change.emit(id);
+    }
+  }
+  /**
+   * Returns a clone of the pagination instance object matching the id. If no
+   * id specified, returns the instance corresponding to the default id.
+   */
+  getInstance(id = this.DEFAULT_ID) {
+    if (this.instances[id]) {
+      return this.clone(this.instances[id]);
+    }
+    return {};
+  }
+  /**
+   * Perform a shallow clone of an object.
+   */
+  clone(obj) {
+    var target = {};
+    for (var i in obj) {
+      if (obj.hasOwnProperty(i)) {
+        target[i] = obj[i];
+      }
+    }
+    return target;
+  }
+};
+var LARGE_NUMBER = Number.MAX_SAFE_INTEGER;
+var PaginatePipe = class {
+  constructor(service) {
+    this.service = service;
+    this.state = {};
+  }
+  transform(collection, args) {
+    if (!(collection instanceof Array)) {
+      let _id = args.id || this.service.defaultId();
+      if (this.state[_id]) {
+        return this.state[_id].slice;
+      } else {
+        return collection;
+      }
+    }
+    let serverSideMode = args.totalItems && args.totalItems !== collection.length;
+    let instance = this.createInstance(collection, args);
+    let id = instance.id;
+    let start2, end2;
+    let perPage = instance.itemsPerPage;
+    let emitChange = this.service.register(instance);
+    if (!serverSideMode && collection instanceof Array) {
+      perPage = +perPage || LARGE_NUMBER;
+      start2 = (instance.currentPage - 1) * perPage;
+      end2 = start2 + perPage;
+      let isIdentical = this.stateIsIdentical(id, collection, start2, end2);
+      if (isIdentical) {
+        return this.state[id].slice;
+      } else {
+        let slice = collection.slice(start2, end2);
+        this.saveState(id, collection, slice, start2, end2);
+        this.service.change.emit(id);
+        return slice;
+      }
+    } else {
+      if (emitChange) {
+        this.service.change.emit(id);
+      }
+      this.saveState(id, collection, collection, start2, end2);
+      return collection;
+    }
+  }
+  /**
+   * Create an PaginationInstance object, using defaults for any optional properties not supplied.
+   */
+  createInstance(collection, config2) {
+    this.checkConfig(config2);
+    return {
+      id: config2.id != null ? config2.id : this.service.defaultId(),
+      itemsPerPage: +config2.itemsPerPage || 0,
+      currentPage: +config2.currentPage || 1,
+      totalItems: +config2.totalItems || collection.length
+    };
+  }
+  /**
+   * Ensure the argument passed to the filter contains the required properties.
+   */
+  checkConfig(config2) {
+    const required = ["itemsPerPage", "currentPage"];
+    const missing = required.filter((prop) => !(prop in config2));
+    if (0 < missing.length) {
+      throw new Error(`PaginatePipe: Argument is missing the following required properties: ${missing.join(", ")}`);
+    }
+  }
+  /**
+   * To avoid returning a brand new array each time the pipe is run, we store the state of the sliced
+   * array for a given id. This means that the next time the pipe is run on this collection & id, we just
+   * need to check that the collection, start and end points are all identical, and if so, return the
+   * last sliced array.
+   */
+  saveState(id, collection, slice, start2, end2) {
+    this.state[id] = {
+      collection,
+      size: collection.length,
+      slice,
+      start: start2,
+      end: end2
+    };
+  }
+  /**
+   * For a given id, returns true if the collection, size, start and end values are identical.
+   */
+  stateIsIdentical(id, collection, start2, end2) {
+    let state = this.state[id];
+    if (!state) {
+      return false;
+    }
+    let isMetaDataIdentical = state.size === collection.length && state.start === start2 && state.end === end2;
+    if (!isMetaDataIdentical) {
+      return false;
+    }
+    return state.slice.every((element, index) => element === collection[start2 + index]);
+  }
+};
+PaginatePipe.\u0275fac = function PaginatePipe_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || PaginatePipe)(\u0275\u0275directiveInject(PaginationService, 16));
+};
+PaginatePipe.\u0275pipe = /* @__PURE__ */ \u0275\u0275definePipe({
+  name: "paginate",
+  type: PaginatePipe,
+  pure: false
+});
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PaginatePipe, [{
+    type: Pipe,
+    args: [{
+      name: "paginate",
+      pure: false
+    }]
+  }], function() {
+    return [{
+      type: PaginationService
+    }];
+  }, null);
+})();
+var DEFAULT_TEMPLATE = `
+    <pagination-template  #p="paginationApi"
+                         [id]="id"
+                         [maxSize]="maxSize"
+                         (pageChange)="pageChange.emit($event)"
+                         (pageBoundsCorrection)="pageBoundsCorrection.emit($event)">
+    <nav role="navigation" [attr.aria-label]="screenReaderPaginationLabel">
+    <ul class="ngx-pagination" 
+        [class.responsive]="responsive"
+        *ngIf="!(autoHide && p.pages.length <= 1)">
+
+        <li class="pagination-previous" [class.disabled]="p.isFirstPage()" *ngIf="directionLinks"> 
+            <a tabindex="0" *ngIf="1 < p.getCurrent()" (keyup.enter)="p.previous()" (click)="p.previous()">
+                {{ previousLabel }} <span class="show-for-sr">{{ screenReaderPageLabel }}</span>
+            </a>
+            <span *ngIf="p.isFirstPage()" aria-disabled="true">
+                {{ previousLabel }} <span class="show-for-sr">{{ screenReaderPageLabel }}</span>
+            </span>
+        </li> 
+
+        <li class="small-screen">
+            {{ p.getCurrent() }} / {{ p.getLastPage() }}
+        </li>
+
+        <li [class.current]="p.getCurrent() === page.value" 
+            [class.ellipsis]="page.label === '...'"
+            *ngFor="let page of p.pages; trackBy: trackByIndex">
+            <a tabindex="0" (keyup.enter)="p.setCurrent(page.value)" (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
+                <span class="show-for-sr">{{ screenReaderPageLabel }} </span>
+                <span>{{ (page.label === '...') ? page.label : (page.label | number:'') }}</span>
+            </a>
+            <ng-container *ngIf="p.getCurrent() === page.value">
+              <span aria-live="polite">
+                <span class="show-for-sr">{{ screenReaderCurrentLabel }} </span>
+                <span>{{ (page.label === '...') ? page.label : (page.label | number:'') }}</span> 
+              </span>
+            </ng-container>
+        </li>
+
+        <li class="pagination-next" [class.disabled]="p.isLastPage()" *ngIf="directionLinks">
+            <a tabindex="0" *ngIf="!p.isLastPage()" (keyup.enter)="p.next()" (click)="p.next()">
+                 {{ nextLabel }} <span class="show-for-sr">{{ screenReaderPageLabel }}</span>
+            </a>
+            <span *ngIf="p.isLastPage()" aria-disabled="true">
+                 {{ nextLabel }} <span class="show-for-sr">{{ screenReaderPageLabel }}</span>
+            </span>
+        </li>
+
+    </ul>
+    </nav>
+    </pagination-template>
+    `;
+var DEFAULT_STYLES = `
+.ngx-pagination {
+  margin-left: 0;
+  margin-bottom: 1rem; }
+  .ngx-pagination::before, .ngx-pagination::after {
+    content: ' ';
+    display: table; }
+  .ngx-pagination::after {
+    clear: both; }
+  .ngx-pagination li {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    margin-right: 0.0625rem;
+    border-radius: 0; }
+  .ngx-pagination li {
+    display: inline-block; }
+  .ngx-pagination a,
+  .ngx-pagination button {
+    color: #0a0a0a; 
+    display: block;
+    padding: 0.1875rem 0.625rem;
+    border-radius: 0; }
+    .ngx-pagination a:hover,
+    .ngx-pagination button:hover {
+      background: #e6e6e6; }
+  .ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: #2199e8;
+    color: #fefefe;
+    cursor: default; }
+  .ngx-pagination .disabled {
+    padding: 0.1875rem 0.625rem;
+    color: #cacaca;
+    cursor: default; } 
+    .ngx-pagination .disabled:hover {
+      background: transparent; }
+  .ngx-pagination a, .ngx-pagination button {
+    cursor: pointer; }
+
+.ngx-pagination .pagination-previous a::before,
+.ngx-pagination .pagination-previous.disabled::before { 
+  content: '\xAB';
+  display: inline-block;
+  margin-right: 0.5rem; }
+
+.ngx-pagination .pagination-next a::after,
+.ngx-pagination .pagination-next.disabled::after {
+  content: '\xBB';
+  display: inline-block;
+  margin-left: 0.5rem; }
+
+.ngx-pagination .show-for-sr {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0); }
+.ngx-pagination .small-screen {
+  display: none; }
+@media screen and (max-width: 601px) {
+  .ngx-pagination.responsive .small-screen {
+    display: inline-block; } 
+  .ngx-pagination.responsive li:not(.small-screen):not(.pagination-previous):not(.pagination-next) {
+    display: none; }
+}
+  `;
+var PaginationControlsDirective = class {
+  constructor(service, changeDetectorRef) {
+    this.service = service;
+    this.changeDetectorRef = changeDetectorRef;
+    this.maxSize = 7;
+    this.pageChange = new EventEmitter();
+    this.pageBoundsCorrection = new EventEmitter();
+    this.pages = [];
+    this.changeSub = this.service.change.subscribe((id) => {
+      if (this.id === id) {
+        this.updatePageLinks();
+        this.changeDetectorRef.markForCheck();
+        this.changeDetectorRef.detectChanges();
+      }
+    });
+  }
+  ngOnInit() {
+    if (this.id === void 0) {
+      this.id = this.service.defaultId();
+    }
+    this.updatePageLinks();
+  }
+  ngOnChanges(changes) {
+    this.updatePageLinks();
+  }
+  ngOnDestroy() {
+    this.changeSub.unsubscribe();
+  }
+  /**
+   * Go to the previous page
+   */
+  previous() {
+    this.checkValidId();
+    this.setCurrent(this.getCurrent() - 1);
+  }
+  /**
+   * Go to the next page
+   */
+  next() {
+    this.checkValidId();
+    this.setCurrent(this.getCurrent() + 1);
+  }
+  /**
+   * Returns true if current page is first page
+   */
+  isFirstPage() {
+    return this.getCurrent() === 1;
+  }
+  /**
+   * Returns true if current page is last page
+   */
+  isLastPage() {
+    return this.getLastPage() === this.getCurrent();
+  }
+  /**
+   * Set the current page number.
+   */
+  setCurrent(page) {
+    this.pageChange.emit(page);
+  }
+  /**
+   * Get the current page number.
+   */
+  getCurrent() {
+    return this.service.getCurrentPage(this.id);
+  }
+  /**
+   * Returns the last page number
+   */
+  getLastPage() {
+    let inst = this.service.getInstance(this.id);
+    if (inst.totalItems < 1) {
+      return 1;
+    }
+    return Math.ceil(inst.totalItems / inst.itemsPerPage);
+  }
+  getTotalItems() {
+    return this.service.getInstance(this.id).totalItems;
+  }
+  checkValidId() {
+    if (this.service.getInstance(this.id).id == null) {
+      console.warn(`PaginationControlsDirective: the specified id "${this.id}" does not match any registered PaginationInstance`);
+    }
+  }
+  /**
+   * Updates the page links and checks that the current page is valid. Should run whenever the
+   * PaginationService.change stream emits a value matching the current ID, or when any of the
+   * input values changes.
+   */
+  updatePageLinks() {
+    let inst = this.service.getInstance(this.id);
+    const correctedCurrentPage = this.outOfBoundCorrection(inst);
+    if (correctedCurrentPage !== inst.currentPage) {
+      setTimeout(() => {
+        this.pageBoundsCorrection.emit(correctedCurrentPage);
+        this.pages = this.createPageArray(inst.currentPage, inst.itemsPerPage, inst.totalItems, this.maxSize);
+      });
+    } else {
+      this.pages = this.createPageArray(inst.currentPage, inst.itemsPerPage, inst.totalItems, this.maxSize);
+    }
+  }
+  /**
+   * Checks that the instance.currentPage property is within bounds for the current page range.
+   * If not, return a correct value for currentPage, or the current value if OK.
+   */
+  outOfBoundCorrection(instance) {
+    const totalPages = Math.ceil(instance.totalItems / instance.itemsPerPage);
+    if (totalPages < instance.currentPage && 0 < totalPages) {
+      return totalPages;
+    } else if (instance.currentPage < 1) {
+      return 1;
+    }
+    return instance.currentPage;
+  }
+  /**
+   * Returns an array of Page objects to use in the pagination controls.
+   */
+  createPageArray(currentPage, itemsPerPage, totalItems, paginationRange) {
+    paginationRange = +paginationRange;
+    let pages = [];
+    const totalPages = Math.max(Math.ceil(totalItems / itemsPerPage), 1);
+    const halfWay = Math.ceil(paginationRange / 2);
+    const isStart = currentPage <= halfWay;
+    const isEnd = totalPages - halfWay < currentPage;
+    const isMiddle = !isStart && !isEnd;
+    let ellipsesNeeded = paginationRange < totalPages;
+    let i = 1;
+    while (i <= totalPages && i <= paginationRange) {
+      let label;
+      let pageNumber = this.calculatePageNumber(i, currentPage, paginationRange, totalPages);
+      let openingEllipsesNeeded = i === 2 && (isMiddle || isEnd);
+      let closingEllipsesNeeded = i === paginationRange - 1 && (isMiddle || isStart);
+      if (ellipsesNeeded && (openingEllipsesNeeded || closingEllipsesNeeded)) {
+        label = "...";
+      } else {
+        label = pageNumber;
+      }
+      pages.push({
+        label,
+        value: pageNumber
+      });
+      i++;
+    }
+    return pages;
+  }
+  /**
+   * Given the position in the sequence of pagination links [i],
+   * figure out what page number corresponds to that position.
+   */
+  calculatePageNumber(i, currentPage, paginationRange, totalPages) {
+    let halfWay = Math.ceil(paginationRange / 2);
+    if (i === paginationRange) {
+      return totalPages;
+    } else if (i === 1) {
+      return i;
+    } else if (paginationRange < totalPages) {
+      if (totalPages - halfWay < currentPage) {
+        return totalPages - paginationRange + i;
+      } else if (halfWay < currentPage) {
+        return currentPage - halfWay + i;
+      } else {
+        return i;
+      }
+    } else {
+      return i;
+    }
+  }
+};
+PaginationControlsDirective.\u0275fac = function PaginationControlsDirective_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || PaginationControlsDirective)(\u0275\u0275directiveInject(PaginationService), \u0275\u0275directiveInject(ChangeDetectorRef));
+};
+PaginationControlsDirective.\u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+  type: PaginationControlsDirective,
+  selectors: [["pagination-template"], ["", "pagination-template", ""]],
+  inputs: {
+    id: "id",
+    maxSize: "maxSize"
+  },
+  outputs: {
+    pageChange: "pageChange",
+    pageBoundsCorrection: "pageBoundsCorrection"
+  },
+  exportAs: ["paginationApi"],
+  features: [\u0275\u0275NgOnChangesFeature]
+});
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PaginationControlsDirective, [{
+    type: Directive,
+    args: [{
+      selector: "pagination-template,[pagination-template]",
+      exportAs: "paginationApi"
+    }]
+  }], function() {
+    return [{
+      type: PaginationService
+    }, {
+      type: ChangeDetectorRef
+    }];
+  }, {
+    id: [{
+      type: Input
+    }],
+    maxSize: [{
+      type: Input
+    }],
+    pageChange: [{
+      type: Output
+    }],
+    pageBoundsCorrection: [{
+      type: Output
+    }]
+  });
+})();
+function coerceToBoolean(input2) {
+  return !!input2 && input2 !== "false";
+}
+var PaginationControlsComponent = class {
+  constructor() {
+    this.maxSize = 7;
+    this.previousLabel = "Previous";
+    this.nextLabel = "Next";
+    this.screenReaderPaginationLabel = "Pagination";
+    this.screenReaderPageLabel = "page";
+    this.screenReaderCurrentLabel = `You're on page`;
+    this.pageChange = new EventEmitter();
+    this.pageBoundsCorrection = new EventEmitter();
+    this._directionLinks = true;
+    this._autoHide = false;
+    this._responsive = false;
+  }
+  get directionLinks() {
+    return this._directionLinks;
+  }
+  set directionLinks(value) {
+    this._directionLinks = coerceToBoolean(value);
+  }
+  get autoHide() {
+    return this._autoHide;
+  }
+  set autoHide(value) {
+    this._autoHide = coerceToBoolean(value);
+  }
+  get responsive() {
+    return this._responsive;
+  }
+  set responsive(value) {
+    this._responsive = coerceToBoolean(value);
+  }
+  trackByIndex(index) {
+    return index;
+  }
+};
+PaginationControlsComponent.\u0275fac = function PaginationControlsComponent_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || PaginationControlsComponent)();
+};
+PaginationControlsComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+  type: PaginationControlsComponent,
+  selectors: [["pagination-controls"]],
+  inputs: {
+    id: "id",
+    maxSize: "maxSize",
+    directionLinks: "directionLinks",
+    autoHide: "autoHide",
+    responsive: "responsive",
+    previousLabel: "previousLabel",
+    nextLabel: "nextLabel",
+    screenReaderPaginationLabel: "screenReaderPaginationLabel",
+    screenReaderPageLabel: "screenReaderPageLabel",
+    screenReaderCurrentLabel: "screenReaderCurrentLabel"
+  },
+  outputs: {
+    pageChange: "pageChange",
+    pageBoundsCorrection: "pageBoundsCorrection"
+  },
+  decls: 4,
+  vars: 4,
+  consts: [["p", "paginationApi"], [3, "pageChange", "pageBoundsCorrection", "id", "maxSize"], ["role", "navigation"], ["class", "ngx-pagination", 3, "responsive", 4, "ngIf"], [1, "ngx-pagination"], ["class", "pagination-previous", 3, "disabled", 4, "ngIf"], [1, "small-screen"], [3, "current", "ellipsis", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "pagination-next", 3, "disabled", 4, "ngIf"], [1, "pagination-previous"], ["tabindex", "0", 3, "keyup.enter", "click", 4, "ngIf"], ["aria-disabled", "true", 4, "ngIf"], ["tabindex", "0", 3, "keyup.enter", "click"], [1, "show-for-sr"], ["aria-disabled", "true"], [4, "ngIf"], ["aria-live", "polite"], [1, "pagination-next"]],
+  template: function PaginationControlsComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      const _r1 = \u0275\u0275getCurrentView();
+      \u0275\u0275elementStart(0, "pagination-template", 1, 0);
+      \u0275\u0275listener("pageChange", function PaginationControlsComponent_Template_pagination_template_pageChange_0_listener($event) {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.pageChange.emit($event));
+      })("pageBoundsCorrection", function PaginationControlsComponent_Template_pagination_template_pageBoundsCorrection_0_listener($event) {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.pageBoundsCorrection.emit($event));
+      });
+      \u0275\u0275elementStart(2, "nav", 2);
+      \u0275\u0275template(3, PaginationControlsComponent_ul_3_Template, 6, 8, "ul", 3);
+      \u0275\u0275elementEnd()();
+    }
+    if (rf & 2) {
+      const p_r3 = \u0275\u0275reference(1);
+      \u0275\u0275property("id", ctx.id)("maxSize", ctx.maxSize);
+      \u0275\u0275advance(2);
+      \u0275\u0275attribute("aria-label", ctx.screenReaderPaginationLabel);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", !(ctx.autoHide && p_r3.pages.length <= 1));
+    }
+  },
+  dependencies: [PaginationControlsDirective, NgIf, NgForOf, DecimalPipe],
+  styles: ['.ngx-pagination{margin-left:0;margin-bottom:1rem}.ngx-pagination:before,.ngx-pagination:after{content:" ";display:table}.ngx-pagination:after{clear:both}.ngx-pagination li{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;margin-right:.0625rem;border-radius:0}.ngx-pagination li{display:inline-block}.ngx-pagination a,.ngx-pagination button{color:#0a0a0a;display:block;padding:.1875rem .625rem;border-radius:0}.ngx-pagination a:hover,.ngx-pagination button:hover{background:#e6e6e6}.ngx-pagination .current{padding:.1875rem .625rem;background:#2199e8;color:#fefefe;cursor:default}.ngx-pagination .disabled{padding:.1875rem .625rem;color:#cacaca;cursor:default}.ngx-pagination .disabled:hover{background:transparent}.ngx-pagination a,.ngx-pagination button{cursor:pointer}.ngx-pagination .pagination-previous a:before,.ngx-pagination .pagination-previous.disabled:before{content:"\\ab";display:inline-block;margin-right:.5rem}.ngx-pagination .pagination-next a:after,.ngx-pagination .pagination-next.disabled:after{content:"\\bb";display:inline-block;margin-left:.5rem}.ngx-pagination .show-for-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.ngx-pagination .small-screen{display:none}@media screen and (max-width: 601px){.ngx-pagination.responsive .small-screen{display:inline-block}.ngx-pagination.responsive li:not(.small-screen):not(.pagination-previous):not(.pagination-next){display:none}}\n'],
+  encapsulation: 2,
+  changeDetection: 0
+});
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PaginationControlsComponent, [{
+    type: Component,
+    args: [{
+      selector: "pagination-controls",
+      template: DEFAULT_TEMPLATE,
+      styles: [DEFAULT_STYLES],
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation$1.None
+    }]
+  }], null, {
+    id: [{
+      type: Input
+    }],
+    maxSize: [{
+      type: Input
+    }],
+    directionLinks: [{
+      type: Input
+    }],
+    autoHide: [{
+      type: Input
+    }],
+    responsive: [{
+      type: Input
+    }],
+    previousLabel: [{
+      type: Input
+    }],
+    nextLabel: [{
+      type: Input
+    }],
+    screenReaderPaginationLabel: [{
+      type: Input
+    }],
+    screenReaderPageLabel: [{
+      type: Input
+    }],
+    screenReaderCurrentLabel: [{
+      type: Input
+    }],
+    pageChange: [{
+      type: Output
+    }],
+    pageBoundsCorrection: [{
+      type: Output
+    }]
+  });
+})();
+var NgxPaginationModule = class {
+};
+NgxPaginationModule.\u0275fac = function NgxPaginationModule_Factory(__ngFactoryType__) {
+  return new (__ngFactoryType__ || NgxPaginationModule)();
+};
+NgxPaginationModule.\u0275mod = /* @__PURE__ */ \u0275\u0275defineNgModule({
+  type: NgxPaginationModule
+});
+NgxPaginationModule.\u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({
+  providers: [PaginationService],
+  imports: [[CommonModule]]
+});
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgxPaginationModule, [{
+    type: NgModule,
+    args: [{
+      imports: [CommonModule],
+      declarations: [PaginatePipe, PaginationControlsComponent, PaginationControlsDirective],
+      providers: [PaginationService],
+      exports: [PaginatePipe, PaginationControlsComponent, PaginationControlsDirective]
+    }]
+  }], null, null);
+})();
+
 // src/app/pages/dashboard/dashboard.component.ts
-function DashboardComponent_div_48_Template(rf, ctx) {
+var _c0 = () => ["/taul-parchi"];
+var _c1 = (a0, a1) => ({ itemsPerPage: 10, currentPage: a0, id: "taulaparchi", totalItems: a1 });
+var _c2 = () => ["/truck-loading-parchi"];
+var _c3 = (a0, a1) => ({ itemsPerPage: 10, currentPage: a0, id: "truckloadingparchi", totalItems: a1 });
+var _c4 = (a0) => ["/taul-parchi-view", a0];
+var _c5 = (a0) => [a0];
+var _c6 = (a0) => ["/truck-loading-parchi-view", a0];
+function DashboardComponent_div_44_div_1_tr_32_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 23)(1, "div", 24)(2, "div", 18)(3, "div", 25)(4, "h4", 19);
-    \u0275\u0275text(5);
+    \u0275\u0275elementStart(0, "tr")(1, "th", 53);
+    \u0275\u0275text(2);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "p")(7, "b");
-    \u0275\u0275text(8, "M+M");
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(9, "h6", 26)(10, "div", 0)(11, "div", 27);
-    \u0275\u0275text(12);
-    \u0275\u0275elementEnd()()()();
-    \u0275\u0275elementStart(13, "div", 28)(14, "div", 29)(15, "h6", 30);
-    \u0275\u0275text(16, " Taul Parchi Grand Total: ");
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "p", 31);
-    \u0275\u0275text(18);
+    \u0275\u0275elementStart(5, "td");
+    \u0275\u0275text(6);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(19, "div", 29)(20, "h6", 30);
-    \u0275\u0275text(21, " Truck Loading Net Weight: ");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(22, "p", 31);
-    \u0275\u0275text(23);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(24, "div", 29)(25, "h6", 30);
-    \u0275\u0275text(26, " Difference (Taul - Truck): ");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "p", 31);
-    \u0275\u0275text(28);
-    \u0275\u0275elementEnd()()()()();
   }
   if (rf & 2) {
-    const crop_r1 = ctx.$implicit;
+    const bag_r1 = ctx.$implicit;
     const i_r2 = ctx.index;
-    const ctx_r2 = \u0275\u0275nextContext();
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(crop_r1.crop_name);
-    \u0275\u0275advance(7);
-    \u0275\u0275textInterpolate1(" Sr.no: ", crop_r1._id, " ");
-    \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate1("", crop_r1.grandTotal, " kg");
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate1("", ctx_r2.Datas[i_r2] == null ? null : ctx_r2.Datas[i_r2].totalBoraValue, " kg");
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate1(" ", crop_r1.grandTotal - (ctx_r2.Datas[i_r2] == null ? null : ctx_r2.Datas[i_r2].totalBoraValue), " kg ");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(i_r2 + 1);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(bag_r1.no_of_bags);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(bag_r1.unit_weight_of_bags);
   }
 }
-function DashboardComponent_div_49_div_10_Template(rf, ctx) {
+function DashboardComponent_div_44_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 23)(1, "div", 24)(2, "div", 18)(3, "div", 25)(4, "h4", 19);
+    \u0275\u0275elementStart(0, "div", 47)(1, "div", 48)(2, "div", 4)(3, "div", 5)(4, "div", 49)(5, "p", 50);
+    \u0275\u0275text(6);
+    \u0275\u0275pipe(7, "titlecase");
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(8, "hr");
+    \u0275\u0275elementStart(9, "div", 0)(10, "div", 2)(11, "h6", 51);
+    \u0275\u0275text(12, "Stock Quantity");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(13, "p", 52);
+    \u0275\u0275text(14);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(15, "div", 2)(16, "h6", 51);
+    \u0275\u0275text(17, "Average Price");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(18, "p", 52);
+    \u0275\u0275text(19);
+    \u0275\u0275pipe(20, "currency");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(21, "div", 21)(22, "table", 39)(23, "thead")(24, "tr")(25, "th", 41);
+    \u0275\u0275text(26, "#");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(27, "th", 41);
+    \u0275\u0275text(28, "No of Bags");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(29, "th", 41);
+    \u0275\u0275text(30, "Weight (in Kgs)");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(31, "tbody");
+    \u0275\u0275template(32, DashboardComponent_div_44_div_1_tr_32_Template, 7, 3, "tr", 42);
+    \u0275\u0275elementEnd()()()()()()()()();
+  }
+  if (rf & 2) {
+    const stockData_r3 = ctx.$implicit;
+    const warehouse_r4 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance(6);
+    \u0275\u0275textInterpolate2("", \u0275\u0275pipeBind1(7, 5, warehouse_r4.name), " (", stockData_r3.crop, ")");
+    \u0275\u0275advance(8);
+    \u0275\u0275textInterpolate1("", stockData_r3.quantity, " Quintals");
+    \u0275\u0275advance(5);
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(20, 7, stockData_r3.averagePrice, "INR"), " ");
+    \u0275\u0275advance(13);
+    \u0275\u0275property("ngForOf", stockData_r3.bag_units);
+  }
+}
+function DashboardComponent_div_44_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 0);
+    \u0275\u0275template(1, DashboardComponent_div_44_div_1_Template, 33, 10, "div", 46);
+    \u0275\u0275element(2, "hr");
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const warehouse_r4 = ctx.$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", warehouse_r4 == null ? null : warehouse_r4.stock);
+  }
+}
+function DashboardComponent_option_81_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 54);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const crop_r5 = ctx.$implicit;
+    \u0275\u0275property("value", crop_r5._id);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(crop_r5.name);
+  }
+}
+function DashboardComponent_tr_107_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275pipe(3, "date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "td");
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "p")(7, "b");
-    \u0275\u0275text(8, "M+M");
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(9, "h6", 26)(10, "div", 0)(11, "div", 27);
-    \u0275\u0275text(12);
-    \u0275\u0275elementEnd()()()();
-    \u0275\u0275elementStart(13, "div", 28)(14, "div", 29)(15, "h6", 30);
-    \u0275\u0275text(16, " NetWeight (Unit * Quantity): ");
+    \u0275\u0275elementStart(6, "td");
+    \u0275\u0275text(7);
+    \u0275\u0275element(8, "br");
+    \u0275\u0275elementStart(9, "span", 55);
+    \u0275\u0275element(10, "i", 56);
+    \u0275\u0275text(11);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "p", 31);
-    \u0275\u0275text(18);
+    \u0275\u0275element(12, "br");
+    \u0275\u0275elementStart(13, "span", 55);
+    \u0275\u0275element(14, "i", 57);
+    \u0275\u0275text(15);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(19, "div", 29)(20, "h6", 30);
-    \u0275\u0275text(21, " Bharti Total: ");
+    \u0275\u0275elementStart(16, "td");
+    \u0275\u0275text(17);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(22, "p", 31);
+    \u0275\u0275elementStart(18, "td");
+    \u0275\u0275text(19);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(20, "td");
+    \u0275\u0275text(21);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(22, "td");
     \u0275\u0275text(23);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(24, "div", 29)(25, "h6", 30);
-    \u0275\u0275text(26, " Grand Total: ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "p", 31);
+    \u0275\u0275elementStart(24, "td");
+    \u0275\u0275text(25);
+    \u0275\u0275pipe(26, "number");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(27, "td");
     \u0275\u0275text(28);
-    \u0275\u0275elementEnd()()()()();
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(29, "td")(30, "button", 58);
+    \u0275\u0275element(31, "i", 59);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(32, "a", 60);
+    \u0275\u0275text(33, " Pay ");
+    \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const crop_r4 = ctx.$implicit;
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(crop_r4.crop_name);
-    \u0275\u0275advance(7);
-    \u0275\u0275textInterpolate1(" Sr.no: ", crop_r4._id, " ");
-    \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate1(" ", crop_r4 == null ? null : crop_r4.totalUnitBoraBoraQuantity, " kg ");
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate1("", crop_r4.totalBharti, " kg");
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate1("", crop_r4.grandTotal, " kg");
+    const taulaParchi_r6 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(3, 13, taulaParchi_r6.created_at, "MM-dd-YYYY hh:mm"));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(taulaParchi_r6 == null ? null : taulaParchi_r6.purchase);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1(" ", taulaParchi_r6 == null ? null : taulaParchi_r6.farmerName, " ");
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate1(" | ", taulaParchi_r6 == null ? null : taulaParchi_r6.farmerMobile, " ");
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate1(" | ", taulaParchi_r6 == null ? null : taulaParchi_r6.farmerVillage, " ");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r6 == null ? null : taulaParchi_r6.wearhouseDetails == null ? null : taulaParchi_r6.wearhouseDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r6 == null ? null : taulaParchi_r6.cropDetails == null ? null : taulaParchi_r6.cropDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r6 == null ? null : taulaParchi_r6.companyDetails == null ? null : taulaParchi_r6.companyDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r6.netWeight);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(26, 16, taulaParchi_r6.amount, ".2"));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(taulaParchi_r6 == null ? null : taulaParchi_r6.userDetails == null ? null : taulaParchi_r6.userDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(19, _c4, taulaParchi_r6._id));
+    \u0275\u0275advance(2);
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(21, _c5, "/cashier-payment/taulParchi/" + taulaParchi_r6._id));
   }
 }
-function DashboardComponent_div_49_Template(rf, ctx) {
+function DashboardComponent_tr_149_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div")(1, "div", 17)(2, "div", 18)(3, "h4", 19);
-    \u0275\u0275text(4, "Net Weight of Crop in Taula Parchi");
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(5, "div", 4)(6, "div", 0)(7, "div", 16)(8, "div", 20)(9, "div", 0);
-    \u0275\u0275template(10, DashboardComponent_div_49_div_10_Template, 29, 5, "div", 21);
-    \u0275\u0275elementEnd()()()()()()();
-  }
-  if (rf & 2) {
-    const ctx_r2 = \u0275\u0275nextContext();
-    \u0275\u0275advance(10);
-    \u0275\u0275property("ngForOf", ctx_r2.Crops);
-  }
-}
-function DashboardComponent_div_59_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 23)(1, "div", 24)(2, "div", 18)(3, "div", 25)(4, "h4", 19);
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275pipe(3, "date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "td");
     \u0275\u0275text(5);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "p")(7, "b");
-    \u0275\u0275text(8, "M+M");
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275elementStart(9, "h6", 26)(10, "div", 0)(11, "div", 27);
-    \u0275\u0275text(12);
-    \u0275\u0275elementEnd()()()();
-    \u0275\u0275elementStart(13, "div", 28)(14, "div", 29)(15, "h6", 30);
-    \u0275\u0275text(16, " Net Weight: ");
+    \u0275\u0275elementStart(6, "td");
+    \u0275\u0275text(7);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(17, "p", 31);
-    \u0275\u0275text(18);
-    \u0275\u0275elementEnd()()()()();
+    \u0275\u0275elementStart(8, "td");
+    \u0275\u0275text(9);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "td");
+    \u0275\u0275text(11);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "td");
+    \u0275\u0275text(13);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(14, "td");
+    \u0275\u0275text(15);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(16, "td");
+    \u0275\u0275text(17);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(18, "td");
+    \u0275\u0275text(19);
+    \u0275\u0275pipe(20, "number");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(21, "td");
+    \u0275\u0275text(22);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(23, "td")(24, "button", 58);
+    \u0275\u0275element(25, "i", 59);
+    \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const truck_r5 = ctx.$implicit;
-    \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate(truck_r5.crop_name);
-    \u0275\u0275advance(7);
-    \u0275\u0275textInterpolate1(" Sr.no: ", truck_r5._id, " ");
-    \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate1(" ", truck_r5.totalBoraValue, " kg ");
+    const truckLoadingParchi_r7 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(3, 11, truckLoadingParchi_r7.created_at, "MM-dd-YYYY"));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.cropDetails == null ? null : truckLoadingParchi_r7.cropDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.partyDetails == null ? null : truckLoadingParchi_r7.partyDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.truckDetails == null ? null : truckLoadingParchi_r7.truckDetails.truckNumber);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.deliveryDetails == null ? null : truckLoadingParchi_r7.deliveryDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.hammalDetails == null ? null : truckLoadingParchi_r7.hammalDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1(" ", truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.wearhouseDetails == null ? null : truckLoadingParchi_r7.wearhouseDetails.name, " ");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r7.netWeight);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(20, 14, truckLoadingParchi_r7.amount, ".2"));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.userDetails == null ? null : truckLoadingParchi_r7.userDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(17, _c6, truckLoadingParchi_r7._id));
   }
 }
 var DashboardComponent = class _DashboardComponent {
-  constructor(apiService) {
+  constructor(apiService, authService) {
     this.apiService = apiService;
+    this.authService = authService;
     this.currentDate = /* @__PURE__ */ new Date();
     this.TaulaParchiCount = 0;
     this.TruckLoadingParchiCount = 0;
     this.TaulaParchi = [];
     this.TruckLoadingParchi = [];
-    this.TaulaParchiDetailsCount = 0;
-    this.TruckLoadingDetailsCount = 0;
-    this.remainingCrops = [];
+    this.pageForTaulaParchi = 1;
+    this.pageForTruckLoadingParchi = 1;
+    this.warehouses = [];
+    this.crops = [];
+    this.storages = [];
+    this.farmerNameSearch = "";
+    this.farmerMobileSearch = "";
+    this.farmerVillageSearch = "";
+    this.currentUser = this.authService.getCurrentUser();
   }
   ngOnInit() {
     this.getTaulaParchis();
-    this.getTaulaParchiDetails();
     this.getTruckLoadingParchis();
-    this.getTaulparchisAggregatedCropData();
-    this.getTruckLoadingDetails();
-    this.getTruckLoadingAggregatedCropData();
+    this.getWarehouses();
+    this.getCrops();
   }
-  // Fetch TaulaParchis from backend
-  getTaulaParchis() {
-    this.apiService.get("taulparchi", {
+  getCrops() {
+    this.apiService.get("crop", {
       params: {
         page: 1,
         limit: 1e3
       }
+    }).subscribe({
+      next: (res) => {
+        this.crops = res.data;
+      },
+      error: (err) => {
+        console.error("Error fetching crops:", err);
+      }
+    });
+  }
+  // Fetch TaulaParchis from backend
+  getTaulaParchis() {
+    const query = {};
+    if (this.farmerNameSearch) {
+      query["farmerName"] = this.farmerNameSearch;
+    }
+    if (this.farmerMobileSearch) {
+      query["farmerMobile"] = this.farmerMobileSearch;
+    }
+    if (this.farmerVillageSearch) {
+      query["farmerVillage"] = this.farmerVillageSearch;
+    }
+    if (this.selectedWarehouse) {
+      query["warehouse"] = this.selectedWarehouse;
+    }
+    if (this.selectedCrop) {
+      query["crop"] = this.selectedCrop;
+    }
+    this.apiService.get("taulparchi", {
+      params: __spreadValues({
+        page: this.pageForTaulaParchi,
+        limit: 10
+      }, query)
     }).subscribe({
       next: (res) => {
         this.TaulaParchi = res.data;
@@ -45027,51 +46105,12 @@ var DashboardComponent = class _DashboardComponent {
       }
     });
   }
-  getTaulaParchiDetails() {
-    this.apiService.get("taulparchi/getdetails", {
-      params: { page: 1, limit: 1e3 }
-    }).subscribe({
-      next: (res) => {
-        if (res && Array.isArray(res)) {
-          console.log("res", res);
-          this.TaulaParchiDetails = res[0];
-          this.TaulaParchiDetailsCount = res.length;
-          console.log("Taula Parchi Details:", this.TaulaParchiDetails);
-        } else {
-          console.error("Invalid response format for Taula Parchi details:", res);
-        }
-      },
-      error: (err) => {
-        console.error("Error fetching Taula Parchi details:", err.message || err);
-      }
-    });
-  }
-  getTaulparchisAggregatedCropData() {
-    this.apiService.get("taulparchi/taulparchisAggregate", {
-      params: {
-        page: 1,
-        limit: 1e3
-      }
-    }).subscribe({
-      next: (res) => {
-        if (Array.isArray(res)) {
-          this.Crops = res;
-          console.log("Aggregated Taul Parchis Data:", this.Crops);
-        } else {
-          console.error("Invalid response format:", res);
-        }
-      },
-      error: (err) => {
-        console.error("Error fetching Taul Parchis Aggregated Data:", err.message || err);
-      }
-    });
-  }
   // Fetch TruckLoadingParchis from backend
   getTruckLoadingParchis() {
     this.apiService.get("truckloading", {
       params: {
-        page: 1,
-        limit: 1e3
+        page: this.pageForTruckLoadingParchi,
+        limit: 10
       }
     }).subscribe({
       next: (res) => {
@@ -45084,55 +46123,48 @@ var DashboardComponent = class _DashboardComponent {
       }
     });
   }
-  getTruckLoadingDetails() {
-    this.apiService.get("truckloading/getdetails", {
+  getWarehouses() {
+    this.apiService.get("storage", {
       params: {
         page: 1,
         limit: 1e3
       }
     }).subscribe({
       next: (res) => {
-        if (res && Array.isArray(res)) {
-          console.log("Response:", res);
-          this.TruckLoadingDetails = res[0];
-          this.TruckLoadingDetailsCount = res.length;
-          console.log("Truck loading details:", this.TruckLoadingDetails);
-        } else {
-          console.error("Invalid response format:", res);
+        this.warehouses = Object.values(res.data);
+        for (const warehouse of this.warehouses) {
+          this.apiService.get(`stock/warehouse-stock-crop-wise`, {
+            params: {
+              warehouse: warehouse._id
+            }
+          }).subscribe({
+            next: (res2) => {
+              this.warehouses = this.warehouses.map((w) => {
+                if (w._id === warehouse._id) {
+                  w.stock = res2;
+                }
+                return w;
+              });
+              console.log(this.warehouses);
+            },
+            error: (err) => {
+              console.error("Error fetching warehouse stock:", err);
+            }
+          });
         }
       },
       error: (err) => {
-        console.error("Error fetching truck loading details:", err.message || err);
-      }
-    });
-  }
-  getTruckLoadingAggregatedCropData() {
-    this.apiService.get("truckloading/truck-loading-details", {
-      params: {
-        page: 1,
-        limit: 1e3
-      }
-    }).subscribe({
-      next: (res) => {
-        if (res) {
-          this.Datas = res;
-          console.log("Aggregated Truck Loading Data:", this.Datas);
-        } else {
-          console.error("Invalid response format:", res);
-        }
-      },
-      error: (err) => {
-        console.error("Error fetching Truck Loading Aggregated Data:", err.message || err);
+        console.error("Error fetching warehouses:", err);
       }
     });
   }
   static {
     this.\u0275fac = function DashboardComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _DashboardComponent)(\u0275\u0275directiveInject(ApiService));
+      return new (__ngFactoryType__ || _DashboardComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(AuthService));
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DashboardComponent, selectors: [["app-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 60, vars: 9, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-body"], [1, "d-flex", "justify-content-between", "align-items-center"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-dark", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-calendar", "fs-3", "text-white"], [1, "text-end"], [1, "mb-0", "text-dark"], [1, "mb-0", "text-secondary"], [1, "row", "mt-3"], [1, "col-12", "col-md-6"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-primary", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-file", "fs-3", "text-white"], [1, "fi", "fi-rs-list", "fs-3", "text-white"], [1, "col-12"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], ["class", "col-md-4", 4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "col-md-4"], [1, "card", "bg-white", "mb-3"], [1, "text-center"], [1, "card-title"], [1, "col", "text-start"], [1, "card-body", "bg-warning"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"]], template: function DashboardComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DashboardComponent, selectors: [["app-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 152, vars: 30, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-body"], [1, "d-flex", "justify-content-between", "align-items-center"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-dark", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-calendar", "fs-3", "text-white"], [1, "text-end"], [1, "mb-0", "text-dark"], [1, "mb-0", "text-secondary"], [1, "row", "mt-3"], [1, "col-12", "col-md-6"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-primary", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-file", "fs-3", "text-white"], [1, "fi", "fi-rs-list", "fs-3", "text-white"], [1, "col-12", "mt-4"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], ["class", "row", 4, "ngFor", "ngForOf"], [1, "col-12"], [1, "col-auto"], [1, "btn", "btn-primary", 3, "routerLink"], [1, "fi", "fi-rr-add"], [1, "filter-sections"], [1, "row", "mb-2"], [1, "form-group"], ["for", "farmerNameSearch"], ["type", "text", "name", "farmerNameSearch", "id", "farmerNameSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerMobileSearch"], ["type", "text", "name", "farmerMobileSearch", "id", "farmerMobileSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerVillageSearch"], ["type", "text", "name", "farmerVillageSearch", "id", "farmerVillageSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "cropSearch"], ["name", "cropSearch", "id", "cropSearch", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "table", "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "table-responsive"], ["id", "truckloadingparchi", 3, "pageChange"], ["class", "col-12 col-md-6 col-lg-4", 4, "ngFor", "ngForOf"], [1, "col-12", "col-md-6", "col-lg-4"], [1, "card", "bg-white", "mb-4"], [1, "text-center"], [1, "mb-0", "text-secondary", "text-center"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["scope", "row"], [3, "value"], [1, "badge", "bg-primary"], [1, "fi", "fi-rr-mobile"], [1, "fi", "fi-rr-marker"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"], [1, "fi", "fi-rr-eye"], [1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"]], template: function DashboardComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "div", 5)(7, "div", 6);
         \u0275\u0275element(8, "i", 7);
@@ -45163,34 +46195,209 @@ var DashboardComponent = class _DashboardComponent {
         \u0275\u0275text(37, "Total Truck Loading Parchi");
         \u0275\u0275elementEnd()()()()()();
         \u0275\u0275elementStart(38, "div", 16)(39, "div", 17)(40, "div", 18)(41, "h4", 19);
-        \u0275\u0275text(42, "Total Crops");
+        \u0275\u0275text(42, "Stock");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(43, "div", 4)(44, "div", 0)(45, "div", 16)(46, "div", 20)(47, "div", 0);
-        \u0275\u0275template(48, DashboardComponent_div_48_Template, 29, 5, "div", 21);
-        \u0275\u0275elementEnd()()()()()();
-        \u0275\u0275template(49, DashboardComponent_div_49_Template, 11, 1, "div", 22);
-        \u0275\u0275elementStart(50, "div", 17)(51, "div", 18)(52, "h4", 19);
-        \u0275\u0275text(53, "Net Weight of Crop in Truck Loading Parchi");
+        \u0275\u0275elementStart(43, "div", 4);
+        \u0275\u0275template(44, DashboardComponent_div_44_Template, 3, 1, "div", 20);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(45, "div", 21)(46, "div", 17)(47, "div", 18)(48, "div", 0)(49, "div", 2)(50, "h4", 19);
+        \u0275\u0275text(51, "Taula Parchis");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(54, "div", 4)(55, "div", 0)(56, "div", 16)(57, "div", 20)(58, "div", 0);
-        \u0275\u0275template(59, DashboardComponent_div_59_Template, 19, 3, "div", 21);
-        \u0275\u0275elementEnd()()()()()()()()()();
+        \u0275\u0275elementStart(52, "div", 22)(53, "a", 23);
+        \u0275\u0275element(54, "i", 24);
+        \u0275\u0275text(55, " New Taula Parchi ");
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(56, "div", 4)(57, "div", 25)(58, "div", 26)(59, "div", 2)(60, "div", 27)(61, "label", 28);
+        \u0275\u0275text(62, "Farmer Name");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(63, "input", 29);
+        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_63_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.farmerNameSearch, $event) || (ctx.farmerNameSearch = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_63_listener() {
+          return ctx.getTaulaParchis();
+        });
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(64, "div", 2)(65, "div", 27)(66, "label", 30);
+        \u0275\u0275text(67, "Farmer Mobile");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(68, "input", 31);
+        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_68_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.farmerMobileSearch, $event) || (ctx.farmerMobileSearch = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_68_listener() {
+          return ctx.getTaulaParchis();
+        });
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(69, "div", 2)(70, "div", 27)(71, "label", 32);
+        \u0275\u0275text(72, "Farmer Village");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(73, "input", 33);
+        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_73_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.farmerVillageSearch, $event) || (ctx.farmerVillageSearch = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_73_listener() {
+          return ctx.getTaulaParchis();
+        });
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(74, "div", 2)(75, "div", 27)(76, "label", 34);
+        \u0275\u0275text(77, "Crop");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(78, "select", 35);
+        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_select_ngModelChange_78_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.selectedCrop, $event) || (ctx.selectedCrop = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_select_ngModelChange_78_listener() {
+          return ctx.getTaulaParchis();
+        });
+        \u0275\u0275elementStart(79, "option", 36);
+        \u0275\u0275text(80, "Select");
+        \u0275\u0275elementEnd();
+        \u0275\u0275template(81, DashboardComponent_option_81_Template, 2, 2, "option", 37);
+        \u0275\u0275elementEnd()()()()();
+        \u0275\u0275elementStart(82, "div", 38)(83, "table", 39)(84, "thead", 40)(85, "tr")(86, "th", 41);
+        \u0275\u0275text(87, "Date");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(88, "th", 41);
+        \u0275\u0275text(89, "Purchase Status");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(90, "th", 41);
+        \u0275\u0275text(91, "Farmer's Name");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(92, "th", 41);
+        \u0275\u0275text(93, "Storage Location");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(94, "th", 41);
+        \u0275\u0275text(95, "Crop");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(96, "th", 41);
+        \u0275\u0275text(97, "Firm/Company");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(98, "th", 41);
+        \u0275\u0275text(99, "Net Weight(in Quintal)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(100, "th", 41);
+        \u0275\u0275text(101, "Amount (\u20B9)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(102, "th", 41);
+        \u0275\u0275text(103, "Created By");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(104, "th", 41);
+        \u0275\u0275text(105, "Action");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(106, "tbody");
+        \u0275\u0275template(107, DashboardComponent_tr_107_Template, 34, 23, "tr", 42);
+        \u0275\u0275pipe(108, "paginate");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(109, "pagination-controls", 43);
+        \u0275\u0275listener("pageChange", function DashboardComponent_Template_pagination_controls_pageChange_109_listener($event) {
+          ctx.pageForTaulaParchi = $event;
+          return ctx.getTaulaParchis();
+        });
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(110, "div", 21)(111, "div", 17)(112, "div", 18)(113, "div", 0)(114, "div", 2)(115, "h4", 19);
+        \u0275\u0275text(116, "Truck Loading Parchis");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(117, "div", 22)(118, "a", 23);
+        \u0275\u0275element(119, "i", 24);
+        \u0275\u0275text(120, " New Truck Loading Parchi ");
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(121, "div", 4)(122, "div", 44)(123, "table", 39)(124, "thead", 40)(125, "tr")(126, "th", 41);
+        \u0275\u0275text(127, "Date");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(128, "th", 41);
+        \u0275\u0275text(129, "Crop");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(130, "th", 41);
+        \u0275\u0275text(131, "Party Name");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(132, "th", 41);
+        \u0275\u0275text(133, "Truck");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(134, "th", 41);
+        \u0275\u0275text(135, "Delivery Location");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(136, "th", 41);
+        \u0275\u0275text(137, "Assigned Hammal");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(138, "th", 41);
+        \u0275\u0275text(139, "Storage Location");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(140, "th", 41);
+        \u0275\u0275text(141, "Net Weight(in Quintal)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(142, "th", 41);
+        \u0275\u0275text(143, "Amount (\u20B9)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(144, "th", 41);
+        \u0275\u0275text(145, "Created By");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(146, "th", 41);
+        \u0275\u0275text(147, "Action");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(148, "tbody");
+        \u0275\u0275template(149, DashboardComponent_tr_149_Template, 26, 19, "tr", 42);
+        \u0275\u0275pipe(150, "paginate");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(151, "pagination-controls", 45);
+        \u0275\u0275listener("pageChange", function DashboardComponent_Template_pagination_controls_pageChange_151_listener($event) {
+          ctx.pageForTruckLoadingParchi = $event;
+          return ctx.getTruckLoadingParchis();
+        });
+        \u0275\u0275elementEnd()()()()()()();
       }
       if (rf & 2) {
         \u0275\u0275advance(11);
-        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(12, 6, ctx.currentDate, "dd-MM-YYYY"), " ");
+        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(12, 13, ctx.currentDate, "dd-MM-YYYY"), " ");
         \u0275\u0275advance(13);
         \u0275\u0275textInterpolate(ctx.TaulaParchiCount);
         \u0275\u0275advance(11);
         \u0275\u0275textInterpolate(ctx.TruckLoadingParchiCount);
-        \u0275\u0275advance(13);
-        \u0275\u0275property("ngForOf", ctx.Crops);
-        \u0275\u0275advance();
-        \u0275\u0275property("ngIf", ctx.Crops && ctx.Crops.length > 0);
+        \u0275\u0275advance(9);
+        \u0275\u0275property("ngForOf", ctx.warehouses);
+        \u0275\u0275advance(9);
+        \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(22, _c0));
         \u0275\u0275advance(10);
-        \u0275\u0275property("ngForOf", ctx.Datas);
+        \u0275\u0275twoWayProperty("ngModel", ctx.farmerNameSearch);
+        \u0275\u0275advance(5);
+        \u0275\u0275twoWayProperty("ngModel", ctx.farmerMobileSearch);
+        \u0275\u0275advance(5);
+        \u0275\u0275twoWayProperty("ngModel", ctx.farmerVillageSearch);
+        \u0275\u0275advance(5);
+        \u0275\u0275twoWayProperty("ngModel", ctx.selectedCrop);
+        \u0275\u0275advance(3);
+        \u0275\u0275property("ngForOf", ctx.crops);
+        \u0275\u0275advance(26);
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(108, 16, ctx.TaulaParchi, \u0275\u0275pureFunction2(23, _c1, ctx.pageForTaulaParchi, ctx.TaulaParchiCount)));
+        \u0275\u0275advance(11);
+        \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(26, _c2));
+        \u0275\u0275advance(31);
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(150, 19, ctx.TruckLoadingParchi, \u0275\u0275pureFunction2(27, _c3, ctx.pageForTruckLoadingParchi, ctx.TruckLoadingParchiCount)));
       }
-    }, dependencies: [DatePipe, CommonModule, NgForOf, NgIf] });
+    }, dependencies: [
+      DatePipe,
+      RouterLink,
+      CommonModule,
+      NgForOf,
+      DecimalPipe,
+      TitleCasePipe,
+      CurrencyPipe,
+      NgxPaginationModule,
+      PaginatePipe,
+      PaginationControlsComponent,
+      FormsModule,
+      NgSelectOption,
+      \u0275NgSelectMultipleOption,
+      DefaultValueAccessor,
+      SelectControlValueAccessor,
+      NgControlStatus,
+      NgModel,
+      ReactiveFormsModule
+    ] });
   }
 };
 (() => {
@@ -46616,7 +47823,7 @@ var createPopper = /* @__PURE__ */ popperGenerator({
 });
 
 // node_modules/@ng-bootstrap/ng-bootstrap/fesm2022/ng-bootstrap.mjs
-var _c0 = ["*"];
+var _c02 = ["*"];
 function NgbAlert_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
@@ -46705,9 +47912,9 @@ function NgbCarousel_Conditional_6_Template(rf, ctx) {
     \u0275\u0275property("id", ctx_r2.id + "-next");
   }
 }
-var _c1 = ["ngbDatepickerDayView", ""];
-var _c2 = ["month"];
-var _c3 = ["year"];
+var _c12 = ["ngbDatepickerDayView", ""];
+var _c22 = ["month"];
+var _c32 = ["year"];
 function NgbDatepickerNavigationSelect_For_3_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "option", 3);
@@ -46902,9 +48109,9 @@ function NgbDatepickerMonth_For_2_Template(rf, ctx) {
     \u0275\u0275conditional(!week_r3.collapsed ? 0 : -1);
   }
 }
-var _c4 = ["defaultDayTemplate"];
-var _c5 = ["content"];
-var _c6 = (a0) => ({
+var _c42 = ["defaultDayTemplate"];
+var _c52 = ["content"];
+var _c62 = (a0) => ({
   $implicit: a0
 });
 function NgbDatepicker_ng_template_0_Template(rf, ctx) {
@@ -46997,7 +48204,7 @@ function NgbNavOutlet_For_1_Conditional_0_Template(rf, ctx) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275property("item", item_r1)("nav", ctx_r1.nav)("role", ctx_r1.paneRole);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", (item_r1.contentTpl == null ? null : item_r1.contentTpl.templateRef) || null)("ngTemplateOutletContext", \u0275\u0275pureFunction1(5, _c6, item_r1.active || ctx_r1.isPanelTransitioning(item_r1)));
+    \u0275\u0275property("ngTemplateOutlet", (item_r1.contentTpl == null ? null : item_r1.contentTpl.templateRef) || null)("ngTemplateOutletContext", \u0275\u0275pureFunction1(5, _c62, item_r1.active || ctx_r1.isPanelTransitioning(item_r1)));
   }
 }
 function NgbNavOutlet_For_1_Template(rf, ctx) {
@@ -47024,7 +48231,7 @@ var _c11 = (a0, a1, a2) => ({
   $implicit: a1,
   currentPage: a2
 });
-var _c12 = (a0, a1) => ({
+var _c122 = (a0, a1) => ({
   disabled: a0,
   currentPage: a1
 });
@@ -47166,7 +48373,7 @@ function NgbPagination_Conditional_15_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275attribute("tabindex", ctx_r2.previousDisabled() ? "-1" : null)("aria-disabled", ctx_r2.previousDisabled() ? "true" : null);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", (ctx_r2.tplFirst == null ? null : ctx_r2.tplFirst.templateRef) || first_r12)("ngTemplateOutletContext", \u0275\u0275pureFunction2(6, _c12, ctx_r2.previousDisabled(), ctx_r2.page));
+    \u0275\u0275property("ngTemplateOutlet", (ctx_r2.tplFirst == null ? null : ctx_r2.tplFirst.templateRef) || first_r12)("ngTemplateOutletContext", \u0275\u0275pureFunction2(6, _c122, ctx_r2.previousDisabled(), ctx_r2.page));
   }
 }
 function NgbPagination_Conditional_16_ng_template_2_Template(rf, ctx) {
@@ -47218,7 +48425,7 @@ function NgbPagination_Conditional_18_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275attribute("tabindex", ctx_r2.nextDisabled() ? "-1" : null)("aria-disabled", ctx_r2.nextDisabled() ? "true" : null);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", (ctx_r2.tplNext == null ? null : ctx_r2.tplNext.templateRef) || next_r16)("ngTemplateOutletContext", \u0275\u0275pureFunction2(6, _c12, ctx_r2.nextDisabled(), ctx_r2.page));
+    \u0275\u0275property("ngTemplateOutlet", (ctx_r2.tplNext == null ? null : ctx_r2.tplNext.templateRef) || next_r16)("ngTemplateOutletContext", \u0275\u0275pureFunction2(6, _c122, ctx_r2.nextDisabled(), ctx_r2.page));
   }
 }
 function NgbPagination_Conditional_19_ng_template_2_Template(rf, ctx) {
@@ -47243,7 +48450,7 @@ function NgbPagination_Conditional_19_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275attribute("tabindex", ctx_r2.nextDisabled() ? "-1" : null)("aria-disabled", ctx_r2.nextDisabled() ? "true" : null);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", (ctx_r2.tplLast == null ? null : ctx_r2.tplLast.templateRef) || last_r18)("ngTemplateOutletContext", \u0275\u0275pureFunction2(6, _c12, ctx_r2.nextDisabled(), ctx_r2.page));
+    \u0275\u0275property("ngTemplateOutlet", (ctx_r2.tplLast == null ? null : ctx_r2.tplLast.templateRef) || last_r18)("ngTemplateOutletContext", \u0275\u0275pureFunction2(6, _c122, ctx_r2.nextDisabled(), ctx_r2.page));
   }
 }
 function NgbPopoverWindow_Conditional_1_ng_template_1_Template(rf, ctx) {
@@ -48816,7 +50023,7 @@ var NgbAlert = class _NgbAlert {
       exportAs: ["ngbAlert"],
       standalone: true,
       features: [\u0275\u0275StandaloneFeature],
-      ngContentSelectors: _c0,
+      ngContentSelectors: _c02,
       decls: 2,
       vars: 1,
       consts: () => {
@@ -50586,7 +51793,7 @@ var NgbDatepickerDayView = class _NgbDatepickerDayView {
       },
       standalone: true,
       features: [\u0275\u0275StandaloneFeature],
-      attrs: _c1,
+      attrs: _c12,
       decls: 1,
       vars: 1,
       template: function NgbDatepickerDayView_Template(rf, ctx) {
@@ -50676,8 +51883,8 @@ var NgbDatepickerNavigationSelect = class _NgbDatepickerNavigationSelect {
       selectors: [["ngb-datepicker-navigation-select"]],
       viewQuery: function NgbDatepickerNavigationSelect_Query(rf, ctx) {
         if (rf & 1) {
-          \u0275\u0275viewQuery(_c2, 7, ElementRef);
-          \u0275\u0275viewQuery(_c3, 7, ElementRef);
+          \u0275\u0275viewQuery(_c22, 7, ElementRef);
+          \u0275\u0275viewQuery(_c32, 7, ElementRef);
         }
         if (rf & 2) {
           let _t;
@@ -51413,8 +52620,8 @@ var NgbDatepicker = class _NgbDatepicker {
       },
       viewQuery: function NgbDatepicker_Query(rf, ctx) {
         if (rf & 1) {
-          \u0275\u0275viewQuery(_c4, 7);
-          \u0275\u0275viewQuery(_c5, 7);
+          \u0275\u0275viewQuery(_c42, 7);
+          \u0275\u0275viewQuery(_c52, 7);
         }
         if (rf & 2) {
           let _t;
@@ -51476,7 +52683,7 @@ var NgbDatepicker = class _NgbDatepicker {
           \u0275\u0275advance();
           \u0275\u0275classProp("ngb-dp-months", !ctx.contentTemplate);
           \u0275\u0275advance(2);
-          \u0275\u0275property("ngTemplateOutlet", ctx.contentTemplate || (ctx.contentTemplateFromContent == null ? null : ctx.contentTemplateFromContent.templateRef) || defaultContentTemplate_r9)("ngTemplateOutletContext", \u0275\u0275pureFunction1(7, _c6, ctx))("ngTemplateOutletInjector", ctx.injector);
+          \u0275\u0275property("ngTemplateOutlet", ctx.contentTemplate || (ctx.contentTemplateFromContent == null ? null : ctx.contentTemplateFromContent.templateRef) || defaultContentTemplate_r9)("ngTemplateOutletContext", \u0275\u0275pureFunction1(7, _c62, ctx))("ngTemplateOutletInjector", ctx.injector);
           \u0275\u0275advance();
           \u0275\u0275property("ngTemplateOutlet", ctx.footerTemplate);
         }
@@ -55452,7 +56659,7 @@ var NgbModalWindow = class _NgbModalWindow {
       },
       standalone: true,
       features: [\u0275\u0275StandaloneFeature],
-      ngContentSelectors: _c0,
+      ngContentSelectors: _c02,
       decls: 4,
       vars: 2,
       consts: [["dialog", ""], ["role", "document"], [1, "modal-content"]],
@@ -57546,7 +58753,7 @@ var NgbPopoverWindow = class _NgbPopoverWindow {
       },
       standalone: true,
       features: [\u0275\u0275StandaloneFeature],
-      ngContentSelectors: _c0,
+      ngContentSelectors: _c02,
       decls: 4,
       vars: 1,
       consts: [["simpleTitle", ""], ["data-popper-arrow", "", 1, "popover-arrow"], [1, "popover-header"], [1, "popover-body"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"]],
@@ -57957,7 +59164,7 @@ var NgbProgressbar = class _NgbProgressbar {
       },
       standalone: true,
       features: [\u0275\u0275StandaloneFeature],
-      ngContentSelectors: _c0,
+      ngContentSelectors: _c02,
       decls: 3,
       vars: 11,
       consts: () => {
@@ -58081,7 +59288,7 @@ var NgbProgressbarStacked = class _NgbProgressbarStacked {
       hostAttrs: [1, "progress-stacked"],
       standalone: true,
       features: [\u0275\u0275StandaloneFeature],
-      ngContentSelectors: _c0,
+      ngContentSelectors: _c02,
       decls: 1,
       vars: 0,
       template: function NgbProgressbarStacked_Template(rf, ctx) {
@@ -60185,7 +61392,7 @@ var NgbToast = class _NgbToast {
       exportAs: ["ngbToast"],
       standalone: true,
       features: [\u0275\u0275NgOnChangesFeature, \u0275\u0275StandaloneFeature],
-      ngContentSelectors: _c0,
+      ngContentSelectors: _c02,
       decls: 5,
       vars: 1,
       consts: () => {
@@ -60379,7 +61586,7 @@ var NgbTooltipWindow = class _NgbTooltipWindow {
       },
       standalone: true,
       features: [\u0275\u0275StandaloneFeature],
-      ngContentSelectors: _c0,
+      ngContentSelectors: _c02,
       decls: 3,
       vars: 0,
       consts: [["data-popper-arrow", "", 1, "tooltip-arrow"], [1, "tooltip-inner"]],
@@ -61856,7 +63063,7 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
       },
       standalone: true,
       features: [\u0275\u0275StandaloneFeature],
-      ngContentSelectors: _c0,
+      ngContentSelectors: _c02,
       decls: 1,
       vars: 0,
       template: function NgbOffcanvasPanel_Template(rf, ctx) {
@@ -62351,6 +63558,46 @@ var SidebarComponent = class _SidebarComponent {
         link: "/truck-loading-parchi-dashboard"
       },
       {
+        title: "Accounts",
+        icon: "fi fi-rr-user-check",
+        link: "/accounts"
+      },
+      {
+        title: "Inventory",
+        icon: "fi fi-rr-list",
+        link: "/inventory"
+      },
+      {
+        title: "Transaction List",
+        icon: "fi fi-rr-receipt",
+        link: "/transactionlist"
+      },
+      {
+        title: "List",
+        icon: "fi fi-rr-list-check",
+        link: "/list"
+      },
+      {
+        title: "My List",
+        icon: "fi fi-rr-clipboard",
+        link: "/my-list"
+      },
+      {
+        title: "Advance Payments",
+        icon: "fi fi-rr-wallet",
+        link: "/advance-payment"
+      },
+      {
+        title: "Warehouse Accounts",
+        icon: "fi fi-rr-wallet",
+        link: "/wearhouse-accounts"
+      },
+      {
+        title: "Warehouse Inventory",
+        icon: "fi fi-rr-wallet",
+        link: "/wearhouse-inventory"
+      },
+      {
         title: "Farmers",
         icon: "fi-rr-database",
         link: "/farmers"
@@ -62399,7 +63646,7 @@ var SidebarComponent = class _SidebarComponent {
         title: "Trucks",
         icon: "fi fi-rr-route",
         link: "/truck"
-      },
+      }
       // {
       //   title: 'Profile',
       //   icon: 'fi-rr-user',
@@ -62410,46 +63657,6 @@ var SidebarComponent = class _SidebarComponent {
       //   icon: 'fi-rr-settings',
       //   link: '/settings'
       // },
-      {
-        title: "Accounts",
-        icon: "fi fi-rr-user-check",
-        link: "/accounts"
-      },
-      {
-        title: "Inventory",
-        icon: "fi fi-rr-list",
-        link: "/inventory"
-      },
-      {
-        title: "Transaction List",
-        icon: "fi fi-rr-receipt",
-        link: "/transactionlist"
-      },
-      {
-        title: "List",
-        icon: "fi fi-rr-list-check",
-        link: "/list"
-      },
-      {
-        title: "My List",
-        icon: "fi fi-rr-clipboard",
-        link: "/my-list"
-      },
-      {
-        title: "Advance Payments",
-        icon: "fi fi-rr-wallet",
-        link: "/advance-payment"
-      },
-      {
-        title: "Warehouse Accounts",
-        icon: "fi fi-rr-wallet",
-        link: "/wearhouse-accounts"
-      },
-      {
-        title: "Warehouse Inventory",
-        icon: "fi fi-rr-wallet",
-        link: "/wearhouse-inventory"
-      }
     ];
   }
   getMenuItems() {
@@ -62947,7 +64154,7 @@ function ZIndexUtils() {
 var zindexutils = ZIndexUtils();
 
 // node_modules/primeng/fesm2022/primeng-api.mjs
-var _c02 = ["*"];
+var _c03 = ["*"];
 var ConfirmEventType;
 (function(ConfirmEventType2) {
   ConfirmEventType2[ConfirmEventType2["ACCEPT"] = 0] = "ACCEPT";
@@ -63508,7 +64715,7 @@ var Header = class _Header {
     selectors: [["p-header"]],
     standalone: true,
     features: [\u0275\u0275StandaloneFeature],
-    ngContentSelectors: _c02,
+    ngContentSelectors: _c03,
     decls: 1,
     vars: 0,
     template: function Header_Template(rf, ctx) {
@@ -63539,7 +64746,7 @@ var Footer = class _Footer {
     selectors: [["p-footer"]],
     standalone: true,
     features: [\u0275\u0275StandaloneFeature],
-    ngContentSelectors: _c02,
+    ngContentSelectors: _c03,
     decls: 1,
     vars: 0,
     template: function Footer_Template(rf, ctx) {
@@ -64477,7 +65684,7 @@ var AutoFocusModule = class _AutoFocusModule {
 })();
 
 // node_modules/primeng/fesm2022/primeng-baseicon.mjs
-var _c03 = ["*"];
+var _c04 = ["*"];
 var BaseIcon = class _BaseIcon {
   label;
   spin = false;
@@ -64511,7 +65718,7 @@ var BaseIcon = class _BaseIcon {
     },
     standalone: true,
     features: [\u0275\u0275InputTransformsFeature, \u0275\u0275StandaloneFeature],
-    ngContentSelectors: _c03,
+    ngContentSelectors: _c04,
     decls: 1,
     vars: 0,
     template: function BaseIcon_Template(rf, ctx) {
@@ -64784,7 +65991,7 @@ var RippleModule = class _RippleModule {
 })();
 
 // node_modules/primeng/fesm2022/primeng-button.mjs
-var _c04 = ["*"];
+var _c05 = ["*"];
 var _c15 = (a0) => ({
   class: a0
 });
@@ -65494,7 +66701,7 @@ var Button = class _Button {
     },
     standalone: true,
     features: [\u0275\u0275InputTransformsFeature, \u0275\u0275StandaloneFeature],
-    ngContentSelectors: _c04,
+    ngContentSelectors: _c05,
     decls: 7,
     vars: 14,
     consts: [["pRipple", "", "pAutoFocus", "", 3, "click", "focus", "blur", "ngStyle", "disabled", "ngClass", "autofocus"], [4, "ngTemplateOutlet"], [4, "ngIf"], ["class", "p-button-label", 4, "ngIf"], [3, "ngClass", "class", 4, "ngIf"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [3, "ngClass", 4, "ngIf"], [3, "styleClass", "spin", 4, "ngIf"], [3, "ngClass"], [3, "styleClass", "spin"], [3, "ngIf"], [1, "p-button-label"]],
@@ -66172,10 +67379,10 @@ var AnimationGroupPlayer = class {
 var \u0275PRE_STYLE = "!";
 
 // node_modules/primeng/fesm2022/primeng-overlay.mjs
-var _c05 = ["overlay"];
+var _c06 = ["overlay"];
 var _c16 = ["content"];
-var _c22 = ["*"];
-var _c32 = (a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13) => ({
+var _c23 = ["*"];
+var _c33 = (a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13) => ({
   "p-overlay p-component": true,
   "p-overlay-modal p-component-overlay p-component-overlay-enter": a0,
   "p-overlay-center": a1,
@@ -66192,16 +67399,16 @@ var _c32 = (a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13) => ({
   "p-overlay-right-start": a12,
   "p-overlay-right-end": a13
 });
-var _c42 = (a0, a1, a2) => ({
+var _c43 = (a0, a1, a2) => ({
   showTransitionParams: a0,
   hideTransitionParams: a1,
   transform: a2
 });
-var _c52 = (a0) => ({
+var _c53 = (a0) => ({
   value: "visible",
   params: a0
 });
-var _c62 = (a0) => ({
+var _c63 = (a0) => ({
   mode: a0
 });
 var _c72 = (a0) => ({
@@ -66236,9 +67443,9 @@ function Overlay_div_0_div_2_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275classMap(ctx_r1.contentStyleClass);
-    \u0275\u0275property("ngStyle", ctx_r1.contentStyle)("ngClass", "p-overlay-content")("@overlayContentAnimation", \u0275\u0275pureFunction1(11, _c52, \u0275\u0275pureFunction3(7, _c42, ctx_r1.showTransitionOptions, ctx_r1.hideTransitionOptions, ctx_r1.transformOptions[ctx_r1.modal ? ctx_r1.overlayResponsiveDirection : "default"])));
+    \u0275\u0275property("ngStyle", ctx_r1.contentStyle)("ngClass", "p-overlay-content")("@overlayContentAnimation", \u0275\u0275pureFunction1(11, _c53, \u0275\u0275pureFunction3(7, _c43, ctx_r1.showTransitionOptions, ctx_r1.hideTransitionOptions, ctx_r1.transformOptions[ctx_r1.modal ? ctx_r1.overlayResponsiveDirection : "default"])));
     \u0275\u0275advance(3);
-    \u0275\u0275property("ngTemplateOutlet", ctx_r1.contentTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction1(15, _c72, \u0275\u0275pureFunction1(13, _c62, ctx_r1.overlayMode)));
+    \u0275\u0275property("ngTemplateOutlet", ctx_r1.contentTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction1(15, _c72, \u0275\u0275pureFunction1(13, _c63, ctx_r1.overlayMode)));
   }
 }
 function Overlay_div_0_Template(rf, ctx) {
@@ -66256,7 +67463,7 @@ function Overlay_div_0_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275classMap(ctx_r1.styleClass);
-    \u0275\u0275property("ngStyle", ctx_r1.style)("ngClass", \u0275\u0275pureFunctionV(5, _c32, [ctx_r1.modal, ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "center", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "top", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "top-start", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "top-end", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "bottom", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "bottom-start", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "bottom-end", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "left", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "left-start", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "left-end", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "right", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "right-start", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "right-end"]));
+    \u0275\u0275property("ngStyle", ctx_r1.style)("ngClass", \u0275\u0275pureFunctionV(5, _c33, [ctx_r1.modal, ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "center", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "top", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "top-start", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "top-end", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "bottom", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "bottom-start", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "bottom-end", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "left", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "left-start", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "left-end", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "right", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "right-start", ctx_r1.modal && ctx_r1.overlayResponsiveDirection === "right-end"]));
     \u0275\u0275advance(2);
     \u0275\u0275property("ngIf", ctx_r1.visible);
   }
@@ -66810,7 +68017,7 @@ var Overlay = class _Overlay {
     },
     viewQuery: function Overlay_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c05, 5);
+        \u0275\u0275viewQuery(_c06, 5);
         \u0275\u0275viewQuery(_c16, 5);
       }
       if (rf & 2) {
@@ -66847,7 +68054,7 @@ var Overlay = class _Overlay {
       onAnimationDone: "onAnimationDone"
     },
     features: [\u0275\u0275ProvidersFeature([OVERLAY_VALUE_ACCESSOR])],
-    ngContentSelectors: _c22,
+    ngContentSelectors: _c23,
     decls: 1,
     vars: 1,
     consts: [["overlay", ""], ["content", ""], [3, "ngStyle", "class", "ngClass", "click", 4, "ngIf"], [3, "click", "ngStyle", "ngClass"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"]],
@@ -67052,23 +68259,23 @@ var OverlayModule = class _OverlayModule {
 })();
 
 // node_modules/primeng/fesm2022/primeng-scroller.mjs
-var _c06 = ["element"];
+var _c07 = ["element"];
 var _c17 = ["content"];
-var _c23 = ["*"];
-var _c33 = (a0, a1, a2) => ({
+var _c24 = ["*"];
+var _c34 = (a0, a1, a2) => ({
   "p-scroller": true,
   "p-scroller-inline": a0,
   "p-both-scroll": a1,
   "p-horizontal-scroll": a2
 });
-var _c43 = (a0, a1) => ({
+var _c44 = (a0, a1) => ({
   $implicit: a0,
   options: a1
 });
-var _c53 = (a0) => ({
+var _c54 = (a0) => ({
   "p-scroller-loading": a0
 });
-var _c63 = (a0) => ({
+var _c64 = (a0) => ({
   "p-component-overlay": a0
 });
 var _c73 = (a0) => ({
@@ -67098,7 +68305,7 @@ function Scroller_ng_container_0_ng_container_3_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", ctx_r1.contentTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction2(2, _c43, ctx_r1.loadedItems, ctx_r1.getContentOptions()));
+    \u0275\u0275property("ngTemplateOutlet", ctx_r1.contentTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction2(2, _c44, ctx_r1.loadedItems, ctx_r1.getContentOptions()));
   }
 }
 function Scroller_ng_container_0_ng_template_4_ng_container_2_ng_container_1_Template(rf, ctx) {
@@ -67117,7 +68324,7 @@ function Scroller_ng_container_0_ng_template_4_ng_container_2_Template(rf, ctx) 
     const index_r4 = ctx.index;
     const ctx_r1 = \u0275\u0275nextContext(3);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", ctx_r1.itemTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction2(2, _c43, item_r3, ctx_r1.getOptions(index_r4)));
+    \u0275\u0275property("ngTemplateOutlet", ctx_r1.itemTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction2(2, _c44, item_r3, ctx_r1.getOptions(index_r4)));
   }
 }
 function Scroller_ng_container_0_ng_template_4_Template(rf, ctx) {
@@ -67128,7 +68335,7 @@ function Scroller_ng_container_0_ng_template_4_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(5, _c53, ctx_r1.d_loading))("ngStyle", ctx_r1.contentStyle);
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(5, _c54, ctx_r1.d_loading))("ngStyle", ctx_r1.contentStyle);
     \u0275\u0275attribute("data-pc-section", "content");
     \u0275\u0275advance(2);
     \u0275\u0275property("ngForOf", ctx_r1.loadedItems)("ngForTrackBy", ctx_r1._trackBy || ctx_r1.index);
@@ -67219,7 +68426,7 @@ function Scroller_ng_container_0_div_7_Template(rf, ctx) {
   if (rf & 2) {
     const buildInLoader_r7 = \u0275\u0275reference(3);
     const ctx_r1 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(4, _c63, !ctx_r1.loaderTemplate));
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(4, _c64, !ctx_r1.loaderTemplate));
     \u0275\u0275attribute("data-pc-section", "loader");
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r1.loaderTemplate)("ngIfElse", buildInLoader_r7);
@@ -67244,7 +68451,7 @@ function Scroller_ng_container_0_Template(rf, ctx) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance();
     \u0275\u0275classMap(ctx_r1._styleClass);
-    \u0275\u0275property("ngStyle", ctx_r1._style)("ngClass", \u0275\u0275pureFunction3(12, _c33, ctx_r1.inline, ctx_r1.both, ctx_r1.horizontal));
+    \u0275\u0275property("ngStyle", ctx_r1._style)("ngClass", \u0275\u0275pureFunction3(12, _c34, ctx_r1.inline, ctx_r1.both, ctx_r1.horizontal));
     \u0275\u0275attribute("id", ctx_r1._id)("tabindex", ctx_r1.tabindex)("data-pc-name", "scroller")("data-pc-section", "root");
     \u0275\u0275advance(2);
     \u0275\u0275property("ngIf", ctx_r1.contentTemplate)("ngIfElse", buildInContent_r8);
@@ -67268,7 +68475,7 @@ function Scroller_ng_template_1_ng_container_1_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", ctx_r1.contentTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction2(5, _c43, ctx_r1.items, \u0275\u0275pureFunction2(2, _c102, ctx_r1._items, ctx_r1.loadedColumns)));
+    \u0275\u0275property("ngTemplateOutlet", ctx_r1.contentTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction2(5, _c44, ctx_r1.items, \u0275\u0275pureFunction2(2, _c102, ctx_r1._items, ctx_r1.loadedColumns)));
   }
 }
 function Scroller_ng_template_1_Template(rf, ctx) {
@@ -68276,7 +69483,7 @@ var Scroller = class _Scroller {
     },
     viewQuery: function Scroller_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c06, 5);
+        \u0275\u0275viewQuery(_c07, 5);
         \u0275\u0275viewQuery(_c17, 5);
       }
       if (rf & 2) {
@@ -68319,7 +69526,7 @@ var Scroller = class _Scroller {
       onScrollIndexChange: "onScrollIndexChange"
     },
     features: [\u0275\u0275NgOnChangesFeature],
-    ngContentSelectors: _c23,
+    ngContentSelectors: _c24,
     decls: 3,
     vars: 2,
     consts: [["disabledContainer", ""], ["element", ""], ["buildInContent", ""], ["content", ""], ["buildInLoader", ""], ["buildInLoaderIcon", ""], [4, "ngIf", "ngIfElse"], [3, "scroll", "ngStyle", "ngClass"], ["class", "p-scroller-spacer", 3, "ngStyle", 4, "ngIf"], ["class", "p-scroller-loader", 3, "ngClass", 4, "ngIf"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "p-scroller-content", 3, "ngClass", "ngStyle"], [4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "p-scroller-spacer", 3, "ngStyle"], [1, "p-scroller-loader", 3, "ngClass"], [4, "ngFor", "ngForOf"], [3, "styleClass"], [4, "ngIf"]],
@@ -69617,7 +70824,7 @@ var SearchIcon = class _SearchIcon extends BaseIcon {
 })();
 
 // node_modules/primeng/fesm2022/primeng-dropdown.mjs
-var _c07 = (a0) => ({
+var _c08 = (a0) => ({
   height: a0
 });
 var _c18 = (a0, a1, a2) => ({
@@ -69626,7 +70833,7 @@ var _c18 = (a0, a1, a2) => ({
   "p-disabled": a1,
   "p-focus": a2
 });
-var _c24 = (a0) => ({
+var _c25 = (a0) => ({
   $implicit: a0
 });
 function DropdownItem_ng_container_1_CheckIcon_1_Template(rf, ctx) {
@@ -69677,16 +70884,16 @@ function DropdownItem_ng_container_3_Template(rf, ctx) {
     \u0275\u0275elementContainer(0);
   }
 }
-var _c34 = ["container"];
-var _c44 = ["filter"];
-var _c54 = ["focusInput"];
-var _c64 = ["editableInput"];
+var _c35 = ["container"];
+var _c45 = ["filter"];
+var _c55 = ["focusInput"];
+var _c65 = ["editableInput"];
 var _c74 = ["items"];
 var _c83 = ["scroller"];
 var _c93 = ["overlay"];
 var _c103 = ["firstHiddenFocusableEl"];
 var _c112 = ["lastHiddenFocusableEl"];
-var _c122 = (a0) => ({
+var _c123 = (a0) => ({
   "max-height": a0
 });
 var _c132 = (a0) => ({
@@ -69718,7 +70925,7 @@ function Dropdown_span_2_ng_container_3_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r2 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngTemplateOutlet", ctx_r2.selectedItemTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c24, ctx_r2.selectedOption));
+    \u0275\u0275property("ngTemplateOutlet", ctx_r2.selectedItemTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c25, ctx_r2.selectedOption));
   }
 }
 function Dropdown_span_2_ng_template_4_span_0_Template(rf, ctx) {
@@ -70134,7 +71341,7 @@ function Dropdown_ng_template_11_p_scroller_6_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r2 = \u0275\u0275nextContext(2);
-    \u0275\u0275styleMap(\u0275\u0275pureFunction1(8, _c07, ctx_r2.scrollHeight));
+    \u0275\u0275styleMap(\u0275\u0275pureFunction1(8, _c08, ctx_r2.scrollHeight));
     \u0275\u0275property("items", ctx_r2.visibleOptions())("itemSize", ctx_r2.virtualScrollItemSize || ctx_r2._itemSize)("autoSize", true)("lazy", ctx_r2.lazy)("options", ctx_r2.virtualScrollOptions);
     \u0275\u0275advance(3);
     \u0275\u0275property("ngIf", ctx_r2.loaderTemplate);
@@ -70192,12 +71399,12 @@ function Dropdown_ng_template_11_ng_template_8_ng_template_2_ng_container_0_Temp
     const scrollerOptions_r20 = \u0275\u0275nextContext().options;
     const ctx_r2 = \u0275\u0275nextContext(2);
     \u0275\u0275advance();
-    \u0275\u0275property("ngStyle", \u0275\u0275pureFunction1(5, _c07, scrollerOptions_r20.itemSize + "px"));
+    \u0275\u0275property("ngStyle", \u0275\u0275pureFunction1(5, _c08, scrollerOptions_r20.itemSize + "px"));
     \u0275\u0275attribute("id", ctx_r2.id + "_" + ctx_r2.getOptionIndex(i_r19, scrollerOptions_r20));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", !ctx_r2.groupTemplate);
     \u0275\u0275advance();
-    \u0275\u0275property("ngTemplateOutlet", ctx_r2.groupTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction1(7, _c24, option_r17.optionGroup));
+    \u0275\u0275property("ngTemplateOutlet", ctx_r2.groupTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction1(7, _c25, option_r17.optionGroup));
   }
 }
 function Dropdown_ng_template_11_ng_template_8_ng_template_2_ng_container_1_Template(rf, ctx) {
@@ -70268,7 +71475,7 @@ function Dropdown_ng_template_11_ng_template_8_li_3_Template(rf, ctx) {
   if (rf & 2) {
     const scrollerOptions_r20 = \u0275\u0275nextContext().options;
     const ctx_r2 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngStyle", \u0275\u0275pureFunction1(4, _c07, scrollerOptions_r20.itemSize + "px"));
+    \u0275\u0275property("ngStyle", \u0275\u0275pureFunction1(4, _c08, scrollerOptions_r20.itemSize + "px"));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", !ctx_r2.emptyFilterTemplate && !ctx_r2.emptyTemplate)("ngIfElse", ctx_r2.emptyFilter);
     \u0275\u0275advance();
@@ -70301,7 +71508,7 @@ function Dropdown_ng_template_11_ng_template_8_li_4_Template(rf, ctx) {
   if (rf & 2) {
     const scrollerOptions_r20 = \u0275\u0275nextContext().options;
     const ctx_r2 = \u0275\u0275nextContext(2);
-    \u0275\u0275property("ngStyle", \u0275\u0275pureFunction1(4, _c07, scrollerOptions_r20.itemSize + "px"));
+    \u0275\u0275property("ngStyle", \u0275\u0275pureFunction1(4, _c08, scrollerOptions_r20.itemSize + "px"));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", !ctx_r2.emptyTemplate)("ngIfElse", ctx_r2.empty);
     \u0275\u0275advance();
@@ -70367,7 +71574,7 @@ function Dropdown_ng_template_11_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r2.filter);
     \u0275\u0275advance();
-    \u0275\u0275property("ngStyle", \u0275\u0275pureFunction1(16, _c122, ctx_r2.virtualScroll ? "auto" : ctx_r2.scrollHeight || "auto"));
+    \u0275\u0275property("ngStyle", \u0275\u0275pureFunction1(16, _c123, ctx_r2.virtualScroll ? "auto" : ctx_r2.scrollHeight || "auto"));
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r2.virtualScroll);
     \u0275\u0275advance();
@@ -70447,14 +71654,14 @@ var DropdownItem = class _DropdownItem {
         \u0275\u0275elementEnd();
       }
       if (rf & 2) {
-        \u0275\u0275property("id", ctx.id)("ngStyle", \u0275\u0275pureFunction1(14, _c07, ctx.itemSize + "px"))("ngClass", \u0275\u0275pureFunction3(16, _c18, ctx.selected, ctx.disabled, ctx.focused));
+        \u0275\u0275property("id", ctx.id)("ngStyle", \u0275\u0275pureFunction1(14, _c08, ctx.itemSize + "px"))("ngClass", \u0275\u0275pureFunction3(16, _c18, ctx.selected, ctx.disabled, ctx.focused));
         \u0275\u0275attribute("aria-label", ctx.label)("aria-setsize", ctx.ariaSetSize)("aria-posinset", ctx.ariaPosInset)("aria-selected", ctx.selected)("data-p-focused", ctx.focused)("data-p-highlight", ctx.selected)("data-p-disabled", ctx.disabled);
         \u0275\u0275advance();
         \u0275\u0275property("ngIf", ctx.checkmark);
         \u0275\u0275advance();
         \u0275\u0275property("ngIf", !ctx.template);
         \u0275\u0275advance();
-        \u0275\u0275property("ngTemplateOutlet", ctx.template)("ngTemplateOutletContext", \u0275\u0275pureFunction1(20, _c24, ctx.option));
+        \u0275\u0275property("ngTemplateOutlet", ctx.template)("ngTemplateOutletContext", \u0275\u0275pureFunction1(20, _c25, ctx.option));
       }
     },
     dependencies: () => [NgClass, NgIf, NgTemplateOutlet, NgStyle, Ripple, BlankIcon, CheckIcon],
@@ -71904,10 +73111,10 @@ var Dropdown = class _Dropdown {
     },
     viewQuery: function Dropdown_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c34, 5);
-        \u0275\u0275viewQuery(_c44, 5);
-        \u0275\u0275viewQuery(_c54, 5);
-        \u0275\u0275viewQuery(_c64, 5);
+        \u0275\u0275viewQuery(_c35, 5);
+        \u0275\u0275viewQuery(_c45, 5);
+        \u0275\u0275viewQuery(_c55, 5);
+        \u0275\u0275viewQuery(_c65, 5);
         \u0275\u0275viewQuery(_c74, 5);
         \u0275\u0275viewQuery(_c83, 5);
         \u0275\u0275viewQuery(_c93, 5);
@@ -72666,7 +73873,7 @@ var DropdownModule = class _DropdownModule {
 })();
 
 // src/app/pages/taul-parchi/taul-parchi.component.ts
-var _c08 = (a0) => ({ show: a0 });
+var _c09 = (a0) => ({ show: a0 });
 var _c19 = () => ({ "width": "100%" });
 function TaulParchiComponent_option_36_Template(rf, ctx) {
   if (rf & 1) {
@@ -73370,7 +74577,7 @@ var TaulParchiComponent = class _TaulParchiComponent {
         \u0275\u0275elementEnd()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(42, _c08, ctx.isNewFarmerPopUpOpen));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(42, _c09, ctx.isNewFarmerPopUpOpen));
         \u0275\u0275advance(14);
         \u0275\u0275twoWayProperty("ngModel", ctx.farmerToAddOrEdit.farmerType);
         \u0275\u0275advance(10);
@@ -73647,7 +74854,7 @@ var SharedService = class _SharedService {
 };
 
 // src/app/pages/truck-loading-parchi/truck-loading-parchi.component.ts
-var _c09 = () => ({ width: "100%" });
+var _c010 = () => ({ width: "100%" });
 function TruckLoadingParchiComponent_p_dropdown_65_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
@@ -73662,7 +74869,7 @@ function TruckLoadingParchiComponent_p_dropdown_65_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275styleMap(\u0275\u0275pureFunction0(6, _c09));
+    \u0275\u0275styleMap(\u0275\u0275pureFunction0(6, _c010));
     \u0275\u0275property("options", ctx_r1.DeliveryLocations);
     \u0275\u0275twoWayProperty("ngModel", ctx_r1.TruckLoadingParchi.deliveryLocation);
     \u0275\u0275property("showClear", true)("filter", true);
@@ -73682,106 +74889,176 @@ function TruckLoadingParchiComponent_p_dropdown_66_Template(rf, ctx) {
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275styleMap(\u0275\u0275pureFunction0(6, _c09));
+    \u0275\u0275styleMap(\u0275\u0275pureFunction0(6, _c010));
     \u0275\u0275property("options", ctx_r1.Storage);
     \u0275\u0275twoWayProperty("ngModel", ctx_r1.TruckLoadingParchi.deliveryLocation);
     \u0275\u0275property("showClear", true)("filter", true);
   }
 }
-function TruckLoadingParchiComponent_div_71_div_19_Template(rf, ctx) {
+function TruckLoadingParchiComponent_div_71_tr_28_Template(rf, ctx) {
   if (rf & 1) {
-    const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div")(1, "label", 43);
+    \u0275\u0275elementStart(0, "tr")(1, "th", 46);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "td");
+    \u0275\u0275text(6);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const bag_r4 = ctx.$implicit;
+    const i_r5 = ctx.index;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(i_r5 + 1);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(bag_r4.no_of_bags);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(bag_r4.unit_weight_of_bags);
+  }
+}
+function TruckLoadingParchiComponent_div_71_div_31_option_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 49);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const unit_r7 = ctx.$implicit;
+    \u0275\u0275property("ngValue", unit_r7.unit_weight_of_bags);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", unit_r7.unit_weight_of_bags, " ");
+  }
+}
+function TruckLoadingParchiComponent_div_71_div_31_div_7_option_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 49);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const i_r9 = ctx.index;
+    \u0275\u0275property("ngValue", i_r9 + 1);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", i_r9 + 1, " ");
+  }
+}
+function TruckLoadingParchiComponent_div_71_div_31_div_7_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r8 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 62)(1, "label", 63);
     \u0275\u0275text(2, " Bora Quantity ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "input", 44);
-    \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_19_Template_input_ngModelChange_3_listener($event) {
-      \u0275\u0275restoreView(_r4);
-      const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275elementStart(3, "select", 64);
+    \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_31_div_7_Template_select_ngModelChange_3_listener($event) {
+      \u0275\u0275restoreView(_r8);
+      const ctx_r1 = \u0275\u0275nextContext(3);
       \u0275\u0275twoWayBindingSet(ctx_r1.TruckLoadingParchi.boraQuantity, $event) || (ctx_r1.TruckLoadingParchi.boraQuantity = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_19_Template_input_ngModelChange_3_listener() {
-      \u0275\u0275restoreView(_r4);
-      const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_31_div_7_Template_select_ngModelChange_3_listener() {
+      \u0275\u0275restoreView(_r8);
+      const ctx_r1 = \u0275\u0275nextContext(3);
       return \u0275\u0275resetView(ctx_r1.calculateNetWeight());
     });
+    \u0275\u0275elementStart(4, "option", 49);
+    \u0275\u0275text(5, "Select Bora Quantity");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "label", 45);
-    \u0275\u0275text(5, "Bora Bharti (in Kgs)");
+    \u0275\u0275template(6, TruckLoadingParchiComponent_div_71_div_31_div_7_option_6_Template, 2, 2, "option", 50);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance(3);
+    \u0275\u0275twoWayProperty("ngModel", ctx_r1.TruckLoadingParchi.boraQuantity);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngForOf", ctx_r1.getArray(ctx_r1.selectedStockInfo.no_of_bags));
+  }
+}
+function TruckLoadingParchiComponent_div_71_div_31_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r6 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div")(1, "label", 47);
+    \u0275\u0275text(2, "Bora Bharti (in Kgs)");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "input", 46);
-    \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_19_Template_input_ngModelChange_6_listener($event) {
-      \u0275\u0275restoreView(_r4);
+    \u0275\u0275elementStart(3, "select", 48);
+    \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_31_Template_select_ngModelChange_3_listener($event) {
+      \u0275\u0275restoreView(_r6);
       const ctx_r1 = \u0275\u0275nextContext(2);
       \u0275\u0275twoWayBindingSet(ctx_r1.TruckLoadingParchi.unitBora, $event) || (ctx_r1.TruckLoadingParchi.unitBora = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_19_Template_input_ngModelChange_6_listener() {
-      \u0275\u0275restoreView(_r4);
+    \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_31_Template_select_ngModelChange_3_listener() {
+      \u0275\u0275restoreView(_r6);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.calculateNetWeight());
     });
+    \u0275\u0275elementStart(4, "option", 49);
+    \u0275\u0275text(5, "Select Bora Bharti");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "label", 47);
-    \u0275\u0275text(8, "Bardana Type");
+    \u0275\u0275template(6, TruckLoadingParchiComponent_div_71_div_31_option_6_Template, 2, 2, "option", 50);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(9, "select", 48);
-    \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_19_Template_select_ngModelChange_9_listener($event) {
-      \u0275\u0275restoreView(_r4);
+    \u0275\u0275template(7, TruckLoadingParchiComponent_div_71_div_31_div_7_Template, 7, 2, "div", 51);
+    \u0275\u0275elementStart(8, "label", 52);
+    \u0275\u0275text(9, "Bardana Type");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "select", 53);
+    \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_31_Template_select_ngModelChange_10_listener($event) {
+      \u0275\u0275restoreView(_r6);
       const ctx_r1 = \u0275\u0275nextContext(2);
       \u0275\u0275twoWayBindingSet(ctx_r1.TruckLoadingParchi.bardanaType, $event) || (ctx_r1.TruckLoadingParchi.bardanaType = $event);
       return \u0275\u0275resetView($event);
     });
-    \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_19_Template_select_ngModelChange_9_listener() {
-      \u0275\u0275restoreView(_r4);
+    \u0275\u0275listener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_31_Template_select_ngModelChange_10_listener() {
+      \u0275\u0275restoreView(_r6);
       const ctx_r1 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r1.calculateNetWeight());
     });
-    \u0275\u0275elementStart(10, "option", 49);
-    \u0275\u0275text(11, "Select Bardana Type");
+    \u0275\u0275elementStart(11, "option", 49);
+    \u0275\u0275text(12, "Select Bardana Type");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "option", 49);
-    \u0275\u0275text(13, "No Bardana");
+    \u0275\u0275elementStart(13, "option", 49);
+    \u0275\u0275text(14, "No Bardana");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "option", 49);
-    \u0275\u0275text(15, "650g");
+    \u0275\u0275elementStart(15, "option", 49);
+    \u0275\u0275text(16, "650g");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "option", 49);
-    \u0275\u0275text(17, "1Kg");
+    \u0275\u0275elementStart(17, "option", 49);
+    \u0275\u0275text(18, "1Kg");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(18, "label", 50);
-    \u0275\u0275text(19, "Net Weight(in Quintal)");
+    \u0275\u0275elementStart(19, "label", 54);
+    \u0275\u0275text(20, "Net Weight(in Quintal)");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(20, "input", 51);
-    \u0275\u0275elementStart(21, "label", 52);
-    \u0275\u0275text(22, "Rate(Per Quintal)");
+    \u0275\u0275element(21, "input", 55);
+    \u0275\u0275elementStart(22, "label", 56);
+    \u0275\u0275text(23, "Rate(Per Quintal)");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(23, "input", 53);
-    \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_19_Template_input_ngModelChange_23_listener($event) {
-      \u0275\u0275restoreView(_r4);
+    \u0275\u0275elementStart(24, "input", 57);
+    \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_31_Template_input_ngModelChange_24_listener($event) {
+      \u0275\u0275restoreView(_r6);
       const ctx_r1 = \u0275\u0275nextContext(2);
       \u0275\u0275twoWayBindingSet(ctx_r1.TruckLoadingParchi.rate, $event) || (ctx_r1.TruckLoadingParchi.rate = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(24, "label", 54);
-    \u0275\u0275text(25, "Freight Advance");
+    \u0275\u0275elementStart(25, "label", 58);
+    \u0275\u0275text(26, "Freight Advance");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(26, "input", 55);
-    \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_19_Template_input_ngModelChange_26_listener($event) {
-      \u0275\u0275restoreView(_r4);
+    \u0275\u0275elementStart(27, "input", 59);
+    \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_31_Template_input_ngModelChange_27_listener($event) {
+      \u0275\u0275restoreView(_r6);
       const ctx_r1 = \u0275\u0275nextContext(2);
       \u0275\u0275twoWayBindingSet(ctx_r1.TruckLoadingParchi.advance, $event) || (ctx_r1.TruckLoadingParchi.advance = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "label", 56);
-    \u0275\u0275text(28, "Remark");
+    \u0275\u0275elementStart(28, "label", 60);
+    \u0275\u0275text(29, "Remark");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(29, "input", 57);
-    \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_19_Template_input_ngModelChange_29_listener($event) {
-      \u0275\u0275restoreView(_r4);
+    \u0275\u0275elementStart(30, "input", 61);
+    \u0275\u0275twoWayListener("ngModelChange", function TruckLoadingParchiComponent_div_71_div_31_Template_input_ngModelChange_30_listener($event) {
+      \u0275\u0275restoreView(_r6);
       const ctx_r1 = \u0275\u0275nextContext(2);
       \u0275\u0275twoWayBindingSet(ctx_r1.TruckLoadingParchi.other, $event) || (ctx_r1.TruckLoadingParchi.other = $event);
       return \u0275\u0275resetView($event);
@@ -73791,9 +75068,11 @@ function TruckLoadingParchiComponent_div_71_div_19_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(3);
-    \u0275\u0275twoWayProperty("ngModel", ctx_r1.TruckLoadingParchi.boraQuantity);
-    \u0275\u0275advance(3);
     \u0275\u0275twoWayProperty("ngModel", ctx_r1.TruckLoadingParchi.unitBora);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngForOf", ctx_r1.stockInfo.bag_units);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.selectedStockInfo);
     \u0275\u0275advance(3);
     \u0275\u0275twoWayProperty("ngModel", ctx_r1.TruckLoadingParchi.bardanaType);
     \u0275\u0275advance(3);
@@ -73826,10 +75105,22 @@ function TruckLoadingParchiComponent_div_71_Template(rf, ctx) {
     \u0275\u0275elementStart(14, "p", 42);
     \u0275\u0275text(15);
     \u0275\u0275pipe(16, "currency");
-    \u0275\u0275elementEnd()()()()()()();
-    \u0275\u0275element(17, "hr");
-    \u0275\u0275elementStart(18, "div");
-    \u0275\u0275template(19, TruckLoadingParchiComponent_div_71_div_19_Template, 30, 10, "div", 34);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(17, "div", 12)(18, "table", 43)(19, "thead")(20, "tr")(21, "th", 44);
+    \u0275\u0275text(22, "#");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(23, "th", 44);
+    \u0275\u0275text(24, "No of Bags");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(25, "th", 44);
+    \u0275\u0275text(26, "Weight (in Kgs)");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(27, "tbody");
+    \u0275\u0275template(28, TruckLoadingParchiComponent_div_71_tr_28_Template, 7, 3, "tr", 45);
+    \u0275\u0275elementEnd()()()()()()()();
+    \u0275\u0275element(29, "hr");
+    \u0275\u0275elementStart(30, "div");
+    \u0275\u0275template(31, TruckLoadingParchiComponent_div_71_div_31_Template, 31, 11, "div", 34);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -73837,8 +75128,10 @@ function TruckLoadingParchiComponent_div_71_Template(rf, ctx) {
     \u0275\u0275advance(10);
     \u0275\u0275textInterpolate(ctx_r1.stockInfo.quantity);
     \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(16, 3, ctx_r1.stockInfo.averagePrice, "INR"), " ");
-    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(16, 4, ctx_r1.stockInfo.averagePrice, "INR"), " ");
+    \u0275\u0275advance(13);
+    \u0275\u0275property("ngForOf", ctx_r1.stockInfo.bag_units);
+    \u0275\u0275advance(3);
     \u0275\u0275property("ngIf", ctx_r1.isStockFetched);
   }
 }
@@ -73858,8 +75151,9 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
       averagePrice: 0,
       crop: "",
       quantity: 0,
-      bags: []
+      bag_units: []
     };
+    this.selectedStockInfo = null;
     this.isStockFetched = false;
     this.TruckLoadingParchi = {
       transferType: "Sale",
@@ -73900,6 +75194,9 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
     const bardanaInKg = boraQuantity * (bardanaType / 1e3);
     this.TruckLoadingParchi.netWeight = (boraQuantity * unitBora - bardanaInKg) / 100;
     this.calculateAmount();
+    if (this.TruckLoadingParchi.unitBora) {
+      this.selectedStockInfo = this.stockInfo.bag_units.find((unit) => unit.unit_weight_of_bags === this.TruckLoadingParchi.unitBora);
+    }
   }
   calculateAmount() {
     const { netWeight, rate } = this.TruckLoadingParchi;
@@ -74104,7 +75401,7 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
       averagePrice: 0,
       crop: "",
       quantity: 0,
-      bags: []
+      bag_units: []
     };
     this.apiService.get(`stock/warehouse-stock-crop-wise`, {
       params: {
@@ -74144,13 +75441,16 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
       }
     });
   }
+  getArray(n) {
+    return Array(n);
+  }
   static {
     this.\u0275fac = function TruckLoadingParchiComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || _TruckLoadingParchiComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(SharedService));
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TruckLoadingParchiComponent, selectors: [["app-truck-loading-parchi"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 76, vars: 56, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "text-link"], [1, "col", "text-end"], [1, "text-muted", "pe-2"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "transferType", 1, "form-label", "mb-0"], ["id", "transferType", "name", "transferType", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "Sale"], ["value", "Stock Transfer"], ["for", "partyName", 1, "form-label"], ["optionLabel", "name", "placeholder", "Select Party", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "crop", 1, "form-label"], ["optionLabel", "name", "placeholder", "Select Crop", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "transport", 1, "form-label"], ["optionLabel", "name", "placeholder", "Select Transport", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "truck", 1, "form-label"], ["optionLabel", "truckNumber", "placeholder", "Select Truck", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "assignedHammal", 1, "form-label"], ["optionLabel", "name", "placeholder", "Select Hammal", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "storage", 1, "form-label"], ["optionLabel", "name", "placeholder", "Select Storage Location", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "deliveryLocation", 1, "form-label"], ["optionLabel", "name", "placeholder", "Select Delivery Location", "optionValue", "_id", 3, "options", "ngModel", "style", "showClear", "filter", "ngModelChange", 4, "ngIf"], ["type", "button", 1, "btn", "btn-primary", "mt-3", 3, "click"], [4, "ngIf"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], ["type", "button", 1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click", "disabled"], ["optionLabel", "name", "placeholder", "Select Delivery Location", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], [1, "card", "bg-light"], [1, "card-body"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", "type", "number", "placeholder", "Bora Quantity", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "unitBora", 1, "form-label"], ["id", "unitBora", "name", "unitBora", "type", "number", "placeholder", "Unit Bora", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "bardanaType", 1, "form-label"], ["id", "bardanaType", "name", "bardanaType", 1, "form-select", 3, "ngModelChange", "ngModel"], [3, "ngValue"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "step", "0.01", "placeholder", "Net Weight", "readonly", "", 1, "form-control", 3, "value"], ["for", "rate", 1, "form-label"], ["id", "rate", "name", "rate", "type", "text", "placeholder", "rate", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "advance", 1, "form-label"], ["id", "advance", "name", "advance", "type", "text", "placeholder", "Freight Advance", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "other", 1, "form-label"], ["id", "other", "name", "other", "type", "text", "placeholder", "Enter Remark", 1, "form-control", 3, "ngModelChange", "ngModel"]], template: function TruckLoadingParchiComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TruckLoadingParchiComponent, selectors: [["app-truck-loading-parchi"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 76, vars: 56, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "text-link"], [1, "col", "text-end"], [1, "text-muted", "pe-2"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "transferType", 1, "form-label", "mb-0"], ["id", "transferType", "name", "transferType", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "Sale"], ["value", "Stock Transfer"], ["for", "partyName", 1, "form-label"], ["optionLabel", "name", "placeholder", "Select Party", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "crop", 1, "form-label"], ["optionLabel", "name", "placeholder", "Select Crop", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "transport", 1, "form-label"], ["optionLabel", "name", "placeholder", "Select Transport", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "truck", 1, "form-label"], ["optionLabel", "truckNumber", "placeholder", "Select Truck", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "assignedHammal", 1, "form-label"], ["optionLabel", "name", "placeholder", "Select Hammal", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "storage", 1, "form-label"], ["optionLabel", "name", "placeholder", "Select Storage Location", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], ["for", "deliveryLocation", 1, "form-label"], ["optionLabel", "name", "placeholder", "Select Delivery Location", "optionValue", "_id", 3, "options", "ngModel", "style", "showClear", "filter", "ngModelChange", 4, "ngIf"], ["type", "button", 1, "btn", "btn-primary", "mt-3", 3, "click"], [4, "ngIf"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], ["type", "button", 1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click", "disabled"], ["optionLabel", "name", "placeholder", "Select Delivery Location", "optionValue", "_id", 3, "ngModelChange", "options", "ngModel", "showClear", "filter"], [1, "card", "bg-light"], [1, "card-body"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], [1, "table", "table-bordered"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["scope", "row"], ["for", "unitBora", 1, "form-label"], ["id", "unitBora", "name", "unitBora", 1, "form-select", 3, "ngModelChange", "ngModel"], [3, "ngValue"], [3, "ngValue", 4, "ngFor", "ngForOf"], ["class", "form-group", 4, "ngIf"], ["for", "bardanaType", 1, "form-label"], ["id", "bardanaType", "name", "bardanaType", 1, "form-select", 3, "ngModelChange", "ngModel"], ["for", "netWeight", 1, "form-label"], ["id", "netWeight", "name", "netWeight", "type", "number", "step", "0.01", "placeholder", "Net Weight", "readonly", "", 1, "form-control", 3, "value"], ["for", "rate", 1, "form-label"], ["id", "rate", "name", "rate", "type", "text", "placeholder", "rate", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "advance", 1, "form-label"], ["id", "advance", "name", "advance", "type", "text", "placeholder", "Freight Advance", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "other", 1, "form-label"], ["id", "other", "name", "other", "type", "text", "placeholder", "Enter Remark", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "form-group"], ["for", "boraQuantity", 1, "form-label"], ["id", "boraQuantity", "name", "boraQuantity", 1, "form-select", 3, "ngModelChange", "ngModel"]], template: function TruckLoadingParchiComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "h4", 5);
         \u0275\u0275text(7, "Truck Loading Parchi");
@@ -74260,7 +75560,7 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
         \u0275\u0275text(69, " Get Stock Information ");
         \u0275\u0275elementEnd()();
         \u0275\u0275element(70, "hr");
-        \u0275\u0275template(71, TruckLoadingParchiComponent_div_71_Template, 20, 6, "div", 34);
+        \u0275\u0275template(71, TruckLoadingParchiComponent_div_71_Template, 32, 7, "div", 34);
         \u0275\u0275elementEnd()()();
         \u0275\u0275elementStart(72, "div", 35)(73, "div", 36)(74, "button", 37);
         \u0275\u0275listener("click", function TruckLoadingParchiComponent_Template_button_click_74_listener() {
@@ -74279,32 +75579,32 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
         \u0275\u0275advance(8);
         \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.transferType);
         \u0275\u0275advance(10);
-        \u0275\u0275styleMap(\u0275\u0275pureFunction0(50, _c09));
+        \u0275\u0275styleMap(\u0275\u0275pureFunction0(50, _c010));
         \u0275\u0275property("options", ctx.Parties);
         \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.partyName);
         \u0275\u0275property("showClear", true)("filter", true);
         \u0275\u0275advance(3);
-        \u0275\u0275styleMap(\u0275\u0275pureFunction0(51, _c09));
+        \u0275\u0275styleMap(\u0275\u0275pureFunction0(51, _c010));
         \u0275\u0275property("options", ctx.Crops);
         \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.crop);
         \u0275\u0275property("showClear", true)("filter", true);
         \u0275\u0275advance(3);
-        \u0275\u0275styleMap(\u0275\u0275pureFunction0(52, _c09));
+        \u0275\u0275styleMap(\u0275\u0275pureFunction0(52, _c010));
         \u0275\u0275property("options", ctx.Transport);
         \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.transport);
         \u0275\u0275property("showClear", true)("filter", true);
         \u0275\u0275advance(3);
-        \u0275\u0275styleMap(\u0275\u0275pureFunction0(53, _c09));
+        \u0275\u0275styleMap(\u0275\u0275pureFunction0(53, _c010));
         \u0275\u0275property("options", ctx.Trucks);
         \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.truck);
         \u0275\u0275property("showClear", true)("filter", true);
         \u0275\u0275advance(3);
-        \u0275\u0275styleMap(\u0275\u0275pureFunction0(54, _c09));
+        \u0275\u0275styleMap(\u0275\u0275pureFunction0(54, _c010));
         \u0275\u0275property("options", ctx.Hammals);
         \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.assignedHammal);
         \u0275\u0275property("showClear", true)("filter", true);
         \u0275\u0275advance(3);
-        \u0275\u0275styleMap(\u0275\u0275pureFunction0(55, _c09));
+        \u0275\u0275styleMap(\u0275\u0275pureFunction0(55, _c010));
         \u0275\u0275property("options", ctx.Storage);
         \u0275\u0275twoWayProperty("ngModel", ctx.TruckLoadingParchi.storage);
         \u0275\u0275property("showClear", true)("filter", true);
@@ -74322,12 +75622,12 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
       NgSelectOption,
       \u0275NgSelectMultipleOption,
       DefaultValueAccessor,
-      NumberValueAccessor,
       SelectControlValueAccessor,
       NgControlStatus,
       NgModel,
       ReactiveFormsModule,
       CommonModule,
+      NgForOf,
       NgIf,
       CurrencyPipe,
       DatePipe,
@@ -74341,7 +75641,7 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
 })();
 
 // src/app/pages/masters/masters.component.ts
-var _c010 = (a0) => ({ "show": a0 });
+var _c011 = (a0) => ({ "show": a0 });
 var _c110 = (a0) => ({ "active": a0 });
 function MastersComponent_button_18_Template(rf, ctx) {
   if (rf & 1) {
@@ -74599,7 +75899,7 @@ var MastersComponent = class _MastersComponent {
         \u0275\u0275elementEnd()()()()()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(9, _c010, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(9, _c011, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2("", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.selectedMasterType, " ");
         \u0275\u0275advance(9);
@@ -74632,940 +75932,8 @@ var MastersComponent = class _MastersComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MastersComponent, { className: "MastersComponent" });
 })();
 
-// node_modules/ngx-pagination/fesm2020/ngx-pagination.mjs
-function PaginationControlsComponent_ul_3_li_1_a_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r2 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 12);
-    \u0275\u0275listener("keyup.enter", function PaginationControlsComponent_ul_3_li_1_a_1_Template_a_keyup_enter_0_listener() {
-      \u0275\u0275restoreView(_r2);
-      \u0275\u0275nextContext(3);
-      const p_r3 = \u0275\u0275reference(1);
-      return \u0275\u0275resetView(p_r3.previous());
-    })("click", function PaginationControlsComponent_ul_3_li_1_a_1_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r2);
-      \u0275\u0275nextContext(3);
-      const p_r3 = \u0275\u0275reference(1);
-      return \u0275\u0275resetView(p_r3.previous());
-    });
-    \u0275\u0275text(1);
-    \u0275\u0275elementStart(2, "span", 13);
-    \u0275\u0275text(3);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r3 = \u0275\u0275nextContext(3);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r3.previousLabel, " ");
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r3.screenReaderPageLabel);
-  }
-}
-function PaginationControlsComponent_ul_3_li_1_span_2_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 14);
-    \u0275\u0275text(1);
-    \u0275\u0275elementStart(2, "span", 13);
-    \u0275\u0275text(3);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r3 = \u0275\u0275nextContext(3);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r3.previousLabel, " ");
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r3.screenReaderPageLabel);
-  }
-}
-function PaginationControlsComponent_ul_3_li_1_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "li", 9);
-    \u0275\u0275template(1, PaginationControlsComponent_ul_3_li_1_a_1_Template, 4, 2, "a", 10)(2, PaginationControlsComponent_ul_3_li_1_span_2_Template, 4, 2, "span", 11);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    \u0275\u0275nextContext(2);
-    const p_r3 = \u0275\u0275reference(1);
-    \u0275\u0275classProp("disabled", p_r3.isFirstPage());
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", 1 < p_r3.getCurrent());
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", p_r3.isFirstPage());
-  }
-}
-function PaginationControlsComponent_ul_3_li_4_a_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 12);
-    \u0275\u0275listener("keyup.enter", function PaginationControlsComponent_ul_3_li_4_a_1_Template_a_keyup_enter_0_listener() {
-      \u0275\u0275restoreView(_r5);
-      const page_r6 = \u0275\u0275nextContext().$implicit;
-      \u0275\u0275nextContext(2);
-      const p_r3 = \u0275\u0275reference(1);
-      return \u0275\u0275resetView(p_r3.setCurrent(page_r6.value));
-    })("click", function PaginationControlsComponent_ul_3_li_4_a_1_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r5);
-      const page_r6 = \u0275\u0275nextContext().$implicit;
-      \u0275\u0275nextContext(2);
-      const p_r3 = \u0275\u0275reference(1);
-      return \u0275\u0275resetView(p_r3.setCurrent(page_r6.value));
-    });
-    \u0275\u0275elementStart(1, "span", 13);
-    \u0275\u0275text(2);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "span");
-    \u0275\u0275text(4);
-    \u0275\u0275pipe(5, "number");
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const page_r6 = \u0275\u0275nextContext().$implicit;
-    const ctx_r3 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1("", ctx_r3.screenReaderPageLabel, " ");
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(page_r6.label === "..." ? page_r6.label : \u0275\u0275pipeBind2(5, 2, page_r6.label, ""));
-  }
-}
-function PaginationControlsComponent_ul_3_li_4_ng_container_2_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "span", 16)(2, "span", 13);
-    \u0275\u0275text(3);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "span");
-    \u0275\u0275text(5);
-    \u0275\u0275pipe(6, "number");
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementContainerEnd();
-  }
-  if (rf & 2) {
-    const page_r6 = \u0275\u0275nextContext().$implicit;
-    const ctx_r3 = \u0275\u0275nextContext(2);
-    \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate1("", ctx_r3.screenReaderCurrentLabel, " ");
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(page_r6.label === "..." ? page_r6.label : \u0275\u0275pipeBind2(6, 2, page_r6.label, ""));
-  }
-}
-function PaginationControlsComponent_ul_3_li_4_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "li");
-    \u0275\u0275template(1, PaginationControlsComponent_ul_3_li_4_a_1_Template, 6, 5, "a", 10)(2, PaginationControlsComponent_ul_3_li_4_ng_container_2_Template, 7, 5, "ng-container", 15);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const page_r6 = ctx.$implicit;
-    \u0275\u0275nextContext(2);
-    const p_r3 = \u0275\u0275reference(1);
-    \u0275\u0275classProp("current", p_r3.getCurrent() === page_r6.value)("ellipsis", page_r6.label === "...");
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", p_r3.getCurrent() !== page_r6.value);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", p_r3.getCurrent() === page_r6.value);
-  }
-}
-function PaginationControlsComponent_ul_3_li_5_a_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r7 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "a", 12);
-    \u0275\u0275listener("keyup.enter", function PaginationControlsComponent_ul_3_li_5_a_1_Template_a_keyup_enter_0_listener() {
-      \u0275\u0275restoreView(_r7);
-      \u0275\u0275nextContext(3);
-      const p_r3 = \u0275\u0275reference(1);
-      return \u0275\u0275resetView(p_r3.next());
-    })("click", function PaginationControlsComponent_ul_3_li_5_a_1_Template_a_click_0_listener() {
-      \u0275\u0275restoreView(_r7);
-      \u0275\u0275nextContext(3);
-      const p_r3 = \u0275\u0275reference(1);
-      return \u0275\u0275resetView(p_r3.next());
-    });
-    \u0275\u0275text(1);
-    \u0275\u0275elementStart(2, "span", 13);
-    \u0275\u0275text(3);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r3 = \u0275\u0275nextContext(3);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r3.nextLabel, " ");
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r3.screenReaderPageLabel);
-  }
-}
-function PaginationControlsComponent_ul_3_li_5_span_2_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "span", 14);
-    \u0275\u0275text(1);
-    \u0275\u0275elementStart(2, "span", 13);
-    \u0275\u0275text(3);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r3 = \u0275\u0275nextContext(3);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", ctx_r3.nextLabel, " ");
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(ctx_r3.screenReaderPageLabel);
-  }
-}
-function PaginationControlsComponent_ul_3_li_5_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "li", 17);
-    \u0275\u0275template(1, PaginationControlsComponent_ul_3_li_5_a_1_Template, 4, 2, "a", 10)(2, PaginationControlsComponent_ul_3_li_5_span_2_Template, 4, 2, "span", 11);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    \u0275\u0275nextContext(2);
-    const p_r3 = \u0275\u0275reference(1);
-    \u0275\u0275classProp("disabled", p_r3.isLastPage());
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", !p_r3.isLastPage());
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", p_r3.isLastPage());
-  }
-}
-function PaginationControlsComponent_ul_3_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "ul", 4);
-    \u0275\u0275template(1, PaginationControlsComponent_ul_3_li_1_Template, 3, 4, "li", 5);
-    \u0275\u0275elementStart(2, "li", 6);
-    \u0275\u0275text(3);
-    \u0275\u0275elementEnd();
-    \u0275\u0275template(4, PaginationControlsComponent_ul_3_li_4_Template, 3, 6, "li", 7)(5, PaginationControlsComponent_ul_3_li_5_Template, 3, 4, "li", 8);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r3 = \u0275\u0275nextContext();
-    const p_r3 = \u0275\u0275reference(1);
-    \u0275\u0275classProp("responsive", ctx_r3.responsive);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r3.directionLinks);
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate2(" ", p_r3.getCurrent(), " / ", p_r3.getLastPage(), " ");
-    \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", p_r3.pages)("ngForTrackBy", ctx_r3.trackByIndex);
-    \u0275\u0275advance();
-    \u0275\u0275property("ngIf", ctx_r3.directionLinks);
-  }
-}
-var PaginationService = class {
-  constructor() {
-    this.change = new EventEmitter();
-    this.instances = {};
-    this.DEFAULT_ID = "DEFAULT_PAGINATION_ID";
-  }
-  defaultId() {
-    return this.DEFAULT_ID;
-  }
-  /**
-   * Register a PaginationInstance with this service. Returns a
-   * boolean value signifying whether the instance is new or
-   * updated (true = new or updated, false = unchanged).
-   */
-  register(instance) {
-    if (instance.id == null) {
-      instance.id = this.DEFAULT_ID;
-    }
-    if (!this.instances[instance.id]) {
-      this.instances[instance.id] = instance;
-      return true;
-    } else {
-      return this.updateInstance(instance);
-    }
-  }
-  /**
-   * Check each property of the instance and update any that have changed. Return
-   * true if any changes were made, else return false.
-   */
-  updateInstance(instance) {
-    let changed = false;
-    for (let prop in this.instances[instance.id]) {
-      if (instance[prop] !== this.instances[instance.id][prop]) {
-        this.instances[instance.id][prop] = instance[prop];
-        changed = true;
-      }
-    }
-    return changed;
-  }
-  /**
-   * Returns the current page number.
-   */
-  getCurrentPage(id) {
-    if (this.instances[id]) {
-      return this.instances[id].currentPage;
-    }
-    return 1;
-  }
-  /**
-   * Sets the current page number.
-   */
-  setCurrentPage(id, page) {
-    if (this.instances[id]) {
-      let instance = this.instances[id];
-      let maxPage = Math.ceil(instance.totalItems / instance.itemsPerPage);
-      if (page <= maxPage && 1 <= page) {
-        this.instances[id].currentPage = page;
-        this.change.emit(id);
-      }
-    }
-  }
-  /**
-   * Sets the value of instance.totalItems
-   */
-  setTotalItems(id, totalItems) {
-    if (this.instances[id] && 0 <= totalItems) {
-      this.instances[id].totalItems = totalItems;
-      this.change.emit(id);
-    }
-  }
-  /**
-   * Sets the value of instance.itemsPerPage.
-   */
-  setItemsPerPage(id, itemsPerPage) {
-    if (this.instances[id]) {
-      this.instances[id].itemsPerPage = itemsPerPage;
-      this.change.emit(id);
-    }
-  }
-  /**
-   * Returns a clone of the pagination instance object matching the id. If no
-   * id specified, returns the instance corresponding to the default id.
-   */
-  getInstance(id = this.DEFAULT_ID) {
-    if (this.instances[id]) {
-      return this.clone(this.instances[id]);
-    }
-    return {};
-  }
-  /**
-   * Perform a shallow clone of an object.
-   */
-  clone(obj) {
-    var target = {};
-    for (var i in obj) {
-      if (obj.hasOwnProperty(i)) {
-        target[i] = obj[i];
-      }
-    }
-    return target;
-  }
-};
-var LARGE_NUMBER = Number.MAX_SAFE_INTEGER;
-var PaginatePipe = class {
-  constructor(service) {
-    this.service = service;
-    this.state = {};
-  }
-  transform(collection, args) {
-    if (!(collection instanceof Array)) {
-      let _id = args.id || this.service.defaultId();
-      if (this.state[_id]) {
-        return this.state[_id].slice;
-      } else {
-        return collection;
-      }
-    }
-    let serverSideMode = args.totalItems && args.totalItems !== collection.length;
-    let instance = this.createInstance(collection, args);
-    let id = instance.id;
-    let start2, end2;
-    let perPage = instance.itemsPerPage;
-    let emitChange = this.service.register(instance);
-    if (!serverSideMode && collection instanceof Array) {
-      perPage = +perPage || LARGE_NUMBER;
-      start2 = (instance.currentPage - 1) * perPage;
-      end2 = start2 + perPage;
-      let isIdentical = this.stateIsIdentical(id, collection, start2, end2);
-      if (isIdentical) {
-        return this.state[id].slice;
-      } else {
-        let slice = collection.slice(start2, end2);
-        this.saveState(id, collection, slice, start2, end2);
-        this.service.change.emit(id);
-        return slice;
-      }
-    } else {
-      if (emitChange) {
-        this.service.change.emit(id);
-      }
-      this.saveState(id, collection, collection, start2, end2);
-      return collection;
-    }
-  }
-  /**
-   * Create an PaginationInstance object, using defaults for any optional properties not supplied.
-   */
-  createInstance(collection, config2) {
-    this.checkConfig(config2);
-    return {
-      id: config2.id != null ? config2.id : this.service.defaultId(),
-      itemsPerPage: +config2.itemsPerPage || 0,
-      currentPage: +config2.currentPage || 1,
-      totalItems: +config2.totalItems || collection.length
-    };
-  }
-  /**
-   * Ensure the argument passed to the filter contains the required properties.
-   */
-  checkConfig(config2) {
-    const required = ["itemsPerPage", "currentPage"];
-    const missing = required.filter((prop) => !(prop in config2));
-    if (0 < missing.length) {
-      throw new Error(`PaginatePipe: Argument is missing the following required properties: ${missing.join(", ")}`);
-    }
-  }
-  /**
-   * To avoid returning a brand new array each time the pipe is run, we store the state of the sliced
-   * array for a given id. This means that the next time the pipe is run on this collection & id, we just
-   * need to check that the collection, start and end points are all identical, and if so, return the
-   * last sliced array.
-   */
-  saveState(id, collection, slice, start2, end2) {
-    this.state[id] = {
-      collection,
-      size: collection.length,
-      slice,
-      start: start2,
-      end: end2
-    };
-  }
-  /**
-   * For a given id, returns true if the collection, size, start and end values are identical.
-   */
-  stateIsIdentical(id, collection, start2, end2) {
-    let state = this.state[id];
-    if (!state) {
-      return false;
-    }
-    let isMetaDataIdentical = state.size === collection.length && state.start === start2 && state.end === end2;
-    if (!isMetaDataIdentical) {
-      return false;
-    }
-    return state.slice.every((element, index) => element === collection[start2 + index]);
-  }
-};
-PaginatePipe.\u0275fac = function PaginatePipe_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || PaginatePipe)(\u0275\u0275directiveInject(PaginationService, 16));
-};
-PaginatePipe.\u0275pipe = /* @__PURE__ */ \u0275\u0275definePipe({
-  name: "paginate",
-  type: PaginatePipe,
-  pure: false
-});
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PaginatePipe, [{
-    type: Pipe,
-    args: [{
-      name: "paginate",
-      pure: false
-    }]
-  }], function() {
-    return [{
-      type: PaginationService
-    }];
-  }, null);
-})();
-var DEFAULT_TEMPLATE = `
-    <pagination-template  #p="paginationApi"
-                         [id]="id"
-                         [maxSize]="maxSize"
-                         (pageChange)="pageChange.emit($event)"
-                         (pageBoundsCorrection)="pageBoundsCorrection.emit($event)">
-    <nav role="navigation" [attr.aria-label]="screenReaderPaginationLabel">
-    <ul class="ngx-pagination" 
-        [class.responsive]="responsive"
-        *ngIf="!(autoHide && p.pages.length <= 1)">
-
-        <li class="pagination-previous" [class.disabled]="p.isFirstPage()" *ngIf="directionLinks"> 
-            <a tabindex="0" *ngIf="1 < p.getCurrent()" (keyup.enter)="p.previous()" (click)="p.previous()">
-                {{ previousLabel }} <span class="show-for-sr">{{ screenReaderPageLabel }}</span>
-            </a>
-            <span *ngIf="p.isFirstPage()" aria-disabled="true">
-                {{ previousLabel }} <span class="show-for-sr">{{ screenReaderPageLabel }}</span>
-            </span>
-        </li> 
-
-        <li class="small-screen">
-            {{ p.getCurrent() }} / {{ p.getLastPage() }}
-        </li>
-
-        <li [class.current]="p.getCurrent() === page.value" 
-            [class.ellipsis]="page.label === '...'"
-            *ngFor="let page of p.pages; trackBy: trackByIndex">
-            <a tabindex="0" (keyup.enter)="p.setCurrent(page.value)" (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
-                <span class="show-for-sr">{{ screenReaderPageLabel }} </span>
-                <span>{{ (page.label === '...') ? page.label : (page.label | number:'') }}</span>
-            </a>
-            <ng-container *ngIf="p.getCurrent() === page.value">
-              <span aria-live="polite">
-                <span class="show-for-sr">{{ screenReaderCurrentLabel }} </span>
-                <span>{{ (page.label === '...') ? page.label : (page.label | number:'') }}</span> 
-              </span>
-            </ng-container>
-        </li>
-
-        <li class="pagination-next" [class.disabled]="p.isLastPage()" *ngIf="directionLinks">
-            <a tabindex="0" *ngIf="!p.isLastPage()" (keyup.enter)="p.next()" (click)="p.next()">
-                 {{ nextLabel }} <span class="show-for-sr">{{ screenReaderPageLabel }}</span>
-            </a>
-            <span *ngIf="p.isLastPage()" aria-disabled="true">
-                 {{ nextLabel }} <span class="show-for-sr">{{ screenReaderPageLabel }}</span>
-            </span>
-        </li>
-
-    </ul>
-    </nav>
-    </pagination-template>
-    `;
-var DEFAULT_STYLES = `
-.ngx-pagination {
-  margin-left: 0;
-  margin-bottom: 1rem; }
-  .ngx-pagination::before, .ngx-pagination::after {
-    content: ' ';
-    display: table; }
-  .ngx-pagination::after {
-    clear: both; }
-  .ngx-pagination li {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    margin-right: 0.0625rem;
-    border-radius: 0; }
-  .ngx-pagination li {
-    display: inline-block; }
-  .ngx-pagination a,
-  .ngx-pagination button {
-    color: #0a0a0a; 
-    display: block;
-    padding: 0.1875rem 0.625rem;
-    border-radius: 0; }
-    .ngx-pagination a:hover,
-    .ngx-pagination button:hover {
-      background: #e6e6e6; }
-  .ngx-pagination .current {
-    padding: 0.1875rem 0.625rem;
-    background: #2199e8;
-    color: #fefefe;
-    cursor: default; }
-  .ngx-pagination .disabled {
-    padding: 0.1875rem 0.625rem;
-    color: #cacaca;
-    cursor: default; } 
-    .ngx-pagination .disabled:hover {
-      background: transparent; }
-  .ngx-pagination a, .ngx-pagination button {
-    cursor: pointer; }
-
-.ngx-pagination .pagination-previous a::before,
-.ngx-pagination .pagination-previous.disabled::before { 
-  content: '\xAB';
-  display: inline-block;
-  margin-right: 0.5rem; }
-
-.ngx-pagination .pagination-next a::after,
-.ngx-pagination .pagination-next.disabled::after {
-  content: '\xBB';
-  display: inline-block;
-  margin-left: 0.5rem; }
-
-.ngx-pagination .show-for-sr {
-  position: absolute !important;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0); }
-.ngx-pagination .small-screen {
-  display: none; }
-@media screen and (max-width: 601px) {
-  .ngx-pagination.responsive .small-screen {
-    display: inline-block; } 
-  .ngx-pagination.responsive li:not(.small-screen):not(.pagination-previous):not(.pagination-next) {
-    display: none; }
-}
-  `;
-var PaginationControlsDirective = class {
-  constructor(service, changeDetectorRef) {
-    this.service = service;
-    this.changeDetectorRef = changeDetectorRef;
-    this.maxSize = 7;
-    this.pageChange = new EventEmitter();
-    this.pageBoundsCorrection = new EventEmitter();
-    this.pages = [];
-    this.changeSub = this.service.change.subscribe((id) => {
-      if (this.id === id) {
-        this.updatePageLinks();
-        this.changeDetectorRef.markForCheck();
-        this.changeDetectorRef.detectChanges();
-      }
-    });
-  }
-  ngOnInit() {
-    if (this.id === void 0) {
-      this.id = this.service.defaultId();
-    }
-    this.updatePageLinks();
-  }
-  ngOnChanges(changes) {
-    this.updatePageLinks();
-  }
-  ngOnDestroy() {
-    this.changeSub.unsubscribe();
-  }
-  /**
-   * Go to the previous page
-   */
-  previous() {
-    this.checkValidId();
-    this.setCurrent(this.getCurrent() - 1);
-  }
-  /**
-   * Go to the next page
-   */
-  next() {
-    this.checkValidId();
-    this.setCurrent(this.getCurrent() + 1);
-  }
-  /**
-   * Returns true if current page is first page
-   */
-  isFirstPage() {
-    return this.getCurrent() === 1;
-  }
-  /**
-   * Returns true if current page is last page
-   */
-  isLastPage() {
-    return this.getLastPage() === this.getCurrent();
-  }
-  /**
-   * Set the current page number.
-   */
-  setCurrent(page) {
-    this.pageChange.emit(page);
-  }
-  /**
-   * Get the current page number.
-   */
-  getCurrent() {
-    return this.service.getCurrentPage(this.id);
-  }
-  /**
-   * Returns the last page number
-   */
-  getLastPage() {
-    let inst = this.service.getInstance(this.id);
-    if (inst.totalItems < 1) {
-      return 1;
-    }
-    return Math.ceil(inst.totalItems / inst.itemsPerPage);
-  }
-  getTotalItems() {
-    return this.service.getInstance(this.id).totalItems;
-  }
-  checkValidId() {
-    if (this.service.getInstance(this.id).id == null) {
-      console.warn(`PaginationControlsDirective: the specified id "${this.id}" does not match any registered PaginationInstance`);
-    }
-  }
-  /**
-   * Updates the page links and checks that the current page is valid. Should run whenever the
-   * PaginationService.change stream emits a value matching the current ID, or when any of the
-   * input values changes.
-   */
-  updatePageLinks() {
-    let inst = this.service.getInstance(this.id);
-    const correctedCurrentPage = this.outOfBoundCorrection(inst);
-    if (correctedCurrentPage !== inst.currentPage) {
-      setTimeout(() => {
-        this.pageBoundsCorrection.emit(correctedCurrentPage);
-        this.pages = this.createPageArray(inst.currentPage, inst.itemsPerPage, inst.totalItems, this.maxSize);
-      });
-    } else {
-      this.pages = this.createPageArray(inst.currentPage, inst.itemsPerPage, inst.totalItems, this.maxSize);
-    }
-  }
-  /**
-   * Checks that the instance.currentPage property is within bounds for the current page range.
-   * If not, return a correct value for currentPage, or the current value if OK.
-   */
-  outOfBoundCorrection(instance) {
-    const totalPages = Math.ceil(instance.totalItems / instance.itemsPerPage);
-    if (totalPages < instance.currentPage && 0 < totalPages) {
-      return totalPages;
-    } else if (instance.currentPage < 1) {
-      return 1;
-    }
-    return instance.currentPage;
-  }
-  /**
-   * Returns an array of Page objects to use in the pagination controls.
-   */
-  createPageArray(currentPage, itemsPerPage, totalItems, paginationRange) {
-    paginationRange = +paginationRange;
-    let pages = [];
-    const totalPages = Math.max(Math.ceil(totalItems / itemsPerPage), 1);
-    const halfWay = Math.ceil(paginationRange / 2);
-    const isStart = currentPage <= halfWay;
-    const isEnd = totalPages - halfWay < currentPage;
-    const isMiddle = !isStart && !isEnd;
-    let ellipsesNeeded = paginationRange < totalPages;
-    let i = 1;
-    while (i <= totalPages && i <= paginationRange) {
-      let label;
-      let pageNumber = this.calculatePageNumber(i, currentPage, paginationRange, totalPages);
-      let openingEllipsesNeeded = i === 2 && (isMiddle || isEnd);
-      let closingEllipsesNeeded = i === paginationRange - 1 && (isMiddle || isStart);
-      if (ellipsesNeeded && (openingEllipsesNeeded || closingEllipsesNeeded)) {
-        label = "...";
-      } else {
-        label = pageNumber;
-      }
-      pages.push({
-        label,
-        value: pageNumber
-      });
-      i++;
-    }
-    return pages;
-  }
-  /**
-   * Given the position in the sequence of pagination links [i],
-   * figure out what page number corresponds to that position.
-   */
-  calculatePageNumber(i, currentPage, paginationRange, totalPages) {
-    let halfWay = Math.ceil(paginationRange / 2);
-    if (i === paginationRange) {
-      return totalPages;
-    } else if (i === 1) {
-      return i;
-    } else if (paginationRange < totalPages) {
-      if (totalPages - halfWay < currentPage) {
-        return totalPages - paginationRange + i;
-      } else if (halfWay < currentPage) {
-        return currentPage - halfWay + i;
-      } else {
-        return i;
-      }
-    } else {
-      return i;
-    }
-  }
-};
-PaginationControlsDirective.\u0275fac = function PaginationControlsDirective_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || PaginationControlsDirective)(\u0275\u0275directiveInject(PaginationService), \u0275\u0275directiveInject(ChangeDetectorRef));
-};
-PaginationControlsDirective.\u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
-  type: PaginationControlsDirective,
-  selectors: [["pagination-template"], ["", "pagination-template", ""]],
-  inputs: {
-    id: "id",
-    maxSize: "maxSize"
-  },
-  outputs: {
-    pageChange: "pageChange",
-    pageBoundsCorrection: "pageBoundsCorrection"
-  },
-  exportAs: ["paginationApi"],
-  features: [\u0275\u0275NgOnChangesFeature]
-});
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PaginationControlsDirective, [{
-    type: Directive,
-    args: [{
-      selector: "pagination-template,[pagination-template]",
-      exportAs: "paginationApi"
-    }]
-  }], function() {
-    return [{
-      type: PaginationService
-    }, {
-      type: ChangeDetectorRef
-    }];
-  }, {
-    id: [{
-      type: Input
-    }],
-    maxSize: [{
-      type: Input
-    }],
-    pageChange: [{
-      type: Output
-    }],
-    pageBoundsCorrection: [{
-      type: Output
-    }]
-  });
-})();
-function coerceToBoolean(input2) {
-  return !!input2 && input2 !== "false";
-}
-var PaginationControlsComponent = class {
-  constructor() {
-    this.maxSize = 7;
-    this.previousLabel = "Previous";
-    this.nextLabel = "Next";
-    this.screenReaderPaginationLabel = "Pagination";
-    this.screenReaderPageLabel = "page";
-    this.screenReaderCurrentLabel = `You're on page`;
-    this.pageChange = new EventEmitter();
-    this.pageBoundsCorrection = new EventEmitter();
-    this._directionLinks = true;
-    this._autoHide = false;
-    this._responsive = false;
-  }
-  get directionLinks() {
-    return this._directionLinks;
-  }
-  set directionLinks(value) {
-    this._directionLinks = coerceToBoolean(value);
-  }
-  get autoHide() {
-    return this._autoHide;
-  }
-  set autoHide(value) {
-    this._autoHide = coerceToBoolean(value);
-  }
-  get responsive() {
-    return this._responsive;
-  }
-  set responsive(value) {
-    this._responsive = coerceToBoolean(value);
-  }
-  trackByIndex(index) {
-    return index;
-  }
-};
-PaginationControlsComponent.\u0275fac = function PaginationControlsComponent_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || PaginationControlsComponent)();
-};
-PaginationControlsComponent.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
-  type: PaginationControlsComponent,
-  selectors: [["pagination-controls"]],
-  inputs: {
-    id: "id",
-    maxSize: "maxSize",
-    directionLinks: "directionLinks",
-    autoHide: "autoHide",
-    responsive: "responsive",
-    previousLabel: "previousLabel",
-    nextLabel: "nextLabel",
-    screenReaderPaginationLabel: "screenReaderPaginationLabel",
-    screenReaderPageLabel: "screenReaderPageLabel",
-    screenReaderCurrentLabel: "screenReaderCurrentLabel"
-  },
-  outputs: {
-    pageChange: "pageChange",
-    pageBoundsCorrection: "pageBoundsCorrection"
-  },
-  decls: 4,
-  vars: 4,
-  consts: [["p", "paginationApi"], [3, "pageChange", "pageBoundsCorrection", "id", "maxSize"], ["role", "navigation"], ["class", "ngx-pagination", 3, "responsive", 4, "ngIf"], [1, "ngx-pagination"], ["class", "pagination-previous", 3, "disabled", 4, "ngIf"], [1, "small-screen"], [3, "current", "ellipsis", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "pagination-next", 3, "disabled", 4, "ngIf"], [1, "pagination-previous"], ["tabindex", "0", 3, "keyup.enter", "click", 4, "ngIf"], ["aria-disabled", "true", 4, "ngIf"], ["tabindex", "0", 3, "keyup.enter", "click"], [1, "show-for-sr"], ["aria-disabled", "true"], [4, "ngIf"], ["aria-live", "polite"], [1, "pagination-next"]],
-  template: function PaginationControlsComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      const _r1 = \u0275\u0275getCurrentView();
-      \u0275\u0275elementStart(0, "pagination-template", 1, 0);
-      \u0275\u0275listener("pageChange", function PaginationControlsComponent_Template_pagination_template_pageChange_0_listener($event) {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.pageChange.emit($event));
-      })("pageBoundsCorrection", function PaginationControlsComponent_Template_pagination_template_pageBoundsCorrection_0_listener($event) {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.pageBoundsCorrection.emit($event));
-      });
-      \u0275\u0275elementStart(2, "nav", 2);
-      \u0275\u0275template(3, PaginationControlsComponent_ul_3_Template, 6, 8, "ul", 3);
-      \u0275\u0275elementEnd()();
-    }
-    if (rf & 2) {
-      const p_r3 = \u0275\u0275reference(1);
-      \u0275\u0275property("id", ctx.id)("maxSize", ctx.maxSize);
-      \u0275\u0275advance(2);
-      \u0275\u0275attribute("aria-label", ctx.screenReaderPaginationLabel);
-      \u0275\u0275advance();
-      \u0275\u0275property("ngIf", !(ctx.autoHide && p_r3.pages.length <= 1));
-    }
-  },
-  dependencies: [PaginationControlsDirective, NgIf, NgForOf, DecimalPipe],
-  styles: ['.ngx-pagination{margin-left:0;margin-bottom:1rem}.ngx-pagination:before,.ngx-pagination:after{content:" ";display:table}.ngx-pagination:after{clear:both}.ngx-pagination li{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;margin-right:.0625rem;border-radius:0}.ngx-pagination li{display:inline-block}.ngx-pagination a,.ngx-pagination button{color:#0a0a0a;display:block;padding:.1875rem .625rem;border-radius:0}.ngx-pagination a:hover,.ngx-pagination button:hover{background:#e6e6e6}.ngx-pagination .current{padding:.1875rem .625rem;background:#2199e8;color:#fefefe;cursor:default}.ngx-pagination .disabled{padding:.1875rem .625rem;color:#cacaca;cursor:default}.ngx-pagination .disabled:hover{background:transparent}.ngx-pagination a,.ngx-pagination button{cursor:pointer}.ngx-pagination .pagination-previous a:before,.ngx-pagination .pagination-previous.disabled:before{content:"\\ab";display:inline-block;margin-right:.5rem}.ngx-pagination .pagination-next a:after,.ngx-pagination .pagination-next.disabled:after{content:"\\bb";display:inline-block;margin-left:.5rem}.ngx-pagination .show-for-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}.ngx-pagination .small-screen{display:none}@media screen and (max-width: 601px){.ngx-pagination.responsive .small-screen{display:inline-block}.ngx-pagination.responsive li:not(.small-screen):not(.pagination-previous):not(.pagination-next){display:none}}\n'],
-  encapsulation: 2,
-  changeDetection: 0
-});
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PaginationControlsComponent, [{
-    type: Component,
-    args: [{
-      selector: "pagination-controls",
-      template: DEFAULT_TEMPLATE,
-      styles: [DEFAULT_STYLES],
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      encapsulation: ViewEncapsulation$1.None
-    }]
-  }], null, {
-    id: [{
-      type: Input
-    }],
-    maxSize: [{
-      type: Input
-    }],
-    directionLinks: [{
-      type: Input
-    }],
-    autoHide: [{
-      type: Input
-    }],
-    responsive: [{
-      type: Input
-    }],
-    previousLabel: [{
-      type: Input
-    }],
-    nextLabel: [{
-      type: Input
-    }],
-    screenReaderPaginationLabel: [{
-      type: Input
-    }],
-    screenReaderPageLabel: [{
-      type: Input
-    }],
-    screenReaderCurrentLabel: [{
-      type: Input
-    }],
-    pageChange: [{
-      type: Output
-    }],
-    pageBoundsCorrection: [{
-      type: Output
-    }]
-  });
-})();
-var NgxPaginationModule = class {
-};
-NgxPaginationModule.\u0275fac = function NgxPaginationModule_Factory(__ngFactoryType__) {
-  return new (__ngFactoryType__ || NgxPaginationModule)();
-};
-NgxPaginationModule.\u0275mod = /* @__PURE__ */ \u0275\u0275defineNgModule({
-  type: NgxPaginationModule
-});
-NgxPaginationModule.\u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({
-  providers: [PaginationService],
-  imports: [[CommonModule]]
-});
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgxPaginationModule, [{
-    type: NgModule,
-    args: [{
-      imports: [CommonModule],
-      declarations: [PaginatePipe, PaginationControlsComponent, PaginationControlsDirective],
-      providers: [PaginationService],
-      exports: [PaginatePipe, PaginationControlsComponent, PaginationControlsDirective]
-    }]
-  }], null, null);
-})();
-
 // src/app/pages/farmers/farmers.component.ts
-var _c011 = (a0) => ({ show: a0 });
+var _c012 = (a0) => ({ show: a0 });
 var _c111 = (a0, a1, a2) => ({ id: "roles_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
 function FarmersComponent_option_36_Template(rf, ctx) {
   if (rf & 1) {
@@ -75869,7 +76237,7 @@ var FarmersComponent = class _FarmersComponent {
         \u0275\u0275elementEnd()()()()()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(16, _c011, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(16, _c012, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2(" ", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, " ");
         \u0275\u0275advance(9);
@@ -75921,7 +76289,7 @@ var FarmersComponent = class _FarmersComponent {
 })();
 
 // src/app/pages/villages/villages.component.ts
-var _c012 = (a0) => ({ "show": a0 });
+var _c013 = (a0) => ({ "show": a0 });
 var _c113 = (a0, a1, a2) => ({ id: "roles_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
 function VillagesComponent_button_18_Template(rf, ctx) {
   if (rf & 1) {
@@ -76121,7 +76489,7 @@ var VillagesComponent = class _VillagesComponent {
         \u0275\u0275elementEnd()()()()()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c012, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c013, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2("", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, " ");
         \u0275\u0275advance(9);
@@ -76158,7 +76526,7 @@ var VillagesComponent = class _VillagesComponent {
 })();
 
 // src/app/pages/hammals/hammals.component.ts
-var _c013 = (a0) => ({ "show": a0 });
+var _c014 = (a0) => ({ "show": a0 });
 var _c114 = (a0, a1, a2) => ({ id: "roles_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
 function HammalsComponent_button_22_Template(rf, ctx) {
   if (rf & 1) {
@@ -76375,7 +76743,7 @@ var HammalsComponent = class _HammalsComponent {
         \u0275\u0275elementEnd()()()()()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(13, _c013, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(13, _c014, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2("", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, " ");
         \u0275\u0275advance(9);
@@ -76415,7 +76783,7 @@ var HammalsComponent = class _HammalsComponent {
 })();
 
 // src/app/pages/crop/crop.component.ts
-var _c014 = (a0) => ({ "show": a0 });
+var _c015 = (a0) => ({ "show": a0 });
 var _c115 = (a0, a1, a2) => ({ id: "roles_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
 function CropComponent_button_18_Template(rf, ctx) {
   if (rf & 1) {
@@ -76615,7 +76983,7 @@ var CropComponent = class _CropComponent {
         \u0275\u0275elementEnd()()()()()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c014, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c015, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2("", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, " ");
         \u0275\u0275advance(9);
@@ -76652,7 +77020,7 @@ var CropComponent = class _CropComponent {
 })();
 
 // src/app/pages/parties/parties.component.ts
-var _c015 = (a0) => ({ "show": a0 });
+var _c016 = (a0) => ({ "show": a0 });
 var _c116 = (a0, a1, a2) => ({ id: "roles_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
 function PartiesComponent_button_18_Template(rf, ctx) {
   if (rf & 1) {
@@ -76852,7 +77220,7 @@ var PartiesComponent = class _PartiesComponent {
         \u0275\u0275elementEnd()()()()()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c015, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c016, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2("", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, " ");
         \u0275\u0275advance(9);
@@ -76889,7 +77257,7 @@ var PartiesComponent = class _PartiesComponent {
 })();
 
 // src/app/pages/delivery/delivery.component.ts
-var _c016 = (a0) => ({ "show": a0 });
+var _c017 = (a0) => ({ "show": a0 });
 var _c117 = (a0, a1, a2) => ({ id: "roles_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
 function DeliveryComponent_button_18_Template(rf, ctx) {
   if (rf & 1) {
@@ -77089,7 +77457,7 @@ var DeliveryComponent = class _DeliveryComponent {
         \u0275\u0275elementEnd()()()()()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c016, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c017, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2("", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, " ");
         \u0275\u0275advance(9);
@@ -77126,9 +77494,9 @@ var DeliveryComponent = class _DeliveryComponent {
 })();
 
 // src/app/pages/accounts/accounts.component.ts
-var _c017 = (a0) => ({ active: a0 });
+var _c018 = (a0) => ({ active: a0 });
 var _c118 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
-var _c25 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
+var _c26 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
 function AccountsComponent_option_34_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "option", 17);
@@ -77402,7 +77770,7 @@ function AccountsComponent_Conditional_39_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngForOf", ctx_r5.TruckLoadingParchiTransactionSummary);
     \u0275\u0275advance(33);
-    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(35, 2, ctx_r5.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c25, ctx_r5.perPage, ctx_r5.currentPage)));
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(35, 2, ctx_r5.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c26, ctx_r5.perPage, ctx_r5.currentPage)));
   }
 }
 var AccountsComponent = class _AccountsComponent {
@@ -77673,9 +78041,9 @@ var AccountsComponent = class _AccountsComponent {
       }
       if (rf & 2) {
         \u0275\u0275advance(7);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c017, ctx.tabState == "taulparchi"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c018, ctx.tabState == "taulparchi"));
         \u0275\u0275advance(3);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(10, _c017, ctx.tabState == "truckloading"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(10, _c018, ctx.tabState == "truckloading"));
         \u0275\u0275advance(7);
         \u0275\u0275twoWayProperty("ngModel", ctx.fromDate);
         \u0275\u0275advance(7);
@@ -77713,9 +78081,9 @@ var AccountsComponent = class _AccountsComponent {
 })();
 
 // src/app/pages/inventory/inventory.component.ts
-var _c018 = (a0) => ({ active: a0 });
+var _c019 = (a0) => ({ active: a0 });
 var _c119 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
-var _c26 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
+var _c27 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
 function InventoryComponent_option_34_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "option", 17);
@@ -77981,7 +78349,7 @@ function InventoryComponent_Conditional_39_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngForOf", ctx_r5.TruckLoadingParchiWeightSummary);
     \u0275\u0275advance(31);
-    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(33, 2, ctx_r5.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c26, ctx_r5.perPage, ctx_r5.currentPage)));
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(33, 2, ctx_r5.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c27, ctx_r5.perPage, ctx_r5.currentPage)));
   }
 }
 var InventoryComponent = class _InventoryComponent {
@@ -78178,9 +78546,9 @@ var InventoryComponent = class _InventoryComponent {
       }
       if (rf & 2) {
         \u0275\u0275advance(7);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(6, _c018, ctx.tabState == "taulparchi"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(6, _c019, ctx.tabState == "taulparchi"));
         \u0275\u0275advance(3);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c018, ctx.tabState == "truckloading"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c019, ctx.tabState == "truckloading"));
         \u0275\u0275advance(21);
         \u0275\u0275twoWayProperty("ngModel", ctx.selectedCrop);
         \u0275\u0275advance(3);
@@ -78213,90 +78581,16 @@ var InventoryComponent = class _InventoryComponent {
 })();
 
 // src/app/pages/transaction/transaction.component.ts
-function TransactionComponent_div_29_option_6_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 48);
-    \u0275\u0275text(1);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const parchi_r3 = ctx.$implicit;
-    \u0275\u0275property("value", parchi_r3._id);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate4(" Farmer: ", parchi_r3 == null ? null : parchi_r3.farmerDetails.name, " -- Crop: ", parchi_r3 == null ? null : parchi_r3.cropDetails.name, " -- Weight: ", parchi_r3 == null ? null : parchi_r3.netWeight, " -- Rate: ", parchi_r3 == null ? null : parchi_r3.rate, " ");
-  }
-}
 function TransactionComponent_div_29_Template(rf, ctx) {
   if (rf & 1) {
-    const _r1 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div")(1, "label", 45);
-    \u0275\u0275text(2, "Transaction Details");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "select", 46);
-    \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_div_29_Template_select_ngModelChange_3_listener($event) {
-      \u0275\u0275restoreView(_r1);
-      const ctx_r1 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r1.transactions.transactionDetails, $event) || (ctx_r1.transactions.transactionDetails = $event);
-      return \u0275\u0275resetView($event);
-    });
-    \u0275\u0275elementStart(4, "option", 15);
-    \u0275\u0275text(5, "Select");
-    \u0275\u0275elementEnd();
-    \u0275\u0275template(6, TransactionComponent_div_29_option_6_Template, 2, 5, "option", 47);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275advance(3);
-    \u0275\u0275twoWayProperty("ngModel", ctx_r1.transactions.transactionDetails);
-    \u0275\u0275advance(3);
-    \u0275\u0275property("ngForOf", ctx_r1.TaulaParchi);
-  }
-}
-function TransactionComponent_div_30_option_6_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 48);
-    \u0275\u0275text(1);
-    \u0275\u0275elementEnd();
-  }
-  if (rf & 2) {
-    const parchi_r5 = ctx.$implicit;
-    \u0275\u0275property("value", parchi_r5._id);
-    \u0275\u0275advance();
-    \u0275\u0275textInterpolate3(" Farmer: ", parchi_r5 == null ? null : parchi_r5.partyDetails.name, " -- Crop: ", parchi_r5 == null ? null : parchi_r5.cropDetails.name, " -- Weight: ", parchi_r5 == null ? null : parchi_r5.netWeight, " ");
-  }
-}
-function TransactionComponent_div_30_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div")(1, "label", 45);
-    \u0275\u0275text(2, "Transaction Details");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "select", 46);
-    \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_div_30_Template_select_ngModelChange_3_listener($event) {
-      \u0275\u0275restoreView(_r4);
-      const ctx_r1 = \u0275\u0275nextContext();
-      \u0275\u0275twoWayBindingSet(ctx_r1.transactions.transactionDetails, $event) || (ctx_r1.transactions.transactionDetails = $event);
-      return \u0275\u0275resetView($event);
-    });
-    \u0275\u0275elementStart(4, "option", 15);
-    \u0275\u0275text(5, "Select");
-    \u0275\u0275elementEnd();
-    \u0275\u0275template(6, TransactionComponent_div_30_option_6_Template, 2, 4, "option", 47);
-    \u0275\u0275elementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275advance(3);
-    \u0275\u0275twoWayProperty("ngModel", ctx_r1.transactions.transactionDetails);
-    \u0275\u0275advance(3);
-    \u0275\u0275property("ngForOf", ctx_r1.TruckLoadingParchi);
+    \u0275\u0275element(0, "div");
   }
 }
 var TransactionComponent = class _TransactionComponent {
-  constructor(apiService, router) {
+  constructor(apiService, router, route) {
     this.apiService = apiService;
     this.router = router;
+    this.route = route;
     this.Farmers = [];
     this.Villages = [];
     this.Hammals = [];
@@ -78310,6 +78604,7 @@ var TransactionComponent = class _TransactionComponent {
       transactionDetails: ""
     };
     this.transaction = {
+      parchi_id: "",
       farmer: "",
       village: "",
       firm_company: "",
@@ -78331,6 +78626,10 @@ var TransactionComponent = class _TransactionComponent {
       remainingAmount: 0,
       totalAmount: 0
     };
+    this.route.params.subscribe((params) => {
+      this.transaction.transactionType = params["parchiType"];
+      this.transaction.parchi_id = params["id"];
+    });
   }
   ngOnInit() {
     this.fetchFarmers();
@@ -78467,17 +78766,14 @@ var TransactionComponent = class _TransactionComponent {
   calculateRemainingAmount() {
     const discountedTotal = this.transaction.totalAmount - this.transaction.discount;
     this.transaction.remainingAmount = discountedTotal - this.transaction.paidAmount;
-    if (this.transaction.remainingAmount < 0) {
-      this.transaction.remainingAmount = 0;
-    }
   }
   static {
     this.\u0275fac = function TransactionComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _TransactionComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(Router));
+      return new (__ngFactoryType__ || _TransactionComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(Router), \u0275\u0275directiveInject(ActivatedRoute));
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TransactionComponent, selectors: [["app-transaction"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 80, vars: 11, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "ps-2", "text-link"], [1, "col", "text-end"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "transactionType", 1, "form-label"], ["id", "transactionType", "name", "transactionType", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "taulParchi"], ["value", "truckLoading"], [4, "ngIf"], ["for", "transactionStatus", 1, "form-label"], ["id", "transactionStatus", "name", "transactionStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "active"], ["value", "inactive"], ["for", "transactionMode", 1, "form-label"], ["id", "transactionMode", "name", "transactionMode", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "cash"], ["value", "cheque"], ["value", "online"], ["value", "bank transfer"], ["value", "UPI"], ["for", "paymentStatus", 1, "form-label"], ["id", "paymentStatus", "name", "paymentStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "incoming"], ["value", "outgoing"], ["for", "paidAmount", 1, "form-label"], ["id", "paidAmount", "name", "paidAmount", "type", "number", "placeholder", "Paid Amount", 1, "form-control", "bg-warning", "text-dark", 3, "ngModelChange", "input", "ngModel"], ["for", "totalAmount", 1, "form-label"], ["id", "totalAmount", "name", "totalAmount", "type", "number", "placeholder", "Total Amount", 1, "form-control", "bg-warning", "text-dark", 3, "ngModelChange", "input", "ngModel"], ["for", "remainingAmount", 1, "form-label"], ["id", "remainingAmount", "name", "remainingAmount", "type", "number", "placeholder", "Remaining Amount", "readonly", "", 1, "form-control", "bg-warning", "text-dark", 3, "value"], ["for", "discount", 1, "form-label"], ["id", "discount", "name", "discount", "type", "number", "placeholder", "Discount", 1, "form-control", "bg-warning", "text-dark", 3, "ngModelChange", "input", "ngModel"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"], ["for", "transactionDetails", 1, "form-label", "mt-3"], ["id", "transactionDetails", "name", "transactionDetails", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"]], template: function TransactionComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TransactionComponent, selectors: [["app-transaction"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 79, vars: 10, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "ps-2", "text-link"], [1, "col", "text-end"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "transactionType", 1, "form-label"], ["id", "transactionType", "name", "transactionType", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "taulParchi"], ["value", "truckLoading"], [4, "ngIf"], ["for", "transactionStatus", 1, "form-label"], ["id", "transactionStatus", "name", "transactionStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "active"], ["value", "inactive"], ["for", "transactionMode", 1, "form-label"], ["id", "transactionMode", "name", "transactionMode", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "cash"], ["value", "cheque"], ["value", "online"], ["value", "bank transfer"], ["value", "UPI"], ["for", "paymentStatus", 1, "form-label"], ["id", "paymentStatus", "name", "paymentStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "incoming"], ["value", "outgoing"], ["for", "paidAmount", 1, "form-label"], ["id", "paidAmount", "name", "paidAmount", "type", "number", "placeholder", "Paid Amount", 1, "form-control", "bg-warning", "text-dark", 3, "ngModelChange", "input", "ngModel"], ["for", "totalAmount", 1, "form-label"], ["id", "totalAmount", "name", "totalAmount", "type", "number", "placeholder", "Total Amount", 1, "form-control", "bg-warning", "text-dark", 3, "ngModelChange", "input", "ngModel"], ["for", "remainingAmount", 1, "form-label"], ["id", "remainingAmount", "name", "remainingAmount", "type", "number", "placeholder", "Remaining Amount", "readonly", "", 1, "form-control", "bg-warning", "text-dark", 3, "value"], ["for", "discount", 1, "form-label"], ["id", "discount", "name", "discount", "type", "number", "placeholder", "Discount", 1, "form-control", "bg-warning", "text-dark", 3, "ngModelChange", "input", "ngModel"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"]], template: function TransactionComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "h4", 5);
         \u0275\u0275text(7, "Add Transaction");
@@ -78507,112 +78803,112 @@ var TransactionComponent = class _TransactionComponent {
         \u0275\u0275elementStart(27, "option", 17);
         \u0275\u0275text(28, "Truck Loading Parchi");
         \u0275\u0275elementEnd()();
-        \u0275\u0275template(29, TransactionComponent_div_29_Template, 7, 2, "div", 18)(30, TransactionComponent_div_30_Template, 7, 2, "div", 18);
-        \u0275\u0275elementStart(31, "label", 19);
-        \u0275\u0275text(32, "Transaction Status");
+        \u0275\u0275template(29, TransactionComponent_div_29_Template, 1, 0, "div", 18);
+        \u0275\u0275elementStart(30, "label", 19);
+        \u0275\u0275text(31, "Transaction Status");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(33, "select", 20);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_33_listener($event) {
+        \u0275\u0275elementStart(32, "select", 20);
+        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_32_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.transaction.transactionStatus, $event) || (ctx.transaction.transactionStatus = $event);
           return $event;
         });
-        \u0275\u0275elementStart(34, "option", 15);
-        \u0275\u0275text(35, "Select");
+        \u0275\u0275elementStart(33, "option", 15);
+        \u0275\u0275text(34, "Select");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(36, "option", 21);
-        \u0275\u0275text(37, "Active");
+        \u0275\u0275elementStart(35, "option", 21);
+        \u0275\u0275text(36, "Active");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(38, "option", 22);
-        \u0275\u0275text(39, "Inactive");
+        \u0275\u0275elementStart(37, "option", 22);
+        \u0275\u0275text(38, "Inactive");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(40, "label", 23);
-        \u0275\u0275text(41, "Transaction Mode");
+        \u0275\u0275elementStart(39, "label", 23);
+        \u0275\u0275text(40, "Transaction Mode");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(42, "select", 24);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_42_listener($event) {
+        \u0275\u0275elementStart(41, "select", 24);
+        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_41_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.transaction.transactionMode, $event) || (ctx.transaction.transactionMode = $event);
           return $event;
         });
-        \u0275\u0275elementStart(43, "option", 15);
-        \u0275\u0275text(44, "Select Transaction Mode");
+        \u0275\u0275elementStart(42, "option", 15);
+        \u0275\u0275text(43, "Select Transaction Mode");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(45, "option", 25);
-        \u0275\u0275text(46, "Cash");
+        \u0275\u0275elementStart(44, "option", 25);
+        \u0275\u0275text(45, "Cash");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(47, "option", 26);
-        \u0275\u0275text(48, "Cheque");
+        \u0275\u0275elementStart(46, "option", 26);
+        \u0275\u0275text(47, "Cheque");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(49, "option", 27);
-        \u0275\u0275text(50, "Online");
+        \u0275\u0275elementStart(48, "option", 27);
+        \u0275\u0275text(49, "Online");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(51, "option", 28);
-        \u0275\u0275text(52, "Bank Transfer");
+        \u0275\u0275elementStart(50, "option", 28);
+        \u0275\u0275text(51, "Bank Transfer");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(53, "option", 29);
-        \u0275\u0275text(54, "UPI");
+        \u0275\u0275elementStart(52, "option", 29);
+        \u0275\u0275text(53, "UPI");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(55, "label", 30);
-        \u0275\u0275text(56, "Payment Status");
+        \u0275\u0275elementStart(54, "label", 30);
+        \u0275\u0275text(55, "Payment Status");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(57, "select", 31);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_57_listener($event) {
+        \u0275\u0275elementStart(56, "select", 31);
+        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_56_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.transaction.PaymentStatus, $event) || (ctx.transaction.PaymentStatus = $event);
           return $event;
         });
-        \u0275\u0275elementStart(58, "option", 15);
-        \u0275\u0275text(59, "Select Payment Status");
+        \u0275\u0275elementStart(57, "option", 15);
+        \u0275\u0275text(58, "Select Payment Status");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(60, "option", 32);
-        \u0275\u0275text(61, "Incoming");
+        \u0275\u0275elementStart(59, "option", 32);
+        \u0275\u0275text(60, "Incoming");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(62, "option", 33);
-        \u0275\u0275text(63, "Outgoing");
+        \u0275\u0275elementStart(61, "option", 33);
+        \u0275\u0275text(62, "Outgoing");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(64, "label", 34);
-        \u0275\u0275text(65, "Paid Amount");
+        \u0275\u0275elementStart(63, "label", 34);
+        \u0275\u0275text(64, "Paid Amount");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(66, "input", 35);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_66_listener($event) {
+        \u0275\u0275elementStart(65, "input", 35);
+        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_65_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.transaction.paidAmount, $event) || (ctx.transaction.paidAmount = $event);
           return $event;
         });
-        \u0275\u0275listener("input", function TransactionComponent_Template_input_input_66_listener() {
+        \u0275\u0275listener("input", function TransactionComponent_Template_input_input_65_listener() {
           return ctx.calculateRemainingAmount();
         });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(67, "label", 36);
-        \u0275\u0275text(68, "Total Amount");
+        \u0275\u0275elementStart(66, "label", 36);
+        \u0275\u0275text(67, "Total Amount");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(69, "input", 37);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_69_listener($event) {
+        \u0275\u0275elementStart(68, "input", 37);
+        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_68_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.transaction.totalAmount, $event) || (ctx.transaction.totalAmount = $event);
           return $event;
         });
-        \u0275\u0275listener("input", function TransactionComponent_Template_input_input_69_listener() {
+        \u0275\u0275listener("input", function TransactionComponent_Template_input_input_68_listener() {
           return ctx.calculateRemainingAmount();
         });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(70, "label", 38);
-        \u0275\u0275text(71, "Remaining Amount");
+        \u0275\u0275elementStart(69, "label", 38);
+        \u0275\u0275text(70, "Remaining Amount");
         \u0275\u0275elementEnd();
-        \u0275\u0275element(72, "input", 39);
-        \u0275\u0275elementStart(73, "label", 40);
-        \u0275\u0275text(74, "Discount");
+        \u0275\u0275element(71, "input", 39);
+        \u0275\u0275elementStart(72, "label", 40);
+        \u0275\u0275text(73, "Discount");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(75, "input", 41);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_75_listener($event) {
+        \u0275\u0275elementStart(74, "input", 41);
+        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_74_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.transaction.discount, $event) || (ctx.transaction.discount = $event);
           return $event;
         });
-        \u0275\u0275listener("input", function TransactionComponent_Template_input_input_75_listener() {
+        \u0275\u0275listener("input", function TransactionComponent_Template_input_input_74_listener() {
           return ctx.calculateRemainingAmount();
         });
         \u0275\u0275elementEnd()()()()();
-        \u0275\u0275elementStart(76, "div", 42)(77, "div", 43)(78, "button", 44);
-        \u0275\u0275listener("click", function TransactionComponent_Template_button_click_78_listener() {
+        \u0275\u0275elementStart(75, "div", 42)(76, "div", 43)(77, "button", 44);
+        \u0275\u0275listener("click", function TransactionComponent_Template_button_click_77_listener() {
           return ctx.saveTransaction();
         });
-        \u0275\u0275text(79, " Submit ");
+        \u0275\u0275text(78, " Submit ");
         \u0275\u0275elementEnd()()()()()()()();
       }
       if (rf & 2) {
@@ -78622,8 +78918,6 @@ var TransactionComponent = class _TransactionComponent {
         \u0275\u0275twoWayProperty("ngModel", ctx.transaction.transactionType);
         \u0275\u0275advance(7);
         \u0275\u0275property("ngIf", ctx.transaction.transactionType === "taulParchi");
-        \u0275\u0275advance();
-        \u0275\u0275property("ngIf", ctx.transaction.transactionType === "truckLoading");
         \u0275\u0275advance(3);
         \u0275\u0275twoWayProperty("ngModel", ctx.transaction.transactionStatus);
         \u0275\u0275advance(9);
@@ -78639,7 +78933,7 @@ var TransactionComponent = class _TransactionComponent {
         \u0275\u0275advance(3);
         \u0275\u0275twoWayProperty("ngModel", ctx.transaction.discount);
       }
-    }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, ReactiveFormsModule, CommonModule, NgForOf, NgIf] });
+    }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, ReactiveFormsModule, CommonModule, NgIf] });
   }
 };
 (() => {
@@ -78647,7 +78941,33 @@ var TransactionComponent = class _TransactionComponent {
 })();
 
 // src/app/pages/transactionlist/transactionlist.component.ts
-function TransactionlistComponent_tr_56_Template(rf, ctx) {
+var _c020 = (a0) => ["/taul-parchi-view", a0];
+function TransactionlistComponent_tr_54_a_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "a", 23);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const transaction_r1 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(2, _c020, transaction_r1 == null ? null : transaction_r1.parchi_id));
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", transaction_r1 == null ? null : transaction_r1.transactionType, " ");
+  }
+}
+function TransactionlistComponent_tr_54_span_8_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const transaction_r1 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(transaction_r1 == null ? null : transaction_r1.transactionType);
+  }
+}
+function TransactionlistComponent_tr_54_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "tr")(1, "td");
     \u0275\u0275text(2);
@@ -78657,53 +78977,55 @@ function TransactionlistComponent_tr_56_Template(rf, ctx) {
     \u0275\u0275pipe(5, "date");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "td");
-    \u0275\u0275text(7);
+    \u0275\u0275template(7, TransactionlistComponent_tr_54_a_7_Template, 2, 4, "a", 21)(8, TransactionlistComponent_tr_54_span_8_Template, 2, 1, "span", 22);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "td");
-    \u0275\u0275text(9);
+    \u0275\u0275elementStart(9, "td");
+    \u0275\u0275text(10);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "td");
-    \u0275\u0275text(11);
+    \u0275\u0275elementStart(11, "td");
+    \u0275\u0275text(12);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "td");
-    \u0275\u0275text(13);
+    \u0275\u0275elementStart(13, "td");
+    \u0275\u0275text(14);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "td");
-    \u0275\u0275text(15);
+    \u0275\u0275elementStart(15, "td");
+    \u0275\u0275text(16);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "td");
-    \u0275\u0275text(17);
+    \u0275\u0275elementStart(17, "td");
+    \u0275\u0275text(18);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "td");
-    \u0275\u0275text(19);
+    \u0275\u0275elementStart(19, "td");
+    \u0275\u0275text(20);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(20, "td");
-    \u0275\u0275text(21);
+    \u0275\u0275elementStart(21, "td");
+    \u0275\u0275text(22);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const transactions_r1 = ctx.$implicit;
+    const transaction_r1 = ctx.$implicit;
     const i_r2 = ctx.index;
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(i_r2 + 1);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 10, transactions_r1 == null ? null : transactions_r1.created_at, "MM-dd-YYYY"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(5, 11, transaction_r1 == null ? null : transaction_r1.created_at, "MM-dd-YYYY"));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.transactionType);
+    \u0275\u0275property("ngIf", transaction_r1 == null ? null : transaction_r1.parchi_id);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !(transaction_r1 == null ? null : transaction_r1.parchi_id));
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.transactionStatus);
+    \u0275\u0275textInterpolate(transaction_r1 == null ? null : transaction_r1.transactionStatus);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.transactionMode);
+    \u0275\u0275textInterpolate(transaction_r1 == null ? null : transaction_r1.transactionMode);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1("", transactions_r1 == null ? null : transactions_r1.discount, "%");
+    \u0275\u0275textInterpolate1("", transaction_r1 == null ? null : transaction_r1.discount, " Rs.");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.paidAmount);
+    \u0275\u0275textInterpolate(transaction_r1 == null ? null : transaction_r1.paidAmount);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.remainingAmount);
+    \u0275\u0275textInterpolate(transaction_r1 == null ? null : transaction_r1.remainingAmount);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.PaymentStatus);
+    \u0275\u0275textInterpolate(transaction_r1 == null ? null : transaction_r1.PaymentStatus);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(transactions_r1 == null ? null : transactions_r1.totalAmount);
+    \u0275\u0275textInterpolate(transaction_r1 == null ? null : transaction_r1.totalAmount);
   }
 }
 var TransactionlistComponent = class _TransactionlistComponent {
@@ -78740,102 +79062,101 @@ var TransactionlistComponent = class _TransactionlistComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TransactionlistComponent, selectors: [["app-transactionlist"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 57, vars: 3, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "div", "d-flex", "justify-content-end", "align-items-center"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["id", "todatehelpid", 1, "form-text", "text-muted"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"]], template: function TransactionlistComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TransactionlistComponent, selectors: [["app-transactionlist"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 55, vars: 3, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control", 3, "ngModelChange", "ngModel"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], [3, "routerLink", 4, "ngIf"], [4, "ngIf"], [3, "routerLink"]], template: function TransactionlistComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4");
         \u0275\u0275text(3, "Transactions");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(4, "div", 2)(5, "div", 3)(6, "button", 4);
-        \u0275\u0275listener("click", function TransactionlistComponent_Template_button_click_6_listener() {
-          return ctx.navigateToTransactionPage();
-        });
-        \u0275\u0275text(7, "Add Transaction");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(8, "div", 5)(9, "div", 6)(10, "div", 7)(11, "label", 8);
-        \u0275\u0275text(12, "From");
+        \u0275\u0275elementStart(4, "div", 2)(5, "div", 3)(6, "div", 4)(7, "div", 5)(8, "label", 6);
+        \u0275\u0275text(9, "From");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(13, "input", 9);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionlistComponent_Template_input_ngModelChange_13_listener($event) {
+        \u0275\u0275elementStart(10, "input", 7);
+        \u0275\u0275twoWayListener("ngModelChange", function TransactionlistComponent_Template_input_ngModelChange_10_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.fromDate, $event) || (ctx.fromDate = $event);
           return $event;
         });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(14, "small", 10);
-        \u0275\u0275text(15, "From Date");
+        \u0275\u0275elementStart(11, "small", 8);
+        \u0275\u0275text(12, "From Date");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(16, "div", 6)(17, "div", 7)(18, "label", 11);
-        \u0275\u0275text(19, "To");
+        \u0275\u0275elementStart(13, "div", 4)(14, "div", 5)(15, "label", 9);
+        \u0275\u0275text(16, "To");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(20, "input", 12);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionlistComponent_Template_input_ngModelChange_20_listener($event) {
+        \u0275\u0275elementStart(17, "input", 10);
+        \u0275\u0275twoWayListener("ngModelChange", function TransactionlistComponent_Template_input_ngModelChange_17_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.toDate, $event) || (ctx.toDate = $event);
           return $event;
         });
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(21, "small", 13);
-        \u0275\u0275text(22, "To Date");
+        \u0275\u0275elementStart(18, "small", 11);
+        \u0275\u0275text(19, "To Date");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(23, "div", 6)(24, "button", 4);
-        \u0275\u0275listener("click", function TransactionlistComponent_Template_button_click_24_listener() {
+        \u0275\u0275elementStart(20, "div", 4);
+        \u0275\u0275element(21, "br");
+        \u0275\u0275elementStart(22, "button", 12);
+        \u0275\u0275listener("click", function TransactionlistComponent_Template_button_click_22_listener() {
           return ctx.getTransactions();
         });
-        \u0275\u0275text(25, " Submit ");
+        \u0275\u0275text(23, " Submit ");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(26, "div", 14)(27, "div", 15)(28, "h4", 16);
-        \u0275\u0275text(29, "Transactions");
+        \u0275\u0275elementStart(24, "div", 13)(25, "div", 14)(26, "h4", 15);
+        \u0275\u0275text(27, "Transactions");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(30, "div", 2)(31, "div", 17)(32, "table", 18)(33, "thead", 19)(34, "tr")(35, "th", 20);
-        \u0275\u0275text(36, "Sr.no");
+        \u0275\u0275elementStart(28, "div", 2)(29, "div", 16)(30, "table", 17)(31, "thead", 18)(32, "tr")(33, "th", 19);
+        \u0275\u0275text(34, "Sr.no");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(37, "th", 20);
-        \u0275\u0275text(38, "Date");
+        \u0275\u0275elementStart(35, "th", 19);
+        \u0275\u0275text(36, "Date");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(39, "th", 20);
-        \u0275\u0275text(40, "Transaction Type");
+        \u0275\u0275elementStart(37, "th", 19);
+        \u0275\u0275text(38, "Transaction Type");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(41, "th", 20);
-        \u0275\u0275text(42, "Transaction Status");
+        \u0275\u0275elementStart(39, "th", 19);
+        \u0275\u0275text(40, "Transaction Status");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(43, "th", 20);
-        \u0275\u0275text(44, "Transaction Mode");
+        \u0275\u0275elementStart(41, "th", 19);
+        \u0275\u0275text(42, "Transaction Mode");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(45, "th", 20);
-        \u0275\u0275text(46, "Discount");
+        \u0275\u0275elementStart(43, "th", 19);
+        \u0275\u0275text(44, "Discount");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(47, "th", 20);
-        \u0275\u0275text(48, "Paid Payment");
+        \u0275\u0275elementStart(45, "th", 19);
+        \u0275\u0275text(46, "Paid Payment");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(49, "th", 20);
-        \u0275\u0275text(50, "Remaining Payment");
+        \u0275\u0275elementStart(47, "th", 19);
+        \u0275\u0275text(48, "Remaining Payment");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(51, "th", 20);
-        \u0275\u0275text(52, " Payment Status");
+        \u0275\u0275elementStart(49, "th", 19);
+        \u0275\u0275text(50, " Payment Status");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(53, "th", 20);
-        \u0275\u0275text(54, "Total Payment");
+        \u0275\u0275elementStart(51, "th", 19);
+        \u0275\u0275text(52, "Total Payment");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(55, "tbody");
-        \u0275\u0275template(56, TransactionlistComponent_tr_56_Template, 22, 13, "tr", 21);
+        \u0275\u0275elementStart(53, "tbody");
+        \u0275\u0275template(54, TransactionlistComponent_tr_54_Template, 23, 14, "tr", 20);
         \u0275\u0275elementEnd()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275advance(13);
+        \u0275\u0275advance(10);
         \u0275\u0275twoWayProperty("ngModel", ctx.fromDate);
         \u0275\u0275advance(7);
         \u0275\u0275twoWayProperty("ngModel", ctx.toDate);
-        \u0275\u0275advance(36);
+        \u0275\u0275advance(37);
         \u0275\u0275property("ngForOf", ctx.transactions);
       }
     }, dependencies: [
       CommonModule,
       NgForOf,
+      NgIf,
       DatePipe,
       FormsModule,
       DefaultValueAccessor,
       NgControlStatus,
       NgModel,
       ReactiveFormsModule,
-      NgxPaginationModule
+      NgxPaginationModule,
+      RouterModule,
+      RouterLink
     ] });
   }
 };
@@ -78844,7 +79165,7 @@ var TransactionlistComponent = class _TransactionlistComponent {
 })();
 
 // src/app/pages/truck/truck.component.ts
-var _c019 = (a0) => ({ show: a0 });
+var _c021 = (a0) => ({ show: a0 });
 var _c120 = (a0, a1, a2) => ({ id: "roles_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
 function TruckComponent_button_37_Template(rf, ctx) {
   if (rf & 1) {
@@ -79121,7 +79442,7 @@ var TruckComponent = class _TruckComponent {
         \u0275\u0275elementEnd()()()()()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(15, _c019, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(15, _c021, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2(" ", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, " ");
         \u0275\u0275advance(9);
@@ -79171,9 +79492,9 @@ var TruckComponent = class _TruckComponent {
 })();
 
 // src/app/pages/list/list.component.ts
-var _c020 = (a0) => ({ active: a0 });
+var _c022 = (a0) => ({ active: a0 });
 var _c121 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
-var _c27 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
+var _c28 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
 function ListComponent_option_34_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "option", 17);
@@ -79514,7 +79835,7 @@ function ListComponent_Conditional_39_Template(rf, ctx) {
     \u0275\u0275advance(32);
     \u0275\u0275property("ngIf", ((tmp_2_0 = ctx_r5.getCurrentUser()) == null ? null : tmp_2_0.role) === "Admin" || "cashier");
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(36, 3, ctx_r5.TruckLoadingParchi, \u0275\u0275pureFunction2(6, _c27, ctx_r5.perPage, ctx_r5.currentPage)));
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(36, 3, ctx_r5.TruckLoadingParchi, \u0275\u0275pureFunction2(6, _c28, ctx_r5.perPage, ctx_r5.currentPage)));
   }
 }
 var ListComponent = class _ListComponent {
@@ -79694,9 +80015,9 @@ var ListComponent = class _ListComponent {
       }
       if (rf & 2) {
         \u0275\u0275advance(7);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(6, _c020, ctx.tabState == "taulparchi"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(6, _c022, ctx.tabState == "taulparchi"));
         \u0275\u0275advance(3);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c020, ctx.tabState == "truckloading"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c022, ctx.tabState == "truckloading"));
         \u0275\u0275advance(21);
         \u0275\u0275twoWayProperty("ngModel", ctx.selectedCrop);
         \u0275\u0275advance(3);
@@ -79730,9 +80051,9 @@ var ListComponent = class _ListComponent {
 })();
 
 // src/app/pages/my-list/my-list.component.ts
-var _c021 = (a0) => ({ active: a0 });
-var _c123 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
-var _c28 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
+var _c023 = (a0) => ({ active: a0 });
+var _c124 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
+var _c29 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
 function MyListComponent_option_34_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "option", 17);
@@ -79875,7 +80196,7 @@ function MyListComponent_Conditional_38_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngForOf", ctx_r5.TaulParchiWeightSummary);
     \u0275\u0275advance(31);
-    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(33, 2, ctx_r5.TaulaParchi, \u0275\u0275pureFunction3(5, _c123, ctx_r5.perPage, ctx_r5.currentPage, ctx_r5.TaulaParchiCount)));
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(33, 2, ctx_r5.TaulaParchi, \u0275\u0275pureFunction3(5, _c124, ctx_r5.perPage, ctx_r5.currentPage, ctx_r5.TaulaParchiCount)));
   }
 }
 function MyListComponent_Conditional_39_div_1_Template(rf, ctx) {
@@ -80014,7 +80335,7 @@ function MyListComponent_Conditional_39_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngForOf", ctx_r5.TruckLoadingParchiWeightSummary);
     \u0275\u0275advance(33);
-    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(35, 2, ctx_r5.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c28, ctx_r5.perPage, ctx_r5.currentPage)));
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(35, 2, ctx_r5.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c29, ctx_r5.perPage, ctx_r5.currentPage)));
   }
 }
 var MyListComponent = class _MyListComponent {
@@ -80206,9 +80527,9 @@ var MyListComponent = class _MyListComponent {
       }
       if (rf & 2) {
         \u0275\u0275advance(7);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(6, _c021, ctx.tabState == "taulparchi"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(6, _c023, ctx.tabState == "taulparchi"));
         \u0275\u0275advance(3);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c021, ctx.tabState == "truckloading"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c023, ctx.tabState == "truckloading"));
         \u0275\u0275advance(21);
         \u0275\u0275twoWayProperty("ngModel", ctx.selectedCrop);
         \u0275\u0275advance(3);
@@ -80241,8 +80562,8 @@ var MyListComponent = class _MyListComponent {
 })();
 
 // src/app/pages/advance-payment/advance-payment.component.ts
-var _c022 = (a0) => ({ show: a0 });
-var _c124 = (a0, a1, a2) => ({ id: "roles_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
+var _c024 = (a0) => ({ show: a0 });
+var _c125 = (a0, a1, a2) => ({ id: "roles_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
 function AdvancePaymentComponent_div_21_option_6_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "option", 48);
@@ -80644,7 +80965,7 @@ var AdvancePaymentComponent = class _AdvancePaymentComponent {
         \u0275\u0275elementEnd()()()()()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(17, _c022, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(17, _c024, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2(" ", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, " ");
         \u0275\u0275advance(9);
@@ -80668,7 +80989,7 @@ var AdvancePaymentComponent = class _AdvancePaymentComponent {
         \u0275\u0275advance(10);
         \u0275\u0275textInterpolate1(" Add ", ctx.masterName, " ");
         \u0275\u0275advance(24);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(86, 14, ctx.data, \u0275\u0275pureFunction3(19, _c124, ctx.limit, ctx.p, ctx.total)));
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(86, 14, ctx.data, \u0275\u0275pureFunction3(19, _c125, ctx.limit, ctx.p, ctx.total)));
       }
     }, dependencies: [
       FormsModule,
@@ -80698,9 +81019,9 @@ var AdvancePaymentComponent = class _AdvancePaymentComponent {
 })();
 
 // src/app/pages/storage/storage.component.ts
-var _c023 = (a0) => ({ "show": a0 });
-var _c125 = (a0, a1, a2) => ({ id: "storage_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
-var _c29 = (a0) => [a0];
+var _c025 = (a0) => ({ "show": a0 });
+var _c126 = (a0, a1, a2) => ({ id: "storage_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
+var _c210 = (a0) => [a0];
 function StorageComponent_button_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
@@ -80869,7 +81190,7 @@ function StorageComponent_div_142_div_21_tr_19_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(9, 5, item_r13.averagePrice, "0.2"));
     \u0275\u0275advance(3);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(8, _c29, "/stock-view/" + item_r13.crop_id + "/" + ctx_r1.selectedWarehouseId));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(8, _c210, "/stock-view/" + item_r13.crop_id + "/" + ctx_r1.selectedWarehouseId));
   }
 }
 function StorageComponent_div_142_div_21_Template(rf, ctx) {
@@ -81304,7 +81625,7 @@ var StorageComponent = class _StorageComponent {
         \u0275\u0275template(142, StorageComponent_div_142_Template, 22, 4, "div", 61);
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(23, _c023, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(23, _c025, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2("", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, "");
         \u0275\u0275advance(9);
@@ -81314,7 +81635,7 @@ var StorageComponent = class _StorageComponent {
         \u0275\u0275advance();
         \u0275\u0275property("ngIf", ctx.isEdit == "Update");
         \u0275\u0275advance();
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(25, _c023, ctx.isStockUpdateModelOpen));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(25, _c025, ctx.isStockUpdateModelOpen));
         \u0275\u0275advance(14);
         \u0275\u0275twoWayProperty("ngModel", ctx.stockItemToAddOrEdit.crop);
         \u0275\u0275advance(3);
@@ -81338,7 +81659,7 @@ var StorageComponent = class _StorageComponent {
         \u0275\u0275advance(10);
         \u0275\u0275textInterpolate1(" Add ", ctx.masterName, " ");
         \u0275\u0275advance(16);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(141, 20, ctx.data, \u0275\u0275pureFunction3(27, _c125, ctx.limit, ctx.p, ctx.total)));
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(141, 20, ctx.data, \u0275\u0275pureFunction3(27, _c126, ctx.limit, ctx.p, ctx.total)));
         \u0275\u0275advance(2);
         \u0275\u0275property("ngIf", ctx.selectedWarehouseId);
       }
@@ -81370,9 +81691,9 @@ var StorageComponent = class _StorageComponent {
 })();
 
 // src/app/pages/wearhouse-accounts/wearhouse-accounts.component.ts
-var _c024 = (a0) => ({ active: a0 });
-var _c126 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
-var _c210 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
+var _c026 = (a0) => ({ active: a0 });
+var _c127 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
+var _c211 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
 function WearhouseAccountsComponent_option_34_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "option", 17);
@@ -81499,7 +81820,7 @@ function WearhouseAccountsComponent_Conditional_38_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngForOf", ctx_r5.TaulParchiTransactionSummary);
     \u0275\u0275advance(27);
-    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(29, 2, ctx_r5.TaulaParchi, \u0275\u0275pureFunction3(5, _c126, ctx_r5.perPage, ctx_r5.currentPage, ctx_r5.TaulaParchiCount)));
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(29, 2, ctx_r5.TaulaParchi, \u0275\u0275pureFunction3(5, _c127, ctx_r5.perPage, ctx_r5.currentPage, ctx_r5.TaulaParchiCount)));
   }
 }
 function WearhouseAccountsComponent_Conditional_39_div_1_Template(rf, ctx) {
@@ -81638,7 +81959,7 @@ function WearhouseAccountsComponent_Conditional_39_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngForOf", ctx_r5.TruckLoadingParchiTransactionSummary);
     \u0275\u0275advance(33);
-    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(35, 2, ctx_r5.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c210, ctx_r5.perPage, ctx_r5.currentPage)));
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(35, 2, ctx_r5.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c211, ctx_r5.perPage, ctx_r5.currentPage)));
   }
 }
 var WearhouseAccountsComponent = class _WearhouseAccountsComponent {
@@ -81844,9 +82165,9 @@ var WearhouseAccountsComponent = class _WearhouseAccountsComponent {
       }
       if (rf & 2) {
         \u0275\u0275advance(7);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c024, ctx.tabState == "taulparchi"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c026, ctx.tabState == "taulparchi"));
         \u0275\u0275advance(3);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(10, _c024, ctx.tabState == "truckloading"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(10, _c026, ctx.tabState == "truckloading"));
         \u0275\u0275advance(7);
         \u0275\u0275twoWayProperty("ngModel", ctx.fromDate);
         \u0275\u0275advance(7);
@@ -81884,9 +82205,9 @@ var WearhouseAccountsComponent = class _WearhouseAccountsComponent {
 })();
 
 // src/app/pages/wearhouse-inventory/wearhouse-inventory.component.ts
-var _c025 = (a0) => ({ active: a0 });
-var _c127 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
-var _c211 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
+var _c027 = (a0) => ({ active: a0 });
+var _c128 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
+var _c212 = (a0, a1) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloading" });
 function WearhouseInventoryComponent_option_34_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "option", 17);
@@ -82029,7 +82350,7 @@ function WearhouseInventoryComponent_Conditional_38_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngForOf", ctx_r5.TaulParchiWeightSummary);
     \u0275\u0275advance(31);
-    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(33, 2, ctx_r5.TaulaParchi, \u0275\u0275pureFunction3(5, _c127, ctx_r5.perPage, ctx_r5.currentPage, ctx_r5.TaulaParchiCount)));
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(33, 2, ctx_r5.TaulaParchi, \u0275\u0275pureFunction3(5, _c128, ctx_r5.perPage, ctx_r5.currentPage, ctx_r5.TaulaParchiCount)));
   }
 }
 function WearhouseInventoryComponent_Conditional_39_div_1_Template(rf, ctx) {
@@ -82160,7 +82481,7 @@ function WearhouseInventoryComponent_Conditional_39_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngForOf", ctx_r5.TruckLoadingParchiWeightSummary);
     \u0275\u0275advance(31);
-    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(33, 2, ctx_r5.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c211, ctx_r5.perPage, ctx_r5.currentPage)));
+    \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(33, 2, ctx_r5.TruckLoadingParchi, \u0275\u0275pureFunction2(5, _c212, ctx_r5.perPage, ctx_r5.currentPage)));
   }
 }
 var WearhouseInventoryComponent = class _WearhouseInventoryComponent {
@@ -82357,9 +82678,9 @@ var WearhouseInventoryComponent = class _WearhouseInventoryComponent {
       }
       if (rf & 2) {
         \u0275\u0275advance(7);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(6, _c025, ctx.tabState == "taulparchi"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(6, _c027, ctx.tabState == "taulparchi"));
         \u0275\u0275advance(3);
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c025, ctx.tabState == "truckloading"));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(8, _c027, ctx.tabState == "truckloading"));
         \u0275\u0275advance(21);
         \u0275\u0275twoWayProperty("ngModel", ctx.selectedLocation);
         \u0275\u0275advance(3);
@@ -82393,7 +82714,7 @@ var WearhouseInventoryComponent = class _WearhouseInventoryComponent {
 
 // node_modules/angularx-qrcode/fesm2022/angularx-qrcode.mjs
 var import_qrcode = __toESM(require_browser(), 1);
-var _c026 = ["qrcElement"];
+var _c028 = ["qrcElement"];
 var QRCodeComponent = class _QRCodeComponent {
   constructor(renderer, sanitizer) {
     this.renderer = renderer;
@@ -82619,7 +82940,7 @@ var QRCodeComponent = class _QRCodeComponent {
       selectors: [["qrcode"]],
       viewQuery: function QRCodeComponent_Query(rf, ctx) {
         if (rf & 1) {
-          \u0275\u0275viewQuery(_c026, 7);
+          \u0275\u0275viewQuery(_c028, 7);
         }
         if (rf & 2) {
           let _t;
@@ -82767,8 +83088,8 @@ var QRCodeModule = class _QRCodeModule {
 })();
 
 // src/app/pages/taulparchi-dashboard/taulparchi-dashboard.component.ts
-var _c027 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
-var _c128 = (a0) => ["/taul-parchi-view", a0];
+var _c029 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
+var _c129 = (a0) => ["/taul-parchi-view", a0];
 function TaulparchiDashboardComponent_tr_53_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
@@ -82855,7 +83176,7 @@ function TaulparchiDashboardComponent_tr_53_Template(rf, ctx) {
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.userDetails == null ? null : taulaParchi_r2.userDetails.name);
     \u0275\u0275advance(4);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(18, _c128, taulaParchi_r2._id));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(18, _c129, taulaParchi_r2._id));
   }
 }
 var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
@@ -83203,7 +83524,7 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
       }
       if (rf & 2) {
         \u0275\u0275advance(53);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(54, 1, ctx.TaulaParchi, \u0275\u0275pureFunction3(4, _c027, ctx.perPage, ctx.currentPage, ctx.TaulaParchiCount)));
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(54, 1, ctx.TaulaParchi, \u0275\u0275pureFunction3(4, _c029, ctx.perPage, ctx.currentPage, ctx.TaulaParchiCount)));
       }
     }, dependencies: [
       CommonModule,
@@ -83683,8 +84004,8 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
 })();
 
 // src/app/pages/truck-loading-parchi-dashboard/truck-loading-parchi-dashboard.component.ts
-var _c028 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloadingparchi", totalItems: a2 });
-var _c129 = (a0) => ["/truck-loading-parchi-view", a0];
+var _c030 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "truckloadingparchi", totalItems: a2 });
+var _c130 = (a0) => ["/truck-loading-parchi-view", a0];
 function TruckLoadingParchiDashboardComponent_tr_57_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
@@ -83770,7 +84091,7 @@ function TruckLoadingParchiDashboardComponent_tr_57_Template(rf, ctx) {
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(truckLoadingParchi_r2 == null ? null : truckLoadingParchi_r2.userDetails == null ? null : truckLoadingParchi_r2.userDetails.name);
     \u0275\u0275advance(7);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(18, _c129, truckLoadingParchi_r2._id));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(18, _c130, truckLoadingParchi_r2._id));
   }
 }
 var TruckLoadingParchiDashboardComponent = class _TruckLoadingParchiDashboardComponent {
@@ -84033,7 +84354,7 @@ var TruckLoadingParchiDashboardComponent = class _TruckLoadingParchiDashboardCom
         \u0275\u0275advance(7);
         \u0275\u0275twoWayProperty("ngModel", ctx.toDate);
         \u0275\u0275advance(40);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(58, 3, ctx.TruckLoadingParchis, \u0275\u0275pureFunction3(6, _c028, ctx.perPage, ctx.currentPage, ctx.TruckLoadingParchiCount)));
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(58, 3, ctx.TruckLoadingParchis, \u0275\u0275pureFunction3(6, _c030, ctx.perPage, ctx.currentPage, ctx.TruckLoadingParchiCount)));
       }
     }, dependencies: [
       CommonModule,
@@ -84377,8 +84698,8 @@ var TruckLoadingParchiViewComponent = class _TruckLoadingParchiViewComponent {
 })();
 
 // src/app/pages/company/company.component.ts
-var _c029 = (a0) => ({ show: a0 });
-var _c130 = (a0, a1, a2) => ({ id: "masters_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
+var _c031 = (a0) => ({ show: a0 });
+var _c131 = (a0, a1, a2) => ({ id: "masters_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
 function CompanyComponent_button_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
@@ -84577,7 +84898,7 @@ var CompanyComponent = class _CompanyComponent {
         \u0275\u0275elementEnd()()()()()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c029, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c031, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2(" ", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, " ");
         \u0275\u0275advance(9);
@@ -84591,7 +84912,7 @@ var CompanyComponent = class _CompanyComponent {
         \u0275\u0275advance(10);
         \u0275\u0275textInterpolate1(" Add ", ctx.masterName, " ");
         \u0275\u0275advance(16);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(55, 9, ctx.data, \u0275\u0275pureFunction3(14, _c130, ctx.limit, ctx.p, ctx.total)));
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(55, 9, ctx.data, \u0275\u0275pureFunction3(14, _c131, ctx.limit, ctx.p, ctx.total)));
       }
     }, dependencies: [
       FormsModule,
@@ -84614,8 +84935,8 @@ var CompanyComponent = class _CompanyComponent {
 })();
 
 // src/app/pages/transport/transport.component.ts
-var _c030 = (a0) => ({ show: a0 });
-var _c131 = (a0, a1, a2) => ({ id: "masters_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
+var _c032 = (a0) => ({ show: a0 });
+var _c133 = (a0, a1, a2) => ({ id: "masters_list", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
 function TransportComponent_button_18_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
@@ -84814,7 +85135,7 @@ var TransportComponent = class _TransportComponent {
         \u0275\u0275elementEnd()()()()()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c030, ctx.isEdit));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(12, _c032, ctx.isEdit));
         \u0275\u0275advance(5);
         \u0275\u0275textInterpolate2(" ", ctx.isEdit == "Update" ? "Update" : "Add", " ", ctx.masterName, " ");
         \u0275\u0275advance(9);
@@ -84828,7 +85149,7 @@ var TransportComponent = class _TransportComponent {
         \u0275\u0275advance(10);
         \u0275\u0275textInterpolate1(" Add ", ctx.masterName, " ");
         \u0275\u0275advance(16);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(55, 9, ctx.data, \u0275\u0275pureFunction3(14, _c131, ctx.limit, ctx.p, ctx.total)));
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(55, 9, ctx.data, \u0275\u0275pureFunction3(14, _c133, ctx.limit, ctx.p, ctx.total)));
       }
     }, dependencies: [
       FormsModule,
@@ -84851,9 +85172,9 @@ var TransportComponent = class _TransportComponent {
 })();
 
 // src/app/pages/stock-view/stock-view.component.ts
-var _c031 = (a0) => ({ "show": a0 });
-var _c133 = (a0, a1, a2) => ({ id: "stock-pagination", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
-var _c212 = (a0) => [a0];
+var _c033 = (a0) => ({ "show": a0 });
+var _c134 = (a0, a1, a2) => ({ id: "stock-pagination", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
+var _c213 = (a0) => [a0];
 function StockViewComponent_tr_40_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
@@ -84916,7 +85237,7 @@ function StockViewComponent_tr_103_a_17_Template(rf, ctx) {
   }
   if (rf & 2) {
     const stock_r6 = \u0275\u0275nextContext().$implicit;
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(1, _c212, "/taul-parchi-view/" + stock_r6.meta_data.taulParchi));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(1, _c213, "/taul-parchi-view/" + stock_r6.meta_data.taulParchi));
   }
 }
 function StockViewComponent_tr_103_a_18_Template(rf, ctx) {
@@ -84928,7 +85249,7 @@ function StockViewComponent_tr_103_a_18_Template(rf, ctx) {
   }
   if (rf & 2) {
     const stock_r6 = \u0275\u0275nextContext().$implicit;
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(1, _c212, "/truck-loading-parchi-view/" + stock_r6.meta_data.truckLoading));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(1, _c213, "/truck-loading-parchi-view/" + stock_r6.meta_data.truckLoading));
   }
 }
 function StockViewComponent_tr_103_Template(rf, ctx) {
@@ -85251,7 +85572,7 @@ var StockViewComponent = class _StockViewComponent {
         \u0275\u0275elementEnd()()()()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(11, _c031, ctx.isStockUpdateModelOpen));
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(11, _c033, ctx.isStockUpdateModelOpen));
         \u0275\u0275advance(40);
         \u0275\u0275property("ngForOf", ctx.stockItemToAddOrEdit.bag_units);
         \u0275\u0275advance(4);
@@ -85265,7 +85586,7 @@ var StockViewComponent = class _StockViewComponent {
         \u0275\u0275advance(36);
         \u0275\u0275property("ngIf", ctx.stock_data.length === 0);
         \u0275\u0275advance();
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(104, 8, ctx.stock_data, \u0275\u0275pureFunction3(13, _c133, ctx.limit, ctx.page, ctx.total)));
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(104, 8, ctx.stock_data, \u0275\u0275pureFunction3(13, _c134, ctx.limit, ctx.page, ctx.total)));
       }
     }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, ReactiveFormsModule, CommonModule, NgClass, NgForOf, NgIf, NgxPaginationModule, PaginatePipe, PaginationControlsComponent, RouterModule, RouterLink] });
   }
@@ -85417,6 +85738,11 @@ var routes = [
         path: "transaction",
         component: TransactionComponent,
         data: { title: "Transaction" }
+      },
+      {
+        path: "cashier-payment/:parchiType/:id",
+        component: TransactionComponent,
+        data: { title: "Taul Parchi Cashier Payment" }
       },
       {
         path: "transactionlist",
@@ -89996,14 +90322,14 @@ var roleWiseAccess = [
     page: "settings",
     roles: ["Admin"]
   },
-  {
-    page: "accounts",
-    roles: ["Admin", "cashier"]
-  },
-  {
-    page: "inventory",
-    roles: ["Admin", "cashier"]
-  },
+  // {
+  //   page: 'accounts',
+  //   roles: ['Admin','cashier'],
+  // },
+  // {
+  //   page: 'inventory',
+  //   roles: ['Admin','cashier'],
+  // },
   {
     page: "transaction",
     roles: ["Admin", "cashier"]
@@ -90016,41 +90342,45 @@ var roleWiseAccess = [
     page: "truck",
     roles: ["Admin"]
   },
-  {
-    page: "list",
-    roles: ["Admin", "cashier"]
-  },
-  {
-    page: "my-list",
-    roles: ["Admin", "Employee"]
-  },
+  // {
+  //   page: 'list',
+  //   roles: ['Admin','cashier'],
+  // },
+  // {
+  //   page: 'my-list',
+  //   roles: ['Admin','Employee'],
+  // },
   {
     page: "advance-payment",
     roles: ["Admin"]
   },
-  {
-    page: "wearhouse-accounts",
-    roles: ["Admin"]
-  },
-  {
-    page: "wearhouse-inventory",
-    roles: ["Admin"]
-  },
+  // {
+  //   page: 'wearhouse-accounts',
+  //   roles: ['Admin'],
+  // },
+  // {
+  //   page: 'wearhouse-inventory',
+  //   roles: ['Admin'],
+  // },
   {
     page: "taul-parchi-dashboard",
-    roles: ["Admin"]
+    roles: ["Admin", "Employee"]
   },
   {
     page: "taul-parchi-view",
-    roles: ["Admin"]
+    roles: ["Admin", "Employee"]
   },
   {
     page: "truck-loading-parchi-dashboard",
-    roles: ["Admin"]
+    roles: ["Admin", "Employee"]
   },
   {
     page: "truck-loading-parchi-view",
-    roles: ["Admin"]
+    roles: ["Admin", "Employee"]
+  },
+  {
+    page: "cashier-payment",
+    roles: ["Admin", "cashier"]
   }
 ];
 

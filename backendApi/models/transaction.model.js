@@ -15,6 +15,10 @@ const TransactionSchema = new mongoose.Schema({
     rate: Number,
     netWeight: Number,
   }],
+  parchi_id: {
+    type: mongoose.Types.ObjectId,
+    ref: 'taulparchis',
+  },
   firm_company: {
     type: String,
   },
@@ -40,7 +44,7 @@ const TransactionSchema = new mongoose.Schema({
   // crop: {
   //   type: mongoose.Types.ObjectId,
   //   ref: 'crop',
-  
+
   // },
   transactionStatus:{
     type: String,
@@ -48,29 +52,28 @@ const TransactionSchema = new mongoose.Schema({
   },
   transactionType: {
     type: String,
-    enum: ['taulParchi', 'truckLoading'],  
-    
+    enum: ['taulParchi', 'truckLoading'],
   },
   transactionMode: {
     type: String,
-    enum: ['cash', 'cheque', 'online', 'bank transfer', 'UPI'], 
+    enum: ['cash', 'cheque', 'online', 'bank transfer', 'UPI'],
     required: true,
   },
   discount: {
-    type: Number, 
+    type: Number,
   },
   paidAmount: {
-    type: Number, 
+    type: Number,
   },
   remainingAmount: {
-    type: Number, 
+    type: Number,
   },
   totalAmount: {
-    type: Number, 
+    type: Number,
   },
   PaymentStatus:{
     type:String,
-    enum: ['incoming', 'outgoing'],  
+    enum: ['incoming', 'outgoing'],
     default: 'incoming',
   },
   created_at: {
@@ -101,7 +104,7 @@ TransactionSchema.pre('save', function (next) {
   if (this.isModified()) {
     this.updated_at = Date.now();
   }
-  
+
   // Calculate remainingAmount: totalAmount - paidAmount - discount
   if (this.totalAmount && this.paidAmount !== undefined) {
     this.remainingAmount = this.totalAmount - this.paidAmount - this.discount;

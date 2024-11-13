@@ -3,38 +3,23 @@
     <h4>Transactions</h4>
   </div>
   <div class="card-body">
-    <div class="div d-flex justify-content-end align-items-center"><button type="button" class="btn btn-primary" (click)="navigateToTransactionPage()">Add Transaction</button></div>
-    
+    <!-- <div class="div d-flex justify-content-end align-items-center"><button type="button" class="btn btn-primary"
+        (click)="navigateToTransactionPage()">Add Transaction</button></div> -->
+
     <div class="row">
       <div class="col">
         <div class="form-group">
           <label for="fromDate">From</label>
-          <input
-            [(ngModel)]="fromDate"
-            type="date"
-            class="form-control"
-            name="fromDate"
-            id="fromDate"
-            aria-describedby="fromdatehelpid"
-            placeholder=""
-          />
-          <small id="fromdatehelpid" class="form-text text-muted"
-            >From Date</small
-          >
+          <input [(ngModel)]="fromDate" type="date" class="form-control" name="fromDate" id="fromDate"
+            aria-describedby="fromdatehelpid" placeholder="" />
+          <small id="fromdatehelpid" class="form-text text-muted">From Date</small>
         </div>
       </div>
       <div class="col">
         <div class="form-group">
           <label for="toDate">To</label>
-          <input
-            [(ngModel)]="toDate"
-            type="date"
-            class="form-control"
-            name="toDate"
-            id="toDate"
-            aria-describedby="todatehelpid"
-            placeholder=""
-          />
+          <input [(ngModel)]="toDate" type="date" class="form-control" name="toDate" id="toDate"
+            aria-describedby="todatehelpid" placeholder="" />
           <small id="todatehelpid" class="form-text text-muted">To Date</small>
         </div>
       </div>
@@ -48,11 +33,8 @@
               </div>
             </div> -->
       <div class="col">
-        <button
-          (click)="getTransactions()"
-          type="button"
-          class="btn btn-primary"
-        >
+        <br/>
+        <button (click)="getTransactions()" type="button" class="btn btn-primary">
           Submit
         </button>
       </div>
@@ -79,12 +61,12 @@
               <tr>
                 <th scope="col">Sr.no</th>
                 <th scope="col">Date</th>
-                <th scope="col">Transaction Type</th>               
+                <th scope="col">Transaction Type</th>
                 <th scope="col">Transaction Status</th>
                 <th scope="col">Transaction Mode</th>
                 <th scope="col">Discount</th>
                 <th scope="col">Paid Payment</th>
-                <th scope="col">Remaining Payment</th>              
+                <th scope="col">Remaining Payment</th>
                 <th scope="col"> Payment Status</th>
                 <th scope="col">Total Payment</th>
 
@@ -92,24 +74,29 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let transactions of transactions; let i = index">
+              <tr *ngFor="let transaction of transactions; let i = index">
                 <td>{{ i + 1 }}</td>
-                <td>{{ transactions?.created_at | date : "MM-dd-YYYY" }}</td>
-                <td>{{ transactions?.transactionType }}</td>
-                <td>{{ transactions?.transactionStatus }}</td>
-                <td>{{ transactions?.transactionMode }}</td>
-                <td>{{ transactions?.discount }}%</td>
-                <td>{{ transactions?.paidAmount }}</td>
-                <td>{{ transactions?.remainingAmount }}</td>
-                <td>{{ transactions?.PaymentStatus }}</td>
-                <td>{{ transactions?.totalAmount }}</td>
+                <td>{{ transaction?.created_at | date : "MM-dd-YYYY" }}</td>
+                <td>
+                  <a *ngIf="transaction?.parchi_id" [routerLink]="['/taul-parchi-view', transaction?.parchi_id]">
+                    {{ transaction?.transactionType }}
+                  </a>
+                  <span *ngIf="!transaction?.parchi_id">{{ transaction?.transactionType }}</span>
+                </td>
+                <td>{{ transaction?.transactionStatus }}</td>
+                <td>{{ transaction?.transactionMode }}</td>
+                <td>{{ transaction?.discount }} Rs.</td>
+                <td>{{ transaction?.paidAmount }}</td>
+                <td>{{ transaction?.remainingAmount }}</td>
+                <td>{{ transaction?.PaymentStatus }}</td>
+                <td>{{ transaction?.totalAmount }}</td>
 
 
                 <!-- <td>
                         <button
                           type="button"
                           class="btn btn-primary"
-                         
+
                         >
                           Print Receipt
                         </button>

@@ -58,475 +58,249 @@
           </div>
         </div>
       </div>
+      <div class="col-12 mt-4">
+        <div class="card bg-white mt-4">
+          <div class="card-header">
+            <h4 class="mb-0">Stock</h4>
+          </div>
+          <div class="card-body">
+            <div class="row" *ngFor="let warehouse of warehouses">
+              <div class="col-12 col-md-6 col-lg-4" *ngFor="let stockData of warehouse?.stock">
+                <div class="card bg-white mb-4">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="text-center">
+                        <p class="mb-0 text-secondary text-center">{{warehouse.name | titlecase}} ({{stockData.crop}})</p>
+                        <hr>
+                        <div class="row">
+                          <div class="col">
+                            <h6 class="card-subtitle mb-2 text-muted">Stock Quantity</h6>
+                            <p class="card-text">{{ stockData.quantity }} Quintals</p>
+                          </div>
+                          <div class="col">
+                            <h6 class="card-subtitle mb-2 text-muted">Average Price</h6>
+                            <p class="card-text">
+                              {{ stockData.averagePrice | currency: 'INR' }}
+                            </p>
+                          </div>
+                          <div class="col-12">
+                            <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">No of Bags</th>
+                                  <th scope="col">Weight (in Kgs)</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let bag of stockData.bag_units; let i = index">
+                                  <th scope="row">{{ i + 1 }}</th>
+                                  <td>{{ bag.no_of_bags }}</td>
+                                  <td>{{ bag.unit_weight_of_bags }}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="col-12">
         <div class="card bg-white mt-4">
           <div class="card-header">
-            <h4 class="mb-0">Total Crops</h4>
-          </div>
-        
-          <!-- Bootstrap cards list -->
-          <div class="card-body">
             <div class="row">
-              <div class="col-12">
-                <div class="table-responsive">
-                  <div class="row">
-                    <div class="col-md-4" *ngFor="let crop of Crops; let i = index">
-                      <div class="card bg-white mb-3">
-                        <div class="card-header">
-                          <div class="text-center">
-                            <h4 class="mb-0">{{ crop.crop_name }}</h4>
-                            <p><b>M+M</b></p>
-                          </div>
-                          <h6 class="card-title">
-                            <div class="row">
-                              <div class="col text-start">
-                                Sr.no: {{ crop._id }}
-                              </div>
-                            </div>
-                          </h6>
-                        </div>
-                        <div class="card-body bg-warning">
-                          <!-- Taul Parchi Grand Total -->
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Taul Parchi Grand Total:
-                            </h6>
-                            <p class="card-text">{{ crop.grandTotal }} kg</p>
-                          </div>
-                          <!-- Truck Loading Parchi Net Weight -->
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Truck Loading Net Weight:
-                            </h6>
-                            <p class="card-text">{{ Datas[i]?.totalBoraValue }} kg</p>
-                          </div>
-                          <!-- Difference in Weight -->
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Difference (Taul - Truck):
-                            </h6>
-                            <p class="card-text">
-                              {{ crop.grandTotal - Datas[i]?.totalBoraValue }} kg
-                            </p>
-                          </div>
-                          <!-- Rate for Taul Parchi -->
-                          <!-- <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">Taul Rate:</h6>
-                            <p class="card-text">{{ crop.rate }}</p>
-                          </div> -->
-                          <!-- Rate for Truck Loading Parchi -->
-                          <!-- <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Truck Loading Rate:
-                            </h6>
-                            <p class="card-text">{{ Datas[i]?.rate }}</p>
-                          </div> -->
-                          <!-- Difference in Rate -->
-                          <!-- <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Rate Difference (Taul - Truck):
-                            </h6>
-                            <p class="card-text">
-                              {{ crop.rate - Datas[i]?.rate }}
-                            </p>
-                          </div> -->
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End of ngFor loop -->
+              <div class="col">
+                <h4 class="mb-0">Taula Parchis</h4>
+              </div>
+              <div class="col-auto">
+                <a class="btn btn-primary" [routerLink]="['/taul-parchi']">
+                  <!-- Add Taula Parchi -->
+                  <i class="fi fi-rr-add"></i> New Taula Parchi
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="filter-sections">
+              <div class="row mb-2">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="farmerNameSearch">Farmer Name</label>
+                    <input type="text" class="form-control" name="farmerNameSearch" id="farmerNameSearch"
+                      [(ngModel)]="farmerNameSearch" (ngModelChange)="getTaulaParchis()" />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="farmerMobileSearch">Farmer Mobile</label>
+                    <input type="text" class="form-control" name="farmerMobileSearch" id="farmerMobileSearch"
+                      [(ngModel)]="farmerMobileSearch" (ngModelChange)="getTaulaParchis()" />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="farmerVillageSearch">Farmer Village</label>
+                    <input type="text" class="form-control" name="farmerVillageSearch" id="farmerVillageSearch"
+                      [(ngModel)]="farmerVillageSearch" (ngModelChange)="getTaulaParchis()" />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="cropSearch">Crop</label>
+                    <select class="form-select" name="cropSearch" id="cropSearch" [(ngModel)]="selectedCrop"
+                      (ngModelChange)="getTaulaParchis()">
+                      <option value="">Select</option>
+                      <option *ngFor="let crop of crops" [value]="crop._id">{{ crop.name }}</option>
+                    </select>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="table table-responsive">
+              <table class="table table-bordered">
+                <thead class="thead-dark">
+                  <tr>
+                    <!-- <th scope="col">Sr.no</th> -->
+                    <th scope="col">Date</th>
+                    <th scope="col">Purchase Status</th>
+                    <th scope="col">Farmer's Name</th>
+                    <th scope="col">Storage Location</th>
+                    <th scope="col">Crop</th>
+                    <th scope="col">Firm/Company</th>
+                    <th scope="col">Net Weight(in Quintal)</th>
+                    <th scope="col">Amount (₹)</th>
+                    <th scope="col">Created By</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Iterate through TaulaParchi data -->
+                  <tr *ngFor="
+                      let taulaParchi of TaulaParchi
+                        | paginate
+                          : {
+                              itemsPerPage: 10,
+                              currentPage: pageForTaulaParchi,
+                              id: 'taulaparchi',
+                              totalItems: TaulaParchiCount
+                            };
+                      let i = index
+                    ">
+                    <!-- <td>{{ currentPage * perPage - perPage + (i + 1) }}</td> -->
+                    <td>{{ taulaParchi.created_at | date : "MM-dd-YYYY hh:mm" }}</td>
+                    <td>{{ taulaParchi?.purchase }}</td>
+                    <td>
+                      {{ taulaParchi?.farmerName }}
+                      <br>
+                      <span class="badge bg-primary">
+                        <i class="fi fi-rr-mobile"></i> | {{ taulaParchi?.farmerMobile }}
+                      </span>
+                      <br>
+                      <span class="badge bg-primary">
+                        <i class="fi fi-rr-marker"></i> | {{ taulaParchi?.farmerVillage }}
+                      </span>
+                    </td>
+                    <td>{{ taulaParchi?.wearhouseDetails?.name }}</td>
+                    <td>{{ taulaParchi?.cropDetails?.name }}</td>
+                    <td>{{ taulaParchi?.companyDetails?.name }}</td>
+                    <td>{{ taulaParchi.netWeight }}</td>
+                    <td>{{ taulaParchi.amount | number: '.2' }}</td>
+                    <td>{{ taulaParchi?.userDetails?.name }}</td>
+                    <td>
+                      <button type="button" class="btn btn-sm btn-primary me-2 mb-2" [routerLink]="['/taul-parchi-view', taulaParchi._id]">
+                        <!-- View -->
+                        <i class="fi fi-rr-eye"></i>
+                      </button>
+                      <!-- Pay Button link -->
+                      <a class="btn btn-sm btn-primary me-2 mb-2" [routerLink]="['/cashier-payment/taulParchi/'+taulaParchi._id]">
+                        <!-- Pay -->
+                        Pay
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <pagination-controls id="taulaparchi"
+              (pageChange)="pageForTaulaParchi = $event; getTaulaParchis()"></pagination-controls>
           </div>
         </div>
-        <!-- Taula Parchis cards list -->
-        <!-- <div class="card bg-white mt-4">
-          <div class="card-header">
-            <h4 class="mb-0">Taula Parchis</h4>
-          </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-12">
-                <div class="table-responsive">
-                  <div class="row">
-                    <div
-                      class="col-md-4"
-                      *ngFor="let taulaParchi of TaulaParchi"
-                    >
-                      <div class="card bg-white mb-3">
-                        <div class="card-header">
-                          <div class="text-center">
-                            <h4 class="mb-0">Taula Parchi</h4>
-                            <p>
-                              <b>M+M</b>
-                            </p>
-                          </div>
-                          <h6 class="card-title">
-                            <div class="row">
-                              <div class="col text-start">
-                                Sr.no: {{ taulaParchi._id }}
-                              </div>
-                              <div class="col text-end">
-                                Date:
-                                {{
-                                  taulaParchi.created_at | date : "dd-MM-YYYY"
-                                }}
-                              </div>
-                            </div>
-                          </h6>
-                        </div>
-                        <div class="card-body bg-warning">
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Farmer:
-                            </h6>
-                            <p class="card-text">
-                              {{ taulaParchi?.farmerDetails.name }}
-                            </p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Village:
-                            </h6>
-                            <p class="card-text">
-                              {{ taulaParchi?.villageDetails.name }}
-                            </p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Firm/Company:
-                            </h6>
-                            <p class="card-text">
-                              {{ taulaParchi.firm_company }}
-                            </p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">Rate:</h6>
-                            <p class="card-text">{{ taulaParchi.rate }}</p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Hammal:
-                            </h6>
-                            <p class="card-text">
-                              {{ taulaParchi?.hammalDetails.name }}
-                            </p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">Crop:</h6>
-                            <p class="card-text">
-                              {{ taulaParchi?.cropDetails.name }}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- Crop Net Weight Taula Parchis cards list -->
-        <div *ngIf="Crops && Crops.length > 0">
-          <div class="card bg-white mt-4">
-            <div class="card-header">
-              <h4 class="mb-0">Net Weight of Crop in Taula Parchi</h4>
-            </div>
-
-            <!-- Bootstrap cards list -->
-            <div class="card-body">
-              <div class="row">
-                <div class="col-12">
-                  <div class="table-responsive">
-                    <div class="row">
-                      <!-- Loop through Crops array -->
-                      <div class="col-md-4" *ngFor="let crop of Crops">
-                        <div class="card bg-white mb-3">
-                          <div class="card-header">
-                            <div class="text-center">
-                              <h4 class="mb-0">{{ crop.crop_name }}</h4>
-                              <p><b>M+M</b></p>
-                            </div>
-                            <h6 class="card-title">
-                              <div class="row">
-                                <div class="col text-start">
-                                  Sr.no: {{ crop._id }}
-                                </div>
-                              </div>
-                            </h6>
-                          </div>
-                          <div class="card-body bg-warning">
-                            <div
-                              class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                            >
-                              <h6 class="card-subtitle mb-2 text-muted">
-                                NetWeight (Unit * Quantity):
-                              </h6>
-                              <p class="card-text">
-                                {{ crop?.totalUnitBoraBoraQuantity }} kg
-                              </p>
-                            </div>
-                            <div
-                              class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                            >
-                              <h6 class="card-subtitle mb-2 text-muted">
-                                Bharti Total:
-                              </h6>
-                              <p class="card-text">{{ crop.totalBharti }} kg</p>
-                            </div>
-                            <div
-                              class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                            >
-                              <h6 class="card-subtitle mb-2 text-muted">
-                                Grand Total:
-                              </h6>
-                              <p class="card-text">{{ crop.grandTotal }} kg</p>
-                            </div>
-                            <!-- <div
-                              class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                            >
-                              <h6 class="card-subtitle mb-2 text-muted">
-                                Rate:
-                              </h6>
-                              <p class="card-text">{{ crop.grandRate }}</p>
-                            </div> -->
-                          </div>
-                        </div>
-                      </div>
-                      <!-- End of ngFor loop -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Truck Loading Parchis cards list -->
-        <!-- <div class="card bg-white mt-4">
-          <div class="card-header">
-            <h4 class="mb-0">Truck Loading Parchis</h4>
-          </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-12">
-                <div class="table-responsive">
-                  <div class="row">
-                    <div
-                      class="col-md-4"
-                      *ngFor="let truckLoadingParchi of TruckLoadingParchi"
-                    >
-                      <div class="card bg-white mb-3">
-                        <div class="card-header">
-                          <div class="text-center">
-                            <h4 class="mb-0">Truck Loading Parchi</h4>
-                            <p>
-                              <b>M+M</b>
-                            </p>
-                          </div>
-                          <h6 class="card-title text-dark">
-                            <div class="row">
-                              <div class="col text-start">
-                                Sr.no: {{ truckLoadingParchi._id }}
-                              </div>
-                              <div class="col text-end">
-                                Date:
-                                {{
-                                  truckLoadingParchi.created_at
-                                    | date : "dd-MM-YYYY"
-                                }}
-                              </div>
-                            </div>
-                          </h6>
-                        </div>
-                        <div class="card-body bg-warning">
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Party Name:
-                            </h6>
-                            <p class="card-text">
-                              {{ TruckLoadingDetails.partyName }}
-                            </p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Vehicle Number:
-                            </h6>
-                            <p class="card-text">
-                              {{ TruckLoadingParchi[0]?.vehicleNumber }}
-                            </p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Delivery Location:
-                            </h6>
-                            <p class="card-text">
-                              {{ TruckLoadingDetails?.deliveryLocation }}
-                            </p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Hammal:
-                            </h6>
-                            <p class="card-text">
-                              {{ TruckLoadingDetails?.assignedHammal }}
-                            </p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Bora Nag:
-                            </h6>
-                            <p class="card-text">
-                              {{ TruckLoadingParchi[0]?.boraQuantity }}
-                            </p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Kaanta Weight:
-                            </h6>
-                            <p class="card-text">
-                              {{ TruckLoadingParchi[0]?.netWeight }}
-                            </p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">Crop</h6>
-                            <p class="card-text">
-                              {{ TruckLoadingDetails?.cropName }}
-                            </p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">Rate:</h6>
-                            <p class="card-text">
-                              {{ TruckLoadingParchi[0]?.rate }}
-                            </p>
-                          </div>
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Other:
-                            </h6>
-                            <p class="card-text">
-                              {{ TruckLoadingParchi[0]?.other }}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        
-        
-        <!-- Crop Net Weight Truck Loading Parchi cards list -->
+      </div>
+      <div class="col-12">
         <div class="card bg-white mt-4">
           <div class="card-header">
-            <h4 class="mb-0">Net Weight of Crop in Truck Loading Parchi</h4>
-          </div>
-
-          <div class="card-body">
             <div class="row">
-              <div class="col-12">
-                <div class="table-responsive">
-                  <div class="row">
-                    <!-- Loop through Datas array -->
-                    <div class="col-md-4" *ngFor="let truck of Datas">
-                      <div class="card bg-white mb-3">
-                        <div class="card-header">
-                          <div class="text-center">
-                            <h4 class="mb-0">{{ truck.crop_name }}</h4>
-                            <p><b>M+M</b></p>
-                          </div>
-                          <h6 class="card-title">
-                            <div class="row">
-                              <div class="col text-start">
-                                Sr.no: {{ truck._id }}
-                              </div>
-                            </div>
-                          </h6>
-                        </div>
-
-                        <div class="card-body bg-warning">
-                          <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">
-                              Net Weight:
-                            </h6>
-                            <p class="card-text">
-                              {{ truck.totalBoraValue }} kg
-                            </p>
-                          </div>
-                          <!-- <div
-                            class="border-bottom border-dark border-bottom-dotted mb-2 pb-2"
-                          >
-                            <h6 class="card-subtitle mb-2 text-muted">Rate:</h6>
-                            <p class="card-text">
-                              {{ truck.rate }}
-                            </p>
-                          </div> -->
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End of ngFor loop -->
-                  </div>
-                </div>
+              <div class="col">
+                <h4 class="mb-0">Truck Loading Parchis</h4>
+              </div>
+              <div class="col-auto">
+                <a class="btn btn-primary" [routerLink]="['/truck-loading-parchi']">
+                  <!-- Add Truck Loading Parchi -->
+                  <i class="fi fi-rr-add"></i> New Truck Loading Parchi
+                </a>
               </div>
             </div>
           </div>
-        </div>
+          <div class="card-body">
+              <div class="table-responsive">
+                  <table class="table table-bordered">
+                      <thead class="thead-dark">
+                          <tr>
+                              <!-- <th scope="col">Sr.no</th> -->
+                              <th scope="col">Date</th>
+                              <th scope="col">Crop</th>
+                              <th scope="col">Party Name</th>
+                              <th scope="col">Truck</th>
+                              <th scope="col">Delivery Location</th>
+                              <th scope="col">Assigned Hammal</th>
+                              <th scope="col">Storage Location</th>
+                              <th scope="col">Net Weight(in Quintal)</th>
+                              <th scope="col">Amount (₹)</th>
+                              <th scope="col">Created By</th>
+                              <th scope="col">Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <!-- Iterate through TruckLoadingParchi data -->
+                          <tr *ngFor="let truckLoadingParchi of TruckLoadingParchi
+                              | paginate : { itemsPerPage: 10, currentPage: pageForTruckLoadingParchi, id: 'truckloadingparchi', totalItems: TruckLoadingParchiCount };
+                              let i = index;">
+                              <!-- <td>{{ pageForTruckLoadingParchi * 10 - 10 + (i + 1) }}</td> -->
+                              <td>{{ truckLoadingParchi.created_at | date: 'MM-dd-YYYY' }}</td>
+                              <td>{{ truckLoadingParchi?.cropDetails?.name }}</td>
+                              <td>{{ truckLoadingParchi?.partyDetails?.name }}</td>
+                              <td>{{ truckLoadingParchi?.truckDetails?.truckNumber }}</td>
+                              <td>{{ truckLoadingParchi?.deliveryDetails?.name }}</td>
+                              <td>{{ truckLoadingParchi?.hammalDetails?.name }}</td>
+                              <td>
+                                  {{ truckLoadingParchi?.wearhouseDetails?.name }}
+                              </td>
+                              <td>{{ truckLoadingParchi.netWeight }}</td>
+                              <td>{{ truckLoadingParchi.amount | number: '.2' }}</td>
+                              <td>{{ truckLoadingParchi?.userDetails?.name }}</td>
 
-       
-      
-       
-        
-       
-        
+                              <td>
+                                <button type="button" class="btn btn-sm btn-primary me-2 mb-2" [routerLink]="['/truck-loading-parchi-view', truckLoadingParchi._id]">
+                                  <!-- View -->
+                                  <i class="fi fi-rr-eye"></i>
+                                </button>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+
+              <pagination-controls id="truckloadingparchi"
+                  (pageChange)="pageForTruckLoadingParchi = $event; getTruckLoadingParchis()"></pagination-controls>
+          </div>
+      </div>
       </div>
     </div>
   </div>

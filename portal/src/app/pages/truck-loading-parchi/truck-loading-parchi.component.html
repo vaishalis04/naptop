@@ -268,7 +268,7 @@
                                   {{ stockInfo.averagePrice | currency: 'INR' }}
                                 </p>
                               </div>
-                              <!-- <div class="col-12">
+                              <div class="col-12">
                                 <table class="table table-bordered">
                                   <thead>
                                     <tr>
@@ -278,14 +278,14 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr *ngFor="let bag of stockInfo.bags; let i = index">
+                                    <tr *ngFor="let bag of stockInfo.bag_units; let i = index">
                                       <th scope="row">{{ i + 1 }}</th>
                                       <td>{{ bag.no_of_bags }}</td>
                                       <td>{{ bag.unit_weight_of_bags }}</td>
                                     </tr>
                                   </tbody>
                                 </table>
-                              </div> -->
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -295,21 +295,9 @@
                   <div>
 
                   <div *ngIf="isStockFetched">
-                    <label for="boraQuantity" class="form-label">
-                      Bora Quantity
-                    </label>
-                    <input
-                      id="boraQuantity"
-                      class="form-control"
-                      [(ngModel)]="TruckLoadingParchi.boraQuantity"
-                      name="boraQuantity"
-                      type="number"
-                      placeholder="Bora Quantity"
-                      (ngModelChange)="calculateNetWeight()"
-                    />
 
                     <label for="unitBora" class="form-label">Bora Bharti (in Kgs)</label>
-                    <input
+                    <!-- <input
                       id="unitBora"
                       class="form-control"
                       [(ngModel)]="TruckLoadingParchi.unitBora"
@@ -317,7 +305,47 @@
                       type="number"
                       placeholder="Unit Bora"
                       (ngModelChange)="calculateNetWeight()"
-                    />
+                    /> -->
+                    <select
+                      id="unitBora"
+                      class="form-select"
+                      [(ngModel)]="TruckLoadingParchi.unitBora"
+                      name="unitBora"
+                      (ngModelChange)="calculateNetWeight()"
+                    >
+                      <option [ngValue]="">Select Bora Bharti</option>
+                      <option *ngFor="let unit of stockInfo.bag_units" [ngValue]="unit.unit_weight_of_bags">
+                        {{ unit.unit_weight_of_bags }}
+                      </option>
+                    </select>
+
+                    <div class="form-group" *ngIf="selectedStockInfo">
+                      <label for="boraQuantity" class="form-label">
+                        Bora Quantity
+                      </label>
+                      <!-- <input
+                        id="boraQuantity"
+                        class="form-control"
+                        [(ngModel)]="TruckLoadingParchi.boraQuantity"
+                        name="boraQuantity"
+                        type="number"
+                        placeholder="Bora Quantity"
+                        (ngModelChange)="calculateNetWeight()"
+                      /> -->
+                      <select
+                        id="boraQuantity"
+                        class="form-select"
+                        [(ngModel)]="TruckLoadingParchi.boraQuantity"
+                        name="boraQuantity"
+                        (ngModelChange)="calculateNetWeight()"
+                      >
+                        <option [ngValue]="">Select Bora Quantity</option>
+                        <option *ngFor="let num of getArray(selectedStockInfo.no_of_bags); let i = index" [ngValue]="i + 1">
+                          {{ i + 1 }}
+                        </option>
+                      </select>
+                    </div>
+
                     <label for="bardanaType" class="form-label"
                       >Bardana Type</label
                     >

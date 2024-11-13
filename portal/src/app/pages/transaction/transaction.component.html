@@ -36,10 +36,10 @@
 
                   <!-- Taul Parchi Transaction Details -->
                   <div *ngIf="transaction.transactionType === 'taulParchi'">
-                    <label for="transactionDetails" class="form-label mt-3"
+                    <!-- <label for="transactionDetails" class="form-label mt-3"
                       >Transaction Details</label
-                    >
-                    <select
+                    > -->
+                    <!-- <select
                       id="transactionDetails"
                       class="form-select bg-warning text-dark"
                       [(ngModel)]="transactions.transactionDetails"
@@ -54,11 +54,11 @@
                         {{ parchi?.cropDetails.name }} -- Weight:
                         {{ parchi?.netWeight }} -- Rate: {{ parchi?.rate }}
                       </option>
-                    </select>
+                    </select> -->
                   </div>
 
                   <!-- Truck Loading Parchi Transaction Details -->
-                  <div *ngIf="transaction.transactionType === 'truckLoading'">
+                  <!-- <div *ngIf="transaction.transactionType === 'truckLoading'">
                     <label for="transactionDetails" class="form-label mt-3"
                       >Transaction Details</label
                     >
@@ -78,7 +78,7 @@
                         {{ parchi?.netWeight }}
                       </option>
                     </select>
-                  </div>
+                  </div> -->
 
                   <label for="transactionStatus" class="form-label"
                     >Transaction Status</label

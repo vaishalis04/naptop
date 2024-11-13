@@ -2,11 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ApiService } from '../../services/api.service';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { AuthService } from '../../services/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [DatePipe, RouterLink, CommonModule],
+  imports: [
+    DatePipe,
+    RouterLink,
+    CommonModule,
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
@@ -16,32 +26,76 @@ export class DashboardComponent implements OnInit {
   TruckLoadingParchiCount = 0;
   TaulaParchi: any[] = [];
   TruckLoadingParchi: any[] = [];
-  Crops: any;
-  Datas: any;
-  TaulaParchiDetails: any
-  TaulaParchiDetailsCount = 0;
-  TruckLoadingDetails: any;
-  TruckLoadingDetailsCount = 0
-  remainingCrops: any[] = [];
-  constructor(private apiService: ApiService) { }
+  pageForTaulaParchi = 1;
+  pageForTruckLoadingParchi = 1;
+  warehouses: any[] = [];
+  currentUser: any;
+
+  crops: any[] = [];
+  storages: any[] = [];
+  farmerNameSearch = '';
+  farmerMobileSearch = '';
+  farmerVillageSearch = '';
+  selectedWarehouse: any;
+  selectedCrop: any;
+
+  constructor(
+    private apiService: ApiService,
+    private authService: AuthService
+  ) {
+    this.currentUser = this.authService.getCurrentUser();
+  }
 
   ngOnInit(): void {
     this.getTaulaParchis();
-    this.getTaulaParchiDetails()
     this.getTruckLoadingParchis();
-    this.getTaulparchisAggregatedCropData()
-    this.getTruckLoadingDetails()
-    this.getTruckLoadingAggregatedCropData()
-    
+    this.getWarehouses();
+    this.getCrops();
   }
-  
+
+  getCrops() {
+    this.apiService
+      .get('crop', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.crops = res.data;
+        },
+        error: (err: any) => {
+          console.error('Error fetching crops:', err);
+        },
+      });
+  }
+
   // Fetch TaulaParchis from backend
   getTaulaParchis() {
+    const query: any = {};
+    if (this.farmerNameSearch) {
+      query['farmerName'] = this.farmerNameSearch;
+    }
+    if (this.farmerMobileSearch) {
+      query['farmerMobile'] = this.farmerMobileSearch;
+    }
+    if (this.farmerVillageSearch) {
+      query['farmerVillage'] = this.farmerVillageSearch;
+    }
+    if (this.selectedWarehouse) {
+      query['warehouse'] = this.selectedWarehouse;
+    }
+    if (this.selectedCrop) {
+      query['crop'] = this.selectedCrop;
+    }
+
     this.apiService
       .get('taulparchi', {
         params: {
-          page: 1,
-          limit: 1000, 
+          page: this.pageForTaulaParchi,
+          limit: 10,
+          ...query,
         },
       })
       .subscribe({
@@ -55,62 +109,13 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  getTaulaParchiDetails() {
-    this.apiService.get('taulparchi/getdetails', {
-      params: { page: 1, limit: 1000 }
-    })
-    .subscribe({
-      next: (res: any) => {
-        if (res && Array.isArray(res)) {
-          console.log("res", res);
-          // Assuming you want the first item
-          this.TaulaParchiDetails = res[0]; // Get the first object
-          this.TaulaParchiDetailsCount = res.length; // Total number of items
-          console.log('Taula Parchi Details:', this.TaulaParchiDetails);
-        } else {
-          console.error('Invalid response format for Taula Parchi details:', res);
-        }
-      },
-      error: (err: any) => {
-        console.error('Error fetching Taula Parchi details:', err.message || err);
-      }
-    });
-    
-  }
-  
-
-
-  getTaulparchisAggregatedCropData() {
-    this.apiService
-      .get('taulparchi/taulparchisAggregate', {
-        params: {
-          page: 1,
-          limit: 1000, 
-        },
-      })
-      .subscribe({
-        next: (res: any) => {
-        // if(res){
-          if (Array.isArray(res)) {
-            this.Crops = res; 
-            console.log('Aggregated Taul Parchis Data:', this.Crops);
-          } else {
-            console.error('Invalid response format:', res);
-          }
-        },
-        error: (err: any) => {
-          console.error('Error fetching Taul Parchis Aggregated Data:', err.message || err);
-        },
-      });
-  }
-  
   // Fetch TruckLoadingParchis from backend
   getTruckLoadingParchis() {
     this.apiService
       .get('truckloading', {
         params: {
-          page: 1,
-          limit: 1000, 
+          page: this.pageForTruckLoadingParchi,
+          limit: 10,
         },
       })
       .subscribe({
@@ -126,52 +131,40 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  getTruckLoadingDetails() {
-    this.apiService
-      .get('truckloading/getdetails', {
-        params: {
-          page: 1,
-          limit: 1000,
-        },
-      })
-      .subscribe({
-        next: (res: any) => {
-          if (res && Array.isArray(res)) {
-            console.log("Response:", res);
-            this.TruckLoadingDetails = res[0]; // Assuming you want to get the first item
-            this.TruckLoadingDetailsCount = res.length; // Total number of items
-            console.log("Truck loading details:", this.TruckLoadingDetails);
-          } else {
-            console.error('Invalid response format:', res);
-          }
-        },
-        error: (err: any) => {
-          console.error('Error fetching truck loading details:', err.message || err);
-        },
-      });
+  getWarehouses() {
+    // get storage locations
+    this.apiService.get('storage', {
+      params: {
+        page: 1,
+        limit: 1000,
+      },
+    }).subscribe({
+      next: (res: any) => {
+        this.warehouses = Object.values(res.data);
+        for (const warehouse of this.warehouses) {
+          this.apiService.get(`stock/warehouse-stock-crop-wise`, {
+            params: {
+              warehouse: warehouse._id,
+            },
+          }).subscribe({
+            next: (res: any) => {
+              this.warehouses = this.warehouses.map((w) => {
+                if (w._id === warehouse._id) {
+                  w.stock = res;
+                }
+                return w;
+              });
+              console.log(this.warehouses);
+            },
+            error: (err: any) => {
+              console.error('Error fetching warehouse stock:', err);
+            },
+          });
+        }
+      },
+      error: (err: any) => {
+        console.error('Error fetching warehouses:', err);
+      },
+    });
   }
-  
-  getTruckLoadingAggregatedCropData() {
-    this.apiService
-      .get('truckloading/truck-loading-details', {
-        params: {
-          page: 1,
-          limit: 1000,
-        },
-      })
-      .subscribe({
-        next: (res: any) => {
-          if (res) {
-            this.Datas = res; 
-            console.log('Aggregated Truck Loading Data:', this.Datas);
-          } else {
-            console.error('Invalid response format:', res);
-          }
-        },
-        error: (err: any) => {
-          console.error('Error fetching Truck Loading Aggregated Data:', err.message || err);
-        },
-      });
-  }
-  
 }

@@ -112,38 +112,86 @@ module.exports = {
             };
 
             const result = await Model.aggregate([
-                { $match: query },
-                // Group by crop and sum the quantity for logType 'purchase' and 'transfer in' subtracting the quantity for logType 'sale' and 'transfer out'
+                {
+                    $match: {
+                        warehouse: mongoose.Types.ObjectId(warehouse), // Filters by the specified warehouse ID
+                        disabled: { $ne: true },
+                        is_inactive: { $ne: true }
+                    }
+                },
                 {
                     $group: {
-                        _id: "$crop",
+                        _id: { crop: "$crop", warehouse: "$warehouse" }, // Groups by crop and warehouse to isolate each warehouse's records
                         quantity: {
                             $sum: {
                                 $cond: [
                                     { $in: ["$logType", ["purchase", "transfer in"]] },
                                     "$quantity",
-                                    { $cond: [{ $in: ["$logType", ["sale", "transfer out"]] }, { $subtract: [0, "$quantity"] }, 0] }
+                                    { $cond: [{ $in: ["$logType", ["sale", "transfer out"]] }, { $multiply: ["$quantity", -1] }, 0]
+                                    }
                                 ]
                             }
                         },
                         averagePrice: { $avg: "$price" },
-                        bag_units: { $push: "$bag_units" }
+                        bag_units: {
+                            $push: {
+                                $cond: [
+                                    { $in: ["$logType", ["purchase", "transfer in"]] },
+                                    "$bag_units",
+                                    {
+                                        $map: {
+                                            input: "$bag_units",
+                                            as: "bag",
+                                            in: {
+                                                unit_weight_of_bags: "$$bag.unit_weight_of_bags",
+                                                no_of_bags: { $multiply: ["$$bag.no_of_bags", -1] } // Adjusts for sales or transfers out by making the number of bags negative
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
                     }
                 },
-                // Populate crop details
+                {
+                    $unwind: "$bag_units"
+                },
+                {
+                    $unwind: "$bag_units"
+                },
+                {
+                    $group: {
+                        _id: { crop: "$_id.crop", warehouse: "$_id.warehouse", unit_weight_of_bags: "$bag_units.unit_weight_of_bags" },
+                        quantity: { $first: "$quantity" },
+                        averagePrice: { $first: "$averagePrice" },
+                        no_of_bags: { $sum: "$bag_units.no_of_bags" }
+                    }
+                },
+                {
+                    $group: {
+                        _id: { crop: "$_id.crop", warehouse: "$_id.warehouse" },
+                        quantity: { $first: "$quantity" },
+                        averagePrice: { $first: "$averagePrice" },
+                        bag_units: {
+                            $push: {
+                                unit_weight_of_bags: "$_id.unit_weight_of_bags",
+                                no_of_bags: "$no_of_bags"
+                            }
+                        }
+                    }
+                },
+                // Add $lookup to get crop details as before
                 {
                     $lookup: {
                         from: "crops",
-                        localField: "_id",
+                        localField: "_id.crop",
                         foreignField: "_id",
                         as: "crop"
                     }
                 },
                 { $unwind: "$crop" },
-                // Project required fields
                 {
                     $project: {
-                        _id: 0,
                         crop_id: "$crop._id",
                         crop: "$crop.name",
                         quantity: 1,

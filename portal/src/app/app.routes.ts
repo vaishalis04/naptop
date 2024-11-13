@@ -181,6 +181,11 @@ export const routes: Routes = [
         data: { title: 'Transaction' },
       },
       {
+        path: 'cashier-payment/:parchiType/:id',
+        component: TransactionComponent,
+        data: { title: 'Taul Parchi Cashier Payment' },
+      },
+      {
         path: 'transactionlist',
         component: TransactionlistComponent,
         data: { title: 'Transactionlist' },

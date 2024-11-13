@@ -57,6 +57,13 @@ module.exports = {
           warehouse: data.storage,
           price: data.rate,
           logType: "transfer out",
+          bag_units:
+          [
+            {
+              unit_weight_of_bags: data.unitBora,
+              no_of_bags: data.boraQuantity
+            }
+          ],
           meta_data: {
             truckLoading: result._id,
           },
@@ -68,6 +75,13 @@ module.exports = {
           warehouse: data.deliveryLocation,
           price: data.rate,
           logType: "transfer in",
+          bag_units:
+          [
+            {
+              unit_weight_of_bags: data.unitBora,
+              no_of_bags: data.boraQuantity
+            }
+          ],
           meta_data: {
             truckLoading: result._id,
           },
@@ -84,6 +98,13 @@ module.exports = {
           warehouse: data.storage,
           price: data.rate,
           logType: "sale",
+          bag_units:
+          [
+            {
+              unit_weight_of_bags: data.unitBora,
+              no_of_bags: data.boraQuantity
+            }
+          ],
           meta_data: {
             truckLoading: result._id,
           },
@@ -137,6 +158,10 @@ module.exports = {
 
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
+
+      if (req.user && req.user.role !== "Admin" && req.user.role !== "cashier") {
+        query.createdBy = mongoose.Types.ObjectId(req.user.id);
+      }
 
       // Aggregate query to get truck loading data with filters, pagination, and sorting
       let result = await Model.aggregate([

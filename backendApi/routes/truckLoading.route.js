@@ -3,7 +3,7 @@ const router = express.Router();
 const TruckLoadingController = require('../controllers/truckLoading.controller');
 const { verifyAccessToken } = require("../Helpers/jwt_helper");
 
-router.get('/',  TruckLoadingController.list);
+router.get('/', verifyAccessToken, TruckLoadingController.list);
 
 router.post('/', TruckLoadingController.create);
 

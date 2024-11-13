@@ -200,7 +200,7 @@ module.exports = {
 
   list: async (req, res, next) => {
     try {
-      const { crop, firm_company, disabled, page, limit, order_by, order_in } =
+      const { farmerName, farmerMobile, farmerVillage, storage, crop, firm_company, disabled, page, limit, order_by, order_in } =
         req.query;
 
       const _page = page ? parseInt(page) : 1;
@@ -216,6 +216,18 @@ module.exports = {
       }
 
       const query = {};
+      if (farmerName) {
+        query.farmerName = new RegExp(farmerName, "i");
+      }
+      if (farmerMobile) {
+        query.farmerMobile = new RegExp(farmerMobile, "i");
+      }
+      if (farmerVillage) {
+        query.farmerVillage = new RegExp(farmerVillage, "i");
+      }
+      if (storage) {
+        query.storage = new mongoose.Types.ObjectId(storage);
+      }
       if (firm_company) {
         query.firm_company = new RegExp(firm_company, "i");
       }
@@ -224,6 +236,10 @@ module.exports = {
       }
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
+
+      if (req.user && req.user.role !== "Admin" && req.user.role !== "cashier") {
+        query.createdBy = mongoose.Types.ObjectId(req.user.id);
+      }
 
       // Aggregate query to get taul parchis with applied filters, pagination, and sorting
       let result = await Model.aggregate([
