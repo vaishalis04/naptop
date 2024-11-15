@@ -143,7 +143,7 @@ export class TaulparchiViewComponent implements OnInit {
           <div class="section">
             <div class="row">
               <div class="label"><b>Sr.No:</b></div>
-              <div class="value">${this.getTaulaParchiSrNo(taulaParchi?.created_at)}</div>
+              <div class="value">${taulaParchi?.sno}</div>
             </div>
             <div class="row">
               <div class="label"><b>Date:</b></div>

@@ -4,7 +4,7 @@
         <p><b>M+M</b></p>
         <div class="row">
             <div class="col text-start">
-                <b>Serial Number:</b> {{ getTruckLoadingParchiSrNo(truckLoadingParchi?.created_at) }}
+                <b>Serial Number:</b> {{truckLoadingParchi?.sno}}
             </div>
             <div class="col text-end">
                 <b>Date:</b> {{ truckLoadingParchi?.created_at | date: 'dd-MM-YYYY' }}

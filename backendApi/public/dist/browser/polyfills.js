@@ -2444,14 +2444,14 @@ zone.js/fesm2015/zone.js:
 
 @angular/localize/fesm2022/localize.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/localize/fesm2022/init.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)

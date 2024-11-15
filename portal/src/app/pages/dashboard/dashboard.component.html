@@ -24,7 +24,8 @@
     </div>
     <!-- Stats Card -->
     <div class="row mt-3">
-      <div class="col-12 col-md-6">
+      <!-- <div *ngIf="getCurrentUser()?.role === 'Admin'"> -->
+      <div *ngIf="getCurrentUser()?.role === 'Admin'" class="col-12 col-md-6">
         <div class="card bg-white">
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
@@ -41,7 +42,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6">
+      <div *ngIf="getCurrentUser()?.role === 'Admin'" class="col-12 col-md-6">
         <div class="card bg-white">
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
@@ -58,29 +59,44 @@
           </div>
         </div>
       </div>
-      <div class="col-12 mt-4">
+      <div *ngIf="getCurrentUser()?.role === 'Admin'" class="col-12 mt-4">
         <div class="card bg-white mt-4">
           <div class="card-header">
             <h4 class="mb-0">Stock</h4>
           </div>
           <div class="card-body">
             <div class="row" *ngFor="let warehouse of warehouses">
-              <div class="col-12 col-md-6 col-lg-4" *ngFor="let stockData of warehouse?.stock">
+              <div
+                class="col-12 col-md-6 col-lg-4"
+                *ngFor="let stockData of warehouse?.stock"
+              >
                 <div class="card bg-white mb-4">
                   <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
                       <div class="text-center">
-                        <p class="mb-0 text-secondary text-center">{{warehouse.name | titlecase}} ({{stockData.crop}})</p>
-                        <hr>
+                        <p class="mb-0 text-secondary text-center">
+                          {{ warehouse.name | titlecase }} ({{
+                            stockData.crop
+                          }})
+                        </p>
+                        <hr />
                         <div class="row">
                           <div class="col">
-                            <h6 class="card-subtitle mb-2 text-muted">Stock Quantity</h6>
-                            <p class="card-text">{{ stockData.quantity }} Quintals</p>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                              Stock Quantity
+                            </h6>
+                            <p class="card-text">
+                              {{ stockData.quantity }} Quintals
+                            </p>
                           </div>
                           <div class="col">
-                            <h6 class="card-subtitle mb-2 text-muted">Average Price</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                              Average Price
+                            </h6>
                             <p class="card-text">
-                              {{ stockData.averagePrice | currency: 'INR' }}
+                              {{ stockData.averagePrice | currency : "INR" }}
                             </p>
                           </div>
                           <div class="col-12">
@@ -93,7 +109,12 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr *ngFor="let bag of stockData.bag_units; let i = index">
+                                <tr
+                                  *ngFor="
+                                    let bag of stockData.bag_units;
+                                    let i = index
+                                  "
+                                >
                                   <th scope="row">{{ i + 1 }}</th>
                                   <td>{{ bag.no_of_bags }}</td>
                                   <td>{{ bag.unit_weight_of_bags }}</td>
@@ -107,11 +128,12 @@
                   </div>
                 </div>
               </div>
-              <hr>
+              <hr />
             </div>
           </div>
         </div>
       </div>
+
       <div class="col-12">
         <div class="card bg-white mt-4">
           <div class="card-header">
@@ -133,32 +155,70 @@
                 <div class="col">
                   <div class="form-group">
                     <label for="farmerNameSearch">Farmer Name</label>
-                    <input type="text" class="form-control" name="farmerNameSearch" id="farmerNameSearch"
-                      [(ngModel)]="farmerNameSearch" (ngModelChange)="getTaulaParchis()" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="farmerNameSearch"
+                      id="farmerNameSearch"
+                      [(ngModel)]="farmerNameSearch"
+                      (ngModelChange)="getTaulaParchis()"
+                    />
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-group">
                     <label for="farmerMobileSearch">Farmer Mobile</label>
-                    <input type="text" class="form-control" name="farmerMobileSearch" id="farmerMobileSearch"
-                      [(ngModel)]="farmerMobileSearch" (ngModelChange)="getTaulaParchis()" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="farmerMobileSearch"
+                      id="farmerMobileSearch"
+                      [(ngModel)]="farmerMobileSearch"
+                      (ngModelChange)="getTaulaParchis()"
+                    />
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-group">
                     <label for="farmerVillageSearch">Farmer Village</label>
-                    <input type="text" class="form-control" name="farmerVillageSearch" id="farmerVillageSearch"
-                      [(ngModel)]="farmerVillageSearch" (ngModelChange)="getTaulaParchis()" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="farmerVillageSearch"
+                      id="farmerVillageSearch"
+                      [(ngModel)]="farmerVillageSearch"
+                      (ngModelChange)="getTaulaParchis()"
+                    />
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-group">
                     <label for="cropSearch">Crop</label>
-                    <select class="form-select" name="cropSearch" id="cropSearch" [(ngModel)]="selectedCrop"
-                      (ngModelChange)="getTaulaParchis()">
+                    <select
+                      class="form-select"
+                      name="cropSearch"
+                      id="cropSearch"
+                      [(ngModel)]="selectedCrop"
+                      (ngModelChange)="getTaulaParchis()"
+                    >
                       <option value="">Select</option>
-                      <option *ngFor="let crop of crops" [value]="crop._id">{{ crop.name }}</option>
+                      <option *ngFor="let crop of crops" [value]="crop._id">
+                        {{ crop.name }}
+                      </option>
                     </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="snoSearch">S.no</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="snoSearch"
+                      id="snoSearch"
+                      [(ngModel)]="snoSearch"
+                      (ngModelChange)="getTaulaParchis()"
+                    />
                   </div>
                 </div>
               </div>
@@ -182,7 +242,8 @@
                 </thead>
                 <tbody>
                   <!-- Iterate through TaulaParchi data -->
-                  <tr *ngFor="
+                  <tr
+                    *ngFor="
                       let taulaParchi of TaulaParchi
                         | paginate
                           : {
@@ -192,44 +253,73 @@
                               totalItems: TaulaParchiCount
                             };
                       let i = index
-                    ">
+                    "
+                  >
                     <!-- <td>{{ currentPage * perPage - perPage + (i + 1) }}</td> -->
-                    <td>{{ taulaParchi.created_at | date : "MM-dd-YYYY hh:mm" }}</td>
+                    <td>
+                      {{ taulaParchi.created_at | date : "MM-dd-YYYY hh:mm" }}
+                    </td>
                     <td>{{ taulaParchi?.purchase }}</td>
                     <td>
                       {{ taulaParchi?.farmerName }}
-                      <br>
+                      <br />
                       <span class="badge bg-primary">
-                        <i class="fi fi-rr-mobile"></i> | {{ taulaParchi?.farmerMobile }}
+                        <i class="fi fi-rr-mobile"></i> |
+                        {{ taulaParchi?.farmerMobile }}
                       </span>
-                      <br>
+                      <br />
                       <span class="badge bg-primary">
-                        <i class="fi fi-rr-marker"></i> | {{ taulaParchi?.farmerVillage }}
+                        <i class="fi fi-rr-marker"></i> |
+                        {{ taulaParchi?.farmerVillage }}
                       </span>
                     </td>
                     <td>{{ taulaParchi?.wearhouseDetails?.name }}</td>
                     <td>{{ taulaParchi?.cropDetails?.name }}</td>
                     <td>{{ taulaParchi?.companyDetails?.name }}</td>
                     <td>{{ taulaParchi.netWeight }}</td>
-                    <td>{{ taulaParchi.amount | number: '.2' }}</td>
+                    <td>{{ taulaParchi.amount | number : ".2" }}</td>
                     <td>{{ taulaParchi?.userDetails?.name }}</td>
                     <td>
-                      <button type="button" class="btn btn-sm btn-primary me-2 mb-2" [routerLink]="['/taul-parchi-view', taulaParchi._id]">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-primary me-2 mb-2"
+                        [routerLink]="['/taul-parchi-view', taulaParchi._id]"
+                      >
                         <!-- View -->
                         <i class="fi fi-rr-eye"></i>
                       </button>
                       <!-- Pay Button link -->
-                      <a class="btn btn-sm btn-primary me-2 mb-2" [routerLink]="['/cashier-payment/taulParchi/'+taulaParchi._id]">
+                      <a
+                        *ngIf="
+                          getCurrentUser()?.role === 'cashier' &&
+                          !taulaParchi?.transactionType
+                        "
+                        class="btn btn-sm btn-primary me-2 mb-2"
+                        [routerLink]="[
+                          '/cashier-payment/taulParchi/' + taulaParchi._id
+                        ]"
+                      >
                         <!-- Pay -->
                         Pay
                       </a>
+
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-primary me-2 mb-2"
+                        (click)="printReceipt(taulaParchi)"
+                      >
+                        <!-- Print -->
+                        <i class="fi fi-rr-print"></i>
+                      </button>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <pagination-controls id="taulaparchi"
-              (pageChange)="pageForTaulaParchi = $event; getTaulaParchis()"></pagination-controls>
+            <pagination-controls
+              id="taulaparchi"
+              (pageChange)="pageForTaulaParchi = $event; getTaulaParchis()"
+            ></pagination-controls>
           </div>
         </div>
       </div>
@@ -241,7 +331,10 @@
                 <h4 class="mb-0">Truck Loading Parchis</h4>
               </div>
               <div class="col-auto">
-                <a class="btn btn-primary" [routerLink]="['/truck-loading-parchi']">
+                <a
+                  class="btn btn-primary"
+                  [routerLink]="['/truck-loading-parchi']"
+                >
                   <!-- Add Truck Loading Parchi -->
                   <i class="fi fi-rr-add"></i> New Truck Loading Parchi
                 </a>
@@ -249,58 +342,81 @@
             </div>
           </div>
           <div class="card-body">
-              <div class="table-responsive">
-                  <table class="table table-bordered">
-                      <thead class="thead-dark">
-                          <tr>
-                              <!-- <th scope="col">Sr.no</th> -->
-                              <th scope="col">Date</th>
-                              <th scope="col">Crop</th>
-                              <th scope="col">Party Name</th>
-                              <th scope="col">Truck</th>
-                              <th scope="col">Delivery Location</th>
-                              <th scope="col">Assigned Hammal</th>
-                              <th scope="col">Storage Location</th>
-                              <th scope="col">Net Weight(in Quintal)</th>
-                              <th scope="col">Amount (₹)</th>
-                              <th scope="col">Created By</th>
-                              <th scope="col">Action</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <!-- Iterate through TruckLoadingParchi data -->
-                          <tr *ngFor="let truckLoadingParchi of TruckLoadingParchi
-                              | paginate : { itemsPerPage: 10, currentPage: pageForTruckLoadingParchi, id: 'truckloadingparchi', totalItems: TruckLoadingParchiCount };
-                              let i = index;">
-                              <!-- <td>{{ pageForTruckLoadingParchi * 10 - 10 + (i + 1) }}</td> -->
-                              <td>{{ truckLoadingParchi.created_at | date: 'MM-dd-YYYY' }}</td>
-                              <td>{{ truckLoadingParchi?.cropDetails?.name }}</td>
-                              <td>{{ truckLoadingParchi?.partyDetails?.name }}</td>
-                              <td>{{ truckLoadingParchi?.truckDetails?.truckNumber }}</td>
-                              <td>{{ truckLoadingParchi?.deliveryDetails?.name }}</td>
-                              <td>{{ truckLoadingParchi?.hammalDetails?.name }}</td>
-                              <td>
-                                  {{ truckLoadingParchi?.wearhouseDetails?.name }}
-                              </td>
-                              <td>{{ truckLoadingParchi.netWeight }}</td>
-                              <td>{{ truckLoadingParchi.amount | number: '.2' }}</td>
-                              <td>{{ truckLoadingParchi?.userDetails?.name }}</td>
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead class="thead-dark">
+                  <tr>
+                    <!-- <th scope="col">Sr.no</th> -->
+                    <th scope="col">Date</th>
+                    <th scope="col">Crop</th>
+                    <th scope="col">Party Name</th>
+                    <th scope="col">Truck</th>
+                    <th scope="col">Delivery Location</th>
+                    <th scope="col">Assigned Hammal</th>
+                    <th scope="col">Storage Location</th>
+                    <th scope="col">Net Weight(in Quintal)</th>
+                    <th scope="col">Amount (₹)</th>
+                    <th scope="col">Created By</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Iterate through TruckLoadingParchi data -->
+                  <tr
+                    *ngFor="
+                      let truckLoadingParchi of TruckLoadingParchi
+                        | paginate
+                          : {
+                              itemsPerPage: 10,
+                              currentPage: pageForTruckLoadingParchi,
+                              id: 'truckloadingparchi',
+                              totalItems: TruckLoadingParchiCount
+                            };
+                      let i = index
+                    "
+                  >
+                    <!-- <td>{{ pageForTruckLoadingParchi * 10 - 10 + (i + 1) }}</td> -->
+                    <td>
+                      {{ truckLoadingParchi.created_at | date : "MM-dd-YYYY" }}
+                    </td>
+                    <td>{{ truckLoadingParchi?.cropDetails?.name }}</td>
+                    <td>{{ truckLoadingParchi?.partyDetails?.name }}</td>
+                    <td>{{ truckLoadingParchi?.truckDetails?.truckNumber }}</td>
+                    <td>{{ truckLoadingParchi?.deliveryDetails?.name }}</td>
+                    <td>{{ truckLoadingParchi?.hammalDetails?.name }}</td>
+                    <td>
+                      {{ truckLoadingParchi?.wearhouseDetails?.name }}
+                    </td>
+                    <td>{{ truckLoadingParchi.netWeight }}</td>
+                    <td>{{ truckLoadingParchi.amount | number : ".2" }}</td>
+                    <td>{{ truckLoadingParchi?.userDetails?.name }}</td>
 
-                              <td>
-                                <button type="button" class="btn btn-sm btn-primary me-2 mb-2" [routerLink]="['/truck-loading-parchi-view', truckLoadingParchi._id]">
-                                  <!-- View -->
-                                  <i class="fi fi-rr-eye"></i>
-                                </button>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
+                    <td>
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-primary me-2 mb-2"
+                        [routerLink]="[
+                          '/truck-loading-parchi-view',
+                          truckLoadingParchi._id
+                        ]"
+                      >
+                        <!-- View -->
+                        <i class="fi fi-rr-eye"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <pagination-controls id="truckloadingparchi"
-                  (pageChange)="pageForTruckLoadingParchi = $event; getTruckLoadingParchis()"></pagination-controls>
+            <pagination-controls
+              id="truckloadingparchi"
+              (pageChange)="
+                pageForTruckLoadingParchi = $event; getTruckLoadingParchis()
+              "
+            ></pagination-controls>
           </div>
-      </div>
+        </div>
       </div>
     </div>
   </div>

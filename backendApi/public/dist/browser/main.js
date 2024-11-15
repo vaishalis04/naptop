@@ -73,9 +73,9 @@ var __async = (__this, __arguments, generator) => {
   });
 };
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/can-promise.js
+// node_modules/qrcode/lib/can-promise.js
 var require_can_promise = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/can-promise.js"(exports, module) {
+  "node_modules/qrcode/lib/can-promise.js"(exports, module) {
     "use strict";
     module.exports = function() {
       return typeof Promise === "function" && Promise.prototype && Promise.prototype.then;
@@ -83,9 +83,9 @@ var require_can_promise = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/utils.js
+// node_modules/qrcode/lib/core/utils.js
 var require_utils = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/utils.js"(exports) {
+  "node_modules/qrcode/lib/core/utils.js"(exports) {
     "use strict";
     var toSJISFunction;
     var CODEWORDS_COUNT = [
@@ -163,9 +163,9 @@ var require_utils = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/error-correction-level.js
+// node_modules/qrcode/lib/core/error-correction-level.js
 var require_error_correction_level = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/error-correction-level.js"(exports) {
+  "node_modules/qrcode/lib/core/error-correction-level.js"(exports) {
     "use strict";
     exports.L = {
       bit: 1
@@ -217,9 +217,9 @@ var require_error_correction_level = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/bit-buffer.js
+// node_modules/qrcode/lib/core/bit-buffer.js
 var require_bit_buffer = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/bit-buffer.js"(exports, module) {
+  "node_modules/qrcode/lib/core/bit-buffer.js"(exports, module) {
     "use strict";
     function BitBuffer() {
       this.buffer = [];
@@ -253,9 +253,9 @@ var require_bit_buffer = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/bit-matrix.js
+// node_modules/qrcode/lib/core/bit-matrix.js
 var require_bit_matrix = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/bit-matrix.js"(exports, module) {
+  "node_modules/qrcode/lib/core/bit-matrix.js"(exports, module) {
     "use strict";
     function BitMatrix(size) {
       if (!size || size < 1) {
@@ -283,9 +283,9 @@ var require_bit_matrix = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/alignment-pattern.js
+// node_modules/qrcode/lib/core/alignment-pattern.js
 var require_alignment_pattern = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/alignment-pattern.js"(exports) {
+  "node_modules/qrcode/lib/core/alignment-pattern.js"(exports) {
     "use strict";
     var getSymbolSize = require_utils().getSymbolSize;
     exports.getRowColCoords = function getRowColCoords(version) {
@@ -319,9 +319,9 @@ var require_alignment_pattern = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/finder-pattern.js
+// node_modules/qrcode/lib/core/finder-pattern.js
 var require_finder_pattern = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/finder-pattern.js"(exports) {
+  "node_modules/qrcode/lib/core/finder-pattern.js"(exports) {
     "use strict";
     var getSymbolSize = require_utils().getSymbolSize;
     var FINDER_PATTERN_SIZE = 7;
@@ -339,9 +339,9 @@ var require_finder_pattern = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/mask-pattern.js
+// node_modules/qrcode/lib/core/mask-pattern.js
 var require_mask_pattern = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/mask-pattern.js"(exports) {
+  "node_modules/qrcode/lib/core/mask-pattern.js"(exports) {
     "use strict";
     exports.Patterns = {
       PATTERN000: 0,
@@ -482,9 +482,9 @@ var require_mask_pattern = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/error-correction-code.js
+// node_modules/qrcode/lib/core/error-correction-code.js
 var require_error_correction_code = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/error-correction-code.js"(exports) {
+  "node_modules/qrcode/lib/core/error-correction-code.js"(exports) {
     "use strict";
     var ECLevel = require_error_correction_level();
     var EC_BLOCKS_TABLE = [
@@ -844,9 +844,9 @@ var require_error_correction_code = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/galois-field.js
+// node_modules/qrcode/lib/core/galois-field.js
 var require_galois_field = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/galois-field.js"(exports) {
+  "node_modules/qrcode/lib/core/galois-field.js"(exports) {
     "use strict";
     var EXP_TABLE = new Uint8Array(512);
     var LOG_TABLE = new Uint8Array(256);
@@ -878,9 +878,9 @@ var require_galois_field = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/polynomial.js
+// node_modules/qrcode/lib/core/polynomial.js
 var require_polynomial = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/polynomial.js"(exports) {
+  "node_modules/qrcode/lib/core/polynomial.js"(exports) {
     "use strict";
     var GF = require_galois_field();
     exports.mul = function mul(p1, p2) {
@@ -915,9 +915,9 @@ var require_polynomial = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/reed-solomon-encoder.js
+// node_modules/qrcode/lib/core/reed-solomon-encoder.js
 var require_reed_solomon_encoder = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/reed-solomon-encoder.js"(exports, module) {
+  "node_modules/qrcode/lib/core/reed-solomon-encoder.js"(exports, module) {
     "use strict";
     var Polynomial = require_polynomial();
     function ReedSolomonEncoder(degree) {
@@ -948,9 +948,9 @@ var require_reed_solomon_encoder = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/version-check.js
+// node_modules/qrcode/lib/core/version-check.js
 var require_version_check = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/version-check.js"(exports) {
+  "node_modules/qrcode/lib/core/version-check.js"(exports) {
     "use strict";
     exports.isValid = function isValid(version) {
       return !isNaN(version) && version >= 1 && version <= 40;
@@ -958,9 +958,9 @@ var require_version_check = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/regex.js
+// node_modules/qrcode/lib/core/regex.js
 var require_regex = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/regex.js"(exports) {
+  "node_modules/qrcode/lib/core/regex.js"(exports) {
     "use strict";
     var numeric = "[0-9]+";
     var alphanumeric = "[A-Z $%*+\\-./:]+";
@@ -987,9 +987,9 @@ var require_regex = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/mode.js
+// node_modules/qrcode/lib/core/mode.js
 var require_mode = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/mode.js"(exports) {
+  "node_modules/qrcode/lib/core/mode.js"(exports) {
     "use strict";
     var VersionCheck = require_version_check();
     var Regex = require_regex();
@@ -1069,9 +1069,9 @@ var require_mode = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/version.js
+// node_modules/qrcode/lib/core/version.js
 var require_version = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/version.js"(exports) {
+  "node_modules/qrcode/lib/core/version.js"(exports) {
     "use strict";
     var Utils = require_utils();
     var ECCode = require_error_correction_code();
@@ -1165,9 +1165,9 @@ var require_version = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/format-info.js
+// node_modules/qrcode/lib/core/format-info.js
 var require_format_info = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/format-info.js"(exports) {
+  "node_modules/qrcode/lib/core/format-info.js"(exports) {
     "use strict";
     var Utils = require_utils();
     var G15 = 1 << 10 | 1 << 8 | 1 << 5 | 1 << 4 | 1 << 2 | 1 << 1 | 1 << 0;
@@ -1184,9 +1184,9 @@ var require_format_info = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/numeric-data.js
+// node_modules/qrcode/lib/core/numeric-data.js
 var require_numeric_data = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/numeric-data.js"(exports, module) {
+  "node_modules/qrcode/lib/core/numeric-data.js"(exports, module) {
     "use strict";
     var Mode = require_mode();
     function NumericData(data) {
@@ -1220,9 +1220,9 @@ var require_numeric_data = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/alphanumeric-data.js
+// node_modules/qrcode/lib/core/alphanumeric-data.js
 var require_alphanumeric_data = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/alphanumeric-data.js"(exports, module) {
+  "node_modules/qrcode/lib/core/alphanumeric-data.js"(exports, module) {
     "use strict";
     var Mode = require_mode();
     var ALPHA_NUM_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", " ", "$", "%", "*", "+", "-", ".", "/", ":"];
@@ -1299,9 +1299,9 @@ var require_encode_utf8 = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/byte-data.js
+// node_modules/qrcode/lib/core/byte-data.js
 var require_byte_data = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/byte-data.js"(exports, module) {
+  "node_modules/qrcode/lib/core/byte-data.js"(exports, module) {
     "use strict";
     var encodeUtf8 = require_encode_utf8();
     var Mode = require_mode();
@@ -1330,9 +1330,9 @@ var require_byte_data = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/kanji-data.js
+// node_modules/qrcode/lib/core/kanji-data.js
 var require_kanji_data = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/kanji-data.js"(exports, module) {
+  "node_modules/qrcode/lib/core/kanji-data.js"(exports, module) {
     "use strict";
     var Mode = require_mode();
     var Utils = require_utils();
@@ -1469,9 +1469,9 @@ var require_dijkstra = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/segments.js
+// node_modules/qrcode/lib/core/segments.js
 var require_segments = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/segments.js"(exports) {
+  "node_modules/qrcode/lib/core/segments.js"(exports) {
     "use strict";
     var Mode = require_mode();
     var NumericData = require_numeric_data();
@@ -1670,9 +1670,9 @@ var require_segments = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/core/qrcode.js
+// node_modules/qrcode/lib/core/qrcode.js
 var require_qrcode = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/core/qrcode.js"(exports) {
+  "node_modules/qrcode/lib/core/qrcode.js"(exports) {
     "use strict";
     var Utils = require_utils();
     var ECLevel = require_error_correction_level();
@@ -1927,9 +1927,9 @@ var require_qrcode = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/renderer/utils.js
+// node_modules/qrcode/lib/renderer/utils.js
 var require_utils2 = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/renderer/utils.js"(exports) {
+  "node_modules/qrcode/lib/renderer/utils.js"(exports) {
     "use strict";
     function hex2rgba(hex) {
       if (typeof hex === "number") {
@@ -2008,9 +2008,9 @@ var require_utils2 = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/renderer/canvas.js
+// node_modules/qrcode/lib/renderer/canvas.js
 var require_canvas = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/renderer/canvas.js"(exports) {
+  "node_modules/qrcode/lib/renderer/canvas.js"(exports) {
     "use strict";
     var Utils = require_utils2();
     function clearCanvas(ctx, canvas, size) {
@@ -2062,9 +2062,9 @@ var require_canvas = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/renderer/svg-tag.js
+// node_modules/qrcode/lib/renderer/svg-tag.js
 var require_svg_tag = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/renderer/svg-tag.js"(exports) {
+  "node_modules/qrcode/lib/renderer/svg-tag.js"(exports) {
     "use strict";
     var Utils = require_utils2();
     function getColorAttrib(color, attrib) {
@@ -2121,9 +2121,9 @@ var require_svg_tag = __commonJS({
   }
 });
 
-// node_modules/angularx-qrcode/node_modules/qrcode/lib/browser.js
+// node_modules/qrcode/lib/browser.js
 var require_browser = __commonJS({
-  "node_modules/angularx-qrcode/node_modules/qrcode/lib/browser.js"(exports) {
+  "node_modules/qrcode/lib/browser.js"(exports) {
     "use strict";
     var canPromise = require_can_promise();
     var QRCode = require_qrcode();
@@ -13685,7 +13685,7 @@ function createRootComponent(componentView, rootComponentDef, rootDirectives, ho
 }
 function setRootNodeAttributes(hostRenderer, componentDef, hostRNode, rootSelectorOrNode) {
   if (rootSelectorOrNode) {
-    setUpAttributes(hostRenderer, hostRNode, ["ng-version", "18.2.8"]);
+    setUpAttributes(hostRenderer, hostRNode, ["ng-version", "18.2.10"]);
   } else {
     const {
       attrs,
@@ -15299,6 +15299,22 @@ var AfterRenderSequence = class {
     this.unregisterOnDestroy?.();
   }
 };
+function afterRender(callbackOrSpec, options) {
+  ngDevMode && assertNotInReactiveContext(afterRender, "Call `afterRender` outside of a reactive context. For example, schedule the render callback inside the component constructor`.");
+  !options?.injector && assertInInjectionContext(afterRender);
+  const injector = options?.injector ?? inject(Injector);
+  if (!isPlatformBrowser(injector)) {
+    return NOOP_AFTER_RENDER_REF;
+  }
+  performanceMarkFeature("NgAfterRender");
+  return afterRenderImpl(
+    callbackOrSpec,
+    injector,
+    options,
+    /* once */
+    false
+  );
+}
 function afterNextRender(callbackOrSpec, options) {
   !options?.injector && assertInInjectionContext(afterNextRender);
   const injector = options?.injector ?? inject(Injector);
@@ -21035,7 +21051,7 @@ var Version = class {
     this.patch = parts.slice(2).join(".");
   }
 };
-var VERSION = new Version("18.2.8");
+var VERSION = new Version("18.2.10");
 var Console = class _Console {
   log(message) {
     console.log(message);
@@ -27870,39 +27886,6 @@ var CurrencyPipe = class _CurrencyPipe {
     this._locale = _locale;
     this._defaultCurrencyCode = _defaultCurrencyCode;
   }
-  /**
-   *
-   * @param value The number to be formatted as currency.
-   * @param currencyCode The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code,
-   * such as `USD` for the US dollar and `EUR` for the euro. The default currency code can be
-   * configured using the `DEFAULT_CURRENCY_CODE` injection token.
-   * @param display The format for the currency indicator. One of the following:
-   *   - `code`: Show the code (such as `USD`).
-   *   - `symbol`(default): Show the symbol (such as `$`).
-   *   - `symbol-narrow`: Use the narrow symbol for locales that have two symbols for their
-   * currency.
-   * For example, the Canadian dollar CAD has the symbol `CA$` and the symbol-narrow `$`. If the
-   * locale has no narrow symbol, uses the standard symbol for the locale.
-   *   - String: Use the given string value instead of a code or a symbol.
-   * For example, an empty string will suppress the currency & symbol.
-   *   - Boolean (marked deprecated in v5): `true` for symbol and false for `code`.
-   *
-   * @param digitsInfo Decimal representation options, specified by a string
-   * in the following format:<br>
-   * <code>{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}</code>.
-   *   - `minIntegerDigits`: The minimum number of integer digits before the decimal point.
-   * Default is `1`.
-   *   - `minFractionDigits`: The minimum number of digits after the decimal point.
-   * Default is `2`.
-   *   - `maxFractionDigits`: The maximum number of digits after the decimal point.
-   * Default is `2`.
-   * If not provided, the number will be formatted with the proper amount of digits,
-   * depending on what the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) specifies.
-   * For example, the Canadian dollar has 2 digits, whereas the Chilean peso has none.
-   * @param locale A locale code for the locale format rules to use.
-   * When not supplied, uses the value of `LOCALE_ID`, which is `en-US` by default.
-   * See [Setting your app locale](guide/i18n/locale-id).
-   */
   transform(value, currencyCode = this._defaultCurrencyCode, display = "symbol", digitsInfo, locale) {
     if (!isValue(value)) return null;
     locale ||= this._locale;
@@ -28042,7 +28025,7 @@ function isPlatformBrowser2(platformId) {
 function isPlatformServer(platformId) {
   return platformId === PLATFORM_SERVER_ID;
 }
-var VERSION2 = new Version("18.2.8");
+var VERSION2 = new Version("18.2.10");
 var ViewportScroller = class _ViewportScroller {
   static {
     this.\u0275prov = \u0275\u0275defineInjectable({
@@ -32959,7 +32942,7 @@ var HydrationFeatureKind;
   HydrationFeatureKind2[HydrationFeatureKind2["I18nSupport"] = 2] = "I18nSupport";
   HydrationFeatureKind2[HydrationFeatureKind2["EventReplay"] = 3] = "EventReplay";
 })(HydrationFeatureKind || (HydrationFeatureKind = {}));
-var VERSION3 = new Version("18.2.8");
+var VERSION3 = new Version("18.2.10");
 
 // node_modules/@angular/router/fesm2022/router.mjs
 var PRIMARY_OUTLET = "primary";
@@ -38391,7 +38374,7 @@ function provideRouterInitializer() {
     }
   ];
 }
-var VERSION4 = new Version("18.2.8");
+var VERSION4 = new Version("18.2.10");
 
 // node_modules/@angular/forms/fesm2022/forms.mjs
 var BaseControlValueAccessor = class _BaseControlValueAccessor {
@@ -44395,7 +44378,7 @@ var UntypedFormBuilder = class _UntypedFormBuilder extends FormBuilder {
     }]
   }], null, null);
 })();
-var VERSION5 = new Version("18.2.8");
+var VERSION5 = new Version("18.2.10");
 var FormsModule = class _FormsModule {
   /**
    * @description
@@ -44673,7 +44656,7 @@ var LoginComponent = class _LoginComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoginComponent, { className: "LoginComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoginComponent, { className: "LoginComponent", filePath: "src\\app\\pages\\login\\login.component.ts", lineNumber: 21 });
 })();
 
 // src/app/pages/page-not-found/page-not-found.component.ts
@@ -44697,7 +44680,7 @@ var PageNotFoundComponent = class _PageNotFoundComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PageNotFoundComponent, { className: "PageNotFoundComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PageNotFoundComponent, { className: "PageNotFoundComponent", filePath: "src\\app\\pages\\page-not-found\\page-not-found.component.ts", lineNumber: 10 });
 })();
 
 // src/app/pages/sign-up/sign-up.component.ts
@@ -44832,7 +44815,7 @@ var SignUpComponent = class _SignUpComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SignUpComponent, { className: "SignUpComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SignUpComponent, { className: "SignUpComponent", filePath: "src\\app\\pages\\sign-up\\sign-up.component.ts", lineNumber: 15 });
 })();
 
 // src/app/pages/forgot-password/forgot-password.component.ts
@@ -44853,7 +44836,7 @@ var ForgotPasswordComponent = class _ForgotPasswordComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ForgotPasswordComponent, { className: "ForgotPasswordComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ForgotPasswordComponent, { className: "ForgotPasswordComponent", filePath: "src\\app\\pages\\forgot-password\\forgot-password.component.ts", lineNumber: 10 });
 })();
 
 // node_modules/ngx-pagination/fesm2020/ngx-pagination.mjs
@@ -45796,9 +45779,45 @@ var _c3 = (a0, a1) => ({ itemsPerPage: 10, currentPage: a0, id: "truckloadingpar
 var _c4 = (a0) => ["/taul-parchi-view", a0];
 var _c5 = (a0) => [a0];
 var _c6 = (a0) => ["/truck-loading-parchi-view", a0];
-function DashboardComponent_div_44_div_1_tr_32_Template(rf, ctx) {
+function DashboardComponent_div_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "tr")(1, "th", 53);
+    \u0275\u0275elementStart(0, "div", 44)(1, "div", 3)(2, "div", 4)(3, "div", 5)(4, "div", 45);
+    \u0275\u0275element(5, "i", 46);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "div", 8)(7, "h3", 9);
+    \u0275\u0275text(8);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "p", 10);
+    \u0275\u0275text(10, "Total Taula Parchi");
+    \u0275\u0275elementEnd()()()()()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance(8);
+    \u0275\u0275textInterpolate(ctx_r0.TaulaParchiCount);
+  }
+}
+function DashboardComponent_div_17_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 44)(1, "div", 3)(2, "div", 4)(3, "div", 5)(4, "div", 45);
+    \u0275\u0275element(5, "i", 47);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "div", 8)(7, "h3", 9);
+    \u0275\u0275text(8);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "p", 10);
+    \u0275\u0275text(10, "Total Truck Loading Parchi");
+    \u0275\u0275elementEnd()()()()()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance(8);
+    \u0275\u0275textInterpolate(ctx_r0.TruckLoadingParchiCount);
+  }
+}
+function DashboardComponent_div_18_div_6_div_1_tr_32_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "tr")(1, "th", 57);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "td");
@@ -45809,90 +45828,117 @@ function DashboardComponent_div_44_div_1_tr_32_Template(rf, ctx) {
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
-    const bag_r1 = ctx.$implicit;
-    const i_r2 = ctx.index;
+    const bag_r2 = ctx.$implicit;
+    const i_r3 = ctx.index;
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(i_r2 + 1);
+    \u0275\u0275textInterpolate(i_r3 + 1);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(bag_r1.no_of_bags);
+    \u0275\u0275textInterpolate(bag_r2.no_of_bags);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(bag_r1.unit_weight_of_bags);
+    \u0275\u0275textInterpolate(bag_r2.unit_weight_of_bags);
   }
 }
-function DashboardComponent_div_44_div_1_Template(rf, ctx) {
+function DashboardComponent_div_18_div_6_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 47)(1, "div", 48)(2, "div", 4)(3, "div", 5)(4, "div", 49)(5, "p", 50);
+    \u0275\u0275elementStart(0, "div", 51)(1, "div", 52)(2, "div", 4)(3, "div", 5)(4, "div", 53)(5, "p", 54);
     \u0275\u0275text(6);
     \u0275\u0275pipe(7, "titlecase");
     \u0275\u0275elementEnd();
     \u0275\u0275element(8, "hr");
-    \u0275\u0275elementStart(9, "div", 0)(10, "div", 2)(11, "h6", 51);
-    \u0275\u0275text(12, "Stock Quantity");
+    \u0275\u0275elementStart(9, "div", 0)(10, "div", 2)(11, "h6", 55);
+    \u0275\u0275text(12, " Stock Quantity ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(13, "p", 52);
+    \u0275\u0275elementStart(13, "p", 56);
     \u0275\u0275text(14);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(15, "div", 2)(16, "h6", 51);
-    \u0275\u0275text(17, "Average Price");
+    \u0275\u0275elementStart(15, "div", 2)(16, "h6", 55);
+    \u0275\u0275text(17, " Average Price ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "p", 52);
+    \u0275\u0275elementStart(18, "p", 56);
     \u0275\u0275text(19);
     \u0275\u0275pipe(20, "currency");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(21, "div", 21)(22, "table", 39)(23, "thead")(24, "tr")(25, "th", 41);
+    \u0275\u0275elementStart(21, "div", 14)(22, "table", 37)(23, "thead")(24, "tr")(25, "th", 39);
     \u0275\u0275text(26, "#");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "th", 41);
+    \u0275\u0275elementStart(27, "th", 39);
     \u0275\u0275text(28, "No of Bags");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(29, "th", 41);
+    \u0275\u0275elementStart(29, "th", 39);
     \u0275\u0275text(30, "Weight (in Kgs)");
     \u0275\u0275elementEnd()()();
     \u0275\u0275elementStart(31, "tbody");
-    \u0275\u0275template(32, DashboardComponent_div_44_div_1_tr_32_Template, 7, 3, "tr", 42);
+    \u0275\u0275template(32, DashboardComponent_div_18_div_6_div_1_tr_32_Template, 7, 3, "tr", 40);
     \u0275\u0275elementEnd()()()()()()()()();
   }
   if (rf & 2) {
-    const stockData_r3 = ctx.$implicit;
-    const warehouse_r4 = \u0275\u0275nextContext().$implicit;
+    const stockData_r4 = ctx.$implicit;
+    const warehouse_r5 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275advance(6);
-    \u0275\u0275textInterpolate2("", \u0275\u0275pipeBind1(7, 5, warehouse_r4.name), " (", stockData_r3.crop, ")");
+    \u0275\u0275textInterpolate2(" ", \u0275\u0275pipeBind1(7, 5, warehouse_r5.name), " (", stockData_r4.crop, ") ");
     \u0275\u0275advance(8);
-    \u0275\u0275textInterpolate1("", stockData_r3.quantity, " Quintals");
+    \u0275\u0275textInterpolate1(" ", stockData_r4.quantity, " Quintals ");
     \u0275\u0275advance(5);
-    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(20, 7, stockData_r3.averagePrice, "INR"), " ");
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(20, 7, stockData_r4.averagePrice, "INR"), " ");
     \u0275\u0275advance(13);
-    \u0275\u0275property("ngForOf", stockData_r3.bag_units);
+    \u0275\u0275property("ngForOf", stockData_r4.bag_units);
   }
 }
-function DashboardComponent_div_44_Template(rf, ctx) {
+function DashboardComponent_div_18_div_6_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 0);
-    \u0275\u0275template(1, DashboardComponent_div_44_div_1_Template, 33, 10, "div", 46);
+    \u0275\u0275template(1, DashboardComponent_div_18_div_6_div_1_Template, 33, 10, "div", 50);
     \u0275\u0275element(2, "hr");
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const warehouse_r4 = ctx.$implicit;
+    const warehouse_r5 = ctx.$implicit;
     \u0275\u0275advance();
-    \u0275\u0275property("ngForOf", warehouse_r4 == null ? null : warehouse_r4.stock);
+    \u0275\u0275property("ngForOf", warehouse_r5 == null ? null : warehouse_r5.stock);
   }
 }
-function DashboardComponent_option_81_Template(rf, ctx) {
+function DashboardComponent_div_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 54);
+    \u0275\u0275elementStart(0, "div", 48)(1, "div", 15)(2, "div", 16)(3, "h4", 17);
+    \u0275\u0275text(4, "Stock");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(5, "div", 4);
+    \u0275\u0275template(6, DashboardComponent_div_18_div_6_Template, 3, 1, "div", 49);
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance(6);
+    \u0275\u0275property("ngForOf", ctx_r0.warehouses);
+  }
+}
+function DashboardComponent_option_55_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 58);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const crop_r5 = ctx.$implicit;
-    \u0275\u0275property("value", crop_r5._id);
+    const crop_r6 = ctx.$implicit;
+    \u0275\u0275property("value", crop_r6._id);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(crop_r5.name);
+    \u0275\u0275textInterpolate1(" ", crop_r6.name, " ");
   }
 }
-function DashboardComponent_tr_107_Template(rf, ctx) {
+function DashboardComponent_tr_86_a_32_Template(rf, ctx) {
   if (rf & 1) {
+    \u0275\u0275elementStart(0, "a", 67);
+    \u0275\u0275text(1, " Pay ");
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const taulaParchi_r8 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(1, _c5, "/cashier-payment/taulParchi/" + taulaParchi_r8._id));
+  }
+}
+function DashboardComponent_tr_86_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r7 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "tr")(1, "td");
     \u0275\u0275text(2);
     \u0275\u0275pipe(3, "date");
@@ -45903,13 +45949,13 @@ function DashboardComponent_tr_107_Template(rf, ctx) {
     \u0275\u0275elementStart(6, "td");
     \u0275\u0275text(7);
     \u0275\u0275element(8, "br");
-    \u0275\u0275elementStart(9, "span", 55);
-    \u0275\u0275element(10, "i", 56);
+    \u0275\u0275elementStart(9, "span", 59);
+    \u0275\u0275element(10, "i", 60);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
     \u0275\u0275element(12, "br");
-    \u0275\u0275elementStart(13, "span", 55);
-    \u0275\u0275element(14, "i", 57);
+    \u0275\u0275elementStart(13, "span", 59);
+    \u0275\u0275element(14, "i", 61);
     \u0275\u0275text(15);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(16, "td");
@@ -45931,44 +45977,52 @@ function DashboardComponent_tr_107_Template(rf, ctx) {
     \u0275\u0275elementStart(27, "td");
     \u0275\u0275text(28);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(29, "td")(30, "button", 58);
-    \u0275\u0275element(31, "i", 59);
+    \u0275\u0275elementStart(29, "td")(30, "button", 62);
+    \u0275\u0275element(31, "i", 63);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(32, "a", 60);
-    \u0275\u0275text(33, " Pay ");
+    \u0275\u0275template(32, DashboardComponent_tr_86_a_32_Template, 2, 3, "a", 64);
+    \u0275\u0275elementStart(33, "button", 65);
+    \u0275\u0275listener("click", function DashboardComponent_tr_86_Template_button_click_33_listener() {
+      const taulaParchi_r8 = \u0275\u0275restoreView(_r7).$implicit;
+      const ctx_r0 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r0.printReceipt(taulaParchi_r8));
+    });
+    \u0275\u0275element(34, "i", 66);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const taulaParchi_r6 = ctx.$implicit;
+    let tmp_15_0;
+    const taulaParchi_r8 = ctx.$implicit;
+    const ctx_r0 = \u0275\u0275nextContext();
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(3, 13, taulaParchi_r6.created_at, "MM-dd-YYYY hh:mm"));
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(3, 13, taulaParchi_r8.created_at, "MM-dd-YYYY hh:mm"), " ");
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(taulaParchi_r6 == null ? null : taulaParchi_r6.purchase);
+    \u0275\u0275textInterpolate(taulaParchi_r8 == null ? null : taulaParchi_r8.purchase);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1(" ", taulaParchi_r6 == null ? null : taulaParchi_r6.farmerName, " ");
+    \u0275\u0275textInterpolate1(" ", taulaParchi_r8 == null ? null : taulaParchi_r8.farmerName, " ");
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate1(" | ", taulaParchi_r6 == null ? null : taulaParchi_r6.farmerMobile, " ");
+    \u0275\u0275textInterpolate1(" | ", taulaParchi_r8 == null ? null : taulaParchi_r8.farmerMobile, " ");
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate1(" | ", taulaParchi_r6 == null ? null : taulaParchi_r6.farmerVillage, " ");
+    \u0275\u0275textInterpolate1(" | ", taulaParchi_r8 == null ? null : taulaParchi_r8.farmerVillage, " ");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r6 == null ? null : taulaParchi_r6.wearhouseDetails == null ? null : taulaParchi_r6.wearhouseDetails.name);
+    \u0275\u0275textInterpolate(taulaParchi_r8 == null ? null : taulaParchi_r8.wearhouseDetails == null ? null : taulaParchi_r8.wearhouseDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r6 == null ? null : taulaParchi_r6.cropDetails == null ? null : taulaParchi_r6.cropDetails.name);
+    \u0275\u0275textInterpolate(taulaParchi_r8 == null ? null : taulaParchi_r8.cropDetails == null ? null : taulaParchi_r8.cropDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r6 == null ? null : taulaParchi_r6.companyDetails == null ? null : taulaParchi_r6.companyDetails.name);
+    \u0275\u0275textInterpolate(taulaParchi_r8 == null ? null : taulaParchi_r8.companyDetails == null ? null : taulaParchi_r8.companyDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(taulaParchi_r6.netWeight);
+    \u0275\u0275textInterpolate(taulaParchi_r8.netWeight);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(26, 16, taulaParchi_r6.amount, ".2"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(26, 16, taulaParchi_r8.amount, ".2"));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(taulaParchi_r6 == null ? null : taulaParchi_r6.userDetails == null ? null : taulaParchi_r6.userDetails.name);
+    \u0275\u0275textInterpolate(taulaParchi_r8 == null ? null : taulaParchi_r8.userDetails == null ? null : taulaParchi_r8.userDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(19, _c4, taulaParchi_r6._id));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(19, _c4, taulaParchi_r8._id));
     \u0275\u0275advance(2);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(21, _c5, "/cashier-payment/taulParchi/" + taulaParchi_r6._id));
+    \u0275\u0275property("ngIf", ((tmp_15_0 = ctx_r0.getCurrentUser()) == null ? null : tmp_15_0.role) === "cashier" && !(taulaParchi_r8 == null ? null : taulaParchi_r8.transactionType));
   }
 }
-function DashboardComponent_tr_149_Template(rf, ctx) {
+function DashboardComponent_tr_128_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "tr")(1, "td");
     \u0275\u0275text(2);
@@ -46002,34 +46056,34 @@ function DashboardComponent_tr_149_Template(rf, ctx) {
     \u0275\u0275elementStart(21, "td");
     \u0275\u0275text(22);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(23, "td")(24, "button", 58);
-    \u0275\u0275element(25, "i", 59);
+    \u0275\u0275elementStart(23, "td")(24, "button", 62);
+    \u0275\u0275element(25, "i", 63);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const truckLoadingParchi_r7 = ctx.$implicit;
+    const truckLoadingParchi_r9 = ctx.$implicit;
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(3, 11, truckLoadingParchi_r7.created_at, "MM-dd-YYYY"));
+    \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(3, 11, truckLoadingParchi_r9.created_at, "MM-dd-YYYY"), " ");
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.cropDetails == null ? null : truckLoadingParchi_r7.cropDetails.name);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r9 == null ? null : truckLoadingParchi_r9.cropDetails == null ? null : truckLoadingParchi_r9.cropDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.partyDetails == null ? null : truckLoadingParchi_r7.partyDetails.name);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r9 == null ? null : truckLoadingParchi_r9.partyDetails == null ? null : truckLoadingParchi_r9.partyDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.truckDetails == null ? null : truckLoadingParchi_r7.truckDetails.truckNumber);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r9 == null ? null : truckLoadingParchi_r9.truckDetails == null ? null : truckLoadingParchi_r9.truckDetails.truckNumber);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.deliveryDetails == null ? null : truckLoadingParchi_r7.deliveryDetails.name);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r9 == null ? null : truckLoadingParchi_r9.deliveryDetails == null ? null : truckLoadingParchi_r9.deliveryDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.hammalDetails == null ? null : truckLoadingParchi_r7.hammalDetails.name);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r9 == null ? null : truckLoadingParchi_r9.hammalDetails == null ? null : truckLoadingParchi_r9.hammalDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1(" ", truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.wearhouseDetails == null ? null : truckLoadingParchi_r7.wearhouseDetails.name, " ");
+    \u0275\u0275textInterpolate1(" ", truckLoadingParchi_r9 == null ? null : truckLoadingParchi_r9.wearhouseDetails == null ? null : truckLoadingParchi_r9.wearhouseDetails.name, " ");
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r7.netWeight);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r9.netWeight);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(20, 14, truckLoadingParchi_r7.amount, ".2"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(20, 14, truckLoadingParchi_r9.amount, ".2"));
     \u0275\u0275advance(3);
-    \u0275\u0275textInterpolate(truckLoadingParchi_r7 == null ? null : truckLoadingParchi_r7.userDetails == null ? null : truckLoadingParchi_r7.userDetails.name);
+    \u0275\u0275textInterpolate(truckLoadingParchi_r9 == null ? null : truckLoadingParchi_r9.userDetails == null ? null : truckLoadingParchi_r9.userDetails.name);
     \u0275\u0275advance(2);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(17, _c6, truckLoadingParchi_r7._id));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(17, _c6, truckLoadingParchi_r9._id));
   }
 }
 var DashboardComponent = class _DashboardComponent {
@@ -46049,6 +46103,8 @@ var DashboardComponent = class _DashboardComponent {
     this.farmerNameSearch = "";
     this.farmerMobileSearch = "";
     this.farmerVillageSearch = "";
+    this.snoSearch = "";
+    this.qrCodeUrl = null;
     this.currentUser = this.authService.getCurrentUser();
   }
   ngOnInit() {
@@ -46083,6 +46139,9 @@ var DashboardComponent = class _DashboardComponent {
     }
     if (this.farmerVillageSearch) {
       query["farmerVillage"] = this.farmerVillageSearch;
+    }
+    if (this.snoSearch) {
+      query["sno"] = this.snoSearch;
     }
     if (this.selectedWarehouse) {
       query["warehouse"] = this.selectedWarehouse;
@@ -46158,13 +46217,176 @@ var DashboardComponent = class _DashboardComponent {
       }
     });
   }
+  getCurrentUser() {
+    return this.authService.currentUser;
+  }
+  generateQRCode(data) {
+    this.qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${data}&size=150x150`;
+  }
+  printReceipt(taulaParchi) {
+    this.generateQRCode(taulaParchi._id || "N/A");
+    const receiptContent = `
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Taula Parchi Receipt</title>
+          <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+          <style>
+            body {
+              font-family: 'Courier New', monospace;
+              margin: 20px;
+              background-color: #f8f9fa;
+            }
+            .card {
+              padding: 20px;
+              border: 1px solid #000;
+              width: 350px;
+              margin: 0 auto;
+              background-color: white;
+            }
+            h4 { text-align: center; }
+            .section { margin-bottom: 15px; padding-bottom: 10px; }
+            .row { display: flex; justify-content: space-between; }
+            .btn-print { display: block; margin: 20px auto; }
+            @media print { .btn-print { display: none; } }
+          </style>
+        </head>
+        <body>
+         <div class="container mt-4">
+        <div class="card">
+          <h4 class="mb-2">Taula Parchi Receipt</h4>
+          <p class="text-center"><b>M+M</b></p>
+
+          <!-- Sr. No and Date Section -->
+
+          <div class="section">
+            <div class="row">
+              <div class="label"><b>Sr.No:</b></div>
+              <div class="value">${taulaParchi?.sno}</div>
+           </div>
+            <div class="row">
+              <div class="label"><b>Date:</b></div>
+              <div class="value">${new Date(taulaParchi?.created_at).toLocaleDateString()}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Time:</b></div>
+              <div class="value">${new Date(taulaParchi?.created_at).toLocaleTimeString()}</div>
+            </div>
+          </div>
+
+          <!-- Farmer and Crop Details -->
+
+          <div class="section">
+            <div class="row">
+              <div class="label"><b>Farmer's Name:</b></div>
+              <div class="value">${taulaParchi.farmerName || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Mobile:</b></div>
+              <div class="value">${taulaParchi.farmerMobile || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Village:</b></div>
+              <div class="value">${taulaParchi.farmerVillage || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Storage Location:</b></div>
+              <div class="value">${taulaParchi.wearhouseDetails?.name || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Crop:</b></div>
+              <div class="value">${taulaParchi.cropDetails?.name || "N/A"}</div>
+            </div>
+          </div>
+
+          <!-- Purchase and Firm Details -->
+          <div class="section">
+            <div class="row">
+              <div class="label"><b>Purchase Status:</b></div>
+              <div class="value">${taulaParchi.purchase || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Firm/Company:</b></div>
+              <div class="value">${taulaParchi.companyDetails.name || "N/A"}</div>
+            </div>
+          </div>
+
+          <!-- Additional Fields -->
+          <div class="section">
+            <div class="row">
+              <div class="label"><b>Rate (\u20B9):</b></div>
+              <div class="value">${taulaParchi.rate || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Tulai Option:</b></div>
+              <div class="value">${taulaParchi.tulai || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Exempt Hammali:</b></div>
+              <div class="value">${taulaParchi.exemptHammali ? taulaParchi.exemptHammali === "deduct" ? "Deduct" : "Exempted" : "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Hammal:</b></div>
+              <div class="value">${taulaParchi?.hammalDetails?.name || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Bora Quantity:</b></div>
+              <div class="value">${taulaParchi.boraQuantity || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Bharti (in Kgs):</b></div>
+              <div class="value">${taulaParchi.bharti || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Loose Quantity (in Kgs):</b></div>
+              <div class="value">${taulaParchi.looseQuantity || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Net Weight (Quintal):</b></div>
+              <div class="value">${taulaParchi.netWeight}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Hammali (\u20B9):</b></div>
+              <div class="value">${taulaParchi.hammali}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Amount (\u20B9):</b></div>
+              <div class="value">${taulaParchi.amount || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Transaction Type:</b></div>
+              <div class="value">${taulaParchi.transactionType || "N/A"}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Transaction Id:</b></div>
+              <div class="value">${taulaParchi.transactionId || "N/A"}</div>
+            </div>
+          </div>
+          <div class="section">
+              <div class="row"><div class="label"><b>QR Code:</b></div><div class="value"><img src="${this.qrCodeUrl}" alt="QR Code" /></div></div>
+            </div>
+
+          <!-- Print Button -->
+          <button class="btn-print" onclick="window.print()">Print Receipt</button>
+        </div>
+      </div>
+
+        </body>
+      </html>`;
+    const receiptWindow = window.open("", "_blank");
+    receiptWindow?.document.write(receiptContent);
+    receiptWindow?.document.close();
+    receiptWindow?.focus();
+  }
   static {
     this.\u0275fac = function DashboardComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || _DashboardComponent)(\u0275\u0275directiveInject(ApiService), \u0275\u0275directiveInject(AuthService));
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DashboardComponent, selectors: [["app-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 152, vars: 30, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-body"], [1, "d-flex", "justify-content-between", "align-items-center"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-dark", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-calendar", "fs-3", "text-white"], [1, "text-end"], [1, "mb-0", "text-dark"], [1, "mb-0", "text-secondary"], [1, "row", "mt-3"], [1, "col-12", "col-md-6"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-primary", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-file", "fs-3", "text-white"], [1, "fi", "fi-rs-list", "fs-3", "text-white"], [1, "col-12", "mt-4"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], ["class", "row", 4, "ngFor", "ngForOf"], [1, "col-12"], [1, "col-auto"], [1, "btn", "btn-primary", 3, "routerLink"], [1, "fi", "fi-rr-add"], [1, "filter-sections"], [1, "row", "mb-2"], [1, "form-group"], ["for", "farmerNameSearch"], ["type", "text", "name", "farmerNameSearch", "id", "farmerNameSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerMobileSearch"], ["type", "text", "name", "farmerMobileSearch", "id", "farmerMobileSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerVillageSearch"], ["type", "text", "name", "farmerVillageSearch", "id", "farmerVillageSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "cropSearch"], ["name", "cropSearch", "id", "cropSearch", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "table", "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "table-responsive"], ["id", "truckloadingparchi", 3, "pageChange"], ["class", "col-12 col-md-6 col-lg-4", 4, "ngFor", "ngForOf"], [1, "col-12", "col-md-6", "col-lg-4"], [1, "card", "bg-white", "mb-4"], [1, "text-center"], [1, "mb-0", "text-secondary", "text-center"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["scope", "row"], [3, "value"], [1, "badge", "bg-primary"], [1, "fi", "fi-rr-mobile"], [1, "fi", "fi-rr-marker"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"], [1, "fi", "fi-rr-eye"], [1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"]], template: function DashboardComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DashboardComponent, selectors: [["app-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 131, vars: 31, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-body"], [1, "d-flex", "justify-content-between", "align-items-center"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-dark", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-calendar", "fs-3", "text-white"], [1, "text-end"], [1, "mb-0", "text-dark"], [1, "mb-0", "text-secondary"], [1, "row", "mt-3"], ["class", "col-12 col-md-6", 4, "ngIf"], ["class", "col-12 mt-4", 4, "ngIf"], [1, "col-12"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "col-auto"], [1, "btn", "btn-primary", 3, "routerLink"], [1, "fi", "fi-rr-add"], [1, "filter-sections"], [1, "row", "mb-2"], [1, "form-group"], ["for", "farmerNameSearch"], ["type", "text", "name", "farmerNameSearch", "id", "farmerNameSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerMobileSearch"], ["type", "text", "name", "farmerMobileSearch", "id", "farmerMobileSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerVillageSearch"], ["type", "text", "name", "farmerVillageSearch", "id", "farmerVillageSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "cropSearch"], ["name", "cropSearch", "id", "cropSearch", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "snoSearch"], ["type", "text", "name", "snoSearch", "id", "snoSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "table", "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "table-responsive"], ["id", "truckloadingparchi", 3, "pageChange"], [1, "col-12", "col-md-6"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-primary", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-file", "fs-3", "text-white"], [1, "fi", "fi-rs-list", "fs-3", "text-white"], [1, "col-12", "mt-4"], ["class", "row", 4, "ngFor", "ngForOf"], ["class", "col-12 col-md-6 col-lg-4", 4, "ngFor", "ngForOf"], [1, "col-12", "col-md-6", "col-lg-4"], [1, "card", "bg-white", "mb-4"], [1, "text-center"], [1, "mb-0", "text-secondary", "text-center"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["scope", "row"], [3, "value"], [1, "badge", "bg-primary"], [1, "fi", "fi-rr-mobile"], [1, "fi", "fi-rr-marker"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"], [1, "fi", "fi-rr-eye"], ["class", "btn btn-sm btn-primary me-2 mb-2", 3, "routerLink", 4, "ngIf"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "click"], [1, "fi", "fi-rr-print"], [1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"]], template: function DashboardComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "div", 5)(7, "div", 6);
         \u0275\u0275element(8, "i", 7);
@@ -46176,191 +46398,184 @@ var DashboardComponent = class _DashboardComponent {
         \u0275\u0275elementStart(13, "p", 10);
         \u0275\u0275text(14, "Date");
         \u0275\u0275elementEnd()()()()()()();
-        \u0275\u0275elementStart(15, "div", 11)(16, "div", 12)(17, "div", 3)(18, "div", 4)(19, "div", 5)(20, "div", 13);
-        \u0275\u0275element(21, "i", 14);
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(22, "div", 8)(23, "h3", 9);
-        \u0275\u0275text(24);
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(25, "p", 10);
-        \u0275\u0275text(26, "Total Taula Parchi");
-        \u0275\u0275elementEnd()()()()()();
-        \u0275\u0275elementStart(27, "div", 12)(28, "div", 3)(29, "div", 4)(30, "div", 5)(31, "div", 13);
-        \u0275\u0275element(32, "i", 15);
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(33, "div", 8)(34, "h3", 9);
-        \u0275\u0275text(35);
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(36, "p", 10);
-        \u0275\u0275text(37, "Total Truck Loading Parchi");
-        \u0275\u0275elementEnd()()()()()();
-        \u0275\u0275elementStart(38, "div", 16)(39, "div", 17)(40, "div", 18)(41, "h4", 19);
-        \u0275\u0275text(42, "Stock");
+        \u0275\u0275elementStart(15, "div", 11);
+        \u0275\u0275template(16, DashboardComponent_div_16_Template, 11, 1, "div", 12)(17, DashboardComponent_div_17_Template, 11, 1, "div", 12)(18, DashboardComponent_div_18_Template, 7, 1, "div", 13);
+        \u0275\u0275elementStart(19, "div", 14)(20, "div", 15)(21, "div", 16)(22, "div", 0)(23, "div", 2)(24, "h4", 17);
+        \u0275\u0275text(25, "Taula Parchis");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(43, "div", 4);
-        \u0275\u0275template(44, DashboardComponent_div_44_Template, 3, 1, "div", 20);
-        \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(45, "div", 21)(46, "div", 17)(47, "div", 18)(48, "div", 0)(49, "div", 2)(50, "h4", 19);
-        \u0275\u0275text(51, "Taula Parchis");
-        \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(52, "div", 22)(53, "a", 23);
-        \u0275\u0275element(54, "i", 24);
-        \u0275\u0275text(55, " New Taula Parchi ");
+        \u0275\u0275elementStart(26, "div", 18)(27, "a", 19);
+        \u0275\u0275element(28, "i", 20);
+        \u0275\u0275text(29, " New Taula Parchi ");
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(56, "div", 4)(57, "div", 25)(58, "div", 26)(59, "div", 2)(60, "div", 27)(61, "label", 28);
-        \u0275\u0275text(62, "Farmer Name");
+        \u0275\u0275elementStart(30, "div", 4)(31, "div", 21)(32, "div", 22)(33, "div", 2)(34, "div", 23)(35, "label", 24);
+        \u0275\u0275text(36, "Farmer Name");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(63, "input", 29);
-        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_63_listener($event) {
+        \u0275\u0275elementStart(37, "input", 25);
+        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_37_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.farmerNameSearch, $event) || (ctx.farmerNameSearch = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_63_listener() {
+        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_37_listener() {
           return ctx.getTaulaParchis();
         });
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(64, "div", 2)(65, "div", 27)(66, "label", 30);
-        \u0275\u0275text(67, "Farmer Mobile");
+        \u0275\u0275elementStart(38, "div", 2)(39, "div", 23)(40, "label", 26);
+        \u0275\u0275text(41, "Farmer Mobile");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(68, "input", 31);
-        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_68_listener($event) {
+        \u0275\u0275elementStart(42, "input", 27);
+        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_42_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.farmerMobileSearch, $event) || (ctx.farmerMobileSearch = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_68_listener() {
+        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_42_listener() {
           return ctx.getTaulaParchis();
         });
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(69, "div", 2)(70, "div", 27)(71, "label", 32);
-        \u0275\u0275text(72, "Farmer Village");
+        \u0275\u0275elementStart(43, "div", 2)(44, "div", 23)(45, "label", 28);
+        \u0275\u0275text(46, "Farmer Village");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(73, "input", 33);
-        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_73_listener($event) {
+        \u0275\u0275elementStart(47, "input", 29);
+        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_47_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.farmerVillageSearch, $event) || (ctx.farmerVillageSearch = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_73_listener() {
+        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_47_listener() {
           return ctx.getTaulaParchis();
         });
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(74, "div", 2)(75, "div", 27)(76, "label", 34);
-        \u0275\u0275text(77, "Crop");
+        \u0275\u0275elementStart(48, "div", 2)(49, "div", 23)(50, "label", 30);
+        \u0275\u0275text(51, "Crop");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(78, "select", 35);
-        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_select_ngModelChange_78_listener($event) {
+        \u0275\u0275elementStart(52, "select", 31);
+        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_select_ngModelChange_52_listener($event) {
           \u0275\u0275twoWayBindingSet(ctx.selectedCrop, $event) || (ctx.selectedCrop = $event);
           return $event;
         });
-        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_select_ngModelChange_78_listener() {
+        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_select_ngModelChange_52_listener() {
           return ctx.getTaulaParchis();
         });
-        \u0275\u0275elementStart(79, "option", 36);
-        \u0275\u0275text(80, "Select");
+        \u0275\u0275elementStart(53, "option", 32);
+        \u0275\u0275text(54, "Select");
         \u0275\u0275elementEnd();
-        \u0275\u0275template(81, DashboardComponent_option_81_Template, 2, 2, "option", 37);
+        \u0275\u0275template(55, DashboardComponent_option_55_Template, 2, 2, "option", 33);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(56, "div", 2)(57, "div", 23)(58, "label", 34);
+        \u0275\u0275text(59, "S.no");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(60, "input", 35);
+        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_60_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.snoSearch, $event) || (ctx.snoSearch = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_60_listener() {
+          return ctx.getTaulaParchis();
+        });
         \u0275\u0275elementEnd()()()()();
-        \u0275\u0275elementStart(82, "div", 38)(83, "table", 39)(84, "thead", 40)(85, "tr")(86, "th", 41);
-        \u0275\u0275text(87, "Date");
+        \u0275\u0275elementStart(61, "div", 36)(62, "table", 37)(63, "thead", 38)(64, "tr")(65, "th", 39);
+        \u0275\u0275text(66, "Date");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(88, "th", 41);
-        \u0275\u0275text(89, "Purchase Status");
+        \u0275\u0275elementStart(67, "th", 39);
+        \u0275\u0275text(68, "Purchase Status");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(90, "th", 41);
-        \u0275\u0275text(91, "Farmer's Name");
+        \u0275\u0275elementStart(69, "th", 39);
+        \u0275\u0275text(70, "Farmer's Name");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(92, "th", 41);
-        \u0275\u0275text(93, "Storage Location");
+        \u0275\u0275elementStart(71, "th", 39);
+        \u0275\u0275text(72, "Storage Location");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(94, "th", 41);
-        \u0275\u0275text(95, "Crop");
+        \u0275\u0275elementStart(73, "th", 39);
+        \u0275\u0275text(74, "Crop");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(96, "th", 41);
-        \u0275\u0275text(97, "Firm/Company");
+        \u0275\u0275elementStart(75, "th", 39);
+        \u0275\u0275text(76, "Firm/Company");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(98, "th", 41);
-        \u0275\u0275text(99, "Net Weight(in Quintal)");
+        \u0275\u0275elementStart(77, "th", 39);
+        \u0275\u0275text(78, "Net Weight(in Quintal)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(100, "th", 41);
-        \u0275\u0275text(101, "Amount (\u20B9)");
+        \u0275\u0275elementStart(79, "th", 39);
+        \u0275\u0275text(80, "Amount (\u20B9)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(102, "th", 41);
-        \u0275\u0275text(103, "Created By");
+        \u0275\u0275elementStart(81, "th", 39);
+        \u0275\u0275text(82, "Created By");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(104, "th", 41);
-        \u0275\u0275text(105, "Action");
+        \u0275\u0275elementStart(83, "th", 39);
+        \u0275\u0275text(84, "Action");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(106, "tbody");
-        \u0275\u0275template(107, DashboardComponent_tr_107_Template, 34, 23, "tr", 42);
-        \u0275\u0275pipe(108, "paginate");
+        \u0275\u0275elementStart(85, "tbody");
+        \u0275\u0275template(86, DashboardComponent_tr_86_Template, 35, 21, "tr", 40);
+        \u0275\u0275pipe(87, "paginate");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(109, "pagination-controls", 43);
-        \u0275\u0275listener("pageChange", function DashboardComponent_Template_pagination_controls_pageChange_109_listener($event) {
+        \u0275\u0275elementStart(88, "pagination-controls", 41);
+        \u0275\u0275listener("pageChange", function DashboardComponent_Template_pagination_controls_pageChange_88_listener($event) {
           ctx.pageForTaulaParchi = $event;
           return ctx.getTaulaParchis();
         });
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(110, "div", 21)(111, "div", 17)(112, "div", 18)(113, "div", 0)(114, "div", 2)(115, "h4", 19);
-        \u0275\u0275text(116, "Truck Loading Parchis");
+        \u0275\u0275elementStart(89, "div", 14)(90, "div", 15)(91, "div", 16)(92, "div", 0)(93, "div", 2)(94, "h4", 17);
+        \u0275\u0275text(95, "Truck Loading Parchis");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(117, "div", 22)(118, "a", 23);
-        \u0275\u0275element(119, "i", 24);
-        \u0275\u0275text(120, " New Truck Loading Parchi ");
+        \u0275\u0275elementStart(96, "div", 18)(97, "a", 19);
+        \u0275\u0275element(98, "i", 20);
+        \u0275\u0275text(99, " New Truck Loading Parchi ");
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(121, "div", 4)(122, "div", 44)(123, "table", 39)(124, "thead", 40)(125, "tr")(126, "th", 41);
-        \u0275\u0275text(127, "Date");
+        \u0275\u0275elementStart(100, "div", 4)(101, "div", 42)(102, "table", 37)(103, "thead", 38)(104, "tr")(105, "th", 39);
+        \u0275\u0275text(106, "Date");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(128, "th", 41);
-        \u0275\u0275text(129, "Crop");
+        \u0275\u0275elementStart(107, "th", 39);
+        \u0275\u0275text(108, "Crop");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(130, "th", 41);
-        \u0275\u0275text(131, "Party Name");
+        \u0275\u0275elementStart(109, "th", 39);
+        \u0275\u0275text(110, "Party Name");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(132, "th", 41);
-        \u0275\u0275text(133, "Truck");
+        \u0275\u0275elementStart(111, "th", 39);
+        \u0275\u0275text(112, "Truck");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(134, "th", 41);
-        \u0275\u0275text(135, "Delivery Location");
+        \u0275\u0275elementStart(113, "th", 39);
+        \u0275\u0275text(114, "Delivery Location");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(136, "th", 41);
-        \u0275\u0275text(137, "Assigned Hammal");
+        \u0275\u0275elementStart(115, "th", 39);
+        \u0275\u0275text(116, "Assigned Hammal");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(138, "th", 41);
-        \u0275\u0275text(139, "Storage Location");
+        \u0275\u0275elementStart(117, "th", 39);
+        \u0275\u0275text(118, "Storage Location");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(140, "th", 41);
-        \u0275\u0275text(141, "Net Weight(in Quintal)");
+        \u0275\u0275elementStart(119, "th", 39);
+        \u0275\u0275text(120, "Net Weight(in Quintal)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(142, "th", 41);
-        \u0275\u0275text(143, "Amount (\u20B9)");
+        \u0275\u0275elementStart(121, "th", 39);
+        \u0275\u0275text(122, "Amount (\u20B9)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(144, "th", 41);
-        \u0275\u0275text(145, "Created By");
+        \u0275\u0275elementStart(123, "th", 39);
+        \u0275\u0275text(124, "Created By");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(146, "th", 41);
-        \u0275\u0275text(147, "Action");
+        \u0275\u0275elementStart(125, "th", 39);
+        \u0275\u0275text(126, "Action");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(148, "tbody");
-        \u0275\u0275template(149, DashboardComponent_tr_149_Template, 26, 19, "tr", 42);
-        \u0275\u0275pipe(150, "paginate");
+        \u0275\u0275elementStart(127, "tbody");
+        \u0275\u0275template(128, DashboardComponent_tr_128_Template, 26, 19, "tr", 40);
+        \u0275\u0275pipe(129, "paginate");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(151, "pagination-controls", 45);
-        \u0275\u0275listener("pageChange", function DashboardComponent_Template_pagination_controls_pageChange_151_listener($event) {
+        \u0275\u0275elementStart(130, "pagination-controls", 43);
+        \u0275\u0275listener("pageChange", function DashboardComponent_Template_pagination_controls_pageChange_130_listener($event) {
           ctx.pageForTruckLoadingParchi = $event;
           return ctx.getTruckLoadingParchis();
         });
         \u0275\u0275elementEnd()()()()()()();
       }
       if (rf & 2) {
+        let tmp_1_0;
+        let tmp_2_0;
+        let tmp_3_0;
         \u0275\u0275advance(11);
-        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(12, 13, ctx.currentDate, "dd-MM-YYYY"), " ");
-        \u0275\u0275advance(13);
-        \u0275\u0275textInterpolate(ctx.TaulaParchiCount);
-        \u0275\u0275advance(11);
-        \u0275\u0275textInterpolate(ctx.TruckLoadingParchiCount);
+        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(12, 14, ctx.currentDate, "dd-MM-YYYY"), " ");
+        \u0275\u0275advance(5);
+        \u0275\u0275property("ngIf", ((tmp_1_0 = ctx.getCurrentUser()) == null ? null : tmp_1_0.role) === "Admin");
+        \u0275\u0275advance();
+        \u0275\u0275property("ngIf", ((tmp_2_0 = ctx.getCurrentUser()) == null ? null : tmp_2_0.role) === "Admin");
+        \u0275\u0275advance();
+        \u0275\u0275property("ngIf", ((tmp_3_0 = ctx.getCurrentUser()) == null ? null : tmp_3_0.role) === "Admin");
         \u0275\u0275advance(9);
-        \u0275\u0275property("ngForOf", ctx.warehouses);
-        \u0275\u0275advance(9);
-        \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(22, _c0));
+        \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(23, _c0));
         \u0275\u0275advance(10);
         \u0275\u0275twoWayProperty("ngModel", ctx.farmerNameSearch);
         \u0275\u0275advance(5);
@@ -46371,18 +46586,21 @@ var DashboardComponent = class _DashboardComponent {
         \u0275\u0275twoWayProperty("ngModel", ctx.selectedCrop);
         \u0275\u0275advance(3);
         \u0275\u0275property("ngForOf", ctx.crops);
+        \u0275\u0275advance(5);
+        \u0275\u0275twoWayProperty("ngModel", ctx.snoSearch);
         \u0275\u0275advance(26);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(108, 16, ctx.TaulaParchi, \u0275\u0275pureFunction2(23, _c1, ctx.pageForTaulaParchi, ctx.TaulaParchiCount)));
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(87, 17, ctx.TaulaParchi, \u0275\u0275pureFunction2(24, _c1, ctx.pageForTaulaParchi, ctx.TaulaParchiCount)));
         \u0275\u0275advance(11);
-        \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(26, _c2));
+        \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(27, _c2));
         \u0275\u0275advance(31);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(150, 19, ctx.TruckLoadingParchi, \u0275\u0275pureFunction2(27, _c3, ctx.pageForTruckLoadingParchi, ctx.TruckLoadingParchiCount)));
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(129, 20, ctx.TruckLoadingParchi, \u0275\u0275pureFunction2(28, _c3, ctx.pageForTruckLoadingParchi, ctx.TruckLoadingParchiCount)));
       }
     }, dependencies: [
       DatePipe,
       RouterLink,
       CommonModule,
       NgForOf,
+      NgIf,
       DecimalPipe,
       TitleCasePipe,
       CurrencyPipe,
@@ -46401,7 +46619,7 @@ var DashboardComponent = class _DashboardComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DashboardComponent, { className: "DashboardComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DashboardComponent, { className: "DashboardComponent", filePath: "src\\app\\pages\\dashboard\\dashboard.component.ts", lineNumber: 23 });
 })();
 
 // node_modules/@angular/core/fesm2022/rxjs-interop.mjs
@@ -48026,7 +48244,7 @@ function NgbDatepickerMonth_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 0);
     \u0275\u0275template(1, NgbDatepickerMonth_Conditional_0_Conditional_1_Template, 2, 1, "div", 1);
-    \u0275\u0275repeaterCreate(2, NgbDatepickerMonth_Conditional_0_For_3_Template, 2, 1, "div", 2, \u0275\u0275repeaterTrackByIdentity);
+    \u0275\u0275repeaterCreate(2, NgbDatepickerMonth_Conditional_0_For_3_Template, 2, 1, "div", 2, \u0275\u0275repeaterTrackByIndex);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -48344,7 +48562,7 @@ function NgbPagination_ng_template_12_For_1_Template(rf, ctx) {
 }
 function NgbPagination_ng_template_12_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275repeaterCreate(0, NgbPagination_ng_template_12_For_1_Template, 3, 6, "li", 14, \u0275\u0275repeaterTrackByIdentity);
+    \u0275\u0275repeaterCreate(0, NgbPagination_ng_template_12_For_1_Template, 3, 6, "li", 14, \u0275\u0275repeaterTrackByIndex);
   }
   if (rf & 2) {
     const pages_r10 = ctx.pages;
@@ -48839,9 +49057,9 @@ function NgbTypeaheadWindow_For_3_Template(rf, ctx) {
     const _r4 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "button", 3);
     \u0275\u0275listener("mouseenter", function NgbTypeaheadWindow_For_3_Template_button_mouseenter_0_listener() {
-      const \u0275$index_5_r5 = \u0275\u0275restoreView(_r4).$index;
+      const $index_r5 = \u0275\u0275restoreView(_r4).$index;
       const ctx_r5 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r5.markActive(\u0275$index_5_r5));
+      return \u0275\u0275resetView(ctx_r5.markActive($index_r5));
     })("click", function NgbTypeaheadWindow_For_3_Template_button_click_0_listener() {
       const result_r7 = \u0275\u0275restoreView(_r4).$implicit;
       const ctx_r5 = \u0275\u0275nextContext();
@@ -48852,11 +49070,11 @@ function NgbTypeaheadWindow_For_3_Template(rf, ctx) {
   }
   if (rf & 2) {
     const result_r7 = ctx.$implicit;
-    const \u0275$index_5_r5 = ctx.$index;
+    const $index_r5 = ctx.$index;
     const ctx_r5 = \u0275\u0275nextContext();
     const rt_r8 = \u0275\u0275reference(1);
-    \u0275\u0275classProp("active", \u0275$index_5_r5 === ctx_r5.activeIdx);
-    \u0275\u0275property("id", ctx_r5.id + "-" + \u0275$index_5_r5);
+    \u0275\u0275classProp("active", $index_r5 === ctx_r5.activeIdx);
+    \u0275\u0275property("id", ctx_r5.id + "-" + $index_r5);
     \u0275\u0275advance();
     \u0275\u0275property("ngTemplateOutlet", ctx_r5.resultTemplate || rt_r8)("ngTemplateOutletContext", \u0275\u0275pureFunction3(5, _c14, result_r7, ctx_r5.term, ctx_r5.formatter));
   }
@@ -49100,9 +49318,7 @@ var ngbCollapsingTransition = (element, animation2, context2) => {
     maxSize = measureCollapsingElementDimensionPx(element, dimension);
     context2.maxSize = maxSize;
     element.style[dimension] = direction !== "show" ? maxSize : "0px";
-    classList.remove("collapse");
-    classList.remove("collapsing");
-    classList.remove("show");
+    classList.remove("collapse", "collapsing", "show");
     reflow(element);
     classList.add("collapsing");
   }
@@ -49288,10 +49504,8 @@ var NgbAccordionBody = class _NgbAccordionBody {
     this._destroyViewIfExists();
   }
   _destroyViewIfExists() {
-    if (this._viewRef) {
-      this._viewRef.destroy();
-      this._viewRef = null;
-    }
+    this._viewRef?.destroy();
+    this._viewRef = null;
   }
   _createViewIfNotExists() {
     if (!this._viewRef) {
@@ -49320,12 +49534,7 @@ var NgbAccordionBody = class _NgbAccordionBody {
           \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._bodyTpl = _t.first);
         }
       },
-      hostVars: 2,
-      hostBindings: function NgbAccordionBody_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          \u0275\u0275classProp("accordion-body", true);
-        }
-      },
+      hostAttrs: [1, "accordion-body"],
       standalone: true
     });
   }
@@ -49337,7 +49546,7 @@ var NgbAccordionBody = class _NgbAccordionBody {
       selector: "[ngbAccordionBody]",
       standalone: true,
       host: {
-        "[class.accordion-body]": "true"
+        class: "accordion-body"
       }
     }]
   }], null, {
@@ -49363,13 +49572,12 @@ var NgbAccordionCollapse = class _NgbAccordionCollapse {
     this.\u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
       type: _NgbAccordionCollapse,
       selectors: [["", "ngbAccordionCollapse", ""]],
-      hostAttrs: ["role", "region"],
-      hostVars: 4,
+      hostAttrs: ["role", "region", 1, "accordion-collapse"],
+      hostVars: 2,
       hostBindings: function NgbAccordionCollapse_HostBindings(rf, ctx) {
         if (rf & 2) {
           \u0275\u0275hostProperty("id", ctx.item.collapseId);
           \u0275\u0275attribute("aria-labelledby", ctx.item.toggleId);
-          \u0275\u0275classProp("accordion-collapse", true);
         }
       },
       exportAs: ["ngbAccordionCollapse"],
@@ -49387,7 +49595,7 @@ var NgbAccordionCollapse = class _NgbAccordionCollapse {
       selector: "[ngbAccordionCollapse]",
       host: {
         role: "region",
-        "[class.accordion-collapse]": "true",
+        class: "accordion-collapse",
         "[id]": "item.collapseId",
         "[attr.aria-labelledby]": "item.toggleId"
       },
@@ -49455,12 +49663,11 @@ var NgbAccordionButton = class _NgbAccordionButton {
     this.\u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
       type: _NgbAccordionButton,
       selectors: [["button", "ngbAccordionButton", ""]],
-      hostAttrs: ["type", "button"],
-      hostVars: 3,
+      hostAttrs: ["type", "button", 1, "accordion-button"],
+      hostVars: 1,
       hostBindings: function NgbAccordionButton_HostBindings(rf, ctx) {
         if (rf & 2) {
           \u0275\u0275hostProperty("disabled", ctx.item.disabled);
-          \u0275\u0275classProp("accordion-button", true);
         }
       },
       standalone: true,
@@ -49476,7 +49683,7 @@ var NgbAccordionButton = class _NgbAccordionButton {
       standalone: true,
       host: {
         "[disabled]": "item.disabled",
-        "[class.accordion-button]": "true",
+        class: "accordion-button",
         type: "button"
       },
       hostDirectives: [NgbAccordionToggle]
@@ -49496,11 +49703,11 @@ var NgbAccordionHeader = class _NgbAccordionHeader {
     this.\u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
       type: _NgbAccordionHeader,
       selectors: [["", "ngbAccordionHeader", ""]],
-      hostAttrs: ["role", "heading"],
-      hostVars: 4,
+      hostAttrs: ["role", "heading", 1, "accordion-header"],
+      hostVars: 2,
       hostBindings: function NgbAccordionHeader_HostBindings(rf, ctx) {
         if (rf & 2) {
-          \u0275\u0275classProp("accordion-header", true)("collapsed", ctx.item.collapsed);
+          \u0275\u0275classProp("collapsed", ctx.item.collapsed);
         }
       },
       standalone: true
@@ -49515,7 +49722,7 @@ var NgbAccordionHeader = class _NgbAccordionHeader {
       standalone: true,
       host: {
         role: "heading",
-        "[class.accordion-header]": "true",
+        class: "accordion-header",
         "[class.collapsed]": "item.collapsed"
       }
     }]
@@ -49655,11 +49862,11 @@ var NgbAccordionItem = class _NgbAccordionItem {
           \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._collapse = _t.first);
         }
       },
-      hostVars: 3,
+      hostAttrs: [1, "accordion-item"],
+      hostVars: 1,
       hostBindings: function NgbAccordionItem_HostBindings(rf, ctx) {
         if (rf & 2) {
           \u0275\u0275hostProperty("id", ctx.id);
-          \u0275\u0275classProp("accordion-item", true);
         }
       },
       inputs: {
@@ -49687,8 +49894,8 @@ var NgbAccordionItem = class _NgbAccordionItem {
       exportAs: "ngbAccordionItem",
       standalone: true,
       host: {
-        "[class.accordion-item]": "true",
-        "[id]": "id"
+        "[id]": "id",
+        class: "accordion-item"
       }
     }]
   }], null, {
@@ -49841,12 +50048,7 @@ var NgbAccordionDirective = class _NgbAccordionDirective {
           \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._items = _t);
         }
       },
-      hostVars: 2,
-      hostBindings: function NgbAccordionDirective_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          \u0275\u0275classProp("accordion", true);
-        }
-      },
+      hostAttrs: [1, "accordion"],
       inputs: {
         animation: "animation",
         closeOthers: "closeOthers",
@@ -49871,7 +50073,7 @@ var NgbAccordionDirective = class _NgbAccordionDirective {
       standalone: true,
       exportAs: "ngbAccordion",
       host: {
-        "[class.accordion]": "true"
+        class: "accordion"
       }
     }]
   }], null, {
@@ -50029,8 +50231,8 @@ var NgbAlert = class _NgbAlert {
       consts: () => {
         let i18n_0;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0 = goog.getMsg("Close");
-          i18n_0 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0 = goog.getMsg("Close");
+          i18n_0 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_0;
         } else {
           i18n_0 = $localize`:@@ngb.alert.close:Close`;
         }
@@ -50170,13 +50372,11 @@ var isBeingAnimated = ({
   return classList.contains("carousel-item-start") || classList.contains("carousel-item-end");
 };
 var removeDirectionClasses = (classList) => {
-  classList.remove("carousel-item-start");
-  classList.remove("carousel-item-end");
+  classList.remove("carousel-item-start", "carousel-item-end");
 };
 var removeClasses = (classList) => {
   removeDirectionClasses(classList);
-  classList.remove("carousel-item-prev");
-  classList.remove("carousel-item-next");
+  classList.remove("carousel-item-prev", "carousel-item-next");
 };
 var ngbCarouselTransitionIn = (element, animation2, {
   direction
@@ -50185,7 +50385,6 @@ var ngbCarouselTransitionIn = (element, animation2, {
     classList
   } = element;
   if (!animation2) {
-    removeDirectionClasses(classList);
     removeClasses(classList);
     classList.add("active");
     return;
@@ -50209,7 +50408,6 @@ var ngbCarouselTransitionOut = (element, animation2, {
     classList
   } = element;
   if (!animation2) {
-    removeDirectionClasses(classList);
     removeClasses(classList);
     classList.remove("active");
     return;
@@ -50276,6 +50474,7 @@ var NgbCarousel = class _NgbCarousel {
     this._cd = inject(ChangeDetectorRef);
     this._container = inject(ElementRef);
     this._destroyRef = inject(DestroyRef);
+    this._injector = inject(Injector);
     this._interval$ = new BehaviorSubject(this._config.interval);
     this._mouseHover$ = new BehaviorSubject(false);
     this._focused$ = new BehaviorSubject(false);
@@ -50365,7 +50564,7 @@ var NgbCarousel = class _NgbCarousel {
       this._transitionIds?.forEach((id) => ngbCompleteTransition(this._getSlideElement(id)));
       this._transitionIds = null;
       this._cd.markForCheck();
-      this._ngZone.onStable.pipe(take(1)).subscribe(() => {
+      afterNextRender(() => {
         for (const {
           id
         } of this.slides) {
@@ -50376,6 +50575,9 @@ var NgbCarousel = class _NgbCarousel {
             element.classList.remove("active");
           }
         }
+      }, {
+        phase: AfterRenderPhase.MixedReadWrite,
+        injector: this._injector
       });
     });
   }
@@ -50578,7 +50780,7 @@ var NgbCarousel = class _NgbCarousel {
       consts: () => {
         let i18n_1;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1 = goog.getMsg(" Slide {$interpolation} of {$interpolation_1} ", {
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1 = goog.getMsg(" Slide {$interpolation} of {$interpolation_1} ", {
             "interpolation": "\uFFFD0\uFFFD",
             "interpolation_1": "\uFFFD1\uFFFD"
           }, {
@@ -50587,21 +50789,21 @@ var NgbCarousel = class _NgbCarousel {
               "interpolation_1": "{{ c }}"
             }
           });
-          i18n_1 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1;
+          i18n_1 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_1;
         } else {
           i18n_1 = $localize`:Currently selected slide number read by screen reader@@ngb.carousel.slide-number: Slide ${"\uFFFD0\uFFFD"}:INTERPOLATION: of ${"\uFFFD1\uFFFD"}:INTERPOLATION_1: `;
         }
         let i18n_2;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2 = goog.getMsg("Previous");
-          i18n_2 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2 = goog.getMsg("Previous");
+          i18n_2 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_2;
         } else {
           i18n_2 = $localize`:@@ngb.carousel.previous:Previous`;
         }
         let i18n_3;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3 = goog.getMsg("Next");
-          i18n_3 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3 = goog.getMsg("Next");
+          i18n_3 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_3;
         } else {
           i18n_3 = $localize`:@@ngb.carousel.next:Next`;
         }
@@ -51242,12 +51444,20 @@ var NgbDatepickerI18nDefault = class _NgbDatepickerI18nDefault extends NgbDatepi
   constructor() {
     super(...arguments);
     this._locale = inject(LOCALE_ID);
-    this._monthsShort = getLocaleMonthNames(this._locale, FormStyle.Standalone, TranslationWidth.Abbreviated);
-    this._monthsFull = getLocaleMonthNames(this._locale, FormStyle.Standalone, TranslationWidth.Wide);
+    this._monthsShort = [...Array(12).keys()].map((month) => Intl.DateTimeFormat(this._locale, {
+      month: "short",
+      timeZone: "UTC"
+    }).format(Date.UTC(2e3, month)));
+    this._monthsFull = [...Array(12).keys()].map((month) => Intl.DateTimeFormat(this._locale, {
+      month: "long",
+      timeZone: "UTC"
+    }).format(Date.UTC(2e3, month)));
   }
-  getWeekdayLabel(weekday, width) {
-    const weekdaysStartingOnSunday = getLocaleDayNames(this._locale, FormStyle.Standalone, width === void 0 ? TranslationWidth.Short : width);
-    const weekdays = weekdaysStartingOnSunday.map((day, index) => weekdaysStartingOnSunday[(index + 1) % 7]);
+  getWeekdayLabel(weekday, width = "narrow") {
+    const weekdays = [1, 2, 3, 4, 5, 6, 7].map((day) => Intl.DateTimeFormat(this._locale, {
+      weekday: width,
+      timeZone: "UTC"
+    }).format(Date.UTC(2e3, 4, day)));
     return weekdays[weekday - 1] || "";
   }
   getMonthShortName(month) {
@@ -51358,7 +51568,7 @@ var NgbDatepickerService = class _NgbDatepickerService {
         }
       },
       weekdays: (weekdays) => {
-        const weekdayWidth = weekdays === true || weekdays === false ? TranslationWidth.Short : weekdays;
+        const weekdayWidth = weekdays === true || weekdays === false ? "narrow" : weekdays;
         const weekdaysVisible = weekdays === true || weekdays === false ? weekdays : true;
         if (this._state.weekdayWidth !== weekdayWidth || this._state.weekdaysVisible !== weekdaysVisible) {
           return {
@@ -51394,7 +51604,7 @@ var NgbDatepickerService = class _NgbDatepickerService {
         years: [],
         months: []
       },
-      weekdayWidth: TranslationWidth.Short,
+      weekdayWidth: "narrow",
       weekdaysVisible: true
     };
   }
@@ -51591,7 +51801,7 @@ var NgbDatepickerConfig = class _NgbDatepickerConfig {
     this.navigation = "select";
     this.outsideDays = "visible";
     this.showWeekNumbers = false;
-    this.weekdays = TranslationWidth.Short;
+    this.weekdays = "narrow";
   }
   static {
     this.\u0275fac = function NgbDatepickerConfig_Factory(__ngFactoryType__) {
@@ -51681,21 +51891,6 @@ var NgbDateStructAdapter = class _NgbDateStructAdapter extends NgbDateAdapter {
     type: Injectable
   }], null, null);
 })();
-var Key;
-(function(Key2) {
-  Key2[Key2["Tab"] = 9] = "Tab";
-  Key2[Key2["Enter"] = 13] = "Enter";
-  Key2[Key2["Escape"] = 27] = "Escape";
-  Key2[Key2["Space"] = 32] = "Space";
-  Key2[Key2["PageUp"] = 33] = "PageUp";
-  Key2[Key2["PageDown"] = 34] = "PageDown";
-  Key2[Key2["End"] = 35] = "End";
-  Key2[Key2["Home"] = 36] = "Home";
-  Key2[Key2["ArrowLeft"] = 37] = "ArrowLeft";
-  Key2[Key2["ArrowUp"] = 38] = "ArrowUp";
-  Key2[Key2["ArrowRight"] = 39] = "ArrowRight";
-  Key2[Key2["ArrowDown"] = 40] = "ArrowDown";
-})(Key || (Key = {}));
 var NgbDatepickerKeyboardService = class _NgbDatepickerKeyboardService {
   /**
    * Processes a keyboard event.
@@ -51705,33 +51900,33 @@ var NgbDatepickerKeyboardService = class _NgbDatepickerKeyboardService {
       state,
       calendar
     } = datepicker;
-    switch (event.which) {
-      case Key.PageUp:
+    switch (event.key) {
+      case "PageUp":
         datepicker.focusDate(calendar.getPrev(state.focusedDate, event.shiftKey ? "y" : "m", 1));
         break;
-      case Key.PageDown:
+      case "PageDown":
         datepicker.focusDate(calendar.getNext(state.focusedDate, event.shiftKey ? "y" : "m", 1));
         break;
-      case Key.End:
+      case "End":
         datepicker.focusDate(event.shiftKey ? state.maxDate : state.lastDate);
         break;
-      case Key.Home:
+      case "Home":
         datepicker.focusDate(event.shiftKey ? state.minDate : state.firstDate);
         break;
-      case Key.ArrowLeft:
+      case "ArrowLeft":
         datepicker.focusDate(calendar.getPrev(state.focusedDate, "d", 1));
         break;
-      case Key.ArrowUp:
+      case "ArrowUp":
         datepicker.focusDate(calendar.getPrev(state.focusedDate, "d", calendar.getDaysPerWeek()));
         break;
-      case Key.ArrowRight:
+      case "ArrowRight":
         datepicker.focusDate(calendar.getNext(state.focusedDate, "d", 1));
         break;
-      case Key.ArrowDown:
+      case "ArrowDown":
         datepicker.focusDate(calendar.getNext(state.focusedDate, "d", calendar.getDaysPerWeek()));
         break;
-      case Key.Enter:
-      case Key.Space:
+      case "Enter":
+      case " ":
         datepicker.focusSelect();
         break;
       default:
@@ -51908,29 +52103,29 @@ var NgbDatepickerNavigationSelect = class _NgbDatepickerNavigationSelect {
       consts: () => {
         let i18n_4;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4 = goog.getMsg("Select month");
-          i18n_4 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4 = goog.getMsg("Select month");
+          i18n_4 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_4;
         } else {
           i18n_4 = $localize`:@@ngb.datepicker.select-month:Select month`;
         }
         let i18n_5;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5 = goog.getMsg("Select month");
-          i18n_5 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5 = goog.getMsg("Select month");
+          i18n_5 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_5;
         } else {
           i18n_5 = $localize`:@@ngb.datepicker.select-month:Select month`;
         }
         let i18n_6;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6 = goog.getMsg("Select year");
-          i18n_6 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6 = goog.getMsg("Select year");
+          i18n_6 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_6;
         } else {
           i18n_6 = $localize`:@@ngb.datepicker.select-year:Select year`;
         }
         let i18n_7;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7 = goog.getMsg("Select year");
-          i18n_7 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7 = goog.getMsg("Select year");
+          i18n_7 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_7;
         } else {
           i18n_7 = $localize`:@@ngb.datepicker.select-year:Select year`;
         }
@@ -52088,29 +52283,29 @@ var NgbDatepickerNavigation = class _NgbDatepickerNavigation {
       consts: () => {
         let i18n_8;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8 = goog.getMsg("Previous month");
-          i18n_8 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8 = goog.getMsg("Previous month");
+          i18n_8 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_8;
         } else {
           i18n_8 = $localize`:@@ngb.datepicker.previous-month:Previous month`;
         }
         let i18n_9;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9 = goog.getMsg("Previous month");
-          i18n_9 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9 = goog.getMsg("Previous month");
+          i18n_9 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_9;
         } else {
           i18n_9 = $localize`:@@ngb.datepicker.previous-month:Previous month`;
         }
         let i18n_10;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10 = goog.getMsg("Next month");
-          i18n_10 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10 = goog.getMsg("Next month");
+          i18n_10 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_10;
         } else {
           i18n_10 = $localize`:@@ngb.datepicker.next-month:Next month`;
         }
         let i18n_11;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11 = goog.getMsg("Next month");
-          i18n_11 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11 = goog.getMsg("Next month");
+          i18n_11 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_11;
         } else {
           i18n_11 = $localize`:@@ngb.datepicker.next-month:Next month`;
         }
@@ -52355,7 +52550,7 @@ var NgbDatepickerMonth = class _NgbDatepickerMonth {
 				@if (datepicker.showWeekNumbers) {
 					<div class="ngb-dp-weekday ngb-dp-showweek small">{{ i18n.getWeekLabel() }}</div>
 				}
-				@for (weekday of viewModel.weekdays; track weekday) {
+				@for (weekday of viewModel.weekdays; track $index) {
 					<div class="ngb-dp-weekday small" role="columnheader">{{ weekday }}</div>
 				}
 			</div>
@@ -52405,8 +52600,10 @@ var NgbDatepicker = class _NgbDatepicker {
     this._ngbDateAdapter = inject(NgbDateAdapter);
     this._ngZone = inject(NgZone);
     this._destroyRef = inject(DestroyRef);
+    this._injector = inject(Injector);
     this._controlValue = null;
     this._publicState = {};
+    this._initialized = false;
     this.dayTemplate = this._config.dayTemplate;
     this.dayTemplateData = this._config.dayTemplateData;
     this.displayMonths = this._config.displayMonths;
@@ -52511,7 +52708,12 @@ var NgbDatepicker = class _NgbDatepicker {
     this._service.focusSelect();
   }
   focus() {
-    this._ngZone.onStable.asObservable().pipe(take(1)).subscribe(() => this._nativeElement.querySelector('div.ngb-dp-day[tabindex="0"]')?.focus());
+    afterNextRender(() => {
+      this._nativeElement.querySelector('div.ngb-dp-day[tabindex="0"]')?.focus();
+    }, {
+      phase: AfterRenderPhase.Read,
+      injector: this._injector
+    });
   }
   /**
    * Navigates to the provided date.
@@ -52551,12 +52753,13 @@ var NgbDatepicker = class _NgbDatepicker {
     if (!this.dayTemplate) {
       this.dayTemplate = this._defaultDayTemplate;
     }
+    this._initialized = true;
   }
   ngOnChanges(changes) {
     const inputs = {};
     ["dayTemplateData", "displayMonths", "markDisabled", "firstDayOfWeek", "navigation", "minDate", "maxDate", "outsideDays", "weekdays"].filter((name) => name in changes).forEach((name) => inputs[name] = this[name]);
     this._service.set(inputs);
-    if ("startDate" in changes) {
+    if ("startDate" in changes && this._initialized) {
       const {
         currentValue,
         previousValue
@@ -52729,7 +52932,7 @@ var NgbDatepicker = class _NgbDatepicker {
 		</ng-template>
 
 		<ng-template #defaultContentTemplate>
-			@for (month of model.months; track month; let i = $index) {
+			@for (month of model.months; track month) {
 				<div class="ngb-dp-month">
 					@if (navigation === 'none' || (displayMonths > 1 && navigation === 'select')) {
 						<div class="ngb-dp-month-name">
@@ -52867,12 +53070,7 @@ function ngbAutoClose(zone, document2, type, close, closed$, insideElements, ign
           return matchesSelectorIfAny(element, insideSelector) || !isContainedIn(element, insideElements);
         }
       };
-      const escapes$ = fromEvent(document2, "keydown").pipe(
-        takeUntil(closed$),
-        /* eslint-disable-next-line deprecation/deprecation */
-        filter((e) => e.which === Key.Escape),
-        tap((e) => e.preventDefault())
-      );
+      const escapes$ = fromEvent(document2, "keydown").pipe(takeUntil(closed$), filter((e) => e.key === "Escape"), tap((e) => e.preventDefault()));
       const mouseDowns$ = fromEvent(document2, "mousedown").pipe(map(shouldCloseOnClick), takeUntil(closed$));
       const closeableClicks$ = fromEvent(document2, "mouseup").pipe(withLatestFrom(mouseDowns$), filter(([_, shouldClose]) => shouldClose), delay(0), takeUntil(closed$));
       race([escapes$.pipe(map(
@@ -52893,12 +53091,7 @@ function getFocusableBoundaryElements(element) {
 var ngbFocusTrap = (zone, element, stopFocusTrap$, refocusOnClick = false) => {
   zone.runOutsideAngular(() => {
     const lastFocusedElement$ = fromEvent(element, "focusin").pipe(takeUntil(stopFocusTrap$), map((e) => e.target));
-    fromEvent(element, "keydown").pipe(
-      takeUntil(stopFocusTrap$),
-      /* eslint-disable-next-line deprecation/deprecation */
-      filter((e) => e.which === Key.Tab),
-      withLatestFrom(lastFocusedElement$)
-    ).subscribe(([tabEvent, focusedElement]) => {
+    fromEvent(element, "keydown").pipe(takeUntil(stopFocusTrap$), filter((e) => e.key === "Tab"), withLatestFrom(lastFocusedElement$)).subscribe(([tabEvent, focusedElement]) => {
       const [first2, last4] = getFocusableBoundaryElements(element);
       if ((focusedElement === first2 || focusedElement === element) && tabEvent.shiftKey) {
         last4.focus();
@@ -53206,6 +53399,7 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
     this._dateAdapter = inject(NgbDateAdapter);
     this._document = inject(DOCUMENT2);
     this._changeDetector = inject(ChangeDetectorRef);
+    this._injector = inject(Injector);
     this._config = inject(NgbInputDatepickerConfig);
     this._cRef = null;
     this._disabled = false;
@@ -53312,7 +53506,9 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
    */
   open() {
     if (!this.isOpen()) {
-      this._cRef = this._vcRef.createComponent(NgbDatepicker);
+      this._cRef = this._vcRef.createComponent(NgbDatepicker, {
+        injector: this._injector
+      });
       this._applyPopupStyling(this._cRef.location.nativeElement);
       this._applyDatepickerInputs(this._cRef);
       this._subscribeForDatepickerOutputs(this._cRef.instance);
@@ -53348,10 +53544,14 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
             hostElement,
             targetElement: this._cRef.location.nativeElement,
             placement: this.placement,
-            appendToBody: this.container === "body",
             updatePopperOptions: (options) => this.popperOptions(addPopperOffset([0, 2])(options))
           });
-          this._zoneSubscription = this._ngZone.onStable.subscribe(() => this._positioning.update());
+          this._afterRenderRef = afterRender(() => {
+            this._positioning.update();
+          }, {
+            phase: AfterRenderPhase.MixedReadWrite,
+            injector: this._injector
+          });
         }
       });
       this._setCloseHandlers();
@@ -53362,10 +53562,10 @@ var NgbInputDatepicker = class _NgbInputDatepicker {
    */
   close() {
     if (this.isOpen()) {
-      this._vcRef.remove(this._vcRef.indexOf(this._cRef.hostView));
+      this._cRef?.destroy();
       this._cRef = null;
       this._positioning.destroy();
-      this._zoneSubscription?.unsubscribe();
+      this._afterRenderRef?.destroy();
       this._destroyCloseHandlers$.next();
       this.closed.emit();
       this._changeDetector.markForCheck();
@@ -55455,7 +55655,8 @@ var NgbDropdownMenu = class _NgbDropdownMenu {
           \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.menuItems = _t);
         }
       },
-      hostVars: 4,
+      hostAttrs: [1, "dropdown-menu"],
+      hostVars: 2,
       hostBindings: function NgbDropdownMenu_HostBindings(rf, ctx) {
         if (rf & 1) {
           \u0275\u0275listener("keydown.ArrowUp", function NgbDropdownMenu_keydown_ArrowUp_HostBindingHandler($event) {
@@ -55477,7 +55678,7 @@ var NgbDropdownMenu = class _NgbDropdownMenu {
           });
         }
         if (rf & 2) {
-          \u0275\u0275classProp("dropdown-menu", true)("show", ctx.dropdown.isOpen());
+          \u0275\u0275classProp("show", ctx.dropdown.isOpen());
         }
       },
       standalone: true
@@ -55491,7 +55692,7 @@ var NgbDropdownMenu = class _NgbDropdownMenu {
       selector: "[ngbDropdownMenu]",
       standalone: true,
       host: {
-        "[class.dropdown-menu]": "true",
+        class: "dropdown-menu",
         "[class.show]": "dropdown.isOpen()",
         "(keydown.ArrowUp)": "dropdown.onKeyDown($event)",
         "(keydown.ArrowDown)": "dropdown.onKeyDown($event)",
@@ -55626,6 +55827,7 @@ var NgbDropdown = class _NgbDropdown {
     this._changeDetector = inject(ChangeDetectorRef);
     this._config = inject(NgbDropdownConfig);
     this._document = inject(DOCUMENT2);
+    this._injector = inject(Injector);
     this._ngZone = inject(NgZone);
     this._nativeElement = inject(ElementRef).nativeElement;
     this._destroyCloseHandlers$ = new Subject();
@@ -55644,11 +55846,14 @@ var NgbDropdown = class _NgbDropdown {
     }
   }
   ngAfterContentInit() {
-    this._ngZone.onStable.pipe(take(1)).subscribe(() => {
+    afterNextRender(() => {
       this._applyPlacementClasses();
       if (this._open) {
         this._setCloseHandlers();
       }
+    }, {
+      phase: AfterRenderPhase.Write,
+      injector: this._injector
     });
   }
   ngOnChanges(changes) {
@@ -55659,8 +55864,7 @@ var NgbDropdown = class _NgbDropdown {
       this._positioning.setOptions({
         hostElement: this._anchor.nativeElement,
         targetElement: this._bodyContainer || this._menu.nativeElement,
-        placement: this.placement,
-        appendToBody: this.container === "body"
+        placement: this.placement
       });
       this._applyPlacementClasses();
     }
@@ -55699,11 +55903,15 @@ var NgbDropdown = class _NgbDropdown {
               hostElement: this._anchor.nativeElement,
               targetElement: this._bodyContainer || this._menu.nativeElement,
               placement: this.placement,
-              appendToBody: this.container === "body",
               updatePopperOptions: (options) => this.popperOptions(addPopperOffset([0, 2])(options))
             });
             this._applyPlacementClasses();
-            this._zoneSubscription = this._ngZone.onStable.subscribe(() => this._positionMenu());
+            this._afterRenderRef = afterRender(() => {
+              this._positionMenu();
+            }, {
+              phase: AfterRenderPhase.Write,
+              injector: this._injector
+            });
           });
         }
       }
@@ -55726,7 +55934,7 @@ var NgbDropdown = class _NgbDropdown {
       this._open = false;
       this._resetContainer();
       this._positioning.destroy();
-      this._zoneSubscription?.unsubscribe();
+      this._afterRenderRef?.destroy();
       this._destroyCloseHandlers$.next();
       this.openChange.emit(false);
       this._changeDetector.markForCheck();
@@ -55746,7 +55954,9 @@ var NgbDropdown = class _NgbDropdown {
     this.close();
   }
   onKeyDown(event) {
-    const key = event.which;
+    const {
+      key
+    } = event;
     const itemElements = this._getMenuElements();
     let position = -1;
     let itemElement = null;
@@ -55761,13 +55971,13 @@ var NgbDropdown = class _NgbDropdown {
         }
       });
     }
-    if (key === Key.Space || key === Key.Enter) {
+    if (key === " " || key === "Enter") {
       if (itemElement && (this.autoClose === true || this.autoClose === "inside")) {
         fromEvent(itemElement, "click").pipe(take(1)).subscribe(() => this.close());
       }
       return;
     }
-    if (key === Key.Tab) {
+    if (key === "Tab") {
       if (event.target && this.isOpen() && this.autoClose) {
         if (this._anchor.nativeElement === event.target) {
           if (this.container === "body" && !event.shiftKey) {
@@ -55803,20 +56013,20 @@ var NgbDropdown = class _NgbDropdown {
       this.open();
       if (itemElements.length) {
         switch (key) {
-          case Key.ArrowDown:
+          case "ArrowDown":
             position = Math.min(position + 1, itemElements.length - 1);
             break;
-          case Key.ArrowUp:
+          case "ArrowUp":
             if (this._isDropup() && position === -1) {
               position = itemElements.length - 1;
               break;
             }
             position = Math.max(position - 1, 0);
             break;
-          case Key.Home:
+          case "Home":
             position = 0;
             break;
-          case Key.End:
+          case "End":
             position = itemElements.length - 1;
             break;
         }
@@ -56087,7 +56297,15 @@ var PopupService = class {
     const {
       nativeElement
     } = this._windowRef.location;
-    const transition$ = this._ngZone.onStable.pipe(take(1), mergeMap(() => ngbRunTransition(this._ngZone, nativeElement, ({
+    const nextRenderSubject = new Subject();
+    afterNextRender(() => {
+      nextRenderSubject.next();
+      nextRenderSubject.complete();
+    }, {
+      injector: this._injector,
+      phase: AfterRenderPhase.MixedReadWrite
+    });
+    const transition$ = nextRenderSubject.pipe(mergeMap(() => ngbRunTransition(this._ngZone, nativeElement, ({
       classList
     }) => classList.add("show"), {
       animation: animation2,
@@ -56108,15 +56326,10 @@ var PopupService = class {
       animation: animation2,
       runningTransition: "stop"
     }).pipe(tap(() => {
-      if (this._windowRef) {
-        this._viewContainerRef.remove(this._viewContainerRef.indexOf(this._windowRef.hostView));
-        this._windowRef = null;
-      }
-      if (this._contentRef?.viewRef) {
-        this._applicationRef.detachView(this._contentRef.viewRef);
-        this._contentRef.viewRef.destroy();
-        this._contentRef = null;
-      }
+      this._windowRef?.destroy();
+      this._contentRef?.viewRef?.destroy();
+      this._windowRef = null;
+      this._contentRef = null;
     }));
   }
   _getContentRef(content, templateContext) {
@@ -56188,18 +56401,20 @@ var NgbModalBackdrop = class _NgbModalBackdrop {
   constructor() {
     this._nativeElement = inject(ElementRef).nativeElement;
     this._zone = inject(NgZone);
+    this._injector = inject(Injector);
   }
   ngOnInit() {
-    this._zone.onStable.asObservable().pipe(take(1)).subscribe(() => {
-      ngbRunTransition(this._zone, this._nativeElement, (element, animation2) => {
-        if (animation2) {
-          reflow(element);
-        }
-        element.classList.add("show");
-      }, {
-        animation: this.animation,
-        runningTransition: "continue"
-      });
+    afterNextRender(() => ngbRunTransition(this._zone, this._nativeElement, (element, animation2) => {
+      if (animation2) {
+        reflow(element);
+      }
+      element.classList.add("show");
+    }, {
+      animation: this.animation,
+      runningTransition: "continue"
+    }), {
+      injector: this._injector,
+      phase: AfterRenderPhase.MixedReadWrite
     });
   }
   hide() {
@@ -56438,9 +56653,7 @@ var NgbModalRef = class {
       } = this._windowCmptRef.location;
       nativeElement.parentNode.removeChild(nativeElement);
       this._windowCmptRef.destroy();
-      if (this._contentRef && this._contentRef.viewRef) {
-        this._contentRef.viewRef.destroy();
-      }
+      this._contentRef?.viewRef?.destroy();
       this._windowCmptRef = null;
       this._contentRef = null;
     });
@@ -56470,6 +56683,7 @@ var NgbModalWindow = class _NgbModalWindow {
     this._document = inject(DOCUMENT2);
     this._elRef = inject(ElementRef);
     this._zone = inject(NgZone);
+    this._injector = inject(Injector);
     this._closed$ = new Subject();
     this._elWithFocus = null;
     this.backdrop = true;
@@ -56486,8 +56700,9 @@ var NgbModalWindow = class _NgbModalWindow {
   }
   ngOnInit() {
     this._elWithFocus = this._document.activeElement;
-    this._zone.onStable.asObservable().pipe(take(1)).subscribe(() => {
-      this._show();
+    afterNextRender(() => this._show(), {
+      injector: this._injector,
+      phase: AfterRenderPhase.MixedReadWrite
     });
   }
   ngOnDestroy() {
@@ -56538,11 +56753,7 @@ var NgbModalWindow = class _NgbModalWindow {
       nativeElement
     } = this._elRef;
     this._zone.runOutsideAngular(() => {
-      fromEvent(nativeElement, "keydown").pipe(
-        takeUntil(this._closed$),
-        /* eslint-disable-next-line deprecation/deprecation */
-        filter((e) => e.which === Key.Escape)
-      ).subscribe((event) => {
+      fromEvent(nativeElement, "keydown").pipe(takeUntil(this._closed$), filter((e) => e.key === "Escape")).subscribe((event) => {
         if (this.keyboard) {
           requestAnimationFrame(() => {
             if (!event.defaultPrevented) {
@@ -57179,9 +57390,6 @@ var NgbNavItem = class _NgbNavItem {
     this.shown = new EventEmitter();
     this.hidden = new EventEmitter();
   }
-  ngAfterContentChecked() {
-    this.contentTpl = this.contentTpls.first;
-  }
   ngOnInit() {
     if (!isDefined(this.domId)) {
       this.domId = `ngb-nav-${navCounter++}`;
@@ -57220,15 +57428,10 @@ var NgbNavItem = class _NgbNavItem {
         }
         if (rf & 2) {
           let _t;
-          \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.contentTpls = _t);
+          \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.contentTpl = _t.first);
         }
       },
-      hostVars: 2,
-      hostBindings: function NgbNavItem_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          \u0275\u0275classProp("nav-item", true);
-        }
-      },
+      hostAttrs: [1, "nav-item"],
       inputs: {
         destroyOnHide: "destroyOnHide",
         disabled: "disabled",
@@ -57252,7 +57455,7 @@ var NgbNavItem = class _NgbNavItem {
       exportAs: "ngbNavItem",
       standalone: true,
       host: {
-        "[class.nav-item]": "true"
+        class: "nav-item"
       }
     }]
   }], null, {
@@ -57275,8 +57478,8 @@ var NgbNavItem = class _NgbNavItem {
     hidden: [{
       type: Output
     }],
-    contentTpls: [{
-      type: ContentChildren,
+    contentTpl: [{
+      type: ContentChild,
       args: [NgbNavContent, {
         descendants: false
       }]
@@ -57319,7 +57522,6 @@ var NgbNav = class _NgbNav {
     if (this.roles !== "tablist" || !this.keyboard) {
       return;
     }
-    const key = event.which;
     const enabledLinks = this.links.filter((link) => !link.navItem.disabled);
     const {
       length
@@ -57331,19 +57533,19 @@ var NgbNav = class _NgbNav {
       }
     });
     if (length) {
-      switch (key) {
-        case Key.ArrowUp:
-        case Key.ArrowLeft:
+      switch (event.key) {
+        case "ArrowUp":
+        case "ArrowLeft":
           position = (position - 1 + length) % length;
           break;
-        case Key.ArrowRight:
-        case Key.ArrowDown:
+        case "ArrowRight":
+        case "ArrowDown":
           position = (position + 1) % length;
           break;
-        case Key.Home:
+        case "Home":
           position = 0;
           break;
-        case Key.End:
+        case "End":
           position = length - 1;
           break;
       }
@@ -57424,7 +57626,8 @@ var NgbNav = class _NgbNav {
           \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.links = _t);
         }
       },
-      hostVars: 6,
+      hostAttrs: [1, "nav"],
+      hostVars: 4,
       hostBindings: function NgbNav_HostBindings(rf, ctx) {
         if (rf & 1) {
           \u0275\u0275listener("keydown.arrowLeft", function NgbNav_keydown_arrowLeft_HostBindingHandler($event) {
@@ -57445,7 +57648,7 @@ var NgbNav = class _NgbNav {
         }
         if (rf & 2) {
           \u0275\u0275attribute("aria-orientation", ctx.orientation === "vertical" && ctx.roles === "tablist" ? "vertical" : void 0)("role", ctx.role ? ctx.role : ctx.roles ? "tablist" : void 0);
-          \u0275\u0275classProp("nav", true)("flex-column", ctx.orientation === "vertical");
+          \u0275\u0275classProp("flex-column", ctx.orientation === "vertical");
         }
       },
       inputs: {
@@ -57476,7 +57679,7 @@ var NgbNav = class _NgbNav {
       exportAs: "ngbNav",
       standalone: true,
       host: {
-        "[class.nav]": "true",
+        class: "nav",
         "[class.flex-column]": `orientation === 'vertical'`,
         "[attr.aria-orientation]": `orientation === 'vertical' && roles === 'tablist' ? 'vertical' : undefined`,
         "[attr.role]": `role ? role : roles ? 'tablist' : undefined`,
@@ -57563,12 +57766,13 @@ var NgbNavLinkBase = class _NgbNavLinkBase {
     this.\u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
       type: _NgbNavLinkBase,
       selectors: [["", "ngbNavLink", ""]],
-      hostVars: 14,
+      hostAttrs: [1, "nav-link"],
+      hostVars: 12,
       hostBindings: function NgbNavLinkBase_HostBindings(rf, ctx) {
         if (rf & 2) {
           \u0275\u0275hostProperty("id", ctx.navItem.domId);
           \u0275\u0275attribute("role", ctx.role ? ctx.role : ctx.nav.roles ? "tab" : void 0)("tabindex", ctx.tabindex)("aria-controls", ctx.navItem.isPanelInDom() ? ctx.navItem.panelDomId : null)("aria-selected", ctx.navItem.active)("aria-disabled", ctx.navItem.disabled);
-          \u0275\u0275classProp("nav-link", true)("nav-item", ctx.navItem.isNgContainer())("active", ctx.navItem.active)("disabled", ctx.navItem.disabled);
+          \u0275\u0275classProp("nav-item", ctx.navItem.isNgContainer())("active", ctx.navItem.active)("disabled", ctx.navItem.disabled);
         }
       },
       standalone: true
@@ -57583,7 +57787,7 @@ var NgbNavLinkBase = class _NgbNavLinkBase {
       standalone: true,
       host: {
         "[id]": "navItem.domId",
-        "[class.nav-link]": "true",
+        class: "nav-link",
         "[class.nav-item]": "navItem.isNgContainer()",
         "[attr.role]": `role ? role : nav.roles ? 'tab' : undefined`,
         "[class.active]": "navItem.active",
@@ -57798,8 +58002,7 @@ var NgbNavOutlet = class _NgbNavOutlet {
   }
   _updateActivePane() {
     this._activePane = this._getActivePane();
-    this._activePane?.nativeElement.classList.add("show");
-    this._activePane?.nativeElement.classList.add("active");
+    this._activePane?.nativeElement.classList.add("show", "active");
   }
   _getPaneForItem(item) {
     return this._panes && this._panes.find((pane) => pane.item === item) || null;
@@ -57825,12 +58028,7 @@ var NgbNavOutlet = class _NgbNavOutlet {
           \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._panes = _t);
         }
       },
-      hostVars: 2,
-      hostBindings: function NgbNavOutlet_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          \u0275\u0275classProp("tab-content", true);
-        }
-      },
+      hostAttrs: [1, "tab-content"],
       inputs: {
         paneRole: "paneRole",
         nav: [0, "ngbNavOutlet", "nav"]
@@ -57863,7 +58061,7 @@ var NgbNavOutlet = class _NgbNavOutlet {
       standalone: true,
       imports: [NgbNavPane, NgTemplateOutlet],
       host: {
-        "[class.tab-content]": "true"
+        class: "tab-content"
       },
       encapsulation: ViewEncapsulation$1.None,
       changeDetection: ChangeDetectionStrategy.OnPush,
@@ -58306,57 +58504,57 @@ var NgbPagination = class _NgbPagination {
       consts: () => {
         let i18n_12;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12 = goog.getMsg("\xAB\xAB");
-          i18n_12 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12 = goog.getMsg("\xAB\xAB");
+          i18n_12 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_12;
         } else {
           i18n_12 = $localize`:@@ngb.pagination.first:««`;
         }
         let i18n_13;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13 = goog.getMsg("\xAB");
-          i18n_13 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13 = goog.getMsg("\xAB");
+          i18n_13 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_13;
         } else {
           i18n_13 = $localize`:@@ngb.pagination.previous:«`;
         }
         let i18n_14;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14 = goog.getMsg("\xBB");
-          i18n_14 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14 = goog.getMsg("\xBB");
+          i18n_14 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_14;
         } else {
           i18n_14 = $localize`:@@ngb.pagination.next:»`;
         }
         let i18n_15;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15 = goog.getMsg("\xBB\xBB");
-          i18n_15 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15 = goog.getMsg("\xBB\xBB");
+          i18n_15 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_15;
         } else {
           i18n_15 = $localize`:@@ngb.pagination.last:»»`;
         }
         let i18n_16;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16 = goog.getMsg("First");
-          i18n_16 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16 = goog.getMsg("First");
+          i18n_16 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_16;
         } else {
           i18n_16 = $localize`:@@ngb.pagination.first-aria:First`;
         }
         let i18n_17;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17 = goog.getMsg("Previous");
-          i18n_17 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17 = goog.getMsg("Previous");
+          i18n_17 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_17;
         } else {
           i18n_17 = $localize`:@@ngb.pagination.previous-aria:Previous`;
         }
         let i18n_18;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18 = goog.getMsg("Next");
-          i18n_18 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18 = goog.getMsg("Next");
+          i18n_18 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_18;
         } else {
           i18n_18 = $localize`:@@ngb.pagination.next-aria:Next`;
         }
         let i18n_19;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19 = goog.getMsg("Last");
-          i18n_19 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19 = goog.getMsg("Last");
+          i18n_19 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_19;
         } else {
           i18n_19 = $localize`:@@ngb.pagination.last-aria:Last`;
         }
@@ -58410,7 +58608,7 @@ var NgbPagination = class _NgbPagination {
 		<ng-template #ellipsis>...</ng-template>
 		<ng-template #defaultNumber let-page let-currentPage="currentPage">{{ page }}</ng-template>
 		<ng-template #defaultPages let-page let-pages="pages" let-disabled="disabled">
-			@for (pageNumber of pages; track pageNumber) {
+			@for (pageNumber of pages; track $index) {
 				<li
 					class="page-item"
 					[class.active]="pageNumber === page"
@@ -58846,6 +59044,7 @@ var NgbPopover = class _NgbPopover {
     this._ngZone = inject(NgZone);
     this._document = inject(DOCUMENT2);
     this._changeDetector = inject(ChangeDetectorRef);
+    this._injector = inject(Injector);
     this._ngbPopoverWindowId = `ngb-popover-${nextId$1++}`;
     this._popupService = new PopupService(NgbPopoverWindow);
     this._windowRef = null;
@@ -58880,13 +59079,17 @@ var NgbPopover = class _NgbPopover {
           hostElement: this._getPositionTargetElement(),
           targetElement: this._windowRef.location.nativeElement,
           placement: this.placement,
-          appendToBody: this.container === "body",
           baseClass: "bs-popover",
           updatePopperOptions: (options) => this.popperOptions(addPopperOffset([0, 8])(options))
         });
         Promise.resolve().then(() => {
           this._positioning.update();
-          this._zoneSubscription = this._ngZone.onStable.subscribe(() => this._positioning.update());
+        });
+        this._afterRenderRef = afterRender(() => {
+          this._positioning.update();
+        }, {
+          phase: AfterRenderPhase.MixedReadWrite,
+          injector: this._injector
         });
       });
       ngbAutoClose(this._ngZone, this._document, this.autoClose, () => this.close(), this.hidden, [this._windowRef.location.nativeElement]);
@@ -58904,7 +59107,7 @@ var NgbPopover = class _NgbPopover {
       this._popupService.close(animation2).subscribe(() => {
         this._windowRef = null;
         this._positioning.destroy();
-        this._zoneSubscription?.unsubscribe();
+        this._afterRenderRef?.destroy();
         this.hidden.emit();
         this._changeDetector.markForCheck();
       });
@@ -59170,14 +59373,14 @@ var NgbProgressbar = class _NgbProgressbar {
       consts: () => {
         let i18n_20;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20 = goog.getMsg("{$interpolation}", {
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20 = goog.getMsg("{$interpolation}", {
             "interpolation": "\uFFFD0\uFFFD"
           }, {
             original_code: {
               "interpolation": "{{ getValue() / max | percent }}"
             }
           });
-          i18n_20 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20;
+          i18n_20 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_20;
         } else {
           i18n_20 = $localize`:@@ngb.progressbar.value:${"\uFFFD0\uFFFD"}:INTERPOLATION:`;
         }
@@ -59221,7 +59424,8 @@ var NgbProgressbar = class _NgbProgressbar {
         "aria-valuemin": "0",
         "[attr.aria-valuemax]": "max",
         "[attr.aria-label]": "ariaLabel",
-        "[style.width.%]": "stacked ? getPercentValue() : null"
+        "[style.width.%]": "stacked ? getPercentValue() : null",
+        "[style.height]": "height"
       },
       template: `
 		<div
@@ -59269,9 +59473,6 @@ var NgbProgressbar = class _NgbProgressbar {
     }],
     height: [{
       type: Input
-    }, {
-      type: HostBinding,
-      args: ["style.height"]
     }]
   });
 })();
@@ -59413,19 +59614,19 @@ var NgbRating = class _NgbRating {
     }
   }
   handleKeyDown(event) {
-    switch (event.which) {
-      case Key.ArrowDown:
-      case Key.ArrowLeft:
+    switch (event.key) {
+      case "ArrowDown":
+      case "ArrowLeft":
         this.update(this.rate - 1);
         break;
-      case Key.ArrowUp:
-      case Key.ArrowRight:
+      case "ArrowUp":
+      case "ArrowRight":
         this.update(this.rate + 1);
         break;
-      case Key.Home:
+      case "Home":
         this.update(0);
         break;
-      case Key.End:
+      case "End":
         this.update(this.max);
         break;
       default:
@@ -60540,7 +60741,8 @@ var NgbTimepickerI18n = class _NgbTimepickerI18n {
 var NgbTimepickerI18nDefault = class _NgbTimepickerI18nDefault extends NgbTimepickerI18n {
   constructor() {
     super(...arguments);
-    this._periods = getLocaleDayPeriods(inject(LOCALE_ID), FormStyle.Standalone, TranslationWidth.Narrow);
+    this._locale = inject(LOCALE_ID);
+    this._periods = [formatDate(/* @__PURE__ */ new Date(36e5), "a", this._locale, "UTC"), formatDate(new Date(36e5 * 13), "a", this._locale, "UTC")];
   }
   getMorningPeriod() {
     return this._periods[0];
@@ -60763,98 +60965,98 @@ var NgbTimepicker = class _NgbTimepicker {
       consts: () => {
         let i18n_21;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21 = goog.getMsg("HH");
-          i18n_21 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21 = goog.getMsg("HH");
+          i18n_21 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_21;
         } else {
           i18n_21 = $localize`:@@ngb.timepicker.HH:HH`;
         }
         let i18n_22;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22 = goog.getMsg("Hours");
-          i18n_22 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22 = goog.getMsg("Hours");
+          i18n_22 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_22;
         } else {
           i18n_22 = $localize`:@@ngb.timepicker.hours:Hours`;
         }
         let i18n_23;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23 = goog.getMsg("MM");
-          i18n_23 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23 = goog.getMsg("MM");
+          i18n_23 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_23;
         } else {
           i18n_23 = $localize`:@@ngb.timepicker.MM:MM`;
         }
         let i18n_24;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24 = goog.getMsg("Minutes");
-          i18n_24 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24 = goog.getMsg("Minutes");
+          i18n_24 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_24;
         } else {
           i18n_24 = $localize`:@@ngb.timepicker.minutes:Minutes`;
         }
         let i18n_25;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25 = goog.getMsg("Increment hours");
-          i18n_25 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25 = goog.getMsg("Increment hours");
+          i18n_25 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_25;
         } else {
           i18n_25 = $localize`:@@ngb.timepicker.increment-hours:Increment hours`;
         }
         let i18n_26;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26 = goog.getMsg("Decrement hours");
-          i18n_26 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26 = goog.getMsg("Decrement hours");
+          i18n_26 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_26;
         } else {
           i18n_26 = $localize`:@@ngb.timepicker.decrement-hours:Decrement hours`;
         }
         let i18n_27;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27 = goog.getMsg("Increment minutes");
-          i18n_27 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27 = goog.getMsg("Increment minutes");
+          i18n_27 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_27;
         } else {
           i18n_27 = $localize`:@@ngb.timepicker.increment-minutes:Increment minutes`;
         }
         let i18n_28;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28 = goog.getMsg("Decrement minutes");
-          i18n_28 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28 = goog.getMsg("Decrement minutes");
+          i18n_28 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_28;
         } else {
           i18n_28 = $localize`:@@ngb.timepicker.decrement-minutes:Decrement minutes`;
         }
         let i18n_29;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29 = goog.getMsg("SS");
-          i18n_29 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29 = goog.getMsg("SS");
+          i18n_29 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_29;
         } else {
           i18n_29 = $localize`:@@ngb.timepicker.SS:SS`;
         }
         let i18n_30;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30 = goog.getMsg("Seconds");
-          i18n_30 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30 = goog.getMsg("Seconds");
+          i18n_30 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_30;
         } else {
           i18n_30 = $localize`:@@ngb.timepicker.seconds:Seconds`;
         }
         let i18n_31;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31 = goog.getMsg("Increment seconds");
-          i18n_31 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31 = goog.getMsg("Increment seconds");
+          i18n_31 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_31;
         } else {
           i18n_31 = $localize`:@@ngb.timepicker.increment-seconds:Increment seconds`;
         }
         let i18n_32;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32 = goog.getMsg("Decrement seconds");
-          i18n_32 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32 = goog.getMsg("Decrement seconds");
+          i18n_32 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_32;
         } else {
           i18n_32 = $localize`:@@ngb.timepicker.decrement-seconds:Decrement seconds`;
         }
         let i18n_33;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33 = goog.getMsg("{$interpolation}", {
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33 = goog.getMsg("{$interpolation}", {
             "interpolation": "\uFFFD0\uFFFD"
           }, {
             original_code: {
               "interpolation": "{{ i18n.getAfternoonPeriod() }}"
             }
           });
-          i18n_33 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33;
+          i18n_33 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_33;
         } else {
           i18n_33 = $localize`:@@ngb.timepicker.PM:${"\uFFFD0\uFFFD"}:INTERPOLATION:`;
         }
@@ -61280,6 +61482,7 @@ var NgbToast = class _NgbToast {
     this.ariaLive = ariaLive;
     this._config = inject(NgbToastConfig);
     this._zone = inject(NgZone);
+    this._injector = inject(Injector);
     this._element = inject(ElementRef);
     this.animation = this._config.animation;
     this.delay = this._config.delay;
@@ -61290,9 +61493,12 @@ var NgbToast = class _NgbToast {
     this.ariaLive ??= this._config.ariaLive;
   }
   ngAfterContentInit() {
-    this._zone.onStable.asObservable().pipe(take(1)).subscribe(() => {
+    afterNextRender(() => {
       this._init();
       this.show();
+    }, {
+      phase: AfterRenderPhase.MixedReadWrite,
+      injector: this._injector
     });
   }
   ngOnChanges(changes) {
@@ -61398,8 +61604,8 @@ var NgbToast = class _NgbToast {
       consts: () => {
         let i18n_34;
         if (false) {
-          const MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34 = goog.getMsg("Close");
-          i18n_34 = MSG__USERS_NK_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34;
+          const MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34 = goog.getMsg("Close");
+          i18n_34 = MSG_C__USERS_DELL_DOCUMENTS_GITHUB_NAPTOL_PORTAL_NODE_MODULES__NG_BOOTSTRAP_NG_BOOTSTRAP_FESM2022_NG_BOOTSTRAP_MJS_34;
         } else {
           i18n_34 = $localize`:@@ngb.toast.close-aria:Close`;
         }
@@ -61658,6 +61864,7 @@ var NgbTooltip = class _NgbTooltip {
     this._ngZone = inject(NgZone);
     this._document = inject(DOCUMENT2);
     this._changeDetector = inject(ChangeDetectorRef);
+    this._injector = inject(Injector);
     this._ngbTooltipWindowId = `ngb-tooltip-${nextId++}`;
     this._popupService = new PopupService(NgbTooltipWindow);
     this._windowRef = null;
@@ -61704,13 +61911,17 @@ var NgbTooltip = class _NgbTooltip {
           hostElement: this._getPositionTargetElement(),
           targetElement: this._windowRef.location.nativeElement,
           placement: this.placement,
-          appendToBody: this.container === "body",
           baseClass: "bs-tooltip",
           updatePopperOptions: (options) => this.popperOptions(addPopperOffset([0, 6])(options))
         });
         Promise.resolve().then(() => {
           this._positioning.update();
-          this._zoneSubscription = this._ngZone.onStable.subscribe(() => this._positioning.update());
+        });
+        this._afterRenderRef = afterRender(() => {
+          this._positioning.update();
+        }, {
+          phase: AfterRenderPhase.MixedReadWrite,
+          injector: this._injector
         });
       });
       ngbAutoClose(this._ngZone, this._document, this.autoClose, () => this.close(), this.hidden, [this._windowRef.location.nativeElement], [this._nativeElement]);
@@ -61728,7 +61939,7 @@ var NgbTooltip = class _NgbTooltip {
       this._popupService.close(animation2).subscribe(() => {
         this._windowRef = null;
         this._positioning.destroy();
-        this._zoneSubscription?.unsubscribe();
+        this._afterRenderRef?.destroy();
         this.hidden.emit();
         this._changeDetector.markForCheck();
       });
@@ -61928,7 +62139,7 @@ var NgbHighlight = class _NgbHighlight {
       consts: [[3, "class"]],
       template: function NgbHighlight_Template(rf, ctx) {
         if (rf & 1) {
-          \u0275\u0275repeaterCreate(0, NgbHighlight_For_1_Template, 2, 1, null, null, \u0275\u0275repeaterTrackByIdentity);
+          \u0275\u0275repeaterCreate(0, NgbHighlight_For_1_Template, 2, 1, null, null, \u0275\u0275repeaterTrackByIndex);
         }
         if (rf & 2) {
           \u0275\u0275repeater(ctx.parts);
@@ -61949,8 +62160,8 @@ var NgbHighlight = class _NgbHighlight {
       changeDetection: ChangeDetectionStrategy.OnPush,
       encapsulation: ViewEncapsulation$1.None,
       template: `
-		@for (part of parts; track part; let odd = $odd) {
-			@if (odd) {
+		@for (part of parts; track $index) {
+			@if ($odd) {
 				<span class="{{ highlightClass }}">{{ part }}</span>
 			} @else {
 				<ng-container>{{ part }}</ng-container>
@@ -62164,7 +62375,7 @@ var NgbTypeaheadWindow = class _NgbTypeaheadWindow {
       template: function NgbTypeaheadWindow_Template(rf, ctx) {
         if (rf & 1) {
           \u0275\u0275template(0, NgbTypeaheadWindow_ng_template_0_Template, 1, 2, "ng-template", null, 0, \u0275\u0275templateRefExtractor);
-          \u0275\u0275repeaterCreate(2, NgbTypeaheadWindow_For_3_Template, 2, 9, "button", 1, \u0275\u0275repeaterTrackByIdentity);
+          \u0275\u0275repeaterCreate(2, NgbTypeaheadWindow_For_3_Template, 2, 9, "button", 1, \u0275\u0275repeaterTrackByIndex);
         }
         if (rf & 2) {
           \u0275\u0275advance(2);
@@ -62195,14 +62406,14 @@ var NgbTypeaheadWindow = class _NgbTypeaheadWindow {
 		<ng-template #rt let-result="result" let-term="term" let-formatter="formatter">
 			<ngb-highlight [result]="formatter(result)" [term]="term" />
 		</ng-template>
-		@for (result of results; track result; let idx = $index) {
+		@for (result of results; track $index) {
 			<button
 				type="button"
 				class="dropdown-item"
 				role="option"
-				[id]="id + '-' + idx"
-				[class.active]="idx === activeIdx"
-				(mouseenter)="markActive(idx)"
+				[id]="id + '-' + $index"
+				[class.active]="$index === activeIdx"
+				(mouseenter)="markActive($index)"
 				(click)="select(result)"
 			>
 				<ng-template
@@ -62254,6 +62465,7 @@ var NgbTypeahead = class _NgbTypeahead {
     this._document = inject(DOCUMENT2);
     this._ngZone = inject(NgZone);
     this._changeDetector = inject(ChangeDetectorRef);
+    this._injector = inject(Injector);
     this._popupService = new PopupService(NgbTypeaheadWindow);
     this._positioning = ngbPositioning();
     this._subscription = null;
@@ -62336,19 +62548,19 @@ var NgbTypeahead = class _NgbTypeahead {
     if (!this.isPopupOpen()) {
       return;
     }
-    switch (event.which) {
-      case Key.ArrowDown:
+    switch (event.key) {
+      case "ArrowDown":
         event.preventDefault();
         this._windowRef.instance.next();
         this._showHint();
         break;
-      case Key.ArrowUp:
+      case "ArrowUp":
         event.preventDefault();
         this._windowRef.instance.prev();
         this._showHint();
         break;
-      case Key.Enter:
-      case Key.Tab: {
+      case "Enter":
+      case "Tab": {
         const result = this._windowRef.instance.getActive();
         if (isDefined(result)) {
           event.preventDefault();
@@ -62382,10 +62594,14 @@ var NgbTypeahead = class _NgbTypeahead {
             hostElement: this._nativeElement,
             targetElement: this._windowRef.location.nativeElement,
             placement: this.placement,
-            appendToBody: this.container === "body",
             updatePopperOptions: (options) => this.popperOptions(addPopperOffset([0, 2])(options))
           });
-          this._zoneSubscription = this._ngZone.onStable.subscribe(() => this._positioning.update());
+          this._afterRenderRef = afterRender(() => {
+            this._positioning.update();
+          }, {
+            phase: AfterRenderPhase.MixedReadWrite,
+            injector: this._injector
+          });
         }
       });
       ngbAutoClose(this._ngZone, this._document, "outside", () => this.dismissPopup(), this._closed$, [this._nativeElement, this._windowRef.location.nativeElement]);
@@ -62394,7 +62610,7 @@ var NgbTypeahead = class _NgbTypeahead {
   _closePopup() {
     this._popupService.close().subscribe(() => {
       this._positioning.destroy();
-      this._zoneSubscription?.unsubscribe();
+      this._afterRenderRef?.destroy();
       this._closed$.next();
       this._windowRef = null;
       this.activeDescendant = null;
@@ -62794,9 +63010,7 @@ var NgbOffcanvasRef = class {
       } = this._panelCmptRef.location;
       nativeElement.parentNode.removeChild(nativeElement);
       this._panelCmptRef.destroy();
-      if (this._contentRef && this._contentRef.viewRef) {
-        this._contentRef.viewRef.destroy();
-      }
+      this._contentRef?.viewRef?.destroy();
       this._panelCmptRef = null;
       this._contentRef = null;
     });
@@ -62825,19 +63039,21 @@ var NgbOffcanvasBackdrop = class _NgbOffcanvasBackdrop {
   constructor() {
     this._nativeElement = inject(ElementRef).nativeElement;
     this._zone = inject(NgZone);
+    this._injector = inject(Injector);
     this.dismissEvent = new EventEmitter();
   }
   ngOnInit() {
-    this._zone.onStable.asObservable().pipe(take(1)).subscribe(() => {
-      ngbRunTransition(this._zone, this._nativeElement, (element, animation2) => {
-        if (animation2) {
-          reflow(element);
-        }
-        element.classList.add("show");
-      }, {
-        animation: this.animation,
-        runningTransition: "continue"
-      });
+    afterNextRender(() => ngbRunTransition(this._zone, this._nativeElement, (element, animation2) => {
+      if (animation2) {
+        reflow(element);
+      }
+      element.classList.add("show");
+    }, {
+      animation: this.animation,
+      runningTransition: "continue"
+    }), {
+      injector: this._injector,
+      phase: AfterRenderPhase.MixedReadWrite
     });
   }
   hide() {
@@ -62928,6 +63144,7 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
     this._document = inject(DOCUMENT2);
     this._elRef = inject(ElementRef);
     this._zone = inject(NgZone);
+    this._injector = inject(Injector);
     this._closed$ = new Subject();
     this._elWithFocus = null;
     this.keyboard = true;
@@ -62941,8 +63158,9 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
   }
   ngOnInit() {
     this._elWithFocus = this._document.activeElement;
-    this._zone.onStable.asObservable().pipe(take(1)).subscribe(() => {
-      this._show();
+    afterNextRender(() => this._show(), {
+      injector: this._injector,
+      phase: AfterRenderPhase.MixedReadWrite
     });
   }
   ngOnDestroy() {
@@ -62990,11 +63208,7 @@ var NgbOffcanvasPanel = class _NgbOffcanvasPanel {
       nativeElement
     } = this._elRef;
     this._zone.runOutsideAngular(() => {
-      fromEvent(nativeElement, "keydown").pipe(
-        takeUntil(this._closed$),
-        /* eslint-disable-next-line deprecation/deprecation */
-        filter((e) => e.which === Key.Escape)
-      ).subscribe((event) => {
+      fromEvent(nativeElement, "keydown").pipe(takeUntil(this._closed$), filter((e) => e.key === "Escape")).subscribe((event) => {
         if (this.keyboard) {
           requestAnimationFrame(() => {
             if (!event.defaultPrevented) {
@@ -63500,7 +63714,7 @@ var HeaderComponent = class _HeaderComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src\\app\\components\\header\\header.component.ts", lineNumber: 14 });
 })();
 
 // src/app/components/sidebar/sidebar.component.ts
@@ -63709,7 +63923,7 @@ var SidebarComponent = class _SidebarComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SidebarComponent, { className: "SidebarComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SidebarComponent, { className: "SidebarComponent", filePath: "src\\app\\components\\sidebar\\sidebar.component.ts", lineNumber: 13 });
 })();
 
 // src/app/layouts/portal-layout/portal-layout.component.ts
@@ -63743,7 +63957,7 @@ var PortalLayoutComponent = class _PortalLayoutComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PortalLayoutComponent, { className: "PortalLayoutComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PortalLayoutComponent, { className: "PortalLayoutComponent", filePath: "src\\app\\layouts\\portal-layout\\portal-layout.component.ts", lineNumber: 13 });
 })();
 
 // src/app/pages/profile/profile.component.ts
@@ -63846,7 +64060,7 @@ var ProfileComponent = class _ProfileComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ProfileComponent, { className: "ProfileComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ProfileComponent, { className: "ProfileComponent", filePath: "src\\app\\pages\\profile\\profile.component.ts", lineNumber: 14 });
 })();
 
 // src/app/pages/settings/settings.component.ts
@@ -63867,7 +64081,7 @@ var SettingsComponent = class _SettingsComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SettingsComponent, { className: "SettingsComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(SettingsComponent, { className: "SettingsComponent", filePath: "src\\app\\pages\\settings\\settings.component.ts", lineNumber: 10 });
 })();
 
 // src/app/guards/auth.guard.ts
@@ -74660,7 +74874,7 @@ var TaulParchiComponent = class _TaulParchiComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulParchiComponent, { className: "TaulParchiComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulParchiComponent, { className: "TaulParchiComponent", filePath: "src\\app\\pages\\taul-parchi\\taul-parchi.component.ts", lineNumber: 22 });
 })();
 
 // src/app/services/shared.service.ts
@@ -75637,7 +75851,7 @@ var TruckLoadingParchiComponent = class _TruckLoadingParchiComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiComponent, { className: "TruckLoadingParchiComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiComponent, { className: "TruckLoadingParchiComponent", filePath: "src\\app\\pages\\truck-loading-parchi\\truck-loading-parchi.component.ts", lineNumber: 21 });
 })();
 
 // src/app/pages/masters/masters.component.ts
@@ -75929,7 +76143,7 @@ var MastersComponent = class _MastersComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MastersComponent, { className: "MastersComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MastersComponent, { className: "MastersComponent", filePath: "src\\app\\pages\\masters\\masters.component.ts", lineNumber: 17 });
 })();
 
 // src/app/pages/farmers/farmers.component.ts
@@ -76285,7 +76499,7 @@ var FarmersComponent = class _FarmersComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FarmersComponent, { className: "FarmersComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FarmersComponent, { className: "FarmersComponent", filePath: "src\\app\\pages\\farmers\\farmers.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/villages/villages.component.ts
@@ -76522,7 +76736,7 @@ var VillagesComponent = class _VillagesComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(VillagesComponent, { className: "VillagesComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(VillagesComponent, { className: "VillagesComponent", filePath: "src\\app\\pages\\villages\\villages.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/hammals/hammals.component.ts
@@ -76779,7 +76993,7 @@ var HammalsComponent = class _HammalsComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HammalsComponent, { className: "HammalsComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HammalsComponent, { className: "HammalsComponent", filePath: "src\\app\\pages\\hammals\\hammals.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/crop/crop.component.ts
@@ -77016,7 +77230,7 @@ var CropComponent = class _CropComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(CropComponent, { className: "CropComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(CropComponent, { className: "CropComponent", filePath: "src\\app\\pages\\crop\\crop.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/parties/parties.component.ts
@@ -77253,7 +77467,7 @@ var PartiesComponent = class _PartiesComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PartiesComponent, { className: "PartiesComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PartiesComponent, { className: "PartiesComponent", filePath: "src\\app\\pages\\parties\\parties.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/delivery/delivery.component.ts
@@ -77490,7 +77704,7 @@ var DeliveryComponent = class _DeliveryComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DeliveryComponent, { className: "DeliveryComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DeliveryComponent, { className: "DeliveryComponent", filePath: "src\\app\\pages\\delivery\\delivery.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/accounts/accounts.component.ts
@@ -78077,7 +78291,7 @@ var AccountsComponent = class _AccountsComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AccountsComponent, { className: "AccountsComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AccountsComponent, { className: "AccountsComponent", filePath: "src\\app\\pages\\accounts\\accounts.component.ts", lineNumber: 28 });
 })();
 
 // src/app/pages/inventory/inventory.component.ts
@@ -78577,13 +78791,23 @@ var InventoryComponent = class _InventoryComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(InventoryComponent, { className: "InventoryComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(InventoryComponent, { className: "InventoryComponent", filePath: "src\\app\\pages\\inventory\\inventory.component.ts", lineNumber: 20 });
 })();
 
 // src/app/pages/transaction/transaction.component.ts
-function TransactionComponent_div_29_Template(rf, ctx) {
+function TransactionComponent_div_63_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "div");
+    \u0275\u0275elementStart(0, "div", 11)(1, "h6", 12);
+    \u0275\u0275text(2, "Exempt Hammali:");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "p", 13);
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate1(" ", (ctx_r0.taulaParchi == null ? null : ctx_r0.taulaParchi.exemptHammali) ? ctx_r0.taulaParchi.exemptHammali === "deduct" ? "Deduct" : "Exempted" : "N/A", " ");
   }
 }
 var TransactionComponent = class _TransactionComponent {
@@ -78591,181 +78815,67 @@ var TransactionComponent = class _TransactionComponent {
     this.apiService = apiService;
     this.router = router;
     this.route = route;
-    this.Farmers = [];
-    this.Villages = [];
-    this.Hammals = [];
-    this.Crops = [];
-    this.TaulaParchi = [];
-    this.TaulaParchiCount = 0;
-    this.TruckLoadingParchi = [];
-    this.TruckLoadingParchiCount = 0;
-    this.transactions = {
-      transactionStatus: "",
-      transactionDetails: ""
-    };
-    this.transaction = {
-      parchi_id: "",
-      farmer: "",
-      village: "",
+    this.taulaParchi = {};
+    this.updateTaulparchi = {
+      farmerName: "",
+      farmerMobile: "",
+      farmerVillage: "",
+      purchase: "",
+      storage: "",
       firm_company: "",
       rate: "",
+      tulai: "",
       hammal: "",
       boraQuantity: 0,
       unitBora: 0,
       bharti: 0,
+      looseQuantity: 0,
       netWeight: 0,
       crop: "",
-      PaymentStatus: "",
+      amount: 0,
+      transactionType: "",
+      other: "",
+      hammali: 0,
+      exemptHammali: "deduct",
       id: Date.now(),
       created_at: /* @__PURE__ */ new Date(),
-      transactionStatus: "",
-      transactionMode: "",
-      transactionType: "",
-      discount: 0,
-      paidAmount: 0,
-      remainingAmount: 0,
-      totalAmount: 0
+      createdBy: ""
     };
-    this.route.params.subscribe((params) => {
-      this.transaction.transactionType = params["parchiType"];
-      this.transaction.parchi_id = params["id"];
-    });
+    this.transactionId = null;
   }
   ngOnInit() {
-    this.fetchFarmers();
-    this.fetchVillages();
-    this.fetchHammals();
-    this.fetchCrops();
-    this.getTaulaParchis();
-    this.getTruckLoadingParchis();
-  }
-  calculateNetWeight() {
-    const { boraQuantity, unitBora, bharti } = this.transaction;
-    this.transaction.netWeight = boraQuantity * unitBora + bharti;
-  }
-  // Fetch Farmers from backend
-  fetchFarmers() {
-    this.apiService.get("farmer", {
-      params: {
-        page: 1,
-        limit: 1e3
-      }
-    }).subscribe({
-      next: (res) => {
-        this.Farmers = res.data;
-      },
-      error: (err) => {
-        console.error("Error fetching Farmers:", err);
-      }
-    });
-  }
-  // Fetch Villages from backend
-  fetchVillages() {
-    this.apiService.get("village", {
-      params: {
-        page: 1,
-        limit: 1e3
-      }
-    }).subscribe({
-      next: (res) => {
-        this.Villages = res.data;
-      },
-      error: (err) => {
-        console.error("Error fetching Villages:", err);
-      }
-    });
-  }
-  // Fetch Hammals from backend
-  fetchHammals() {
-    this.apiService.get("hammals", {
-      params: {
-        page: 1,
-        limit: 1e3
-      }
-    }).subscribe({
-      next: (res) => {
-        this.Hammals = res.data;
-      },
-      error: (err) => {
-        console.error("Error fetching Hammals:", err);
-      }
-    });
-  }
-  // Fetch Crops from backend
-  fetchCrops() {
-    this.apiService.get("crop", {
-      params: {
-        page: 1,
-        limit: 1e3
-      }
-    }).subscribe({
-      next: (res) => {
-        this.Crops = res.data;
-      },
-      error: (err) => {
-        console.error("Error fetching Crops:", err);
-      }
-    });
-  }
-  autoFillFirmOrCompany() {
-    const selectedFarmer = this.Farmers.find((farmer) => farmer.name === this.transaction.farmer);
-    if (selectedFarmer) {
-      this.transaction.firm_company = selectedFarmer.firm_company;
-    } else {
-      this.transaction.firm_company = "";
+    this.transactionId = this.route.snapshot.paramMap.get("id");
+    if (this.transactionId) {
+      this.getTaulaParchiById(this.transactionId);
     }
   }
-  getTaulaParchis() {
-    let params;
-    this.apiService.get("taulparchi", {
-      params
-    }).subscribe({
+  getTaulaParchiById(id) {
+    this.apiService.get(`taulparchi/${id}`).subscribe({
       next: (res) => {
-        this.TaulaParchi = res.data;
-        this.TaulaParchiCount = res.meta.total || this.TaulaParchi.length;
+        this.taulaParchi = res;
+        this.updateTaulparchi = __spreadValues({}, this.taulaParchi);
       },
       error: (err) => {
-        console.error("Error fetching TaulaParchis:", err);
+        console.error("Error fetching Taula Parchi details:", err);
       }
     });
   }
-  getTruckLoadingParchis() {
-    let params;
-    this.apiService.get("truckloading", {
-      params
-    }).subscribe({
-      next: (res) => {
-        this.TruckLoadingParchi = res.data;
-        console.log("loading...", res.data);
-        this.TruckLoadingParchiCount = res.total || this.TruckLoadingParchi.length;
-      },
-      error: (err) => {
-        console.error("Error fetching TruckLoadingParchis:", err);
-      }
-    });
-  }
-  saveTransaction() {
-    if (!this.transaction.transactionStatus) {
-      alert("Please select Farmer");
-      return;
-    }
-    if (this.transaction) {
-      this.apiService.post("transaction", this.transaction).subscribe({
+  saveParchi() {
+    if (this.transactionId) {
+      const updateData = { transactionType: this.updateTaulparchi.transactionType };
+      this.apiService.patch(`taulparchi/${this.transactionId}`, updateData).subscribe({
         next: (res) => {
-          console.log("transaction saved successfully");
+          console.log("Taula Parchi updated successfully", updateData);
           this.router.navigate(["/dashboard"]);
         },
         error: (err) => {
-          console.error("Error saving transaction:", err);
+          console.error("Error saving Taula Parchi:", err);
+          alert("Failed to save Taula Parchi. Please try again.");
         }
       });
     } else {
       alert("Please fill in all required fields.");
     }
-  }
-  calculateRemainingAmount() {
-    const discountedTotal = this.transaction.totalAmount - this.transaction.discount;
-    this.transaction.remainingAmount = discountedTotal - this.transaction.paidAmount;
   }
   static {
     this.\u0275fac = function TransactionComponent_Factory(__ngFactoryType__) {
@@ -78773,171 +78883,183 @@ var TransactionComponent = class _TransactionComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TransactionComponent, selectors: [["app-transaction"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 79, vars: 10, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "ps-2", "text-link"], [1, "col", "text-end"], [1, "card-body", "bg-warning"], [1, "col-12"], [1, "form-group", "mb-3"], ["for", "transactionType", 1, "form-label"], ["id", "transactionType", "name", "transactionType", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "taulParchi"], ["value", "truckLoading"], [4, "ngIf"], ["for", "transactionStatus", 1, "form-label"], ["id", "transactionStatus", "name", "transactionStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "active"], ["value", "inactive"], ["for", "transactionMode", 1, "form-label"], ["id", "transactionMode", "name", "transactionMode", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "cash"], ["value", "cheque"], ["value", "online"], ["value", "bank transfer"], ["value", "UPI"], ["for", "paymentStatus", 1, "form-label"], ["id", "paymentStatus", "name", "paymentStatus", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", "incoming"], ["value", "outgoing"], ["for", "paidAmount", 1, "form-label"], ["id", "paidAmount", "name", "paidAmount", "type", "number", "placeholder", "Paid Amount", 1, "form-control", "bg-warning", "text-dark", 3, "ngModelChange", "input", "ngModel"], ["for", "totalAmount", 1, "form-label"], ["id", "totalAmount", "name", "totalAmount", "type", "number", "placeholder", "Total Amount", 1, "form-control", "bg-warning", "text-dark", 3, "ngModelChange", "input", "ngModel"], ["for", "remainingAmount", 1, "form-label"], ["id", "remainingAmount", "name", "remainingAmount", "type", "number", "placeholder", "Remaining Amount", "readonly", "", 1, "form-control", "bg-warning", "text-dark", 3, "value"], ["for", "discount", 1, "form-label"], ["id", "discount", "name", "discount", "type", "number", "placeholder", "Discount", 1, "form-control", "bg-warning", "text-dark", 3, "ngModelChange", "input", "ngModel"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"]], template: function TransactionComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TransactionComponent, selectors: [["app-transaction"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 121, vars: 18, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "col", "text-end"], [1, "card-body", "bg-warning"], [1, "col-12", "col-md-6", "col-lg-4"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["class", "border-bottom border-dark border-bottom-dotted mb-2 pb-2", 4, "ngIf"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2", "bg-warning", "text-dark"], [1, "card-subtitle", "mb-2", "text-muted", "bg-warning", "text-dark"], [1, "form-group", "bg-warning"], ["id", "transactionType", "name", "transactionType", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "cash"], ["value", "credit"], ["value", "bank transfer"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"]], template: function TransactionComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "h4", 5);
         \u0275\u0275text(7, "Add Transaction");
         \u0275\u0275elementEnd();
         \u0275\u0275elementStart(8, "div", 0)(9, "div", 6)(10, "b")(11, "span", 7);
         \u0275\u0275text(12, "Transaction ID:");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(13, "span", 8);
-        \u0275\u0275text(14);
         \u0275\u0275elementEnd()()();
-        \u0275\u0275element(15, "div", 9);
+        \u0275\u0275element(13, "div", 8);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(16, "div", 10)(17, "div", 0)(18, "div", 11)(19, "div", 12)(20, "label", 13);
-        \u0275\u0275text(21, "Transaction Type");
+        \u0275\u0275elementStart(14, "div", 9)(15, "div", 0)(16, "div", 10)(17, "div", 11)(18, "h6", 12);
+        \u0275\u0275text(19, "Farmer's Name:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(22, "select", 14);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_22_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.transaction.transactionType, $event) || (ctx.transaction.transactionType = $event);
-          return $event;
-        });
-        \u0275\u0275elementStart(23, "option", 15);
-        \u0275\u0275text(24, "Select");
+        \u0275\u0275elementStart(20, "p", 13);
+        \u0275\u0275text(21);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(22, "div", 10)(23, "div", 11)(24, "h6", 12);
+        \u0275\u0275text(25, "Mobile:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(25, "option", 16);
-        \u0275\u0275text(26, "Taul Parchi");
+        \u0275\u0275elementStart(26, "p", 13);
+        \u0275\u0275text(27);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(28, "div", 10)(29, "div", 11)(30, "h6", 12);
+        \u0275\u0275text(31, "Village:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(27, "option", 17);
-        \u0275\u0275text(28, "Truck Loading Parchi");
+        \u0275\u0275elementStart(32, "p", 13);
+        \u0275\u0275text(33);
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(34, "div", 0)(35, "div", 10)(36, "div", 11)(37, "h6", 12);
+        \u0275\u0275text(38, "Purchase Status:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(39, "p", 13);
+        \u0275\u0275text(40);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(41, "div", 10)(42, "div", 11)(43, "h6", 12);
+        \u0275\u0275text(44, "Crop:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(45, "p", 13);
+        \u0275\u0275text(46);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(47, "div", 10)(48, "div", 11)(49, "h6", 12);
+        \u0275\u0275text(50, "Firm/Company:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(51, "p", 13);
+        \u0275\u0275text(52);
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(53, "div", 11)(54, "h6", 12);
+        \u0275\u0275text(55, "Rate (Per Quintal):");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(56, "p", 13);
+        \u0275\u0275text(57);
         \u0275\u0275elementEnd()();
-        \u0275\u0275template(29, TransactionComponent_div_29_Template, 1, 0, "div", 18);
-        \u0275\u0275elementStart(30, "label", 19);
-        \u0275\u0275text(31, "Transaction Status");
+        \u0275\u0275elementStart(58, "div", 11)(59, "h6", 12);
+        \u0275\u0275text(60, "Tulai Options:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(32, "select", 20);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_32_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.transaction.transactionStatus, $event) || (ctx.transaction.transactionStatus = $event);
-          return $event;
-        });
-        \u0275\u0275elementStart(33, "option", 15);
-        \u0275\u0275text(34, "Select");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(35, "option", 21);
-        \u0275\u0275text(36, "Active");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(37, "option", 22);
-        \u0275\u0275text(38, "Inactive");
+        \u0275\u0275elementStart(61, "p", 13);
+        \u0275\u0275text(62);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(39, "label", 23);
-        \u0275\u0275text(40, "Transaction Mode");
+        \u0275\u0275template(63, TransactionComponent_div_63_Template, 5, 1, "div", 14);
+        \u0275\u0275elementStart(64, "div", 11)(65, "h6", 12);
+        \u0275\u0275text(66, "Bora Quantity:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(41, "select", 24);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_41_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.transaction.transactionMode, $event) || (ctx.transaction.transactionMode = $event);
-          return $event;
-        });
-        \u0275\u0275elementStart(42, "option", 15);
-        \u0275\u0275text(43, "Select Transaction Mode");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(44, "option", 25);
-        \u0275\u0275text(45, "Cash");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(46, "option", 26);
-        \u0275\u0275text(47, "Cheque");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(48, "option", 27);
-        \u0275\u0275text(49, "Online");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(50, "option", 28);
-        \u0275\u0275text(51, "Bank Transfer");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(52, "option", 29);
-        \u0275\u0275text(53, "UPI");
+        \u0275\u0275elementStart(67, "p", 13);
+        \u0275\u0275text(68);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(54, "label", 30);
-        \u0275\u0275text(55, "Payment Status");
+        \u0275\u0275elementStart(69, "div", 11)(70, "h6", 12);
+        \u0275\u0275text(71, "Bharti (in Kgs):");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(56, "select", 31);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_56_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.transaction.PaymentStatus, $event) || (ctx.transaction.PaymentStatus = $event);
-          return $event;
-        });
-        \u0275\u0275elementStart(57, "option", 15);
-        \u0275\u0275text(58, "Select Payment Status");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(59, "option", 32);
-        \u0275\u0275text(60, "Incoming");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(61, "option", 33);
-        \u0275\u0275text(62, "Outgoing");
+        \u0275\u0275elementStart(72, "p", 13);
+        \u0275\u0275text(73);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(63, "label", 34);
-        \u0275\u0275text(64, "Paid Amount");
+        \u0275\u0275elementStart(74, "div", 11)(75, "h6", 12);
+        \u0275\u0275text(76, "Loose Quantity (in Kgs):");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(65, "input", 35);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_65_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.transaction.paidAmount, $event) || (ctx.transaction.paidAmount = $event);
+        \u0275\u0275elementStart(77, "p", 13);
+        \u0275\u0275text(78);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(79, "div", 11)(80, "h6", 12);
+        \u0275\u0275text(81, "Hammali (in \u20B9):");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(82, "p", 13);
+        \u0275\u0275text(83);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(84, "div", 11)(85, "h6", 12);
+        \u0275\u0275text(86, "Net Weight (in Quintal):");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(87, "p", 13);
+        \u0275\u0275text(88);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(89, "div", 11)(90, "h6", 12);
+        \u0275\u0275text(91, "Hammal:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(92, "p", 13);
+        \u0275\u0275text(93);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(94, "div", 11)(95, "h6", 12);
+        \u0275\u0275text(96, "Storage Location:");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(97, "p", 13);
+        \u0275\u0275text(98);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(99, "div", 11)(100, "h6", 12);
+        \u0275\u0275text(101, "Amount (in \u20B9):");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(102, "p", 13);
+        \u0275\u0275text(103);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(104, "div", 15)(105, "h6", 16);
+        \u0275\u0275text(106, "Transaction Type");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(107, "div", 17)(108, "select", 18);
+        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_select_ngModelChange_108_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.updateTaulparchi.transactionType, $event) || (ctx.updateTaulparchi.transactionType = $event);
           return $event;
         });
-        \u0275\u0275listener("input", function TransactionComponent_Template_input_input_65_listener() {
-          return ctx.calculateRemainingAmount();
-        });
+        \u0275\u0275elementStart(109, "option", 19);
+        \u0275\u0275text(110, "Select Transaction Type");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(66, "label", 36);
-        \u0275\u0275text(67, "Total Amount");
+        \u0275\u0275elementStart(111, "option", 20);
+        \u0275\u0275text(112, "Cash");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(68, "input", 37);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_68_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.transaction.totalAmount, $event) || (ctx.transaction.totalAmount = $event);
-          return $event;
-        });
-        \u0275\u0275listener("input", function TransactionComponent_Template_input_input_68_listener() {
-          return ctx.calculateRemainingAmount();
-        });
+        \u0275\u0275elementStart(113, "option", 21);
+        \u0275\u0275text(114, "Credit");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(69, "label", 38);
-        \u0275\u0275text(70, "Remaining Amount");
-        \u0275\u0275elementEnd();
-        \u0275\u0275element(71, "input", 39);
-        \u0275\u0275elementStart(72, "label", 40);
-        \u0275\u0275text(73, "Discount");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(74, "input", 41);
-        \u0275\u0275twoWayListener("ngModelChange", function TransactionComponent_Template_input_ngModelChange_74_listener($event) {
-          \u0275\u0275twoWayBindingSet(ctx.transaction.discount, $event) || (ctx.transaction.discount = $event);
-          return $event;
+        \u0275\u0275elementStart(115, "option", 22);
+        \u0275\u0275text(116, "Bank Transfer");
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275elementStart(117, "div", 23)(118, "div", 24)(119, "button", 25);
+        \u0275\u0275listener("click", function TransactionComponent_Template_button_click_119_listener() {
+          return ctx.saveParchi();
         });
-        \u0275\u0275listener("input", function TransactionComponent_Template_input_input_74_listener() {
-          return ctx.calculateRemainingAmount();
-        });
-        \u0275\u0275elementEnd()()()()();
-        \u0275\u0275elementStart(75, "div", 42)(76, "div", 43)(77, "button", 44);
-        \u0275\u0275listener("click", function TransactionComponent_Template_button_click_77_listener() {
-          return ctx.saveTransaction();
-        });
-        \u0275\u0275text(78, " Submit ");
+        \u0275\u0275text(120, " Submit ");
         \u0275\u0275elementEnd()()()()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275advance(14);
-        \u0275\u0275textInterpolate(ctx.transaction.id);
-        \u0275\u0275advance(8);
-        \u0275\u0275twoWayProperty("ngModel", ctx.transaction.transactionType);
+        \u0275\u0275advance(21);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.farmerName) ? ctx.taulaParchi.farmerName : "N/A");
+        \u0275\u0275advance(6);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.farmerMobile) ? ctx.taulaParchi.farmerMobile : "N/A");
+        \u0275\u0275advance(6);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.farmerVillage) ? ctx.taulaParchi.farmerVillage : "N/A");
         \u0275\u0275advance(7);
-        \u0275\u0275property("ngIf", ctx.transaction.transactionType === "taulParchi");
-        \u0275\u0275advance(3);
-        \u0275\u0275twoWayProperty("ngModel", ctx.transaction.transactionStatus);
-        \u0275\u0275advance(9);
-        \u0275\u0275twoWayProperty("ngModel", ctx.transaction.transactionMode);
-        \u0275\u0275advance(15);
-        \u0275\u0275twoWayProperty("ngModel", ctx.transaction.PaymentStatus);
-        \u0275\u0275advance(9);
-        \u0275\u0275twoWayProperty("ngModel", ctx.transaction.paidAmount);
-        \u0275\u0275advance(3);
-        \u0275\u0275twoWayProperty("ngModel", ctx.transaction.totalAmount);
-        \u0275\u0275advance(3);
-        \u0275\u0275property("value", ctx.transaction.remainingAmount);
-        \u0275\u0275advance(3);
-        \u0275\u0275twoWayProperty("ngModel", ctx.transaction.discount);
+        \u0275\u0275textInterpolate1(" ", (ctx.taulaParchi == null ? null : ctx.taulaParchi.purchase) == "directPurchase" ? "Direct Purchase" : (ctx.taulaParchi == null ? null : ctx.taulaParchi.purchase) == "AuctionMandiPurchase" ? "Auction Mandi Purchase" : "N/A", " ");
+        \u0275\u0275advance(6);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.cropDetails == null ? null : ctx.taulaParchi.cropDetails.name) ? ctx.taulaParchi.cropDetails.name : "N/A");
+        \u0275\u0275advance(6);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.companyDetails == null ? null : ctx.taulaParchi.companyDetails.name) ? ctx.taulaParchi.companyDetails == null ? null : ctx.taulaParchi.companyDetails.name : "N/A");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.rate) ? "\u20B9" + ctx.taulaParchi.rate : "N/A");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.tulai) ? ctx.taulaParchi.tulai : "N/A");
+        \u0275\u0275advance();
+        \u0275\u0275property("ngIf", (ctx.taulaParchi == null ? null : ctx.taulaParchi.tulai) === "Labour");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.boraQuantity) ? ctx.taulaParchi.boraQuantity : "N/A");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.bharti) ? ctx.taulaParchi.bharti : "N/A");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.looseQuantity) ? ctx.taulaParchi.looseQuantity : "N/A");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.hammali) ? ctx.taulaParchi.hammali : "N/A");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate(ctx.taulaParchi == null ? null : ctx.taulaParchi.netWeight);
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.hammalDetails == null ? null : ctx.taulaParchi.hammalDetails.name) ? ctx.taulaParchi.hammalDetails.name : "N/A");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.wearhouseDetails == null ? null : ctx.taulaParchi.wearhouseDetails.name) ? ctx.taulaParchi.wearhouseDetails.name : "N/A");
+        \u0275\u0275advance(5);
+        \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.amount) ? "\u20B9" + ctx.taulaParchi.amount : "N/A");
+        \u0275\u0275advance(5);
+        \u0275\u0275twoWayProperty("ngModel", ctx.updateTaulparchi.transactionType);
       }
-    }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, NumberValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, ReactiveFormsModule, CommonModule, NgIf] });
+    }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, SelectControlValueAccessor, NgControlStatus, NgModel, ReactiveFormsModule, CommonModule, NgIf] });
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionComponent, { className: "TransactionComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionComponent, { className: "TransactionComponent", filePath: "src\\app\\pages\\transaction\\transaction.component.ts", lineNumber: 183 });
 })();
 
 // src/app/pages/transactionlist/transactionlist.component.ts
@@ -79161,7 +79283,7 @@ var TransactionlistComponent = class _TransactionlistComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionlistComponent, { className: "TransactionlistComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransactionlistComponent, { className: "TransactionlistComponent", filePath: "src\\app\\pages\\transactionlist\\transactionlist.component.ts", lineNumber: 22 });
 })();
 
 // src/app/pages/truck/truck.component.ts
@@ -79488,7 +79610,7 @@ var TruckComponent = class _TruckComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckComponent, { className: "TruckComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckComponent, { className: "TruckComponent", filePath: "src\\app\\pages\\truck\\truck.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/list/list.component.ts
@@ -80047,7 +80169,7 @@ var ListComponent = class _ListComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListComponent, { className: "ListComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ListComponent, { className: "ListComponent", filePath: "src\\app\\pages\\list\\list.component.ts", lineNumber: 21 });
 })();
 
 // src/app/pages/my-list/my-list.component.ts
@@ -80558,7 +80680,7 @@ var MyListComponent = class _MyListComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MyListComponent, { className: "MyListComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(MyListComponent, { className: "MyListComponent", filePath: "src\\app\\pages\\my-list\\my-list.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/advance-payment/advance-payment.component.ts
@@ -81015,7 +81137,7 @@ var AdvancePaymentComponent = class _AdvancePaymentComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AdvancePaymentComponent, { className: "AdvancePaymentComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AdvancePaymentComponent, { className: "AdvancePaymentComponent", filePath: "src\\app\\pages\\advance-payment\\advance-payment.component.ts", lineNumber: 17 });
 })();
 
 // src/app/pages/storage/storage.component.ts
@@ -81687,7 +81809,7 @@ var StorageComponent = class _StorageComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(StorageComponent, { className: "StorageComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(StorageComponent, { className: "StorageComponent", filePath: "src\\app\\pages\\storage\\storage.component.ts", lineNumber: 21 });
 })();
 
 // src/app/pages/wearhouse-accounts/wearhouse-accounts.component.ts
@@ -82201,7 +82323,7 @@ var WearhouseAccountsComponent = class _WearhouseAccountsComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(WearhouseAccountsComponent, { className: "WearhouseAccountsComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(WearhouseAccountsComponent, { className: "WearhouseAccountsComponent", filePath: "src\\app\\pages\\wearhouse-accounts\\wearhouse-accounts.component.ts", lineNumber: 27 });
 })();
 
 // src/app/pages/wearhouse-inventory/wearhouse-inventory.component.ts
@@ -82709,7 +82831,7 @@ var WearhouseInventoryComponent = class _WearhouseInventoryComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(WearhouseInventoryComponent, { className: "WearhouseInventoryComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(WearhouseInventoryComponent, { className: "WearhouseInventoryComponent", filePath: "src\\app\\pages\\wearhouse-inventory\\wearhouse-inventory.component.ts", lineNumber: 20 });
 })();
 
 // node_modules/angularx-qrcode/fesm2022/angularx-qrcode.mjs
@@ -83088,11 +83210,25 @@ var QRCodeModule = class _QRCodeModule {
 })();
 
 // src/app/pages/taulparchi-dashboard/taulparchi-dashboard.component.ts
-var _c029 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
-var _c129 = (a0) => ["/taul-parchi-view", a0];
-function TaulparchiDashboardComponent_tr_53_Template(rf, ctx) {
+var _c029 = (a0, a1) => ({ itemsPerPage: 10, currentPage: a0, id: "taulaparchi", totalItems: a1 });
+var _c129 = (a0, a1, a2) => ({ itemsPerPage: a0, currentPage: a1, id: "taulaparchi", totalItems: a2 });
+var _c213 = (a0) => ["/taul-parchi-view", a0];
+var _c36 = (a0) => [a0];
+function TaulparchiDashboardComponent_option_52_Template(rf, ctx) {
   if (rf & 1) {
-    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "option", 36);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const crop_r1 = ctx.$implicit;
+    \u0275\u0275property("value", crop_r1._id);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(crop_r1.name);
+  }
+}
+function TaulparchiDashboardComponent_tr_83_Template(rf, ctx) {
+  if (rf & 1) {
     \u0275\u0275elementStart(0, "tr")(1, "td");
     \u0275\u0275text(2);
     \u0275\u0275pipe(3, "date");
@@ -83103,13 +83239,13 @@ function TaulparchiDashboardComponent_tr_53_Template(rf, ctx) {
     \u0275\u0275elementStart(6, "td");
     \u0275\u0275text(7);
     \u0275\u0275element(8, "br");
-    \u0275\u0275elementStart(9, "span", 22);
-    \u0275\u0275element(10, "i", 23);
+    \u0275\u0275elementStart(9, "span", 37);
+    \u0275\u0275element(10, "i", 38);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
     \u0275\u0275element(12, "br");
-    \u0275\u0275elementStart(13, "span", 22);
-    \u0275\u0275element(14, "i", 24);
+    \u0275\u0275elementStart(13, "span", 37);
+    \u0275\u0275element(14, "i", 39);
     \u0275\u0275text(15);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(16, "td");
@@ -83131,30 +83267,17 @@ function TaulparchiDashboardComponent_tr_53_Template(rf, ctx) {
     \u0275\u0275elementStart(27, "td");
     \u0275\u0275text(28);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(29, "td")(30, "button", 25);
-    \u0275\u0275listener("click", function TaulparchiDashboardComponent_tr_53_Template_button_click_30_listener() {
-      const taulaParchi_r2 = \u0275\u0275restoreView(_r1).$implicit;
-      const ctx_r2 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r2.printReceipt(taulaParchi_r2));
-    });
-    \u0275\u0275element(31, "i", 26);
+    \u0275\u0275elementStart(29, "td")(30, "button", 40);
+    \u0275\u0275element(31, "i", 41);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(32, "button", 27);
-    \u0275\u0275element(33, "i", 28);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(34, "button", 29);
-    \u0275\u0275listener("click", function TaulparchiDashboardComponent_tr_53_Template_button_click_34_listener() {
-      const taulaParchi_r2 = \u0275\u0275restoreView(_r1).$implicit;
-      const ctx_r2 = \u0275\u0275nextContext();
-      return \u0275\u0275resetView(ctx_r2.deleteTaulaParchi(taulaParchi_r2._id));
-    });
-    \u0275\u0275element(35, "i", 30);
+    \u0275\u0275elementStart(32, "a", 42);
+    \u0275\u0275text(33, " Pay ");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
     const taulaParchi_r2 = ctx.$implicit;
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(3, 12, taulaParchi_r2.created_at, "MM-dd-YYYY hh:mm"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(3, 13, taulaParchi_r2.created_at, "MM-dd-YYYY hh:mm"));
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.purchase);
     \u0275\u0275advance(2);
@@ -83172,11 +83295,102 @@ function TaulparchiDashboardComponent_tr_53_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(taulaParchi_r2.netWeight);
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(26, 15, taulaParchi_r2.amount, ".2"));
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(26, 16, taulaParchi_r2.amount, ".2"));
     \u0275\u0275advance(3);
     \u0275\u0275textInterpolate(taulaParchi_r2 == null ? null : taulaParchi_r2.userDetails == null ? null : taulaParchi_r2.userDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(19, _c213, taulaParchi_r2._id));
+    \u0275\u0275advance(2);
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(21, _c36, "/cashier-payment/taulParchi/" + taulaParchi_r2._id));
+  }
+}
+function TaulparchiDashboardComponent_tr_112_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275pipe(3, "date");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "td");
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "td");
+    \u0275\u0275text(7);
+    \u0275\u0275element(8, "br");
+    \u0275\u0275elementStart(9, "span", 37);
+    \u0275\u0275element(10, "i", 38);
+    \u0275\u0275text(11);
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(12, "br");
+    \u0275\u0275elementStart(13, "span", 37);
+    \u0275\u0275element(14, "i", 39);
+    \u0275\u0275text(15);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(16, "td");
+    \u0275\u0275text(17);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(18, "td");
+    \u0275\u0275text(19);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(20, "td");
+    \u0275\u0275text(21);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(22, "td");
+    \u0275\u0275text(23);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(24, "td");
+    \u0275\u0275text(25);
+    \u0275\u0275pipe(26, "number");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(27, "td");
+    \u0275\u0275text(28);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(29, "td")(30, "button", 43);
+    \u0275\u0275listener("click", function TaulparchiDashboardComponent_tr_112_Template_button_click_30_listener() {
+      const taulaParchi_r4 = \u0275\u0275restoreView(_r3).$implicit;
+      const ctx_r4 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r4.printReceipt(taulaParchi_r4));
+    });
+    \u0275\u0275element(31, "i", 44);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(32, "button", 40);
+    \u0275\u0275element(33, "i", 41);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(34, "button", 45);
+    \u0275\u0275listener("click", function TaulparchiDashboardComponent_tr_112_Template_button_click_34_listener() {
+      const taulaParchi_r4 = \u0275\u0275restoreView(_r3).$implicit;
+      const ctx_r4 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r4.deleteTaulaParchi(taulaParchi_r4._id));
+    });
+    \u0275\u0275element(35, "i", 46);
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const taulaParchi_r4 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(3, 12, taulaParchi_r4.created_at, "MM-dd-YYYY hh:mm"));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(taulaParchi_r4 == null ? null : taulaParchi_r4.purchase);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1(" ", taulaParchi_r4 == null ? null : taulaParchi_r4.farmerName, " ");
     \u0275\u0275advance(4);
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(18, _c129, taulaParchi_r2._id));
+    \u0275\u0275textInterpolate1(" | ", taulaParchi_r4 == null ? null : taulaParchi_r4.farmerMobile, " ");
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate1(" | ", taulaParchi_r4 == null ? null : taulaParchi_r4.farmerVillage, " ");
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r4 == null ? null : taulaParchi_r4.wearhouseDetails == null ? null : taulaParchi_r4.wearhouseDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r4 == null ? null : taulaParchi_r4.cropDetails == null ? null : taulaParchi_r4.cropDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r4 == null ? null : taulaParchi_r4.companyDetails == null ? null : taulaParchi_r4.companyDetails.name);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(taulaParchi_r4.netWeight);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(\u0275\u0275pipeBind2(26, 15, taulaParchi_r4.amount, ".2"));
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(taulaParchi_r4 == null ? null : taulaParchi_r4.userDetails == null ? null : taulaParchi_r4.userDetails.name);
+    \u0275\u0275advance(4);
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(18, _c213, taulaParchi_r4._id));
   }
 }
 var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
@@ -83193,8 +83407,49 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
     this.Storage = [];
     this.qrCodeUrl = null;
     this.currentUser = {};
+    this.pageForTaulaParchi = 1;
+    this.crops = [];
+    this.farmerNameSearch = "";
+    this.farmerMobileSearch = "";
+    this.farmerVillageSearch = "";
+    this.snoSearch = "";
     this.getTaulaParchis();
     this.authService.setCurrentUser();
+  }
+  getTaulaParchisFilter() {
+    const query = {};
+    if (this.farmerNameSearch) {
+      query["farmerName"] = this.farmerNameSearch;
+    }
+    if (this.farmerMobileSearch) {
+      query["farmerMobile"] = this.farmerMobileSearch;
+    }
+    if (this.farmerVillageSearch) {
+      query["farmerVillage"] = this.farmerVillageSearch;
+    }
+    if (this.snoSearch) {
+      query["sno"] = this.snoSearch;
+    }
+    if (this.selectedWarehouse) {
+      query["warehouse"] = this.selectedWarehouse;
+    }
+    if (this.selectedCrop) {
+      query["crop"] = this.selectedCrop;
+    }
+    this.apiService.get("taulparchi", {
+      params: __spreadValues({
+        page: this.pageForTaulaParchi,
+        limit: 10
+      }, query)
+    }).subscribe({
+      next: (res) => {
+        this.TaulaParchi = res.data;
+        this.TaulaParchiCount = res.total || this.TaulaParchi.length;
+      },
+      error: (err) => {
+        console.error("Error fetching TaulaParchis:", err);
+      }
+    });
   }
   getTaulaParchis() {
     let params = {
@@ -83210,6 +83465,21 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
       },
       error: (err) => {
         console.error("Error fetching TaulaParchis:", err);
+      }
+    });
+  }
+  getCrops() {
+    this.apiService.get("crop", {
+      params: {
+        page: 1,
+        limit: 1e3
+      }
+    }).subscribe({
+      next: (res) => {
+        this.crops = res.data;
+      },
+      error: (err) => {
+        console.error("Error fetching crops:", err);
       }
     });
   }
@@ -83306,8 +83576,8 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
           <div class="section">
             <div class="row">
               <div class="label"><b>Sr.No:</b></div>
-              <div class="value">${this.getTaulaParchiSrNo(taulaParchi?.created_at)}</div>
-            </div>
+              <div class="value">${taulaParchi?.sno}</div>
+s            </div>
             <div class="row">
               <div class="label"><b>Date:</b></div>
               <div class="value">${new Date(taulaParchi?.created_at).toLocaleDateString()}</div>
@@ -83456,7 +83726,7 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiDashboardComponent, selectors: [["app-taulparchi-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 56, vars: 8, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["type", "button", 1, "btn", "btn-primary"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "table", "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "badge", "bg-primary"], [1, "fi", "fi-rr-mobile"], [1, "fi", "fi-rr-marker"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "click"], [1, "fi", "fi-rr-print"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"], [1, "fi", "fi-rr-eye"], ["type", "button", 1, "btn", "btn-sm", "btn-danger", "me-2", "mb-2", 3, "click"], [1, "fi", "fi-rr-trash"]], template: function TaulparchiDashboardComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiDashboardComponent, selectors: [["app-taulparchi-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 115, vars: 21, consts: [[1, "card"], [1, "card-header", "d-flex", "justify-content-center", "align-items-center"], [1, "card-body"], [1, "row"], [1, "col"], [1, "form-group"], ["for", "fromDate"], ["type", "date", "name", "fromDate", "id", "fromDate", "aria-describedby", "fromdatehelpid", "placeholder", "", 1, "form-control"], ["id", "fromdatehelpid", 1, "form-text", "text-muted"], ["for", "toDate"], ["type", "date", "name", "toDate", "id", "toDate", "aria-describedby", "todatehelpid", "placeholder", "", 1, "form-control"], ["id", "todatehelpid", 1, "form-text", "text-muted"], ["type", "button", 1, "btn", "btn-primary"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "filter-sections"], [1, "row", "mb-2"], ["for", "farmerNameSearch"], ["type", "text", "name", "farmerNameSearch", "id", "farmerNameSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerMobileSearch"], ["type", "text", "name", "farmerMobileSearch", "id", "farmerMobileSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerVillageSearch"], ["type", "text", "name", "farmerVillageSearch", "id", "farmerVillageSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "cropSearch"], ["name", "cropSearch", "id", "cropSearch", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "snoSearch"], ["type", "text", "name", "snoSearch", "id", "snoSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "table", "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [3, "value"], [1, "badge", "bg-primary"], [1, "fi", "fi-rr-mobile"], [1, "fi", "fi-rr-marker"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"], [1, "fi", "fi-rr-eye"], [1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "click"], [1, "fi", "fi-rr-print"], ["type", "button", 1, "btn", "btn-sm", "btn-danger", "me-2", "mb-2", 3, "click"], [1, "fi", "fi-rr-trash"]], template: function TaulparchiDashboardComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h4");
         \u0275\u0275text(3, "All Taula Parchi");
@@ -83481,50 +83751,168 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
         \u0275\u0275elementStart(23, "div", 13)(24, "div", 14)(25, "h4", 15);
         \u0275\u0275text(26, "Taula Parchis");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(27, "div", 2)(28, "div", 16)(29, "table", 17)(30, "thead", 18)(31, "tr")(32, "th", 19);
-        \u0275\u0275text(33, "Date");
+        \u0275\u0275elementStart(27, "div", 2)(28, "div", 16)(29, "div", 17)(30, "div", 4)(31, "div", 5)(32, "label", 18);
+        \u0275\u0275text(33, "Farmer Name");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(34, "th", 19);
-        \u0275\u0275text(35, "Purchase Status");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(36, "th", 19);
-        \u0275\u0275text(37, "Farmer's Name");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(38, "th", 19);
-        \u0275\u0275text(39, "Storage Location");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(40, "th", 19);
-        \u0275\u0275text(41, "Crop");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(42, "th", 19);
-        \u0275\u0275text(43, "Firm/Company");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(44, "th", 19);
-        \u0275\u0275text(45, "Net Weight(in Quintal)");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(46, "th", 19);
-        \u0275\u0275text(47, "Amount (\u20B9)");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(48, "th", 19);
-        \u0275\u0275text(49, "Created By");
-        \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(50, "th", 19);
-        \u0275\u0275text(51, "Action");
+        \u0275\u0275elementStart(34, "input", 19);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulparchiDashboardComponent_Template_input_ngModelChange_34_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.farmerNameSearch, $event) || (ctx.farmerNameSearch = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function TaulparchiDashboardComponent_Template_input_ngModelChange_34_listener() {
+          return ctx.getTaulaParchisFilter();
+        });
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(52, "tbody");
-        \u0275\u0275template(53, TaulparchiDashboardComponent_tr_53_Template, 36, 20, "tr", 20);
-        \u0275\u0275pipe(54, "paginate");
+        \u0275\u0275elementStart(35, "div", 4)(36, "div", 5)(37, "label", 20);
+        \u0275\u0275text(38, "Farmer Mobile");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(39, "input", 21);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulparchiDashboardComponent_Template_input_ngModelChange_39_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.farmerMobileSearch, $event) || (ctx.farmerMobileSearch = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function TaulparchiDashboardComponent_Template_input_ngModelChange_39_listener() {
+          return ctx.getTaulaParchisFilter();
+        });
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(55, "pagination-controls", 21);
-        \u0275\u0275listener("pageChange", function TaulparchiDashboardComponent_Template_pagination_controls_pageChange_55_listener($event) {
+        \u0275\u0275elementStart(40, "div", 4)(41, "div", 5)(42, "label", 22);
+        \u0275\u0275text(43, "Farmer Village");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(44, "input", 23);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulparchiDashboardComponent_Template_input_ngModelChange_44_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.farmerVillageSearch, $event) || (ctx.farmerVillageSearch = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function TaulparchiDashboardComponent_Template_input_ngModelChange_44_listener() {
+          return ctx.getTaulaParchisFilter();
+        });
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(45, "div", 4)(46, "div", 5)(47, "label", 24);
+        \u0275\u0275text(48, "Crop");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(49, "select", 25);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulparchiDashboardComponent_Template_select_ngModelChange_49_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.selectedCrop, $event) || (ctx.selectedCrop = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function TaulparchiDashboardComponent_Template_select_ngModelChange_49_listener() {
+          return ctx.getTaulaParchisFilter();
+        });
+        \u0275\u0275elementStart(50, "option", 26);
+        \u0275\u0275text(51, "Select");
+        \u0275\u0275elementEnd();
+        \u0275\u0275template(52, TaulparchiDashboardComponent_option_52_Template, 2, 2, "option", 27);
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(53, "div", 4)(54, "div", 5)(55, "label", 28);
+        \u0275\u0275text(56, "S.no");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(57, "input", 29);
+        \u0275\u0275twoWayListener("ngModelChange", function TaulparchiDashboardComponent_Template_input_ngModelChange_57_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.snoSearch, $event) || (ctx.snoSearch = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function TaulparchiDashboardComponent_Template_input_ngModelChange_57_listener() {
+          return ctx.getTaulaParchisFilter();
+        });
+        \u0275\u0275elementEnd()()()()();
+        \u0275\u0275elementStart(58, "div", 30)(59, "table", 31)(60, "thead", 32)(61, "tr")(62, "th", 33);
+        \u0275\u0275text(63, "Date");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(64, "th", 33);
+        \u0275\u0275text(65, "Purchase Status");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(66, "th", 33);
+        \u0275\u0275text(67, "Farmer's Name");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(68, "th", 33);
+        \u0275\u0275text(69, "Storage Location");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(70, "th", 33);
+        \u0275\u0275text(71, "Crop");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(72, "th", 33);
+        \u0275\u0275text(73, "Firm/Company");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(74, "th", 33);
+        \u0275\u0275text(75, "Net Weight(in Quintal)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(76, "th", 33);
+        \u0275\u0275text(77, "Amount (\u20B9)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(78, "th", 33);
+        \u0275\u0275text(79, "Created By");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(80, "th", 33);
+        \u0275\u0275text(81, "Action");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(82, "tbody");
+        \u0275\u0275template(83, TaulparchiDashboardComponent_tr_83_Template, 34, 23, "tr", 34);
+        \u0275\u0275pipe(84, "paginate");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(85, "pagination-controls", 35);
+        \u0275\u0275listener("pageChange", function TaulparchiDashboardComponent_Template_pagination_controls_pageChange_85_listener($event) {
+          ctx.pageForTaulaParchi = $event;
+          return ctx.getTaulaParchis();
+        });
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(86, "div", 2)(87, "div", 30)(88, "table", 31)(89, "thead", 32)(90, "tr")(91, "th", 33);
+        \u0275\u0275text(92, "Date");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(93, "th", 33);
+        \u0275\u0275text(94, "Purchase Status");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(95, "th", 33);
+        \u0275\u0275text(96, "Farmer's Name");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(97, "th", 33);
+        \u0275\u0275text(98, "Storage Location");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(99, "th", 33);
+        \u0275\u0275text(100, "Crop");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(101, "th", 33);
+        \u0275\u0275text(102, "Firm/Company");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(103, "th", 33);
+        \u0275\u0275text(104, "Net Weight(in Quintal)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(105, "th", 33);
+        \u0275\u0275text(106, "Amount (\u20B9)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(107, "th", 33);
+        \u0275\u0275text(108, "Created By");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(109, "th", 33);
+        \u0275\u0275text(110, "Action");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(111, "tbody");
+        \u0275\u0275template(112, TaulparchiDashboardComponent_tr_112_Template, 36, 20, "tr", 34);
+        \u0275\u0275pipe(113, "paginate");
+        \u0275\u0275elementEnd()()();
+        \u0275\u0275elementStart(114, "pagination-controls", 35);
+        \u0275\u0275listener("pageChange", function TaulparchiDashboardComponent_Template_pagination_controls_pageChange_114_listener($event) {
           ctx.currentPage = $event;
           return ctx.getTaulaParchis();
         });
         \u0275\u0275elementEnd()()()()();
       }
       if (rf & 2) {
-        \u0275\u0275advance(53);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(54, 1, ctx.TaulaParchi, \u0275\u0275pureFunction3(4, _c029, ctx.perPage, ctx.currentPage, ctx.TaulaParchiCount)));
+        \u0275\u0275advance(34);
+        \u0275\u0275twoWayProperty("ngModel", ctx.farmerNameSearch);
+        \u0275\u0275advance(5);
+        \u0275\u0275twoWayProperty("ngModel", ctx.farmerMobileSearch);
+        \u0275\u0275advance(5);
+        \u0275\u0275twoWayProperty("ngModel", ctx.farmerVillageSearch);
+        \u0275\u0275advance(5);
+        \u0275\u0275twoWayProperty("ngModel", ctx.selectedCrop);
+        \u0275\u0275advance(3);
+        \u0275\u0275property("ngForOf", ctx.crops);
+        \u0275\u0275advance(5);
+        \u0275\u0275twoWayProperty("ngModel", ctx.snoSearch);
+        \u0275\u0275advance(26);
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(84, 8, ctx.TaulaParchi, \u0275\u0275pureFunction2(14, _c029, ctx.pageForTaulaParchi, ctx.TaulaParchiCount)));
+        \u0275\u0275advance(29);
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(113, 11, ctx.TaulaParchi, \u0275\u0275pureFunction3(17, _c129, ctx.perPage, ctx.currentPage, ctx.TaulaParchiCount)));
       }
     }, dependencies: [
       CommonModule,
@@ -83532,6 +83920,12 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
       DecimalPipe,
       DatePipe,
       FormsModule,
+      NgSelectOption,
+      \u0275NgSelectMultipleOption,
+      DefaultValueAccessor,
+      SelectControlValueAccessor,
+      NgControlStatus,
+      NgModel,
       ReactiveFormsModule,
       NgxPaginationModule,
       PaginatePipe,
@@ -83543,11 +83937,11 @@ var TaulparchiDashboardComponent = class _TaulparchiDashboardComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulparchiDashboardComponent, { className: "TaulparchiDashboardComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulparchiDashboardComponent, { className: "TaulparchiDashboardComponent", filePath: "src\\app\\pages\\taulparchi-dashboard\\taulparchi-dashboard.component.ts", lineNumber: 25 });
 })();
 
 // src/app/pages/taulparchi-view/taulparchi-view.component.ts
-function TaulparchiViewComponent_div_77_Template(rf, ctx) {
+function TaulparchiViewComponent_div_76_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 14)(1, "h6", 15);
     \u0275\u0275text(2, "Exempt Hammali:");
@@ -83681,7 +84075,7 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
           <div class="section">
             <div class="row">
               <div class="label"><b>Sr.No:</b></div>
-              <div class="value">${this.getTaulaParchiSrNo(taulaParchi?.created_at)}</div>
+              <div class="value">${taulaParchi?.sno}</div>
             </div>
             <div class="row">
               <div class="label"><b>Date:</b></div>
@@ -83811,7 +84205,7 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiViewComponent, selectors: [["app-taulparchi-view"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 122, vars: 26, consts: [[1, "container", "mt-2"], [1, "card", "bg-white", "mb-3"], [1, "card-header"], [1, "text-center"], [1, "mb-0"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "fas", "fa-print"], [1, "card-title"], [1, "row"], [1, "col", "text-start"], [1, "col", "text-end"], [1, "ms-2"], [1, "card-body", "bg-warning"], [1, "col-12", "col-md-6", "col-lg-4"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["class", "border-bottom border-dark border-bottom-dotted mb-2 pb-2", 4, "ngIf"], [1, "text-center", "mt-4"], ["type", "button", 1, "btn", "btn-secondary", "px-5", 3, "click"], [1, "fas", "fa-arrow-left"]], template: function TaulparchiViewComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TaulparchiViewComponent, selectors: [["app-taulparchi-view"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 121, vars: 26, consts: [[1, "container", "mt-2"], [1, "card", "bg-white", "mb-3"], [1, "card-header"], [1, "text-center"], [1, "mb-0"], ["type", "button", 1, "btn", "btn-primary", 3, "click"], [1, "fas", "fa-print"], [1, "card-title"], [1, "row"], [1, "col", "text-start"], [1, "col", "text-end"], [1, "ms-2"], [1, "card-body", "bg-warning"], [1, "col-12", "col-md-6", "col-lg-4"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["class", "border-bottom border-dark border-bottom-dotted mb-2 pb-2", 4, "ngIf"], [1, "text-center", "mt-4"], ["type", "button", 1, "btn", "btn-secondary", "px-5", 3, "click"], [1, "fas", "fa-arrow-left"]], template: function TaulparchiViewComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "h4", 4);
         \u0275\u0275text(5, " Taul Parchi ");
@@ -83826,133 +84220,131 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
         \u0275\u0275text(11, "M+M");
         \u0275\u0275elementEnd()()();
         \u0275\u0275elementStart(12, "h6", 7)(13, "div", 8)(14, "div", 9)(15, "b");
-        \u0275\u0275text(16, "Sr.no:");
+        \u0275\u0275text(16);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(17, "div", 10)(18, "b");
+        \u0275\u0275text(19, "Date:");
         \u0275\u0275elementEnd();
-        \u0275\u0275text(17);
+        \u0275\u0275text(20);
+        \u0275\u0275pipe(21, "date");
+        \u0275\u0275elementStart(22, "span", 11)(23, "b");
+        \u0275\u0275text(24, "Time:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(18, "div", 10)(19, "b");
-        \u0275\u0275text(20, "Date:");
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(21);
-        \u0275\u0275pipe(22, "date");
-        \u0275\u0275elementStart(23, "span", 11)(24, "b");
-        \u0275\u0275text(25, "Time:");
-        \u0275\u0275elementEnd();
-        \u0275\u0275text(26);
-        \u0275\u0275pipe(27, "date");
+        \u0275\u0275text(25);
+        \u0275\u0275pipe(26, "date");
         \u0275\u0275elementEnd()()()()();
-        \u0275\u0275elementStart(28, "div", 12)(29, "div", 8)(30, "div", 13)(31, "div", 14)(32, "h6", 15);
-        \u0275\u0275text(33, "Farmer's Name:");
+        \u0275\u0275elementStart(27, "div", 12)(28, "div", 8)(29, "div", 13)(30, "div", 14)(31, "h6", 15);
+        \u0275\u0275text(32, "Farmer's Name:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(34, "p", 16);
-        \u0275\u0275text(35);
+        \u0275\u0275elementStart(33, "p", 16);
+        \u0275\u0275text(34);
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(36, "div", 13)(37, "div", 14)(38, "h6", 15);
-        \u0275\u0275text(39, "Mobile:");
+        \u0275\u0275elementStart(35, "div", 13)(36, "div", 14)(37, "h6", 15);
+        \u0275\u0275text(38, "Mobile:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(40, "p", 16);
-        \u0275\u0275text(41);
+        \u0275\u0275elementStart(39, "p", 16);
+        \u0275\u0275text(40);
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(42, "div", 13)(43, "div", 14)(44, "h6", 15);
-        \u0275\u0275text(45, "Village:");
+        \u0275\u0275elementStart(41, "div", 13)(42, "div", 14)(43, "h6", 15);
+        \u0275\u0275text(44, "Village:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(46, "p", 16);
-        \u0275\u0275text(47);
+        \u0275\u0275elementStart(45, "p", 16);
+        \u0275\u0275text(46);
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(48, "div", 8)(49, "div", 13)(50, "div", 14)(51, "h6", 15);
-        \u0275\u0275text(52, "Purchase Status:");
+        \u0275\u0275elementStart(47, "div", 8)(48, "div", 13)(49, "div", 14)(50, "h6", 15);
+        \u0275\u0275text(51, "Purchase Status:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(53, "p", 16);
-        \u0275\u0275text(54);
+        \u0275\u0275elementStart(52, "p", 16);
+        \u0275\u0275text(53);
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(55, "div", 13)(56, "div", 14)(57, "h6", 15);
-        \u0275\u0275text(58, "Crop:");
+        \u0275\u0275elementStart(54, "div", 13)(55, "div", 14)(56, "h6", 15);
+        \u0275\u0275text(57, "Crop:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(59, "p", 16);
-        \u0275\u0275text(60);
+        \u0275\u0275elementStart(58, "p", 16);
+        \u0275\u0275text(59);
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(61, "div", 13)(62, "div", 14)(63, "h6", 15);
-        \u0275\u0275text(64, "Firm/Company:");
+        \u0275\u0275elementStart(60, "div", 13)(61, "div", 14)(62, "h6", 15);
+        \u0275\u0275text(63, "Firm/Company:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(65, "p", 16);
-        \u0275\u0275text(66);
+        \u0275\u0275elementStart(64, "p", 16);
+        \u0275\u0275text(65);
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(67, "div", 14)(68, "h6", 15);
-        \u0275\u0275text(69, "Rate (Per Quintal):");
+        \u0275\u0275elementStart(66, "div", 14)(67, "h6", 15);
+        \u0275\u0275text(68, "Rate (Per Quintal):");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(70, "p", 16);
-        \u0275\u0275text(71);
+        \u0275\u0275elementStart(69, "p", 16);
+        \u0275\u0275text(70);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(72, "div", 14)(73, "h6", 15);
-        \u0275\u0275text(74, "Tulai Options:");
+        \u0275\u0275elementStart(71, "div", 14)(72, "h6", 15);
+        \u0275\u0275text(73, "Tulai Options:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(75, "p", 16);
-        \u0275\u0275text(76);
+        \u0275\u0275elementStart(74, "p", 16);
+        \u0275\u0275text(75);
         \u0275\u0275elementEnd()();
-        \u0275\u0275template(77, TaulparchiViewComponent_div_77_Template, 5, 1, "div", 17);
-        \u0275\u0275elementStart(78, "div", 14)(79, "h6", 15);
-        \u0275\u0275text(80, "Bora Quantity:");
+        \u0275\u0275template(76, TaulparchiViewComponent_div_76_Template, 5, 1, "div", 17);
+        \u0275\u0275elementStart(77, "div", 14)(78, "h6", 15);
+        \u0275\u0275text(79, "Bora Quantity:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(81, "p", 16);
-        \u0275\u0275text(82);
+        \u0275\u0275elementStart(80, "p", 16);
+        \u0275\u0275text(81);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(83, "div", 14)(84, "h6", 15);
-        \u0275\u0275text(85, "Bharti (in Kgs):");
+        \u0275\u0275elementStart(82, "div", 14)(83, "h6", 15);
+        \u0275\u0275text(84, "Bharti (in Kgs):");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(86, "p", 16);
-        \u0275\u0275text(87);
+        \u0275\u0275elementStart(85, "p", 16);
+        \u0275\u0275text(86);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(88, "div", 14)(89, "h6", 15);
-        \u0275\u0275text(90, "Loose Quantity (in Kgs):");
+        \u0275\u0275elementStart(87, "div", 14)(88, "h6", 15);
+        \u0275\u0275text(89, "Loose Quantity (in Kgs):");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(91, "p", 16);
-        \u0275\u0275text(92);
+        \u0275\u0275elementStart(90, "p", 16);
+        \u0275\u0275text(91);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(93, "div", 14)(94, "h6", 15);
-        \u0275\u0275text(95, "Hammali (in \u20B9):");
+        \u0275\u0275elementStart(92, "div", 14)(93, "h6", 15);
+        \u0275\u0275text(94, "Hammali (in \u20B9):");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(96, "p", 16);
-        \u0275\u0275text(97);
+        \u0275\u0275elementStart(95, "p", 16);
+        \u0275\u0275text(96);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(98, "div", 14)(99, "h6", 15);
-        \u0275\u0275text(100, "Net Weight (in Quintal):");
+        \u0275\u0275elementStart(97, "div", 14)(98, "h6", 15);
+        \u0275\u0275text(99, "Net Weight (in Quintal):");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(101, "p", 16);
-        \u0275\u0275text(102);
+        \u0275\u0275elementStart(100, "p", 16);
+        \u0275\u0275text(101);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(103, "div", 14)(104, "h6", 15);
-        \u0275\u0275text(105, "Hammal:");
+        \u0275\u0275elementStart(102, "div", 14)(103, "h6", 15);
+        \u0275\u0275text(104, "Hammal:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(106, "p", 16);
-        \u0275\u0275text(107);
+        \u0275\u0275elementStart(105, "p", 16);
+        \u0275\u0275text(106);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(108, "div", 14)(109, "h6", 15);
-        \u0275\u0275text(110, "Storage Location:");
+        \u0275\u0275elementStart(107, "div", 14)(108, "h6", 15);
+        \u0275\u0275text(109, "Storage Location:");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(111, "p", 16);
-        \u0275\u0275text(112);
+        \u0275\u0275elementStart(110, "p", 16);
+        \u0275\u0275text(111);
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(113, "div", 14)(114, "h6", 15);
-        \u0275\u0275text(115, "Amount (in \u20B9):");
+        \u0275\u0275elementStart(112, "div", 14)(113, "h6", 15);
+        \u0275\u0275text(114, "Amount (in \u20B9):");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(116, "p", 16);
-        \u0275\u0275text(117);
+        \u0275\u0275elementStart(115, "p", 16);
+        \u0275\u0275text(116);
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(118, "div", 18)(119, "button", 19);
-        \u0275\u0275listener("click", function TaulparchiViewComponent_Template_button_click_119_listener() {
+        \u0275\u0275elementStart(117, "div", 18)(118, "button", 19);
+        \u0275\u0275listener("click", function TaulparchiViewComponent_Template_button_click_118_listener() {
           return ctx.goBack();
         });
-        \u0275\u0275element(120, "i", 20);
-        \u0275\u0275text(121, " Back ");
+        \u0275\u0275element(119, "i", 20);
+        \u0275\u0275text(120, " Back ");
         \u0275\u0275elementEnd()()();
       }
       if (rf & 2) {
-        \u0275\u0275advance(17);
-        \u0275\u0275textInterpolate1(" ", ctx.getTaulaParchiSrNo(ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at), " ");
+        \u0275\u0275advance(16);
+        \u0275\u0275textInterpolate1("Sr.no:", ctx.taulaParchi == null ? null : ctx.taulaParchi.sno, "");
         \u0275\u0275advance(4);
-        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(22, 20, ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at, "dd-MM-YYYY"), " ");
+        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(21, 20, ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at, "dd-MM-YYYY"), " ");
         \u0275\u0275advance(5);
-        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(27, 23, ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at, "HH:mm:ss"), " ");
+        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(26, 23, ctx.taulaParchi == null ? null : ctx.taulaParchi.created_at, "HH:mm:ss"), " ");
         \u0275\u0275advance(9);
         \u0275\u0275textInterpolate((ctx.taulaParchi == null ? null : ctx.taulaParchi.farmerName) ? ctx.taulaParchi.farmerName : "N/A");
         \u0275\u0275advance(6);
@@ -84000,7 +84392,7 @@ var TaulparchiViewComponent = class _TaulparchiViewComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulparchiViewComponent, { className: "TaulparchiViewComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TaulparchiViewComponent, { className: "TaulparchiViewComponent", filePath: "src\\app\\pages\\taulparchi-view\\taulparchi-view.component.ts", lineNumber: 23 });
 })();
 
 // src/app/pages/truck-loading-parchi-dashboard/truck-loading-parchi-dashboard.component.ts
@@ -84168,7 +84560,7 @@ var TruckLoadingParchiDashboardComponent = class _TruckLoadingParchiDashboardCom
         <div class="section">
           <div class="row">
             <span><b>Serial Number:</b></span>
-            <span>${this.getTruckLoadingParchiSrNo(truckLoadingParchi.created_at)}</span>
+            <span>${truckLoadingParchi?.sno}</span>
           </div>
           <div class="row">
             <span><b>Date:</b></span>
@@ -84375,7 +84767,7 @@ var TruckLoadingParchiDashboardComponent = class _TruckLoadingParchiDashboardCom
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiDashboardComponent, { className: "TruckLoadingParchiDashboardComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiDashboardComponent, { className: "TruckLoadingParchiDashboardComponent", filePath: "src\\app\\pages\\truck-loading-parchi-dashboard\\truck-loading-parchi-dashboard.component.ts", lineNumber: 22 });
 })();
 
 // src/app/pages/truck-loading-parchi-view/truck-loading-parchi-view.component.ts
@@ -84654,7 +85046,7 @@ var TruckLoadingParchiViewComponent = class _TruckLoadingParchiViewComponent {
       }
       if (rf & 2) {
         \u0275\u0275advance(11);
-        \u0275\u0275textInterpolate1(" ", ctx.getTruckLoadingParchiSrNo(ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.created_at), " ");
+        \u0275\u0275textInterpolate1(" ", ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.sno, " ");
         \u0275\u0275advance(4);
         \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(16, 15, ctx.truckLoadingParchi == null ? null : ctx.truckLoadingParchi.created_at, "dd-MM-YYYY"), " ");
         \u0275\u0275advance(9);
@@ -84694,7 +85086,7 @@ var TruckLoadingParchiViewComponent = class _TruckLoadingParchiViewComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiViewComponent, { className: "TruckLoadingParchiViewComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TruckLoadingParchiViewComponent, { className: "TruckLoadingParchiViewComponent", filePath: "src\\app\\pages\\truck-loading-parchi-view\\truck-loading-parchi-view.component.ts", lineNumber: 21 });
 })();
 
 // src/app/pages/company/company.component.ts
@@ -84931,7 +85323,7 @@ var CompanyComponent = class _CompanyComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(CompanyComponent, { className: "CompanyComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(CompanyComponent, { className: "CompanyComponent", filePath: "src\\app\\pages\\company\\company.component.ts", lineNumber: 20 });
 })();
 
 // src/app/pages/transport/transport.component.ts
@@ -85168,13 +85560,13 @@ var TransportComponent = class _TransportComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransportComponent, { className: "TransportComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(TransportComponent, { className: "TransportComponent", filePath: "src\\app\\pages\\transport\\transport.component.ts", lineNumber: 19 });
 })();
 
 // src/app/pages/stock-view/stock-view.component.ts
 var _c033 = (a0) => ({ "show": a0 });
 var _c134 = (a0, a1, a2) => ({ id: "stock-pagination", itemsPerPage: a0, currentPage: a1, totalItems: a2 });
-var _c213 = (a0) => [a0];
+var _c214 = (a0) => [a0];
 function StockViewComponent_tr_40_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
@@ -85237,7 +85629,7 @@ function StockViewComponent_tr_103_a_17_Template(rf, ctx) {
   }
   if (rf & 2) {
     const stock_r6 = \u0275\u0275nextContext().$implicit;
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(1, _c213, "/taul-parchi-view/" + stock_r6.meta_data.taulParchi));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(1, _c214, "/taul-parchi-view/" + stock_r6.meta_data.taulParchi));
   }
 }
 function StockViewComponent_tr_103_a_18_Template(rf, ctx) {
@@ -85249,7 +85641,7 @@ function StockViewComponent_tr_103_a_18_Template(rf, ctx) {
   }
   if (rf & 2) {
     const stock_r6 = \u0275\u0275nextContext().$implicit;
-    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(1, _c213, "/truck-loading-parchi-view/" + stock_r6.meta_data.truckLoading));
+    \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(1, _c214, "/truck-loading-parchi-view/" + stock_r6.meta_data.truckLoading));
   }
 }
 function StockViewComponent_tr_103_Template(rf, ctx) {
@@ -85592,7 +85984,7 @@ var StockViewComponent = class _StockViewComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(StockViewComponent, { className: "StockViewComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(StockViewComponent, { className: "StockViewComponent", filePath: "src\\app\\pages\\stock-view\\stock-view.component.ts", lineNumber: 15 });
 })();
 
 // src/app/app.routes.ts
@@ -90487,7 +90879,7 @@ var AppComponent = class _AppComponent {
   }
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent" });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src\\app\\app.component.ts", lineNumber: 15 });
 })();
 
 // src/main.ts
@@ -90496,14 +90888,14 @@ bootstrapApplication(AppComponent, appConfig).catch((err) => console.error(err))
 
 @angular/core/fesm2022/primitives/signals.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/core/fesm2022/core.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
@@ -90555,56 +90947,56 @@ bootstrapApplication(AppComponent, appConfig).catch((err) => console.error(err))
 
 @angular/common/fesm2022/common.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/common/fesm2022/http.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/platform-browser/fesm2022/platform-browser.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/router/fesm2022/router.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/forms/fesm2022/forms.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/core/fesm2022/rxjs-interop.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/animations/fesm2022/animations.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/service-worker/fesm2022/service-worker.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
@@ -90618,14 +91010,14 @@ bootstrapApplication(AppComponent, appConfig).catch((err) => console.error(err))
 
 @angular/animations/fesm2022/browser.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/platform-browser/fesm2022/animations.mjs:
   (**
-   * @license Angular v18.2.8
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)

@@ -27,6 +27,9 @@ router.delete('/:id', TaulParchiController.delete);
 
 router.get('/:id', TaulParchiController.get);
 
+router.patch('/:id', TaulParchiController.patch);
+
+
 
 
 

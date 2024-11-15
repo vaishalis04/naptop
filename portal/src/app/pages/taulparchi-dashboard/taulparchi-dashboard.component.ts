@@ -35,8 +35,15 @@ export class TaulparchiDashboardComponent {
   Storage: any[] = [];
   qrCodeUrl: string | null = null;
   currentUser: any = {};
+  pageForTaulaParchi = 1;
 
-
+  crops: any[] = [];
+  farmerNameSearch = '';
+  farmerMobileSearch = '';
+  farmerVillageSearch = '';
+  snoSearch='';
+  selectedWarehouse: any;
+  selectedCrop: any;
   constructor(
     private apiService: ApiService,
     private authService: AuthService
@@ -44,7 +51,45 @@ export class TaulparchiDashboardComponent {
     this.getTaulaParchis();
     this.authService.setCurrentUser();
   }
+  getTaulaParchisFilter() {
+    const query: any = {};
+    if (this.farmerNameSearch) {
+      query['farmerName'] = this.farmerNameSearch;
+    }
+    if (this.farmerMobileSearch) {
+      query['farmerMobile'] = this.farmerMobileSearch;
+    }
+    if (this.farmerVillageSearch) {
+      query['farmerVillage'] = this.farmerVillageSearch;
+    }
+    if (this.snoSearch) {
+      query['sno'] = this.snoSearch;
+    }
+    if (this.selectedWarehouse) {
+      query['warehouse'] = this.selectedWarehouse;
+    }
+    if (this.selectedCrop) {
+      query['crop'] = this.selectedCrop;
+    }
 
+    this.apiService
+      .get('taulparchi', {
+        params: {
+          page: this.pageForTaulaParchi,
+          limit: 10,
+          ...query,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.TaulaParchi = res.data;
+          this.TaulaParchiCount = res.total || this.TaulaParchi.length;
+        },
+        error: (err: any) => {
+          console.error('Error fetching TaulaParchis:', err);
+        },
+      });
+  }
   getTaulaParchis() {
     let params: any = {
       page: this.currentPage,
@@ -62,6 +107,24 @@ export class TaulparchiDashboardComponent {
         },
         error: (err: any) => {
           console.error('Error fetching TaulaParchis:', err);
+        },
+      });
+  }
+  
+  getCrops() {
+    this.apiService
+      .get('crop', {
+        params: {
+          page: 1,
+          limit: 1000,
+        },
+      })
+      .subscribe({
+        next: (res: any) => {
+          this.crops = res.data;
+        },
+        error: (err: any) => {
+          console.error('Error fetching crops:', err);
         },
       });
   }
@@ -160,8 +223,8 @@ export class TaulparchiDashboardComponent {
           <div class="section">
             <div class="row">
               <div class="label"><b>Sr.No:</b></div>
-              <div class="value">${this.getTaulaParchiSrNo(taulaParchi?.created_at)}</div>
-            </div>
+              <div class="value">${taulaParchi?.sno}</div>
+s            </div>
             <div class="row">
               <div class="label"><b>Date:</b></div>
               <div class="value">${new Date(taulaParchi?.created_at).toLocaleDateString()}</div>

@@ -4,17 +4,144 @@ const mongoose = require("mongoose");
 const StockModel = require("../models/stock.model");
 
 module.exports = {
+  // create: async (req, res, next) => {
+  //   try {
+  //     const data = req.body;
+
+  //     // Validate required fields
+  //     if (!data.partyName) {
+  //       return res.status(400).json({ error: "Party Name is required." });
+  //     }
+  //     // if (!data.vehicleNumber) {
+  //     //   return res.status(400).json({ error: "Vehicle Number is required." });
+  //     // }
+  //     if (!data.assignedHammal) {
+  //       return res.status(400).json({ error: "Assigned Hammal is required." });
+  //     }
+  //     if (!data.boraQuantity) {
+  //       return res.status(400).json({ error: "Bora Quantity is required." });
+  //     }
+  //     if (!data.unitBora) {
+  //       return res.status(400).json({ error: "Unit Bora is required." });
+  //     }
+  //     if (!data.crop) {
+  //       return res.status(400).json({ error: "Crop is required." });
+  //     }
+
+  //     // Calculate netWeight using the formula: netWeight = boraQuantity * unitBora
+  //     // data.netWeight = data.boraQuantity * data.unitBora;
+
+  //     // Optional: You can check for duplicates or other conditions if required.
+  //     // const existingTruckLoading = await Model.findOne({
+  //     //   partyName: data.partyName,
+  //     //   vehicleNumber: data.vehicleNumber,
+  //     // });
+  //     // if (existingTruckLoading) {
+  //     //   return res.status(400).json({
+  //     //     error:
+  //     //       "A Truck Loading entry already exists with the same Party Name and Vehicle Number.",
+  //     //   });
+  //     // }
+
+  //     // Create a new TruckLoading instance with the provided data
+  //     const newTruckLoading = new Model(data);
+
+  //     // Save the new TruckLoading entry to the database
+  //     const result = await newTruckLoading.save();
+
+  //     // Create a new Stock entry for the TruckLoading
+  //     if (data.transferType === "Stock Transfer") {
+  //       const stockData = {
+  //         crop: data.crop,
+  //         quantity: data.netWeight,
+  //         warehouse: data.storage,
+  //         price: data.rate,
+  //         logType: "transfer out",
+  //         bag_units:
+  //         [
+  //           {
+  //             unit_weight_of_bags: data.unitBora,
+  //             no_of_bags: data.boraQuantity
+  //           }
+  //         ],
+  //         meta_data: {
+  //           truckLoading: result._id,
+  //         },
+  //       };
+
+  //       const stockDataIn = {
+  //         crop: data.crop,
+  //         quantity: data.netWeight,
+  //         warehouse: data.deliveryLocation,
+  //         price: data.rate,
+  //         logType: "transfer in",
+  //         bag_units:
+  //         [
+  //           {
+  //             unit_weight_of_bags: data.unitBora,
+  //             no_of_bags: data.boraQuantity
+  //           }
+  //         ],
+  //         meta_data: {
+  //           truckLoading: result._id,
+  //         },
+  //       };
+
+  //       const lastRecord = await Model.findOne({}).sort({ created_at: -1 }).select("sno");
+
+  //     let newSno = "TR000001"; // Default if no records exist
+  
+  //     if (lastRecord && lastRecord.sno) {
+  //       const lastNumber = parseInt(lastRecord.sno.slice(2)); // Extract number part after "Tl"
+  //       newSno = `TR${String(lastNumber + 1).padStart(6, "0")}`;
+  //     }
+  
+  //     data.sno = newSno;
+  //     console.log("data",newSno)
+
+  //       // Create a new Stock entry using the StockModel
+  //       const stockResult = await StockModel.createOrUpdateStock(null, stockData);
+  //       const stockResultIn = await StockModel.createOrUpdateStock(null, stockDataIn);
+  //     } else {
+  //       // Create a new Stock entry for the TruckLoading
+  //       const stockData = {
+  //         crop: data.crop,
+  //         quantity: data.netWeight,
+  //         warehouse: data.storage,
+  //         price: data.rate,
+  //         logType: "sale",
+  //         bag_units:
+  //         [
+  //           {
+  //             unit_weight_of_bags: data.unitBora,
+  //             no_of_bags: data.boraQuantity
+  //           }
+  //         ],
+  //         meta_data: {
+  //           truckLoading: result._id,
+  //         },
+  //       };
+
+  //       // Create a new Stock entry using the StockModel
+  //       const stockResult = await StockModel.createOrUpdateStock(null, stockData);
+  //     }
+
+  //     // Respond with the saved TruckLoading and a status of 201 (Created)
+  //     return res.status(201).json(result);
+  //   } catch (error) {
+  //     console.error("Error saving TruckLoading:", error);
+  //     next(createError(500, "Failed to save Truck Loading.")); // Handle errors and send a 500 response
+  //   }
+  // },
+
   create: async (req, res, next) => {
     try {
       const data = req.body;
-
+  
       // Validate required fields
       if (!data.partyName) {
         return res.status(400).json({ error: "Party Name is required." });
       }
-      // if (!data.vehicleNumber) {
-      //   return res.status(400).json({ error: "Vehicle Number is required." });
-      // }
       if (!data.assignedHammal) {
         return res.status(400).json({ error: "Assigned Hammal is required." });
       }
@@ -27,38 +154,37 @@ module.exports = {
       if (!data.crop) {
         return res.status(400).json({ error: "Crop is required." });
       }
-
+  
+      // Generate a new auto-incrementing sno
+      const lastRecord = await Model.findOne({}).sort({ created_at: -1 }).select("sno");
+      let newSno = "TR000001"; // Default if no records exist
+  
+      if (lastRecord && lastRecord.sno) {
+        const lastNumber = parseInt(lastRecord.sno.slice(2)); // Extract number part after "TR"
+        newSno = `TR${String(lastNumber + 1).padStart(6, "0")}`;
+      }
+  
+      data.sno = newSno; // Assign the generated sno to data before creation
+      console.log("Assigned sno:", newSno); // Debugging line to verify the sno
+  
       // Calculate netWeight using the formula: netWeight = boraQuantity * unitBora
-      // data.netWeight = data.boraQuantity * data.unitBora;
-
-      // Optional: You can check for duplicates or other conditions if required.
-      // const existingTruckLoading = await Model.findOne({
-      //   partyName: data.partyName,
-      //   vehicleNumber: data.vehicleNumber,
-      // });
-      // if (existingTruckLoading) {
-      //   return res.status(400).json({
-      //     error:
-      //       "A Truck Loading entry already exists with the same Party Name and Vehicle Number.",
-      //   });
-      // }
-
+      data.netWeight = data.boraQuantity * data.unitBora;
+  
       // Create a new TruckLoading instance with the provided data
       const newTruckLoading = new Model(data);
-
+  
       // Save the new TruckLoading entry to the database
       const result = await newTruckLoading.save();
-
+  
       // Create a new Stock entry for the TruckLoading
       if (data.transferType === "Stock Transfer") {
-        const stockData = {
+        const stockDataOut = {
           crop: data.crop,
           quantity: data.netWeight,
           warehouse: data.storage,
           price: data.rate,
           logType: "transfer out",
-          bag_units:
-          [
+          bag_units: [
             {
               unit_weight_of_bags: data.unitBora,
               no_of_bags: data.boraQuantity
@@ -68,15 +194,14 @@ module.exports = {
             truckLoading: result._id,
           },
         };
-
+  
         const stockDataIn = {
           crop: data.crop,
           quantity: data.netWeight,
           warehouse: data.deliveryLocation,
           price: data.rate,
           logType: "transfer in",
-          bag_units:
-          [
+          bag_units: [
             {
               unit_weight_of_bags: data.unitBora,
               no_of_bags: data.boraQuantity
@@ -86,20 +211,19 @@ module.exports = {
             truckLoading: result._id,
           },
         };
-
-        // Create a new Stock entry using the StockModel
-        const stockResult = await StockModel.createOrUpdateStock(null, stockData);
-        const stockResultIn = await StockModel.createOrUpdateStock(null, stockDataIn);
+  
+        // Create stock entries for both transfer in and transfer out
+        await StockModel.createOrUpdateStock(null, stockDataOut);
+        await StockModel.createOrUpdateStock(null, stockDataIn);
       } else {
-        // Create a new Stock entry for the TruckLoading
+        // Create a stock entry for sale type
         const stockData = {
           crop: data.crop,
           quantity: data.netWeight,
           warehouse: data.storage,
           price: data.rate,
           logType: "sale",
-          bag_units:
-          [
+          bag_units: [
             {
               unit_weight_of_bags: data.unitBora,
               no_of_bags: data.boraQuantity
@@ -109,11 +233,11 @@ module.exports = {
             truckLoading: result._id,
           },
         };
-
-        // Create a new Stock entry using the StockModel
-        const stockResult = await StockModel.createOrUpdateStock(null, stockData);
+  
+        // Create the stock entry
+        await StockModel.createOrUpdateStock(null, stockData);
       }
-
+  
       // Respond with the saved TruckLoading and a status of 201 (Created)
       return res.status(201).json(result);
     } catch (error) {
@@ -121,6 +245,7 @@ module.exports = {
       next(createError(500, "Failed to save Truck Loading.")); // Handle errors and send a 500 response
     }
   },
+  
   list: async (req, res, next) => {
     try {
       const {

@@ -102,7 +102,7 @@ export class TruckLoadingParchiDashboardComponent {
         <div class="section">
           <div class="row">
             <span><b>Serial Number:</b></span>
-            <span>${this.getTruckLoadingParchiSrNo(truckLoadingParchi.created_at)}</span>
+            <span>${truckLoadingParchi?.sno}</span>
           </div>
           <div class="row">
             <span><b>Date:</b></span>

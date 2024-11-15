@@ -36,8 +36,10 @@ export class DashboardComponent implements OnInit {
   farmerNameSearch = '';
   farmerMobileSearch = '';
   farmerVillageSearch = '';
+  snoSearch='';
   selectedWarehouse: any;
   selectedCrop: any;
+  qrCodeUrl: string | null = null;
 
   constructor(
     private apiService: ApiService,
@@ -82,6 +84,9 @@ export class DashboardComponent implements OnInit {
     }
     if (this.farmerVillageSearch) {
       query['farmerVillage'] = this.farmerVillageSearch;
+    }
+    if (this.snoSearch) {
+      query['sno'] = this.snoSearch;
     }
     if (this.selectedWarehouse) {
       query['warehouse'] = this.selectedWarehouse;
@@ -167,4 +172,171 @@ export class DashboardComponent implements OnInit {
       },
     });
   }
+  getCurrentUser() {
+    return this.authService.currentUser;
+  }
+  generateQRCode(data: string) {
+    this.qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${data}&size=150x150`;
+  }
+  printReceipt(taulaParchi: any) {
+    this.generateQRCode(taulaParchi._id || 'N/A');
+    const receiptContent = `
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Taula Parchi Receipt</title>
+          <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+          <style>
+            body {
+              font-family: 'Courier New', monospace;
+              margin: 20px;
+              background-color: #f8f9fa;
+            }
+            .card {
+              padding: 20px;
+              border: 1px solid #000;
+              width: 350px;
+              margin: 0 auto;
+              background-color: white;
+            }
+            h4 { text-align: center; }
+            .section { margin-bottom: 15px; padding-bottom: 10px; }
+            .row { display: flex; justify-content: space-between; }
+            .btn-print { display: block; margin: 20px auto; }
+            @media print { .btn-print { display: none; } }
+          </style>
+        </head>
+        <body>
+         <div class="container mt-4">
+        <div class="card">
+          <h4 class="mb-2">Taula Parchi Receipt</h4>
+          <p class="text-center"><b>M+M</b></p>
+
+          <!-- Sr. No and Date Section -->
+
+          <div class="section">
+            <div class="row">
+              <div class="label"><b>Sr.No:</b></div>
+              <div class="value">${taulaParchi?.sno}</div>
+           </div>
+            <div class="row">
+              <div class="label"><b>Date:</b></div>
+              <div class="value">${new Date(taulaParchi?.created_at).toLocaleDateString()}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Time:</b></div>
+              <div class="value">${new Date(taulaParchi?.created_at).toLocaleTimeString()}</div>
+            </div>
+          </div>
+
+          <!-- Farmer and Crop Details -->
+
+          <div class="section">
+            <div class="row">
+              <div class="label"><b>Farmer's Name:</b></div>
+              <div class="value">${taulaParchi.farmerName || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Mobile:</b></div>
+              <div class="value">${taulaParchi.farmerMobile || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Village:</b></div>
+              <div class="value">${taulaParchi.farmerVillage || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Storage Location:</b></div>
+              <div class="value">${taulaParchi.wearhouseDetails?.name || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Crop:</b></div>
+              <div class="value">${taulaParchi.cropDetails?.name || 'N/A'}</div>
+            </div>
+          </div>
+
+          <!-- Purchase and Firm Details -->
+          <div class="section">
+            <div class="row">
+              <div class="label"><b>Purchase Status:</b></div>
+              <div class="value">${taulaParchi.purchase || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Firm/Company:</b></div>
+              <div class="value">${taulaParchi.companyDetails.name || 'N/A'}</div>
+            </div>
+          </div>
+
+          <!-- Additional Fields -->
+          <div class="section">
+            <div class="row">
+              <div class="label"><b>Rate (₹):</b></div>
+              <div class="value">${taulaParchi.rate || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Tulai Option:</b></div>
+              <div class="value">${taulaParchi.tulai || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Exempt Hammali:</b></div>
+              <div class="value">${
+                taulaParchi.exemptHammali ? (taulaParchi.exemptHammali === 'deduct' ? 'Deduct' : 'Exempted') : 'N/A'
+              }</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Hammal:</b></div>
+              <div class="value">${taulaParchi?.hammalDetails?.name || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Bora Quantity:</b></div>
+              <div class="value">${taulaParchi.boraQuantity || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Bharti (in Kgs):</b></div>
+              <div class="value">${taulaParchi.bharti || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Loose Quantity (in Kgs):</b></div>
+              <div class="value">${taulaParchi.looseQuantity || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Net Weight (Quintal):</b></div>
+              <div class="value">${taulaParchi.netWeight}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Hammali (₹):</b></div>
+              <div class="value">${taulaParchi.hammali}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Amount (₹):</b></div>
+              <div class="value">${taulaParchi.amount || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Transaction Type:</b></div>
+              <div class="value">${taulaParchi.transactionType || 'N/A'}</div>
+            </div>
+            <div class="row">
+              <div class="label"><b>Transaction Id:</b></div>
+              <div class="value">${taulaParchi.transactionId || 'N/A'}</div>
+            </div>
+          </div>
+          <div class="section">
+              <div class="row"><div class="label"><b>QR Code:</b></div><div class="value"><img src="${this.qrCodeUrl}" alt="QR Code" /></div></div>
+            </div>
+
+          <!-- Print Button -->
+          <button class="btn-print" onclick="window.print()">Print Receipt</button>
+        </div>
+      </div>
+
+        </body>
+      </html>`;
+  
+    const receiptWindow = window.open('', '_blank');
+    receiptWindow?.document.write(receiptContent);
+    receiptWindow?.document.close();
+    receiptWindow?.focus();
+  }
+  
 }

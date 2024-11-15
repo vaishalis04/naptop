@@ -1,6 +1,175 @@
+// import { Component, OnInit } from '@angular/core';
+// import { CommonModule } from '@angular/common';
+// import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
+// import { ApiService } from '../../services/api.service';
+// import { ActivatedRoute, Router } from '@angular/router';
+
+// @Component({
+//   selector: 'app-transaction',
+//   standalone: true,
+//   imports: [FormsModule, ReactiveFormsModule, CommonModule],
+//   templateUrl: './transaction.component.html',
+//   styleUrl: './transaction.component.css',
+// })
+// export class TransactionComponent implements OnInit {
+// taulaParchi: any = {};
+//   TaulaParchi: any[] = [];
+//   TaulaParchiCount = 0;
+
+//   updateTaulparchi = {
+//     farmerName: '',
+//     farmerMobile: '',
+//     farmerVillage: '',
+//     purchase: '',
+//     storage: '',
+//     firm_company: '',
+//     rate: '',
+//     tulai: '',
+//     hammal: '',
+//     boraQuantity: 0,
+//     unitBora: 0,
+//     bharti: 0,
+//     looseQuantity: 0,
+//     netWeight: 0,
+//     crop: '',
+//     amount: 0,
+//     transactionType:'',
+//     other: '',
+//     hammali: 0,
+//     exemptHammali: 'deduct',
+//     id: Date.now(),
+//     created_at: new Date(),
+//     createdBy: '',
+//   };
+//   constructor(
+//     private apiService: ApiService,
+//     private router: Router,
+//     private route: ActivatedRoute
+//   ) {
+    
+//   }
+
+//   ngOnInit(): void {
+//     const id = this.route.snapshot.paramMap.get('id');
+//     if (id) {
+//       this.getTaulaParchiById(id);
+//     }
+//   }
+//   getTaulaParchiById(id: string) {
+//     this.apiService.get(`taulparchi/${id}`).subscribe({
+//       next: (res: any) => {
+//         console.log("res",res)
+//         this.taulaParchi = res;
+//         console.log("taulparchi",res)
+//       },
+//       error: (err: any) => {
+//         console.error('Error fetching Taula Parchi details:', err);
+//       },
+//     });
+//   }
+
+//   saveParchi() {
+//     if (this.taulaParchi && Object.keys(this.taulaParchi).length > 0) {
+//         this.apiService.put(`taulparchi/${this.taulaParchi.id}`, this.updateTaulparchi).subscribe({
+//         next: (res: any) => {
+//           console.log('taulparchi saved successfully');
+//           this.router.navigate(['/dashboard']);
+//         },
+//         error: (err: any) => {
+//           console.error('Error saving taulparchi:', err);
+//         },
+//       });
+//     } else {
+//       alert('Please fill in all required fields.');
+//     }
+//   }
+// }
+// import { Component, OnInit } from '@angular/core';
+// import { CommonModule } from '@angular/common';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { ApiService } from '../../services/api.service';
+// import { ActivatedRoute, Router } from '@angular/router';
+
+// @Component({
+//   selector: 'app-transaction',
+//   standalone: true,
+//   imports: [FormsModule, ReactiveFormsModule, CommonModule],
+//   templateUrl: './transaction.component.html',
+//   styleUrl: './transaction.component.css',
+// })
+// export class TransactionComponent implements OnInit {
+//   taulaParchi: any = {};
+//   updateTaulparchi: any = {
+//     farmerName: '',
+//     farmerMobile: '',
+//     farmerVillage: '',
+//     purchase: '',
+//     storage: '',
+//     firm_company: '',
+//     rate: '',
+//     tulai: '',
+//     hammal: '',
+//     boraQuantity: 0,
+//     unitBora: 0,
+//     bharti: 0,
+//     looseQuantity: 0,
+//     netWeight: 0,
+//     crop: '',
+//     amount: 0,
+//     transactionType: '',
+//     other: '',
+//     hammali: 0,
+//     exemptHammali: 'deduct',
+//     id: Date.now(),
+//     created_at: new Date(),
+//     createdBy: '',
+//   };
+
+//   constructor(
+//     private apiService: ApiService,
+//     private router: Router,
+//     private route: ActivatedRoute
+//   ) {}
+
+//   ngOnInit(): void {
+//     const id = this.route.snapshot.paramMap.get('id');
+//     if (id) {
+//       this.getTaulaParchiById(id);
+//     }
+//   }
+
+//   getTaulaParchiById(id: string) {
+//     this.apiService.get(`taulparchi/${id}`).subscribe({
+//       next: (res: any) => {
+//         this.taulaParchi = res;
+//         // Populate updateTaulparchi with taulaParchi data
+//         this.updateTaulparchi = { ...this.taulaParchi };
+//       },
+//       error: (err: any) => {
+//         console.error('Error fetching Taula Parchi details:', err);
+//       },
+//     });
+//   }
+
+//   saveParchi() {
+//     if (this.taulaParchi && Object.keys(this.taulaParchi).length > 0) {
+//       this.apiService.put(`taulparchi/${this.taulaParchi.id}`, this.updateTaulparchi).subscribe({
+//         next: (res: any) => {
+//           console.log('Taula Parchi updated successfully');
+//           this.router.navigate(['/dashboard']);
+//         },
+//         error: (err: any) => {
+//           console.error('Error saving Taula Parchi:', err);
+//         },
+//       });
+//     } else {
+//       alert('Please fill in all required fields.');
+//     }
+//   }
+// }
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule, NgForm } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -9,222 +178,83 @@ import { ActivatedRoute, Router } from '@angular/router';
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './transaction.component.html',
-  styleUrl: './transaction.component.css',
+  styleUrls: ['./transaction.component.css'],
 })
 export class TransactionComponent implements OnInit {
-  Farmers: any[] = [];
-  Villages: any[] = [];
-  Hammals: any[] = [];
-  Crops: any[] = [];
-  TaulaParchi: any[] = [];
-  selectedCrop: any
-  TaulaParchiCount = 0;
-  TruckLoadingParchi: any[] = [];
-  TruckLoadingParchiCount = 0;
-  transactions = {
-    transactionStatus: '',
-    transactionDetails: '',
-
-  };
-
-  transaction = {
-    parchi_id: '',
-    farmer: '',
-    village: '',
+  taulaParchi: any = {};
+  updateTaulparchi: any = {
+    farmerName: '',
+    farmerMobile: '',
+    farmerVillage: '',
+    purchase: '',
+    storage: '',
     firm_company: '',
     rate: '',
+    tulai: '',
     hammal: '',
     boraQuantity: 0,
     unitBora: 0,
     bharti: 0,
+    looseQuantity: 0,
     netWeight: 0,
     crop: '',
-    PaymentStatus: '',
+    amount: 0,
+    transactionType: '',
+    other: '',
+    hammali: 0,
+    exemptHammali: 'deduct',
     id: Date.now(),
     created_at: new Date(),
-    transactionStatus: '',
-    transactionMode: '',
-    transactionType: '',
-    discount: 0,
-    paidAmount: 0,
-    remainingAmount: 0,
-    totalAmount: 0,
+    createdBy: '',
   };
+  transactionId: string | null = null;
+
   constructor(
     private apiService: ApiService,
     private router: Router,
     private route: ActivatedRoute
-  ) {
-    this.route.params.subscribe((params) => {
-      this.transaction.transactionType = params['parchiType'];
-      this.transaction.parchi_id = params['id'];
+  ) {}
+
+  ngOnInit(): void {
+    this.transactionId = this.route.snapshot.paramMap.get('id'); // Store the ID from the route
+
+    if (this.transactionId) {
+      this.getTaulaParchiById(this.transactionId);
+    }
+  }
+
+  getTaulaParchiById(id: string) {
+    this.apiService.get(`taulparchi/${id}`).subscribe({
+      next: (res: any) => {
+        this.taulaParchi = res;
+        this.updateTaulparchi = { ...this.taulaParchi }; // Populate updateTaulparchi with fetched data
+      },
+      error: (err: any) => {
+        console.error('Error fetching Taula Parchi details:', err);
+      },
     });
   }
 
-  ngOnInit(): void {
-    this.fetchFarmers();
-    this.fetchVillages();
-    this.fetchHammals();
-    this.fetchCrops();
-    this.getTaulaParchis()
-    this.getTruckLoadingParchis()
-  }
-
-  calculateNetWeight(): void {
-    const { boraQuantity, unitBora, bharti } = this.transaction;
-    this.transaction.netWeight = boraQuantity * unitBora + bharti;
-  }
-
-  // Fetch Farmers from backend
-  fetchFarmers() {
-    this.apiService
-      .get('farmer', {
-        params: {
-          page: 1,
-          limit: 1000,
-        },
-      })
-      .subscribe({
+  saveParchi() {
+    if (this.transactionId) {
+      const updateData = { transactionType: this.updateTaulparchi.transactionType };
+  
+      this.apiService.patch(`taulparchi/${this.transactionId}`, updateData).subscribe({
         next: (res: any) => {
-          this.Farmers = res.data;
+          console.log('Taula Parchi updated successfully',updateData);
+          this.router.navigate(['/dashboard']); // Redirect to dashboard after successful update
         },
         error: (err: any) => {
-          console.error('Error fetching Farmers:', err);
-        },
-      });
-  }
-
-  // Fetch Villages from backend
-  fetchVillages() {
-    this.apiService
-      .get('village', {
-        params: {
-          page: 1,
-          limit: 1000,
-        },
-      })
-      .subscribe({
-        next: (res: any) => {
-          this.Villages = res.data;
-        },
-        error: (err: any) => {
-          console.error('Error fetching Villages:', err);
-        },
-      });
-  }
-
-  // Fetch Hammals from backend
-  fetchHammals() {
-    this.apiService
-      .get('hammals', {
-        params: {
-          page: 1,
-          limit: 1000,
-        },
-      })
-      .subscribe({
-        next: (res: any) => {
-          this.Hammals = res.data;
-        },
-        error: (err: any) => {
-          console.error('Error fetching Hammals:', err);
-        },
-      });
-  }
-
-  // Fetch Crops from backend
-  fetchCrops() {
-    this.apiService
-      .get('crop', {
-        params: {
-          page: 1,
-          limit: 1000,
-        },
-      })
-      .subscribe({
-        next: (res: any) => {
-          this.Crops = res.data;
-        },
-        error: (err: any) => {
-          console.error('Error fetching Crops:', err);
-        },
-      });
-  }
-
-  autoFillFirmOrCompany() {
-    const selectedFarmer = this.Farmers.find(
-      (farmer) => farmer.name === this.transaction.farmer
-    );
-    if (selectedFarmer) {
-      this.transaction.firm_company = selectedFarmer.firm_company;
-    } else {
-      this.transaction.firm_company = '';
-    }
-  }
-  getTaulaParchis() {
-    let params;
-
-    this.apiService
-      .get('taulparchi', {
-        params
-      })
-      .subscribe({
-        next: (res: any) => {
-          this.TaulaParchi = res.data;
-          this.TaulaParchiCount = res.meta.total || this.TaulaParchi.length;
-        },
-        error: (err: any) => {
-          console.error('Error fetching TaulaParchis:', err);
-        },
-      });
-  }
-  getTruckLoadingParchis() {
-    let params
-
-    this.apiService
-      .get('truckloading', {
-        params
-      })
-      .subscribe({
-        next: (res: any) => {
-          this.TruckLoadingParchi = res.data;
-          console.log('loading...', res.data);
-          this.TruckLoadingParchiCount =
-            res.total || this.TruckLoadingParchi.length;
-        },
-        error: (err: any) => {
-          console.error('Error fetching TruckLoadingParchis:', err);
-        },
-      });
-  }
-
-  saveTransaction() {
-    if (!this.transaction.transactionStatus) {
-      alert('Please select Farmer');
-      return;
-    }
-
-    if (this.transaction) {
-      this.apiService.post('transaction', this.transaction).subscribe({
-        next: (res: any) => {
-          console.log('transaction saved successfully');
-          this.router.navigate(['/dashboard']);
-        },
-        error: (err: any) => {
-          console.error('Error saving transaction:', err);
+          console.error('Error saving Taula Parchi:', err);
+          alert('Failed to save Taula Parchi. Please try again.');
         },
       });
     } else {
       alert('Please fill in all required fields.');
     }
   }
-  calculateRemainingAmount() {
-    const discountedTotal = this.transaction.totalAmount - this.transaction.discount;
-    this.transaction.remainingAmount = discountedTotal - this.transaction.paidAmount;
-
-    // Ensure remainingAmount is never negative
-    // if (this.transaction.remainingAmount < 0) {
-    //   this.transaction.remainingAmount = 0;
-    // }
-  }
+  
+ 
+  
+  
 }

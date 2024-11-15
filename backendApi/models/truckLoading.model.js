@@ -1,8 +1,9 @@
-const { ref } = require("@hapi/joi/lib/compile");
-const { type } = require("@hapi/joi/lib/extend");
 const mongoose = require("mongoose");
 
 const TruckLoadingSchema = new mongoose.Schema({
+    sno: {
+        type: String,
+      },
     transferType: {
         type: String,
         enum: ['Sale', 'Stock Transfer']
