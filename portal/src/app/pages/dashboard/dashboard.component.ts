@@ -37,6 +37,7 @@ export class DashboardComponent implements OnInit {
   farmerMobileSearch = '';
   farmerVillageSearch = '';
   snoSearch='';
+  transactionTypeSearch='';
   selectedWarehouse: any;
   selectedCrop: any;
   qrCodeUrl: string | null = null;
@@ -94,7 +95,9 @@ export class DashboardComponent implements OnInit {
     if (this.selectedCrop) {
       query['crop'] = this.selectedCrop;
     }
-
+    if (this.transactionTypeSearch) {
+      query['transactionType'] = this.transactionTypeSearch;
+    }
     this.apiService
       .get('taulparchi', {
         params: {

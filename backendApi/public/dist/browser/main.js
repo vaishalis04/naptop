@@ -45781,8 +45781,8 @@ var _c5 = (a0) => [a0];
 var _c6 = (a0) => ["/truck-loading-parchi-view", a0];
 function DashboardComponent_div_16_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 44)(1, "div", 3)(2, "div", 4)(3, "div", 5)(4, "div", 45);
-    \u0275\u0275element(5, "i", 46);
+    \u0275\u0275elementStart(0, "div", 49)(1, "div", 3)(2, "div", 4)(3, "div", 5)(4, "div", 50);
+    \u0275\u0275element(5, "i", 51);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "div", 8)(7, "h3", 9);
     \u0275\u0275text(8);
@@ -45799,8 +45799,8 @@ function DashboardComponent_div_16_Template(rf, ctx) {
 }
 function DashboardComponent_div_17_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 44)(1, "div", 3)(2, "div", 4)(3, "div", 5)(4, "div", 45);
-    \u0275\u0275element(5, "i", 47);
+    \u0275\u0275elementStart(0, "div", 49)(1, "div", 3)(2, "div", 4)(3, "div", 5)(4, "div", 50);
+    \u0275\u0275element(5, "i", 52);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "div", 8)(7, "h3", 9);
     \u0275\u0275text(8);
@@ -45817,7 +45817,7 @@ function DashboardComponent_div_17_Template(rf, ctx) {
 }
 function DashboardComponent_div_18_div_6_div_1_tr_32_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "tr")(1, "th", 57);
+    \u0275\u0275elementStart(0, "tr")(1, "th", 62);
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "td");
@@ -45840,35 +45840,35 @@ function DashboardComponent_div_18_div_6_div_1_tr_32_Template(rf, ctx) {
 }
 function DashboardComponent_div_18_div_6_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 51)(1, "div", 52)(2, "div", 4)(3, "div", 5)(4, "div", 53)(5, "p", 54);
+    \u0275\u0275elementStart(0, "div", 56)(1, "div", 57)(2, "div", 4)(3, "div", 5)(4, "div", 58)(5, "p", 59);
     \u0275\u0275text(6);
     \u0275\u0275pipe(7, "titlecase");
     \u0275\u0275elementEnd();
     \u0275\u0275element(8, "hr");
-    \u0275\u0275elementStart(9, "div", 0)(10, "div", 2)(11, "h6", 55);
+    \u0275\u0275elementStart(9, "div", 0)(10, "div", 2)(11, "h6", 60);
     \u0275\u0275text(12, " Stock Quantity ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(13, "p", 56);
+    \u0275\u0275elementStart(13, "p", 61);
     \u0275\u0275text(14);
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(15, "div", 2)(16, "h6", 55);
+    \u0275\u0275elementStart(15, "div", 2)(16, "h6", 60);
     \u0275\u0275text(17, " Average Price ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(18, "p", 56);
+    \u0275\u0275elementStart(18, "p", 61);
     \u0275\u0275text(19);
     \u0275\u0275pipe(20, "currency");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(21, "div", 14)(22, "table", 37)(23, "thead")(24, "tr")(25, "th", 39);
+    \u0275\u0275elementStart(21, "div", 14)(22, "table", 42)(23, "thead")(24, "tr")(25, "th", 44);
     \u0275\u0275text(26, "#");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(27, "th", 39);
+    \u0275\u0275elementStart(27, "th", 44);
     \u0275\u0275text(28, "No of Bags");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(29, "th", 39);
+    \u0275\u0275elementStart(29, "th", 44);
     \u0275\u0275text(30, "Weight (in Kgs)");
     \u0275\u0275elementEnd()()();
     \u0275\u0275elementStart(31, "tbody");
-    \u0275\u0275template(32, DashboardComponent_div_18_div_6_div_1_tr_32_Template, 7, 3, "tr", 40);
+    \u0275\u0275template(32, DashboardComponent_div_18_div_6_div_1_tr_32_Template, 7, 3, "tr", 45);
     \u0275\u0275elementEnd()()()()()()()()();
   }
   if (rf & 2) {
@@ -45887,7 +45887,7 @@ function DashboardComponent_div_18_div_6_div_1_Template(rf, ctx) {
 function DashboardComponent_div_18_div_6_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 0);
-    \u0275\u0275template(1, DashboardComponent_div_18_div_6_div_1_Template, 33, 10, "div", 50);
+    \u0275\u0275template(1, DashboardComponent_div_18_div_6_div_1_Template, 33, 10, "div", 55);
     \u0275\u0275element(2, "hr");
     \u0275\u0275elementEnd();
   }
@@ -45899,11 +45899,11 @@ function DashboardComponent_div_18_div_6_Template(rf, ctx) {
 }
 function DashboardComponent_div_18_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 48)(1, "div", 15)(2, "div", 16)(3, "h4", 17);
+    \u0275\u0275elementStart(0, "div", 53)(1, "div", 15)(2, "div", 16)(3, "h4", 17);
     \u0275\u0275text(4, "Stock");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(5, "div", 4);
-    \u0275\u0275template(6, DashboardComponent_div_18_div_6_Template, 3, 1, "div", 49);
+    \u0275\u0275template(6, DashboardComponent_div_18_div_6_Template, 3, 1, "div", 54);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -45914,7 +45914,7 @@ function DashboardComponent_div_18_Template(rf, ctx) {
 }
 function DashboardComponent_option_55_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 58);
+    \u0275\u0275elementStart(0, "option", 63);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -45925,9 +45925,9 @@ function DashboardComponent_option_55_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", crop_r6.name, " ");
   }
 }
-function DashboardComponent_tr_86_a_32_Template(rf, ctx) {
+function DashboardComponent_tr_99_a_32_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "a", 67);
+    \u0275\u0275elementStart(0, "a", 72);
     \u0275\u0275text(1, " Pay ");
     \u0275\u0275elementEnd();
   }
@@ -45936,7 +45936,7 @@ function DashboardComponent_tr_86_a_32_Template(rf, ctx) {
     \u0275\u0275property("routerLink", \u0275\u0275pureFunction1(1, _c5, "/cashier-payment/taulParchi/" + taulaParchi_r8._id));
   }
 }
-function DashboardComponent_tr_86_Template(rf, ctx) {
+function DashboardComponent_tr_99_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "tr")(1, "td");
@@ -45949,13 +45949,13 @@ function DashboardComponent_tr_86_Template(rf, ctx) {
     \u0275\u0275elementStart(6, "td");
     \u0275\u0275text(7);
     \u0275\u0275element(8, "br");
-    \u0275\u0275elementStart(9, "span", 59);
-    \u0275\u0275element(10, "i", 60);
+    \u0275\u0275elementStart(9, "span", 64);
+    \u0275\u0275element(10, "i", 65);
     \u0275\u0275text(11);
     \u0275\u0275elementEnd();
     \u0275\u0275element(12, "br");
-    \u0275\u0275elementStart(13, "span", 59);
-    \u0275\u0275element(14, "i", 61);
+    \u0275\u0275elementStart(13, "span", 64);
+    \u0275\u0275element(14, "i", 66);
     \u0275\u0275text(15);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(16, "td");
@@ -45977,17 +45977,17 @@ function DashboardComponent_tr_86_Template(rf, ctx) {
     \u0275\u0275elementStart(27, "td");
     \u0275\u0275text(28);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(29, "td")(30, "button", 62);
-    \u0275\u0275element(31, "i", 63);
+    \u0275\u0275elementStart(29, "td")(30, "button", 67);
+    \u0275\u0275element(31, "i", 68);
     \u0275\u0275elementEnd();
-    \u0275\u0275template(32, DashboardComponent_tr_86_a_32_Template, 2, 3, "a", 64);
-    \u0275\u0275elementStart(33, "button", 65);
-    \u0275\u0275listener("click", function DashboardComponent_tr_86_Template_button_click_33_listener() {
+    \u0275\u0275template(32, DashboardComponent_tr_99_a_32_Template, 2, 3, "a", 69);
+    \u0275\u0275elementStart(33, "button", 70);
+    \u0275\u0275listener("click", function DashboardComponent_tr_99_Template_button_click_33_listener() {
       const taulaParchi_r8 = \u0275\u0275restoreView(_r7).$implicit;
       const ctx_r0 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r0.printReceipt(taulaParchi_r8));
     });
-    \u0275\u0275element(34, "i", 66);
+    \u0275\u0275element(34, "i", 71);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -46022,7 +46022,7 @@ function DashboardComponent_tr_86_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ((tmp_15_0 = ctx_r0.getCurrentUser()) == null ? null : tmp_15_0.role) === "cashier" && !(taulaParchi_r8 == null ? null : taulaParchi_r8.transactionType));
   }
 }
-function DashboardComponent_tr_128_Template(rf, ctx) {
+function DashboardComponent_tr_141_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "tr")(1, "td");
     \u0275\u0275text(2);
@@ -46056,8 +46056,8 @@ function DashboardComponent_tr_128_Template(rf, ctx) {
     \u0275\u0275elementStart(21, "td");
     \u0275\u0275text(22);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(23, "td")(24, "button", 62);
-    \u0275\u0275element(25, "i", 63);
+    \u0275\u0275elementStart(23, "td")(24, "button", 67);
+    \u0275\u0275element(25, "i", 68);
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -46104,6 +46104,7 @@ var DashboardComponent = class _DashboardComponent {
     this.farmerMobileSearch = "";
     this.farmerVillageSearch = "";
     this.snoSearch = "";
+    this.transactionTypeSearch = "";
     this.qrCodeUrl = null;
     this.currentUser = this.authService.getCurrentUser();
   }
@@ -46148,6 +46149,9 @@ var DashboardComponent = class _DashboardComponent {
     }
     if (this.selectedCrop) {
       query["crop"] = this.selectedCrop;
+    }
+    if (this.transactionTypeSearch) {
+      query["transactionType"] = this.transactionTypeSearch;
     }
     this.apiService.get("taulparchi", {
       params: __spreadValues({
@@ -46386,7 +46390,7 @@ var DashboardComponent = class _DashboardComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DashboardComponent, selectors: [["app-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 131, vars: 31, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-body"], [1, "d-flex", "justify-content-between", "align-items-center"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-dark", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-calendar", "fs-3", "text-white"], [1, "text-end"], [1, "mb-0", "text-dark"], [1, "mb-0", "text-secondary"], [1, "row", "mt-3"], ["class", "col-12 col-md-6", 4, "ngIf"], ["class", "col-12 mt-4", 4, "ngIf"], [1, "col-12"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "col-auto"], [1, "btn", "btn-primary", 3, "routerLink"], [1, "fi", "fi-rr-add"], [1, "filter-sections"], [1, "row", "mb-2"], [1, "form-group"], ["for", "farmerNameSearch"], ["type", "text", "name", "farmerNameSearch", "id", "farmerNameSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerMobileSearch"], ["type", "text", "name", "farmerMobileSearch", "id", "farmerMobileSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerVillageSearch"], ["type", "text", "name", "farmerVillageSearch", "id", "farmerVillageSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "cropSearch"], ["name", "cropSearch", "id", "cropSearch", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "snoSearch"], ["type", "text", "name", "snoSearch", "id", "snoSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], [1, "table", "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "table-responsive"], ["id", "truckloadingparchi", 3, "pageChange"], [1, "col-12", "col-md-6"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-primary", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-file", "fs-3", "text-white"], [1, "fi", "fi-rs-list", "fs-3", "text-white"], [1, "col-12", "mt-4"], ["class", "row", 4, "ngFor", "ngForOf"], ["class", "col-12 col-md-6 col-lg-4", 4, "ngFor", "ngForOf"], [1, "col-12", "col-md-6", "col-lg-4"], [1, "card", "bg-white", "mb-4"], [1, "text-center"], [1, "mb-0", "text-secondary", "text-center"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["scope", "row"], [3, "value"], [1, "badge", "bg-primary"], [1, "fi", "fi-rr-mobile"], [1, "fi", "fi-rr-marker"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"], [1, "fi", "fi-rr-eye"], ["class", "btn btn-sm btn-primary me-2 mb-2", 3, "routerLink", 4, "ngIf"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "click"], [1, "fi", "fi-rr-print"], [1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"]], template: function DashboardComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DashboardComponent, selectors: [["app-dashboard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 144, vars: 32, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-body"], [1, "d-flex", "justify-content-between", "align-items-center"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-dark", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-calendar", "fs-3", "text-white"], [1, "text-end"], [1, "mb-0", "text-dark"], [1, "mb-0", "text-secondary"], [1, "row", "mt-3"], ["class", "col-12 col-md-6", 4, "ngIf"], ["class", "col-12 mt-4", 4, "ngIf"], [1, "col-12"], [1, "card", "bg-white", "mt-4"], [1, "card-header"], [1, "mb-0"], [1, "col-auto"], [1, "btn", "btn-primary", 3, "routerLink"], [1, "fi", "fi-rr-add"], [1, "filter-sections"], [1, "row", "mb-2"], [1, "form-group"], ["for", "farmerNameSearch"], ["type", "text", "name", "farmerNameSearch", "id", "farmerNameSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerMobileSearch"], ["type", "text", "name", "farmerMobileSearch", "id", "farmerMobileSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "farmerVillageSearch"], ["type", "text", "name", "farmerVillageSearch", "id", "farmerVillageSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "cropSearch"], ["name", "cropSearch", "id", "cropSearch", 1, "form-select", 3, "ngModelChange", "ngModel"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], ["for", "snoSearch"], ["type", "text", "name", "snoSearch", "id", "snoSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["for", "transactionTypeSearch"], ["name", "transactionTypeSearch", "id", "transactionTypeSearch", 1, "form-control", 3, "ngModelChange", "ngModel"], ["value", "cash"], ["value", "credit"], ["value", "banktransfer"], [1, "table", "table-responsive"], [1, "table", "table-bordered"], [1, "thead-dark"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["id", "taulaparchi", 3, "pageChange"], [1, "table-responsive"], ["id", "truckloadingparchi", 3, "pageChange"], [1, "col-12", "col-md-6"], [1, "d-flex", "justify-content-center", "align-items-center", "bg-primary", "rounded", "p-3", "px-4"], [1, "fi", "fi-rs-file", "fs-3", "text-white"], [1, "fi", "fi-rs-list", "fs-3", "text-white"], [1, "col-12", "mt-4"], ["class", "row", 4, "ngFor", "ngForOf"], ["class", "col-12 col-md-6 col-lg-4", 4, "ngFor", "ngForOf"], [1, "col-12", "col-md-6", "col-lg-4"], [1, "card", "bg-white", "mb-4"], [1, "text-center"], [1, "mb-0", "text-secondary", "text-center"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["scope", "row"], [3, "value"], [1, "badge", "bg-primary"], [1, "fi", "fi-rr-mobile"], [1, "fi", "fi-rr-marker"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"], [1, "fi", "fi-rr-eye"], ["class", "btn btn-sm btn-primary me-2 mb-2", 3, "routerLink", 4, "ngIf"], ["type", "button", 1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "click"], [1, "fi", "fi-rr-print"], [1, "btn", "btn-sm", "btn-primary", "me-2", "mb-2", 3, "routerLink"]], template: function DashboardComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "div", 5)(7, "div", 6);
         \u0275\u0275element(8, "i", 7);
@@ -46470,104 +46474,127 @@ var DashboardComponent = class _DashboardComponent {
         \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_input_ngModelChange_60_listener() {
           return ctx.getTaulaParchis();
         });
-        \u0275\u0275elementEnd()()()()();
-        \u0275\u0275elementStart(61, "div", 36)(62, "table", 37)(63, "thead", 38)(64, "tr")(65, "th", 39);
-        \u0275\u0275text(66, "Date");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(61, "div", 2)(62, "div", 23)(63, "label", 36);
+        \u0275\u0275text(64, "Transaction Type");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(67, "th", 39);
-        \u0275\u0275text(68, "Purchase Status");
+        \u0275\u0275elementStart(65, "select", 37);
+        \u0275\u0275twoWayListener("ngModelChange", function DashboardComponent_Template_select_ngModelChange_65_listener($event) {
+          \u0275\u0275twoWayBindingSet(ctx.transactionTypeSearch, $event) || (ctx.transactionTypeSearch = $event);
+          return $event;
+        });
+        \u0275\u0275listener("ngModelChange", function DashboardComponent_Template_select_ngModelChange_65_listener() {
+          return ctx.getTaulaParchis();
+        });
+        \u0275\u0275elementStart(66, "option", 32);
+        \u0275\u0275text(67, "Select");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(69, "th", 39);
-        \u0275\u0275text(70, "Farmer's Name");
+        \u0275\u0275elementStart(68, "option", 38);
+        \u0275\u0275text(69, "Cash");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(71, "th", 39);
-        \u0275\u0275text(72, "Storage Location");
+        \u0275\u0275elementStart(70, "option", 39);
+        \u0275\u0275text(71, "Credit");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(73, "th", 39);
-        \u0275\u0275text(74, "Crop");
+        \u0275\u0275elementStart(72, "option", 40);
+        \u0275\u0275text(73, "Bank Transfer");
+        \u0275\u0275elementEnd()()()()()();
+        \u0275\u0275elementStart(74, "div", 41)(75, "table", 42)(76, "thead", 43)(77, "tr")(78, "th", 44);
+        \u0275\u0275text(79, "Date");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(75, "th", 39);
-        \u0275\u0275text(76, "Firm/Company");
+        \u0275\u0275elementStart(80, "th", 44);
+        \u0275\u0275text(81, "Purchase Status");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(77, "th", 39);
-        \u0275\u0275text(78, "Net Weight(in Quintal)");
+        \u0275\u0275elementStart(82, "th", 44);
+        \u0275\u0275text(83, "Farmer's Name");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(79, "th", 39);
-        \u0275\u0275text(80, "Amount (\u20B9)");
+        \u0275\u0275elementStart(84, "th", 44);
+        \u0275\u0275text(85, "Storage Location");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(81, "th", 39);
-        \u0275\u0275text(82, "Created By");
+        \u0275\u0275elementStart(86, "th", 44);
+        \u0275\u0275text(87, "Crop");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(83, "th", 39);
-        \u0275\u0275text(84, "Action");
+        \u0275\u0275elementStart(88, "th", 44);
+        \u0275\u0275text(89, "Firm/Company");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(90, "th", 44);
+        \u0275\u0275text(91, "Net Weight(in Quintal)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(92, "th", 44);
+        \u0275\u0275text(93, "Amount (\u20B9)");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(94, "th", 44);
+        \u0275\u0275text(95, "Created By");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(96, "th", 44);
+        \u0275\u0275text(97, "Action");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(85, "tbody");
-        \u0275\u0275template(86, DashboardComponent_tr_86_Template, 35, 21, "tr", 40);
-        \u0275\u0275pipe(87, "paginate");
+        \u0275\u0275elementStart(98, "tbody");
+        \u0275\u0275template(99, DashboardComponent_tr_99_Template, 35, 21, "tr", 45);
+        \u0275\u0275pipe(100, "paginate");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(88, "pagination-controls", 41);
-        \u0275\u0275listener("pageChange", function DashboardComponent_Template_pagination_controls_pageChange_88_listener($event) {
+        \u0275\u0275elementStart(101, "pagination-controls", 46);
+        \u0275\u0275listener("pageChange", function DashboardComponent_Template_pagination_controls_pageChange_101_listener($event) {
           ctx.pageForTaulaParchi = $event;
           return ctx.getTaulaParchis();
         });
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(89, "div", 14)(90, "div", 15)(91, "div", 16)(92, "div", 0)(93, "div", 2)(94, "h4", 17);
-        \u0275\u0275text(95, "Truck Loading Parchis");
+        \u0275\u0275elementStart(102, "div", 14)(103, "div", 15)(104, "div", 16)(105, "div", 0)(106, "div", 2)(107, "h4", 17);
+        \u0275\u0275text(108, "Truck Loading Parchis");
         \u0275\u0275elementEnd()();
-        \u0275\u0275elementStart(96, "div", 18)(97, "a", 19);
-        \u0275\u0275element(98, "i", 20);
-        \u0275\u0275text(99, " New Truck Loading Parchi ");
+        \u0275\u0275elementStart(109, "div", 18)(110, "a", 19);
+        \u0275\u0275element(111, "i", 20);
+        \u0275\u0275text(112, " New Truck Loading Parchi ");
         \u0275\u0275elementEnd()()()();
-        \u0275\u0275elementStart(100, "div", 4)(101, "div", 42)(102, "table", 37)(103, "thead", 38)(104, "tr")(105, "th", 39);
-        \u0275\u0275text(106, "Date");
+        \u0275\u0275elementStart(113, "div", 4)(114, "div", 47)(115, "table", 42)(116, "thead", 43)(117, "tr")(118, "th", 44);
+        \u0275\u0275text(119, "Date");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(107, "th", 39);
-        \u0275\u0275text(108, "Crop");
+        \u0275\u0275elementStart(120, "th", 44);
+        \u0275\u0275text(121, "Crop");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(109, "th", 39);
-        \u0275\u0275text(110, "Party Name");
+        \u0275\u0275elementStart(122, "th", 44);
+        \u0275\u0275text(123, "Party Name");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(111, "th", 39);
-        \u0275\u0275text(112, "Truck");
+        \u0275\u0275elementStart(124, "th", 44);
+        \u0275\u0275text(125, "Truck");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(113, "th", 39);
-        \u0275\u0275text(114, "Delivery Location");
+        \u0275\u0275elementStart(126, "th", 44);
+        \u0275\u0275text(127, "Delivery Location");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(115, "th", 39);
-        \u0275\u0275text(116, "Assigned Hammal");
+        \u0275\u0275elementStart(128, "th", 44);
+        \u0275\u0275text(129, "Assigned Hammal");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(117, "th", 39);
-        \u0275\u0275text(118, "Storage Location");
+        \u0275\u0275elementStart(130, "th", 44);
+        \u0275\u0275text(131, "Storage Location");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(119, "th", 39);
-        \u0275\u0275text(120, "Net Weight(in Quintal)");
+        \u0275\u0275elementStart(132, "th", 44);
+        \u0275\u0275text(133, "Net Weight(in Quintal)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(121, "th", 39);
-        \u0275\u0275text(122, "Amount (\u20B9)");
+        \u0275\u0275elementStart(134, "th", 44);
+        \u0275\u0275text(135, "Amount (\u20B9)");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(123, "th", 39);
-        \u0275\u0275text(124, "Created By");
+        \u0275\u0275elementStart(136, "th", 44);
+        \u0275\u0275text(137, "Created By");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(125, "th", 39);
-        \u0275\u0275text(126, "Action");
+        \u0275\u0275elementStart(138, "th", 44);
+        \u0275\u0275text(139, "Action");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(127, "tbody");
-        \u0275\u0275template(128, DashboardComponent_tr_128_Template, 26, 19, "tr", 40);
-        \u0275\u0275pipe(129, "paginate");
+        \u0275\u0275elementStart(140, "tbody");
+        \u0275\u0275template(141, DashboardComponent_tr_141_Template, 26, 19, "tr", 45);
+        \u0275\u0275pipe(142, "paginate");
         \u0275\u0275elementEnd()()();
-        \u0275\u0275elementStart(130, "pagination-controls", 43);
-        \u0275\u0275listener("pageChange", function DashboardComponent_Template_pagination_controls_pageChange_130_listener($event) {
+        \u0275\u0275elementStart(143, "pagination-controls", 48);
+        \u0275\u0275listener("pageChange", function DashboardComponent_Template_pagination_controls_pageChange_143_listener($event) {
           ctx.pageForTruckLoadingParchi = $event;
           return ctx.getTruckLoadingParchis();
         });
-        \u0275\u0275elementEnd()()()()()()();
+        \u0275\u0275elementEnd()()()()()()()();
       }
       if (rf & 2) {
         let tmp_1_0;
         let tmp_2_0;
         let tmp_3_0;
         \u0275\u0275advance(11);
-        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(12, 14, ctx.currentDate, "dd-MM-YYYY"), " ");
+        \u0275\u0275textInterpolate1(" ", \u0275\u0275pipeBind2(12, 15, ctx.currentDate, "dd-MM-YYYY"), " ");
         \u0275\u0275advance(5);
         \u0275\u0275property("ngIf", ((tmp_1_0 = ctx.getCurrentUser()) == null ? null : tmp_1_0.role) === "Admin");
         \u0275\u0275advance();
@@ -46575,7 +46602,7 @@ var DashboardComponent = class _DashboardComponent {
         \u0275\u0275advance();
         \u0275\u0275property("ngIf", ((tmp_3_0 = ctx.getCurrentUser()) == null ? null : tmp_3_0.role) === "Admin");
         \u0275\u0275advance(9);
-        \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(23, _c0));
+        \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(24, _c0));
         \u0275\u0275advance(10);
         \u0275\u0275twoWayProperty("ngModel", ctx.farmerNameSearch);
         \u0275\u0275advance(5);
@@ -46588,12 +46615,14 @@ var DashboardComponent = class _DashboardComponent {
         \u0275\u0275property("ngForOf", ctx.crops);
         \u0275\u0275advance(5);
         \u0275\u0275twoWayProperty("ngModel", ctx.snoSearch);
-        \u0275\u0275advance(26);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(87, 17, ctx.TaulaParchi, \u0275\u0275pureFunction2(24, _c1, ctx.pageForTaulaParchi, ctx.TaulaParchiCount)));
+        \u0275\u0275advance(5);
+        \u0275\u0275twoWayProperty("ngModel", ctx.transactionTypeSearch);
+        \u0275\u0275advance(34);
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(100, 18, ctx.TaulaParchi, \u0275\u0275pureFunction2(25, _c1, ctx.pageForTaulaParchi, ctx.TaulaParchiCount)));
         \u0275\u0275advance(11);
-        \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(27, _c2));
+        \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(28, _c2));
         \u0275\u0275advance(31);
-        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(129, 20, ctx.TruckLoadingParchi, \u0275\u0275pureFunction2(28, _c3, ctx.pageForTruckLoadingParchi, ctx.TruckLoadingParchiCount)));
+        \u0275\u0275property("ngForOf", \u0275\u0275pipeBind2(142, 21, ctx.TruckLoadingParchi, \u0275\u0275pureFunction2(29, _c3, ctx.pageForTruckLoadingParchi, ctx.TruckLoadingParchiCount)));
       }
     }, dependencies: [
       DatePipe,
@@ -78883,7 +78912,7 @@ var TransactionComponent = class _TransactionComponent {
     };
   }
   static {
-    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TransactionComponent, selectors: [["app-transaction"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 121, vars: 18, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "col", "text-end"], [1, "card-body", "bg-warning"], [1, "col-12", "col-md-6", "col-lg-4"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["class", "border-bottom border-dark border-bottom-dotted mb-2 pb-2", 4, "ngIf"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2", "bg-warning", "text-dark"], [1, "card-subtitle", "mb-2", "text-muted", "bg-warning", "text-dark"], [1, "form-group", "bg-warning"], ["id", "transactionType", "name", "transactionType", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "cash"], ["value", "credit"], ["value", "bank transfer"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"]], template: function TransactionComponent_Template(rf, ctx) {
+    this.\u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _TransactionComponent, selectors: [["app-transaction"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 121, vars: 18, consts: [[1, "row"], [1, "col-12", "col-md"], [1, "col"], [1, "card", "bg-white"], [1, "card-header", "text-center"], [1, "mb-0"], [1, "col", "text-start"], [1, "text-muted", "ps-2"], [1, "col", "text-end"], [1, "card-body", "bg-warning"], [1, "col-12", "col-md-6", "col-lg-4"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2"], [1, "card-subtitle", "mb-2", "text-muted"], [1, "card-text"], ["class", "border-bottom border-dark border-bottom-dotted mb-2 pb-2", 4, "ngIf"], [1, "border-bottom", "border-dark", "border-bottom-dotted", "mb-2", "pb-2", "bg-warning", "text-dark"], [1, "card-subtitle", "mb-2", "text-muted", "bg-warning", "text-dark"], [1, "form-group", "bg-warning"], ["id", "transactionType", "name", "transactionType", 1, "form-select", "bg-warning", "text-dark", 3, "ngModelChange", "ngModel"], ["value", ""], ["value", "cash"], ["value", "credit"], ["value", "banktransfer"], [1, "card-actions", "bg-light", "border"], [1, "text-end"], [1, "btn", "btn-primary", "btn-lg", "m-3", 3, "click"]], template: function TransactionComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 0)(3, "div", 2)(4, "div", 3)(5, "div", 4)(6, "h4", 5);
         \u0275\u0275text(7, "Add Transaction");

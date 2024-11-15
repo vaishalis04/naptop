@@ -220,7 +220,24 @@
                       (ngModelChange)="getTaulaParchis()"
                     />
                   </div>
-                </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="transactionTypeSearch">Transaction Type</label>
+                      <select
+                        class="form-control"
+                        name="transactionTypeSearch"
+                        id="transactionTypeSearch"
+                        [(ngModel)]="transactionTypeSearch"
+                        (ngModelChange)="getTaulaParchis()"
+                      >
+                      <option value="">Select</option>
+                        <option value="cash">Cash</option>
+                        <option value="credit">Credit</option>
+                        <option value="banktransfer">Bank Transfer</option>
+                      </select>
+                    </div>
+                  </div>
+                  
               </div>
             </div>
             <div class="table table-responsive">

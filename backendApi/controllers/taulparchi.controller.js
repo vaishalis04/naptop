@@ -209,7 +209,7 @@ module.exports = {
 
   list: async (req, res, next) => {
     try {
-      const { farmerName, farmerMobile, farmerVillage, storage, crop, sno,firm_company, disabled, page, limit, order_by, order_in } =
+      const { farmerName, farmerMobile, farmerVillage, storage, crop, sno,transactionType,firm_company, disabled, page, limit, order_by, order_in } =
         req.query;
 
       const _page = page ? parseInt(page) : 1;
@@ -245,6 +245,9 @@ module.exports = {
       }
       if (sno) {
         query.sno = new RegExp(sno, "i");
+      }
+      if (transactionType) {
+        query.transactionType = new RegExp(transactionType, "i");
       }
       query.disabled = { $ne: true };
       query.is_inactive = { $ne: true };
