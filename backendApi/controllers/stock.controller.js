@@ -84,12 +84,12 @@ module.exports = {
             res.json({
                 data: result,
                 meta: {
-                current_page: _page,
-                from: _skip + 1,
-                last_page: Math.ceil(total / _limit),
-                per_page: _limit,
-                to: _skip + result.length,
-                total: total,
+                    current_page: _page,
+                    from: _skip + 1,
+                    last_page: Math.ceil(total / _limit),
+                    per_page: _limit,
+                    to: _skip + result.length,
+                    total: total,
                 },
             });
         } catch (error) {
@@ -98,36 +98,108 @@ module.exports = {
         }
     },
 
-    warehouseStockCropWise: async (req, res, next) => {
+    getCropWiseWarehouseWisePendingBagConversionCount: async (req, res, next) => {
         try {
-            const { warehouse } = req.query;
+            const warehouse = req.params.warehouseId;
+
             if (!warehouse) {
                 return res.status(400).json({ error: "Warehouse is required." });
             }
 
+            // Where bag_units is empty array or does not exist group by crop
             const query = {
                 warehouse: mongoose.Types.ObjectId(warehouse),
-                disabled: { $ne: true },
-                is_inactive: { $ne: true },
+                $or: [
+                    { bag_units: { $exists: false } },
+                    { bag_units: { $size: 0 } }
+                ],
             };
 
             const result = await Model.aggregate([
                 {
-                    $match: {
-                        warehouse: mongoose.Types.ObjectId(warehouse), // Filters by the specified warehouse ID
-                        disabled: { $ne: true },
-                        is_inactive: { $ne: true }
-                    }
+                    $match: query
                 },
                 {
                     $group: {
-                        _id: { crop: "$crop", warehouse: "$warehouse" }, // Groups by crop and warehouse to isolate each warehouse's records
+                        _id: { crop: "$crop" },
+                        count: { $sum: 1 }
+                    }
+                },
+                {
+                    $lookup: {
+                        from: "crops",
+                        localField: "_id.crop",
+                        foreignField: "_id",
+                        as: "crop"
+                    }
+                },
+                { $unwind: "$crop" },
+                {
+                    $project: {
+                        crop_id: "$crop._id",
+                        crop: "$crop.name",
+                        count: 1
+                    }
+                }
+            ]);
+
+            res.json(result);
+        } catch (error) {
+            console.error("Error fetching pending bag conversion count:", error);
+            next(createError(500, "Failed to fetch pending bag conversion count."));
+        }
+    },
+
+    warehouseStockCropWise: async (req, res, next) => {
+        try {
+            const { warehouse, timeframe } = req.query;
+
+            if (!warehouse) {
+                return res.status(400).json({ error: "Warehouse is required." });
+            }
+
+            // Define date filter based on timeframe
+            let dateFilter = {};
+            if (timeframe === "daily") {
+                const startOfDay = new Date();
+                startOfDay.setHours(0, 0, 0, 0);
+                const endOfDay = new Date();
+                endOfDay.setHours(23, 59, 59, 999);
+                dateFilter = { updated_at: { $gte: startOfDay, $lte: endOfDay } };
+            } else if (timeframe === "monthly") {
+                const now = new Date();
+                const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+                const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59, 999);
+                dateFilter = { updated_at: { $gte: startOfMonth, $lte: endOfMonth } };
+            }
+
+            // Base query
+            const query = {
+                warehouse: mongoose.Types.ObjectId(warehouse),
+                disabled: { $ne: true },
+                is_inactive: { $ne: true },
+                ...dateFilter, // Add the date filter dynamically based on timeframe
+            };
+            console.log("query", query);
+
+            const result = await Model.aggregate([
+                {
+                    $match: query // Apply warehouse and timeframe filtering
+                },
+                {
+                    $group: {
+                        _id: { crop: "$crop", warehouse: "$warehouse" }, // Group by crop and warehouse
                         quantity: {
                             $sum: {
                                 $cond: [
                                     { $in: ["$logType", ["purchase", "transfer in"]] },
                                     "$quantity",
-                                    { $cond: [{ $in: ["$logType", ["sale", "transfer out"]] }, { $multiply: ["$quantity", -1] }, 0]
+                                    {
+                                        $cond: [
+                                            { $in: ["$logType", ["sale", "transfer out"]] },
+                                            { $multiply: ["$quantity", -1] },
+                                            0
+                                        ]
                                     }
                                 ]
                             }
@@ -144,7 +216,7 @@ module.exports = {
                                             as: "bag",
                                             in: {
                                                 unit_weight_of_bags: "$$bag.unit_weight_of_bags",
-                                                no_of_bags: { $multiply: ["$$bag.no_of_bags", -1] } // Adjusts for sales or transfers out by making the number of bags negative
+                                                no_of_bags: { $multiply: ["$$bag.no_of_bags", -1] }
                                             }
                                         }
                                     }
@@ -180,7 +252,6 @@ module.exports = {
                         }
                     }
                 },
-                // Add $lookup to get crop details as before
                 {
                     $lookup: {
                         from: "crops",
@@ -207,6 +278,116 @@ module.exports = {
             next(createError(500, "Failed to fetch warehouse stock crop-wise."));
         }
     },
+
+    // warehouseStockCropWise: async (req, res, next) => {
+    //     try {
+    //         const { warehouse } = req.query;
+    //         if (!warehouse) {
+    //             return res.status(400).json({ error: "Warehouse is required." });
+    //         }
+
+    //         const query = {
+    //             warehouse: mongoose.Types.ObjectId(warehouse),
+    //             disabled: { $ne: true },
+    //             is_inactive: { $ne: true },
+    //         };
+
+    //         const result = await Model.aggregate([
+    //             {
+    //                 $match: {
+    //                     warehouse: mongoose.Types.ObjectId(warehouse), // Filters by the specified warehouse ID
+    //                     disabled: { $ne: true },
+    //                     is_inactive: { $ne: true }
+    //                 }
+    //             },
+    //             {
+    //                 $group: {
+    //                     _id: { crop: "$crop", warehouse: "$warehouse" }, // Groups by crop and warehouse to isolate each warehouse's records
+    //                     quantity: {
+    //                         $sum: {
+    //                             $cond: [
+    //                                 { $in: ["$logType", ["purchase", "transfer in"]] },
+    //                                 "$quantity",
+    //                                 { $cond: [{ $in: ["$logType", ["sale", "transfer out"]] }, { $multiply: ["$quantity", -1] }, 0]
+    //                                 }
+    //                             ]
+    //                         }
+    //                     },
+    //                     averagePrice: { $avg: "$price" },
+    //                     bag_units: {
+    //                         $push: {
+    //                             $cond: [
+    //                                 { $in: ["$logType", ["purchase", "transfer in"]] },
+    //                                 "$bag_units",
+    //                                 {
+    //                                     $map: {
+    //                                         input: "$bag_units",
+    //                                         as: "bag",
+    //                                         in: {
+    //                                             unit_weight_of_bags: "$$bag.unit_weight_of_bags",
+    //                                             no_of_bags: { $multiply: ["$$bag.no_of_bags", -1] } // Adjusts for sales or transfers out by making the number of bags negative
+    //                                         }
+    //                                     }
+    //                                 }
+    //                             ]
+    //                         }
+    //                     }
+    //                 }
+    //             },
+    //             {
+    //                 $unwind: "$bag_units"
+    //             },
+    //             {
+    //                 $unwind: "$bag_units"
+    //             },
+    //             {
+    //                 $group: {
+    //                     _id: { crop: "$_id.crop", warehouse: "$_id.warehouse", unit_weight_of_bags: "$bag_units.unit_weight_of_bags" },
+    //                     quantity: { $first: "$quantity" },
+    //                     averagePrice: { $first: "$averagePrice" },
+    //                     no_of_bags: { $sum: "$bag_units.no_of_bags" }
+    //                 }
+    //             },
+    //             {
+    //                 $group: {
+    //                     _id: { crop: "$_id.crop", warehouse: "$_id.warehouse" },
+    //                     quantity: { $first: "$quantity" },
+    //                     averagePrice: { $first: "$averagePrice" },
+    //                     bag_units: {
+    //                         $push: {
+    //                             unit_weight_of_bags: "$_id.unit_weight_of_bags",
+    //                             no_of_bags: "$no_of_bags"
+    //                         }
+    //                     }
+    //                 }
+    //             },
+    //             // Add $lookup to get crop details as before
+    //             {
+    //                 $lookup: {
+    //                     from: "crops",
+    //                     localField: "_id.crop",
+    //                     foreignField: "_id",
+    //                     as: "crop"
+    //                 }
+    //             },
+    //             { $unwind: "$crop" },
+    //             {
+    //                 $project: {
+    //                     crop_id: "$crop._id",
+    //                     crop: "$crop.name",
+    //                     quantity: 1,
+    //                     averagePrice: 1,
+    //                     bag_units: 1
+    //                 }
+    //             }
+    //         ]);
+
+    //         res.json(result);
+    //     } catch (error) {
+    //         console.error("Error fetching warehouse stock crop-wise:", error);
+    //         next(createError(500, "Failed to fetch warehouse stock crop-wise."));
+    //     }
+    // },
 
     get: async (req, res, next) => {
         try {

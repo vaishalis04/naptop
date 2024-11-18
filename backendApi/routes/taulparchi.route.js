@@ -13,6 +13,8 @@ router.get('/getWeightwearhouseSummary', TaulParchiController.getWearhouseWeight
 
 router.get('/', verifyAccessToken, TaulParchiController.list);
 
+router.get('/pos', TaulParchiController.list);
+
 router.post('/', TaulParchiController.create);
 
 router.get('/getWeightsummary', TaulParchiController.getWeightSummary);

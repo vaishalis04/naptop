@@ -1,6 +1,6 @@
 /**
  * @license
- * Video.js 8.19.1 <http://videojs.com/>
+ * Video.js 8.18.1 <http://videojs.com/>
  * Copyright Brightcove, Inc. <https://www.brightcove.com/>
  * Available under Apache License Version 2.0
  * <https://github.com/videojs/video.js/blob/main/LICENSE>
@@ -13,7 +13,7 @@
   typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory() : typeof define === "function" && define.amd ? define(factory) : (global2 = typeof globalThis !== "undefined" ? globalThis : global2 || self, global2.videojs = factory());
 })(this, function() {
   "use strict";
-  var version$5 = "8.19.1";
+  var version$5 = "8.18.1";
   const hooks_ = {};
   const hooks = function(type, fn) {
     hooks_[type] = hooks_[type] || [];
@@ -15710,57 +15710,6 @@
       this.setSrc(src);
     }
     /**
-     * Add a <source> element to the <video> element.
-     *
-     * @param {string} srcUrl
-     *        The URL of the video source.
-     *
-     * @param {string} [mimeType]
-     *        The MIME type of the video source. Optional but recommended.
-     *
-     * @return {boolean}
-     *         Returns true if the source element was successfully added, false otherwise.
-     */
-    addSourceElement(srcUrl, mimeType) {
-      if (!srcUrl) {
-        log$1.error("Invalid source URL.");
-        return false;
-      }
-      const sourceAttributes = {
-        src: srcUrl
-      };
-      if (mimeType) {
-        sourceAttributes.type = mimeType;
-      }
-      const sourceElement = createEl("source", {}, sourceAttributes);
-      this.el_.appendChild(sourceElement);
-      return true;
-    }
-    /**
-     * Remove a <source> element from the <video> element by its URL.
-     *
-     * @param {string} srcUrl
-     *        The URL of the source to remove.
-     *
-     * @return {boolean}
-     *         Returns true if the source element was successfully removed, false otherwise.
-     */
-    removeSourceElement(srcUrl) {
-      if (!srcUrl) {
-        log$1.error("Source URL is required to remove the source element.");
-        return false;
-      }
-      const sourceElements = this.el_.querySelectorAll("source");
-      for (const sourceElement of sourceElements) {
-        if (sourceElement.src === srcUrl) {
-          this.el_.removeChild(sourceElement);
-          return true;
-        }
-      }
-      log$1.warn(`No matching source element found with src: ${srcUrl}`);
-      return false;
-    }
-    /**
      * Reset the tech by removing all sources and then calling
      * {@link Html5.resetMediaElement}.
      */
@@ -18015,8 +17964,7 @@
       }
     }
     /**
-     * Handle a double-click on the media element to enter/exit fullscreen,
-     * or exit documentPictureInPicture mode
+     * Handle a double-click on the media element to enter/exit fullscreen
      *
      * @param {Event} event
      *        the event that caused this function to trigger
@@ -18033,8 +17981,6 @@
         if (this.options_ === void 0 || this.options_.userActions === void 0 || this.options_.userActions.doubleClick === void 0 || this.options_.userActions.doubleClick !== false) {
           if (this.options_ !== void 0 && this.options_.userActions !== void 0 && typeof this.options_.userActions.doubleClick === "function") {
             this.options_.userActions.doubleClick.call(this, event);
-          } else if (this.isInPictureInPicture() && !document.pictureInPictureElement) {
-            this.exitPictureInPicture();
           } else if (this.isFullscreen()) {
             this.exitFullscreen();
           } else {
@@ -19346,39 +19292,6 @@
         this.changingSrc_ = false;
       }, true);
       return false;
-    }
-    /**
-     * Add a <source> element to the <video> element.
-     *
-     * @param {string} srcUrl
-     *        The URL of the video source.
-     *
-     * @param {string} [mimeType]
-     *        The MIME type of the video source. Optional but recommended.
-     *
-     * @return {boolean}
-     *         Returns true if the source element was successfully added, false otherwise.
-     */
-    addSourceElement(srcUrl, mimeType) {
-      if (!this.tech_) {
-        return false;
-      }
-      return this.tech_.addSourceElement(srcUrl, mimeType);
-    }
-    /**
-     * Remove a <source> element from the <video> element by its URL.
-     *
-     * @param {string} srcUrl
-     *        The URL of the source to remove.
-     *
-     * @return {boolean}
-     *         Returns true if the source element was successfully removed, false otherwise.
-     */
-    removeSourceElement(srcUrl) {
-      if (!this.tech_) {
-        return false;
-      }
-      return this.tech_.removeSourceElement(srcUrl);
     }
     /**
      * Begin loading the src data.
@@ -27604,7 +27517,7 @@
     DOMParser: DOMParser_1
   };
   var DOMParser2 = domParser.DOMParser;
-  /*! @name mpd-parser @version 1.3.1 @license Apache-2.0 */
+  /*! @name mpd-parser @version 1.3.0 @license Apache-2.0 */
   const isObject = (obj) => {
     return !!obj && typeof obj === "object";
   };
@@ -28192,10 +28105,9 @@
   const organizeVttPlaylists = (playlists, sidxMapping = {}) => {
     return playlists.reduce((a, playlist) => {
       const label = playlist.attributes.label || playlist.attributes.lang || "text";
-      const language = playlist.attributes.lang || "und";
       if (!a[label]) {
         a[label] = {
-          language,
+          language: label,
           default: false,
           autoselect: false,
           playlists: [],
@@ -29791,7 +29703,7 @@
     metadataTsToSeconds
   };
   var clock_1 = clock.ONE_SECOND_IN_TS;
-  /*! @name @videojs/http-streaming @version 3.15.0 @license Apache-2.0 */
+  /*! @name @videojs/http-streaming @version 3.14.2 @license Apache-2.0 */
   const resolveUrl = resolveUrl$1;
   const resolveManifestRedirect = (url, req) => {
     if (req && req.responseURL && url !== req.responseURL) {
@@ -46829,13 +46741,9 @@ ${segmentInfoString(segmentInfo)}`);
       this.handleDurationChange_ = this.handleDurationChange_.bind(this);
       this.handleSourceOpen_ = this.handleSourceOpen_.bind(this);
       this.handleSourceEnded_ = this.handleSourceEnded_.bind(this);
-      this.load = this.load.bind(this);
-      this.pause = this.pause.bind(this);
       this.mediaSource.addEventListener("durationchange", this.handleDurationChange_);
       this.mediaSource.addEventListener("sourceopen", this.handleSourceOpen_);
       this.mediaSource.addEventListener("sourceended", this.handleSourceEnded_);
-      this.mediaSource.addEventListener("startstreaming", this.load);
-      this.mediaSource.addEventListener("endstreaming", this.pause);
       this.seekable_ = createTimeRanges();
       this.hasPlayed_ = false;
       this.syncController_ = new SyncController(options);
@@ -47456,18 +47364,6 @@ ${segmentInfoString(segmentInfo)}`);
       }
       if (this.mediaTypes_.SUBTITLES.activePlaylistLoader) {
         this.subtitleSegmentLoader_.load();
-      }
-    }
-    /**
-     * Call pause on our SegmentLoaders
-     */
-    pause() {
-      this.mainSegmentLoader_.pause();
-      if (this.mediaTypes_.AUDIO.activePlaylistLoader) {
-        this.audioSegmentLoader_.pause();
-      }
-      if (this.mediaTypes_.SUBTITLES.activePlaylistLoader) {
-        this.subtitleSegmentLoader_.pause();
       }
     }
     /**
@@ -49090,9 +48986,9 @@ ${segmentInfoString(segmentInfo)}`);
   const reloadSourceOnError = function(options) {
     initPlugin(this, options);
   };
-  var version$4 = "3.15.0";
+  var version$4 = "3.14.2";
   var version$3 = "7.0.3";
-  var version$2 = "1.3.1";
+  var version$2 = "1.3.0";
   var version$1 = "7.2.0";
   var version = "4.0.2";
   const Vhs = {
@@ -49719,12 +49615,7 @@ ${segmentInfoString(segmentInfo)}`);
         return;
       }
       this.mediaSourceUrl_ = window.URL.createObjectURL(this.playlistController_.mediaSource);
-      if ((videojs.browser.IS_ANY_SAFARI || videojs.browser.IS_IOS) && this.options_.overrideNative && this.options_.sourceType === "hls" && typeof this.tech_.addSourceElement === "function") {
-        this.tech_.addSourceElement(this.mediaSourceUrl_);
-        this.tech_.addSourceElement(this.source_.src);
-      } else {
-        this.tech_.src(this.mediaSourceUrl_);
-      }
+      this.tech_.src(this.mediaSourceUrl_);
     }
     createKeySessions_() {
       const audioPlaylistLoader = this.playlistController_.mediaTypes_.AUDIO.activePlaylistLoader;

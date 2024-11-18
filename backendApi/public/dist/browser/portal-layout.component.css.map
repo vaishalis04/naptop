@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["src/app/layouts/portal-layout/portal-layout.component.css"],
-  "sourcesContent": [".main-body {\r\n    margin-top: 70px;\r\n    height: calc(100vh - 70px);\r\n    overflow-y: auto;\r\n}\r\n@media (min-width: 768px) {\r\n    .main-body {\r\n        margin-left: 250px;\r\n    }\r\n}"],
+  "sourcesContent": [".main-body {\n    margin-top: 70px;\n    height: calc(100vh - 70px);\n    overflow-y: auto;\n}\n@media (min-width: 768px) {\n    .main-body {\n        margin-left: 250px;\n    }\n}"],
   "mappings": ";AAAA,CAAC;AACG,cAAY;AACZ,UAAQ,KAAK,MAAM,EAAE;AACrB,cAAY;AAChB;AACA,OAAO,CAAC,SAAS,EAAE;AACf,GANH;AAOO,iBAAa;AACjB;AACJ;",
   "names": []
 }

@@ -31,6 +31,7 @@
         <h4 class="mb-0">Taula Parchis</h4>
       </div>
       <div class="card-body">
+
         <div class="filter-sections">
           <div class="row mb-2">
             <div class="col">
@@ -56,19 +57,21 @@
             </div>
             <div class="col">
               <div class="form-group">
-                <label for="cropSearch">Crop</label>
-                <select class="form-select" name="cropSearch" id="cropSearch" [(ngModel)]="selectedCrop"
-                  (ngModelChange)="getTaulaParchisFilter()">
-                  <option value="">Select</option>
-                  <option *ngFor="let crop of crops" [value]="crop._id">{{ crop.name }}</option>
-                </select>
+                <label for="snoSearch">S.no</label>
+                <input type="text" class="form-control" name="snoSearch" id="snoSearch" [(ngModel)]="snoSearch"
+                  (ngModelChange)="getTaulaParchisFilter()" />
               </div>
             </div>
             <div class="col">
               <div class="form-group">
-                <label for="snoSearch">S.no</label>
-                <input type="text" class="form-control" name="snoSearch" id="snoSearch"
-                  [(ngModel)]="snoSearch" (ngModelChange)="getTaulaParchisFilter()" />
+                <label for="transactionTypeSearch">Transaction Type</label>
+                <select class="form-control" name="transactionTypeSearch" id="transactionTypeSearch"
+                  [(ngModel)]="transactionTypeSearch" (ngModelChange)="getTaulaParchis()">
+                  <option value="">Select</option>
+                  <option value="cash">Cash</option>
+                  <option value="credit">Credit</option>
+                  <option value="banktransfer">Bank Transfer</option>
+                </select>
               </div>
             </div>
           </div>
@@ -77,7 +80,7 @@
           <table class="table table-bordered">
             <thead class="thead-dark">
               <tr>
-                <!-- <th scope="col">Sr.no</th> -->
+                <th scope="col">Sr.no</th>
                 <th scope="col">Date</th>
                 <th scope="col">Purchase Status</th>
                 <th scope="col">Farmer's Name</th>
@@ -87,23 +90,24 @@
                 <th scope="col">Net Weight(in Quintal)</th>
                 <th scope="col">Amount (₹)</th>
                 <th scope="col">Created By</th>
+                <th scope="col">Print</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
               <!-- Iterate through TaulaParchi data -->
               <tr *ngFor="
-                  let taulaParchi of TaulaParchi
-                    | paginate
-                      : {
-                          itemsPerPage: 10,
-                          currentPage: pageForTaulaParchi,
-                          id: 'taulaparchi',
-                          totalItems: TaulaParchiCount
-                        };
-                  let i = index
-                ">
-                <!-- <td>{{ currentPage * perPage - perPage + (i + 1) }}</td> -->
+                    let taulaParchi of TaulaParchi
+                      | paginate
+                        : {
+                            itemsPerPage: perPage,
+                            currentPage: currentPage,
+                            id: 'taulaparchi',
+                            totalItems: TaulaParchiCount
+                          };
+                    let i = index
+                  ">
+                <td>{{ taulaParchi.sno }}</td>
                 <td>{{ taulaParchi.created_at | date : "MM-dd-YYYY hh:mm" }}</td>
                 <td>{{ taulaParchi?.purchase }}</td>
                 <td>
@@ -123,86 +127,26 @@
                 <td>{{ taulaParchi.netWeight }}</td>
                 <td>{{ taulaParchi.amount | number: '.2' }}</td>
                 <td>{{ taulaParchi?.userDetails?.name }}</td>
-                <td>
-                  <button type="button" class="btn btn-sm btn-primary me-2 mb-2" [routerLink]="['/taul-parchi-view', taulaParchi._id]">
-                    <!-- View -->
-                    <i class="fi fi-rr-eye"></i>
+                <td class="d-flex">
+                  <button type="button" class="btn btn-sm btn-primary me-2 mb-2"
+                    (click)="sendToPrintReceipt(taulaParchi)">
+                    <!-- Print -->
+                    <i class="fi fi-rr-print"></i>
                   </button>
-                  <!-- Pay Button link -->
-                  <a class="btn btn-sm btn-primary me-2 mb-2" [routerLink]="['/cashier-payment/taulParchi/'+taulaParchi._id]">
-                    <!-- Pay -->
-                    Pay
-                  </a>
                 </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <pagination-controls id="taulaparchi"
-          (pageChange)="pageForTaulaParchi = $event; getTaulaParchis()"></pagination-controls>
-      </div>
-      <div class="card-body">
-        <div class="table table-responsive">
-          <table class="table table-bordered">
-            <thead class="thead-dark">
-              <tr>
-                <!-- <th scope="col">Sr.no</th> -->
-                <th scope="col">Date</th>
-                <th scope="col">Purchase Status</th>
-                <th scope="col">Farmer's Name</th>
-                <th scope="col">Storage Location</th>
-                <th scope="col">Crop</th>
-                <th scope="col">Firm/Company</th>
-                <th scope="col">Net Weight(in Quintal)</th>
-                <th scope="col">Amount (₹)</th>
-                <th scope="col">Created By</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Iterate through TaulaParchi data -->
-              <tr *ngFor="
-                  let taulaParchi of TaulaParchi
-                    | paginate
-                      : {
-                          itemsPerPage: perPage,
-                          currentPage: currentPage,
-                          id: 'taulaparchi',
-                          totalItems: TaulaParchiCount
-                        };
-                  let i = index
-                ">
-                <!-- <td>{{ currentPage * perPage - perPage + (i + 1) }}</td> -->
-                <td>{{ taulaParchi.created_at | date : "MM-dd-YYYY hh:mm" }}</td>
-                <td>{{ taulaParchi?.purchase }}</td>
-                <td>
-                  {{ taulaParchi?.farmerName }}
-                  <br>
-                  <span class="badge bg-primary">
-                    <i class="fi fi-rr-mobile"></i> | {{ taulaParchi?.farmerMobile }}
-                  </span>
-                  <br>
-                  <span class="badge bg-primary">
-                    <i class="fi fi-rr-marker"></i> | {{ taulaParchi?.farmerVillage }}
-                  </span>
-                </td>
-                <td>{{ taulaParchi?.wearhouseDetails?.name }}</td>
-                <td>{{ taulaParchi?.cropDetails?.name }}</td>
-                <td>{{ taulaParchi?.companyDetails?.name }}</td>
-                <td>{{ taulaParchi.netWeight }}</td>
-                <td>{{ taulaParchi.amount | number: '.2' }}</td>
-                <td>{{ taulaParchi?.userDetails?.name }}</td>
                 <td>
                   <button type="button" class="btn btn-sm btn-primary me-2 mb-2" (click)="printReceipt(taulaParchi)">
                     <!-- Print -->
                     <i class="fi fi-rr-print"></i>
                   </button>
-                  <button type="button" class="btn btn-sm btn-primary me-2 mb-2" [routerLink]="['/taul-parchi-view', taulaParchi._id]">
+                  <button type="button" class="btn btn-sm btn-primary me-2 mb-2"
+                    [routerLink]="['/taul-parchi-view', taulaParchi._id]">
                     <!-- View -->
                     <i class="fi fi-rr-eye"></i>
                   </button>
                   <!-- delete -->
-                  <button type="button" class="btn btn-sm btn-danger me-2 mb-2" (click)="deleteTaulaParchi(taulaParchi._id)">
+                  <button *ngIf="currentUser.role == 'Admin'" type="button" class="btn btn-sm btn-danger me-2 mb-2"
+                    (click)="deleteTaulaParchi(taulaParchi._id)">
                     <i class="fi fi-rr-trash"></i>
                   </button>
                 </td>
@@ -210,9 +154,9 @@
             </tbody>
           </table>
         </div>
-        <pagination-controls id="taulaparchi"
-          (pageChange)="currentPage = $event; getTaulaParchis()"></pagination-controls>
       </div>
+      <pagination-controls id="taulaparchi"
+        (pageChange)="currentPage = $event; getTaulaParchis()"></pagination-controls>
     </div>
   </div>
 </div>

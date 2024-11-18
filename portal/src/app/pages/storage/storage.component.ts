@@ -52,6 +52,7 @@ export class StorageComponent {
     meta_data: {},
   };
   isStockUpdateModelOpen: boolean = false;
+  cropWiseWarehouseStock: any[] = [];
 
   crops: any[] = [];
 
@@ -82,7 +83,22 @@ export class StorageComponent {
       }
     }).subscribe((data: any) => {
       this.crops = data.data;
+      this.getCropWiseWarehouseStock();
     });
+  }
+
+  getCropWiseWarehouseStock() {
+    this.apiService.get(`stock/warehouse-stock-crop-wise/${this.selectedWarehouseId}`).subscribe((data: any) => {
+      this.cropWiseWarehouseStock = data;
+    });
+  }
+
+  getCropPendingCount(cropId: string) {
+    const cropStock = this.cropWiseWarehouseStock.find((item: any) => item.crop_id === cropId);
+    if (cropStock) {
+      return cropStock.count;
+    }
+    return 0;
   }
 
   selectItemToEdit(index: number) {
@@ -142,6 +158,7 @@ export class StorageComponent {
   viewStock(warehouseId: string) {
     if (warehouseId) {
       this.selectedWarehouseId = warehouseId;
+      this.cropWiseWarehouseStock = [];
       this.apiService.get(`stock/warehouse-stock-crop-wise`, {
         params: {
           warehouse: warehouseId,

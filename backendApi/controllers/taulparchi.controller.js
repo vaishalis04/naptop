@@ -66,12 +66,12 @@ module.exports = {
       const lastRecord = await Model.findOne({}).sort({ created_at: -1 }).select("sno");
 
       let newSno = "TL000001"; // Default if no records exist
-  
+
       if (lastRecord && lastRecord.sno) {
         const lastNumber = parseInt(lastRecord.sno.slice(2)); // Extract number part after "Tl"
         newSno = `TL${String(lastNumber + 1).padStart(6, "0")}`;
       }
-  
+
       data.sno = newSno;
       // Create a new TaulParchi instance with the provided data
       const newTaulParchi = new Model(data);
@@ -209,7 +209,7 @@ module.exports = {
 
   list: async (req, res, next) => {
     try {
-      const { farmerName, farmerMobile, farmerVillage, storage, crop, sno,transactionType,firm_company, disabled, page, limit, order_by, order_in } =
+      const { enableToPrint, enableToPrintBy, farmerName, farmerMobile, farmerVillage, storage, crop, sno,transactionType,firm_company, disabled, page, limit, order_by, order_in } =
         req.query;
 
       const _page = page ? parseInt(page) : 1;
@@ -225,6 +225,12 @@ module.exports = {
       }
 
       const query = {};
+      if (enableToPrint) {
+        query.enableToPrint = enableToPrint == 'Y' ? true : false;
+      }
+      if (enableToPrintBy) {
+        query.enableToPrintBy = enableToPrintBy;
+      }
       if (farmerName) {
         query.farmerName = new RegExp(farmerName, "i");
       }
@@ -398,19 +404,19 @@ module.exports = {
         return res.status(400).json({ error: "No data provided for update." });
       }
 
-      if (!data.transactionType) {
-        return res.status(400).json({ error: "transactionType is required." });
-      }
+      // if (!data.transactionType) {
+      //   return res.status(400).json({ error: "transactionType is required." });
+      // }
 
       // Calculate netWeight using the formula: netWeight = (boraQuantity * unitBora) + bharti
       // data.netWeight = data.boraQuantity * data.unitBora + data.bharti;
-      if (
-        data.boraQuantity !== undefined &&
-        data.unitBora !== undefined &&
-        data.bharti !== undefined
-      ) {
-        data.netWeight = data.boraQuantity * data.unitBora + data.bharti;
-      }
+      // if (
+      //   data.boraQuantity !== undefined &&
+      //   data.unitBora !== undefined &&
+      //   data.bharti !== undefined
+      // ) {
+      //   data.netWeight = data.boraQuantity * data.unitBora + data.bharti;
+      // }
 
       // Assign the `updated_at` field
       data.updated_at = Date.now();
@@ -1347,28 +1353,28 @@ module.exports = {
   },
   // patch:async (req, res) => {
   //   try {
-  //     const { id } = req.params; 
+  //     const { id } = req.params;
   //     const { transactionType } = req.body; // Extract the field to update
-  
+
   //     // Debugging: Log the request body to verify the incoming data
   //     console.log('Received data for update:', req.body);
-  
+
   //     // Check if transactionType is provided
   //     if (!transactionType) {
   //       return res.status(400).json({ error: 'Transaction type is required.' });
   //     }
-  
+
   //     // Find and update the Taulparchi document by ID
   //     const updatedTaulparchi = await Model.findByIdAndUpdate(
   //       id, // ID of the record to update
   //       { transactionType }, // Only update the transactionType field
   //       { new: true } // Return the updated document
   //     );
-  
+
   //     if (!updatedTaulparchi) {
   //       return res.status(404).json({ error: 'Taulparchi not found.' });
   //     }
-  
+
   //     // Send success response
   //     res.status(200).json({ message: 'Taulparchi updated successfully', data: updatedTaulparchi });
   //   } catch (err) {
@@ -1380,24 +1386,24 @@ module.exports = {
       const { id } = req.params;
       const { transactionType } = req.body;
       // const userId = req.user.id;  // Assuming the user ID is available in req.user (after authentication)
-  
+
       // Debugging: Log the request body to verify the incoming data
       console.log('Received data for update:', req.body);
-  
+
       // Check if transactionType is provided
       if (!transactionType) {
         return res.status(400).json({ error: 'Transaction type is required.' });
       }
-  
+
       // Generate transactionId (sno) based on last record's sno
       const lastRecord = await Model.findOne({}).sort({ created_at: -1 }).select('sno');
       let newSno = "TRTP000001";  // Default if no records exist
-  
+
       if (lastRecord && lastRecord.sno) {
         const lastNumber = parseInt(lastRecord.sno.slice(4)); // Extract number part after "TRTP"
         newSno = `TRTP${String(lastNumber + 1).padStart(6, '0')}`;
       }
-  
+
       // Prepare the update data
       const updateData = {
         transactionType,
@@ -1405,18 +1411,18 @@ module.exports = {
         // transaction_by: userId,  // Save the user ID who made the transaction
         transactionId: newSno,   // New transaction ID based on sno
       };
-  
+
       // Find and update the Taulparchi document by ID
       const updatedTaulparchi = await Model.findByIdAndUpdate(
         id,                      // ID of the record to update
         { $set: updateData },     // Update the fields
         { new: true }             // Return the updated document
       );
-  
+
       if (!updatedTaulparchi) {
         return res.status(404).json({ error: 'Taulparchi not found.' });
       }
-  
+
       // Send success response
       res.status(200).json({
         message: 'Taulparchi updated successfully',
@@ -1426,5 +1432,5 @@ module.exports = {
       console.error('Error updating Taulparchi:', err);
       res.status(500).json({ error: 'An error occurred while updating Taulparchi.' });
     }
-  }  
+  }
   }

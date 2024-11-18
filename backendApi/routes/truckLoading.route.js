@@ -5,6 +5,8 @@ const { verifyAccessToken } = require("../Helpers/jwt_helper");
 
 router.get('/', verifyAccessToken, TruckLoadingController.list);
 
+router.get('/pos', TruckLoadingController.list);
+
 router.post('/', TruckLoadingController.create);
 
 router.get('/userId/:id',  TruckLoadingController.getByUser);

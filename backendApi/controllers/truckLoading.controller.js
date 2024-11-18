@@ -90,12 +90,12 @@ module.exports = {
   //       const lastRecord = await Model.findOne({}).sort({ created_at: -1 }).select("sno");
 
   //     let newSno = "TR000001"; // Default if no records exist
-  
+
   //     if (lastRecord && lastRecord.sno) {
   //       const lastNumber = parseInt(lastRecord.sno.slice(2)); // Extract number part after "Tl"
   //       newSno = `TR${String(lastNumber + 1).padStart(6, "0")}`;
   //     }
-  
+
   //     data.sno = newSno;
   //     console.log("data",newSno)
 
@@ -137,7 +137,7 @@ module.exports = {
   create: async (req, res, next) => {
     try {
       const data = req.body;
-  
+
       // Validate required fields
       if (!data.partyName) {
         return res.status(400).json({ error: "Party Name is required." });
@@ -154,28 +154,28 @@ module.exports = {
       if (!data.crop) {
         return res.status(400).json({ error: "Crop is required." });
       }
-  
+
       // Generate a new auto-incrementing sno
       const lastRecord = await Model.findOne({}).sort({ created_at: -1 }).select("sno");
       let newSno = "TR000001"; // Default if no records exist
-  
+
       if (lastRecord && lastRecord.sno) {
         const lastNumber = parseInt(lastRecord.sno.slice(2)); // Extract number part after "TR"
         newSno = `TR${String(lastNumber + 1).padStart(6, "0")}`;
       }
-  
+
       data.sno = newSno; // Assign the generated sno to data before creation
       console.log("Assigned sno:", newSno); // Debugging line to verify the sno
-  
+
       // Calculate netWeight using the formula: netWeight = boraQuantity * unitBora
-      data.netWeight = data.boraQuantity * data.unitBora;
-  
+      // data.netWeight = data.boraQuantity * data.unitBora;
+
       // Create a new TruckLoading instance with the provided data
       const newTruckLoading = new Model(data);
-  
+
       // Save the new TruckLoading entry to the database
       const result = await newTruckLoading.save();
-  
+
       // Create a new Stock entry for the TruckLoading
       if (data.transferType === "Stock Transfer") {
         const stockDataOut = {
@@ -194,7 +194,7 @@ module.exports = {
             truckLoading: result._id,
           },
         };
-  
+
         const stockDataIn = {
           crop: data.crop,
           quantity: data.netWeight,
@@ -211,7 +211,7 @@ module.exports = {
             truckLoading: result._id,
           },
         };
-  
+
         // Create stock entries for both transfer in and transfer out
         await StockModel.createOrUpdateStock(null, stockDataOut);
         await StockModel.createOrUpdateStock(null, stockDataIn);
@@ -233,11 +233,11 @@ module.exports = {
             truckLoading: result._id,
           },
         };
-  
+
         // Create the stock entry
         await StockModel.createOrUpdateStock(null, stockData);
       }
-  
+
       // Respond with the saved TruckLoading and a status of 201 (Created)
       return res.status(201).json(result);
     } catch (error) {
@@ -245,10 +245,11 @@ module.exports = {
       next(createError(500, "Failed to save Truck Loading.")); // Handle errors and send a 500 response
     }
   },
-  
+
   list: async (req, res, next) => {
     try {
       const {
+        enableToPrint, enableToPrintBy,
         crop,
         partyName,
         vehicleNumber,
@@ -271,6 +272,12 @@ module.exports = {
       }
 
       const query = {};
+      if (enableToPrint) {
+        query.enableToPrint = enableToPrint == 'Y' ? true : false;
+      }
+      if (enableToPrintBy) {
+        query.enableToPrintBy = enableToPrintBy;
+      }
       if (partyName) {
         query.partyName = mongoose.Types.ObjectId(partyName);
       }
@@ -486,7 +493,7 @@ module.exports = {
       // }
 
       // Calculate netWeight using the formula: netWeight = boraQuantity * unitBora
-      data.netWeight = data.boraQuantity * data.unitBora;
+      // data.netWeight = data.boraQuantity * data.unitBora;
 
       // Assign the `updated_at` field
       data.updated_at = Date.now();
@@ -648,39 +655,39 @@ module.exports = {
         },
         {
           $facet: {
-              sale: [
-                  { $match: { transferType: "Sale" } },
-                  {
-                      $lookup: {
-                          from: "deliveries",
-                          localField: "deliveryLocation",
-                          foreignField: "_id",
-                          as: "deliveryDetails",
-                      },
-                  },
-                  { $unwind: { path: "$deliveryDetails", preserveNullAndEmptyArrays: true } },
-              ],
-              stockTransfer: [
-                  { $match: { transferType: "Stock Transfer" } },
-                  {
-                      $lookup: {
-                          from: "storages",
-                          localField: "deliveryLocation",
-                          foreignField: "_id",
-                          as: "deliveryDetails",
-                      },
-                  },
-                  { $unwind: { path: "$deliveryDetails", preserveNullAndEmptyArrays: true } },
-              ]
+            sale: [
+              { $match: { transferType: "Sale" } },
+              {
+                $lookup: {
+                  from: "deliveries",
+                  localField: "deliveryLocation",
+                  foreignField: "_id",
+                  as: "deliveryDetails",
+                },
+              },
+              { $unwind: { path: "$deliveryDetails", preserveNullAndEmptyArrays: true } },
+            ],
+            stockTransfer: [
+              { $match: { transferType: "Stock Transfer" } },
+              {
+                $lookup: {
+                  from: "storages",
+                  localField: "deliveryLocation",
+                  foreignField: "_id",
+                  as: "deliveryDetails",
+                },
+              },
+              { $unwind: { path: "$deliveryDetails", preserveNullAndEmptyArrays: true } },
+            ]
           }
-      },
-      {
+        },
+        {
           $project: {
-              results: { $concatArrays: ["$sale", "$stockTransfer"] }
+            results: { $concatArrays: ["$sale", "$stockTransfer"] }
           }
-      },
-      { $unwind: "$results" },
-      { $replaceRoot: { newRoot: "$results" } }
+        },
+        { $unwind: "$results" },
+        { $replaceRoot: { newRoot: "$results" } }
       ]);
 
       if (!result.length) {

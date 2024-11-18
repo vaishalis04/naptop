@@ -4,6 +4,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-truck-loading-parchi-dashboard',
@@ -29,7 +30,10 @@ export class TruckLoadingParchiDashboardComponent {
   toDate: any;
   Storage: any[] = [];
 
-  constructor(private apiService: ApiService) {
+  constructor(
+    private apiService: ApiService,
+    private authService: AuthService
+  ) {
     this.getTruckLoadingParchis();
   }
 
@@ -145,6 +149,10 @@ export class TruckLoadingParchiDashboardComponent {
             <span>${truckLoadingParchi?.bardanaType == 1000 ? '1 Kg' : (truckLoadingParchi?.bardanaType == 650 ? '0.650 Kg' : 'No Bradana Weight')}</span>
           </div>
           <div class="row">
+            <span><b>Dried Weight:</b></span>
+            <span>${truckLoadingParchi.driedWeight} Kgs</span>
+          </div>
+          <div class="row">
             <span><b>Net Weight (Quintal):</b></span>
             <span>${truckLoadingParchi.netWeight}</span>
           </div>
@@ -198,5 +206,21 @@ export class TruckLoadingParchiDashboardComponent {
         },
       });
     }
+  }
+
+  sendToPrintReceipt(truckLoadingParchi: any) {
+    this.apiService.put(`truckloading/${truckLoadingParchi._id}`, {
+      enableToPrint: true,
+      enableToPrintBy: this.authService?.currentUser?.email || 'N/A',
+    }).subscribe({
+      next: (res: any) => {
+        console.log('Truck Loading Parchi updated:', res);
+        alert('Sent to printer.');
+        // this.printReceipt(taulaParchi);
+      },
+      error: (err: any) => {
+        console.error('Error updating Truck Loading Parchi:', err);
+      },
+    });
   }
 }

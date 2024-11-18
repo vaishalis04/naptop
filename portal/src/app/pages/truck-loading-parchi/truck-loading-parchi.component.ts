@@ -55,6 +55,7 @@ export class TruckLoadingParchiComponent implements OnInit {
     crop: '',
     rate: 0,
     bardanaType:0,
+    driedWeight: 0,
     netWeight: 0, // To be calculated
     amount: 0, // To be calculated
     other: '',
@@ -84,7 +85,7 @@ export class TruckLoadingParchiComponent implements OnInit {
   calculateNetWeight(): void {
     const { boraQuantity, unitBora, bardanaType } = this.TruckLoadingParchi;
     const bardanaInKg = (boraQuantity * (bardanaType/1000)); // Convert bardanaUnit from grams to kilograms
-    this.TruckLoadingParchi.netWeight = ((boraQuantity * unitBora) - bardanaInKg)/100;
+    this.TruckLoadingParchi.netWeight = ((boraQuantity * unitBora) - bardanaInKg)/100 - this.TruckLoadingParchi.driedWeight/100;
     this.calculateAmount();
     if (this.TruckLoadingParchi.unitBora) {
       this.selectedStockInfo = this.stockInfo.bag_units.find((unit: any) => unit.unit_weight_of_bags === this.TruckLoadingParchi.unitBora);

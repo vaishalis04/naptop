@@ -94,7 +94,7 @@ export class TruckLoadingParchiViewComponent {
         <div class="section">
           <div class="row">
             <span><b>Serial Number:</b></span>
-            <span>${this.getTruckLoadingParchiSrNo(this.truckLoadingParchi.created_at)}</span>
+            <span>${this.truckLoadingParchi.sno}</span>
           </div>
           <div class="row">
             <span><b>Date:</b></span>
@@ -135,6 +135,10 @@ export class TruckLoadingParchiViewComponent {
           <div class="row">
             <span><b>Bardana Weight:</b></span>
             <span>${this.truckLoadingParchi?.bardanaType == 1000 ? '1 Kg' : (this.truckLoadingParchi?.bardanaType == 650 ? '0.650 Kg' : 'No Bradana Weight')}</span>
+          </div>
+          <div class="row">
+            <span><b>Dried Weight:</b></span>
+            <span>${this.truckLoadingParchi?.driedWeight} Kgs</span>
           </div>
           <div class="row">
             <span><b>Net Weight (Quintal):</b></span>

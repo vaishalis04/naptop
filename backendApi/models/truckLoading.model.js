@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const TruckLoadingSchema = new mongoose.Schema({
     sno: {
         type: String,
-      },
+    },
     transferType: {
         type: String,
         enum: ['Sale', 'Stock Transfer']
@@ -28,7 +28,7 @@ const TruckLoadingSchema = new mongoose.Schema({
         ref: 'Hammal',
 
     },
-    transport:{
+    transport: {
         type: mongoose.Types.ObjectId,
         ref: 'Transport',
     },
@@ -42,11 +42,11 @@ const TruckLoadingSchema = new mongoose.Schema({
     unitBora: {
         type: Number,
     },
-    bardanaType:{
+    bardanaType: {
         type: Number,
-        enum: [0, 650 , 1000],
+        enum: [0, 650, 1000],
     },
-    bardanaUnit:{
+    bardanaUnit: {
         type: Number,
     },
     // bardanaBag650g: {
@@ -57,6 +57,10 @@ const TruckLoadingSchema = new mongoose.Schema({
     //     type: Number,
     //     default: 0,
     // },
+    driedWeight: {
+        type: Number,
+        default: 0,
+    },
     netWeight: {
         type: Number,
     },
@@ -75,7 +79,14 @@ const TruckLoadingSchema = new mongoose.Schema({
         type: String,
         default: '',
     },
-    advance:{
+    advance: {
+        type: String,
+    },
+    enableToPrint: {
+        type: Boolean,
+        default: false,
+    },
+    enableToPrintBy: {
         type: String,
     },
     created_at: {

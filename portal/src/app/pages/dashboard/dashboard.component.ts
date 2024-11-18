@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.getTaulaParchis();
     this.getTruckLoadingParchis();
-    this.getWarehouses();
+    this.getWarehouses('daily');
     this.getCrops();
   }
 
@@ -139,20 +139,25 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  getWarehouses() {
+  getWarehouses(timeframe?: any) {
     // get storage locations
     this.apiService.get('storage', {
       params: {
         page: 1,
-        limit: 1000,
+        limit: 1000
       },
     }).subscribe({
       next: (res: any) => {
         this.warehouses = Object.values(res.data);
+        const query: any = {};
+        if (timeframe !== 'overall') {
+          query['timeframe'] = timeframe;
+        }
         for (const warehouse of this.warehouses) {
           this.apiService.get(`stock/warehouse-stock-crop-wise`, {
             params: {
               warehouse: warehouse._id,
+              ...query,
             },
           }).subscribe({
             next: (res: any) => {
@@ -335,11 +340,11 @@ export class DashboardComponent implements OnInit {
 
         </body>
       </html>`;
-  
+
     const receiptWindow = window.open('', '_blank');
     receiptWindow?.document.write(receiptContent);
     receiptWindow?.document.close();
     receiptWindow?.focus();
   }
-  
+
 }

@@ -395,6 +395,9 @@
                       />
                     </div> -->
 
+                    <label for="driedWeight" class="form-label"
+                      >Dried Weight(in Kgs)</label>
+                    <input id="driedWeight" class="form-control" [(ngModel)]="TruckLoadingParchi.driedWeight" name="driedWeight" type="number" placeholder="Dried Weight" (ngModelChange)="calculateNetWeight()" />
 
                     <label for="netWeight" class="form-label"
                       >Net Weight(in Quintal)</label

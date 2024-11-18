@@ -10,6 +10,11 @@ router.get(
     stockController.warehouseStockCropWise
 );
 
+router.get(
+    '/warehouse-stock-crop-wise/:warehouseId',
+    stockController.getCropWiseWarehouseWisePendingBagConversionCount
+);
+
 router.post('/', stockController.create);
 
 router.put('/:id', stockController.update);

@@ -41,15 +41,18 @@ export class TaulparchiDashboardComponent {
   farmerNameSearch = '';
   farmerMobileSearch = '';
   farmerVillageSearch = '';
+  transactionTypeSearch = '';
   snoSearch='';
   selectedWarehouse: any;
   selectedCrop: any;
+
   constructor(
     private apiService: ApiService,
     private authService: AuthService
   ) {
     this.getTaulaParchis();
     this.authService.setCurrentUser();
+    this.currentUser = JSON.parse(localStorage.getItem('user') || '{}');
   }
   getTaulaParchisFilter() {
     const query: any = {};
@@ -91,14 +94,35 @@ export class TaulparchiDashboardComponent {
       });
   }
   getTaulaParchis() {
-    let params: any = {
-      page: this.currentPage,
-      limit: this.perPage,
-    };
-
+    const query: any = {};
+    if (this.farmerNameSearch) {
+      query['farmerName'] = this.farmerNameSearch;
+    }
+    if (this.farmerMobileSearch) {
+      query['farmerMobile'] = this.farmerMobileSearch;
+    }
+    if (this.farmerVillageSearch) {
+      query['farmerVillage'] = this.farmerVillageSearch;
+    }
+    if (this.snoSearch) {
+      query['sno'] = this.snoSearch;
+    }
+    if (this.selectedWarehouse) {
+      query['warehouse'] = this.selectedWarehouse;
+    }
+    if (this.selectedCrop) {
+      query['crop'] = this.selectedCrop;
+    }
+    if (this.transactionTypeSearch) {
+      query['transactionType'] = this.transactionTypeSearch;
+    }
     this.apiService
       .get('taulparchi', {
-        params,
+        params: {
+          page: this.pageForTaulaParchi,
+          limit: 10,
+          ...query,
+        },
       })
       .subscribe({
         next: (res: any) => {
@@ -110,7 +134,7 @@ export class TaulparchiDashboardComponent {
         },
       });
   }
-  
+
   getCrops() {
     this.apiService
       .get('crop', {

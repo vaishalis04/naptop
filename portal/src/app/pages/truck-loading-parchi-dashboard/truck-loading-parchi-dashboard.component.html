@@ -44,6 +44,7 @@
                                 <th scope="col">Net Weight(in Quintal)</th>
                                 <th scope="col">Amount (₹)</th>
                                 <th scope="col">Created By</th>
+                                <th scope="col">Print</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -52,7 +53,7 @@
                             <tr *ngFor="let truckLoadingParchi of TruckLoadingParchis
                                 | paginate : { itemsPerPage: perPage, currentPage: currentPage, id: 'truckloadingparchi', totalItems: TruckLoadingParchiCount };
                                 let i = index;">
-                                <td>{{ currentPage * perPage - perPage + (i + 1) }}</td>
+                                <td>{{ truckLoadingParchi.sno }}</td>
                                 <td>{{ truckLoadingParchi.created_at | date: 'MM-dd-YYYY' }}</td>
                                 <td>{{ truckLoadingParchi?.cropDetails?.name }}</td>
                                 <td>{{ truckLoadingParchi?.partyDetails?.name }}</td>
@@ -65,7 +66,13 @@
                                 <td>{{ truckLoadingParchi.netWeight }}</td>
                                 <td>{{ truckLoadingParchi.amount | number: '.2' }}</td>
                                 <td>{{ truckLoadingParchi?.userDetails?.name }}</td>
-
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-primary me-2 mb-2"
+                                        (click)="sendToPrintReceipt(truckLoadingParchi)">
+                                        <!-- Print -->
+                                        <i class="fi fi-rr-print"></i>
+                                    </button>
+                                </td>
                                 <td>
                                     <div class="row">
                                         <div class="col-4">

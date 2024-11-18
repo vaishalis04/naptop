@@ -288,6 +288,22 @@
                         </div>
                     </div>
                 </section>
+                <div class="row mt-3" *ngIf="selectedWarehouseId">
+                    <div class="row">
+                        <div class="col border-end" *ngFor="let crop of crops">
+                            <a class="btn btn-outline-primary" [routerLink]="['/stock-view/'+crop._id+'/'+selectedWarehouseId]">
+                                <div class="row">
+                                    <div class="col">
+                                        {{ crop.name }}
+                                    </div>
+                                    <div class="col-auto">
+                                        (pending: {{ getCropPendingCount(crop._id) }})
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div class="row mt-3" *ngIf="selectedWarehouseId && !stockData.length">
                     <div class="alert bg-warning">
                         No Crops are available in stock
