@@ -135,12 +135,12 @@
                   </button>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-sm btn-primary me-2 mb-2" (click)="printReceipt(taulaParchi)">
-                    <!-- Print -->
+                  <!-- <button type="button" class="btn btn-sm btn-primary me-2 mb-2" (click)="sendToPrintReceipt(taulaParchi)">
                     <i class="fi fi-rr-print"></i>
-                  </button>
+                  </button> -->
                   <button type="button" class="btn btn-sm btn-primary me-2 mb-2"
-                    [routerLink]="['/taul-parchi-view', taulaParchi._id]">
+                    [routerLink]="['/taul-parchi-view', taulaParchi._id]" 
+                    >
                     <!-- View -->
                     <i class="fi fi-rr-eye"></i>
                   </button>

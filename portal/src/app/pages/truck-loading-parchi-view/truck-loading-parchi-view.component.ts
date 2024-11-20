@@ -4,6 +4,7 @@ import { ApiService } from '../../services/api.service';
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-truck-loading-parchi-view',
@@ -24,7 +25,8 @@ export class TruckLoadingParchiViewComponent {
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute, // Inject ActivatedRoute to capture route parameters
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -186,5 +188,20 @@ export class TruckLoadingParchiViewComponent {
   // Navigate back to the previous page
   goBack() {
     this.router.navigate(['/truck-loading-parchi-dashboard']); // Adjust the route as needed
+  }
+  sendToPrintReceipt(truckLoadingParchi: any) {
+    this.apiService.put(`truckloading/${truckLoadingParchi._id}`, {
+      enableToPrint: true,
+      enableToPrintBy: this.authService?.currentUser?.email || 'N/A',
+    }).subscribe({
+      next: (res: any) => {
+        console.log('Truck Loading Parchi updated:', res);
+        alert('Sent to printer.');
+        // this.printReceipt(taulaParchi);
+      },
+      error: (err: any) => {
+        console.error('Error updating Truck Loading Parchi:', err);
+      },
+    });
   }
 }

@@ -5,6 +5,7 @@ import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
 import { ButtonModule } from "primeng/button";
 import { DropdownModule } from "primeng/dropdown";
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-taul-parchi',
@@ -54,9 +55,10 @@ export class TaulParchiComponent implements OnInit {
     created_at: new Date(),
     createdBy: '',
   };
+  selectedStorageName: string = '';
 
-
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private apiService: ApiService, private router: Router,    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
     this.fetchFarmers();
@@ -65,7 +67,31 @@ export class TaulParchiComponent implements OnInit {
     this.fetchCrops();
     this.fetchStorage()
     this.fetchCompany()
+    this.fetchFromLocal()
   }
+  fetchFromLocal(){
+    const savedStorageId = localStorage.getItem('selectedWarehouseId');
+    console.log("hsv",localStorage.getItem('selectedWarehouseId'))
+if (savedStorageId) {
+  this.TaulParchi.storage = savedStorageId;
+  const storageData = localStorage.getItem('selectedWarehouse');
+  console.log("Storage Data:", storageData); 
+  if (storageData) {
+    const selectedStorage = JSON.parse(storageData); // Parse the object
+    if (selectedStorage && selectedStorage._id === savedStorageId) {
+      this.selectedStorageName = selectedStorage.name; // Assign name to display
+      console.log("Selected Storage Name:", this.selectedStorageName);
+    } else {
+      console.warn("No matching storage found for the savedStorageId.");
+    }
+  } else {
+    console.warn("No storage data found in localStorage.");
+  }
+} else {
+  console.warn("No saved storage ID found in localStorage.");
+}
+  }
+  
 
   calculateNetWeight(): void {
     const { boraQuantity, bharti, looseQuantity } = this.TaulParchi;
@@ -305,6 +331,9 @@ export class TaulParchiComponent implements OnInit {
     } else {
       alert('Please fill in all required fields.');
     }
+  }
+  getCurrentUser() {
+    return this.authService.currentUser;
   }
 
   openFarmerPopUp() {

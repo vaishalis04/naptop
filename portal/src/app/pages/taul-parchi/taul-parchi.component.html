@@ -1,14 +1,23 @@
 <!-- modal for add/update -->
-<div class="modal fade" [ngClass]="{ show: isNewFarmerPopUpOpen }" id="addUpdateMasterModal" tabindex="-1"
-  aria-labelledby="addUpdateMasterModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  [ngClass]="{ show: isNewFarmerPopUpOpen }"
+  id="addUpdateMasterModal"
+  tabindex="-1"
+  aria-labelledby="addUpdateMasterModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addUpdateMasterModalLabel">
-          Add Farmer
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-          (click)="isNewFarmerPopUpOpen = false"></button>
+        <h5 class="modal-title" id="addUpdateMasterModalLabel">Add Farmer</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="isNewFarmerPopUpOpen = false"
+        ></button>
       </div>
       <div class="modal-body">
         <div class="container">
@@ -16,8 +25,12 @@
             <div class="col-12">
               <div class="form-group">
                 <label for="farmerType" class="form-label">Farmer Type</label>
-                <select id="farmerType" class="form-control" [(ngModel)]="farmerToAddOrEdit.farmerType"
-                  name="farmerType">
+                <select
+                  id="farmerType"
+                  class="form-control"
+                  [(ngModel)]="farmerToAddOrEdit.farmerType"
+                  name="farmerType"
+                >
                   <option value="">Select Farmer Type</option>
                   <option value="regular">Regular</option>
                   <option value="premium">Premium</option>
@@ -25,19 +38,43 @@
               </div>
               <div class="form-group">
                 <label for="masterName" class="form-label">Name</label>
-                <input id="masterName" class="form-control" [(ngModel)]="farmerToAddOrEdit.name" name="masterName"
-                  type="text" placeholder="Name" />
+                <input
+                  id="masterName"
+                  class="form-control"
+                  [(ngModel)]="farmerToAddOrEdit.name"
+                  name="masterName"
+                  type="text"
+                  placeholder="Name"
+                />
               </div>
               <div class="form-group">
                 <label for="mobile" class="form-label">Mobile</label>
-                <input id="mobile" class="form-control" [(ngModel)]="farmerToAddOrEdit.mobile" name="mobile" type="text"
-                  placeholder="Mobile" maxlength="10" minlength="10" pattern="[0-9]{10}" required
-                  #mobileInput="ngModel" />
+                <input
+                  id="mobile"
+                  class="form-control"
+                  [(ngModel)]="farmerToAddOrEdit.mobile"
+                  name="mobile"
+                  type="text"
+                  placeholder="Mobile"
+                  maxlength="10"
+                  minlength="10"
+                  pattern="[0-9]{10}"
+                  required
+                  #mobileInput="ngModel"
+                />
                 <div class="form-group">
                   <label for="village" class="form-label">Village</label>
-                  <select id="village" class="form-control" [(ngModel)]="farmerToAddOrEdit.village" name="village">
+                  <select
+                    id="village"
+                    class="form-control"
+                    [(ngModel)]="farmerToAddOrEdit.village"
+                    name="village"
+                  >
                     <option value="">Select Village</option>
-                    <option *ngFor="let village of Villages" [value]="village._id">
+                    <option
+                      *ngFor="let village of Villages"
+                      [value]="village._id"
+                    >
                       {{ village.name }}
                     </option>
                   </select>
@@ -49,7 +86,12 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="isNewFarmerPopUpOpen = false">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          (click)="isNewFarmerPopUpOpen = false"
+        >
           Close
         </button>
         <button type="button" class="btn btn-primary" (click)="addNewFarmer()">
@@ -77,14 +119,12 @@
                   <span class="text-muted pe-2">Date:</span>
                   <span class="text-link">{{
                     TaulParchi.created_at | date : "dd-MM-YYYY"
-                    }}</span>
+                  }}</span>
                   <span class="text-muted pe-2 ms-2">Time:</span>
                   <span class="text-link">{{
                     TaulParchi.created_at | date : "HH:mm:ss"
-                    }}</span>
+                  }}</span>
                 </b>
-
-
               </div>
             </div>
           </div>
@@ -95,24 +135,53 @@
                   <div class="row">
                     <div class="col-12 col-md-6 col-lg-4">
                       <div class="form-group">
-                        <label for="farmerName" class="form-label">Farmer's Name</label>
-                        <input id="farmerName" class="form-control" [(ngModel)]="TaulParchi.farmerName" name="farmerName"
-                          type="text" placeholder="Farmer's Name" required />
+                        <label for="farmerName" class="form-label"
+                          >Farmer's Name</label
+                        >
+                        <input
+                          id="farmerName"
+                          class="form-control"
+                          [(ngModel)]="TaulParchi.farmerName"
+                          name="farmerName"
+                          type="text"
+                          placeholder="Farmer's Name"
+                          required
+                        />
                       </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                       <div class="form-group">
-                        <label for="farmerMobile" class="form-label">Farmer's Mobile</label>
-                        <input id="farmerMobile" class="form-control" [(ngModel)]="TaulParchi.farmerMobile"
-                          name="farmerMobile" type="text" placeholder="Farmer's Mobile" maxlength="10" minlength="10"
-                          pattern="[0-9]{10}" required />
+                        <label for="farmerMobile" class="form-label"
+                          >Farmer's Mobile</label
+                        >
+                        <input
+                          id="farmerMobile"
+                          class="form-control"
+                          [(ngModel)]="TaulParchi.farmerMobile"
+                          name="farmerMobile"
+                          type="text"
+                          placeholder="Farmer's Mobile"
+                          maxlength="10"
+                          minlength="10"
+                          pattern="[0-9]{10}"
+                          required
+                        />
                       </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                       <div class="form-group">
-                        <label for="farmerVillage" class="form-label">Farmer's Village</label>
-                        <input id="farmerVillage" class="form-control" [(ngModel)]="TaulParchi.farmerVillage"
-                          name="farmerVillage" type="text" placeholder="Farmer's Village" required />
+                        <label for="farmerVillage" class="form-label"
+                          >Farmer's Village</label
+                        >
+                        <input
+                          id="farmerVillage"
+                          class="form-control"
+                          [(ngModel)]="TaulParchi.farmerVillage"
+                          name="farmerVillage"
+                          type="text"
+                          placeholder="Farmer's Village"
+                          required
+                        />
                       </div>
                     </div>
                   </div>
@@ -120,11 +189,19 @@
                   <div class="row">
                     <div class="col-12 col-md-6 col-lg-4">
                       <div class="form-group">
-                        <label for="purchaseStatus" class="form-label">Purchase Status</label>
-                        <select id="purchaseStatus" class="form-select bg-warning text-dark" [(ngModel)]="TaulParchi.purchase"
-                          name="purchaseStatus">
+                        <label for="purchaseStatus" class="form-label"
+                          >Purchase Status</label
+                        >
+                        <select
+                          id="purchaseStatus"
+                          class="form-select bg-warning text-dark"
+                          [(ngModel)]="TaulParchi.purchase"
+                          name="purchaseStatus"
+                        >
                           <option value="">Select Purchase</option>
-                          <option value="directPurchase">Direct Purchase</option>
+                          <option value="directPurchase">
+                            Direct Purchase
+                          </option>
                           <option value="AuctionMandiPurchase">
                             Auction Mandi Purchase
                           </option>
@@ -134,17 +211,36 @@
                     <div class="col-12 col-md-6 col-lg-4">
                       <div class="form-group">
                         <label for="crop" class="form-label">Crop</label>
-                        <p-dropdown [options]="Crops" [(ngModel)]="TaulParchi.crop" optionLabel="name" optionValue="_id"
-                          placeholder="Select Crop" [showClear]="true" [filter]="true"
-                          [style]="{'width':'100%'}"></p-dropdown>
+                        <p-dropdown
+                          [options]="Crops"
+                          [(ngModel)]="TaulParchi.crop"
+                          optionLabel="name"
+                          optionValue="_id"
+                          placeholder="Select Crop"
+                          [showClear]="true"
+                          [filter]="true"
+                          [style]="{ width: '100%' }"
+                        ></p-dropdown>
                       </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
                       <div class="form-group">
-                        <label for="firmCompany" class="form-label">Purchasing Firm / Company</label>
-                        <select id="firmCompany" class="form-select" [(ngModel)]="TaulParchi.firm_company" name="firmCompany">
+                        <label for="firmCompany" class="form-label"
+                          >Purchasing Firm / Company</label
+                        >
+                        <select
+                          id="firmCompany"
+                          class="form-select"
+                          [(ngModel)]="TaulParchi.firm_company"
+                          name="firmCompany"
+                        >
                           <option value="">Select Firm / Company</option>
-                          <option *ngFor="let firm of firm_company" [value]="firm._id">{{ firm.name }}</option>
+                          <option
+                            *ngFor="let firm of firm_company"
+                            [value]="firm._id"
+                          >
+                            {{ firm.name }}
+                          </option>
                         </select>
                       </div>
                     </div>
@@ -152,27 +248,66 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="storage" class="form-label">Storage Location</label>
-                  <p-dropdown [options]="Storage" [(ngModel)]="TaulParchi.storage" optionLabel="name" optionValue="_id"
-                    placeholder="Select Storage Location" [showClear]="true" [filter]="true"
-                    [style]="{'width':'100%'}"></p-dropdown>
+                  <div *ngIf="getCurrentUser()?.role !== 'Employee'">
+                    <label for="storage" class="form-label"
+                      >Storage Location</label
+                    >
+                    <p-dropdown
+                      [options]="Storage"
+                      [(ngModel)]="TaulParchi.storage"
+                      optionLabel="name"
+                      optionValue="_id"
+                      placeholder="Select Storage Location"
+                      [showClear]="true"
+                      [filter]="true"
+                      [style]="{ width: '100%' }"
+                    ></p-dropdown>
+                  </div>
 
-                  <label for="rate" class="form-label">Rate (Per Quintal)</label>
+                  <div *ngIf="getCurrentUser()?.role === 'Employee'">
+                    <label for="storage" class="form-label">Storage Location</label>
+                    <div class="storage-display" *ngIf="selectedStorageName">
+                      {{ selectedStorageName }}
+                    </div>
+                    <div *ngIf="!selectedStorageName">
+                      No storage location selected.
+                    </div>
+                  </div>
+                  <hr />
+
+                  <label for="rate" class="form-label"
+                    >Rate (Per Quintal)</label
+                  >
                   <div class="input-group">
-                    <span class="input-group-text bg-transparent border-0 p-0">₹</span>
-                    <input id="rate" class="form-control" [(ngModel)]="TaulParchi.rate" name="rate" type="number"
-                      placeholder="Rate" (ngModelChange)="calculateAmount()" />
+                    <span class="input-group-text bg-transparent border-0 p-0"
+                      >₹</span
+                    >
+                    <input
+                      id="rate"
+                      class="form-control"
+                      [(ngModel)]="TaulParchi.rate"
+                      name="rate"
+                      type="number"
+                      placeholder="Rate"
+                      (ngModelChange)="calculateAmount()"
+                    />
                   </div>
                   <label for="tulai" class="form-label">Tulai Options</label>
-                  <select id="tulai" class="form-select bg-warning text-dark" [(ngModel)]="TaulParchi.tulai"
-                    name="tulai">
+                  <select
+                    id="tulai"
+                    class="form-select bg-warning text-dark"
+                    [(ngModel)]="TaulParchi.tulai"
+                    name="tulai"
+                  >
                     <option value="">Select Tulai</option>
                     <option value="Labour">Labour</option>
                     <option value="Dharamkata">Dharamkanta</option>
                   </select>
 
                   <div *ngIf="TaulParchi.tulai === 'Labour'">
-                    <label for="assignedHammal" class="form-label">Assigned Hammal</label>
+                    <label for="assignedHammal" class="form-label"
+                      >Assigned Hammal</label
+                    >
                     <!-- <select id="assignedHammal" class="form-select" [(ngModel)]="TaulParchi.hammal"
                       name="assignedHammal" (ngModelChange)="calculateAmount(); calculateHammali()">
                       <option value="">Select Hammal</option>
@@ -180,63 +315,166 @@
                         {{ hammal.name }}
                       </option>
                     </select> -->
-                    <p-dropdown [options]="Hammals" [(ngModel)]="TaulParchi.hammal" optionLabel="name" optionValue="_id"
-                      placeholder="Select Hammal" [showClear]="true" [filter]="true" [style]="{'width':'100%'}"
-                      (onChange)="calculateAmount(); calculateHammali()"></p-dropdown>
+                    <p-dropdown
+                      [options]="Hammals"
+                      [(ngModel)]="TaulParchi.hammal"
+                      optionLabel="name"
+                      optionValue="_id"
+                      placeholder="Select Hammal"
+                      [showClear]="true"
+                      [filter]="true"
+                      [style]="{ width: '100%' }"
+                      (onChange)="calculateAmount(); calculateHammali()"
+                    ></p-dropdown>
                   </div>
 
-                  <div class="form-group mb-3" *ngIf="TaulParchi.farmerName && TaulParchi.tulai === 'Labour'">
-                    <label for="exemptHammali" class="form-label">Exempt Hammali</label>
-                    <select id="exemptHammali" class="form-select" [(ngModel)]="TaulParchi.exemptHammali"
-                      name="exemptHammali" (ngModelChange)="calculateAmount(); calculateHammali()">
+                  <div
+                    class="form-group mb-3"
+                    *ngIf="
+                      TaulParchi.farmerName && TaulParchi.tulai === 'Labour'
+                    "
+                  >
+                    <label for="exemptHammali" class="form-label"
+                      >Exempt Hammali</label
+                    >
+                    <select
+                      id="exemptHammali"
+                      class="form-select"
+                      [(ngModel)]="TaulParchi.exemptHammali"
+                      name="exemptHammali"
+                      (ngModelChange)="calculateAmount(); calculateHammali()"
+                    >
                       <option value="">Select Exempt Hammali</option>
                       <option value="deduct">Deduct</option>
                       <option value="exempted">Exempted</option>
                     </select>
                   </div>
-                  <div class="form-group mb-3" *ngIf="TaulParchi.farmerName && TaulParchi.tulai === 'Labour'">
-                    <label for="boraQuantity" class="form-label">Bora Quantity</label>
-                    <input id="boraQuantity" class="form-control" [(ngModel)]="TaulParchi.boraQuantity"
-                      name="boraQuantity" type="number" placeholder="Bora Quantity"
-                      (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
+                  <div
+                    class="form-group mb-3"
+                    *ngIf="
+                      TaulParchi.farmerName && TaulParchi.tulai === 'Labour'
+                    "
+                  >
+                    <label for="boraQuantity" class="form-label"
+                      >Bora Quantity</label
+                    >
+                    <input
+                      id="boraQuantity"
+                      class="form-control"
+                      [(ngModel)]="TaulParchi.boraQuantity"
+                      name="boraQuantity"
+                      type="number"
+                      placeholder="Bora Quantity"
+                      (ngModelChange)="
+                        calculateNetWeight();
+                        calculateAmount();
+                        calculateHammali()
+                      "
+                    />
 
-                    <label for="bharti" class="form-label">Bharti(in Kgs)</label>
-                    <input id="bharti" class="form-control" [(ngModel)]="TaulParchi.bharti" name="bharti" type="number"
+                    <label for="bharti" class="form-label"
+                      >Bharti(in Kgs)</label
+                    >
+                    <input
+                      id="bharti"
+                      class="form-control"
+                      [(ngModel)]="TaulParchi.bharti"
+                      name="bharti"
+                      type="number"
                       placeholder="Bharti"
-                      (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
+                      (ngModelChange)="
+                        calculateNetWeight();
+                        calculateAmount();
+                        calculateHammali()
+                      "
+                    />
 
-                    <label for="looseQuantity" class="form-label">Loose Quantity(in Kgs)</label>
-                    <input id="looseQuantity" class="form-control" [(ngModel)]="TaulParchi.looseQuantity"
-                      name="looseQuantity" type="number" placeholder="Enter looseQuantity"
-                      (ngModelChange)="calculateNetWeight(); calculateAmount(); calculateHammali()" />
+                    <label for="looseQuantity" class="form-label"
+                      >Loose Quantity(in Kgs)</label
+                    >
+                    <input
+                      id="looseQuantity"
+                      class="form-control"
+                      [(ngModel)]="TaulParchi.looseQuantity"
+                      name="looseQuantity"
+                      type="number"
+                      placeholder="Enter looseQuantity"
+                      (ngModelChange)="
+                        calculateNetWeight();
+                        calculateAmount();
+                        calculateHammali()
+                      "
+                    />
                   </div>
 
-                  <label for="netWeight" class="form-label">Net Weight (in Quintal)</label>
-                  <input id="netWeight" class="form-control" name="netWeight" type="number" placeholder="Net Weight"
-                    [readonly]="TaulParchi.tulai != 'Dharamkata'" [(ngModel)]="TaulParchi.netWeight"
-                    (ngModelChange)="calculateAmount();" />
+                  <label for="netWeight" class="form-label"
+                    >Net Weight (in Quintal)</label
+                  >
+                  <input
+                    id="netWeight"
+                    class="form-control"
+                    name="netWeight"
+                    type="number"
+                    placeholder="Net Weight"
+                    [readonly]="TaulParchi.tulai != 'Dharamkata'"
+                    [(ngModel)]="TaulParchi.netWeight"
+                    (ngModelChange)="calculateAmount()"
+                  />
                 </div>
 
                 <div class="form-group mb-3">
-                  <label for="amount" class="form-label">Payable Amount(in ₹)</label>
-                  <input id="amount" class="form-control" [value]="TaulParchi.amount" name="amount" type="number"
-                    placeholder="Amount" readonly />
+                  <label for="amount" class="form-label"
+                    >Payable Amount(in ₹)</label
+                  >
+                  <input
+                    id="amount"
+                    class="form-control"
+                    [value]="TaulParchi.amount"
+                    name="amount"
+                    type="number"
+                    placeholder="Amount"
+                    readonly
+                  />
                 </div>
-                <div class="form-group mb-3"
-                  *ngIf="TaulParchi.tulai === 'Labour' && TaulParchi.farmerName && TaulParchi.hammal">
-                  <label for="hammali" class="form-label">Hammali Amount(in ₹)</label>
-                  <input id="hammali" class="form-control" [value]="TaulParchi.hammali" name="hammali" type="number"
-                    placeholder="hammali" readonly />
+                <div
+                  class="form-group mb-3"
+                  *ngIf="
+                    TaulParchi.tulai === 'Labour' &&
+                    TaulParchi.farmerName &&
+                    TaulParchi.hammal
+                  "
+                >
+                  <label for="hammali" class="form-label"
+                    >Hammali Amount(in ₹)</label
+                  >
+                  <input
+                    id="hammali"
+                    class="form-control"
+                    [value]="TaulParchi.hammali"
+                    name="hammali"
+                    type="number"
+                    placeholder="hammali"
+                    readonly
+                  />
                 </div>
                 <label for="other" class="form-label">Remark</label>
-                <input id="other" class="form-control" [(ngModel)]="TaulParchi.other" name="other" type="text"
-                  placeholder="Enter Remark" />
+                <input
+                  id="other"
+                  class="form-control"
+                  [(ngModel)]="TaulParchi.other"
+                  name="other"
+                  type="text"
+                  placeholder="Enter Remark"
+                />
               </div>
             </div>
           </div>
           <div class="card-actions bg-light border">
             <div class="text-end">
-              <button class="btn btn-primary btn-lg m-3" (click)="saveTaulParchi()">
+              <button
+                class="btn btn-primary btn-lg m-3"
+                (click)="saveTaulParchi()"
+              >
                 Submit
               </button>
             </div>

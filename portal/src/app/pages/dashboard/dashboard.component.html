@@ -6,7 +6,9 @@
         <div class="card bg-white">
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex justify-content-center align-items-center bg-dark rounded p-3 px-4">
+              <div
+                class="d-flex justify-content-center align-items-center bg-dark rounded p-3 px-4"
+              >
                 <i class="fi fi-rs-calendar fs-3 text-white"></i>
               </div>
               <div class="text-end">
@@ -20,14 +22,17 @@
         </div>
       </div>
     </div>
+
     <!-- Stats Card -->
     <div class="row mt-3">
       <!-- <div *ngIf="getCurrentUser()?.role === 'Admin'"> -->
-      <div *ngIf="getCurrentUser()?.role != 'Cashier'" class="col-12 col-md-6">
+      <div *ngIf="getCurrentUser()?.role != 'cashier'" class="col-12 col-md-6">
         <div class="card bg-white">
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex justify-content-center align-items-center bg-primary rounded p-3 px-4">
+              <div
+                class="d-flex justify-content-center align-items-center bg-primary rounded p-3 px-4"
+              >
                 <i class="fi fi-rs-file fs-3 text-white"></i>
               </div>
               <div class="text-end">
@@ -38,11 +43,13 @@
           </div>
         </div>
       </div>
-      <div *ngIf="getCurrentUser()?.role !== 'Cashier'" class="col-12 col-md-6">
+      <div *ngIf="getCurrentUser()?.role !== 'cashier'" class="col-12 col-md-6">
         <div class="card bg-white">
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex justify-content-center align-items-center bg-primary rounded p-3 px-4">
+              <div
+                class="d-flex justify-content-center align-items-center bg-primary rounded p-3 px-4"
+              >
                 <i class="fi fi-rs-list fs-3 text-white"></i>
               </div>
               <div class="text-end">
@@ -53,7 +60,69 @@
           </div>
         </div>
       </div>
-      <div *ngIf="getCurrentUser()?.role !== 'Cashier'" class="col-12 mt-4">
+      <div *ngIf="getCurrentUser()?.role === 'Employee'">
+        <!-- Card for Purchase Status -->
+        <div class="col-12">
+          <div class="card bg-white mt-4">
+            <div class="card-header">
+              <div class="row">
+                <div class="col">
+                  <h4 class="mb-0">Add Parchi</h4>
+                  <!-- Heading for Add Parchi -->
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Purchase Status Form -->
+              <div class="form-group mb-3">
+                <label for="warehouse" class="form-label"
+                  >Purchase Status</label
+                >
+                <select
+                  id="warehouse"
+                  class="form-select"
+                  [(ngModel)]="selectedWarehouseId"
+                  (change)="onWarehouseChange()"
+                >
+                  <option value="">Select Warehouse</option>
+                  <option
+                    *ngFor="let warehouse of location"
+                    [value]="warehouse._id"
+                  >
+                    {{ warehouse.name }}
+                  </option>
+                </select>
+              </div>
+
+              <!-- Action Buttons -->
+              <div>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  [routerLink]="['/taul-parchi']"
+                  style="margin-right: 10px"
+                >
+                  + Taul Parchi
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  [routerLink]="['/truck-loading-parchi']"
+                  style="margin-right: 10px"
+                >
+                  + Truck Loading
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add Horizontal Line -->
+        <hr />
+      </div>
+
+      <div *ngIf="getCurrentUser()?.role !== 'cashier'" class="col-12 mt-4">
         <div class="card bg-white mt-4">
           <div class="card-header">
             <div class="row">
@@ -64,8 +133,12 @@
                 <!-- Daily | Monthly | Overall -->
                 <div class="form-group">
                   <label for="warehouseFilter">Filter</label>
-                  <select class="form-control" id="warehouseFilter" #warehouseFilter
-                    (change)="getWarehouses(warehouseFilter.value)">
+                  <select
+                    class="form-control"
+                    id="warehouseFilter"
+                    #warehouseFilter
+                    (change)="getWarehouses(warehouseFilter.value)"
+                  >
                     <option value="daily">Daily</option>
                     <option value="monthly">Monthly</option>
                     <option value="overall">Overall</option>
@@ -76,14 +149,19 @@
           </div>
           <div class="card-body">
             <div class="row" *ngFor="let warehouse of warehouses">
-              <div class="col-12 col-md-6 col-lg-4" *ngFor="let stockData of warehouse?.stock">
+              <div
+                class="col-12 col-md-6 col-lg-4"
+                *ngFor="let stockData of warehouse?.stock"
+              >
                 <div class="card bg-white mb-4">
                   <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
                       <div class="text-center">
                         <p class="mb-0 text-secondary text-center">
                           {{ warehouse.name | titlecase }} ({{
-                          stockData.crop
+                            stockData.crop
                           }})
                         </p>
                         <hr />
@@ -114,10 +192,12 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr *ngFor="
+                                <tr
+                                  *ngFor="
                                     let bag of stockData.bag_units;
                                     let i = index
-                                  ">
+                                  "
+                                >
                                   <th scope="row">{{ i + 1 }}</th>
                                   <td>{{ bag.no_of_bags }}</td>
                                   <td>{{ bag.unit_weight_of_bags }}</td>
@@ -158,22 +238,40 @@
                 <div class="col">
                   <div class="form-group">
                     <label for="farmerNameSearch">Farmer Name</label>
-                    <input type="text" class="form-control" name="farmerNameSearch" id="farmerNameSearch"
-                      [(ngModel)]="farmerNameSearch" (ngModelChange)="getTaulaParchis()" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="farmerNameSearch"
+                      id="farmerNameSearch"
+                      [(ngModel)]="farmerNameSearch"
+                      (ngModelChange)="getTaulaParchis()"
+                    />
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-group">
                     <label for="farmerMobileSearch">Farmer Mobile</label>
-                    <input type="text" class="form-control" name="farmerMobileSearch" id="farmerMobileSearch"
-                      [(ngModel)]="farmerMobileSearch" (ngModelChange)="getTaulaParchis()" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="farmerMobileSearch"
+                      id="farmerMobileSearch"
+                      [(ngModel)]="farmerMobileSearch"
+                      (ngModelChange)="getTaulaParchis()"
+                    />
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-group">
                     <label for="farmerVillageSearch">Farmer Village</label>
-                    <input type="text" class="form-control" name="farmerVillageSearch" id="farmerVillageSearch"
-                      [(ngModel)]="farmerVillageSearch" (ngModelChange)="getTaulaParchis()" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="farmerVillageSearch"
+                      id="farmerVillageSearch"
+                      [(ngModel)]="farmerVillageSearch"
+                      (ngModelChange)="getTaulaParchis()"
+                    />
                   </div>
                 </div>
                 <!-- <div class="col">
@@ -196,15 +294,26 @@
                 <div class="col">
                   <div class="form-group">
                     <label for="snoSearch">S.no</label>
-                    <input type="text" class="form-control" name="snoSearch" id="snoSearch" [(ngModel)]="snoSearch"
-                      (ngModelChange)="getTaulaParchis()" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="snoSearch"
+                      id="snoSearch"
+                      [(ngModel)]="snoSearch"
+                      (ngModelChange)="getTaulaParchis()"
+                    />
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-group">
                     <label for="transactionTypeSearch">Transaction Type</label>
-                    <select class="form-control" name="transactionTypeSearch" id="transactionTypeSearch"
-                      [(ngModel)]="transactionTypeSearch" (ngModelChange)="getTaulaParchis()">
+                    <select
+                      class="form-control"
+                      name="transactionTypeSearch"
+                      id="transactionTypeSearch"
+                      [(ngModel)]="transactionTypeSearch"
+                      (ngModelChange)="getTaulaParchis()"
+                    >
                       <option value="">Select</option>
                       <option value="cash">Cash</option>
                       <option value="credit">Credit</option>
@@ -232,36 +341,42 @@
                   </thead>
                   <tbody>
                     <!-- Iterate through TaulaParchi data -->
-                    <tr *ngFor="
-                      let taulaParchi of TaulaParchi
-                        | paginate
-                          : {
-                              itemsPerPage: 10,
-                              currentPage: pageForTaulaParchi,
-                              id: 'taulaparchi',
-                              totalItems: TaulaParchiCount
-                            };
-                      let i = index
-                    ">
+                    <tr
+                      *ngFor="
+                        let taulaParchi of TaulaParchi
+                          | paginate
+                            : {
+                                itemsPerPage: 10,
+                                currentPage: pageForTaulaParchi,
+                                id: 'taulaparchi',
+                                totalItems: TaulaParchiCount
+                              };
+                        let i = index
+                      "
+                    >
                       <td>
                         {{ taulaParchi.sno }}
                         <div *ngIf="taulaParchi?.transactionType">
                           <span class="badge bg-success">
                             <!-- money -->
-                            <i class="fi fi-rr-money"></i> | {{ taulaParchi?.transactionType }}
+                            <i class="fi fi-rr-money"></i> |
+                            {{ taulaParchi?.transactionType }}
                           </span>
                         </div>
                         <!-- transactionId -->
                         <div *ngIf="taulaParchi?.transactionId">
                           <span class="badge bg-info">
-                            <i class="fi fi-rr-credit-card"></i> | {{ taulaParchi?.transactionId }}
+                            <i class="fi fi-rr-credit-card"></i> |
+                            {{ taulaParchi?.transactionId }}
                           </span>
                         </div>
                       </td>
                       <td>
                         <span class="badge bg-primary">
                           <i class="fi fi-rr-clock"></i>
-                          {{ taulaParchi.created_at | date : "MM-dd-YYYY hh:mm" }}
+                          {{
+                            taulaParchi.created_at | date : "MM-dd-YYYY hh:mm"
+                          }}
                         </span>
                       </td>
                       <td>{{ taulaParchi?.purchase }}</td>
@@ -285,25 +400,38 @@
                       <td>{{ taulaParchi.amount | number : ".2" }}</td>
                       <td>{{ taulaParchi?.userDetails?.name }}</td>
                       <td>
-                        <button type="button" class="btn btn-sm btn-primary me-2 mb-2"
-                          [routerLink]="['/taul-parchi-view', taulaParchi._id]">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-primary me-2 mb-2"
+                          [routerLink]="['/taul-parchi-view', taulaParchi._id]"
+                        >
                           <!-- View -->
                           <i class="fi fi-rr-eye"></i>
                         </button>
                         <!-- Pay Button link -->
-                        <a *ngIf="
-                          getCurrentUser()?.role === 'cashier' &&
-                          !taulaParchi?.transactionType
-                        " class="btn btn-sm btn-primary me-2 mb-2" [routerLink]="[
-                          '/cashier-payment/taulParchi/' + taulaParchi._id
-                        ]">
+                        <a
+                          *ngIf="
+                            getCurrentUser()?.role === 'cashier' &&
+                            !taulaParchi?.transactionType
+                          "
+                          class="btn btn-sm btn-primary me-2 mb-2"
+                          [routerLink]="[
+                            '/cashier-payment/taulParchi/' + taulaParchi._id
+                          ]"
+                        >
                           <!-- Pay -->
                           Pay
                         </a>
 
-                        <button type="button" class="btn btn-sm btn-primary me-2 mb-2"
+                        <!-- <button type="button" class="btn btn-sm btn-primary me-2 mb-2"
                           (click)="printReceipt(taulaParchi)">
-                          <!-- Print -->
+                          <i class="fi fi-rr-print"></i>
+                        </button> -->
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-primary me-2 mb-2"
+                          (click)="sendToPrintReceipt(taulaParchi)"
+                        >
                           <i class="fi fi-rr-print"></i>
                         </button>
                       </td>
@@ -311,8 +439,10 @@
                   </tbody>
                 </table>
               </div>
-              <pagination-controls id="taulaparchi"
-                (pageChange)="pageForTaulaParchi = $event; getTaulaParchis()"></pagination-controls>
+              <pagination-controls
+                id="taulaparchi"
+                (pageChange)="pageForTaulaParchi = $event; getTaulaParchis()"
+              ></pagination-controls>
             </div>
           </div>
         </div>
@@ -324,7 +454,10 @@
                   <h4 class="mb-0">Truck Loading Parchis</h4>
                 </div>
                 <div class="col-auto">
-                  <a class="btn btn-primary" [routerLink]="['/truck-loading-parchi']">
+                  <a
+                    class="btn btn-primary"
+                    [routerLink]="['/truck-loading-parchi']"
+                  >
                     <!-- Add Truck Loading Parchi -->
                     <i class="fi fi-rr-add"></i> New Truck Loading Parchi
                   </a>
@@ -352,24 +485,30 @@
                   </thead>
                   <tbody>
                     <!-- Iterate through TruckLoadingParchi data -->
-                    <tr *ngFor="
-                      let truckLoadingParchi of TruckLoadingParchi
-                        | paginate
-                          : {
-                              itemsPerPage: 10,
-                              currentPage: pageForTruckLoadingParchi,
-                              id: 'truckloadingparchi',
-                              totalItems: TruckLoadingParchiCount
-                            };
-                      let i = index
-                    ">
+                    <tr
+                      *ngFor="
+                        let truckLoadingParchi of TruckLoadingParchi
+                          | paginate
+                            : {
+                                itemsPerPage: 10,
+                                currentPage: pageForTruckLoadingParchi,
+                                id: 'truckloadingparchi',
+                                totalItems: TruckLoadingParchiCount
+                              };
+                        let i = index
+                      "
+                    >
                       <td>{{ truckLoadingParchi.sno }}</td>
                       <td>
-                        {{ truckLoadingParchi.created_at | date : "MM-dd-YYYY" }}
+                        {{
+                          truckLoadingParchi.created_at | date : "MM-dd-YYYY"
+                        }}
                       </td>
                       <td>{{ truckLoadingParchi?.cropDetails?.name }}</td>
                       <td>{{ truckLoadingParchi?.partyDetails?.name }}</td>
-                      <td>{{ truckLoadingParchi?.truckDetails?.truckNumber }}</td>
+                      <td>
+                        {{ truckLoadingParchi?.truckDetails?.truckNumber }}
+                      </td>
                       <td>{{ truckLoadingParchi?.deliveryDetails?.name }}</td>
                       <td>{{ truckLoadingParchi?.hammalDetails?.name }}</td>
                       <td>
@@ -380,10 +519,14 @@
                       <td>{{ truckLoadingParchi?.userDetails?.name }}</td>
 
                       <td>
-                        <button type="button" class="btn btn-sm btn-primary me-2 mb-2" [routerLink]="[
-                          '/truck-loading-parchi-view',
-                          truckLoadingParchi._id
-                        ]">
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-primary me-2 mb-2"
+                          [routerLink]="[
+                            '/truck-loading-parchi-view',
+                            truckLoadingParchi._id
+                          ]"
+                        >
                           <!-- View -->
                           <i class="fi fi-rr-eye"></i>
                         </button>
@@ -393,12 +536,16 @@
                 </table>
               </div>
 
-              <pagination-controls id="truckloadingparchi" (pageChange)="
-                pageForTruckLoadingParchi = $event; getTruckLoadingParchis()
-              "></pagination-controls>
+              <pagination-controls
+                id="truckloadingparchi"
+                (pageChange)="
+                  pageForTruckLoadingParchi = $event; getTruckLoadingParchis()
+                "
+              ></pagination-controls>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>

@@ -170,33 +170,32 @@
                   ></p-dropdown>
 
 
-                  <label for="storage" class="form-label"
-                    >Storage Location</label
-                  >
-                  <!-- <select
-                    id="storage"
-                    class="form-select"
-                    [(ngModel)]="TruckLoadingParchi.storage"
-                    name="storage"
-                  >
-                    <option value="">Select Storage Location</option>
-                    <option
-                      *ngFor="let storage of Storage"
-                      [value]="storage._id"
-                    >
-                      {{ storage.name }}
-                    </option>
-                  </select> -->
-                  <p-dropdown
-                    [options]="Storage"
-                    [(ngModel)]="TruckLoadingParchi.storage"
-                    optionLabel="name"
-                    placeholder="Select Storage Location"
-                    optionValue="_id"
-                    [style]="{ width: '100%' }"
-                    [showClear]="true" [filter]="true"
-                  ></p-dropdown>
-
+                  <div class="form-group">
+                    <div *ngIf="getCurrentUser()?.role !== 'Employee'">
+                      <label for="storage" class="form-label">Storage Location</label>
+                      <p-dropdown
+                        [options]="Storage"
+                        [(ngModel)]="TruckLoadingParchi.storage"
+                        optionLabel="name"
+                        placeholder="Select Storage Location"
+                        optionValue="_id"
+                        [style]="{ width: '100%' }"
+                        [showClear]="true"
+                        [filter]="true"
+                      ></p-dropdown>
+                    </div>
+                  
+                    <div *ngIf="getCurrentUser()?.role === 'Employee'">
+                      <label for="storage" class="form-label">Storage Location</label>
+                      <div class="storage-display" *ngIf="selectedStorageName">
+                        {{ selectedStorageName }}
+                      </div>
+                      <div *ngIf="!selectedStorageName">
+                        No storage location selected.
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
 
                   <label for="deliveryLocation" class="form-label"
                     >Delivery Location</label

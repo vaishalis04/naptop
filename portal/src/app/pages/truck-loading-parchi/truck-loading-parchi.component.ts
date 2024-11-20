@@ -5,6 +5,7 @@ import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
 import { DropdownModule } from 'primeng/dropdown';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-truck-loading-parchi',
@@ -65,11 +66,12 @@ export class TruckLoadingParchiComponent implements OnInit {
     created_at: new Date(),
     createdBy: '',
   };
-
+  selectedStorageName: string = '';
   constructor(
     private apiService: ApiService,
     private router: Router,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -80,8 +82,30 @@ export class TruckLoadingParchiComponent implements OnInit {
     this.fetchTrucks();
     this.fetchStorage()
     this.fetchTransport()
+    this.fetchFromLocal()
   }
-
+  fetchFromLocal(){
+    const savedStorageId = localStorage.getItem('selectedWarehouseId');
+    console.log("hsv",localStorage.getItem('selectedWarehouseId'))
+if (savedStorageId) {
+  this.TruckLoadingParchi.storage = savedStorageId;
+  const storageData = localStorage.getItem('selectedWarehouse');
+  console.log("Storage Data:", storageData); 
+  if (storageData) {
+    const selectedStorage = JSON.parse(storageData); // Parse the object
+    if (selectedStorage && selectedStorage._id === savedStorageId) {
+      this.selectedStorageName = selectedStorage.name; // Assign name to display
+      console.log("Selected Storage Name:", this.selectedStorageName);
+    } else {
+      console.warn("No matching storage found for the savedStorageId.");
+    }
+  } else {
+    console.warn("No storage data found in localStorage.");
+  }
+} else {
+  console.warn("No saved storage ID found in localStorage.");
+}
+  }
   calculateNetWeight(): void {
     const { boraQuantity, unitBora, bardanaType } = this.TruckLoadingParchi;
     const bardanaInKg = (boraQuantity * (bardanaType/1000)); // Convert bardanaUnit from grams to kilograms
@@ -223,6 +247,10 @@ export class TruckLoadingParchiComponent implements OnInit {
         },
       });
   }
+  getCurrentUser() {
+    return this.authService.currentUser;
+  }
+
   // Save TruckLoadingParchi to the backend
   saveTruckLoadingParchi() {
     if (!this.TruckLoadingParchi.partyName) {

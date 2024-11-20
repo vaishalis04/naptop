@@ -30,7 +30,6 @@ export class DashboardComponent implements OnInit {
   pageForTruckLoadingParchi = 1;
   warehouses: any[] = [];
   currentUser: any;
-
   crops: any[] = [];
   storages: any[] = [];
   farmerNameSearch = '';
@@ -41,7 +40,8 @@ export class DashboardComponent implements OnInit {
   selectedWarehouse: any;
   selectedCrop: any;
   qrCodeUrl: string | null = null;
-
+  location: any[] = [];
+  selectedWarehouseId:any;
   constructor(
     private apiService: ApiService,
     private authService: AuthService
@@ -54,6 +54,7 @@ export class DashboardComponent implements OnInit {
     this.getTruckLoadingParchis();
     this.getWarehouses('daily');
     this.getCrops();
+    this.loadWarehouses()
   }
 
   getCrops() {
@@ -180,6 +181,37 @@ export class DashboardComponent implements OnInit {
       },
     });
   }
+  loadWarehouses() {
+    this.apiService.get('storage').subscribe({
+      next: (data: any) => {
+        this.location = data.data;
+        console.log(this.location,"gvshgvh")
+      },
+      error: (error: any) => {
+        console.error('Error fetching warehouses:', error);
+      },
+    });
+  }
+  onWarehouseChange() {
+    const selectedWarehouse = this.location.find(
+      (warehouse) => warehouse._id === this.selectedWarehouseId
+    );
+
+    if (selectedWarehouse) {
+      localStorage.setItem('selectedWarehouseId', selectedWarehouse._id);
+      localStorage.setItem('selectedWarehouse', JSON.stringify(selectedWarehouse));
+    }
+  }
+
+  getSelectedWarehouse() {
+    const selectedWarehouse = localStorage.getItem('selectedWarehouse');
+    return selectedWarehouse ? JSON.parse(selectedWarehouse) : null;
+  }
+  getSelectedWarehouseId() {
+    return localStorage.getItem('selectedWarehouseId');
+  }
+
+  
   getCurrentUser() {
     return this.authService.currentUser;
   }
@@ -346,5 +378,19 @@ export class DashboardComponent implements OnInit {
     receiptWindow?.document.close();
     receiptWindow?.focus();
   }
-
+  sendToPrintReceipt(taulaParchi: any) {
+    this.apiService.put(`taulparchi/${taulaParchi._id}`, {
+      enableToPrint: true,
+      enableToPrintBy: this.authService?.currentUser?.email || 'N/A',
+    }).subscribe({
+      next: (res: any) => {
+        console.log('Taula Parchi updated successfully:', res);
+        alert('Sent to printer.');
+        // this.printReceipt(taulaParchi);
+      },
+      error: (err: any) => {
+        console.error('Error updating Taula Parchi:', err);
+      },
+    });
+  }
 }

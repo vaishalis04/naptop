@@ -5,6 +5,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { QRCodeModule } from 'angularx-qrcode';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-taulparchi-view',
@@ -26,7 +27,8 @@ export class TaulparchiViewComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute, // Inject ActivatedRoute to capture route parameters
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -276,5 +278,20 @@ export class TaulparchiViewComponent implements OnInit {
   // Navigate back to the previous page
   goBack() {
     this.router.navigate(['/taul-parchi-dashboard']); // Adjust the route as needed
+  }
+  sendToPrintReceipt(taulaParchi: any) {
+    this.apiService.put(`taulparchi/${taulaParchi._id}`, {
+      enableToPrint: true,
+      enableToPrintBy: this.authService?.currentUser?.email || 'N/A',
+    }).subscribe({
+      next: (res: any) => {
+        console.log('Taula Parchi updated successfully:', res);
+        alert('Sent to printer.');
+        // this.printReceipt(taulaParchi);
+      },
+      error: (err: any) => {
+        console.error('Error updating Taula Parchi:', err);
+      },
+    });
   }
 }
