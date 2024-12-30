@@ -44,7 +44,7 @@
                                 <th scope="col">Net Weight(in Quintal)</th>
                                 <th scope="col">Amount (₹)</th>
                                 <th scope="col">Created By</th>
-                                <th scope="col">Print</th>
+                                <!-- <th scope="col">Print</th> -->
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -66,36 +66,25 @@
                                 <td>{{ truckLoadingParchi.netWeight }}</td>
                                 <td>{{ truckLoadingParchi.amount | number: '.2' }}</td>
                                 <td>{{ truckLoadingParchi?.userDetails?.name }}</td>
-                                <td>
+                                <!-- <td>
                                     <button type="button" class="btn btn-sm btn-primary me-2 mb-2"
                                         (click)="sendToPrintReceipt(truckLoadingParchi)">
-                                        <!-- Print -->
                                         <i class="fi fi-rr-print"></i>
                                     </button>
-                                </td>
+                                </td> -->
                                 <td>
-                                    <div class="row">
-                                        <!-- <div class="col-4">
-                                            <button type="button" class="btn btn-primary"
-                                                (click)="printReceipt(truckLoadingParchi)" style="margin-right: 10px;">
-                                                <i class="fi fi-rr-print"></i>
-                                            </button>
-                                        </div> -->
-                                        <div class="col-4">
-                                            <button type="button" class="btn btn-primary"
-                                                [routerLink]="['/truck-loading-parchi-view', truckLoadingParchi._id]">
-                                                <!-- View -->
-                                                <i class="fi fi-rr-eye"></i>
-                                            </button>
-                                        </div>
-                                        <div class="col-4">
-                                            <button type="button" class="btn btn-danger"
-                                                (click)="deleteTruckLoadingParchi(truckLoadingParchi._id)">
-                                                <!-- Delete -->
-                                                <i class="fi fi-rr-trash"></i>
-                                            </button>
-                                        </div>
-                                    </div>
+                                    <span class="badge">
+                                        <button type="button" class="btn btn-primary me-2"
+                                            [routerLink]="['/truck-loading-parchi-view', truckLoadingParchi._id]">
+                                            <!-- View -->
+                                            <i class="fi fi-rr-eye"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-danger"
+                                            (click)="deleteTruckLoadingParchi(truckLoadingParchi._id)">
+                                            <!-- Delete -->
+                                            <i class="fi fi-rr-trash"></i>
+                                        </button>
+                                    </span>
                                 </td>
                             </tr>
                         </tbody>

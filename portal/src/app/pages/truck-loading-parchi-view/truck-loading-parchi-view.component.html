@@ -1,6 +1,19 @@
 <div class="card bg-white mb-3">
     <div class="card-header text-center">
-        <h4 class="mb-0">Truck Loading Parchi</h4>
+        <h4 class="mb-0">Truck Loading Parchi
+            <!-- Print -->
+          <span *ngIf="printerStatus && loadingText">
+            <button *ngIf="printerStatus == 'Ready'" type="button" class="btn btn-primary" (click)="sendToPrintReceipt(truckLoadingParchi)">
+              <i class="fas fa-print"></i> ({{printerStatus}} | {{loadingText}}) Print
+            </button>
+            <span *ngIf="printerStatus != 'Ready'" class="badge bg-secondary text-wrap">
+              {{ loadingText }} | {{ printerStatus }}
+            </span>
+          </span>
+          <button *ngIf="!(printerStatus && loadingText)" type="button" class="btn btn-primary" (click)="sendToPrintReceipt(truckLoadingParchi)">
+            <i class="fas fa-print"></i> Print
+          </button>
+        </h4>
         <p><b>M+M</b></p>
         <div class="row">
             <div class="col text-start">
@@ -99,7 +112,7 @@
     <button type="button" class="btn btn-secondary px-5" (click)="goBack()">
         <i class="fas fa-arrow-left"></i> Back
     </button>
-    <button type="button" class="btn btn-primary px-5" (click)="sendToPrintReceipt(truckLoadingParchi)">
+    <!-- <button type="button" class="btn btn-primary px-5" (click)="sendToPrintReceipt(truckLoadingParchi)">
         <i class="fas fa-print"></i> Print
-    </button>
+    </button> -->
 </div>

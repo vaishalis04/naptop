@@ -7,6 +7,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { QRCodeModule } from 'angularx-qrcode';
 import { AuthService } from '../../services/auth.service';
 
+declare const IminPrinter: any;
+
 @Component({
   selector: 'app-taulparchi-view',
   standalone: true,
@@ -24,12 +26,16 @@ import { AuthService } from '../../services/auth.service';
 export class TaulparchiViewComponent implements OnInit {
   taulaParchi: any = {}; // Store the specific taulaParchi details here
   qrCodeUrl: string | null = null;
+  printerStatus: any = '';
+  loadingText: any = '';
+  IminPrintInstance: any = '';
+
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute, // Inject ActivatedRoute to capture route parameters
     private router: Router,
     private authService: AuthService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     // Get the ID from the route
@@ -37,15 +43,16 @@ export class TaulparchiViewComponent implements OnInit {
     if (id) {
       this.getTaulaParchiById(id);
     }
+    this.initPrinter()
   }
 
   // Fetch Taula Parchi by ID
   getTaulaParchiById(id: string) {
     this.apiService.get(`taulparchi/${id}`).subscribe({
       next: (res: any) => {
-        console.log("res",res)
+        console.log("res", res)
         this.taulaParchi = res;
-        console.log("taulparchi",res)
+        console.log("taulparchi", res)
       },
       error: (err: any) => {
         console.error('Error fetching Taula Parchi details:', err);
@@ -205,9 +212,8 @@ export class TaulparchiViewComponent implements OnInit {
             </div>
             <div class="row">
               <div class="label"><b>Exempt Hammali:</b></div>
-              <div class="value">${
-                taulaParchi.exemptHammali ? (taulaParchi.exemptHammali === 'deduct' ? 'Deduct' : 'Exempted') : 'N/A'
-              }</div>
+              <div class="value">${taulaParchi.exemptHammali ? (taulaParchi.exemptHammali === 'deduct' ? 'Deduct' : 'Exempted') : 'N/A'
+      }</div>
             </div>
             <div class="row">
               <div class="label"><b>Hammal:</b></div>
@@ -280,18 +286,300 @@ export class TaulparchiViewComponent implements OnInit {
     this.router.navigate(['/taul-parchi-dashboard']); // Adjust the route as needed
   }
   sendToPrintReceipt(taulaParchi: any) {
-    this.apiService.put(`taulparchi/${taulaParchi._id}`, {
-      enableToPrint: true,
-      enableToPrintBy: this.authService?.currentUser?.email || 'N/A',
-    }).subscribe({
-      next: (res: any) => {
-        console.log('Taula Parchi updated successfully:', res);
-        alert('Sent to printer.');
-        // this.printReceipt(taulaParchi);
-      },
-      error: (err: any) => {
-        console.error('Error updating Taula Parchi:', err);
-      },
-    });
+    if (this.printerStatus == 'Ready') {
+      this.printViaPrinter()
+    } else {
+      this.printReceipt(this.taulaParchi);
+    }
+    // this.apiService.put(`taulparchi/${taulaParchi._id}`, {
+    //   enableToPrint: true,
+    //   enableToPrintBy: this.authService?.currentUser?.email || 'N/A',
+    // }).subscribe({
+    //   next: (res: any) => {
+    //     console.log('Taula Parchi updated successfully:', res);
+    //     alert('Sent to printer.');
+    //     // this.printReceipt(taulaParchi);
+    //   },
+    //   error: (err: any) => {
+    //     console.error('Error updating Taula Parchi:', err);
+    //   },
+    // });
   }
+
+  async printViaPrinter() {
+    try {
+      this.IminPrintInstance.setTextWidth(576);
+
+      // Header
+      this.IminPrintInstance.setTextSize(28);
+      this.IminPrintInstance.setTextStyle(1);
+      this.IminPrintInstance.printColumnsText(
+        ['Taula Parchi Receipt'],
+        [32],
+        [1],
+        [28],
+        576
+      );
+      this.IminPrintInstance.printColumnsText(
+        ['M+M'],
+        [32],
+        [1],
+        [28],
+        576
+      );
+      this.IminPrintInstance.printText('========================');
+
+      // Reset text style
+      this.IminPrintInstance.setTextStyle(0);
+      this.IminPrintInstance.setTextSize(24);
+
+      // Basic Details
+      this.IminPrintInstance.printColumnsText(
+        ['Sr.No', this.taulaParchi?.sno],
+        [12, 20],
+        [0, 2],
+        [24, 24],
+        576
+      );
+
+      this.IminPrintInstance.printColumnsText(
+        ['Date', new Date(this.taulaParchi?.created_at).toLocaleDateString()],
+        [12, 20],
+        [0, 2],
+        [24, 24],
+        576
+      );
+
+      this.IminPrintInstance.printColumnsText(
+        ['Time', new Date(this.taulaParchi?.created_at).toLocaleTimeString()],
+        [12, 20],
+        [0, 2],
+        [24, 24],
+        576
+      );
+
+      this.IminPrintInstance.printText('------------------');
+
+      // Farmer Details Section
+      this.IminPrintInstance.setTextStyle(1);
+      this.IminPrintInstance.printText('Farmer Details:');
+      this.IminPrintInstance.setTextStyle(0);
+
+      this.IminPrintInstance.printColumnsText(
+        ["Farmer's Name", this.taulaParchi.farmerName || 'N/A'],
+        [15, 17],
+        [0, 2],
+        [24, 24],
+        576
+      );
+
+      this.IminPrintInstance.printColumnsText(
+        ['Mobile', this.taulaParchi.farmerMobile || 'N/A'],
+        [15, 17],
+        [0, 2],
+        [24, 24],
+        576
+      );
+
+      this.IminPrintInstance.printColumnsText(
+        ['Village', this.taulaParchi.farmerVillage || 'N/A'],
+        [15, 17],
+        [0, 2],
+        [24, 24],
+        576
+      );
+
+      this.IminPrintInstance.printColumnsText(
+        ['Storage', this.taulaParchi.wearhouseDetails?.name || 'N/A'],
+        [15, 17],
+        [0, 2],
+        [24, 24],
+        576
+      );
+
+      this.IminPrintInstance.printColumnsText(
+        ['Crop', this.taulaParchi.cropDetails?.name || 'N/A'],
+        [15, 17],
+        [0, 2],
+        [24, 24],
+        576
+      );
+
+      this.IminPrintInstance.printText('------------------');
+
+      // Purchase Details Section
+      this.IminPrintInstance.setTextStyle(1);
+      this.IminPrintInstance.printText('Purchase Details:');
+      this.IminPrintInstance.setTextStyle(0);
+
+      this.IminPrintInstance.printColumnsText(
+        ['Purchase', this.taulaParchi.purchase || 'N/A'],
+        [15, 17],
+        [0, 2],
+        [24, 24],
+        576
+      );
+
+      this.IminPrintInstance.printColumnsText(
+        ['Company', this.taulaParchi.companyDetails?.name || 'N/A'],
+        [15, 17],
+        [0, 2],
+        [24, 24],
+        576
+      );
+
+      this.IminPrintInstance.printText('------------------');
+
+      // Weight & Amount Details Section
+      this.IminPrintInstance.setTextStyle(1);
+      this.IminPrintInstance.printText('Weight & Amount Details:');
+      this.IminPrintInstance.setTextStyle(0);
+
+      const details = [
+        ['Rate', `₹${this.taulaParchi.rate || 'N/A'}`],
+        ['Tulai Option', this.taulaParchi.tulai || 'N/A'],
+        ['Exempt Hammali', this.taulaParchi.exemptHammali ?
+          (this.taulaParchi.exemptHammali === 'deduct' ? 'Deduct' : 'Exempted') : 'N/A'],
+        ['Hammal', this.taulaParchi?.hammalDetails?.name || 'N/A'],
+        ['Bora Qty', this.taulaParchi.boraQuantity || 'N/A'],
+        ['Bharti', `${this.taulaParchi.bharti || 'N/A'} Kgs`],
+        ['Loose Qty', `${this.taulaParchi.looseQuantity || 'N/A'} Kgs`],
+        ['Net Weight', `${this.taulaParchi.netWeight || 'N/A'} Quintal`]
+      ];
+
+      details.forEach(([label, value]) => {
+        this.IminPrintInstance.printColumnsText(
+          [label, value],
+          [15, 17],
+          [0, 2],
+          [24, 24],
+          576
+        );
+      });
+
+      this.IminPrintInstance.printText('------------------');
+
+      // Total Section with larger and bold text
+      this.IminPrintInstance.setTextStyle(1);
+      this.IminPrintInstance.setTextSize(26);
+      this.IminPrintInstance.printColumnsText(
+        ['Hammali', `₹${this.taulaParchi.hammali || 'N/A'}`],
+        [15, 17],
+        [0, 2],
+        [26, 26],
+        576
+      );
+
+      this.IminPrintInstance.printColumnsText(
+        ['Total Amount', `₹${this.taulaParchi.amount || 'N/A'}`],
+        [15, 17],
+        [0, 2],
+        [26, 26],
+        576
+      );
+
+      this.IminPrintInstance.printText('------------------');
+
+      // Footer
+      this.IminPrintInstance.printColumnsText(
+        ['Thank You!'],
+        [32],
+        [1],
+        [24],
+        576
+      );
+      this.IminPrintInstance.printText('========================');
+
+      // Feed and Cut
+      this.IminPrintInstance.printAndFeedPaper(100);
+      this.IminPrintInstance.partialCut();
+
+      alert('Receipt printed successfully');
+    } catch (error) {
+      console.error('Error printing receipt:', error);
+      alert('Print error occurred');
+      this.printReceipt(this.taulaParchi);
+    }
+  }
+
+  async initPrinter() {
+    // Initialize printer instance
+    this.IminPrintInstance = new IminPrinter();
+
+    // Connect to printer and check status
+    try {
+      const isConnect = await this.IminPrintInstance.connect();
+      let reconnectNum = 0;
+
+      if (isConnect) {
+        this.loadingText = 'The connection is successful and is being initialized.';
+        this.printerStatus = 'Connected, initializing...';
+
+        this.IminPrintInstance.initPrinter();
+        this.loadingText = 'Initialization successful, checking printing status.';
+
+        const checkStatus = setInterval(async () => {
+          const status = await this.IminPrintInstance.getPrinterStatus();
+          if (status.value === 0) {
+            this.loadingText = 'Printing status is normal.';
+            this.printerStatus = 'Ready';
+            clearInterval(checkStatus);
+          } else if (status.value < 0) {
+            reconnectNum++;
+            this.printerStatus = 'Reconnecting... (Attempt ' + reconnectNum + ')';
+            if (reconnectNum > 3) {
+              reconnectNum = 0;
+              this.IminPrintInstance.initPrinter();
+            }
+          } else {
+            this.loadingText = `Error, printing status is abnormal, status value: ${status.value} trying to reconnect`;
+            this.printerStatus = 'Error: Abnormal status';
+          }
+        }, 2000);
+      } else {
+        this.loadingText = 'Error, The print service cannot be connected';
+        this.printerStatus = 'Connection failed';
+      }
+    } catch (error) {
+      this.loadingText = 'Error, The print service cannot be connected';
+      this.printerStatus = 'Connection error';
+      console.error('Printer connection error:', error);
+    }
+
+  }
+
+  // Setup demo print functionality
+  // setupPrintDemo() {
+  //   const printButton: any = document.getElementById('printDemo');
+  //   printButton.addEventListener('click', async function () {
+  //     try {
+  //       this.printerStatus = 'Printing demo receipt...';
+
+  //       // Set text size for demo
+  //       IminPrintInstance.setTextSize(28);
+
+  //       // Print header
+  //       IminPrintInstance.printText('===== Demo Print =====\n');
+
+  //       // Print current date and time
+  //       IminPrintInstance.printText(`Date: ${new Date().toLocaleString()}\n`);
+
+  //       // Print test content
+  //       IminPrintInstance.printText('This is a test print from\n');
+  //       IminPrintInstance.printText('iMin Printer\n');
+
+  //       // Print divider
+  //       IminPrintInstance.printText('=====================\n');
+
+  //       // Feed paper and cut
+  //       IminPrintInstance.printAndFeedPaper(100);
+  //       IminPrintInstance.partialCut();
+
+  //       this.printerStatus = 'Demo receipt printed successfully';
+  //     } catch (error) {
+  //       this.printerStatus = 'Print error occurred';
+  //       console.error('Print error:', error);
+  //     }
+  //   });
+  // }
 }

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/pages/login/login.component.css"],
-  "sourcesContent": ["@media (max-width: 767px) {\r\n    .login-form-container {\r\n        min-width: 100%;\r\n    }\r\n}\r\n@media (min-width: 768px) {\r\n    .login-form-container {\r\n        min-width: 450px;\r\n    }\r\n}\r\n.login-form-container {\r\n    margin: 5% auto;\r\n}\r\n\r\nimg.logo {\r\n    width: 100px;\r\n}\r\n"],
-  "mappings": ";AAAA,OAAO,CAAC,SAAS,EAAE;AACf,GAAC;AACG,eAAW;AACf;AACJ;AACA,OAAO,CAAC,SAAS,EAAE;AACf,GALC;AAMG,eAAW;AACf;AACJ;AACA,CATK;AAUD,UAAQ,GAAG;AACf;AAEA,GAAG,CAAC;AACA,SAAO;AACX;",
-  "names": []
-}

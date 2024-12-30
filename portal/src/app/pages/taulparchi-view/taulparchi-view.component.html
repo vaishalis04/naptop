@@ -5,7 +5,15 @@
         <h4 class="mb-0">
           Taul Parchi
           <!-- Print -->
-          <button type="button" class="btn btn-primary" (click)="sendToPrintReceipt(taulaParchi)">
+          <span *ngIf="printerStatus && loadingText">
+            <button *ngIf="printerStatus == 'Ready'" type="button" class="btn btn-primary" (click)="sendToPrintReceipt(taulaParchi)">
+              <i class="fas fa-print"></i> ({{printerStatus}} | {{loadingText}}) Print
+            </button>
+            <span *ngIf="printerStatus != 'Ready'" class="badge bg-secondary text-wrap">
+              {{ loadingText }} | {{ printerStatus }}
+            </span>
+          </span>
+          <button *ngIf="!(printerStatus && loadingText)" type="button" class="btn btn-primary" (click)="sendToPrintReceipt(taulaParchi)">
             <i class="fas fa-print"></i> Print
           </button>
         </h4>

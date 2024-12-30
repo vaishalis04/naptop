@@ -1,0 +1,151 @@
+{
+  "configVersion": 1,
+  "timestamp": 1735426321929,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/index.html",
+        "/main-T66YJ2KU.js",
+        "/manifest.webmanifest",
+        "/polyfills-MH2GNY63.js",
+        "/scripts-PBMAT7JW.js",
+        "/styles-U5ZKHQC5.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/SCR-20240106-njrl.png",
+        "/assets/images/car-top-view.png",
+        "/assets/js/imin-printer.min.js",
+        "/assets/logos/ayodhya-logo.jpg",
+        "/assets/logos/logo-square.png",
+        "/assets/logos/logo-wide.png",
+        "/media/color-727V6BA6.png",
+        "/media/hue-3YTJE6JS.png",
+        "/media/primeicons-4GST5W3O.woff2",
+        "/media/primeicons-DHQU4SEP.svg",
+        "/media/primeicons-GEFHGEHP.ttf",
+        "/media/primeicons-P53SE5CV.woff",
+        "/media/roboto-v20-latin-ext_latin-500-QCKPPE42.woff2",
+        "/media/roboto-v20-latin-ext_latin-500-UKPROMCT.woff",
+        "/media/roboto-v20-latin-ext_latin-700-L5E4QLQF.woff2",
+        "/media/roboto-v20-latin-ext_latin-700-XH376R4L.woff",
+        "/media/roboto-v20-latin-ext_latin-regular-B2TBCAKK.woff2",
+        "/media/roboto-v20-latin-ext_latin-regular-NPMDQIK3.woff",
+        "/media/uicons-bold-rounded-MQNABNC6-MQNABNC6.woff2",
+        "/media/uicons-bold-rounded-UTQQXXF3-UTQQXXF3.woff",
+        "/media/uicons-bold-straight-3JAZKD6K-3JAZKD6K.woff2",
+        "/media/uicons-bold-straight-3S6L5GRX-3S6L5GRX.woff",
+        "/media/uicons-brands-PQBQF6T3-PQBQF6T3.woff",
+        "/media/uicons-brands-XJPKRNBN-XJPKRNBN.woff2",
+        "/media/uicons-regular-rounded-J3WOUERV-J3WOUERV.woff2",
+        "/media/uicons-regular-rounded-KDJ23353-KDJ23353.woff",
+        "/media/uicons-regular-straight-2I3O25UC-2I3O25UC.woff2",
+        "/media/uicons-regular-straight-AFQI6GFM-AFQI6GFM.woff",
+        "/media/uicons-solid-rounded-IYSBBSWN-IYSBBSWN.woff2",
+        "/media/uicons-solid-rounded-UWVI4CEC-UWVI4CEC.woff",
+        "/media/uicons-solid-straight-4DZ3VA4V-4DZ3VA4V.woff2",
+        "/media/uicons-solid-straight-ITFA7HIK-ITFA7HIK.woff",
+        "/media/uicons-thin-rounded-HOOVQNVT-HOOVQNVT.woff2",
+        "/media/uicons-thin-rounded-IJXIJK3M-IJXIJK3M.woff",
+        "/media/uicons-thin-straight-2YUSDJEW-2YUSDJEW.woff2",
+        "/media/uicons-thin-straight-JPCGBQEF-JPCGBQEF.woff"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/assets/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/assets/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/assets/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/assets/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/assets/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/assets/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/assets/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/assets/images/SCR-20240106-njrl.png": "76f0d17281862e0db516d5be4ade81bb9c9f4feb",
+    "/assets/images/car-top-view.png": "dcaff3a3169dad83b7314e3ae3a0b200513b43c6",
+    "/assets/js/imin-printer.min.js": "b5559aa03cf94c4537c7c7fdd2a38a4032e1b703",
+    "/assets/logos/ayodhya-logo.jpg": "dad4e6c0facaf07b55cc89e958253f46041ba7f7",
+    "/assets/logos/logo-square.png": "14468759c650c0015fe1aa45ed5bb353a930a14a",
+    "/assets/logos/logo-wide.png": "4ba5443ce2be20e25c2051b95226b278d7f27960",
+    "/index.html": "919f5d646170dfb87c6b88ffd722acc05371c213",
+    "/main-T66YJ2KU.js": "eff538058fb9c6c05d22156a400d86d4b205f606",
+    "/manifest.webmanifest": "01d7d3d825af3b5b905af9e8490ea65b34314a23",
+    "/media/color-727V6BA6.png": "c54e4eac0b6c88b9da8cfdf00b1d9093b828286b",
+    "/media/hue-3YTJE6JS.png": "ec215387067c733aed6649b96d8a81798a58b21b",
+    "/media/primeicons-4GST5W3O.woff2": "837c1279b6af9d297f34fdb43e6fcc9206a79f32",
+    "/media/primeicons-DHQU4SEP.svg": "a07ae39027c1a780b42fd82fad7575c2924d9d28",
+    "/media/primeicons-GEFHGEHP.ttf": "3b878ca7e88945a8ec25814810b95367d8977ae6",
+    "/media/primeicons-P53SE5CV.woff": "361e3af71bb4e515feead2f787348a92a5527158",
+    "/media/roboto-v20-latin-ext_latin-500-QCKPPE42.woff2": "c6bb23353807dc80aab7b404b84cd126e23218c7",
+    "/media/roboto-v20-latin-ext_latin-500-UKPROMCT.woff": "d2cebefb88017b3f031c04933e86deb1951b5e4c",
+    "/media/roboto-v20-latin-ext_latin-700-L5E4QLQF.woff2": "6c49cb8d1502a5c3a70d549f5255101dc779a2f0",
+    "/media/roboto-v20-latin-ext_latin-700-XH376R4L.woff": "4440f2258e5e240b030f628e121d5a3159c027f0",
+    "/media/roboto-v20-latin-ext_latin-regular-B2TBCAKK.woff2": "04551650580fab08f51698de86a568367a454bad",
+    "/media/roboto-v20-latin-ext_latin-regular-NPMDQIK3.woff": "210731c08d7e605ae9f1634b82ff5847cb50e9e8",
+    "/media/uicons-bold-rounded-MQNABNC6-MQNABNC6.woff2": "3699d769b24a24665666df205170493b24fd0d0c",
+    "/media/uicons-bold-rounded-UTQQXXF3-UTQQXXF3.woff": "34156f6e02d4a9f9329df469a5924fbe1d8ec333",
+    "/media/uicons-bold-straight-3JAZKD6K-3JAZKD6K.woff2": "6f21fc0626e991b7525b30f30c8115edd230c8ad",
+    "/media/uicons-bold-straight-3S6L5GRX-3S6L5GRX.woff": "3b5b5869d4be294d254b1cf92e43464c46b74b46",
+    "/media/uicons-brands-PQBQF6T3-PQBQF6T3.woff": "4d3cb1e5a2b08e827b4a4f52814bafe3fd76410e",
+    "/media/uicons-brands-XJPKRNBN-XJPKRNBN.woff2": "c1ec10773d2e5a617d5581a26ad4b65436ca85c4",
+    "/media/uicons-regular-rounded-J3WOUERV-J3WOUERV.woff2": "3c10e62fd82639389e8ca77ed3fb6bd70558abcb",
+    "/media/uicons-regular-rounded-KDJ23353-KDJ23353.woff": "88ff3ac21f7d214e4d0bef184f77eeaf6480156b",
+    "/media/uicons-regular-straight-2I3O25UC-2I3O25UC.woff2": "b2c07ac8e5c99ea85a8c702a94aa214da7d235f0",
+    "/media/uicons-regular-straight-AFQI6GFM-AFQI6GFM.woff": "b75d3538f05934b6231203a48f156b1fc142fbac",
+    "/media/uicons-solid-rounded-IYSBBSWN-IYSBBSWN.woff2": "95f9bdc243432f7892883a4a2a943ac2fb16618d",
+    "/media/uicons-solid-rounded-UWVI4CEC-UWVI4CEC.woff": "9777402ba73ca2c55b52366342bf8740112f6429",
+    "/media/uicons-solid-straight-4DZ3VA4V-4DZ3VA4V.woff2": "f8acc7fc46040459f729392c35ee512cd58997c8",
+    "/media/uicons-solid-straight-ITFA7HIK-ITFA7HIK.woff": "ceeea932449ba02389727782d854990a1ad6cd27",
+    "/media/uicons-thin-rounded-HOOVQNVT-HOOVQNVT.woff2": "946822585471f4d2a45f14acbd2aad43036523e5",
+    "/media/uicons-thin-rounded-IJXIJK3M-IJXIJK3M.woff": "518a4e04396e0faa14263ee066c0682a3142fe09",
+    "/media/uicons-thin-straight-2YUSDJEW-2YUSDJEW.woff2": "40fc21e480253dd30396dd37d08a63873e99169b",
+    "/media/uicons-thin-straight-JPCGBQEF-JPCGBQEF.woff": "e64b16dbeeb7076b93c0b230eaaf7e37e5ce4866",
+    "/polyfills-MH2GNY63.js": "3c45a12b17fda69e5b6ed63ba5d8cc13f85d5dd1",
+    "/scripts-PBMAT7JW.js": "cccc6faedaef4f259dea68cfd33b79486d6038de",
+    "/styles-U5ZKHQC5.css": "b9e5cfb5ddfa420856d124edcae08073ce9b46bc"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

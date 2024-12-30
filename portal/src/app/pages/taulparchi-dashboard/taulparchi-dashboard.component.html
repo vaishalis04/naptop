@@ -90,7 +90,7 @@
                 <th scope="col">Net Weight(in Quintal)</th>
                 <th scope="col">Amount (₹)</th>
                 <th scope="col">Created By</th>
-                <th scope="col">Print</th>
+                <!-- <th scope="col">Print</th> -->
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -127,28 +127,29 @@
                 <td>{{ taulaParchi.netWeight }}</td>
                 <td>{{ taulaParchi.amount | number: '.2' }}</td>
                 <td>{{ taulaParchi?.userDetails?.name }}</td>
-                <td class="d-flex">
+                <!-- <td class="d-flex">
                   <button type="button" class="btn btn-sm btn-primary me-2 mb-2"
                     (click)="sendToPrintReceipt(taulaParchi)">
-                    <!-- Print -->
                     <i class="fi fi-rr-print"></i>
                   </button>
-                </td>
+                </td> -->
                 <td>
                   <!-- <button type="button" class="btn btn-sm btn-primary me-2 mb-2" (click)="sendToPrintReceipt(taulaParchi)">
                     <i class="fi fi-rr-print"></i>
                   </button> -->
-                  <button type="button" class="btn btn-sm btn-primary me-2 mb-2"
-                    [routerLink]="['/taul-parchi-view', taulaParchi._id]" 
-                    >
-                    <!-- View -->
-                    <i class="fi fi-rr-eye"></i>
-                  </button>
-                  <!-- delete -->
-                  <button *ngIf="currentUser.role == 'Admin'" type="button" class="btn btn-sm btn-danger me-2 mb-2"
-                    (click)="deleteTaulaParchi(taulaParchi._id)">
-                    <i class="fi fi-rr-trash"></i>
-                  </button>
+                  <span class="badge">
+                    <button type="button" class="btn btn-sm btn-primary me-2 mb-2"
+                      [routerLink]="['/taul-parchi-view', taulaParchi._id]"
+                      >
+                      <!-- View -->
+                      <i class="fi fi-rr-eye"></i>
+                    </button>
+                    <!-- delete -->
+                    <button *ngIf="currentUser.role == 'Admin'" type="button" class="btn btn-sm btn-danger me-2 mb-2"
+                      (click)="deleteTaulaParchi(taulaParchi._id)">
+                      <i class="fi fi-rr-trash"></i>
+                    </button>
+                  </span>
                 </td>
               </tr>
             </tbody>
